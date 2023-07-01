@@ -123,5 +123,3 @@ format:
 filters:
   - include-files.lua
   - quarto
-
-  
