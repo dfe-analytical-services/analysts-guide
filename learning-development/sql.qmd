@@ -52,7 +52,7 @@ Andy Brook's excellent Introduction to SQL session, giving a visual overview of 
 
 ---
 
-Here are some tips to follow best practice in your SQL code, making it easier to read and pick up if another person is running your code. Following best practice guidance will help you to achieve RAP best practice with [clean final code](rap.html#Clean_final_code)
+Here are some tips to follow best practice in your SQL code, making it easier to read and pick up if another person is running your code. Following best practice guidance will help you to achieve RAP best practice with [clean final code](../RAP/rap.html#Clean_final_code)
 
 * Avoid any trailing whitespace
 * Always capitalize SQL keywords (e.g., SELECT or AS)
@@ -69,7 +69,7 @@ Here are some tips to follow best practice in your SQL code, making it easier to
 
 SSMS is the best tool to get started with writing SQL queries and saving SQL scripts that produce your desired outputs. 
 
-Once you have saved SQL scripts or are more familiar with writing SQL queries on the fly, you can look at running your scripts or lines of SQL code [directly in R](rap.html#Connecting_R_to_SQL). This will streamline your process, saving copying and pasting SQL outputs into csvs, and ultimately help with reaching RAP best practice by aiding production of [a single publication production script](rap.html#Single_publication_production_script)
+Once you have saved SQL scripts or are more familiar with writing SQL queries on the fly, you can look at running your scripts or lines of SQL code [directly in R](../RAP/rap.html#Connecting_R_to_SQL). This will streamline your process, saving copying and pasting SQL outputs into csvs, and ultimately help with reaching RAP best practice by aiding production of [a single publication production script](../RAP/rap.html#Single_publication_production_script)
 
 ---
 
@@ -150,7 +150,7 @@ If the area is in any other server, raise a request through the central IT servi
 
 ---
 
-Information on how to do this in R can be found in our [processes and RAP page](rap.html#Moving_data_to_different_areas)
+Information on how to do this in R can be found in our [processes and RAP page](../RAP/rap.html#Moving_data_to_different_areas)
 
 ---
 
