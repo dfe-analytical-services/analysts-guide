@@ -18,10 +18,11 @@ There is already a wealth of resources out there, and therefore this site unasha
 
 We hope it can prove a useful resource for everyone from the most experienced right through to those just starting out. If you have any feedback, suggested additions, or wish to challenge any of the guidance, please contact us using the envelope button in the top right corner.
 
+
 ## Learning and development
 
 [General resources](learning-development/learning-development.html)
-- A collection of useful learning resources, and information on the recommended tools to get you started
+- Useful learning resources, and support to get you started
 
 [SQL](learning-development/sql.html)
 - Guidance and tips for accessing data via databases with SQL
@@ -45,17 +46,17 @@ We hope it can prove a useful resource for everyone from the most experienced ri
 [How to publish](publishing-statistics/pub.html)
 - Guidance for how to publish different types of statistics
 
-[Using EES](publishing-statistics/ees.html)
-- Guidance for how to use the features in the Explore Education Statistics platform
-
-[EES good practice examples](publishing-statistics/examples.html)
-- Examples of good practice in EES across all of our publications
-
-[Dashboards](publishing-statistics/dashboards.html)
+[Public dashboards](publishing-statistics/dashboards.html)
 - Guidance for publishing official statistics dashboards
 
-[Creating embedded visualisations](publishing-statistics/embedded-charts.html)
-- Guidance for creating and embedding R-Shiny charts in EES publications
+[Using EES](publishing-statistics/ees.html)
+- How to use the features in Explore Education Statistics
+
+[Good examples in EES](publishing-statistics/examples.html)
+- Examples of good practice in Explore Eduaction Statistics
+
+[Embedded visualisations in EES](publishing-statistics/embedded-charts.html)
+- How to embed R-Shiny charts in EES publications
 
 ## Understanding users
 
@@ -63,18 +64,21 @@ We hope it can prove a useful resource for everyone from the most experienced ri
 - Guidance on understanding and engaging with the users of published statistics
 
 [EES analytics](understanding-users/user_analytics.html)
-- Guidance on understanding how users are interacting with your statistics published via EES-
+- Understanding how users are interacting with your publications
 
-## RAP
+## Reproducible Analytical Pipelines (RAP)
 
-[Processes and RAP](RAP/rap.html)
-- Guidance for how to process data, including the principles of Reproducible Analytical Pipelines (RAP)
+[RAP expectations](RAP/rap-expectations.html)
+- Guidance for all analysts on expectations of RAP
 
-[RAP information for managers](RAP/rap-managers.html)
-- Guidance for those managing analysts and FAQs on RAP
+[RAP support](RAP/rap-managers.html)
+- Details on support available for RAP in DfE
 
 [RAP FAQs](RAP/rap-faq.html)
-- Frequently asked questions about Reproducible Analytical Pipelines!
+- Frequently asked questions about RAP
+
+[RAP in statistics](RAP/rap-statistics.html)
+- Detailed RAP guidance for statistics publications
 
 ## Our resources
 
@@ -84,7 +88,7 @@ We also have a number of other applications for statistics production teams to u
 
 
 
-### DfE QA app
+### EES data screening app
 
 
 
@@ -96,7 +100,7 @@ This application allows you to screen your data files against the underlying dat
 
 
 
-### Explore Education Statistics Analytics
+### EES Analytics
 
 
 
@@ -108,11 +112,11 @@ There is an R Shiny dashboard that provides access to the Google Analytics data 
 
 
 
-### Publication self-assessment tool
+### Publication RAP self-assessment tool
 
 
 
-A self assessment tool allowing official statistics publications to compare different aspects of their production processes against best practice.
+A self assessment tool allowing official statistics publications to understand how their production processes match up against RAP expectations.
 
  - [RAP self-assessment tool](https://rsconnect/rsc/publication-self-assessment/){target="_blank" rel="noopener noreferrer"}
 
@@ -120,17 +124,11 @@ A self assessment tool allowing official statistics publications to compare diff
 
 
 
-### Template QA code
+### Template code
 
-
+- [Template DfE R Shiny dashboard](https://github.com/dfe-analytical-services/shiny-template){target="_blank" rel="noopener noreferrer"}
 
 - [Template QA code repository](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}
-
-
-
-### dfeR package
-
-
 
 - [dfeR R package](https://github.com/dfe-analytical-services/dfeR){target="_blank" rel="noopener noreferrer"}
 
