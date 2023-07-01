@@ -53,7 +53,7 @@ These titles are not cluttered with geographies and time periods, which automati
 
 [The Initial Teacher Training performance profiles](https://explore-education-statistics.service.gov.uk/find-statistics/initial-teacher-training-performance-profiles/2019-20) publication is one example of needing to upload a file outside of the regular data/metadata structure. Their provider-level tables also contain national and regional data, which is not supported in EES at the time of writing. The file has a clear title, and data guidance clearly explains what is in the file.
 
-`r knitr::include_graphics("../images/otherfile_eg.png")`
+![](../images/otherfile_eg.png)
 
 ---
 
@@ -72,7 +72,7 @@ The public data guidance is a key element of your release, to help direct users 
 
 [The School Workforce Census](https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england), along with having sensible brief file names, also has great examples of useful data guidance, which explain what is in each file without overloading the user with information:
 
-`r knitr::include_graphics("../images/good_metadata.png")`
+![](../images/good_metadata.png)
 
 ---
 
@@ -84,7 +84,7 @@ The public data guidance is a key element of your release, to help direct users 
 
 [The NEET annual brief](https://explore-education-statistics.service.gov.uk/find-statistics/neet-statistics-annual-brief) is a good example of a public metadata overview section done well. It follows the EES template, goes into just the right amount of detail, and is easy to understand.
 
-`r knitr::include_graphics("../images/data_guidance.PNG")`
+![](../images/data_guidance.PNG)
 
 [NEET data guidance on EES](https://explore-education-statistics.service.gov.uk/find-statistics/neet-statistics-annual-brief/meta-guidance).
 
@@ -105,7 +105,7 @@ Charts and tables are key ways to highlight important information and stories in
 
 The [Further Education: outcome based success measures](https://explore-education-statistics.service.gov.uk/find-statistics/further-education-outcome-based-success-measures) release contains infographics that cannot be built in EES. They are saved as SVGs so render clearly on any device, and follows the same colour palette as the rest of the release.
 
-`r knitr::include_graphics("../images/fe_svg.svg")`
+![](../images/fe_svg.svg)
 
 ---
 
@@ -117,7 +117,7 @@ The [Further Education: outcome based success measures](https://explore-educatio
 
 The [Widening participation in higher education](https://explore-education-statistics.service.gov.uk/find-statistics/widening-participation-in-higher-education) publication has a good example of a chart built with a long timeseries in the chart builder, with sparing use of footnotes. For example below, a line in the chart indicates a point where comparisons cannot be made, and a key caveat around the comparability of years is included as a footnote, which is needed to interpret the data and chart accurately.
 
-`r knitr::include_graphics("../images/footnotes_good_example.PNG")`
+![](../images/footnotes_good_example.PNG)
 
 ---
 
@@ -129,7 +129,7 @@ Good alt-text descriptions in charts will not just repeat the title of the chart
 
 [The school workforce census](https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england) has a good example of alt-text for one of their charts. The associated alt-text for the chart below is: "Line chart showing the percentage of all teachers taking absence across all state funded schools in England between the academic years 2014/15 and 2018/19. The chart shows a fall from 55.7% to 54.0% in this period." 
 
-`r knitr::include_graphics("../images/alt_text_good.PNG")`
+![](../images/alt_text_good.PNG)
 
 
 ---
@@ -138,11 +138,11 @@ Good alt-text descriptions in charts will not just repeat the title of the chart
 
 ---
 
-[Full guidance on creating featured tables](ees.html#featured-tables).
+[Full guidance on creating featured tables](../publishing-statistics/ees.html#featured-tables).
 
 Good featured tables have short, easy to understand titles, and point users to commonly requested tables or other tables that might be interesting to a wide range of users. For example, the [pupil absence in schools: autumn term](https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england-autumn-term) release has a good example of a clear title, with further information (including date and geographic coverage) left in the description. Leaving these out of the main title makes it much easier for users to navigate through multiple featured tables:
 
-`r knitr::include_graphics("../images/featured_table_good.PNG")`
+![](../images/featured_table_good.PNG)
 
 ---
 
@@ -161,11 +161,11 @@ Clear, concise content is required to direct your users to the right place, and 
 
 The [Education, health and care plans](https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans) release has a good example of a headlines section. There are a sensible number of key statistics, and the summary below gives an overview of trends without diving into the numbers and overwhelming the user.
 
-`r knitr::include_graphics("../images/headlines_good.PNG")`
+![](../images/headlines_good.PNG)
 
 The [Exclusions](https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england) release has a good example of custom explanations under key stat tiles to show users exactly what the numbers are describing:
 
-`r knitr::include_graphics("../images/what_is_this.PNG")`
+![](../images/what_is_this.PNG)
 
 ---
 
@@ -230,7 +230,7 @@ Keeping track of processes for approving and amending releases is crucial for tr
 
 These notes clearly explain to the user what has changed, which files were affected and at what level:
 
-`r knitr::include_graphics("../images/release_amendment_example.PNG")`
+![](../images/release_amendment_example.PNG)
 
 
 ---
@@ -243,6 +243,6 @@ These notes clearly explain to the user what has changed, which files were affec
 
 The [COVID attendance](https://explore-education-statistics.service.gov.uk/find-statistics/attendance-in-education-and-early-years-settings-during-the-coronavirus-covid-19-outbreak) publication has fortnightly releases at the time of writing, and the team have a good process for sign-off. This includes detailed information at each stage to confirm who has signed off, who has requested an action be taken, and who has carried out the action.
 
-`r knitr::include_graphics("../images/covid_signoff.png")`
+![](../images/covid_signoff.png)
 
 ---

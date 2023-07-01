@@ -45,9 +45,9 @@ Public pre-production - [https://pre-production.explore-education-statistics.ser
 
 - **Production** - Red - the real service, anyone creating real releases that they intend to publish to the public should be using this environment
 
-Admin - [https://admin.explore-education-statistics.service.gov.uk](https://admin.explore-education-statistics.service.gov.uk)
+Admin production - [https://admin.explore-education-statistics.service.gov.uk](https://admin.explore-education-statistics.service.gov.uk)
 
-Public - [https://explore-education-statistics.service.gov.uk](https://explore-education-statistics.service.gov.uk)
+Public production - [https://explore-education-statistics.service.gov.uk](https://explore-education-statistics.service.gov.uk)
 
 There is no overlap between the environments and content created on one cannot be moved to any other.
 

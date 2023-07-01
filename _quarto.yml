@@ -7,7 +7,7 @@ website:
   title: "Statistician's Guide" 
   site-url: "https://dfe-analytical-services.github.io/statisticians-guide/" 
   repo-url: https://github.com/dfe-analytical-services/statisticians-guide
-  repo-actions: [issue]
+  repo-actions: [edit, issue]
   google-analytics: "G-KBJCBD114T"
   cookie-consent: false
 
@@ -47,7 +47,7 @@ website:
         text: "Email us"
       - icon: microsoft-teams
         menu: 
-          - text: "DfE analysts teams"
+          - text: "DfE analytical community"
             href: mailto:statistics.development@education.gov.uk
           - text: "Statistics production"
             href: mailto:statistics.development@education.gov.uk
