@@ -6,17 +6,13 @@ title: "SQL"
 
 ---
 
-## What is it
-
----
+## What is SQL
 
 SQL or Structured Query Language, is a programming language used to talk to relational database management systems.
 
 ---
 
-## What is it for
-
----
+## What is SQL for
 
 SQL servers are where most of DfE's data is held, making it ideal for database management.
 
@@ -24,9 +20,7 @@ SQL provides us with a language primarily for querying databases to extract data
 
 ---
 
-## How to get it
-
----
+## How to install SQL
 
 Download SSMS from the DfE software center, talk to your team about getting access to the appropriate SQL servers and databases where the data you need to access is held and start writing SQL queries.
 
@@ -38,8 +32,6 @@ There are usually a couple of different versions available for software on the s
 
 ## Best place to start
 
----
-
 Andy Brook's excellent Introduction to SQL session, giving a visual overview of the basics of querying with SQL:
 
 <div align="center">
@@ -49,8 +41,6 @@ Andy Brook's excellent Introduction to SQL session, giving a visual overview of 
 ---
 
 ## Best practice
-
----
 
 Here are some tips to follow best practice in your SQL code, making it easier to read and pick up if another person is running your code. Following best practice guidance will help you to achieve RAP best practice with [clean final code](../RAP/rap.html#Clean_final_code)
 
@@ -65,7 +55,6 @@ Here are some tips to follow best practice in your SQL code, making it easier to
 
 ## How to work with SQL
 
----
 
 SSMS is the best tool to get started with writing SQL queries and saving SQL scripts that produce your desired outputs. 
 
@@ -75,15 +64,12 @@ Once you have saved SQL scripts or are more familiar with writing SQL queries on
 
 ## Quick reference lookup
 
----
 
 - [w3schools.com](https://www.w3schools.com/sql/default.asp){target="_blank" rel="noopener noreferrer"} offers a useful guide through the most common SQL commands.
 
 ---
 
 ## Other resources
-
----
 
 - This [tutorial script](https://github.com/TomFranklin/sql-applied-data-tidying/blob/master/data_tidying_l_and_d.sql){target="_blank" rel="noopener noreferrer"} by Tom Franklin is a particularly good starting point as it includes the data you are manipulating, so you don't need to worry about connecting to or getting access to specific databases before you can then run anything. Simply open up Microsoft SQL Server Management Studio and start playing with that query.
 
@@ -106,7 +92,6 @@ Andy's follow up intermediate SQL session, covering more advanced features of SQ
 
 ## Tips for using SQL
 
----
 
 ### Setting up a SQL area
 
@@ -129,7 +114,7 @@ There are a few common servers that statistics producers make use of at DfE. Use
 
 ---
 
-### Giving/getting access
+### Managing access
 
 ---
 
@@ -143,6 +128,7 @@ If the area is in any other server, raise a request through the central IT servi
 * The database name
 * Whether it's read or write access you need
 
+<!-- TODO: Update this, think it's service desk requests now? -->
 
 ---
 

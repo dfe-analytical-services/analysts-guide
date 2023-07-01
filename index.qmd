@@ -10,6 +10,8 @@ library(fontawesome)
 
 ```
 
+---
+
 This website is a guide aimed at anyone working in analysis or statistics in the Department for Education (DfE). It details best practice and learning resources across a number of areas listed out on this page.
 
 If viewed in its entirety, it provides a walk-through guide for statisticians from processing to publication, as well as being a single reference point that is easy to navigate if you just need to check on a specific part of the process, link off to other resources, or access specific guidance.

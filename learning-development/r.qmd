@@ -6,25 +6,22 @@ title: "R"
 
 ---
 
-## What is it
+## What is R
 
----
 
 R is an open-source programming language specifically aimed at statisticians and data analysts.
 
 ---
 
-## What is it for
+## What is R for
 
----
 
 R can be used for almost anything you can think of, notably data analysis, data visualisation, and creating reports and dashboards. It can also be used to extract data from SQL databases and run SQL queries.
 
 ---
 
-## How to get it
+## How to install R
 
----
 
 Download R (language) and RStudio (IDE) from the DfE software center. We also recommend that you download RTools (a helpful R extension) at the same time.
 
@@ -35,8 +32,6 @@ There are usually a couple of different versions available for software on the s
 ---
 
 ## Best places to start
-
----
 
 - The DfE Analytics Academy host an [online R training course](https://trello.com/invite/b/QdDx3VmA/96f273b3438db2bb8ee5feae3943c3d4/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"}. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.
 
@@ -49,7 +44,6 @@ There are usually a couple of different versions available for software on the s
 
 ## Best practice
 
----
 
 Tips for reaching best practice in R can be found on our [RAP page](../RAP/rap.html#Clean_final_code), with guidance on meeting best practice in RAP for clean final code. This makes it easier to read and pick up if another person is running your code. 
 
@@ -58,7 +52,6 @@ Tips for reaching best practice in R can be found on our [RAP page](../RAP/rap.h
 
 ## How to work with R
 
----
 
 ### R Projects
 
@@ -167,7 +160,6 @@ This is surprisingly neat to do. Let's say you wanted to roll back to version 1.
 
 ##  Quick reference lookup
 
----
 
 - If you want a useful guide for R syntax or functions, then look no further than the [R cheat sheets](https://rstudio.com/resources/cheatsheets/){target="_blank" rel="noopener noreferrer"}, these can be an invaluable point of reference. Below we've included a few particularly relevant ones:
     + Introduction to the [RStudio environment](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf){target="_blank" rel="noopener noreferrer"}
@@ -185,7 +177,6 @@ This is surprisingly neat to do. Let's say you wanted to roll back to version 1.
 
 ## Other resources
 
----
 
 - Here is another free introduction to R course by [Quantargo](https://www.quantargo.com/courses/course-r-introduction/){target="_blank" rel="noopener noreferrer"}.
 
@@ -209,7 +200,6 @@ This is surprisingly neat to do. Let's say you wanted to roll back to version 1.
 
 ## Excel functions in R
 
----
 
 R can do everything you do in excel, but takes out the human error. The reference table below shows how you would carry out popular Excel commands in R.
 
@@ -237,7 +227,6 @@ More tips for moving from using Excel to using R can be found in the [excel-to-R
 
 ## SQL functions in R
 
----
 
 R can do a lot of the things that are possible in SQL. The reference table below shows how you would carry out some popular SQL commands in R.
 
@@ -266,7 +255,6 @@ More tips for moving from using SQL to using R can be found in the [SQL-to-R wik
 
 ## Tips for using R
 
----
 
 A selection of handy bits of code and workarounds for common issues. More useful code snippets can also be found in our [github repo](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}
 
@@ -278,15 +266,8 @@ A selection of handy bits of code and workarounds for common issues. More useful
 
 This can be done most easily by navigating in RStudio through `Tools > Global options > General > Basic > R version (change)`. It's likely you'll need to restart RStudio for the changes to take affect. 
 
-
-<!-- We cover this in the excel to R section -->
-<!-- ### Mutating columns -->
-
-<!-- Where you have a simple if else scenario use `mutate(col = if_else(expression, TRUE, FALSE)`, rather than `mutate(col = case_when(expression ~ TRUE, TRUE ~FALSE)` it's both quicker and easier on the eye! -->
-
 ---
 
-<!-- This is going into DfER- remove once it's in? -->
 ### Rounding
 
 ---
@@ -304,11 +285,7 @@ roundFiveUp <- function(x, n){
 }
 ```
 
-<!-- covered in SQL to R section -->
-<!-- ### Grouping sets in R -->
-
-<!-- The data.table package has a really neat function that can produce quick pivots and subtotals as you would using grouping sets in SQL. More information can be found at [this R bloggers post](https://www.r-bloggers.com/2019/03/creating-blazing-fast-pivot-tables-from-r-with-data-table-now-with-subtotals-using-grouping-sets/){target="_blank" rel="noopener noreferrer"}, with handy written examples to walk you through.  -->
-
+This function can also be found in the [dfeR R package](https://github.com/dfe-analytical-services/dfeR){target="_blank" rel="noopener noreferrer"}.
 
 ---
 
@@ -554,8 +531,6 @@ SET NOCOUNT ON;
 ### Can't find make error
 
 ---
-
-<!-- [Add later - example screenshot of error] -->
 
 This error is usually due to Rtools not being properly installed, this has become fairly common since it has been dropped from the software centre. There have been several requests to read it, though as of yet none have succeeded. For now there's a workaround to this.
 

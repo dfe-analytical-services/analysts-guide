@@ -6,17 +6,15 @@ title: "Git"
 
 ---
 
-## What is it
+## What is Git
 
----
 
 It is a version control software. It is by far the best of its kind and is widely used by software developers and data scientists.
 
 ---
 
-## What is it for
+## What is Git for
 
----
 
 Git is a version control software that tracks changes to files within a folder that you assign Git to track. It works best with plain text files such as flat data files, code scripts and markdown documents. These folders are known as repositories and can be held and managed securely in a central online place such as GitHub (best for public), GitLab (can be good for either public or private) and Azure DevOps (best for private). We can easily mirror our Azure DevOps repositories in the DfE Analytical Services area on [GitHub](https://github.com/dfe-analytical-services){target="_blank" rel="noopener noreferrer"}.
 
@@ -25,9 +23,8 @@ It is widely used across DfE and integrates neatly with our use of Azure DevOps,
 
 ---
 
-## How to get it
+## How to install Git
 
----
 
 Download it from the [Git website](https://git-scm.com/downloads){target="_blank" rel="noopener noreferrer"}.
 
@@ -39,9 +36,7 @@ When you first try to use Git you may be prompted for a GitHub username and pass
 
 ## Best places to start
 
----
-
-<!-- worth us linking to how to create a git repo for azure and for github once our dashboard guidance is out? -->
+- [Contact us](mailto:statistics.development@education.gov.uk) about attending one of our in-person Git workshops
 
 - If you're new to Git and are unsure of what it does, then take a look through these [Git for humans slides](https://speakerdeck.com/alicebartlett/git-for-humans){target="_blank" rel="noopener noreferrer"}
 
@@ -53,7 +48,6 @@ When you first try to use Git you may be prompted for a GitHub username and pass
 
 ## How to work with git
 
----
 
 ### Git Bash
 
@@ -75,7 +69,6 @@ However, you can still run the full suite of git commands by simply typing them 
 
 ##  Quick reference lookup
 
----
 
 - GitHub have created a [cheat sheet for git commands](https://education.github.com/git-cheat-sheet-education.pdf){target="_blank" rel="noopener noreferrer"}.
 
@@ -83,7 +76,6 @@ However, you can still run the full suite of git commands by simply typing them 
 
 ## Other resources
 
----
 
 - Avison Ho and Linda Bennett gave this coffee and coding presentation on [version controlling SQL with Git](https://github.com/avisionh/SQL-Titbits/wiki/User-Guide:-SQL-x-Git-Version-Control){target="_blank" rel="noopener noreferrer"}.
 
@@ -103,7 +95,7 @@ However, you can still run the full suite of git commands by simply typing them 
 
 ## Tips for using Git
 
----
+
 
 ### Branches
 
