@@ -1,3 +1,6 @@
+---
+title: "Page not found"
+---
 
 <!-- TODO: make a lost version of frederick -->
 
