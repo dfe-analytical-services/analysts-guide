@@ -2,10 +2,6 @@
 title: "Embedded visualisations in EES"
 ---
 
-```{r include=FALSE}
-require(knitr)
-```
-
 <p class="text-muted">Guidance for creating and embedding R-Shiny visualisations in EES publications</p>
 
 ---

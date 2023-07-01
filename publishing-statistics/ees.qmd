@@ -140,9 +140,7 @@ There is also a publication owner role, which is assigned at publication level t
 
 See below for a diagram of the responsibilities of each role as part of the publication process in EES:
 
-```{r, echo=FALSE, fig.align='center'}
-knitr::include_graphics("../images/EES_roles.svg")
-```
+![](../images/EES_roles.svg)
 
 ---
 
@@ -153,9 +151,7 @@ If you have not published on EES before, or if you're creating a brand new publi
 
 The hierarchy of content within EES is as follows -
 
-```{r, echo=FALSE, fig.align='center'}
-knitr::include_graphics("../images/ees-hierarchy.PNG")
-```
+![](../images/ees-hierarchy.PNG)
 
 Publications are organised into topics and themes (as shown on the EES [Find Statistics page](https://explore-education-statistics.service.gov.uk/find-statistics)), and then within each publication there are releases - where the latest release includes the latest statistics for that publication. For example:
 
@@ -201,7 +197,7 @@ When you enter the service you’ll see the admin dashboard, here what you can s
 The Statistics Development Team will be responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored via their EES mailbox - explore.statistics@education.gov.uk.
 
 
-`r knitr::include_graphics("../images/EES-admin-dashboard.PNG")`
+![](../images/EES-admin-dashboard.PNG)
 
 
 Within this dashboard you can view and manage existing publications, including creating and editing their releases. You can use the drop down lists to find releases by theme/topic/publication or use the draft and scheduled releases tabs to see releases that are in progress.
@@ -247,7 +243,7 @@ Once you have created your release you will see enter the ‘create release dash
 5.  Pre-release access (invite users to pre-release and create public pre-release list)
 
 
-`r knitr::include_graphics("../images/EES-create-release-dashboard.PNG")`
+![](../images/EES-create-release-dashboard.PNG)
 
 ---
 
@@ -314,7 +310,7 @@ If you believe your file is ‘stuck’ please contact explore.statistics@educat
 
 To save time when creating tables and charts, and to aid users who view your data themselves via the table tool, you can now save custom orders for your filters and indicators. You can do this in the data and files page after uploading underlying data files, via the ‘reorder filters and indicators’ tab. Once there just choose which file you want to reorder and then click and drag the items until they’re in the order you want them to show in the table tool. This then becomes the default order for this filter or indicator and will apply in all charts and tables automatically.
 
-`r knitr::include_graphics("../images/order-filters-indicators.png")`
+![](../images/order-filters-indicators.png)
 
 
 ---
@@ -345,13 +341,13 @@ Any data files that only consist of Planning area, and/or Institution level data
 
 Here you should also create your [public data guidance](https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england/meta-guidance) document, this replaces the information that would have previously been uploaded as a pdf and is designed to help users understand and use the data they download from your release.
 
-`r knitr::include_graphics("../images/admin-public-meta-start.PNG")`
+![](../images/admin-public-meta-start.PNG)
 
 The document will automatically update as you add new data files to your release, however you will need to add an overview of all the data included in the release and short summaries for each data file before the release can be published.
 
 A list of variables in each file with an associated label (taken from metadata uploads) and associated footnotes will also be displayed for each file.
 
-`r knitr::include_graphics("../images/admin-public-meta-detail.PNG")`
+![](../images/admin-public-meta-detail.PNG)
 
 <div class="alert alert-dismissible alert-danger">
 Releases cannot be published without a completed metadata document. If not filled in an error will be flagged during sign off.
@@ -372,23 +368,23 @@ The replacement file must contain the exact same column names and types as the o
 </div>
 
 
-`r knitr::include_graphics("../images/replace-data-start.png")`
+![](../images/replace-data-start.png)
 
 The first step is to upload the new file.
 
-`r knitr::include_graphics("../images/replace-data-step1.PNG")`
+![](../images/replace-data-step1.PNG)
 
 One you've chosen and uploaded your replacement file it will need to go through the usual import process before it can check if retaining existing data blocks and footnotes will be possible.
 
-`r knitr::include_graphics("../images/replace-data-step2.PNG")`
+![](../images/replace-data-step2.PNG)
 
 Once the upload is finished a report will appear which highlights whether existing data blocks and footnotes can be replaced successfully. If you want to keep any data blocks and footnotes you've built you will need to make sure that your replacement data file still contains the information (indicators, filters, geographic_levels and time_periods) that was used to create them.
 
-`r knitr::include_graphics("../images/replace-data-success.PNG")`
+![](../images/replace-data-success.PNG)
 
 If it's not possible for a data block or footnote to be recreated using the replacing data file a warning will appear and you'll be prompted to either edit or delete them before completing the replacement.
 
-`r knitr::include_graphics("../images/replace-data-fail.PNG")`
+![](../images/replace-data-fail.PNG)
 
 <div class="alert alert-dismissible alert-danger">
 Remember to double check any data blocks or footnotes that were recreated by the platform before publishing your release.
@@ -401,11 +397,11 @@ Remember to double check any data blocks or footnotes that were recreated by the
 
 Footnotes are added via footnotes tab - rather than writing multiple tables and assigning individual footnotes, you write footnotes and assign them to certain indicators and filters so they appear when users select them in the table builder. For example in the below, the footnote "This is a footnote" is assigned to "Headcount" indicator for all options within the "School type" filter.
 
-`r knitr::include_graphics("../images/footnote_example.PNG")`
+![](../images/footnote_example.PNG)
 
 If you'd rather, you can assign a footnote to the whole data file by ticking this box.
 
-`r knitr::include_graphics("../images/All_indicators.PNG")`
+![](../images/All_indicators.PNG)
 
 You can assign the same footnote across multiple data files.
 
@@ -432,7 +428,7 @@ Once you're happy with your table, give it a title and some source information b
 
 The manage data blocks page will list all the data blocks you have created, highlighting which have charts, are used in content and are saved as highlight tables.
 
-`r knitr::include_graphics("../images/ees-manage-data-blocks.PNG")`
+![](../images/ees-manage-data-blocks.PNG)
 
 
 ---
@@ -445,11 +441,11 @@ You can also choose to highlight a data block table as a ‘featured table’ wh
 
 There is an option to choose if a table is a 'featured table' when saving each data block, here you can name the table and add a description giving the table coverage:
 
-`r knitr::include_graphics("../images/EES-create-release-table-highlight.PNG")`
+![](../images/EES-create-release-table-highlight.PNG)
 
 Each featured table will then be listed to the user within the table tool. Featured tables do not have to be embedded within your release content to be included in this list.
 
-`r knitr::include_graphics("../images/EES-table-tool-highlights.PNG")`
+![](../images/EES-table-tool-highlights.PNG)
 
 ---
 
@@ -459,7 +455,7 @@ Each featured table will then be listed to the user within the table tool. Featu
 
 Any data block tables that are created and saved within the admin app will also be assigned a ‘fast-track link’, this url can then be used throughout your release as a way to direct users to specific tables (within the table tool) more quickly so they can interact and explore the data further.  It will appear at the top of the page like this:
 
-`r knitr::include_graphics("../images/EES-create-release-fasttrack-url.PNG")`
+![](../images/EES-create-release-fasttrack-url.PNG)
 
 
 When your release is published, any embedded data block tables within the release will have an 'explore data button' beneath them which will utilise these fast track links to quickly direct users to the table within the table tool so they can explore the data further. You can also use fast-track links as a hyperlink within release commentary (without having to embed the data block).
@@ -512,7 +508,7 @@ Within the ‘chart configuration’ tab you can add a title, alt text, move the
 Make sure to review your chart dimensions before you publish. Users should be able to read the labels on the axes and see the legend without having to scroll.
 </div>
 
-`r knitr::include_graphics("../images/EES-charts-create.PNG")`
+![](../images/EES-charts-create.PNG)
 
 Note, within the vertical and horizontal bar chart types you can also create stacked bar charts by clicking the 'Stacked bars' option within the chart configuration tab
 
@@ -524,7 +520,7 @@ Note, within the vertical and horizontal bar chart types you can also create sta
 
 Here is where you add data to the chart. You can add each series one at a time or all together.
 
-`r knitr::include_graphics("../images/EES-charts-add-data.PNG")`
+![](../images/EES-charts-add-data.PNG)
 
 ---
 
@@ -534,7 +530,7 @@ Here is where you add data to the chart. You can add each series one at a time o
 
 You can edit the chart legend, and styling of your series via the Legend tab.
 
-`r knitr::include_graphics("../images/EES-charts-legend.PNG")`
+![](../images/EES-charts-legend.PNG)
 
 <div class="alert alert-dismissible alert-info">
 To select specify custom colours outside of the defaults, you can double click on the colour codes at the bottom of the colour picked until you get to the type of code you're wanting to input (e.g. hex code) and then enter the code manually.
@@ -548,7 +544,7 @@ To select specify custom colours outside of the defaults, you can double click o
 
 Here is where you configure the x-axis: You can alter gridlines, labels, sort, limit and add reference lines.
 
-`r knitr::include_graphics("../images/EES-charts-xaxis.PNG")`
+![](../images/EES-charts-xaxis.PNG)
 
 |Option|What it does|
 |---------|---------|
@@ -569,7 +565,7 @@ Here is where you configure the x-axis: You can alter gridlines, labels, sort, l
 
 Then follow a similar process for the y axis configuration, play around until the chart looks how you want it to.
 
-`r knitr::include_graphics("../images/EES-charts-yaxis.PNG")`
+![](../images/EES-charts-yaxis.PNG)
 
 |Option|What it does|
 |---------|---------|
@@ -591,7 +587,7 @@ Then follow a similar process for the y axis configuration, play around until th
 
 If you create your chart and then change your mind as to what chart type would be best you can just click to change it and it will try to save all the options that you had applied previously.
 
-`r knitr::include_graphics("../images/EES-charts-change-type.PNG")`
+![](../images/EES-charts-change-type.PNG)
 
 
 <div class="alert alert-dismissible alert-info">
@@ -608,15 +604,15 @@ You can create maps too, currently this is possible for regional, LA and LAD dat
 
 You can change the boundaries you are plotting onto via the "chart configuration" tab, the latest boundary file will automatically be selected, but if you are visualising historic data, you may want an older boundary file. Please [contact us](mailto:explore.statistics@education.gov.uk) if the boundary you want to plot is unavailable.
 
-`r knitr::include_graphics("../images/map_config.png")`
+![](../images/map_config.png)
 
 Then to create a map, add the cuts of data you want to display in the "data sets" tab of the chart builder.
 
-`r knitr::include_graphics("../images/map_add_data.PNG")`
+![](../images/map_add_data.PNG)
 
 You can change the colour scale of the chart in the "legend" tab.
 
-`r knitr::include_graphics("../images/map_change_legend.png")`
+![](../images/map_change_legend.png)
 
 ---
 
@@ -720,7 +716,7 @@ Use the ‘Add secondary stats’ button to add a data block to your headline st
 
 Use the 'Key stats' options to add key statistic tiles to your release. For each tile you first have to have created a data block that contains only one number.
 
-`r knitr::include_graphics("../images/key-stat.PNG")`
+![](../images/key-stat.PNG)
 
 After embedding a key stat tile you can then edit it to add trend information and a description of what the indicator is.
 
@@ -751,13 +747,13 @@ You can create static html tables for presenting information that isn't embedded
 
 While a release is in draft mode, comments can be added to text to help teams collaborate. Simply highlight the text you want to comment on and click on the speech bubble in the editing bar to add a comment.
 
-`r knitr::include_graphics("../images/comment.png")`
+![](../images/comment.png)
 
 Comments can be edited at a later date, and can also be marked as resolved so that you can see which comments have been addressed and which are still outstanding.
 
 When someone is editing a text box, it will now be instantly frozen for all other users preventing two users from editing the same block of text at the same time. You will be able to see the name of the user who is making edits, and will see the edits coming through every few seconds as their changes autosave.
 
-`r knitr::include_graphics("../images/freeze_text.png")`
+![](../images/freeze_text.png)
 
 ---
 
@@ -812,20 +808,20 @@ You can test this works by typing the url into your browser, it should take you 
 When writing your release content, highlight a word or phrase and click the link icon in the text editor bar.
 
 
-`r knitr::include_graphics("../images/ees-glossary-texteditor.PNG")`
+![](../images/ees-glossary-texteditor.PNG)
 
 
 Then, paste your glossary url into the box that appears.
 
 
-`r knitr::include_graphics("../images/ees-glossary-paste.PNG")`
+![](../images/ees-glossary-paste.PNG)
 
 
 That's it, the system will automatically recognise that the link is for the glossary and will do the rest. You can then change to the preview mode to see how this would then appear to public users, and test that the box appears with the definition.
 
-`r knitr::include_graphics("../images/ees-glossary-text.PNG")`
+![](../images/ees-glossary-text.PNG)
 
-`r knitr::include_graphics("../images/ees-glossary-modal.PNG")`
+![](../images/ees-glossary-modal.PNG)
 
 
 ---
@@ -858,7 +854,7 @@ The checklist can be accessed by clicking to edit release status.
 
 Remember to check over it before you submit your release for approval as a release that has outstanding warnings on it will not be able to be published.
 
-`r knitr::include_graphics("../images/ees-release-checklist.PNG")`
+![](../images/ees-release-checklist.PNG)
 
 ---
 
@@ -868,7 +864,7 @@ Remember to check over it before you submit your release for approval as a relea
 
 Releases are approved via the sign off tab. The release date is also set during this stage of the process. All releases scheduled for a specific date will be published at 9:30am on that day.
 
-`r knitr::include_graphics("../images/ees-approving-release.PNG")`
+![](../images/ees-approving-release.PNG)
 
 The approver has the ability to approve the release to be published on a specific date or to publish as soon as possible. Publishing as soon as possible is useful for publishing amendments to existing releases.
 
@@ -922,15 +918,15 @@ Inviting users for pre-release access and building the public pre-release list c
 
 Once the release has been marked as approved, go to the  ‘Pre-release access’ tab and add the relevant email addresses to grant pre-release access. All invited users will receive an email to say that they have been given pre-release access and will get a url where the preview release will be available.
 
-`r knitr::include_graphics("../images/EES-invite-pra.PNG")`
+![](../images/EES-invite-pra.PNG)
 
 You should also create the public facing pre-release access page by clicking the ‘Public access list’ tab.
 
-`r knitr::include_graphics("../images/EES-public-pra-list.PNG")`
+![](../images/EES-public-pra-list.PNG)
 
 After creating your pre-release access list a text editor will appear where you can list the roles that have been given early access to the release. This list will then appear in the list of file downloads at the top of each release.
 
-`r knitr::include_graphics("../images/EES-create-public-pra-list.PNG")`
+![](../images/EES-create-public-pra-list.PNG)
 
 
 ---
@@ -941,7 +937,7 @@ After creating your pre-release access list a text editor will appear where you 
 
 If you need to make an amendment to release that has already been published this is possible to do from within the admin dashboard if you are a publication owner. If you need to create an amendment and your publication owner is not available, please contact the Statistics Development Team to do this for you.
 
-`r knitr::include_graphics("../images/EES-amend-release.PNG")`
+![](../images/EES-amend-release.PNG)
 
 Creating an amendment of a release will create a new version for which you can make any changes and then choose to republish, either as soon as possible or on a given date.
 
@@ -952,8 +948,7 @@ Creating an amendment of a release will create a new version for which you can m
 
 When publishing a new amendment you should add a 'release note' to your release so users can be informed of what has changed:
 
-`r knitr::include_graphics("../images/EES-release-note.PNG")`
-
+![](../images/EES-release-note.PNG)
 
 
 ---
@@ -966,7 +961,7 @@ Methodologies work in a very similar way to the written content of a release, th
 
 If you have not created or published a methodology page on EES before, the first thing your publication owner will need to do is create a methodology page.
 
-`r knitr::include_graphics("../images/EES-create-methodology.PNG")`
+![](../images/EES-create-methodology.PNG)
 
 Once created you can then edit the methodology content in a similar way to how you would create release page content.
 
@@ -976,7 +971,7 @@ Once the drafting has finished, a methodology should be set as 'approved for pub
 
 If you want to revise an existing methodology page you can amend the methodology which will generate a new version for you to edit.
 
-`r knitr::include_graphics("../images/EES-amend-methodology.PNG")`
+![](../images/EES-amend-methodology.PNG)
 
 Once you're happy with your amendment it just needs to be [approved](#sign-off) in the usual way for it to be published.
 
@@ -987,7 +982,7 @@ Once you're happy with your amendment it just needs to be [approved](#sign-off) 
 
 Subheadings make it easier for your users to navigate through your methodology. When editing text blocks in your methodology, you can do this by highlighting your subheading and selecting "Heading 3" in place of "Paragraph":
 
-`r knitr::include_graphics("../images/methodology_subheadings.PNG")`
+![](../images/methodology_subheadings.PNG)
 
 You can add further subheadings underneath this but try to limit the number of subheadings per accordion to 10 at the most. Too many subheadings will make it tricky for users to find what they are looking for.
 
@@ -998,11 +993,11 @@ You can add further subheadings underneath this but try to limit the number of s
 
 You can add images to methodology pages via the content editor.
 
-`r knitr::include_graphics("../images/ees-wysiwyg-images.png")`
+![](../images/ees-wysiwyg-images.png)
 
 When uploading an image you will need to add alt text via by clicking the eye symbol, you may also choose to add an image caption.
 
-`r knitr::include_graphics("../images/ees-wysiwyg-alt-text.PNG")`
+![](../images/ees-wysiwyg-alt-text.PNG)
 
 <div class="alert alert-dismissible alert-info">
 Accessibility matters for uploaded images too, consider the following if you do need to upload an image -
@@ -1027,7 +1022,7 @@ We have a type of role within EES admin called ‘Publication Owner’. This per
 
 Options available to publication owners:
 
-`r knitr::include_graphics("../images/publicationowner-options.png")`
+![](../images/publicationowner-options.png)
 
 
 ---
@@ -1043,7 +1038,7 @@ Any updates here will affect all releases in the series and will be published im
 It is possible to change the publication title via this page, however this should be used rarely and will not affect the publications url if one or more published releases exist.
 </div>
 
-`r knitr::include_graphics("../images/manage-publication.png")`
+![](../images/manage-publication.png)
 
 ---
 

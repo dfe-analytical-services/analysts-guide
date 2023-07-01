@@ -110,7 +110,7 @@ There are a few common servers that statistics producers make use of at DfE. Use
 * PDB16 (3DCPRI-PDB16\ACSQLS) - raise a request through the service desk under "non-standard" > "any other request"
 * Analyse & Modelling server (T1PRANMSQL\SQLPROD,60125) - raise a request on the service desk under the following options:
 
-`r knitr::include_graphics("../images/A_M_SQL.PNG")`
+![](../images/A_M_SQL.PNG)
 
 ---
 

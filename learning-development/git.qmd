@@ -111,13 +111,13 @@ When you create a git project, it will automatically create a "main" (sometimes 
 
 - It is good practice to have at least one other branch, we tend to call it "development". This is the branch where you will be doing most of your work. To open a new branch, navigate to "branches" and click on the blue box highlighted below
 
-`r knitr::include_graphics("../images/new_branch_git.png")`
+![](../images/new_branch_git.png)
 
 - Having two separate branches means that if anything goes wrong in the "development" branch, the "main" or "master" branch is still unaffected and runs without issue. This lets you test and QA the code more thoroughly before merging into your main branch.
 
 - When working on your project, make sure that you are in the right branch. You can check this by navigating to the "Git" tab in RStudio as demonstrated below.
 
-`r knitr::include_graphics("../images/select_branch.png")`
+![](../images/select_branch.png)
 
 ---
 
@@ -129,15 +129,15 @@ Once you are happy with changes and want them to be in the latest version of you
 
 - When you make a change to a file, this will pop up in the "Git" window of your R console. Select the files you want to commit by ticking the "staged" box next to them.
 
-`r knitr::include_graphics("../images/git_stage.png")`
+![](../images/git_stage.png)
 
 - This will bring up a new window. Add a comment describing your additions/changes, and click commit. You will see all the staged files disappear. Then click “Push” to push the committed files up to the online repository for all to use.
 
-`r knitr::include_graphics("../images/git_push.png")`
+![](../images/git_push.png)
 
 - When another member of your team makes a commit and you want to pull this into your local area to check and work off the latest version, click on the blue "pull" button.
 
-`r knitr::include_graphics("../images/pull_git.png")`
+![](../images/pull_git.png)
 
 Committing regularly is strongly recommended as each commit is a saved point in time that you can easily roll back to if needed. If you want to know more about how to do this, see the [reverting a commit](#reverting-a-commit) section below. 
 
@@ -198,7 +198,7 @@ Happy days!
 
 You can use `gitk --all` to visualise a tree of all previous commits up to this point.
 
-`r knitr::include_graphics("../images/gitk.png")`
+![](../images/gitk.png)
 
 ---
 
@@ -317,11 +317,11 @@ In Azure DevOps you can securely store variables that are then used by your pipe
 
 First create a variable group by navigating to `Pipelines > Library`. Enter any variables you want to store here and make sure to change the variable type to secret if appropriate (i.e. login credentials or PATs).
 
-`r knitr::include_graphics("../images/createVariableGroup.png")`
+![](../images/createVariableGroup.png)
 
 Then, in the pipeline you want to use the variables in, go to `Variables > Variable groups` and link the variable group as shown below. You can then call upon the variables as needed in your pipeline.
 
-`r knitr::include_graphics("../images/linkVariableGroup.png")`
+![](../images/linkVariableGroup.png)
 
 ---
 
@@ -341,7 +341,7 @@ There may be times when you have a repository in one place, such as Azure DevOps
 
 To mirror a code repository from Azure DevOps, use the [mirror git repository extension](https://github.com/swellaby/vsts-mirror-git-repository){target="_blank" rel="noopener noreferrer"} (already installed on dfe-gov-uk instance), make use of the PAT and secure variables sections above and then add a job to your pipeline and enter your parameters in the fields as per the example below:
 
-`r knitr::include_graphics("../images/mirroringGit.png")`
+![](../images/mirroringGit.png)
 
 ---
 

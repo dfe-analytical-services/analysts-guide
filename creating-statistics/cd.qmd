@@ -175,7 +175,7 @@ Each release on the platform will have a summary box at the top that contains th
 
 It is recommended to have 3 headline statistics but you can have more (up to a maximum of 6) or fewer. Key statistic tiles are split into the following elements.
 
-`r knitr::include_graphics("../images/key-stat.PNG")`
+![](../images/key-stat.PNG)
 
 | Element | Content |
 |---------|---------|
@@ -365,12 +365,12 @@ Search engine optimisation (SEO) makes it easier for users to find your data thr
 
 Following best practice in writing about statistics is of increasing importance. As shown in the below example any sentence could be pulled out into a snippet and shown in a search engine to users who are searching for related information:
 
-`r knitr::include_graphics("../images/google-snippet.png")`
+![](../images/google-snippet.png)
 
 
 We should make a concerted effort to ensure that we are answering the questions people are interested in as search engines are getting smarter and pulling this information directly out of webpages. See the following example of a google search using a snippet from one of our publications as an answer in the search engine results itself:
 
-`r knitr::include_graphics("../images/google-peopleAlsoAsk.png")`
+![](../images/google-peopleAlsoAsk.png)
 
 
 
@@ -516,15 +516,15 @@ There may be times when including missing data increases the file size too much,
 
 By including the missing data in your open data files you can then create charts in EES that represent this. Start off by creating a data block with the data you want to build the chart from.
 
-`r knitr::include_graphics("../images/ees-missing-data-table.png")`
+![](../images/ees-missing-data-table.png)
 
 On the chart configuration tab there is a toggle for visualising non-numeric values in the data as 0. On the first chart configuration tab, there's a check box that will toggle between showing and hiding them.
 
-`r knitr::include_graphics("../images/ees-non-numeric-toggle.png")`
+![](../images/ees-non-numeric-toggle.png)
 
 When selected, you will then see that this data appears in the chart as if the indicator values are 0.
 
-`r knitr::include_graphics("../images/ees-missing-data-chart.png")`
+![](../images/ees-missing-data-chart.png)
 
 ---
 

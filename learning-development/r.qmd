@@ -63,7 +63,7 @@ Whenever you are using R, you should work in an RProject. This just makes sure y
 
 You can check which project you are working in by looking in the top right hand corner of RStudio:
 
-`r knitr::include_graphics("../images/Rproj.png")`
+![](../images/Rproj.png)
 
 ---
 

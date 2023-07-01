@@ -2,10 +2,6 @@
 title: "Public dashboards"
 ---
 
-```{r include=FALSE}
-require(knitr)
-```
-
 <p class="text-muted">Guidance for publishing public statistics dashboards</p>
 
 ---
@@ -189,7 +185,7 @@ Collecting the right engagement data means you’ll be alerted to potential prob
 
 At a minumum you should be requesting feedback from users via a survey hosted on the dashboard and reviewing this on a regular basis. An example of this kind of feedback survey is the [beta banner survey](https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-XMiKzsnr8xJoWM_DeGwIu9UNDJHOEJDRklTNVA1SDdLOFJITEwyWU1OQS4u) on Explore Education Statistics.
 
-`r knitr::include_graphics("../images/betaBanner.png")`
+![](../images/betaBanner.png)
 
 Google Analytics is a free service that collects information on who visits your webpage and how they interact with it. You can set up basic Google Analytics for your published dashboard in a few simple steps outlined in this article: [Add Google Analytics to a Shiny app](https://shiny.rstudio.com/articles/google-analytics.html) and view a more complex example in this [example file](https://github.com/dfe-analytical-services/exclusion-statistics/blob/master/www/google-analytics.js). If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact statistics.development@education.gov.uk.
 
@@ -346,7 +342,7 @@ You must have done the following before a dashboard can be published (the statis
 * Accessibility testing the dashboard and updating the accessibility statement. The [accessibility testing guidance](#accessibility-testing) later in this section outlines how teams can do this.
 * You should test how your dashboard appears and performs on mobile devices. you can do this by opening your dashboard in chrome/edge, right clicking anywhere on the page and selecting 'inspect'. you will then see a new panel on the right hand side of your screen. To see your dashboard how a mobile user would, click the mobile/tablet button (see the image below).
 
-`r knitr::include_graphics("../images/mobile_testing.PNG")`
+![](../images/mobile_testing.PNG)
 
 * Setting up UI and unit tests (UI tests are a part of the automated QA process and will run via GitHub actions each time you create a pull request). See our [guidance on UI tests](#ui-tests) and [guidance on unit tests](#unit-tests).
 * Performance testing your dashboard. See our [guidance on performance testing](#performance-testing).
@@ -377,17 +373,17 @@ Your statement should be written in line with the [accessibility statement guida
 
 Lighthouse in Google Chrome is an easy way to quickly rate your accessibility. Open your app in Chrome, right click anywhere on the page and select "Inspect". From there, navigate to "Lighthouse" in the top grey bar, and click "Generate report". This generates scores for accessibility, best practices and SEO for your application or web page:
 
-`r knitr::include_graphics("../images/lighthouse.gif")`
+![](../images/lighthouse.gif)
 
 To complement this, we recommend also using the [shinya11y](https://github.com/ewenme/shinya11y) package to look at accessibility across your dashboard. Simply install and load the package, then include `use_tota11y()` at the top of your UI script. This brings up an interface that helps you examine different accessibility aspects in your app, like colour contrast, alt-text and what screen readers will detect:
 
-`r knitr::include_graphics("../images/shinya11y_demo.gif")`
+![](../images/shinya11y_demo.gif)
 
 Automated tools can't check for everything and there's no substitute for giving your dashboard a manual check. You should consider what users need from your dashboard and ensure that that information is accessible to all. For example, can someone using a screen reader get the same information as you can see on the screen from a downloadable csv or from the alt text that you have provided? Everything that you can see, you should also be able to read with a screen reader. Use the [Edge narrator tool](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) to test out how your dashboard works in practice.
 
 One example of a dashboard for Official statistics that meets these regulations is the [SCAP LA school places scorecards app](https://department-for-education.shinyapps.io/la-school-places-scorecards). Their accessibility statement is clearly labelled, explains what checks have been carried out, what the known limitations are and the plans in place to fix them:
 
-`r knitr::include_graphics("../images/accessibility.PNG")`
+![](../images/accessibility.PNG)
 
 
 <!-- TODO: Couldn't work out how to fit this in, but worth keeping and combining with the gov.uk guidance on alt text? (https://www.w3.org/WAI/tutorials/../images/decision-tree/) -->
@@ -440,7 +436,7 @@ You can use in-line CSS to make these style changes, or make edits to the style 
 
 The [SCAP LA school places scorecards app](https://department-for-education.shinyapps.io/la-school-places-scorecards){target="_blank" rel="noopener noreferrer"} is one example of a public facing dashboard that meets these styling requirements.
 
-`r knitr::include_graphics("../images/styling.PNG")`
+![](../images/styling.PNG)
 
 
 ---
@@ -475,7 +471,7 @@ After several seconds (depending on the range of actions you performed), a visua
 
 The profvis results are shown in the flame profiling chart. The top half of the chart shows any processing time measurements above 10ms for each line of code. It can be useful to focus in on lines that have measured times above 10ms by selecting "Hide lines of code with zero time" from the options menu in the top right.
 
-`r knitr::include_graphics("../images/dashboards-testing-profvis.PNG")`
+![](../images/dashboards-testing-profvis.PNG)
 
 Lines with timings of greater than about 5-100ms may warrant further investigation to see if they warrant some optimization. Common routes to optimising code are:
 
@@ -509,7 +505,7 @@ Each test is separated out by comments, clearly stating what is being tested.
  - **app$setInputs()** tells the UI test to select an input in the app
  - **app$snapshot()** tells the UI test which outputs to capture (i.e. which outputs you'd expect to change and want to test)
 
- `r knitr::include_graphics("../images/ui_test.PNG")`
+![](../images/ui_test.PNG)
 
 The expected outputs are saved in a [UI_tests-expected](https://github.com/dfe-analytical-services/la-school-places-scorecards/tree/main/tests/shinytest/UI_tests-expected) folder, and every time you run a UI test, the outputs will be compared to these expected snapshots.
 
