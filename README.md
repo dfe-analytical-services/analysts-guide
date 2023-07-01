@@ -1,4 +1,4 @@
-[![Quarto Publish](https://github.com/dfe-analytical-services/statisticians-guide/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/dfe-analytical-services/statisticians-guide/actions/workflows/publish.yml)
+[![Publish to pages](https://github.com/dfe-analytical-services/statisticians-guide/actions/workflows/publish.yml/badge.svg)](https://github.com/dfe-analytical-services/statisticians-guide/actions/workflows/publish.yml)
 
 # DfE Statistics Production Guidance
 
