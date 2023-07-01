@@ -39,15 +39,15 @@ As stated above, EES consists of two parts. We also have four versions (environm
 
 - **Pre-production** - Yellow - a sandbox area for analysts to carry out functionality testing
 
-    Admin pre-production - [https://admin.pre-production.explore-education-statistics.service.gov.uk]
+Admin pre-production - [https://admin.pre-production.explore-education-statistics.service.gov.uk](https://admin.pre-production.explore-education-statistics.service.gov.uk)
 
-    Public pre-production - https://pre-production.explore-education-statistics.service.gov.uk
+Public pre-production - [https://pre-production.explore-education-statistics.service.gov.uk](https://pre-production.explore-education-statistics.service.gov.uk)
 
 - **Production** - Red - the real service, anyone creating real releases that they intend to publish to the public should be using this environment
 
-    Admin - https://admin.explore-education-statistics.service.gov.uk
+Admin - [https://admin.explore-education-statistics.service.gov.uk](https://admin.explore-education-statistics.service.gov.uk)
 
-    Public - https://explore-education-statistics.service.gov.uk
+Public - [https://explore-education-statistics.service.gov.uk](https://explore-education-statistics.service.gov.uk)
 
 There is no overlap between the environments and content created on one cannot be moved to any other.
 
