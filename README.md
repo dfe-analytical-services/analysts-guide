@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A quarto-based website used as a central place to hold guidance, helpful links and code examples for analysts working in DfE. The source repository is hosted in GitHub and deployed via GitHub pages.
+A quarto-based static website used as a central place to hold guidance, helpful links and code examples for analysts working in DfE. The source repository is hosted in GitHub and deployed via GitHub pages.
 
 ---
 
