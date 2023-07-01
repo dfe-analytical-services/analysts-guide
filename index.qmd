@@ -132,3 +132,9 @@ A self assessment tool allowing official statistics publications to understand h
 
 - [dfeR R package](https://github.com/dfe-analytical-services/dfeR){target="_blank" rel="noopener noreferrer"}
 
+## Our mailbox
+
+Our mailbox is always monitored and is available for anyone in DfE to ask questions about analysis, whether that is about RAP, building dashboards, coding support, learning and development or statistics publications.
+
+- [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)
+- 9am-5pm, Monday-Friday, aim to reply within 1-2 days
