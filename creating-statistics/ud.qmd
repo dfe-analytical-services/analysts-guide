@@ -59,7 +59,7 @@ For data to be used with the table tool and charts in EES, it needs to be provid
   * whether a given column is a filter or indicator;
   * human readable name for use in tables and charts on EES;
   * filter grouping information;
-  * number of decimal places to display for indicator fields (i.e. allowing a lower precision to be presented in the derived tables than the underlying data - useful for minimising rounding errors in aggregates);
+  * number of decimal places to display for indicator fields (i.e. allowing a lower precision to be presented in the dervied tables than the underlying data - useful for minimising rounding errors in aggregates);
   * units for indicator fields (e.g. £, %);
 * The data should use the [appropriate GSS codes](#data-symbols) for suppressed, low, not available and not applicable entries.
 
@@ -214,6 +214,10 @@ Additional filters are the release specific characteristics that we filter our d
 
 The policy of creating tidy data files effectively means optimising your filter-indicator combinations for use within the EES user interface. By doing so, end users will be better able to interact with your data and find the information that they're looking for.
 
+The video below provides some context around this and shows how tidy data structures work better in the EES table tool when compared to wide (or pivoted) data sets.
+
+<iframe width="853" height="480" src="https://web.microsoftstream.com/embed/video/fb2c32b2-7601-4698-9f9d-9d2b96c0a8f4?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+
 The number of indicators should be kept to a minimum, whilst maintaining different types of measurements as distinct indicators. For example a wide structure might consist of something like the following:
 
 | ... | number_pupils_passing_95 | number_pupils_passing_94 | percentage_pupils_passing_95 | percentage_pupils_passing_94 |
@@ -228,6 +232,15 @@ Creating a tidy form of this data would look something more like this:
 | ... | 9 to 4                   | 642                      | 51.8                     |
 
 This is a simplified example and your data will likely be more complex, but in making this type of change, you may be able to better identify more optimal ways of organising your data. For example, if you find that restructuring like this creates a lot of empty cells, it may be that the data has incompatible filters and can be separated out into multiple data files.
+
+The next video illustrates the differences between wide and tidy data, showing examples of the same data organised in each structure.
+
+<iframe width="853" height="480" src="https://web.microsoftstream.com/embed/video/c8f467db-31bb-4307-8d3b-11e5186c4049?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+
+If your current processes produce wide data that you need to switch to a tidy structure, one of doing this is using the `pivot_longer()` function in R. The following video demonstrates how to do that using the data shown in the previous videos.
+
+<iframe width="853" height="480" src="https://web.microsoftstream.com/embed/video/023ba23c-a7bf-4313-91c8-9dc2e14b1c8e?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+
 
 ---
 
@@ -607,6 +620,8 @@ We publish at a number of different geography breakdowns and these vary from pub
 The geographic_level column should describe the level of data present in that row. Therefore data for a collection from a specific local authority would have 'Local authority' as the geographic_level, while a National aggregation would have 'National' as the geographic_level.
 
 Teams should make sure that they are regularly checking their geography codes if they are not using a lookup from a maintained database (such as in the PDR). ONS have the [Open Geography portal](http://geoportal.statistics.gov.uk/){target="_blank" rel="noopener noreferrer"}, which can be a useful way of checking these. There is a wealth of data on there, though Local authority boundaries can be hard to find, they can be found using the tabs at the top – Boundaries > Administrative Boundaries > Counties and Unitary Authorities.
+
+Teams can also use the lookup tables available via the [data screener GitHub repository data folder](https://github.com/dfe-analytical-services/dfe-published-data-qa/tree/master/data){target="_blank" rel="noopener noreferrer"}. Guidance on how to link directly to the latest data in your code can be seen in the [standardised reference data section](../RAP/rap.html#Standardised_reference_data)
 
 If you have data from an unknown location, the standard is to use 'Not available' as name, and 'x' as the code/s, this clearly marks that the geographical data for that row is unavailable, and does so in a consistent way with the wider GSS. If you have a unique variation of a certain location, e.g. 'Outside of England and unknown', we may be able to add these in as exceptions. Locations like this would have a code of 'z' as no widely used code is applicable, please get in touch with us to discuss it further if you think this might apply to you.
 

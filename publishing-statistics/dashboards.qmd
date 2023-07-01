@@ -299,7 +299,7 @@ If you have any questions on this process please do contact us at statistics.dev
 
 Shiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage, embed them in [R Markdown documents](http://rmarkdown.rstudio.com/) or build [dashboards](http://rstudio.github.io/shinydashboard/). You can also extend your Shiny apps with [CSS themes](http://rstudio.github.io/shinythemes/), [htmlwidgets](http://www.htmlwidgets.org/), and [JavaScript actions](https://github.com/daattali/shinyjs/blob/master/README.md).
 
-The guidance on this page assumes you have prior knowledge of R, if you are new to R, then take a look at our [R resources page](r.html) to get started.
+The guidance on this page assumes you have prior knowledge of R, if you are new to R, then take a look at our [R resources page](../learning-development/r.html) to get started.
 
 ---
 
@@ -452,11 +452,11 @@ ggplot(aes(y=value, x="",
 
 ```
 
-Further examples are given on the [Using Explore Education Statistics guidance](ees.html#example-ggplot-chart-code) page.
+Further examples are given on the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page.
 
 You can use in-line CSS to make these style changes, or make edits to the style sheet. Editing the style sheet is a neater solution if you want to apply changes across your app, and keeps your UI code clean. You can find out how styles are configured by running your app, right clicking and selecting "Inspect" to view the element you wish to change. You can then find these lines in the CSS stylesheet and change a number of things including fonts, font colours and background colours.
 
-The [SCAP LA school places scorecards app](https://department-for-education.shinyapps.io/la-school-places-scorecards) is one example of a public facing dashboard that meets these styling requirements.
+The [SCAP LA school places scorecards app](https://department-for-education.shinyapps.io/la-school-places-scorecards){target="_blank" rel="noopener noreferrer"} is one example of a public facing dashboard that meets these styling requirements.
 
 `r knitr::include_graphics("../images/styling.PNG")`
 
@@ -469,7 +469,7 @@ The [SCAP LA school places scorecards app](https://department-for-education.shin
 
 To ensure that they are reliable, dashboards should have an appropriate amount of automated tests before they can be published. We recommend using a mix of UI and unit tests, but the number and type of tests that you need to run will depend on the content of your application.
 
-Further guidance on setting up testing can be found in the [DfE good code practice guide](https://dfe-analytical-services.github.io/good-code-practice/testing.html#testing-shiny-apps). Also see our guidance on testing R code on the [learning resources page](l+d.html#R).
+Further guidance on setting up testing can be found in the [DfE good code practice guide](https://dfe-analytical-services.github.io/good-code-practice/testing.html#testing-shiny-apps){target="_blank" rel="noopener noreferrer"}. Also see our guidance on testing R code on the [learning resources page](../learning-development/l+d.html#R).
 
 ---
 
@@ -601,7 +601,7 @@ If you are running an internal-only app then you can connect to our internal SQL
 
 ---
 
-See our [Git](git.html#storing-secure-variables) page for guidance on storing secure variables in repositories.
+See our [Git](../learning-development/git.html#storing-secure-variables) page for guidance on storing secure variables in repositories.
 
 ---
 

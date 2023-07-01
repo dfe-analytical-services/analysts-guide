@@ -147,7 +147,7 @@ DfE are working with ONS and others to consider how to take forward work in this
 >
 >In addition and more broadly, the department is working with ONS Best Practice Team to consider guidance around user engagement and how best to take forward the strategy for the department.  In line with this, as part of these developments we will be reviewing and refreshing our current [public-facing user engagement strategy](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/287444/User_engagement_policy.pdf) which will then be reviewed annually.
 
-Teams are encouraged to already start to think about who their users are, the channels they use to understand their needs and the user experience. Publication teams should keep abreast of [user analytics](user_an.html) to understand more about how users use and access their statistics and whether further improvements could be made. In addition, teams should also think about the ways they can glean feedback on their publication(s), this may include internal checks regards enhancements such as participating in [content design scrum(s)](cd.html#publication-scrums).
+Teams are encouraged to already start to think about who their users are, the channels they use to understand their needs and the user experience. Publication teams should keep abreast of [user analytics](user-analytics.html) to understand more about how users use and access their statistics and whether further improvements could be made. In addition, teams should also think about the ways they can glean feedback on their publication(s), this may include internal checks regards enhancements such as participating in [content design scrum(s)](../creating-statistics/cd.html#publication-scrums).
 
 ---
 

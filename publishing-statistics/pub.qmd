@@ -19,9 +19,9 @@ The platform moved into Public Beta in March 2020 and currently operates in para
 
 More information on why EES was introduced and the functionality within the platform can be found in these [slides.](https://docs.google.com/presentation/d/1CJMLxEPngGbTZbn1n4M6huGIeizUmjysthLwU3Zxoq4/edit?usp=sharing){target="_blank" rel="noopener noreferrer"}
 
-* All national, official and ad-hoc statistics should be [published on EES](#EES)
+* All national, official and ad-hoc statistics should be [published on EES](#ees)
 * Management Information should be published on [.gov.uk](#gov.uk)
-* [Interactive dashboards](#Dashboards) built for particular user needs can be published separately
+* [Interactive dashboards](#dashboards) built for particular user needs can be published separately
 
 The following table outlines the key differences between publishing via EES and the old method via [gov.uk:](https://www.gov.uk/government/organisations/department-for-education/about/statistics){target="_blank" rel="noopener noreferrer"}
 

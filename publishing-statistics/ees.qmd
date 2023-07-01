@@ -1,18 +1,18 @@
 ---
-title: "Explore Education Statistics"
+title: "Using Explore Education Statistics"
 ---
 
 <p class="text-muted">Guidance for how to use the features in the Explore Education Statistics platform</p>
 
 ---
 
-Explore Education Statistics (EES) is the Department’s official statistics dissemination platform, designed to make DfE’s published statistics and data easier to find, access, use and understand.
+Explore Education Statistics (EES) is the Department’s official statistics dissemination platform, designed to make DFE’s published statistics and data easier to find, access, use and understand.
 
 **The EES platform consists of two applications:**
 
-1. The [public](https://explore-education-statistics.service.gov.uk/){target="_blank" rel="noopener noreferrer"} website, where users access stats
+1. The [public](https://explore-education-statistics.service.gov.uk/) website, where users access stats
 
-2. The [admin](https://admin.explore-education-statistics.service.gov.uk/){target="_blank" rel="noopener noreferrer"} website, where production teams create their stats
+2. The [admin](https://admin.explore-education-statistics.service.gov.uk/) website, where production teams create their stats
 
 <div class="alert alert-dismissible alert-info">
 The majority of the admin side of EES is only supported in Google Chrome and Microsoft Edge and will not work correctly in Internet Explorer. The public website and pre-release previews of releases in admin can be viewed using Internet Explorer, though we still recommend that people use Chrome or Edge instead.
@@ -162,7 +162,7 @@ The hierarchy of content within EES is as follows -
 knitr::include_graphics("../images/ees-hierarchy.PNG")
 ```
 
-Publications are organised into topics and themes (as shown on the EES [Find Statistics page](https://explore-education-statistics.service.gov.uk/find-statistics){target="_blank" rel="noopener noreferrer"}), and then within each publication there are releases - where the latest release includes the latest statistics for that publication. For example:
+Publications are organised into topics and themes (as shown on the EES [Find Statistics page](https://explore-education-statistics.service.gov.uk/find-statistics)), and then within each publication there are releases - where the latest release includes the latest statistics for that publication. For example:
 
 | Level | Example |
 |:------|:------|
@@ -180,17 +180,17 @@ If you want to request a new publication, please be prepared to give the followi
 + The heading and subheading that you want the publication to sit under in our site (take a look at the current structure [here](https://explore-education-statistics.service.gov.uk/find-statistics){target="_blank" rel="noopener noreferrer"}), feel free to either use existing ones, or suggest new ones
 + The exact title of the publication
 + A summary of less than 160 characters (including spaces) that describes your publication series
-+ If the methodology already exists elsewhere and you have a URL for it, or if you want to [create one](#Methodology)
++ If the methodology already exists elsewhere and you have a URL for it, or if you want to [create one](#methodology)
 + Team name
 + Team email address
 + Lead statistician name
 + Lead statistician contact number
-+ The [time period](ud.html#List_of_allowable_time_values) of the release you’re creating
++ The [time period](../creating-statistics/ud.html#List_of_allowable_time_values) of the release you’re creating
 + Whether they are National statistics, an ad-hoc publication, or official statistics
-+ List of email addresses of analysts who need access to the release and at what [permission levels](#Roles_and_permissions)
++ List of email addresses of analysts who need access to the release and at what [permission levels](#roles-and-permissions)
 
 
-Publication details can be [managed by publication owners](#Publication_management) or via requests to the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk).
+Publication details can be [managed by publication owners](#managing-publications) or via requests to the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk).
 
 ---
 
@@ -232,11 +232,11 @@ If you have external users you'd like to request access for, please send the fol
 
 ---
 
-New releases can be [created by publication owners](#Create_new_release) or via requests to the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk). If you're requesting a new release via the mailbox, please give the following:
+New releases can be [created by publication owners](#create-new-release) or via requests to the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk). If you're requesting a new release via the mailbox, please give the following:
 
 + Name of the publication (including theme and topic that it sits under)
 + Time period for the release
-+ [Time identifier](ud.html#List_of_allowable_time_values) for the release
++ [Time identifier](../creating-statistics/ud.html#List_of_allowable_time_values) for the release
 + Type of release (National, Official, Ad-hoc etc)
 
 Once you have created your release you will see enter the ‘create release dashboard, here you need to work through the following tabs to create your release:
@@ -642,7 +642,7 @@ Infographic alternatives should be .svg format and you can use the sizing option
 Accessibility matters for infographics too, consider the following if you do need to upload an image -
 
 * Keep them simple
-* Use colours that are available in EES - see our [visualisation guidance](cd.html#Charts-in-EES) for more details
+* Use colours that are available in EES - see our [visualisation guidance](../creating-statistics/cd.html#Charts-in-EES) for more details
 * Don't put borders around images
 * Read the [GSS guidance on the use of colour in visualisations](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) and follow the steps provided to check your visualisations
 * Try to avoid adding text to your images other than axis labels and limited annotations. Titles and headings can be added in the "chart configuration" tab instead
@@ -860,7 +860,7 @@ There are three statuses:
 
 
 <div class="alert alert-dismissible alert-warning">
-Only users with ‘approver’ permissions(#Roles_and_permissions) (usually G6 or above) can sign off the release for publication.
+Only users with [approver](#roles-and-permissions) permissions (usually G6 or above) can sign off the release for publication.
 </div>
 
 ---
@@ -997,7 +997,7 @@ If you want to revise an existing methodology page you can amend the methodology
 
 `r knitr::include_graphics("../images/EES-amend-methodology.PNG")`
 
-Once you're happy with your amendment it just needs to be [approved](#Sign_off) in the usual way for it to be published.
+Once you're happy with your amendment it just needs to be [approved](#sign-off) in the usual way for it to be published.
 
 ---
 

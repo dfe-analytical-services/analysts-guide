@@ -21,7 +21,7 @@ Migration to a new statistics dissemination platform - Explore Education Statist
 
 Teams should continually improve their publications, assessing against best practice using our [content checklist](#checklist).
 
-All of our publications should be designed around our users first and foremost, and you should consider this page in conjuction with any [user engagement](user_eng.html) activities you are carrying out.
+All of our publications should be designed around our users first and foremost, and you should consider this page in conjuction with any [user engagement](../understanding-users/user-eng.html) activities you are carrying out.
 
 We are running publication scrums where teams can put forward their publication(s) for review by a group of volunteer analysts, providing feedback as ‘unfamiliar new readers’ to discuss ideas for further improvements. For more information, see the [publication scrums](#publication-scrums) section.
 
@@ -300,7 +300,7 @@ You can also get in touch with the DfE Data Harmonisation Champions Group via [s
 
 ---
 
-For the official names of ethnicity filters to use in data files, please check our guidance on [creating statistics](ud.html#ethnicity). The below outlines some key points in writing about ethnicity in publication content.
+For the official names of ethnicity filters to use in data files, please check our guidance on [creating statistics](../creating-statistics/ud.html#ethnicity). The below outlines some key points in writing about ethnicity in publication content.
 
 ---
 
@@ -422,7 +422,7 @@ You do not need to recreate all of the old excel tables, users can find the numb
 
 ---
 
-Any charts in your release should be appropriate for the data, reinforcing the key messages. For more detailed information on how to build charts in EES, visit our [EES charts guidance section](ees.html#Charts).
+Any charts in your release should be appropriate for the data, reinforcing the key messages. For more detailed information on how to build charts in EES, visit our [EES charts guidance section](../publishing-statistics/ees.html#Charts).
 
 Any analyst building charts in or outside of EES should make themselves familiar with the [GSS data visualisation guidance]([GSS colours in visualisations guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts).
 
@@ -515,7 +515,7 @@ For larger palettes when using sequential data, we recommend using [ColorBrewer]
 
 ---
 
-We recommend including any missing data from breaks in a time series in your data file using the appropriate [GSS symbol](ud.html#data-symbols), such as in this example table:
+We recommend including any missing data from breaks in a time series in your data file using the appropriate [GSS symbol](../creating-statistics/ud.html#data-symbols), such as in this example table:
 
 | | 2013/14 | 2014/15 | 2015/16 | 2016/17 | 2017/18 |
 | - | ------| --------| --------| --------| --------|
