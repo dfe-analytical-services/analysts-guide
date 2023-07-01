@@ -4,6 +4,7 @@ project:
 website: 
 #  reader-mode: true
   page-navigation: true
+  back-to-top-navigation: true
   title: "Statistician's Guide" 
   site-url: "https://dfe-analytical-services.github.io/statisticians-guide/" 
   repo-url: https://github.com/dfe-analytical-services/statisticians-guide
