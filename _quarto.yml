@@ -43,18 +43,36 @@ website:
         href: mailto:statistics.development@education.gov.uk
         text: "Email us"
       - icon: microsoft-teams
-        href: mailto:statistics.development@education.gov.uk
-        text: "Statistics teams channel"
+        menu: 
+          - text: "DfE analysts teams"
+            href: mailto:statistics.development@education.gov.uk
+          - text: "Statistics production"
+            href: mailto:statistics.development@education.gov.uk
+          - text: "DfE R community"
+            href: mailto:statistics.development@education.gov.uk
+            
       - icon: camera-reels
-        href: mailto:statistics.development@education.gov.uk
-        text: "Statisticians Guide to the Galaxy recordings and slides"
+        menu:
+          - href: mailto:statistics.development@education.gov.uk
+            text: "Guide to the Galaxy sessions"
+          - href: mailto:statistics.development@education.gov.uk
+            text: "EES show and tells"
+          - href: mailto:statistics.development@education.gov.uk
+            text: "RAP knowledge share series"
+          - href: mailto:statistics.development@education.gov.uk
+            text: "Coffee and coding sessions"            
+            
       - icon: graph-up
         href: https://explore-education-statistics.service.gov.uk/
         text: "Explore education statistics"
+        
       - icon: github
-        href: https://github.com/dfe-analytical-services/statisticians-guide
-        text: "Source code"
-
+        menu:
+          - href: https://github.com/dfe-analytical-services/statisticians-guide
+            text: "Source code"
+          - href: https://github.com/dfe-analytical-services/statisticians-guide/issues/new
+            text: "Suggest changes"
+            
     style: "floating"
     search: true
     collapse-level: 1
