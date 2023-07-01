@@ -27,9 +27,8 @@ Our publication data is released under the terms of the [Open Government License
 
 ## How to check against these standards
 
----
 
-An [interactive shiny app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} has been developed to automate checks against the standards as a final stage of automated quality assurance before upload to EES.
+An [interactive data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} has been developed in R Shiny to automate checks against the standards as a final stage of automated quality assurance before upload to EES.
 
 This can be run on any data file, though requires the [EES metadata](#ees-metadata) to be able to process the file. The app runs on our rsconnect servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on [GitHub](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}, and you can get in touch with us at statistics.development@education.gov.uk.
 
@@ -47,7 +46,6 @@ This can be run on any data file, though requires the [EES metadata](#ees-metada
 
 ## Overview of EES data files
 
----
 
 For data to be used with the table tool and charts in EES, it needs to be provided to the following overall specifications:
 
@@ -95,7 +93,7 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 
 ---
 
-### Example meta-data file ([ees_demo_datafile.meta.csv](../data_examples/ees_demo_datafile.meta.csv))
+### Example metadata file ([ees_demo_datafile.meta.csv](../data_examples/ees_demo_datafile.meta.csv))
 
 ---
 
@@ -143,7 +141,6 @@ For publishing on EES specifically, please note the following points:
 
 ## Tidy data structure
 
----
 
 The move to the new platform provided the ideal opportunity to standardise and 'tidy' up our data to give users the consistency that they ask for. Our standards draw upon the ideas of tidy data - this means applying a logical structure to datasets so they are easier to use and analyse, minimising the time spent cleaning the data before use.
 
@@ -164,13 +161,21 @@ Further details on tidy data, can be found by reading Hadley Wickham's academic 
 
 The variables (columns) in each of the uploaded data files will fall in to the following two categories: filters and indicators.
 
+---
+
 ### Introduction to indicators
+
+---
 
 Indicators are the measureables in any data set. They should be grouped based on the type of measurement, with a column for each different type of measurement. For example, Number of pupils and Percentage of pupils would be two disticnt indicator columns in a data file.
 
 More details on indicators in the EES context are provided in the **[Indicators section](#indicators)** below.
 
+---
+
 ### Introduction to filters
+
+---
 
 A single filter column should contain all the possible filter values for a single data-sub-aggregation. For example, many publications would have an ethnicity_major column containing all the major ethnic breakdowns contained in the data or an fsm column containing the entries FSM and non-FSM.
 
@@ -210,7 +215,11 @@ The standard filters encompass **[time and geography](#time-and-geography)** ele
 
 Additional filters are the release specific characteristics that we filter our data on, e.g. school types, learner characteristics, grade thresholds, etc. Some of these filters have recommended column names and entries in order to support consistency in data files across publications. For example ethnicities should have column names of ethnicity_major, ethnicity_minor or minority_ethnic and contents should be limited to the GSS standards. Such guidelines are outlined in the **[Common harmonised variables section](#common-harmonised-variables)** of this page, whilst further information on fiters in the EES context is given in the **[Filters section](#filters)** below.
 
+---
+
 ### Optimising filter-indicator combinations
+
+---
 
 The policy of creating tidy data files effectively means optimising your filter-indicator combinations for use within the EES user interface. By doing so, end users will be better able to interact with your data and find the information that they're looking for.
 
@@ -246,7 +255,6 @@ If your current processes produce wide data that you need to switch to a tidy st
 
 ## Data format
 
----
 
 These standards give you the power to format the data in a way that best meets the needs of the users. There are only a handful of formatting standards to follow to ensure best practice and consistency across all of our data.
 
@@ -324,7 +332,6 @@ For `write_csv()`, which some of you may be using for increased processing speed
 
 ## How much data to publish
 
----
 
 You should publish as many years of data that you have and is practicable.
 
@@ -334,7 +341,6 @@ If you are not providing a full timeseries for any reason, you must link to the 
 
 ## Deciding what should be in a file
 
----
 
 Explore Education Statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.
 
@@ -349,7 +355,6 @@ We generally recommend fewer large files over a larger number of smaller files. 
 
 ## File size
 
----
 
 There are no character or size limits in a csv file and there is no size limit for EES, though the larger a file is, the longer it will take to upload and process. Also remember that the files you upload are the files that users will download, consider the software they may access to (e.g. Excel) and whether the size of your files are compatible with this.
 
@@ -361,7 +366,7 @@ A **rough guide** to file size would be:
 - 10mb to 100mb is a fairly common file size that most teams have
 - 100mb to 500mb is a large file and will struggle to upload if not compressed to a zip folder.
 - 500mb and over are very large, and sometimes may struggle to compress small enough to upload.
-- 1gb or more in size is larger than any we have seen before and will likely need testing in the platform first.
+- 4gb or more in size is larger than any we have seen before and will likely need testing in the platform first.
 
 [Contact us](mailto:mailto:statistics.development@education.gov.uk) if you have any issues, or files that might be over 1gb.
 
@@ -369,7 +374,6 @@ A **rough guide** to file size would be:
 
 ## Data symbols
 
----
 
 In line with the [GSS guidance on symbols](https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/){target="_blank" rel="noopener noreferrer"}, special values should be replaced with symbols in the following situations:
 
@@ -417,7 +421,6 @@ With some files there may be more than one way to specify the metadata that will
 
 ## Mandatory EES metadata columns
 
----
 
 | column                 | details                                                        |
 |------------------------|----------------------------------------------------------------|
@@ -437,7 +440,6 @@ Note that if you are using percentage points (pp) you must include a clear expla
 
 ## Example EES metadata
 
----
 
 : Each row represents a corresponding column in the data file.
 
@@ -472,7 +474,6 @@ Across every single dataset of official statistics produced by DfE, the followin
 
 ## Time columns
 
----
 
 We use the two columns, time_period and time_identifier, to generalise time across our underlying datasets. All data files must contain these. This is a important for general useability of our data, as well as being critical in driving the charts and tables in the Explore Education Statistics platform and making explicit reference to the time in which our measurements relate to. This is a compulsory element of any official statistics dataset.
 
@@ -613,7 +614,6 @@ You can only mix time_identifiers if they appear within the same table below. If
 
 ## Geography columns
 
----
 
 We publish at a number of different geography breakdowns and these vary from publication to publication. Every publication in the new platform must include the three compulsory geography columns - geographic_level, country_code and country_name in its data files. These are compulsory as the data we are producing must lie within a country boundary.
 
@@ -756,7 +756,6 @@ for dashboards and other secondary statistics services.
 
 ## Ethnicity
 
----
 
 ### Overview
 

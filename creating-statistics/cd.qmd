@@ -170,7 +170,6 @@ Below is a session by Robert Cuffe from the BBC talking to DfE statisticians abo
 
 ## Headline facts and figures
 
----
 
 Each release on the platform will have a summary box at the top that contains the top facts and headlines for your release - you should consider this the equivalent of the front page of what was the PDF version of your release.
 
@@ -208,7 +207,6 @@ Use bullet points under the key indicator tiles to pull out the top headlines fr
 
 ## About these statistics
 
----
 
 We recommend that the first accordion section in each release should be 'About these statistics'. Do not assume that users will read it, the nature of interactive pages means that the reader may start at any accordion section so remember to include essential information in the section to which it refers.
 
@@ -253,9 +251,9 @@ For tips on creating accessible content have a look at our [accessibility top ti
 
 ---
 
-## Active headings and titles - content
+## Content headings
 
----
+
 
 Throughout the commentary, active sub-headings outline the main messages making them memorable for users. They should be a short summary of the contents - **aim for 10 words or less** - rather than a full statistical headline. **Avoid using exaggerated or sensationalist language** that you would not use in your main commentary such as "highest ever" or "only". Be neutral in selecting the message to use in the heading rather than favouring positive or negative messages.
 
@@ -263,7 +261,6 @@ Throughout the commentary, active sub-headings outline the main messages making 
 
 ## Accordion section content
 
----
 
 You should split your release into sections that each focus on one or two key messages, with a recommended maximum of 10 sections in the release. **The whole release should take no more than 10 minutes to read.** Our [analytics app](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"} contains insights on how long it takes the average user to read your release.
 
@@ -283,7 +280,6 @@ Do not use footnotes in the text of your content. They’re designed for referen
 
 ## Writing about characteristics
 
----
 
 There is a wide range of guidance available from the GSS, ONS and the Cabinet Office around writing about characteristics. Statistics content published on EES should adhere to the principles outlined by the above. The data harmonisation champions group are in the process of collating the most recent guidance from all these sources and summarising it below.
 
@@ -334,7 +330,6 @@ There are several methods of ordering the ethnic groups, depending on where and 
 
 ## Reporting and interpreting numbers
 
----
 
 Reporting the numbers you work with is an important first step toward writing effective numeric descriptions. By including numbers in text, table or chart, you give the user the raw materials with which to perform comparisons across time, places or groups. However, if you stop there, you leave it to your readers to figure out how those data answer the question at hand.
 
@@ -350,7 +345,6 @@ Try to use prose to summarise the patterns so your user can see the general rela
 
 ## Creating hyperlinks
 
----
 
 Avoid using full URLs in text. Hyperlinks should be used and they should provide a clear description of the destination. Avoid using 'For more information **click here**'. Screen readers often collate all links on a page into one list, so having numerous ‘click here’ links listed is confusing to the user and gives no description of the destinations. ‘For more information see **Guidance to support the summer 2021 exams**’ is an example of a good hyperlink.
 
@@ -360,7 +354,6 @@ Best practice on creating hyperlinks, particularly how to name them and common p
 
 ## Search engine optimisation
 
----
 
 Search engine optimisation (SEO) makes it easier for users to find your data through search engines like Google. Some top tips include:
 
@@ -392,9 +385,8 @@ EES allows you to build charts and tables to visually represent information from
 
 ---
 
-## Active headings and titles - charts and tables
+## Visualisation titles
 
----
 
 For tables and charts, active titles are descriptive and tell the trend by **highlighting the main story**. They should be short - aim for 10 words or less and avoid going over more than one line. Active titles give users the main message without having to find the text that accompanies the chart, and makes it easier for journalists to use your chart directly without having to write their own summary.
 
@@ -404,7 +396,6 @@ Put information such as the measure, source, population, geographical coverage a
 
 ## Using data blocks effectively
 
----
 
 **Aim for fewer tables, and keep them small. As a guide, we suggest no more than one table per accordion section.**
 
@@ -420,7 +411,6 @@ You do not need to recreate all of the old excel tables, users can find the numb
 
 ## Charts in EES
 
----
 
 Any charts in your release should be appropriate for the data, reinforcing the key messages. For more detailed information on how to build charts in EES, visit our [EES charts guidance section](../publishing-statistics/ees.html#Charts).
 
@@ -434,7 +424,6 @@ DWP have created a [Data Visualisation Thinking](https://dataviztraining.dwpdata
 
 ## Colours in charts
 
----
 
 The most important consideration when using colour is to avoid relying on it for interpretation. It should be seen as an enhancement, and your charts should be understandable without it.
 
@@ -513,7 +502,6 @@ For larger palettes when using sequential data, we recommend using [ColorBrewer]
 
 ## Visualising breaks in a timeseries
 
----
 
 We recommend including any missing data from breaks in a time series in your data file using the appropriate [GSS symbol](../creating-statistics/ud.html#data-symbols), such as in this example table:
 
@@ -557,7 +545,6 @@ For releases that have a .html methodology page the relevant link will display a
 
 ## Glossary
 
----
 
 The [glossary in Explore Education Statistics](https://explore-education-statistics.service.gov.uk/glossary){target="_blank" rel="noopener noreferrer"} is intended for definitions used across all publications. Please send any definitions you would like adding to the glossary to the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
@@ -593,11 +580,10 @@ More detailed advice and guidance on content design best practice is available f
 
 ## Publication scrums
 
----
 
-CSSU are running publication scrums, which enable publications to be looked at with fresh eyes through a workshop with volunteers and the publication team. The content checklist, which breaks down the components of producing Best Practice content into smaller chunks with prompt questions is used [(Download content checklist)](resources/Content_Design_Logbook.xlsx){target="_blank" rel="noopener noreferrer"}, along with workshop slides.
+The Statistics Services Unit organise regular publication scrums, which enable publications to be looked at with fresh eyes through a workshop with volunteers and the publication team. The content checklist, which breaks down the components of producing Best Practice content into smaller chunks with prompt questions is used [(Download content checklist)](resources/Content_Design_Logbook.xlsx){target="_blank" rel="noopener noreferrer"}, along with workshop slides.
 
-If you are responsible for signing off publications, then please download and see the Statistics Leadership Group paper highlighting [common pitfalls/top tips regarding content design](resources/Content_Design_Scrums_Insights_final.docx).
+If you are responsible for signing off publications, then please download and see the Statistics Leadership Group paper highlighting [top tips for content design](resources/Content_Design_Scrums_Insights_final.docx).
 
 One of the early outcomes from running publication scrums, was that great content design is more of an art form than science and the scrum process was found to be really useful in enabling a wider element of scrutiny and friendly challenge, in an enjoyable environment to consider publication content.
 
@@ -613,6 +599,6 @@ For a walk through of some of the end to end benefits the scrums have had, take 
 
 Finally, an example of a team who has been through the scrum process for 3 publications talk through their realised benefits, showcasing the type of benefits potentially others could also realise is also available to [watch on sharepoint](https://educationgovuk-my.sharepoint.com/:v:/g/personal/heather_brown_education_gov_uk/EQx_j1oEh0BMqLbMLtnf2ikB4FJIBfEjKptqIDUkoZVgvg?e=a0xHNJ).
 
-If you're interested in being involved in future scrums, please get in contact with Heather Brown.
+If you're interested in being involved in future scrums, please get in [contact us](mailto:statistics.development@education.gov.uk).
 
 ---
