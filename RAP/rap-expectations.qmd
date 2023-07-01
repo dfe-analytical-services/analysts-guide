@@ -24,7 +24,6 @@ The [cross-government RAP strategy](https://analysisfunction.civilservice.gov.uk
 
 ## Analyst leaders 
 
----
 
 Those giving senior sign off on publications and running analytical functions, usually G6 and SCS, analyst leaders will:
 
@@ -41,7 +40,6 @@ Those giving senior sign off on publications and running analytical functions, u
 
 ## Analyst managers 
 
----
 
 Roughly equivalent to Team Leaders and G7, analyst managers will:
 
@@ -57,7 +55,6 @@ Roughly equivalent to Team Leaders and G7, analyst managers will:
 
 ## Analysts 
 
----
 
 Analysts working on analysis in government will:
 

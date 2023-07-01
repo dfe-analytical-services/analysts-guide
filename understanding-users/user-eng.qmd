@@ -22,7 +22,6 @@ The [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/) 
 
 ## USER hub
 
----
 
 The USER hub is now available on the [GSS website](https://gss.civilservice.gov.uk/user-support-and-engagement-resource-hub/), this is a central resource to help producers of statistics develop the knowledge, skills and techniques needed to engage effectively with their audiences.
 
@@ -30,7 +29,6 @@ The USER hub is now available on the [GSS website](https://gss.civilservice.gov.
 
 ## Improving your own engagmenent
 
----
 
 Download this [top tips document](resources/2021_05_14_Top_Tips.docx){target="_blank" rel="noopener noreferrer"} produced for the GSS, as a starting point for understanding how you can improve your user engagement.
 
@@ -42,7 +40,6 @@ More advice and guidance will follow in this space. In the meantime, if you're i
 
 ## Case studies
 
----
 
 ### Explore Education Statistics service
 
@@ -114,7 +111,6 @@ The launch of the strategy, as well as two further videos on the value of user e
 
 ## What is user engagement?
 
----
 
 <div align="center">
 <iframe width="640" height="360" src="https://www.youtube.com/embed/H91A_9EnQ3U?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -127,7 +123,6 @@ The ONS have also published [ten top tips to help improve user engagement](https
 
 ## User engagement successes
 
----
 
 <div align="center">
 <iframe width="640" height="360" src="https://www.youtube.com/embed/-8JohrNH2Ak?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -153,7 +148,6 @@ Teams are encouraged to already start to think about who their users are, the ch
 
 ## Consultations
 
----
 
 If you are considering changes to your publication and are contemplating a formal consultation do get in touch with HOP office early on to discuss.
 
@@ -177,7 +171,6 @@ Some examples of previous consultations are included below:
 
 ## Surveys
 
----
 
 We routinely publish statistical releases, but who is using these and why?  It’s important to understand your user types and need, so we (public and department) get best value from what we do.  Using these insights can help us to continually improve our products and services. Having a survey with your releases is a great way to glean this feedback.  Examples of statistical publication surveys, as well as ONS top tips on user surveys are below/attached.  It would be great to include your examples too, as well as capture your lessons learned and tips, so do send these to us. If you do want further advice, please contact Heather Brown or Ian Hewson.
 

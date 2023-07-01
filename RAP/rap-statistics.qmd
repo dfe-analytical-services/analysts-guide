@@ -38,7 +38,6 @@ Cam and Sarah ran a session introducing how to get started with automated QA in 
 
 ## Our scope
 
----
 
 We want to focus on the parts of the production process that we have ownership and control over – so we are focussing on the process from data sources to publishable data files. This is the part of the process where RAP can currently add the most value - automating the production and quality assurance of our outputs currently takes up huge amount of analytical resource, which could be better spent providing insight and other value adding activity. 
 
@@ -105,7 +104,6 @@ While working to reach our baseline expectation of good and great practice, you 
 
 ## How to assess your publication
 
----
 
 
 The checklist provided in the [publication self-assessment tool](https://rsconnect/rsc/publication-self-assessment){target="_blank" rel="noopener noreferrer"} is designed to make reviewing our processes against our RAP levels easier, giving a straightforward list of questions to check your work against. This will flag potential areas of improvement, and you can then use the links to go to the specific section with more detail and guidance on how to develop your current processes in line with best practice.
@@ -117,7 +115,6 @@ Some teams will already be looking at best practice, while others will still hav
 
 ## Where we need to focus
 
----
 
 
 Most teams have already made progress with their production of tidy data files, and the release of the automated screener has now tied up that end point of the pipeline that we are all currently working towards. The standard pipeline for all teams will roughly resemble this:
@@ -132,7 +129,6 @@ The key now is for us to build on the work so far and focus on how we improve th
 
 ## How to get started
 
----
 
 Measure your publication against the RAP levels using our [self assessment tool](https://rsconnect/rsc/publication-self-assessment/){target="_blank" rel="noopener noreferrer"}. This will give you a good starting point and initial points to work on to progress to the next level of RAP.
 
@@ -152,7 +148,6 @@ The first place to start for your teams RAP is to store the raw data you use to 
 
 ## All source data stored in a database 
 
----
 
 `r knitr::include_graphics("../images/good.svg")`
 
@@ -247,7 +242,6 @@ Much like setting up a SQL area, there are different ways to do this depending o
 
 ## Standardised reference data
 
----
 
 There will of course be cases where some of the data you use is reference data not owned by the DfE, or is available online for you to download rather than in an internal server. There are ways of incorporating this into a reproducible analytical pipeline nicely, sometimes you can even use links/URLs in your code that will always pull the latest data such that you will never need to change the link to reflect updates to the data!
 
@@ -285,7 +279,6 @@ The key thing to remember is that **we should be automating everything we can**,
 
 ## Processing is done with code
 
----
 
 `r knitr::include_graphics("../images/good.svg")`
 
@@ -324,8 +317,6 @@ To get started, here is a [SQL query](https://github.com/TomFranklin/sql-applied
 
 ---
 
-<!-- could have better examples -->
-
 [Here is a video](https://vimeo.com/33727555){target="_blank" rel="noopener noreferrer"} of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at [applied data tidying in R, by RStudio](https://www.youtube.com/watch?v=1ELALQlO-yM){target="_blank" rel="noopener noreferrer"}.
 
 
@@ -357,7 +348,6 @@ For further resources on learning R so that you're able to apply it to your ever
 
 ## Appropriate tools 
 
----
 
 `r knitr::include_graphics("../images/good.svg")`
 
@@ -388,7 +378,6 @@ By following [our guidance](#Version_controlled_final_code_scripts) in saving ve
 
 ## Using 'run' scripts
 
----
 
 Utilising a single 'run' script to execute processes written in other scripts brings a number of benefits. It isn't just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past. 
 
@@ -465,7 +454,6 @@ The team now have their end-to-end process fully documented, which can be run of
 
 ## Recyclable code for future use 
 
----
 
 `r knitr::include_graphics("../images/great.svg")`
 
@@ -507,9 +495,8 @@ data_filtered_last_year <- data %>%
 
 ## Standards for coding
 
----
 
-Code can often be written in many different ways, and in languages such as R, there are often many different functions and routes that you can take to get to the same end result. On top of that, there are even more possibilities for how you can format the code. This section will take you through some widely used standards for coding to help bring standardisation to this area and make it easier to both write and use our code.
+Code can be written in many different ways, and in languages such as R, there are often many different functions and routes that you can take to get to the same end result. On top of that, there are even more possibilities for how you can format the code. This section will take you through some widely used standards for coding to help bring standardisation to this area and make it easier to both write and use our code.
 
 ---
 
@@ -584,7 +571,6 @@ If you ever find yourself writing html, or creating it through rmarkdown, you ca
 
 ## Peer reviewing code
 
----
 
 Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to 'idiot check' our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it's quality and value.
 
@@ -705,7 +691,6 @@ While peer reviewing code within the team is often practical, having external an
 
 ## Automated quality assurance
 
----
 
 Any data files that have been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability.
 
@@ -780,7 +765,6 @@ The [janitor](https://garthtarr.github.io/meatR/janitor.html){target="_blank" re
 
 ## Automating summary statistics
 
----
 
 As a part of automating QA, we should also be looking to automate the production of summary statistics alongside the tidy underlying data files, this then provides us with instant insight into the stories underneath the numbers.
 
@@ -863,7 +847,6 @@ As we work with code to process our data more and more, we can begin to utilise 
 
 ## Sensible folder and file structure 
 
----
 
 `r knitr::include_graphics("../images/good.svg")`
 
@@ -920,7 +903,6 @@ If in doubt, take a look at this [presentation](https://speakerdeck.com/jennybc/
 
 ## Documentation
 
----
 
 `r knitr::include_graphics("../images/good.svg")`
 
@@ -1016,7 +998,6 @@ The [Self-assessment tool](https://github.com/dfe-analytical-services/publicatio
 
 ## Version control with git
 
----
 
 If you do not already have git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
 
@@ -1193,3 +1174,5 @@ git clone YOUR_URL_HERE
 - Make use of git and version control in your team projects regularly. Like learning anything new, putting it into practice regularly is the best way to become confident in using it.  
 
 Please refer to the other links on the [Git learning resources](../learning-development/git.html#other-resources) page to learn more about how to use git in practice.
+
+---
