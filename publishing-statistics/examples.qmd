@@ -8,7 +8,6 @@ title: "Good examples in EES"
 
 ## Files
 
----
 
 Files can be downloaded from multiple areas across the platform and often users will judge their contents based on the name alone. For display names, it's important we make it as clear as possible to users as to what each file contains without cluttering the title with information that is already available from the page around it, saving detailed coverage for the data guidance.
 
@@ -60,7 +59,6 @@ These titles are not cluttered with geographies and time periods, which automati
 
 ## Data guidance
 
----
 
 The public data guidance is a key element of your release, to help direct users to the right file to download or build tables with. It is frequently highlighted by users of our stats as a really helpful element of EES. You will be prompted to fill in data guidance in the release checklist. Any release that does not have a complete public data guidance will not be blocked from approval and publishing.
 
@@ -94,7 +92,6 @@ The public data guidance is a key element of your release, to help direct users 
 
 ## Charts and tables
 
----
 
 Charts and tables are key ways to highlight important information and stories in your release. They should be clear, contain few footnotes that are essential to interpreting the chart or table, and have good descriptive alternative text so users with screen readers can understand what is being visualised.
 
@@ -151,7 +148,6 @@ Good featured tables have short, easy to understand titles, and point users to c
 
 ## Content
 
----
 
 Clear, concise content is required to direct your users to the right place, and keep them engaged with your release. Our [content guidance page](../creating-statistics/cd.html) contains a raft of great advice on how to structure your release and write for the general public.
 
@@ -219,7 +215,6 @@ The [Key stage 4 destinations](https://explore-education-statistics.service.gov.
 
 ## Approvals and amendments
 
----
 
 Keeping track of processes for approving and amending releases is crucial for transparency. Internally, there should be clear paper trail of who has signed off the release, and externally, users need to know if anything in the release has changed from the last time they saw it. 
 
@@ -250,11 +245,4 @@ The [COVID attendance](https://explore-education-statistics.service.gov.uk/find-
 
 `r knitr::include_graphics("../images/covid_signoff.png")`
 
-
-
-
-
-
-
-
-
+---

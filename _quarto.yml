@@ -19,6 +19,7 @@ website:
     location: navbar
     type: textbox
   
+  #### -- Starting attempt at navbar alternative --
   # navbar:
   #   background: primary
   #   search: true

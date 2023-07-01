@@ -30,7 +30,6 @@ Maintenance and use of the platform is supported by the [Statistics Development 
 
 ## Environments
 
----
 
 As stated above, EES consists of two parts. We also have four versions (environments) of EES, the banner for the admin part of each environment will inform you which environment you are on, this is also colour coded:
 
@@ -40,7 +39,7 @@ As stated above, EES consists of two parts. We also have four versions (environm
 
 - **Pre-production** - Yellow - a sandbox area for analysts to carry out functionality testing
 
-    Admin pre-production - https://admin.pre-production.explore-education-statistics.service.gov.uk
+    Admin pre-production - [https://admin.pre-production.explore-education-statistics.service.gov.uk]
 
     Public pre-production - https://pre-production.explore-education-statistics.service.gov.uk
 
@@ -82,9 +81,6 @@ Jobshare emails can not be used to access EES. Specific personal emails should b
 
 ## Roles and permissions
 
----
-
-<!-- need to include methodologies in this section? -->
 
 The Statistics Development Team are responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored via their main mailbox - explore.statistics@education.gov.uk.
 
@@ -152,7 +148,6 @@ knitr::include_graphics("../images/EES_roles.svg")
 
 ## Requesting a new publication
 
----
 
 If you have not published on EES before, or if you're creating a brand new publication, you will need to contact us to create the publication for you before you can get started.
 
@@ -196,7 +191,6 @@ Publication details can be [managed by publication owners](#managing-publication
 
 ## Admin dashboard
 
----
 
 <div class="alert alert-dismissible alert-warning">
 Use Google Chrome or Microsoft Edge to access and use the admin part of Explore Education Statistics.
@@ -216,7 +210,6 @@ Within this dashboard you can view and manage existing publications, including c
 
 ## External user access
 
----
 
 Access to EES for users outside of DfE is difficult as the authentication and security on the service relies on the DfE Azure Active Directory and associated infrastructure. It is possible to request that external users from other government organisations have access, and they can then be added as collaborating analysts on a release or as pre-release viewers.
 
@@ -260,7 +253,6 @@ Once you have created your release you will see enter the ‘create release dash
 
 ## Data and files
 
----
 
 Here you will update your data files and accompanying metadata. You need to make sure that the data has passed through our [data screener checks](https://rsconnect/rsc/dfe-published-data-qa/) before trying to upload it.
 
@@ -406,7 +398,6 @@ Remember to double check any data blocks or footnotes that were recreated by the
 
 ## Footnotes
 
----
 
 Footnotes are added via footnotes tab - rather than writing multiple tables and assigning individual footnotes, you write footnotes and assign them to certain indicators and filters so they appear when users select them in the table builder. For example in the below, the footnote "This is a footnote" is assigned to "Headcount" indicator for all options within the "School type" filter.
 
@@ -426,7 +417,6 @@ We recommend that you only add footnotes once you are certain the data file is f
 
 ## Data blocks (tables and charts)
 
----
 
 A data block is a smaller cut of data from your original file that you can embed into your publication as a presentation table, build charts from, or link users directly to.
 
@@ -717,7 +707,6 @@ The above code should produce something along the lines of the following plots:
 
 ## Content
 
----
 
 In the content tab you can now start creating your release, embedding the data blocks you’ve created as you go.
 
@@ -757,7 +746,7 @@ Do not use footnotes in the text of your content. They’re designed for referen
 
 Any data tables should be included as data blocks, however you can also embed static html tables within a text box. These should only be used to present textual tables or for any small presentations of data that are not possible to do in a data block at the moment.
 
-<!-- gif this -->
+<!-- gif adding in a html table -->
 You can create static html tables for presenting information that isn't embedded in a data block. However, remember that *all of the data* included or referred to in your content should be available (or createable) from the downloadable open data files.
 
 While a release is in draft mode, comments can be added to text to help teams collaborate. Simply highlight the text you want to comment on and click on the speech bubble in the editing bar to add a comment.
@@ -774,7 +763,6 @@ When someone is editing a text box, it will now be instantly frozen for all othe
 
 ## Embedding R-Shiny blocks
 
----
 
 If you need to include a type of chart that isn't possible using the standard EES chart options, for example an interactive chart with filters, you can embed a block to display a custom R-Shiny produced chart.
 
@@ -785,15 +773,11 @@ Once you've got the R-Shiny app set up and hosted, you can embed it using the **
 ![The EES interface for embedding a Shiny chart](../images/tinyshiny-ees-block.PNG)
 
 
-<!-- [GLOSSARY LINKS]
-[REPLACE SOME OF THIS WITH CONTENT RMD LINKS] -->
-
 
 ---
 
 ## Glossary
 
----
 
 Our glossary on EES is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics - https://explore-education-statistics.service.gov.uk/glossary.
 
@@ -848,7 +832,6 @@ That's it, the system will automatically recognise that the link is for the glos
 
 ## Sign off
 
----
 
 Once you’re happy with your release you need to go to the sign off page and change it’s status in order to move it through the release pipeline.
 
@@ -909,7 +892,6 @@ If this is added but then needs to be changed or removed later in the year it is
 
 ## Pre-release access
 
----
 
 Prior to each release going live the production team are also able to grant pre-release access to a named group of users 24 hours before it goes live. These users do not require full access to the whole admin service. They will be able to see preview versions of any releases they have been granted access to.
 
@@ -967,7 +949,6 @@ Creating an amendment of a release will create a new version for which you can m
 
 ## Release notes
 
----
 
 When publishing a new amendment you should add a 'release note' to your release so users can be informed of what has changed:
 
@@ -1003,7 +984,6 @@ Once you're happy with your amendment it just needs to be [approved](#sign-off) 
 
 ## Methodology formatting
 
----
 
 Subheadings make it easier for your users to navigate through your methodology. When editing text blocks in your methodology, you can do this by highlighting your subheading and selecting "Heading 3" in place of "Paragraph":
 
@@ -1015,7 +995,6 @@ You can add further subheadings underneath this but try to limit the number of s
 
 ## Methodology images
 
----
 
 You can add images to methodology pages via the content editor.
 
@@ -1055,7 +1034,6 @@ Options available to publication owners:
 
 ## Publication management
 
----
 
 Use this page to change the details for your publication, such as the contact information or to add links to legacy releases on gov.uk.
 
@@ -1071,7 +1049,6 @@ It is possible to change the publication title via this page, however this shoul
 
 ## Create new release
 
----
 
 After finding the publication you want to create a release for, just press the button to create a new release.
 
@@ -1091,7 +1068,6 @@ The time period for the release should reflect the time period of the data that 
 
 ## Managing legacy releases
 
----
 
 Past publications on other services can be added to the previous releases links that appear on the top right of a release page by using the 'Manage legacy releases' section. In here you can add links to previous releases and choose the order in which they appear.
 

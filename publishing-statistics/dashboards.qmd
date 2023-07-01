@@ -51,7 +51,6 @@ The following sections cover the considerations in more detail, though when deve
 
 ## User needs
 
----
 
 When designing a government service, always start by learning about the people who will use it. If you do not understand who they are or what they need from your service, you cannot build the right thing.
 
@@ -69,11 +68,20 @@ See the [service manual](https://www.gov.uk/service-manual/user-research/start-b
 
 ---
 
-## Tools / software
+## Software choices
 
----
 
 When you make a decision about technology, you’re making a significant investment. The choices you make will have a huge impact on your ability to create, iterate and operate the service in a sustainable way. We should be choosing tools and technology that let us create a high quality service in a cost effective way and minimise the cost of changing direction in future.
+
+**For public facing dashboards we recommended using R Shiny.** 
+
+We feel that it best meets the service standards, it aligns with the departments RAP strategy for the use of R in in Official Statistics, and the general direction of the government analytical community. 
+
+R Shiny is incredibly customisable, and ideal for providing everything in one place - interactivity, user customised printable PDFs (replacing old mail merge solutions), and ease of use on a phone!
+
+R Shiny takes advantage of transferable knowledge and shared resources that already exist to minimise the costs and maximise the shared benefits.
+
+While we recommend R Shiny, teams may use other tools if it can be justified against the Service Standard [11. Choose the right tools and technology](https://www.gov.uk/service-manual/service-standard/point-11-choose-the-right-tools-and-technology).
 
 The most common dashboard options available to us are:
 
@@ -93,17 +101,12 @@ Some considerations to think about when choosing the tooling / software for a da
 - will it allow you to develop automated testing and CI to QA our dashboards?
 - does it align with the [AF expectation](https://www.gov.uk/guidance/af-learning-curriculum-technical) to move towards R and Python for analysis?
 
-For statistics production teams we'd recommended using R Shiny. We feel that it best meets the service standards, it aligns with the departments RAP strategy for the use of R in in Official Statistics, and the general direction of the government analytical community. It takes advantage of transferable knowledge and shared resources to minimise the costs and maximise the shared benefits.
-
-While we recommend R Shiny, teams can use other tools as long as you can justify it against Service Standard [11. Choose the right tools and technology](https://www.gov.uk/service-manual/service-standard/point-11-choose-the-right-tools-and-technology).
-
 The guidance on this page will focus on R Shiny. However, if you are using PowerBI you should also make use of the department's [PowerBI Dashboard standards](https://dfe-analytical-services.github.io/powerbi_dashboardstandards/), and aim to make use of reusable configurations where possible to ensure that duplication of effort across the department is minimised.
 
 ---
 
 ## Accessibility
 
----
 
 Government services must work for everyone who needs to use them. Public sector organisations have a legal duty to consider everyone’s needs when they’re designing and delivering services. Making a website or mobile app accessible means making sure it can be used by as many people as possible. This includes those with:
 
@@ -129,7 +132,6 @@ Analysts should familiarise themselves with the gov.uk guidance on [service acce
 
 ## Governance
 
----
 
 All teams developing dashboards to accompany Official Statistics should contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) for advice on the level of approval required as there may be times when HoP approval is needed in addition to team/unit leader approval. Approvals should be sent to the Statistics Development Team when asking for a new dashboard to be hosted on shinyapps.io.
 
@@ -146,7 +148,6 @@ Regular reflection on how teams are doing and finding ways to improve is an impo
 
 ## Iterative development
 
----
 
 Using [agile](https://www.gov.uk/service-manual/agile-delivery) methods means getting your service in front of real users as soon as possible. Then observing and generating data on how they use it and iterating the service based on what you’ve learned. Because you’re not specifying everything up front before you’ve developed an understanding of what users need, agile methods reduce the risk of delivering the wrong thing.
 
@@ -162,7 +163,6 @@ Continuous improvement means you can respond to changes in user needs, technolog
 
 ## Code testing
 
----
 
 Testing is a way to capture desired behaviour of your code, in such a way that you can automatically verify that it keeps working the way you expect over time. It is essential for making sure that code works the way that you intend it to, and keeps working even after you make changes to the code so that your users have access to a stable service. You need to test your service regularly as part of quality assurance (QA) to make sure that it:
 
@@ -180,7 +180,6 @@ For dashboards created in R Shiny, we strongly recommend a mix of unit tests and
 
 ## Assessing engagement
 
----
 
 Work out what success looks like for your service and identify metrics which will tell you what’s working and what can be improved, combined with user research. For dashboards this will likely be things like the number of users and interactions with what you have created.
 
@@ -198,7 +197,6 @@ Google Analytics is a free service that collects information on who visits your 
 
 ## Peer review
 
----
 
 Peer review is a quality assurance activity, where an analyst other than the original author, views and tests the usage of a product or specific piece of code. This allows a fresh pair of eyes to take a look at your work. It validates that you have taken a correct approach and may highlight errors. This constructive feedback helps you to improve the quality. It provides confidence in your work, and ensures that it is fit for purpose.
 
@@ -206,13 +204,6 @@ Peer review is a quality assurance activity, where an analyst other than the ori
 - Dashboards should also be peer reviewed by analysts outside of the subject area of the team.
 
 The Central Statistics Unit has a number of analysts experience with R Shiny dashboards and are happy to review any dashboards created, contact statistcs.development@education.gov.uk if you're interested in this. For more guidance on how to peer review, see the [peer review section of the Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html).
-
-<!--
-
-TODO: Service monitoring - how much of that can we set up centrally, what can teams do for themselves?
-
-TODO: Expanding on and giving templates for assessing performance
--->
 
 ---
 
@@ -226,7 +217,6 @@ How you choose to publish your R Shiny application will depend on the type of ac
 
 ## Internal only dashboards
 
----
 
 It's possible to publish dashboards that are only accessible to those on DfE kit, to do this you will need to publish via the departments RSConnect servers.
 
@@ -245,7 +235,6 @@ If you're running the app from an internal database, you'll need to contact the 
 
 ## Public dashboards
 
----
 
 The majority of dashboards made to support and augment our Official Statistics will be public facing. For public facing shiny apps you should publish via shinyapps.io. The statistics development team manage a subscription for this and can help you get set up.
 
@@ -305,14 +294,10 @@ The guidance on this page assumes you have prior knowledge of R, if you are new 
 
 ## How to start
 
----
 
 There are a lot of resources already available to support you when working with R Shiny, if you're new, then this [blog post](https://www.r-bloggers.com/2021/03/a-gentle-introduction-to-r-shiny/) provides a gentle introduction.
 
 Our [template shiny app repository](https://github.com/dfe-analytical-services/shiny-template) is a useful starting point for all public facing dashboards in the department. Please see the [dashboard template section](#dfe-dashboard-template) for guidance on what the dashboard template includes and how to use it.
-
-<!-- You can create your own repo from the template by using the 'use template' button available in GitHub:
-GIF!  https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/?utm_campaign=1559837005&utm_medium=social&utm_source=twitter&utm_content=1559837005 -->
 
 For more advanced shiny knowledge it's worth taking a look at the guide to [engineering production-grade shiny apps](https://engineering-shiny.org/).
 
@@ -372,7 +357,6 @@ You must have done the following before a dashboard can be published (the statis
 
 ## Standards to follow
 
----
 
 We expect all dashboards to follow a minimum set of standards to ensure coherence between our products and a minimum standard of quality for our end users.
 
@@ -406,7 +390,7 @@ One example of a dashboard for Official statistics that meets these regulations 
 `r knitr::include_graphics("../images/accessibility.PNG")`
 
 
-<!-- Couldn't work out how to fit this in, but worth keeping and combining with the gov.uk guidance on alt text? (https://www.w3.org/WAI/tutorials/../images/decision-tree/) -->
+<!-- TODO: Couldn't work out how to fit this in, but worth keeping and combining with the gov.uk guidance on alt text? (https://www.w3.org/WAI/tutorials/../images/decision-tree/) -->
 
 ---
 
@@ -427,8 +411,6 @@ Each report should include the department/agency logo in the top left corner. a 
 All dashboards should have a link to the source code, and information about who to contact for feedback/issues. You should be familiar with and follow the [gov.uk style guide](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style) as appropriate.
 
 Teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. Be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
-
-<!-- Palette stuff to put in here too when complete -->
 
 Charts using ggplot2 and plotly can take custom palettes using the `scale_fill_manual()` function, e.g. below:
 
@@ -605,8 +587,6 @@ See our [Git](../learning-development/git.html#storing-secure-variables) page fo
 
 ---
 
----
-
 # DfE Dashboard template
 
 ---
@@ -617,11 +597,10 @@ Our [template shiny app repository](https://github.com/dfe-analytical-services/s
 
 ## What's in the template
 
----
 
 The template provides code for a basic interactive dashboard, with an example line chart using drop-downs for education level and geographic levels. It also includes an example accessibility statement (this is a requirement for all public dashboards and must be filled in, see the [Accessibility](#accessibility) and [Accessibility testing](#accessibility-testing) sections earlier in this guidance), and a 'Support and feedback' page with suggested contact information and links.
 
-<!-- Add a screenshot here when Rich finalises styling -->
+View the [latest version of the template dashboard](https://department-for-education.shinyapps.io/dfe-shiny-template/).
 
 ---
 

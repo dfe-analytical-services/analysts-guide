@@ -21,7 +21,7 @@ More information on why EES was introduced and the functionality within the plat
 
 * All national, official and ad-hoc statistics should be [published on EES](#ees)
 * Management Information should be published on [.gov.uk](#gov.uk)
-* [Interactive dashboards](#dashboards) built for particular user needs can be published separately
+* [Interactive dashboards](#dashboards) built for particular user needs can be published separately, but should have a linked publication on either EES or GOV.UK
 
 The following table outlines the key differences between publishing via EES and the old method via [gov.uk:](https://www.gov.uk/government/organisations/department-for-education/about/statistics){target="_blank" rel="noopener noreferrer"}
 
@@ -49,7 +49,6 @@ All national, official and ad-hoc statistics should be published on EES. This se
 
 ## How to publish
 
----
 
 <html>
 <head>
@@ -66,7 +65,6 @@ All national, official and ad-hoc statistics should be published on EES. This se
 
 ## Publication checklist
 
----
 
 Before releasing statistics for the first time you may want to discuss the new process with key stakeholders and/or pre-release users to make them aware of the new service. You should also inform the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk) and [HoP Office](mailto:Hop.STATISTICS@education.gov.uk) teams.
 
@@ -101,7 +99,6 @@ Word templates for the data guidance, pra-list, and content can be found on [sha
 
 ## Linking to gov.uk
 
----
 
 You will need to arrange a gov.uk statistics publication page so that it links to EES. Here is how to do that:
 
@@ -144,22 +141,18 @@ When you raise the ticket please ensure that all the documents you submit are in
 
 ---
 
-# gov.uk
+# GOV.UK
 
 ---
 
-Management information releases can be published directly on gov.uk
-
+Management information releases can be published directly on gov.uk.
 
 ---
 
 ## How to publish
 
----
 
 Ahead of publication, you’ll need to [raise a ticket with the Digital communications (gov.uk) team](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=1f40a44ddb50fa005ca2fddabf961922&sysparm_category=611828a6db6c2f403b929334ca9619f6&catalog_id=-1){target="_blank" rel="noopener noreferrer"} and ask them to create a new release (or add to a series if this already exists).
-
-<!-- Needs fleshing out -->
 
 In your request, you’ll need to include:
 
@@ -180,9 +173,6 @@ When you raise the ticket please ensure that all the documents you submit are in
 
 ## Publication checklist
 
----
-
-<!-- Again needs fleshing out/based on memory and digging through emails atm! -->
 
 Before you start creating your release you should have: 
 
@@ -210,18 +200,9 @@ Guidance to follow when creating and publishing dashboards is available via the 
 
 ## How to publish
 
----
+We [recommend that teams use R Shiny](../publishing-statistics/dashboards.html#software-choices) to build and publish dashboards. Shiny applications are easily made accessible, and underlying code for Shiny apps can be published alongside for transparency.
 
-We recommend that teams use R Shiny to build and publish apps. Shiny apps are easily made accessible, and underlying code for Shiny apps can be published alongside for transparency.
-
-
-More information to follow.
+For more information on publishing dashboards, including template code and how to get started, see our [Public dashboards page](../publishing-statistics/dashboards.html).
 
 
 ---
-
-## Publication checklist
-
----
-
-More information to follow, contact [the Statistics Development team](mailto:Statistics.DEVELOPMENT@education.gov.uk) in the meantime.
