@@ -59,7 +59,7 @@ For data to be used with the table tool and charts in EES, it needs to be provid
   * whether a given column is a filter or indicator;
   * human readable name for use in tables and charts on EES;
   * filter grouping information;
-  * number of decimal places to display for indicator fields (i.e. allowing a lower precision to be presented in the dervied tables than the underlying data - useful for minimising rounding errors in aggregates);
+  * number of decimal places to display for indicator fields (i.e. allowing a lower precision to be presented in the derived tables than the underlying data - useful for minimising rounding errors in aggregates);
   * units for indicator fields (e.g. £, %);
 * The data should use the [appropriate GSS codes](#data-symbols) for suppressed, low, not available and not applicable entries.
 

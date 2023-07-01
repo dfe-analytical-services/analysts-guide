@@ -8,9 +8,6 @@ title: "RAP support"
 
 # Support on offer
 
----
-
-[RAP guidance](rap.html)
 
 Learning resources and materials for [SQL](../learning-development/sql.html), [R](../learning-development/r.html), and [Git](../learning-development/git.html)
 

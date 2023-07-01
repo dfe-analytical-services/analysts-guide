@@ -16,7 +16,7 @@ We expect any analyst working in statistics production to know and be able to im
 
 We expect managers of analysts working in statistics production to support and prioritise the development required to build the skills needed to implement RAP using the recommended tools. Managers should ensure that the processes for any publications they own meet at least good and great practice.
 
-More information, including definitions of the different levels of good, great, and best practice is on our [RAP guidance page](rap.html).
+More information, including definitions of the different levels of good, great, and best practice is on our [RAP in statistics guidance page](../RAP/rap-statistics.html).
 
 The [cross-government RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/) states a number of explicit expectations for analysts involved in the process, which are detailed in the following sections: [analyst leaders](#analyst-leaders), [analyst managers](#analyst-managers) and [analysts](#analysts).
 

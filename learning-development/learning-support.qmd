@@ -68,7 +68,7 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 ---
 
-For more information on how to use these tools in your analysis, please see the [processes and RAP](rap.html){target="_blank" rel="noopener noreferrer"} page.
+For more information on how to use these tools in statistics publications, please see the [processes and RAP](../RAP/rap-statistics.html){target="_blank" rel="noopener noreferrer"} page.
 
 
 This is by no means a finite list of resources, we want this to be added to and for it to develop over time - if you have any resources that you think could be added then we'd love to [hear from you](mailto:statistics.development@education.gov.uk). 
