@@ -1,12 +1,12 @@
 ---
-title: "Best practice for publishing dashboards"
+title: "Public dashboards"
 ---
 
 ```{r include=FALSE}
 require(knitr)
 ```
 
-<p class="text-muted">Guidance for publishing Official statistics dashboards</p>
+<p class="text-muted">Guidance for publishing public statistics dashboards</p>
 
 ---
 

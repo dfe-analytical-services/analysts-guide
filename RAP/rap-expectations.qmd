@@ -1,44 +1,8 @@
 ---
-title: "RAP information for managers"
+title: "RAP expectations"
 ---
 
-<p class="text-muted">This guidance is to help answer questions about RAP and act as a tool for anyone managing those implementing RAP.</p>
-
----
-
-# Support on offer
-
----
-
-[RAP guidance](rap.html)
-
-Learning resources and materials for [SQL](../learning-development/sql.html), [R](../learning-development/r.html), and [Git](../learning-development/git.html)
-
-Email support
-
- * [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)  
- * 9-5, aim to reply between 1-2 days.
-
-Technical workshops
-
- *	In person workshops covering a specific technical skill that can be used to support the production of outputs within stats as a service (mainly statistics releases).
- *	3 hours long, with people working in small groups.
- *	Recently circled the sites running an introduction to Git, have started preparing an introduction to R and RAP techniques next.
- * Contact statistics.development@education.gov.uk to register interest in workshops happening at your site or to request new topics!
-
-Partnership programme
-
- *	Dedicated resource to support development work, either building skills or working on statistics outputs.
- *	A short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.
- * Contact statistics.development@education.gov.uk if you're interested in finding out more about the support we can give.
-
-We’re also considering a dedicated G6 / G7 programme to build confidence and set expectations. This may include:
-
- * A 2-hour workshop explaining what teams are expected to do when creating and publishing statistics. Including tools and skills required, RAP, using EES, content design, release clearance, UE + ongoing publishing and where teams can go for help.
- * There will be take away materials that cover lines to take and where to get support.
- * All G6s and G7s are expected to do this, with repeats running to ensure everyone gets a chance to attend.
- 
-Keep an eye out on teams for this programme being advertised and contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+<p class="text-muted">Expectations for analysts and senior colleagues around RAP</p>
 
 ---
 
@@ -103,6 +67,3 @@ Analysts working on analysis in government will:
 - learn the skills they need to implement RAP principles
 - engage with users of their analysis to demonstrate the value of RAP principles and build motivation for development
 - deliver their analysis using RAP
-
-
-

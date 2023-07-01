@@ -1,5 +1,5 @@
 ---
-title: "EES - good practice examples"
+title: "Good examples in EES"
 ---
 
 <p class="text-muted">Examples of good practice in EES, from file names to content</p>

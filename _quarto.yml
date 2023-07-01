@@ -9,7 +9,7 @@ website:
   repo-url: https://github.com/dfe-analytical-services/statisticians-guide
   repo-actions: [issue]
   google-analytics: "G-KBJCBD114T"
-  cookie-consent: true
+  cookie-consent: false
 
   page-footer:
     right: "This page is maintained by statistics.development@education.gov.uk"
@@ -94,21 +94,22 @@ website:
       - section: "Publishing statistics"
         contents:
           - publishing-statistics/pub.qmd
+          - publishing-statistics/dashboards.qmd
           - publishing-statistics/ees.qmd
 #          - publishing-statistics/accessibilit-ees.qmd
-          - publishing-statistics/examples.qmd
-          - publishing-statistics/dashboards.qmd
           - publishing-statistics/embedded-charts.qmd
+          - publishing-statistics/examples.qmd
       - section: "Understanding users"
         contents:
           - understanding-users/user-eng.qmd
           - understanding-users/user-analytics.qmd
       - section: "Reproducible Analytical Pipelines (RAP)"
         contents: 
-          - RAP/rap.qmd
-          - RAP/rap-managers.qmd
+          - RAP/expectations.qmd
+          - RAP/support.qmd
           - RAP/rap-faq.qmd
-          
+          - RAP/rap-statistics.qmd
+
 format:
   html:
     theme:

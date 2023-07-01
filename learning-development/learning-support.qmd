@@ -9,7 +9,29 @@ title: "Learning support"
 
 As statistics producers we require a variety of tools to be able to process our data. Below are the recommended tools that will give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.
 
-For best practice when using software and coding in our process, see our [guidance on RAP](rap.html){target="_blank" rel="noopener noreferrer"} the [DfE Good Code Practice guide](https://dfe-analytical-services.github.io/good-code-practice/index.html){target="_blank" rel="noopener noreferrer"}.
+For best practice when using software and coding in our process, see our [guidance on RAP expectations](../RAP/rap-expectations.html){target="_blank" rel="noopener noreferrer"} the [DfE Good Code Practice guide](https://dfe-analytical-services.github.io/good-code-practice/index.html){target="_blank" rel="noopener noreferrer"}.
+
+## Email support
+
+ * [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)  
+ * 9-5, aim to reply between 1-2 days.
+
+## Technical workshops
+
+ *	In person workshops covering specific technical skills in practice
+ *	3 hours long, with people working in small groups
+ *	Recently circled the sites running an introduction to Git, and introduction to R and RAP.
+ * Contact statistics.development@education.gov.uk to register interest in workshops happening at your site or to request new topics!
+
+## Partnership programme
+
+ *	Dedicated resource to support development work, either building skills or working on statistics outputs.
+ *	A short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.
+ * Contact statistics.development@education.gov.uk if you're interested in finding out more about the support we can give.
+
+## Specific resources
+
+We also have specific learning resources and materials for [SQL](../learning-development/sql.html), [R](../learning-development/r.html), and [Git](../learning-development/git.html)
 
 
 ---
@@ -39,29 +61,6 @@ For best practice when using software and coding in our process, see our [guidan
 - [DfE Quality Assurance wiki](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx){target="_blank" rel="noopener noreferrer"} -  much of this is aimed at areas that use modelling, plenty of it is applicable to how we QA our data too.
 
 - [David Sands' Boons of R and Git](https://psysandsy.github.io/boons-r-git.html){target="_blank" rel="noopener noreferrer"} - a helpful guide o why R and Git are worth your time.
-
----
-
-# Partnership programme
-
----
-
-The Statistics Development Team invites teams to take part in our partnership programme. The programme can help individuals with:
-
-* Using a relevant project to develop new coding skills and improving current confidence
-* Streamlining data production processes to free up time for secondary analysis
-* Improving the presentation and consistency of statistical products for users
-
-The partnership programme is a great opportunity to work with the Statistics Development Team, using protected time to work on things that are otherwise usually deprioritised. We understand the pressures of BAU work mean that development time is often hard fit in, but this programme offers designated support and clear project planning from our team so that these improvements can be achieved. Putting in the work at these early stages will save more time and resource in the long run, and we are keen to support as many teams as possible to free up time in the future for even more interesting analysis.
-
-**The Ask**
-
-We ask that you/a designated member of your team are given protected time to work on a specific project, with support from us. Some examples of previous projects we have helped support are:
-
-* The automation of the SEN2 release, creating automated QA reports and all EES outputs at the click of a button.
-* The automation of the HoP rolling brief document, removing arduous tasks like copying, pasting, and formatting in Word.
-
-The time commitment of the programme will be dependent on the size of the work and what level of support is required. [Please get in touch with us](mailto:Statistics.DEVELOPMENT@education.gov.uk) if you are interested and would like to discuss further.
 
 ---
 
