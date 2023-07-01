@@ -3,7 +3,7 @@ on:
   push:
     branches: main
 
-name: Quarto Publish
+name: Publish to pages
 
 jobs:
   build-deploy:
@@ -19,6 +19,8 @@ jobs:
         
       - name: Restore renv
         uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 1
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
