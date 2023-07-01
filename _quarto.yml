@@ -96,7 +96,7 @@ website:
           - publishing-statistics/pub.qmd
           - publishing-statistics/dashboards.qmd
           - publishing-statistics/ees.qmd
-#          - publishing-statistics/accessibilit-ees.qmd
+          - publishing-statistics/accessibilit-ees.qmd
           - publishing-statistics/embedded-charts.qmd
           - publishing-statistics/examples.qmd
       - section: "Understanding users"
