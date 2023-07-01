@@ -1,0 +1,16 @@
+---
+title: Page not found
+---
+
+<center>Error 404 - the page you requested cannot be found.</center>
+
+
+<!-- TODO: make a lost version of frederick -->
+
+
+![](images/builder-duck.PNG){fig-align="center"}
+
+<center>Try using the search bar on the left to find what you were looking for.</center>
+
+
+<center>If you are still struggling, contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) for advice.</center>
