@@ -1,0 +1,103 @@
+project: 
+  type: website
+  
+website: 
+#  reader-mode: true
+  page-navigation: true
+  title: "Statistician's Guide" 
+  site-url: "https://dfe-analytical-services.github.io/statisticians-guide/" 
+  repo-url: https://github.com/dfe-analytical-services/statisticians-guide
+  repo-actions: [issue]
+
+  page-footer:
+    right: "This page is maintained by statistics.development@education.gov.uk"
+    left: "Department for Education, 2023"
+  
+  search:
+    location: navbar
+    type: textbox
+  
+  # navbar:
+  #   background: primary
+  #   search: true
+  #   left:
+  #     - text: "Homepage"
+  #       file: index.qmd
+  #     - text: "Learning resources"
+  #       menu:
+  #         - text: "General resources"
+  #           file: learning-development.qmd
+  #         - text: "SQL"
+  #           file: sql.qmd
+  #         - text: "R"
+  #           file: r.qmd
+  #         - text: "Git"
+  #           file: git.qmd
+          
+  sidebar:
+    logo: "images/duck_guidance.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: envelope
+        href: mailto:statistics.development@education.gov.uk
+        text: "Email us"
+      - icon: microsoft-teams
+        href: mailto:statistics.development@education.gov.uk
+        text: "Statistics teams channel"
+      - icon: camera-reels
+        href: mailto:statistics.development@education.gov.uk
+        text: "Statisticians Guide to the Galaxy recordings and slides"
+      - icon: graph-up
+        href: https://explore-education-statistics.service.gov.uk/
+        text: "Explore education statistics"
+      - icon: github
+        href: https://github.com/dfe-analytical-services/statisticians-guide
+        text: "Source code"
+
+    style: "floating"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Welcome
+      - section: "Learning resources"
+        contents:
+          - learning-development/learning-support.qmd
+          - learning-development/sql.qmd
+          - learning-development/r.qmd
+          - learning-development/git.qmd
+      - section: "Creating statistics"
+        contents:
+          - creating-statistics/rap.qmd
+          - creating-statistics/rap-managers.qmd
+          - creating-statistics/ud.qmd
+          - creating-statistics/cd.qmd
+      - section: "Publishing statistics"
+        contents:
+          - publishing-statistics/pub.qmd
+          - publishing-statistics/ees.qmd
+#          - publishing-statistics/accessibilit-ees.qmd
+          - publishing-statistics/examples.qmd
+          - publishing-statistics/dashboards.qmd
+          - publishing-statistics/embedded-charts.qmd
+      - section: "Understanding users"
+        contents:
+          - understanding-users/user-eng.qmd
+          - understanding-users/user-analytics.qmd
+
+format:
+  html:
+    theme:
+      light: slate
+      dark: united
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+
+filters:
+  - include-files.lua
+  - quarto
+
+  
