@@ -8,6 +8,8 @@ website:
   site-url: "https://dfe-analytical-services.github.io/statisticians-guide/" 
   repo-url: https://github.com/dfe-analytical-services/statisticians-guide
   repo-actions: [issue]
+  google-analytics: "G-KBJCBD114T"
+  cookie-consent: true
 
   page-footer:
     right: "This page is maintained by statistics.development@education.gov.uk"
@@ -87,8 +89,6 @@ website:
           - learning-development/git.qmd
       - section: "Creating statistics"
         contents:
-          - creating-statistics/rap.qmd
-          - creating-statistics/rap-managers.qmd
           - creating-statistics/ud.qmd
           - creating-statistics/cd.qmd
       - section: "Publishing statistics"
@@ -103,7 +103,12 @@ website:
         contents:
           - understanding-users/user-eng.qmd
           - understanding-users/user-analytics.qmd
-
+      - section: "Reproducible Analytical Pipelines (RAP)"
+        contents: 
+          - RAP/rap.qmd
+          - RAP/rap-managers.qmd
+          - RAP/rap-faq.qmd
+          
 format:
   html:
     theme:

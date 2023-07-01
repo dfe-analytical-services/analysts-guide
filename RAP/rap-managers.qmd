@@ -1,0 +1,108 @@
+---
+title: "RAP information for managers"
+---
+
+<p class="text-muted">This guidance is to help answer questions about RAP and act as a tool for anyone managing those implementing RAP.</p>
+
+---
+
+# Support on offer
+
+---
+
+[RAP guidance](rap.html)
+
+Learning resources and materials for [SQL](../learning-development/sql.html), [R](../learning-development/r.html), and [Git](../learning-development/git.html)
+
+Email support
+
+ * [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)  
+ * 9-5, aim to reply between 1-2 days.
+
+Technical workshops
+
+ *	In person workshops covering a specific technical skill that can be used to support the production of outputs within stats as a service (mainly statistics releases).
+ *	3 hours long, with people working in small groups.
+ *	Recently circled the sites running an introduction to Git, have started preparing an introduction to R and RAP techniques next.
+ * Contact statistics.development@education.gov.uk to register interest in workshops happening at your site or to request new topics!
+
+Partnership programme
+
+ *	Dedicated resource to support development work, either building skills or working on statistics outputs.
+ *	A short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.
+ * Contact statistics.development@education.gov.uk if you're interested in finding out more about the support we can give.
+
+We’re also considering a dedicated G6 / G7 programme to build confidence and set expectations. This may include:
+
+ * A 2-hour workshop explaining what teams are expected to do when creating and publishing statistics. Including tools and skills required, RAP, using EES, content design, release clearance, UE + ongoing publishing and where teams can go for help.
+ * There will be take away materials that cover lines to take and where to get support.
+ * All G6s and G7s are expected to do this, with repeats running to ensure everyone gets a chance to attend.
+ 
+Keep an eye out on teams for this programme being advertised and contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+
+---
+
+# RAP Expectations
+
+---
+
+As government analysts working with statistics, we are required to ensure that our analysis is reproducible, transparent, and robust, using coding and code management best practices (source [GSG competency framework](https://analysisfunction.civilservice.gov.uk/policy-store/competency-framework-for-the-government-statistician-group-gsg/)). RAP is a cross-government requirement to help analysts adopt best practices.
+
+We expect any analyst working in statistics production to know and be able to implement RAP principles, using the recommended tools to meet at least good and great practice. 
+
+We expect managers of analysts working in statistics production to support and prioritise the development required to build the skills needed to implement RAP using the recommended tools. Managers should ensure that the processes for any publications they own meet at least good and great practice.
+
+More information, including definitions of the different levels of good, great, and best practice is on our [RAP guidance page](rap.html).
+
+The [cross-government RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/) states a number of explicit expectations for analysts involved in the process, which are detailed in the following sections: [analyst leaders](#analyst-leaders), [analyst managers](#analyst-managers) and [analysts](#analysts).
+
+---
+
+## Analyst leaders 
+
+---
+
+Those giving senior sign off on publications and running analytical functions, usually G6 and SCS, analyst leaders will:
+
+- ensure their analysts build RAP learning and development time into work plans
+- help their teams to work with DDaT professionals to share knowledge
+- promote a “RAP by default” approach for all appropriate analysis
+- write and implement strategic plans to develop new analyses with RAP principles, and to redevelop existing products with RAP principles
+- lead their RAP champions to advise analysis teams on how to implement RAP
+- help teams to incorporate RAP development into workplans
+- identify the most valuable projects by looking at how much capability the team already has and how risky and time-consuming the existing process is
+- communicate the benefits of RAP to analysts, managers, and users
+
+---
+
+## Analyst managers 
+
+---
+
+Roughly equivalent to Team Leaders and G7, analyst managers will:
+
+- work with security and IT teams to give analysts access to the right tools
+- work with security and IT teams to develop platforms that are easy for analysts to access, flexible and responsive to the needs of analysts
+- work with security, IT, and data teams to make sure that the tools data analysts need are available in the right place and are easy to access
+- build extra time into projects to adopt new skills and practices where appropriate
+- learn the skills they need to manage software
+- evaluate RAP projects within organisations to understand and demonstrate the benefits of RAP
+- mandate their teams use RAP principles whenever possible
+
+---
+
+## Analysts 
+
+---
+
+Analysts working on analysis in government will:
+
+- use open-source tools wherever whenever appropriate
+- open source their code
+- work with data engineers and architects to make sure that source data are versioned and stored so that analysis can be reproduced
+- learn the skills they need to implement RAP principles
+- engage with users of their analysis to demonstrate the value of RAP principles and build motivation for development
+- deliver their analysis using RAP
+
+
+
