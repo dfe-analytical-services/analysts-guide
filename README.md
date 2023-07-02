@@ -1,6 +1,6 @@
 [![Publish to pages](https://github.com/dfe-analytical-services/statisticians-guide/actions/workflows/publish.yml/badge.svg)](https://github.com/dfe-analytical-services/statisticians-guide/actions/workflows/publish.yml)
 
-# DfE Statistics Production Guidance
+# Statistician's Guide
 
 ## Introduction
 
