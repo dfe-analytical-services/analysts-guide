@@ -4,7 +4,7 @@
 
 ## Detailed description of changes
 
-## Issue ticket number and link
+## Issue ticket number/s and link
 
 ## Checklist before requesting a review
 - [ ] I have checked the contributing guidelines
