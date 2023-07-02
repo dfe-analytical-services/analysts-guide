@@ -10,7 +10,9 @@ website:
   repo-url: https://github.com/dfe-analytical-services/statisticians-guide
   repo-actions: [edit, issue]
   google-analytics: "G-KBJCBD114T"
-  cookie-consent: false
+  cookie-consent: 
+    style: headline
+    palette: dark
 
   page-footer:
     right: "This page is maintained by statistics.development@education.gov.uk"
@@ -48,33 +50,43 @@ website:
         text: "Email us"
       - icon: microsoft-teams
         menu: 
-          - text: "DfE analytical community"
-            href: mailto:statistics.development@education.gov.uk
+          - text: "DfE analysts network"
+            href: https://teams.microsoft.com/l/team/19%3a50f82a2718184a0e98ba86c3d411a02f%40thread.skype/conversations?groupId=6572094f-43a3-4537-bcf0-fc27dc6557ed&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9
+            target: _blank
           - text: "Statistics production"
-            href: mailto:statistics.development@education.gov.uk
+            href: https://teams.microsoft.com/l/team/19%3ae3c8551e86094e259a60848fcff4dbc1%40thread.skype/conversations?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9
+            target: _blank
           - text: "DfE R community"
-            href: mailto:statistics.development@education.gov.uk
+            href: https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9
+            target: _blank
             
       - icon: camera-reels
         menu:
-          - href: mailto:statistics.development@education.gov.uk
+          - href: https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Statistician%27s%20Guide%20to%20the%20Galaxy?csf=1&web=1&e=owScaj
+            target: _blank
             text: "Guide to the Galaxy sessions"
-          - href: mailto:statistics.development@education.gov.uk
+          - href: https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Explore%20Education%20Statistics?csf=1&web=1&e=HVpi0D
+            target: _blank
             text: "EES show and tells"
-          - href: mailto:statistics.development@education.gov.uk
+          - href: https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series?csf=1&web=1&e=H0pcSH
+            target: _blank
             text: "RAP knowledge share series"
-          - href: mailto:statistics.development@education.gov.uk
+          - href: https://educationgovuk.sharepoint.com/sites/sarpi/g/AC/Coffee%20and%20Coding.aspx?xsdata=MDV8MDF8fGU5YTkwYWU1OTNiNjQzZTIyZTM2MDhkYjVhY2MxN2JlfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2MzgyMDM2MDQ4MjEyMjUwMTR8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPbTFsWlhScGJtZGZXVlJuZUUxRVVUTlphbGwwVGpKUk1FNTVNREJhYW1zMVRGUnJNbHBYV1hSTmVtTjZXbXBCTWxwdFZUQlBWMVV3UUhSb2NtVmhaQzUyTWk5dFpYTnpZV2RsY3k4eE5qZzBOell6TmpneE5qRXh8YjdlZWE0MGYzNDg5NGYxYzJlMzYwOGRiNWFjYzE3YmV8MmE3NzU1YzRmOWMyNDZlOTkwYWVmMjlkZjY5NjczZWE%3D&sdata=ajlKYUZuNHFyNU9XSm5WR3ZZaUZHZDB4bjVJYkJzRFZNc0U1Uit5V1Q5cz0%3D&ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CTess%2EWILLIAMS%40EDUCATION%2EGOV%2EUK&OR=Teams%2DHL&CT=1684763684990&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA0MDIwMjcwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D
+            target: _blank
             text: "Coffee and coding sessions"            
             
       - icon: graph-up
         href: https://explore-education-statistics.service.gov.uk/
+        target: _blank
         text: "Explore education statistics"
         
       - icon: github
         menu:
           - href: https://github.com/dfe-analytical-services/statisticians-guide
+            target: _blank
             text: "Source code"
           - href: https://github.com/dfe-analytical-services/statisticians-guide/issues/new
+            target: _blank
             text: "Suggest changes"
             
     style: "floating"
@@ -124,4 +136,5 @@ format:
 
 filters:
   - include-files.lua
+  - newpagelink.lua
   - quarto
