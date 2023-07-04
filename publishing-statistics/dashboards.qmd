@@ -583,6 +583,49 @@ See our [Git](../learning-development/git.html#storing-secure-variables) page fo
 
 ---
 
+## Publishing your dashboard
+
+---
+
+DfE Shiny applications are published via the DfE Analytical Services [shinyapps.io](https://www.shinyapps.io/) account. You need to alert the statistics development team of any new dashboard publication as early in development as possible and keep us updated on expected publication date. Update the stats development team on any subsequent data or major functional updates to the dashboard publication at least a week prior to re-publishing with the update. Deploying to shinyapps requires the DfE platform codes to be entered into the repository secrets area of your app. This needs to be done by the stats development team.
+Authorisation of a publication should be requested from the relevant G6 or DD and the stats development team (with the former authorisation e-mail being forwarded on to the [Statistics Deveopment Team](mailto:statistics.development@education.gov.uk)).
+
+If you are publishing a dashboard using already published data, then all of your code and data should be on GitHub. You may have decided to password-protect the dashboard URL, in which case, you should make the [Statistics Deveopment Team](mailto:statistics.development@education.gov.uk) aware of your publication date so that they can remove the password-protection at 9:30 on publication day, making the dashboard visible to the public.
+
+If you are publishing a new dashboard for the first time that uses unpublished data, then you should have followed the [guidance on using dummy data](#dummy-data). This means that the unpublished data should not be added to GitHub until the day of publication. You should follow steps 1-9 in the below section on the day before and day of publication.
+
+<div class="alert alert-dismissible alert-danger">
+  Be sure to read the guidance carefully, **do not** commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact [Statistics Deveopment Team](mailto:statistics.development@education.gov.uk) immediately with the full details of what has been uploaded to GitHub and when.
+</div>
+
+---
+
+### Updating data in a dashboard
+
+---
+
+As mentioned in the [public dashboards section](#public-dashboards), a public dashboard should not be updated with unpublished data until the data is published. However, it is possible to clone the repo and run it locally with unpublished data for testing purposes (see our [guidance on testing with unpublished data](#testing-with-unpublished-data)). This guidance applies to both adding real data to a dashboard that previously used dummy data, and to adding updated data to an existing dashboard.
+
+On the day prior to publication:
+
+1. Create a local branch which you will use to update the data. To do this open your local version of the repo, navigate to the Git window, ensure the current branch is main (see 1) as this is the code producing the current live version of the app. If you're happy the current branch is main, then do a pull to ensure it is up-to-date (see 2). Then click the new branch button (see 3).
+
+![](../images/create_new_branch.png)
+
+2. Give your branch a descriptive name, for example, for a data update for publication on a given date, incorporate the date into the branch name (i.e. data_update_01Jan_2023). Click create.
+3. You can now add your unpublished data files to the data folder in your local copy of the repository (in the file explorer). If you have already added the data using .gitignore as described in the [guidance on testing with unpublished data](#testing-with-unpublished-data), you can now remove the file name from the .gitignore file. You can also remove any dummy data files or old data files from the folder.
+4. Now open the script that reads in data for your dashboard and edit the file paths to point at the new data files.
+5. run tidy_code() and run_tests_locally() (see [guidance on UI tests](#ui-tests)). If changes are found when running the tests locally, make sure you look through these differences and understand them. If you are happy with the changes found in the tests (i.e. they are expected due to your updates), update the .json files. These are tested via GitHub actions every time you do a pull request, so you should always run them in advance of any pull request.
+6. You can run your app to test that it is working, but **do not** commit or push this branch yet.
+
+On the day of publication:
+
+7. At 9:30 on publication day, commit and push the changes in your new branch to GitHub. This makes the data files publicly available via GitHub and so should not be done until 9:30 on the day of publication, however this step does not update the dashboard.
+8.	On the GitHub repo, you should now see a prompt to open a pull request. You should do this, following the template, ticking the boxes to show you have completed tests locally as required and provide details of the changes (i.e. that you've updated to include the most recent data, including dates).
+9. As you have already completed tests locally (step 5), you do not have to wait for the tests to complete when you open the pull request, you can click to merge into main straight away. This should start the process of updating the data on the dashboard. You can view the progress and time taken to do this by opening the GitHub actions tab and looking at the shiny-deploy action. Once the shiny-deploy action is complete, the dashboard will have updated.
+
+---
+
 # DfE Dashboard template
 
 ---
