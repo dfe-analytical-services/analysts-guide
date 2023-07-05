@@ -621,7 +621,7 @@ On the day prior to publication:
 On the day of publication:
 
 7. At 9:30 on publication day, commit and push the changes in your new branch to GitHub. This makes the data files publicly available via GitHub and so should not be done until 9:30 on the day of publication, however this step does not update the dashboard.
-8.	On the GitHub repo, you should now see a prompt to open a pull request. You should do this, following the template, ticking the boxes to show you have completed tests locally as required and provide details of the changes (i.e. that you've updated to include the most recent data, including dates).
+8. On the GitHub repo, you should now see a prompt to open a pull request. You should do this, following the template, ticking the boxes to show you have completed tests locally as required and provide details of the changes (i.e. that you've updated to include the most recent data, including dates).
 9. As you have already completed tests locally (step 5), you do not have to wait for the tests to complete when you open the pull request, you can click to merge into main straight away. This should start the process of updating the data on the dashboard. You can view the progress and time taken to do this by opening the GitHub actions tab and looking at the shiny-deploy action. Once the shiny-deploy action is complete, the dashboard will have updated.
 
 ---
