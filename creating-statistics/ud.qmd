@@ -916,7 +916,17 @@ You can also see an example with apprenticeship data file, including the corresp
 
 ---
 
-`r knitr::kable(apprenticeship, caption = "Data file")`
+Data file.
+
+::: {.table-responsive}
+
+| time_period | ... | country_name | appr_type        | appr_exact	     | starters | drop_outs | drop_out_rate |
+|-------------|-----|--------------|------------------|------------------|----------|-----------|---------------|
+| 2018        | ... | England      | Hair and beauty  | Hairdressing     | 200      | 10        | 0.05          |
+| 2018        |	... | England      | Hair and beauty  | Beauty therapy   | 100      | 2         | 0.02          |
+| 2018        |	... |	England      | Rail engineering |	Track signalling | 80       | 4         | 0.05          |
+
+:::
 
 ---
 
