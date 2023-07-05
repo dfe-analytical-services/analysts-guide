@@ -532,27 +532,13 @@ SET NOCOUNT ON;
 
 ---
 
-This error is usually due to Rtools not being properly installed, this has become fairly common since it has been dropped from the software centre. There have been several requests to read it, though as of yet none have succeeded. For now there's a workaround to this.
+This error will appear when trying to restore old package versions using `renv::restore()`. It is usually due to Rtools not being properly installed, and therefore your system is struggling to install the older version of the package that hasn't been provided by CRAN.ware centre. 
 
-You can [install Rtools as a direct download from CRAN](https://cran.r-project.org/bin/windows/Rtools/). On there, pick the right version of RTools for your version of R, download the file and install.
+The solution takes a few minutes, but is relatively straightforward, you can [install Rtools as a direct download from CRAN](https://cran.r-project.org/bin/windows/Rtools/). On there, pick the right version of RTools for your version of R, download the file and install.
 
-<div class="alert alert-dismissible alert-info">
-When downloading RTools you may need to confirm that you understand the risks of downloading an .exe file from an unknown source, this is common, as this is a trusted source, you can click accept.
+Set the install location to your c drive, for example, if installing for R4.2.2, install RTools42 to `C:\rtools42` (this is the default location).
 
-When running the .exe file, Windows Defender may step in and act like it's not going to let you progress any further. If this happens you'll need to click "More info" and only then can you select something like "install anyway".
-</div>
-
-Set the install location to `C:\rtools40` (it is often this by default)
-
-Next you need to add it to the PATH variable. We can't edit this without an admin password, though you can temporarily set it to allow you to restore from renv, by doing it from within the R console.
-
-<div class="alert alert-dismissible alert-info">
-This only sets it temporarily for as long as the R session is running, you'll need to rerun each time you're in an R session and need it.
-</div>
-
-> old_path <- Sys.getenv("PATH")
-> Sys.setenv(PATH = paste(old_path, "C:\\rtools40\\usr\\bin", sep = ";"))
-> Sys.getenv("PATH")
+Once it's installed close and reopen RStudio and run `renv::restore()` again - it should hopefully now restore and install your packages successfully!
 
 ---
 
