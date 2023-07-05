@@ -555,3 +555,16 @@ This only sets it temporarily for as long as the R session is running, you'll ne
 > Sys.getenv("PATH")
 
 ---
+
+### Packages not downloading due to "wininet" error (renv 0.17)
+
+---
+
+Packages are generally downloaded from CRAN using one of two methods: wininet or curl. Since renv version 0.17, analysts potentially hit an error associated with renv defaulting to wininet, whilst R defaults to curl, causing package downloads to fail. To fix this issue, analysts should change their default download method with renv to be curl. This can be done across all R-projects on your machine, by setting the default in your global R environment file. To do this, open up a bash terminal and enter the following command:
+
+`echo 'RENV_DOWNLOAD_METHOD = "curl")' >> ~/.Renviron`
+
+Then restart R-Studio and downloads with renv should now succeed.
+
+---
+
