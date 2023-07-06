@@ -778,27 +778,27 @@ This guidance has been written by collating the most up to date advice and guida
 
 Ethnicity breakdowns should be presented within the standard field names in any data files containing ethnicity breakdowns: **ethnicity_major**, **ethnicity_minor** or **ethnicity_detailed**. The first two are outlined in reference to the GSS guidelines on ethnic groupings below, whilst the third is for any ethnicity fields containing finer grained breakdowns than described in ethnicity_minor below.
 
-The GSS publish standards on how to collect ethnicity data based on research conducted for the UK Census. The current guidelines (shown below) were developed as part of the 2011 Census and were unchanged in the 2021 census. We aim to follow as closely as reasonable to the GSS standards and guidance.
+The GSS publish standards on how to collect ethnicity data based on research conducted for the UK Census. The current guidelines (shown below) were developed as part of the 2011 Census and were unchanged in the 2021 census. We aim to follow as closely as reasonable to the GSS standards and guidance. Note the use of spaces around forward-slashes, which allows us to meet accessibility standards (in particular for the use of screen readers) as well as improving automated wrapping in text and value boxes.
 
 
 | ethnicity_major |    ethnicity_minor                                  |
 |------------|------------------------------------------------|
-| **White** |    English/Welsh/Scottish/Northern Irish/British    |
+| **White** |    English / Welsh / Scottish / Northern Irish / British    |
 |           |    Irish                                            |
 |           |    Gypsy or Irish Traveller                         |
 |           |    Any other White background                       |
-| **Mixed/Multiple ethnic groups** |    White and Black Caribbean |
+| **Mixed / Multiple ethnic groups** |    White and Black Caribbean |
 |           |    White and Black African                          |
 |           |    White and Asian                                  |
-|           |    Any other Mixed/Multiple ethnic background       |
-| **Asian/Asian British** |    Indian                             |
+|           |    Any other Mixed / Multiple ethnic background       |
+| **Asian / Asian British** |    Indian                             |
 |           |    Pakistani                                        |
 |           |    Bangladeshi                                      |
 |           |    Chinese                                          |
 |           |    Any other Asian background                       |
-| **Black/African/Caribbean/Black British** |    African          |
+| **Black / African / Caribbean / Black British** |    African          |
 |           |    Caribbean                       |
-|           |    Any other Black/African/Caribbean background                       |
+|           |    Any other Black / African / Caribbean background                       |
 | **Other ethnic group** |    Arab                       |
 |           |    Any other ethnic group                       |
 | **Unknown** | Unknown |
@@ -834,11 +834,11 @@ Statistics producers should avoid where possible the practice of reporting aggre
 
 - **White**
 
-- **Mixed/Multiple ethnic groups**
+- **Mixed / Multiple ethnic groups**
 
-- **Asian/Asian British**
+- **Asian / Asian British**
 
-- **Black/African/Caribbean/Black British**
+- **Black / African / Caribbean / Black British**
 
 - **Other ethnic group**
 
