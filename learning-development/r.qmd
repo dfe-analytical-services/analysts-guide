@@ -541,3 +541,16 @@ Set the install location to your c drive, for example, if installing for R4.2.2,
 Once it's installed close and reopen RStudio and run `renv::restore()` again - it should hopefully now restore and install your packages successfully!
 
 ---
+
+### Packages not downloading due to "wininet" error (renv 0.17)
+
+---
+
+Packages are generally downloaded from CRAN using one of two methods: wininet or curl. Since renv version 0.17, analysts potentially hit an error associated with renv defaulting to wininet, whilst R defaults to curl, causing package downloads to fail. To fix this issue, analysts should change their default download method with renv to be curl. This can be done across all R-projects on your machine, by setting the default in your global R environment file. To do this, open up a bash terminal and enter the following command:
+
+`echo 'RENV_DOWNLOAD_METHOD = "curl")' >> ~/.Renviron`
+
+Then restart R-Studio and downloads with renv should now succeed.
+
+---
+
