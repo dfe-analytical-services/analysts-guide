@@ -23,7 +23,7 @@ We hope it can prove a useful resource for everyone from the most experienced ri
 
 ## Learning and development
 
-[General resources](learning-development/learning-development.html)
+[General resources](learning-development/learning-support.html)
 - Useful learning resources, and support to get you started
 
 [SQL](learning-development/sql.html)

@@ -73,6 +73,8 @@ An example pair of data and meta-data files are illustrated in the files and tab
 Note that the mandatory columns time_identifier, geographic_level and country_code are abridged in the table below to help with displaying in a web page, but are shown in the example file at the link above.
 </div>
 
+::: {.table-responsive}
+
 | time_period | ... | country_name | region_code | region_name | gender | school_phase | number_children | percent_children |
 |-------------|-----|--------------|-------------|-------------|--------|--------------|-----------------|------------------|
 | 202021      | ... | England      |             |             | Total  | Total        | 1000            | 100.000          |
@@ -91,11 +93,15 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 | 201920      | ... | England      |             |             | Male   | Total        | 444             | 46.444           |
 | 201920      | ... | England      |             |             | Female | Total        | 512             | 53.556           |
 
+:::
+
 ---
 
 ### Example metadata file ([ees_demo_datafile.meta.csv](../data_examples/ees_demo_datafile.meta.csv))
 
 ---
+
+::: {.table-responsive}
 
 | col_name         | col_type  | label        | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
 |------------------|-----------|--------------|--------------------|----------------|--------------|-------------|------------------------|
@@ -104,6 +110,7 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 | number_children  | Indicator | Number of children |              |                |              |             |                        |
 | percent_children | Indicator | Percentage of children |          | %              | 1            |             |                        |
 
+:::
 
 <div class="alert alert-dismissible alert-info">
 Note that for the percent_children column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users' needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.
@@ -225,13 +232,19 @@ The policy of creating tidy data files effectively means optimising your filter-
 
 The video below provides some context around this and shows how tidy data structures work better in the EES table tool when compared to wide (or pivoted) data sets.
 
-<iframe width="853" height="480" src="https://web.microsoftstream.com/embed/video/fb2c32b2-7601-4698-9f9d-9d2b96c0a8f4?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+<center>
+<iframe width="560" height="315" src="https://web.microsoftstream.com/embed/video/fb2c32b2-7601-4698-9f9d-9d2b96c0a8f4?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+</center>
 
 The number of indicators should be kept to a minimum, whilst maintaining different types of measurements as distinct indicators. For example a wide structure might consist of something like the following:
+
+::: {.table-responsive}
 
 | ... | number_pupils_passing_95 | number_pupils_passing_94 | percentage_pupils_passing_95 | percentage_pupils_passing_94 |
 |-----|--------------------------|--------------------------|--------------------------|--------------------------|
 | ... |  567                 |    642                      |  45.7                      |    51.8                      |
+
+:::
 
 Creating a tidy form of this data would look something more like this:
 
@@ -244,12 +257,15 @@ This is a simplified example and your data will likely be more complex, but in m
 
 The next video illustrates the differences between wide and tidy data, showing examples of the same data organised in each structure.
 
-<iframe width="853" height="480" src="https://web.microsoftstream.com/embed/video/c8f467db-31bb-4307-8d3b-11e5186c4049?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+<center>
+<iframe width="560" height="315" src="https://web.microsoftstream.com/embed/video/c8f467db-31bb-4307-8d3b-11e5186c4049?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+</center>
 
 If your current processes produce wide data that you need to switch to a tidy structure, one of doing this is using the `pivot_longer()` function in R. The following video demonstrates how to do that using the data shown in the previous videos.
 
-<iframe width="853" height="480" src="https://web.microsoftstream.com/embed/video/023ba23c-a7bf-4313-91c8-9dc2e14b1c8e?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
-
+<center>
+<iframe width="560" height="315" src="https://web.microsoftstream.com/embed/video/023ba23c-a7bf-4313-91c8-9dc2e14b1c8e?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+</center>
 
 ---
 
@@ -441,7 +457,9 @@ Note that if you are using percentage points (pp) you must include a clear expla
 ## Example EES metadata
 
 
-: Each row represents a corresponding column in the data file.
+Each row represents a column in the data file.
+
+::: {.table-responsive}
 
 | col_name | col_type | label | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|---|
@@ -449,6 +467,8 @@ Note that if you are using percentage points (pp) you must include a clear expla
 | school_phase | Filter | School phase | | | | Filter by the phase of the school | |
 | number_children | Indicator | Number of children | | | | | |
 | percent_children | Indicator | Percentage of children | | % | 1 | | |
+
+:::
 
 ---
 
@@ -778,27 +798,27 @@ This guidance has been written by collating the most up to date advice and guida
 
 Ethnicity breakdowns should be presented within the standard field names in any data files containing ethnicity breakdowns: **ethnicity_major**, **ethnicity_minor** or **ethnicity_detailed**. The first two are outlined in reference to the GSS guidelines on ethnic groupings below, whilst the third is for any ethnicity fields containing finer grained breakdowns than described in ethnicity_minor below.
 
-The GSS publish standards on how to collect ethnicity data based on research conducted for the UK Census. The current guidelines (shown below) were developed as part of the 2011 Census and were unchanged in the 2021 census. We aim to follow as closely as reasonable to the GSS standards and guidance.
+The GSS publish standards on how to collect ethnicity data based on research conducted for the UK Census. The current guidelines (shown below) were developed as part of the 2011 Census and were unchanged in the 2021 census. We aim to follow as closely as reasonable to the GSS standards and guidance. Note the use of spaces around forward-slashes, which allows us to meet accessibility standards (in particular for the use of screen readers) as well as improving automated wrapping in text and value boxes.
 
 
 | ethnicity_major |    ethnicity_minor                                  |
 |------------|------------------------------------------------|
-| **White** |    English/Welsh/Scottish/Northern Irish/British    |
+| **White** |    English / Welsh / Scottish / Northern Irish / British    |
 |           |    Irish                                            |
 |           |    Gypsy or Irish Traveller                         |
 |           |    Any other White background                       |
-| **Mixed/Multiple ethnic groups** |    White and Black Caribbean |
+| **Mixed / Multiple ethnic groups** |    White and Black Caribbean |
 |           |    White and Black African                          |
 |           |    White and Asian                                  |
-|           |    Any other Mixed/Multiple ethnic background       |
-| **Asian/Asian British** |    Indian                             |
+|           |    Any other Mixed / Multiple ethnic background       |
+| **Asian / Asian British** |    Indian                             |
 |           |    Pakistani                                        |
 |           |    Bangladeshi                                      |
 |           |    Chinese                                          |
 |           |    Any other Asian background                       |
-| **Black/African/Caribbean/Black British** |    African          |
+| **Black / African / Caribbean / Black British** |    African          |
 |           |    Caribbean                       |
-|           |    Any other Black/African/Caribbean background                       |
+|           |    Any other Black / African / Caribbean background                       |
 | **Other ethnic group** |    Arab                       |
 |           |    Any other ethnic group                       |
 | **Unknown** | Unknown |
@@ -834,11 +854,11 @@ Statistics producers should avoid where possible the practice of reporting aggre
 
 - **White**
 
-- **Mixed/Multiple ethnic groups**
+- **Mixed / Multiple ethnic groups**
 
-- **Asian/Asian British**
+- **Asian / Asian British**
 
-- **Black/African/Caribbean/Black British**
+- **Black / African / Caribbean / Black British**
 
 - **Other ethnic group**
 
@@ -860,6 +880,7 @@ Aggregates should be included for all filters where possible. There will be some
 
 **For aggregate rows you should refer to these as ‘Total’.** When using filters such as school type or FSM eligibility this can be quite simple, as shown in the example below:
 
+::: {.table-responsive}
 
 | time_period | time_identifier | geographic_level | country_code | country_name | school_type | FSM_status | headcount |
 |-------------|-----------------|------------------|--------------|--------------|-------------|------------|-----------|
@@ -867,6 +888,7 @@ Aggregates should be included for all filters where possible. There will be some
 | 201819      |	Academic year   |	National         | E92000001    |	England      | Primary     | Eligible   | 280       |
 | 201819      |	Academic year   |	National         | E92000001    |	England      | Secondary   | Eligible   | 310       |
 
+:::
 
 It is possible that you wish to include a filter that only has a single level, like FSM_status in the above example that only has 'Eligible'. This is to be expected, and you do not need to unnecessarily double the size of your file by adding a 'Total' that duplicates what is already there. Where this is the case, do not include this filter in the EES metadata as the platform does not need to read that column into the table tool.
 
@@ -878,6 +900,7 @@ It is possible that you wish to include a filter that only has a single level, l
 
 For some filters, this can be more complicated. You might have a great number of different filters that you would rather group together in a two-level hierarchy. You can do this by grouping a filter by a filter group. This essentially uses another filter column to provide a higher group level. This also may be helpful for EES users when creating tables. For example, you may want to group percentages into wider rate bands.
 
+::: {.table-responsive}
 
 | time_period | time_identifier | geographic_level | country_code | country_name | absence_band_group | absence_band |
 |-------------|-----------------|------------------|--------------|--------------|--------------------|--------------|
@@ -885,17 +908,31 @@ For some filters, this can be more complicated. You might have a great number of
 | 2018        |	Calendar year   | National         | E92000001    | England      | 60.0 – 69.9        | 62.0 - 62.9  |
 | 2018        |	Calendar year   |	National         | E92000001    |	England      | 10.0 – 19.9        | 16.0 - 16.9  |
 
+:::
+
 ---
 
 You can also see an example with apprenticeship data file, including the corresponding EES metadata, below:
 
 ---
 
-`r knitr::kable(apprenticeship, caption = "Data file")`
+Data file.
+
+::: {.table-responsive}
+
+| time_period | ... | country_name | appr_type        | appr_exact	     | starters | drop_outs | drop_out_rate |
+|-------------|-----|--------------|------------------|------------------|----------|-----------|---------------|
+| 2018        | ... | England      | Hair and beauty  | Hairdressing     | 200      | 10        | 0.05          |
+| 2018        |	... | England      | Hair and beauty  | Beauty therapy   | 100      | 2         | 0.02          |
+| 2018        |	... |	England      | Rail engineering |	Track signalling | 80       | 4         | 0.05          |
+
+:::
 
 ---
 
-: Corresponding EES metadata file.
+Corresponding EES metadata file.
+
+::: {.table-responsive}
 
 | col_name | col_type | label | indicator_grouping | indicator_unit | filter_hint | filter_grouping_column |
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|
@@ -903,6 +940,8 @@ You can also see an example with apprenticeship data file, including the corresp
 | drop_outs | Indicator | Number of learners not completing an apprenticeship | Apprentice drop-outs | | | |
 | drop_out_rate | Indicator | Percentage of pupils not completing an apprenticeship | Apprentice drop-outs | % | | |
 | **appr_exact** | Filter | Type of apprenticeship | | | Select the apprenticeship types you're interested in | **appr_type** | |
+
+:::
 
 ---
 
@@ -920,12 +959,15 @@ If you are publishing data with a date assigned (e.g. daily data), you can add d
 
 It is important to maintain a **yyyy-mm-dd** format as demonstrated below, so that EES lists dates in the correct order in the table builder.
 
+::: {.table-responsive}
 
 | time_period | time_identifier | date               | geographic_level | country_code | country_name |absence_band  |
 |-------------|-----------------|--------------------|------------------|--------------|--------------|--------------|
 | 2020        | Week 50         | 2020-05-14         | National         | E92000001    | England      | 67.0 - 67.9  |
 | 2020        |	Week 50         | 2020-05-15         | National         | E92000001    | England      | 62.0 - 62.9  |
 | 2020        |	Week 50         | 2020-05-16         | National         | E92000001    | England      | 16.0 - 16.9  |
+
+:::
 
  R automatically outputs dates in this format, but you can also change this in excel if needed, by selecting the column to change and switching from "General" to the specified date format:
 
@@ -964,11 +1006,15 @@ The indicators are the variables showing the measurements/statistics themselves,
 
 As an example, the number and percentage of pupil enrolments are the indicators in this dataset:
 
+::: {.table-responsive}
+
 | time_period | ... | country_name | school_type  | enrolments_num | enrolments_pc |
 |-------------|-----|--------------|--------------|------------|----------|
 | 201819      | ... | England      | Total        | 200        | 100      |
 | 201819      | ... | England      | Primary      | 150        | 75       |
 | 201819      | ... | England      | Secondary    | 50         | 25       |
+
+:::
 
 Like filters, indicator names must not include spaces, and ideally be formatted in [snake_case](https://en.wikipedia.org/wiki/Snake_case){target="_blank" rel="noopener noreferrer"} for ease of use. You can use abbreviations to keep the names short and usable, your users will be able to see what each variable name means in the data guidance. **Avoid starting variable names with a numeric character.**
 
@@ -978,11 +1024,15 @@ If you are including percentages and want to show 79% in EES, you would have the
 
 In line with GSS best practice for communicating uncertainty, when using confidence intervals you should report the upper and lower bounds as separate columns rather than as one confidence interval column:
 
+::: {.table-responsive}
+
 | time_period | ... | country_name | school_type  | estimate | **est_lower_ci** | **est_upper_ci** |
 |-------------|-----|--------------|--------------|------------|----------|----------------|
 | 201819      | ... | England      | Total        | 100        | **96.7** | **103.3** |
 | 201819      | ... | England      | Primary      | 50         | **48.9** | **51.1** |
 | 201819      | ... | England      | Secondary    | 50         | **49.5** | **50.5** |
+
+:::
 
 ---
 
@@ -992,6 +1042,8 @@ In line with GSS best practice for communicating uncertainty, when using confide
 
 Many of our publications contain a large number of indicators. To improve the experience of the user in the platform we can group these under headings as shown on the right. In the example, you can see how the different indicators have been grouped into ‘Admissions’, ‘Applications’, and ‘Preferences breakdowns’ in the EES metadata, followed by how this will appear in the table tool for users.
 
+::: {.table-responsive}
+
 | col_name | col_type | label | indicator_grouping | indicator_unit | filter_hint | filter_grouping_column |
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|
 | nc_year | Filter | NC Year | | | Filter by national curriculum year | |
@@ -999,6 +1051,8 @@ Many of our publications contain a large number of indicators. To improve the ex
 | applications | Indicator | Number of applications received | **Applications** | | | |
 | online_apps | Indicator | Number of online applications | **Applications** | | | |
 | online_apps_% | Indicator | Percentage of online applications | **Applications** | | | |
+
+:::
 
 ---
 
