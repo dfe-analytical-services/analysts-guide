@@ -542,7 +542,7 @@ Clean code should include comments. Comment why you've made decisions, don't com
 
 ---
 
-For best practice on writing SQL code, here is a particularly useful [word document](resources/TSQL_Coding_Standards.docx){target="_blank" rel="noopener noreferrer"} produced by our [Data Hub](https://educationgovuk.sharepoint.com/sites/DataHubProgramme2/Shared%20Documents/Content%20Management/Data%20Hub%20one%20pager.pdf){target="_blank" rel="noopener noreferrer"}. This outlines a variety of best practices, ranging from naming conventions, to  to formatting your SQL code so that it is easy to follow visually.
+For best practice on writing SQL code, here is a particularly useful [word document](../resources/TSQL_Coding_Standards.docx){target="_blank" rel="noopener noreferrer"} produced by our [Data Hub](https://educationgovuk.sharepoint.com/sites/DataHubProgramme2/Shared%20Documents/Content%20Management/Data%20Hub%20one%20pager.pdf){target="_blank" rel="noopener noreferrer"}. This outlines a variety of best practices, ranging from naming conventions, to  to formatting your SQL code so that it is easy to follow visually.
 
 ---
 

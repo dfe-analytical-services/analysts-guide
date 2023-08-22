@@ -35,8 +35,8 @@ The below table gives some pointers on how you can use these stats to improve yo
 
 ---
 
-[Performance analysis: GDS starter guide to using Google Analytics](/resources/performance_analysis_ga_guide.pdf)
+[Performance analysis: GDS starter guide to using Google Analytics](../resources/performance_analysis_ga_guide.pdf)
 
-[Performance analysis: GDS Advanced Analytics Reporting Techniques](/resources/performance_analysis_advance_reporting.pdf)
+[Performance analysis: GDS Advanced Analytics Reporting Techniques](../resources/performance_analysis_advance_reporting.pdf)
 
 ---

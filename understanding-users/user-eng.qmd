@@ -30,7 +30,7 @@ The USER hub is now available on the [GSS website](https://gss.civilservice.gov.
 ## Improving your own engagmenent
 
 
-Download this [top tips document](resources/2021_05_14_Top_Tips.docx){target="_blank" rel="noopener noreferrer"} produced for the GSS, as a starting point for understanding how you can improve your user engagement.
+Download this [top tips document](../resources/2021_05_14_Top_Tips.docx){target="_blank" rel="noopener noreferrer"} produced for the GSS, as a starting point for understanding how you can improve your user engagement.
 
 Through our work engaging users on EES we have built up a list of interested users who have stated a willingness to be contacted about opportunities to be involved in user testing of our statistics on the platform, if you have any suggestions for things for us to test on EES with these users, please contact [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk).
 
@@ -172,9 +172,9 @@ Some examples of previous consultations are included below:
 
 We routinely publish statistical releases, but who is using these and why?  It’s important to understand your user types and need, so we (public and department) get best value from what we do.  Using these insights can help us to continually improve our products and services. Having a survey with your releases is a great way to glean this feedback.  Examples of statistical publication surveys, as well as ONS top tips on user surveys are below/attached.  It would be great to include your examples too, as well as capture your lessons learned and tips, so do send these to us. If you do want further advice, please contact Heather Brown or Ian Hewson.
 
-[User survey and questionnaire design top tips (word document)](resources/2022_02_14_questionaire_toptips.docx)
+[User survey and questionnaire design top tips (word document)](../resources/2022_02_14_questionaire_toptips.docx)
 
-[Results from survey of statistics users (word document)](resources/Survey_results.docx)
+[Results from survey of statistics users (word document)](../resources/Survey_results.docx)
 
 ---
 

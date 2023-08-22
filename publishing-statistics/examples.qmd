@@ -206,7 +206,7 @@ The summary of the [CIN / CLA outcomes release](https://explore-education-statis
 
 [Full guidance on creating a methodology in EES](ees.html#Methodology4).
 
-Good methodologies will broadly cover topics in our recommended [methodology template](resources/Methodology template EES.docx). The [Graduate outcomes (LEO)](https://explore-education-statistics.service.gov.uk/methodology/graduate-outcomes-leo-methodology) methodology broadly follows this outline, making use of effective formatting in EES to help users navigate through accordions, although definitions can be moved to the EES glossary.
+Good methodologies will broadly cover topics in our recommended [methodology template](../resources/Methodology template EES.docx). The [Graduate outcomes (LEO)](https://explore-education-statistics.service.gov.uk/methodology/graduate-outcomes-leo-methodology) methodology broadly follows this outline, making use of effective formatting in EES to help users navigate through accordions, although definitions can be moved to the EES glossary.
 
 The [Key stage 4 destinations](https://explore-education-statistics.service.gov.uk/methodology/key-stage-4-destination-measures-methodology) methodology makes good use of annexes to show changes to their methodology over time.
 

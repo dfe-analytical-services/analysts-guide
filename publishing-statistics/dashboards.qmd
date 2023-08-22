@@ -18,7 +18,7 @@ This guidance is aimed primarily at dashboards published to supplement Official 
 
 This page includes specific guidance for R Shiny dashboards, for teams using PowerBI, the department has a set of PowerBI dashboard standards that can be found on the [DfE's analytical services GitHub area](https://dfe-analytical-services.github.io/powerbi_dashboardstandards/).
 
-There is also a dashboards version of the content design checklist. This checklist runs through a number of things to think about when developing dashboards to compliment official statistics and is worth using to design and also review any dashboards you own - [Dashboards checklist (.xlsx)](resources/Content_Design_Logbook_Dashboards.xlsx). We also have a [dashboard procedure checklist](#dashboard-procedure-checklist) in this guidance page that outlines the steps required to set up an R shiny dashboard.
+There is also a dashboards version of the content design checklist. This checklist runs through a number of things to think about when developing dashboards to compliment official statistics and is worth using to design and also review any dashboards you own - [Dashboards checklist (.xlsx)](../resources/Content_Design_Logbook_Dashboards.xlsx). We also have a [dashboard procedure checklist](#dashboard-procedure-checklist) in this guidance page that outlines the steps required to set up an R shiny dashboard.
 
 ---
 

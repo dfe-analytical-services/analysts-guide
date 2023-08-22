@@ -965,7 +965,7 @@ If you have not created or published a methodology page on EES before, the first
 
 Once created you can then edit the methodology content in a similar way to how you would create release page content.
 
-Methodologies should follow our recommended [methodology template](resources/Methodology template EES.docx), to ensure all the essential details are covered.
+Methodologies should follow our recommended [methodology template](../resources/Methodology template EES.docx), to ensure all the essential details are covered.
 
 Once the drafting has finished, a methodology should be set as 'approved for publication', currently approved methodology changes will be published immediately so make sure you are ready for the changes to go live before approving.
 
