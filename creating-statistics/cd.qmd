@@ -168,74 +168,21 @@ Below is a session by Robert Cuffe from the BBC talking to DfE statisticians abo
 
 ---
 
-## Headline facts and figures
+## Headline sections
 
 
-Each release on the platform will have a summary box at the top that contains the top facts and headlines for your release - you should consider this the equivalent of the front page of what was the PDF version of your release.
-
-It is recommended to have 3 headline statistics but you can have more (up to a maximum of 6) or fewer. Key statistic tiles are split into the following elements.
-
-![](../images/key-stat.PNG)
-
-| Element | Content |
-|---------|---------|
-| Indicator name | Automatically generated from your data |
-| Latest value | Automatically generated from your data |
-| Trend | A short one-sentence description of the trend; try to avoid only stating the change from the previous year and talk about the longer-term trend where appropriate |
-| Guidance title | Should be set to 'What is this?' |
-| Guidance text | A simple description in plain English of what the indicator is |
-
-
-<div class="alert alert-dismissible alert-info">
-You should also add a headline data block to this section, including a table and chart with the most note-worthy findings from the release.
-</div>
-
-Use bullet points under the key indicator tiles to pull out the top headlines from your release. Here are some top tips for writing headlines:
+It is common to use bullet points to draw out key headline messages, either for policy lines or for general interest. Here are some top tips for writing headlines:
 
 * Ask yourself if this is the most important, useful and relevant point to make? Why? What is new?
-* We recommend a maximum of six top headlines, aiming for four or five
+* We recommend a maximum of six top headlines
 * You shouldn't be trying to summarise all the findings in the publication
-* Headlines won't necessarily be the same every year
+* For regular publications, headlines won't necessarily be the same every time
 * Headlines should be a single sentence making a single point, and be able to stand alone from the publication
 * Headlines should make sense to everyone and anyone (no jargon)
 * Structure headlines as: what has happened; why is this important - don't give numbers without context
-* One of your headlines should put the latest figures in the context of the longer-term change
+* At least of your headlines should put the latest figures in the context of the longer-term change
 * Round figures in headlines, you don't need lots of decimal places
 * If there is essential context for the headline facts then put this here
-
----
-
-## About these statistics
-
-
-We recommend that the first accordion section in each release should be 'About these statistics'. Do not assume that users will read it, the nature of interactive pages means that the reader may start at any accordion section so remember to include essential information in the section to which it refers.
-
----
-
-### What not to include in this section
-
----
-
-* Crucial caveats or information necessary for accurate interpretation of the statistics, these should be included within the main commentary next to the point they relate to
-* Technical information that is not relevant to the interpretation of the statistics should be saved for the methodology
-* Definitions should be included within the main commentary when they are first mentioned
-* Lists or descriptions of what is in the commentary as these should be clear from the contents and accordion headings
-
----
-
-### Things that you should include in this section are
-
----
-
-* Say why the data are collected and what they are used for or could be used for, including relevant policies and targets
-* The different geographical levels for which data is published
-* Non-essential but important information about the statistics, such as:
-   + The data collection window, mode of data collection and response rates in terms of whether these are representative
-   + Clarification of the population coverage
-   + Changes in data collection or analysis methods from previous releases
-* Links to relevant related statistics including the cause of any differences
-* Further useful detail on specific measures used in the release
-* Non-urgent notices to users such as minor error corrections and delays or changes to the next publication. If there is something important which you want all users to know about then give it its own accordion section.
 
 ---
 
@@ -243,16 +190,11 @@ We recommend that the first accordion section in each release should be 'About t
 
 ---
 
-The layout of the new platform provides a natural template and enforces a base level of consistency, whilst leaving enough flexibility to meet the needs of a range of publications. All design aspects of this layout have been iteratively user-tested to ensure it's as navigable, accessible, and understandable as possible.
-
-Essentially, your release should have a headline statistics part, followed by up to 10 headered accordion sections, most releases are already structured this way in the PDFs.
-
 For tips on creating accessible content have a look at our [accessibility top tips (.docx)](../resources/Accessibility.docx)
 
 ---
 
 ## Content headings
-
 
 
 Throughout the commentary, active sub-headings outline the main messages making them memorable for users. They should be a short summary of the contents - **aim for 10 words or less** - rather than a full statistical headline. **Avoid using exaggerated or sensationalist language** that you would not use in your main commentary such as "highest ever" or "only". Be neutral in selecting the message to use in the heading rather than favouring positive or negative messages.
