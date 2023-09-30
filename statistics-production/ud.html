@@ -1,0 +1,3068 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Analyst’s Guide - Open Data Standards</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KBJCBD114T"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KBJCBD114T', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"headline",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Open Data Standards</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="mailto:statistics.development@education.gov.uk" rel="" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-microsoft-teams"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a50f82a2718184a0e98ba86c3d411a02f%40thread.skype/conversations?groupId=6572094f-43a3-4537-bcf0-fc27dc6557ed&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            DfE analysts network
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3ae3c8551e86094e259a60848fcff4dbc1%40thread.skype/conversations?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            Statistics production
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            DfE R community
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-camera-reels"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Statistician%27s%20Guide%20to%20the%20Galaxy?csf=1&amp;web=1&amp;e=owScaj">
+            Guide to the Galaxy sessions
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Explore%20Education%20Statistics?csf=1&amp;web=1&amp;e=HVpi0D">
+            EES show and tells
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series?csf=1&amp;web=1&amp;e=H0pcSH">
+            RAP knowledge share series
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/sites/sarpi/g/AC/Coffee%20and%20Coding.aspx?xsdata=MDV8MDF8fGU5YTkwYWU1OTNiNjQzZTIyZTM2MDhkYjVhY2MxN2JlfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2MzgyMDM2MDQ4MjEyMjUwMTR8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPbTFsWlhScGJtZGZXVlJuZUUxRVVUTlphbGwwVGpKUk1FNTVNREJhYW1zMVRGUnJNbHBYV1hSTmVtTjZXbXBCTWxwdFZUQlBWMVV3UUhSb2NtVmhaQzUyTWk5dFpYTnpZV2RsY3k4eE5qZzBOell6TmpneE5qRXh8YjdlZWE0MGYzNDg5NGYxYzJlMzYwOGRiNWFjYzE3YmV8MmE3NzU1YzRmOWMyNDZlOTkwYWVmMjlkZjY5NjczZWE%3D&amp;sdata=ajlKYUZuNHFyNU9XSm5WR3ZZaUZHZDB4bjVJYkJzRFZNc0U1Uit5V1Q5cz0%3D&amp;ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CTess%2EWILLIAMS%40EDUCATION%2EGOV%2EUK&amp;OR=Teams%2DHL&amp;CT=1684763684990&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA0MDIwMjcwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D">
+            Coffee and coding sessions
+            </a>
+          </li>
+      </ul>
+    </div>
+    <a href="https://explore-education-statistics.service.gov.uk/" rel="" title="Explore education statistics" class="quarto-navigation-tool px-1" aria-label="Explore education statistics"><i class="bi bi-graph-up"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-2" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-2">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide">
+            Source code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide/issues/new">
+            Suggest changes
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Learning resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Statistics production</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/pub.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">creating-statistics/ud.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/ees.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/embedded-charts.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/examples.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">understanding-users/user-eng.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">understanding-users/user-analytics.qmd</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Writing and visualising</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+ <span class="menu-text">creating-statistics/cd.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/dashboards.qmd</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP expectations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP FAQs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for Statistics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">ADA and databricks</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#how-to-check-against-these-standards" id="toc-how-to-check-against-these-standards" class="nav-link" data-scroll-target="#how-to-check-against-these-standards">How to check against these standards</a></li>
+  <li><a href="#overview-of-ees-data-files" id="toc-overview-of-ees-data-files" class="nav-link" data-scroll-target="#overview-of-ees-data-files">Overview of EES data files</a>
+  <ul class="collapse">
+  <li><a href="#example-data-file-ees_demo_datafile.csv" id="toc-example-data-file-ees_demo_datafile.csv" class="nav-link" data-scroll-target="#example-data-file-ees_demo_datafile.csv">Example data file (ees_demo_datafile.csv)</a></li>
+  <li><a href="#example-metadata-file-ees_demo_datafile.meta.csv" id="toc-example-metadata-file-ees_demo_datafile.meta.csv" class="nav-link" data-scroll-target="#example-metadata-file-ees_demo_datafile.meta.csv">Example metadata file (ees_demo_datafile.meta.csv)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#general-requirements" id="toc-general-requirements" class="nav-link" data-scroll-target="#general-requirements">General requirements</a>
+  <ul class="collapse">
+  <li><a href="#tidy-data-structure" id="toc-tidy-data-structure" class="nav-link" data-scroll-target="#tidy-data-structure">Tidy data structure</a>
+  <ul class="collapse">
+  <li><a href="#introduction-to-indicators" id="toc-introduction-to-indicators" class="nav-link" data-scroll-target="#introduction-to-indicators">Introduction to indicators</a></li>
+  <li><a href="#introduction-to-filters" id="toc-introduction-to-filters" class="nav-link" data-scroll-target="#introduction-to-filters">Introduction to filters</a></li>
+  <li><a href="#optimising-filter-indicator-combinations" id="toc-optimising-filter-indicator-combinations" class="nav-link" data-scroll-target="#optimising-filter-indicator-combinations">Optimising filter-indicator combinations</a></li>
+  </ul></li>
+  <li><a href="#data-format" id="toc-data-format" class="nav-link" data-scroll-target="#data-format">Data format</a>
+  <ul class="collapse">
+  <li><a href="#file-names" id="toc-file-names" class="nav-link" data-scroll-target="#file-names">File names</a></li>
+  <li><a href="#variable-names" id="toc-variable-names" class="nav-link" data-scroll-target="#variable-names">Variable names</a></li>
+  <li><a href="#how-to-export-data-with-utf-8-encoding" id="toc-how-to-export-data-with-utf-8-encoding" class="nav-link" data-scroll-target="#how-to-export-data-with-utf-8-encoding">How to export data with UTF-8 encoding</a></li>
+  </ul></li>
+  <li><a href="#how-much-data-to-publish" id="toc-how-much-data-to-publish" class="nav-link" data-scroll-target="#how-much-data-to-publish">How much data to publish</a></li>
+  <li><a href="#deciding-what-should-be-in-a-file" id="toc-deciding-what-should-be-in-a-file" class="nav-link" data-scroll-target="#deciding-what-should-be-in-a-file">Deciding what should be in a file</a></li>
+  <li><a href="#file-size" id="toc-file-size" class="nav-link" data-scroll-target="#file-size">File size</a></li>
+  <li><a href="#data-symbols" id="toc-data-symbols" class="nav-link" data-scroll-target="#data-symbols">Data symbols</a></li>
+  </ul></li>
+  <li><a href="#ees-metadata" id="toc-ees-metadata" class="nav-link" data-scroll-target="#ees-metadata">EES metadata</a>
+  <ul class="collapse">
+  <li><a href="#mandatory-ees-metadata-columns" id="toc-mandatory-ees-metadata-columns" class="nav-link" data-scroll-target="#mandatory-ees-metadata-columns">Mandatory EES metadata columns</a></li>
+  <li><a href="#example-ees-metadata" id="toc-example-ees-metadata" class="nav-link" data-scroll-target="#example-ees-metadata">Example EES metadata</a></li>
+  </ul></li>
+  <li><a href="#time-and-geography" id="toc-time-and-geography" class="nav-link" data-scroll-target="#time-and-geography">Time and geography</a>
+  <ul class="collapse">
+  <li><a href="#time-columns" id="toc-time-columns" class="nav-link" data-scroll-target="#time-columns">Time columns</a>
+  <ul class="collapse">
+  <li><a href="#specific-time-standards" id="toc-specific-time-standards" class="nav-link" data-scroll-target="#specific-time-standards">Specific time standards</a></li>
+  <li><a href="#list-of-allowable-time-values" id="toc-list-of-allowable-time-values" class="nav-link" data-scroll-target="#list-of-allowable-time-values">List of allowable time values</a></li>
+  </ul></li>
+  <li><a href="#geography-columns" id="toc-geography-columns" class="nav-link" data-scroll-target="#geography-columns">Geography columns</a>
+  <ul class="collapse">
+  <li><a href="#different-measures-of-geography" id="toc-different-measures-of-geography" class="nav-link" data-scroll-target="#different-measures-of-geography">Different measures of geography</a></li>
+  <li><a href="#allowable-geographic-levels" id="toc-allowable-geographic-levels" class="nav-link" data-scroll-target="#allowable-geographic-levels">Allowable geographic levels</a></li>
+  <li><a href="#using-school-or-provider-as-a-filter" id="toc-using-school-or-provider-as-a-filter" class="nav-link" data-scroll-target="#using-school-or-provider-as-a-filter">Using School or Provider as a filter</a></li>
+  <li><a href="#unknown-geographic-codes" id="toc-unknown-geographic-codes" class="nav-link" data-scroll-target="#unknown-geographic-codes">Unknown geographic codes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#common-harmonised-variables" id="toc-common-harmonised-variables" class="nav-link" data-scroll-target="#common-harmonised-variables">Common harmonised variables</a>
+  <ul class="collapse">
+  <li><a href="#ethnicity" id="toc-ethnicity" class="nav-link" data-scroll-target="#ethnicity">Ethnicity</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#gss-ethnicity-categories" id="toc-gss-ethnicity-categories" class="nav-link" data-scroll-target="#gss-ethnicity-categories">GSS ethnicity categories</a></li>
+  <li><a href="#reporting-on-broad-ethnic-minorities-catageories-e.g.-bame" id="toc-reporting-on-broad-ethnic-minorities-catageories-e.g.-bame" class="nav-link" data-scroll-target="#reporting-on-broad-ethnic-minorities-catageories-e.g.-bame">Reporting on broad ethnic minorities catageories (e.g.&nbsp;BAME)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#filters" id="toc-filters" class="nav-link" data-scroll-target="#filters">Filters</a>
+  <ul class="collapse">
+  <li><a href="#grouping-filters" id="toc-grouping-filters" class="nav-link" data-scroll-target="#grouping-filters">Grouping filters</a></li>
+  <li><a href="#dates-as-filters" id="toc-dates-as-filters" class="nav-link" data-scroll-target="#dates-as-filters">Dates as filters</a></li>
+  </ul></li>
+  <li><a href="#indicators" id="toc-indicators" class="nav-link" data-scroll-target="#indicators">Indicators</a>
+  <ul class="collapse">
+  <li><a href="#indicator-grouping" id="toc-indicator-grouping" class="nav-link" data-scroll-target="#indicator-grouping">Indicator grouping</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/statistics-production/ud.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Open Data Standards</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p class="text-muted">
+Guidance on how to structure data files
+</p>
+<hr>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<hr>
+<p>The aim is to apply a consistent, logical, structure to all data files so that they are easier to use and analyse, minimising the time spent cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using the data, as well as opening up further opportunities for linking data.</p>
+<p>Our publication data is released under the terms of the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/" target="_blank" rel="noopener noreferrer">Open Government License</a> and by following these standards will meet at least 3 stars for <a href="https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats" target="_blank" rel="noopener noreferrer">Open Data</a>.</p>
+<hr>
+<section id="how-to-check-against-these-standards" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-check-against-these-standards">How to check against these standards</h2>
+<p>An <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">interactive data screener</a> has been developed in R Shiny to automate checks against the standards as a final stage of automated quality assurance before upload to EES.</p>
+<p>This can be run on any data file, though requires the <a href="#ees-metadata">EES metadata</a> to be able to process the file. The app runs on our rsconnect servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa" target="_blank" rel="noopener noreferrer">GitHub</a>, and you can get in touch with us at statistics.development@education.gov.uk.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>All data and EES metadata files must be run through the <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">screening app</a> before uploading to EES.</p>
+</div>
+<hr>
+<blockquote class="blockquote">
+<p>“Tidy datasets are all alike but every messy dataset is messy in its own way.” – Hadley Wickham</p>
+</blockquote>
+<hr>
+</section>
+<section id="overview-of-ees-data-files" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-ees-data-files">Overview of EES data files</h2>
+<p>For data to be used with the table tool and charts in EES, it needs to be provided to the following overall specifications:</p>
+<ul>
+<li>The data should be contained in a <a href="#data-format">text file with comma separated values</a> and with the extension .csv.</li>
+<li>The first row of the data file should contain <a href="#variable-names">machine readable column names</a> in <a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake case</a>.</li>
+<li>The data should be layed out in line with <a href="#tidy-data-structure">tidy data principles</a>, consisting of filters (categories) and indicators (values).</li>
+<li>The file should contain the <a href="#time-and-geography">necessary mandatory columns</a> (i.e.&nbsp;time_period, time_identifier, geographical_level, country_code and country_name);</li>
+<li>The data file should have an accompanying <a href="#ees-metadata">meta-data csv file</a>, which contains information on the nature of the columns in the data file:
+<ul>
+<li>whether a given column is a filter or indicator;</li>
+<li>human readable name for use in tables and charts on EES;</li>
+<li>filter grouping information;</li>
+<li>number of decimal places to display for indicator fields (i.e.&nbsp;allowing a lower precision to be presented in the dervied tables than the underlying data - useful for minimising rounding errors in aggregates);</li>
+<li>units for indicator fields (e.g.&nbsp;£, %);</li>
+</ul></li>
+<li>The data should use the <a href="#data-symbols">appropriate GSS codes</a> for suppressed, low, not available and not applicable entries.</li>
+</ul>
+<p>An example pair of data and meta-data files are illustrated in the files and tables below.</p>
+<hr>
+<section id="example-data-file-ees_demo_datafile.csv" class="level3">
+<h3 class="anchored" data-anchor-id="example-data-file-ees_demo_datafile.csv">Example data file (<a href="../data_examples/ees_demo_datafile.csv">ees_demo_datafile.csv</a>)</h3>
+<hr>
+<div class="alert alert-dismissible alert-info">
+<p>Note that the mandatory columns time_identifier, geographic_level and country_code are abridged in the table below to help with displaying in a web page, but are shown in the example file at the link above.</p>
+</div>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 4%">
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 6%">
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>…</th>
+<th>country_name</th>
+<th>region_code</th>
+<th>region_name</th>
+<th>gender</th>
+<th>school_phase</th>
+<th>number_children</th>
+<th>percent_children</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td></td>
+<td></td>
+<td>Total</td>
+<td>Total</td>
+<td>1000</td>
+<td>100.000</td>
+</tr>
+<tr class="even">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td></td>
+<td></td>
+<td>Male</td>
+<td>Total</td>
+<td>490</td>
+<td>49.000</td>
+</tr>
+<tr class="odd">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td></td>
+<td></td>
+<td>Female</td>
+<td>Total</td>
+<td>510</td>
+<td>51.000</td>
+</tr>
+<tr class="even">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td></td>
+<td></td>
+<td>Total</td>
+<td>Primary</td>
+<td>250</td>
+<td>100.000</td>
+</tr>
+<tr class="odd">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td></td>
+<td></td>
+<td>Male</td>
+<td>Primary</td>
+<td>131</td>
+<td>52.400</td>
+</tr>
+<tr class="even">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td></td>
+<td></td>
+<td>Female</td>
+<td>Primary</td>
+<td>119</td>
+<td>47.600</td>
+</tr>
+<tr class="odd">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td>E12000001</td>
+<td>North East</td>
+<td>Total</td>
+<td>Total</td>
+<td>100</td>
+<td>100.000</td>
+</tr>
+<tr class="even">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td>E12000001</td>
+<td>North East</td>
+<td>Male</td>
+<td>Total</td>
+<td>32</td>
+<td>32.000</td>
+</tr>
+<tr class="odd">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td>E12000001</td>
+<td>North East</td>
+<td>Female</td>
+<td>Total</td>
+<td>64</td>
+<td>64.000</td>
+</tr>
+<tr class="even">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td>E12000001</td>
+<td>North East</td>
+<td>Total</td>
+<td>Primary</td>
+<td>43</td>
+<td>100.000</td>
+</tr>
+<tr class="odd">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td>E12000001</td>
+<td>North East</td>
+<td>Male</td>
+<td>Primary</td>
+<td>12</td>
+<td>27.907</td>
+</tr>
+<tr class="even">
+<td>202021</td>
+<td>…</td>
+<td>England</td>
+<td>E12000001</td>
+<td>North East</td>
+<td>Female</td>
+<td>Primary</td>
+<td>31</td>
+<td>72.093</td>
+</tr>
+<tr class="odd">
+<td>201920</td>
+<td>…</td>
+<td>England</td>
+<td></td>
+<td></td>
+<td>Total</td>
+<td>Total</td>
+<td>956</td>
+<td>100.000</td>
+</tr>
+<tr class="even">
+<td>201920</td>
+<td>…</td>
+<td>England</td>
+<td></td>
+<td></td>
+<td>Male</td>
+<td>Total</td>
+<td>444</td>
+<td>46.444</td>
+</tr>
+<tr class="odd">
+<td>201920</td>
+<td>…</td>
+<td>England</td>
+<td></td>
+<td></td>
+<td>Female</td>
+<td>Total</td>
+<td>512</td>
+<td>53.556</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</section>
+<section id="example-metadata-file-ees_demo_datafile.meta.csv" class="level3">
+<h3 class="anchored" data-anchor-id="example-metadata-file-ees_demo_datafile.meta.csv">Example metadata file (<a href="../data_examples/ees_demo_datafile.meta.csv">ees_demo_datafile.meta.csv</a>)</h3>
+<hr>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>col_name</th>
+<th>col_type</th>
+<th>label</th>
+<th>indicator_grouping</th>
+<th>indicator_unit</th>
+<th>indicator_dp</th>
+<th>filter_hint</th>
+<th>filter_grouping_column</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>gender</td>
+<td>Filter</td>
+<td>Gender</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Filter by pupil gender</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>school_phase</td>
+<td>Filter</td>
+<td>School phase</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Filter by the phase of the school</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>number_children</td>
+<td>Indicator</td>
+<td>Number of children</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>percent_children</td>
+<td>Indicator</td>
+<td>Percentage of children</td>
+<td></td>
+<td>%</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="alert alert-dismissible alert-info">
+<p>Note that for the percent_children column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users’ needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.</p>
+</div>
+<p>Further information on all of the requirements for appropriately prepared data files follow in the sections below.</p>
+<p>Once you have prepared a draft data file, you should always run the file through our <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank">EES data file screener</a>. This will check for common issues that may prevent the file from being used appropriately by EES. Note that some issues may not prevent your file from uploading to EES, but would still cause undesired behaviour once on the platform, so it is imperative to screen data files before uploading.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="general-requirements" class="level1">
+<h1>General requirements</h1>
+<hr>
+<p>When publishing statistics, you should be following these standards for underlying data files.</p>
+<p>For publishing on EES specifically, please note the following points:</p>
+<ul>
+<li>Data files uploaded to Explore Education Statistics will be downloadable, <strong>everything in your file must be publishable</strong>.</li>
+<li>You must remember to apply all of your usual suppression policies.</li>
+<li>The data files run the table and chart tools, so all data that you wish to create a table or chart with must be included.</li>
+<li>We expect that multiple data files may be provided for each release.</li>
+<li>Keep in mind that a data block can only have a single data source. However, many blocks can share one source.</li>
+<li>You should include all years of the data you available in your data file to facilitate time series analysis.</li>
+<li>Each data file must be accompanied by a corresponding .csv metadata file as outlined under <a href="#ees-metadata">EES Metadata</a>.</li>
+</ul>
+<div class="alert alert-dismissible alert-danger">
+<p>In light of recent accessibility legislation, you should aim to include at least 3 years of data in EES where it exists.</p>
+</div>
+<hr>
+<section id="tidy-data-structure" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-structure">Tidy data structure</h2>
+<p>The move to the new platform provided the ideal opportunity to standardise and ‘tidy’ up our data to give users the consistency that they ask for. Our standards draw upon the ideas of tidy data - this means applying a logical structure to datasets so they are easier to use and analyse, minimising the time spent cleaning the data before use.</p>
+<p>Here is a quick summary video of what exactly tidy data is.</p>
+<center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oQuupzfX9OQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</center>
+<hr>
+<p>Further details on tidy data, can be found by reading Hadley Wickham’s academic paper on <a href="https://www.jstatsoft.org/index.php/jss/article/view/v059i10/v59i10.pdf" target="_blank" rel="noopener noreferrer">Tidy Data</a>. The key principles to remember are:</p>
+<ul>
+<li><strong>Each variable forms a separate column.</strong></li>
+<li><strong>Each observation forms a separate row.</strong></li>
+</ul>
+<p>The variables (columns) in each of the uploaded data files will fall in to the following two categories: filters and indicators.</p>
+<hr>
+<section id="introduction-to-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-indicators">Introduction to indicators</h3>
+<hr>
+<p>Indicators are the measureables in any data set. They should be grouped based on the type of measurement, with a column for each different type of measurement. For example, Number of pupils and Percentage of pupils would be two disticnt indicator columns in a data file.</p>
+<p>More details on indicators in the EES context are provided in the <strong><a href="#indicators">Indicators section</a></strong> below.</p>
+<hr>
+</section>
+<section id="introduction-to-filters" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-filters">Introduction to filters</h3>
+<hr>
+<p>A single filter column should contain all the possible filter values for a single data-sub-aggregation. For example, many publications would have an ethnicity_major column containing all the major ethnic breakdowns contained in the data or an fsm column containing the entries FSM and non-FSM.</p>
+<p>In general, analysts should use a separate column for each filter in accordance with tidy data principles. This is especially the case where data are presented for combinations of filters (i.e.&nbsp;cross tabulations). User testing has shown this to be the most effective way to structure data for the best user experience with the table tool.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>…</th>
+<th>FSM</th>
+<th>Sex</th>
+<th>number_pupils</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>…</td>
+<td>Total</td>
+<td>Total</td>
+<td>1209</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>Total</td>
+<td>Female</td>
+<td>567</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>Total</td>
+<td>Male</td>
+<td>642</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>FSM</td>
+<td>Total</td>
+<td>406</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>FSM</td>
+<td>Female</td>
+<td>203</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>FSM</td>
+<td>Male</td>
+<td>203</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>non-FSM</td>
+<td>Total</td>
+<td>803</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>non-FSM</td>
+<td>Female</td>
+<td>364</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>non-FSM</td>
+<td>Male</td>
+<td>439</td>
+</tr>
+</tbody>
+</table>
+<p>Where data is broken down across combinations of different filters, teams should aim to “complete the matrix”. This means that, for the given filters, all possible filter combinations should have a corresponding data entry. In this way, teams can prevent users getting the ambiguous “No data” result from EES and can instead provide more explicit codes for any missing data (e.g.&nbsp;not applicable, not available, suppressed, etc)</p>
+<p>A possible exception to the above structure is where no filter combinations/cross-tabulations are present in a given data file. For example, this may be the case if a publication requires a highlights level table that shows a result across breakdowns of sex (Male, Female, etc) and Free School Meal status (FSM, non-FSM), but not combinations of the two (Female and FSM, Male and FSM, Female and non-FSM and Male and non-FSM). In this case, analysts may choose to use a overarching collated filter columns named breakdown_topic and breakdown as follows:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>…</th>
+<th>breakdown_topic</th>
+<th>breakdown</th>
+<th>number_pupils</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>…</td>
+<td>Total</td>
+<td>Total</td>
+<td>1209</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>Sex</td>
+<td>Female</td>
+<td>567</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>Sex</td>
+<td>Male</td>
+<td>642</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>FSM</td>
+<td>FSM</td>
+<td>406</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>FSM</td>
+<td>non-FSM</td>
+<td>803</td>
+</tr>
+</tbody>
+</table>
+<p>With the above structure, breakdown_topic should be added as the fitler_grouping_column for breakdown in the associated meta data file (and therefore should not have its own row in the meta data).</p>
+<p>To re-iterate, teams should not use the above format when filter combinations/cross-tabulations are present in the data file they are producing, so breakdown_topic and breakdown should not contain entries such as “Sex and FSM” or “Female and FSM” respectively.</p>
+<p>Filters come in two types: standard filters and additional filters.</p>
+<p>The standard filters encompass <strong><a href="#time-and-geography">time and geography</a></strong> elements (e.g.&nbsp;time_period, geographic_level, la_code). Specific combinations of these standard filters must be present in your data files and the contents of these filters are required to meet specific standards in order for a data file to be compatible with the table tool in EES.</p>
+<p>Additional filters are the release specific characteristics that we filter our data on, e.g.&nbsp;school types, learner characteristics, grade thresholds, etc. Some of these filters have recommended column names and entries in order to support consistency in data files across publications. For example ethnicities should have column names of ethnicity_major, ethnicity_minor or minority_ethnic and contents should be limited to the GSS standards. Such guidelines are outlined in the <strong><a href="#common-harmonised-variables">Common harmonised variables section</a></strong> of this page, whilst further information on fiters in the EES context is given in the <strong><a href="#filters">Filters section</a></strong> below.</p>
+<hr>
+</section>
+<section id="optimising-filter-indicator-combinations" class="level3">
+<h3 class="anchored" data-anchor-id="optimising-filter-indicator-combinations">Optimising filter-indicator combinations</h3>
+<hr>
+<p>The policy of creating tidy data files effectively means optimising your filter-indicator combinations for use within the EES user interface. By doing so, end users will be better able to interact with your data and find the information that they’re looking for.</p>
+<p>The video below provides some context around this and shows how tidy data structures work better in the EES table tool when compared to wide (or pivoted) data sets.</p>
+<center>
+<iframe width="560" height="315" src="https://web.microsoftstream.com/embed/video/fb2c32b2-7601-4698-9f9d-9d2b96c0a8f4?autoplay=false&amp;showinfo=true" allowfullscreen="" style="border:none;">
+</iframe>
+</center>
+<p>The number of indicators should be kept to a minimum, whilst maintaining different types of measurements as distinct indicators. For example a wide structure might consist of something like the following:</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>…</th>
+<th>number_pupils_passing_95</th>
+<th>number_pupils_passing_94</th>
+<th>percentage_pupils_passing_95</th>
+<th>percentage_pupils_passing_94</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>…</td>
+<td>567</td>
+<td>642</td>
+<td>45.7</td>
+<td>51.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Creating a tidy form of this data would look something more like this:</p>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 31%">
+<col style="width: 31%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>…</th>
+<th>grade_range</th>
+<th>number_pupils</th>
+<th>percentage_pupils</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>…</td>
+<td>9 to 5</td>
+<td>567</td>
+<td>45.7</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>9 to 4</td>
+<td>642</td>
+<td>51.8</td>
+</tr>
+</tbody>
+</table>
+<p>This is a simplified example and your data will likely be more complex, but in making this type of change, you may be able to better identify more optimal ways of organising your data. For example, if you find that restructuring like this creates a lot of empty cells, it may be that the data has incompatible filters and can be separated out into multiple data files.</p>
+<p>The next video illustrates the differences between wide and tidy data, showing examples of the same data organised in each structure.</p>
+<center>
+<iframe width="560" height="315" src="https://web.microsoftstream.com/embed/video/c8f467db-31bb-4307-8d3b-11e5186c4049?autoplay=false&amp;showinfo=true" allowfullscreen="" style="border:none;">
+</iframe>
+</center>
+<p>If your current processes produce wide data that you need to switch to a tidy structure, one of doing this is using the <code>pivot_longer()</code> function in R. The following video demonstrates how to do that using the data shown in the previous videos.</p>
+<center>
+<iframe width="560" height="315" src="https://web.microsoftstream.com/embed/video/023ba23c-a7bf-4313-91c8-9dc2e14b1c8e?autoplay=false&amp;showinfo=true" allowfullscreen="" style="border:none;">
+</iframe>
+</center>
+<hr>
+</section>
+</section>
+<section id="data-format" class="level2">
+<h2 class="anchored" data-anchor-id="data-format">Data format</h2>
+<p>These standards give you the power to format the data in a way that best meets the needs of the users. There are only a handful of formatting standards to follow to ensure best practice and consistency across all of our data.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>Data files must in comma separated values (.csv) format, and use UTF-8 encoding. You can specify this when saving the file in Excel, or exporting from elsewhere.</p>
+</div>
+<p>If you need to use commas within a cell, then you must add a text delimiter such as quotes to your file to define each cell - this is often done automatically for you, though if you’re unsure then you can open up your csv file in a text editor such as notepad to check.</p>
+<p>You should also ensure that your data follows the <a href="https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/" target="_blank" rel="noopener noreferrer">GSS Standards on symbols</a>, though be aware to ignore the ask that symbols are included in separate cells from the data, which is unpractical and unrealistic.</p>
+<hr>
+<section id="file-names" class="level3">
+<h3 class="anchored" data-anchor-id="file-names">File names</h3>
+<hr>
+<p>File names should only include numbers, letters, underscores or hyphens. Special characters must be avoided; for example, the following characters <code>\ / : * ? " &lt; &gt; | [ ] &amp; $ , . +</code> are all considered special characters and are used for specific tasks in an electronic environment, which can lead to confusion in some systems. The use of non-English language letters such as á, í, ñ, è, and õ, should also be avoided.</p>
+<p>File name should ideally be no more than 35-50 characters, file names that try to give too much information end up having the reverse affect and users skim over and get less value than from a more concise name. File names that extend beyond 200 characters will likely cause issues for users using the files in other programs.</p>
+<p>The metadata file should have exactly the same name as the data file, with a suffix of ‘.meta’. E.g. <code>mydatafile.csv</code> and <code>mydatafile.meta.csv</code>.</p>
+<p>You should avoid references to time periods in the file name as this information is shown elsewhere and this can make it harder for users to make use of the newer versions of files in future years. File names should be recyclable year on year.</p>
+<p>In general you should avoid including the geographic level in the file name, unless it is a file that is specifically different (e.g.&nbsp;a file for school level data only).</p>
+<div class="alert alert-dismissible alert-danger">
+<p>For use with EES all file names should be in lower case and avoid special characters or spaces. Any upper case characters in file names will be forced to lower case by EES, and will appear as lower case to the users.</p>
+</div>
+<hr>
+</section>
+<section id="variable-names" class="level3">
+<h3 class="anchored" data-anchor-id="variable-names">Variable names</h3>
+<hr>
+<p>Variable names must be in the first row of your file as the header row, must not include spaces, and ideally be formatted in <a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake_case</a> for ease of use.</p>
+<p><strong>Avoid starting variable names with a numeric character.</strong></p>
+<p>As with file names, you should avoid any special characters; for example, the following characters <code>\ / : * ? " &lt; &gt; | [ ] &amp; $ , . +</code> are all considered special characters and are used for specific tasks in an electronic environment, which can lead to confusion in some systems. The use of non-English language letters such as á, í, ñ, è, and õ, should also be avoided.</p>
+<p>Variable names should ideally be kept below 25-35 characters as long names are often cut off when viewing the data file and generally fail to get the information required across to users. It is a balance between giving enough information so it’s clear what it refers to and giving so much that it’s unhelpful. Remember to make use of your public data guidance and methodology for expanding on details.</p>
+<hr>
+</section>
+<section id="how-to-export-data-with-utf-8-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-export-data-with-utf-8-encoding">How to export data with UTF-8 encoding</h3>
+<hr>
+<p>Most of the time our data is exported as a .csv file it will have UTF-8 encoding by default. However, there are times when this isn’t the case, and therefore we’ll quickly run through how to check this below in each of Excel, SQL, and R.</p>
+<p><strong>Excel</strong></p>
+<p>Excel tends to save all .csv files as UTF-8, however this is not always the case, particularly if there are symbols in the file (such as £). To ensure that it saves with UTF-8 encoding you can select the following when saving a file:</p>
+<p><code>File &gt; Save As &gt; CSV UTF-8 (Comma delimited) (*.csv)</code></p>
+<p><strong>SQL</strong></p>
+<p>For saving results out of SQL as a .csv file there isn’t an option to specify the encoding, therefore the best bet is to either open the file in Excel and specify that as above, or to run your SQL query/read your data into R and follow the guidance below.</p>
+<p><strong>R</strong></p>
+<p>When writing .csv files out of R, you’ll mostly likely be using either <code>write.csv()</code> from base R, or <code>write_csv()</code> from the readr package. For the first one, you can specify encoding using <code>encoding =</code> like the following example:</p>
+<p><code>write.csv(my_data, file = "my_data_file.csv", encoding = "UTF-8")</code></p>
+<p>For <code>write_csv()</code>, which some of you may be using for increased processing speed, the function automatically encodes as UTF-8 format, meaning that you don’t have to do anything different!</p>
+<hr>
+</section>
+</section>
+<section id="how-much-data-to-publish" class="level2">
+<h2 class="anchored" data-anchor-id="how-much-data-to-publish">How much data to publish</h2>
+<p>You should publish as many years of data that you have and is practicable.</p>
+<p>If you are not providing a full timeseries for any reason, you must link to the older published data from your publication release page, and make sure that it’s omission is explained in your methodology and metadata documents.</p>
+<hr>
+</section>
+<section id="deciding-what-should-be-in-a-file" class="level2">
+<h2 class="anchored" data-anchor-id="deciding-what-should-be-in-a-file">Deciding what should be in a file</h2>
+<p>Explore Education Statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.</p>
+<p>The first key consideration is that the table tool will only create tables from a single a data file, and cannot use multiple files as sources. Therefore any data that you want to compare within a single table must in the same data file. The table tool itself is there to allow users to narrow down the amount of data they have to absorb and to be able to efficiently take away key statistics.</p>
+<p>A useful way to judge how to break up data files is to consider whether all of the data in the file is appropriate to show side-by-side in the same table. If there are data that are conceptually different or may be confusing to compare side by side, then these should be in separate data files. Any data file uploaded to EES is usable by all users in the table tool, and users will be able to download the exact same files as you upload.</p>
+<p>We generally recommend fewer large files over a larger number of smaller files. <strong>If you think you are having issues with file size please tell us</strong> so that we can investigate and work towards a solution with you.</p>
+<hr>
+</section>
+<section id="file-size" class="level2">
+<h2 class="anchored" data-anchor-id="file-size">File size</h2>
+<p>There are no character or size limits in a csv file and there is no size limit for EES, though the larger a file is, the longer it will take to upload and process. Also remember that the files you upload are the files that users will download, consider the software they may access to (e.g.&nbsp;Excel) and whether the size of your files are compatible with this.</p>
+<p>Excel has a cell character limit of 32,760 and a row limit of 1,048,576. It is best to avoid exceeding these as some end users may struggle to open the file. One good way to cut the file down is to split after a certain number of years, or to separate out different geographic levels into separate files, providing school level data as a separate file for example. With the data all being in a tidy format these are then easy enough for secondary analysts to stitch back together if needed.</p>
+<p>A <strong>rough guide</strong> to file size would be:</p>
+<ul>
+<li>Anything under 10mb is relatively small</li>
+<li>10mb to 100mb is a fairly common file size that most teams have</li>
+<li>100mb to 500mb is a large file and will struggle to upload if not compressed to a zip folder.</li>
+<li>500mb and over are very large, and sometimes may struggle to compress small enough to upload.</li>
+<li>4gb or more in size is larger than any we have seen before and will likely need testing in the platform first.</li>
+</ul>
+<p><a href="mailto:mailto:statistics.development@education.gov.uk">Contact us</a> if you have any issues, or files that might be over 1gb.</p>
+<hr>
+</section>
+<section id="data-symbols" class="level2">
+<h2 class="anchored" data-anchor-id="data-symbols">Data symbols</h2>
+<p>In line with the <a href="https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/" target="_blank" rel="noopener noreferrer">GSS guidance on symbols</a>, special values should be replaced with symbols in the following situations:</p>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 33%">
+<col style="width: 42%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Usage</th>
+<th>Example</th>
+<th>Obsolete equivalents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>z</td>
+<td>When an observation is <strong>not applicable</strong></td>
+<td>No data for at gender level for boys at an all-girls school</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>x</td>
+<td>When data is <strong>unavailable</strong> for other reasons</td>
+<td>Data for an indicator is not collected in a certain region</td>
+<td>:</td>
+</tr>
+<tr class="odd">
+<td>c</td>
+<td><strong>Confidential</strong> data</td>
+<td>Data has been suppressed</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>low</td>
+<td>Rounds to 0, but is not 0</td>
+<td>Rounding to the nearest thousand, 499 would otherwise show as 0. Only use 0 for true 0’s</td>
+<td>~</td>
+</tr>
+<tr class="odd">
+<td>u</td>
+<td>When an observation is of <em>low reliability</em></td>
+<td>Data for a local authority is identified as missing returns so is removed from regional and national totals</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>If you have any other conventions you’ve used in previous publications, or a scenario that isn’t covered above, check the <a href="https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/" target="_blank" rel="noopener noreferrer">GSS guidance</a> (ignoring the part around separate columns for symbols), and contact us.</p>
+<hr>
+</section>
+</section>
+<section id="ees-metadata" class="level1">
+<h1>EES metadata</h1>
+<hr>
+<p>Metadata in a machine readable (.csv) format must accompany datasets uploaded to the Explore Education Statistics platform to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.</p>
+<p>This EES metadata is different to any metadata files you may provide alongside your data for your users.</p>
+<p>We only need to provide EES metadata for filters and indicators, we do not need to provide any EES metadata for the compulsory observational units (time and geography), as this has been standardised and the platform is expecting pre-defined columns and values in those fields.</p>
+<p>We do not need to provide metadata for filters that only have a single level, as this data is not useful for EES, and is there for the benefit of end users downloading the files.</p>
+<div class="alert alert-dismissible alert-info">
+<p>Note that any extra geography columns not specified in the <a href="#allowable-geographic-levels">allowable values</a> above, or any time columns extra to time_period and time_identifier, are <a href="#filters">filters</a>, and should be included in EES metadata if they have two or more levels.</p>
+</div>
+<p>With some files there may be more than one way to specify the metadata that will work in EES and give an accurate representation of the data itself. In these cases we recommend that publication teams test out different approaches and decide their approach based on what will best meet the needs of the users of their data.</p>
+<hr>
+<section id="mandatory-ees-metadata-columns" class="level2">
+<h2 class="anchored" data-anchor-id="mandatory-ees-metadata-columns">Mandatory EES metadata columns</h2>
+<table class="table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>column</th>
+<th>details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>col_name</td>
+<td>This must exactly match the name of the corresponding column in the dataset.</td>
+</tr>
+<tr class="even">
+<td>col_type</td>
+<td>This must be either ‘Filter’ or ‘Indicator’.</td>
+</tr>
+<tr class="odd">
+<td>label</td>
+<td>This is the version of the column name that the users will see on the platform, therefore you must fill this in and not leave it blank. For example, pupil_headcount may be ‘Number of pupil enrolments’. You should aim to keep these short and descriptive, but have the freedom to decide what is best to do for your users.</td>
+</tr>
+<tr class="even">
+<td>indicator_grouping</td>
+<td>This column gives production teams the option to add subheadings to group indicators in order to benefit the user. If this column is left blank, all indicators will be presented as one list of individual square radio boxes with no subheadings.</td>
+</tr>
+<tr class="odd">
+<td>indicator_unit</td>
+<td>If this column is left blank then this will be a number by default, alternatively you can use either of the following units for financial or percentage measures - “£”, “£m”, “%”, “pp”.</td>
+</tr>
+<tr class="even">
+<td>indicator_dp</td>
+<td>This column allows you to set decimal place formatting for each of your indicators. If you leave it blank the platform will default to 2 d.p</td>
+</tr>
+<tr class="odd">
+<td>filter_hint</td>
+<td>This column gives you the option to add in a hint such as ‘Filter by school type’ for the filter to make the service easier for the users to navigate. If you leave the column blank, no hint will appear. Do not duplicate the column name here, as it will just appear twice</td>
+</tr>
+<tr class="even">
+<td>filter_grouping_column</td>
+<td>This column should be blank unless you are wanting to group your filters. When you are wanting to group your filters this column should contain the exact name of the column/variable that you wish to group by. It is good practice to use the same variable name as that you are grouping, with _group appended at the end, i.e.&nbsp;‘filter’ and ‘filter_group’</td>
+</tr>
+</tbody>
+</table>
+<p>Note that if you are using percentage points (pp) you must include a clear explanation in your release and methodology, so that users can understand what you are referring to.</p>
+<hr>
+</section>
+<section id="example-ees-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="example-ees-metadata">Example EES metadata</h2>
+<p>Each row represents a column in the data file.</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 6%">
+<col style="width: 19%">
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 23%">
+<col style="width: 2%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>col_name</th>
+<th>col_type</th>
+<th>label</th>
+<th>indicator_grouping</th>
+<th>indicator_unit</th>
+<th>indicator_dp</th>
+<th>filter_hint</th>
+<th>filter_grouping_column</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>gender</td>
+<td>Filter</td>
+<td>Gender</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Filter by pupil gender</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>school_phase</td>
+<td>Filter</td>
+<td>School phase</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Filter by the phase of the school</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>number_children</td>
+<td>Indicator</td>
+<td>Number of children</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>percent_children</td>
+<td>Indicator</td>
+<td>Percentage of children</td>
+<td></td>
+<td>%</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<table class="table">
+<caption>The corresponding data file.</caption>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 3%">
+<col style="width: 16%">
+<col style="width: 8%">
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">time_period</th>
+<th style="text-align: left;">…</th>
+<th style="text-align: left;">country_name</th>
+<th style="text-align: left;">gender</th>
+<th style="text-align: left;">school_phase</th>
+<th style="text-align: right;">number_children</th>
+<th style="text-align: right;">percent_children</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">England</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Primary</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">26.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">England</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Primary</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">22.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">England</td>
+<td style="text-align: left;">Total</td>
+<td style="text-align: left;">Primary</td>
+<td style="text-align: right;">440</td>
+<td style="text-align: right;">48.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">England</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Secondary</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">26.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">England</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Secondary</td>
+<td style="text-align: right;">220</td>
+<td style="text-align: right;">24.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">England</td>
+<td style="text-align: left;">Total</td>
+<td style="text-align: left;">Secondary</td>
+<td style="text-align: right;">460</td>
+<td style="text-align: right;">51.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">England</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">53.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">England</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">420</td>
+<td style="text-align: right;">46.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">England</td>
+<td style="text-align: left;">Total</td>
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">100.0</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="time-and-geography" class="level1">
+<h1>Time and geography</h1>
+<hr>
+<p>Every observation, or row, in all of the provided data files will have a set of observational units based on the time period and geographic level that the data relates to. The number of these columns will differ across files depending on the number of geographic levels included in the publication.</p>
+<p>Across every single dataset of official statistics produced by DfE, the following column names must be present at a minimum (example cell values):</p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 22%">
+<col style="width: 23%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>time_identifier</th>
+<th>geographic_level</th>
+<th>country_code</th>
+<th>country_name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>201819</td>
+<td>Academic year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<section id="time-columns" class="level2">
+<h2 class="anchored" data-anchor-id="time-columns">Time columns</h2>
+<p>We use the two columns, time_period and time_identifier, to generalise time across our underlying datasets. All data files must contain these. This is a important for general useability of our data, as well as being critical in driving the charts and tables in the Explore Education Statistics platform and making explicit reference to the time in which our measurements relate to. This is a compulsory element of any official statistics dataset.</p>
+<p>If you think that your data can’t follow this format, please contact statistics.development@education.gov.uk with details so that we can discuss this.</p>
+<ul>
+<li>time_period must contain either a four digit year, or a 6 digit year.</li>
+<li>time_period must be numeric. This allows the platform to understand ranges and order periods in a logical manner.</li>
+<li>six digit time_periods must represent consecutive years - e.g.&nbsp;201718, not 201619.</li>
+<li>If you’re referring to a single term you should use the academic year not the calendar year in the time_period column.</li>
+<li>Conceptually different years cannot be mixed in the same dataset.</li>
+<li>Conceptually different year breakdowns (e.g.&nbsp;term, quarter, month), can be mixed with a full year of the same type using a filter column.</li>
+</ul>
+<hr>
+<section id="specific-time-standards" class="level3">
+<h3 class="anchored" data-anchor-id="specific-time-standards">Specific time standards</h3>
+<hr>
+<p>Producers should not mix different types of years in the same dataset. This is to prevent any chance of confusion for users selecting time periods with similar labels in the table tool. For example, you cannot have Academic year and Calendar year data in the same data file. You also cannot mix yearly breakdowns (e.g.&nbsp;full year, quarters, months, or terms) in the time identifier column. Instead, where it makes sense to mix these within a data file you should use a filter column as shown below. Note the use of ‘Total’, this is a part of the standards for filters.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>time_identifier</th>
+<th>quarter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>201718</td>
+<td>Academic year</td>
+<td>Total</td>
+</tr>
+<tr class="even">
+<td>201718</td>
+<td>Academic year</td>
+<td>Q1</td>
+</tr>
+<tr class="odd">
+<td>201718</td>
+<td>Academic year</td>
+<td>Q1-2</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>time_identifier</th>
+<th>month</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2017</td>
+<td>Calendar year</td>
+<td>Total</td>
+</tr>
+<tr class="even">
+<td>2017</td>
+<td>Calendar year</td>
+<td>July</td>
+</tr>
+</tbody>
+</table>
+<p>If your row of data spans multiple years (e.g.&nbsp;is a cumulative sum between 2010 and 2018), the starting year should be made clear in the name of the indicator, with the year of the end of the time period listed as the time identifier. For example if you had been recording the number of enrolments in a Local authority since from the start of the 2010/11 Academic year to the end of the 2017/18 Academic year, your data would look like the example on the right.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>time_identifier</th>
+<th>starts_since_201011</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>201718</td>
+<td>Academic year</td>
+<td>190</td>
+</tr>
+<tr class="even">
+<td>201617</td>
+<td>Academic year</td>
+<td>173</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="list-of-allowable-time-values" class="level3">
+<h3 class="anchored" data-anchor-id="list-of-allowable-time-values">List of allowable time values</h3>
+<hr>
+<p>All time_period values should be numeric only, below the number of digits (either 4 or 6) is defined per time_identifier below. Do not include dashes or slashes in six digit years.</p>
+<p>You can only mix time_identifiers if they appear within the same table below. If they are in separate tables then they should not be mixed.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Calendar year</td>
+<td>4 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Reporting year</td>
+<td>4 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://explore-education-statistics.service.gov.uk/glossary#academic-year" target="_blank" rel="noopener noreferrer">Academic year</a></td>
+<td>6 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://explore-education-statistics.service.gov.uk/glossary#financial-year" target="_blank" rel="noopener noreferrer">Financial year</a></td>
+<td>6 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Financial year Q1</td>
+<td>6 digits</td>
+</tr>
+<tr class="even">
+<td>Financial year Q2</td>
+<td>6 digits</td>
+</tr>
+<tr class="odd">
+<td>Financial year Q3</td>
+<td>6 digits</td>
+</tr>
+<tr class="even">
+<td>Financial year Q4</td>
+<td>6 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Part 1 (April to September)</td>
+<td>6 digits</td>
+</tr>
+<tr class="even">
+<td>Part 2 (October to March)</td>
+<td>6 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://explore-education-statistics.service.gov.uk/glossary#tax-year" target="_blank" rel="noopener noreferrer">Tax year</a></td>
+<td>6 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Autumn term</td>
+<td>6 digits</td>
+</tr>
+<tr class="even">
+<td>Spring term</td>
+<td>6 digits</td>
+</tr>
+<tr class="odd">
+<td>Summer term</td>
+<td>6 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Autumn and spring term</td>
+<td>6 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>January</td>
+<td>4 digits</td>
+</tr>
+<tr class="even">
+<td>February</td>
+<td>4 digits</td>
+</tr>
+<tr class="odd">
+<td>March</td>
+<td>4 digits</td>
+</tr>
+<tr class="even">
+<td>April</td>
+<td>4 digits</td>
+</tr>
+<tr class="odd">
+<td>May</td>
+<td>4 digits</td>
+</tr>
+<tr class="even">
+<td>June</td>
+<td>4 digits</td>
+</tr>
+<tr class="odd">
+<td>July</td>
+<td>4 digits</td>
+</tr>
+<tr class="even">
+<td>August</td>
+<td>4 digits</td>
+</tr>
+<tr class="odd">
+<td>September</td>
+<td>4 digits</td>
+</tr>
+<tr class="even">
+<td>October</td>
+<td>4 digits</td>
+</tr>
+<tr class="odd">
+<td>November</td>
+<td>4 digits</td>
+</tr>
+<tr class="even">
+<td>December</td>
+<td>4 digits</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Acceptable time_identifier value</th>
+<th>Corresponding time_period</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Week 1</td>
+<td>4 digits</td>
+</tr>
+<tr class="even">
+<td>Week …</td>
+<td>4 digits</td>
+</tr>
+<tr class="odd">
+<td>Week 52</td>
+<td>4 digits</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="jumbotron">
+
+<h3 class="anchored">
+Remember
+</h3>
+<hr class="my-4">
+<ul>
+<li>You must include time_period and time_identifier columns in your data files.</li>
+<li>Your data must match the allowable values above.</li>
+<li>Use ‘Reporting year’ if your data does not fit in other categories, i.e.&nbsp;collected on a specific day.</li>
+<li>If you have different types of year such academic, calendar, and financial, these should be in separate files.</li>
+<li>Use filters to add more detail if you have multiple time breakdowns in the same file (quarter/full year).</li>
+<li>Where a measure spans multiple years, you should name the starting year, and set the time_period as the year published.</li>
+</ul>
+</div>
+<hr>
+</section>
+</section>
+<section id="geography-columns" class="level2">
+<h2 class="anchored" data-anchor-id="geography-columns">Geography columns</h2>
+<p>We publish at a number of different geography breakdowns and these vary from publication to publication. Every publication in the new platform must include the three compulsory geography columns - geographic_level, country_code and country_name in its data files. These are compulsory as the data we are producing must lie within a country boundary.</p>
+<p>The geographic_level column should describe the level of data present in that row. Therefore data for a collection from a specific local authority would have ‘Local authority’ as the geographic_level, while a National aggregation would have ‘National’ as the geographic_level.</p>
+<p>Teams should make sure that they are regularly checking their geography codes if they are not using a lookup from a maintained database (such as in the PDR). ONS have the <a href="http://geoportal.statistics.gov.uk/" target="_blank" rel="noopener noreferrer">Open Geography portal</a>, which can be a useful way of checking these. There is a wealth of data on there, though Local authority boundaries can be hard to find, they can be found using the tabs at the top – Boundaries &gt; Administrative Boundaries &gt; Counties and Unitary Authorities.</p>
+<p>Teams can also use the lookup tables available via the <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa/tree/master/data" target="_blank" rel="noopener noreferrer">data screener GitHub repository data folder</a>. Guidance on how to link directly to the latest data in your code can be seen in the <a href="../RAP/rap.html#Standardised_reference_data">standardised reference data section</a></p>
+<p>If you have data from an unknown location, the standard is to use ‘Not available’ as name, and ‘x’ as the code/s, this clearly marks that the geographical data for that row is unavailable, and does so in a consistent way with the wider GSS. If you have a unique variation of a certain location, e.g.&nbsp;‘Outside of England and unknown’, we may be able to add these in as exceptions. Locations like this would have a code of ‘z’ as no widely used code is applicable, please get in touch with us to discuss it further if you think this might apply to you.</p>
+<p>We expect that all geography codes will be based on the Open Geography Portal and run checks against this for various levels in the <a href="#How-to-check-against-these-standards">data screener</a>, please contact us if you have data that doesn’t match this.</p>
+<div class="alert alert-dismissible alert-info">
+<p>Where you have data for a legacy LA that does not have a 9-digit new code, leave those cells as blank instead.</p>
+</div>
+<hr>
+<section id="different-measures-of-geography" class="level3">
+<h3 class="anchored" data-anchor-id="different-measures-of-geography">Different measures of geography</h3>
+<hr>
+<p>When using geographies that can be measured in multiple ways, you can achieve this by including a <a href="#filters">filter</a> such as level_methodology in the example below to state how you have measured the geographic level. For example, at Local authority level you may have data that was measured by the residence of the pupil and the location of the school:</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 13%">
+<col style="width: 15%">
+<col style="width: 22%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>geographic_level</th>
+<th>old_la_code</th>
+<th>la_name</th>
+<th>new_la_code</th>
+<th>level_methodology</th>
+<th>headcount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Local authority</td>
+<td>373</td>
+<td>Sheffield</td>
+<td>E08000019</td>
+<td>Pupil residence</td>
+<td>689</td>
+</tr>
+<tr class="even">
+<td>Local authority</td>
+<td>373</td>
+<td>Sheffield</td>
+<td>E08000019</td>
+<td>School location</td>
+<td>567</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="allowable-geographic-levels" class="level3">
+<h3 class="anchored" data-anchor-id="allowable-geographic-levels">Allowable geographic levels</h3>
+<hr>
+<p>All rows must have country_code and country_name completed, regardless of geographic level. The additional required columns by level are shown below. You do not have to publish at every level, this is a guide that covers every level that can be published in the platform.</p>
+<p>Where you have multiple geographic levels in a file, leave any not applicable columns blank for other rows. For example, region_name and region_code should be blank for national rows. Some levels do fit into a hierarchy, for example local authorities all have a region, in these cases you should include the higher level information too. So for a local authority row, the region and country columns would all be completed as well as the la columns.</p>
+<table class="table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 41%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>geographic_level</th>
+<th>required columns</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>National</td>
+<td>No additional columns</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Regional</td>
+<td>region_code, region_name</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Local authority</td>
+<td>old_la_code, new_la_code, la_name</td>
+<td>It is usually good practice to include the Regional aggregations where possible given the direct link between Local authorities and Regions.</td>
+</tr>
+<tr class="even">
+<td>RSC region</td>
+<td>rsc_region_lead_name</td>
+<td>For RSC region data, we generally define them into lead RSC regions where the majority of the data is from.</td>
+</tr>
+<tr class="odd">
+<td>Parliamentary constituency</td>
+<td>pcon_code, pcon_name</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Local authority district</td>
+<td>lad_code, lad_name</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Local enterprise partnership</td>
+<td>local_enterprise_partnership_code, local_enterprise_partnership_name</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>English devolved area</td>
+<td>english_devolved_area_code, english_devolved_area_name</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Opportunity area</td>
+<td>opportunity_area_code, opportunity_area_name</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Ward</td>
+<td>ward_code, ward_name</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>MAT</td>
+<td>trust_id, trust_name</td>
+<td>Note that Trust ID is shown as Group ID on GIAS when looking at a Trust. MATs also have a ‘company number’, this can be included but is not mandatory.</td>
+</tr>
+<tr class="even">
+<td>Sponsor</td>
+<td>sponsor_id, sponsor_name</td>
+<td>Note that Sponsor ID is shown as Group ID on GIAS when looking at a Sponsor.</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-dismissible alert-info">
+<p><a href="https://explore-education-statistics.service.gov.uk/glossary#english-devolved-area" target="_blank" rel="noopener noreferrer">English devolved area</a> is used to refer to combined authorities, mayoral combined authorities and the Greater London Authority.</p>
+</div>
+<p>Planning area, School, Provider, and Institution level data will upload as normal to EES, though will not be read into the table tool or data blocks if they are mixed in with other levels. All data, including these levels are accessible in the downloadable files for users to explore in the same format as they are uploaded.</p>
+<p>For Provider, any data files that <strong>only</strong> consist of this level are able to be uploaded and will be usable in the table tool. This solution is still not ideal, though it will allow you to include additional filters at provider level. Wherever there are multiple values per provider this should be marked as a filter, and where there is a single value per provider this should be marked as an indicator.</p>
+<p>For School, any files consisting of school-level data should be standalone data files (that will work in the table tool, not ancillary files) and these should all be passing the <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank">EES data screener</a>. They should also include LA level information so that users can see this when searching.</p>
+<table class="table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 41%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>geographic_level</th>
+<th>required columns</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>School</td>
+<td>school_name, school_urn, school_laestab, old_la_code, new_la_code, la_name</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Provider</td>
+<td>provider_name, provider_ukprn</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For Planning area and Institution data, any data files that <strong>only</strong> consist of these levels should be uploaded as an ancillary file rather than a data file.</p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 32%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>geographic_level</th>
+<th>required columns</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Planning area</td>
+<td>No required columns, though we recommend both planning_area_code and planning_area_name</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Institution</td>
+<td>No required columns, though we recommend you include institution_id and institution_name to make data matching easier</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-dismissible alert-warning">
+<p>If you have a level that isn’t covered above, please contact statistics.development@education.gov.uk with details and example data.</p>
+</div>
+<hr>
+</section>
+<section id="using-school-or-provider-as-a-filter" class="level3">
+<h3 class="anchored" data-anchor-id="using-school-or-provider-as-a-filter">Using School or Provider as a filter</h3>
+<hr>
+<p>Provider / School breakdowns can work as a filter column in your data file but only if it is the only filter in the file. We’d recommend using school_name or provider_name as the filter, and then including the code as well, such as Malton School (URN: 121681) or Malton School (UKPRN: 10004165). You should also include LA level information so that users can see this when searching.</p>
+<p>This approach will work for basic filtering of providers and schools but it may not be performant in the table tool and the number of choices made available to users may be overwhelming (especially for schools, or data set to national level).</p>
+<hr>
+</section>
+<section id="unknown-geographic-codes" class="level3">
+<h3 class="anchored" data-anchor-id="unknown-geographic-codes">Unknown geographic codes</h3>
+<hr>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 39%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Geographical code</th>
+<th>Usage</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>z</td>
+<td>When a geography code is <strong>not applicable</strong></td>
+<td>Using custom geographies like “Scotland, Wales and Northern Ireland” as a group. This has no standardised geography code so will not be applicable</td>
+</tr>
+<tr class="even">
+<td>x</td>
+<td>When a geography code is <strong>unavailable</strong></td>
+<td>Data is missing, the geography is unknown so no code is available</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="jumbotron">
+
+<h3 class="anchored">
+Remember
+</h3>
+<hr class="my-4">
+<ul>
+<li>You must have the minimum expected geography columns, country_code and country_name.</li>
+<li>You must also have the additional columns required for all geographies included in your file.</li>
+<li>The additional columns must exactly match the names above.</li>
+<li>You do not have to publish at every level in the guide, publish the selection of levels you feel appropriate.</li>
+<li>You should regularly check that you are using the most up to date geography names and codes.</li>
+<li>Aside from blanks, no two geographic locations should have the same code.</li>
+<li>You can mix geographies in the same file, and should avoid separating files by geography unless size is an issue.</li>
+</ul>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="common-harmonised-variables" class="level1">
+<h1>Common harmonised variables</h1>
+<hr>
+<p>Wherever possible variables should confirm to the DfE harmonisation strategy. Having consistent variables across publications allows users to more quickly navigate and understand our statistics, whilst also facilitating more advanced methods of interacting with our data platform such as automated data retrieval for dashboards and other secondary statistics services.</p>
+<hr>
+<section id="ethnicity" class="level2">
+<h2 class="anchored" data-anchor-id="ethnicity">Ethnicity</h2>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<hr>
+<p>Race is a protected characteristic under the Equality Act 2010 and can include colour, nationality, ethnic or national origins. Data collected on ethnicity is self-identified and captures a person’s feelings of cultural heritage and belonging. Everyone may have slightly different ideas and feelings about what ethnicity encompasses, race and nationality may, or may not, be a part of a persons’ self-identified ethnicity.</p>
+<p>This guidance has been written by collating the most up to date advice and guidance from the following sources:</p>
+<ul>
+<li><a href="https://analysisfunction.civilservice.gov.uk/policy-store/ethnicity-harmonised-standard/" target="_blank">Government Statistical Service (GSS)</a></li>
+<li><a href="https://style.ons.gov.uk/house-style/race-and-ethnicity/" target="_blank">Office for National Statistics</a></li>
+<li><a href="https://www.ethnicity-facts-figures.service.gov.uk/style-guide/writing-about-ethnicity" target="_blank">Cabinet Office</a></li>
+<li><a href="https://www.gov.uk/government/publications/the-report-of-the-commission-on-race-and-ethnic-disparities" target="_blank">Commission on Race and Ethnic Disparities (CRED) report</a></li>
+</ul>
+<hr>
+</section>
+<section id="gss-ethnicity-categories" class="level3">
+<h3 class="anchored" data-anchor-id="gss-ethnicity-categories">GSS ethnicity categories</h3>
+<hr>
+<p>Ethnicity breakdowns should be presented within the standard field names in any data files containing ethnicity breakdowns: <strong>ethnicity_major</strong>, <strong>ethnicity_minor</strong> or <strong>ethnicity_detailed</strong>. The first two are outlined in reference to the GSS guidelines on ethnic groupings below, whilst the third is for any ethnicity fields containing finer grained breakdowns than described in ethnicity_minor below.</p>
+<p>The GSS publish standards on how to collect ethnicity data based on research conducted for the UK Census. The current guidelines (shown below) were developed as part of the 2011 Census and were unchanged in the 2021 census. We aim to follow as closely as reasonable to the GSS standards and guidance. Note the use of spaces around forward-slashes, which allows us to meet accessibility standards (in particular for the use of screen readers) as well as improving automated wrapping in text and value boxes.</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>ethnicity_major</th>
+<th>ethnicity_minor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>White</strong></td>
+<td>English / Welsh / Scottish / Northern Irish / British</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Irish</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Gypsy or Irish Traveller</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Any other White background</td>
+</tr>
+<tr class="odd">
+<td><strong>Mixed / Multiple ethnic groups</strong></td>
+<td>White and Black Caribbean</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>White and Black African</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>White and Asian</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Any other Mixed / Multiple ethnic background</td>
+</tr>
+<tr class="odd">
+<td><strong>Asian / Asian British</strong></td>
+<td>Indian</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Pakistani</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Bangladeshi</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Chinese</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Any other Asian background</td>
+</tr>
+<tr class="even">
+<td><strong>Black / African / Caribbean / Black British</strong></td>
+<td>African</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Caribbean</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Any other Black / African / Caribbean background</td>
+</tr>
+<tr class="odd">
+<td><strong>Other ethnic group</strong></td>
+<td>Arab</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Any other ethnic group</td>
+</tr>
+<tr class="odd">
+<td><strong>Unknown</strong></td>
+<td>Unknown</td>
+</tr>
+</tbody>
+</table>
+<p>Note that these standards are written from the perspective of creating survey questions, i.e.&nbsp;the data collection phase. Where teams are trying to aggregate existing categories up to match the GSS guidance, careful consideration of how and where differing systems may or may not match with the guidance is necessary.</p>
+<p>We recommend two alternative methods of ordering the above ethnic groups when reporting on ethnicity statistics:</p>
+<ul>
+<li>Alphabetical: use in tables and when listing ethnic groups (with ‘Other ethnic group’ and sometimes ‘Unknown’ as a final category)</li>
+<li>In expected order of size (with largest first): useful in charts and visualisations as it makes data and patterns easier to read</li>
+</ul>
+<hr>
+</section>
+<section id="reporting-on-broad-ethnic-minorities-catageories-e.g.-bame" class="level3">
+<h3 class="anchored" data-anchor-id="reporting-on-broad-ethnic-minorities-catageories-e.g.-bame">Reporting on broad ethnic minorities catageories (e.g.&nbsp;BAME)</h3>
+<hr>
+<p>Published in March 2021, the report of the Commission on Race and Ethnic Disparities made a number of suggestions on how we discuss and report on race in the UK.</p>
+<p>One of the major elements was around aggregation of ethnic minorities into a single over-arching group (in particular BAME):</p>
+<blockquote class="blockquote">
+<p>Recommendation 24: Disaggregate the term ‘BAME’ Stop using aggregated and unhelpful terms such as ‘BAME’, to better focus on understanding disparities and outcomes for specific ethnic groups.</p>
+</blockquote>
+<p>The reasons for this approach are two-fold:</p>
+<ul>
+<li><p>Grouping separate ethnic minorities into a single over-arching group can mask differing trends that may be present in the underlying data for groups experiencing different pressures and environments within UK society.</p></li>
+<li><p>The phrasing ‘Black and Minority Ethnic’ and ‘Black, Asian and Minority Ethnic’ give an emphasis to specific ethnic groups whilst excluding others. This could be misleading or diminish consideration of the unnamed groups within the statistics.</p></li>
+</ul>
+<p>Based on this guidance, the following is how teams should aggregate and write about ethnic minority groups.</p>
+<p>Statistics producers should avoid where possible the practice of reporting aggregates grouping together disparate ethnic groups. Instead, statistics should be reported individually for the recommended top-level groups:</p>
+<ul>
+<li><p><strong>White</strong></p></li>
+<li><p><strong>Mixed / Multiple ethnic groups</strong></p></li>
+<li><p><strong>Asian / Asian British</strong></p></li>
+<li><p><strong>Black / African / Caribbean / Black British</strong></p></li>
+<li><p><strong>Other ethnic group</strong></p></li>
+</ul>
+<p>Where there is a reasonable need to publish or report statistics for a full aggregation of ethnic minorities (such as reporting on existing historical targets), official guidance is as follows:</p>
+<blockquote class="blockquote">
+<p>Use ‘ethnic minorities’ to refer to all ethnic groups except the white British group. This term includes white minorities, such as Gypsy, Roma and Irish Traveller groups. For comparisons with the white group as a whole, use ‘ethnic minorities (excluding White minorities)’.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+</section>
+<section id="filters" class="level1">
+<h1>Filters</h1>
+<hr>
+<p>A filter is a variable that we break our data down by, such as school type, pupil characteristics, or NQT status. There are no required standards for these, you can include any filters that you feel benefit the users of your data.</p>
+<p>Filter names must not include spaces, and ideally be formatted in <a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake_case</a> for ease of use. You can use abbreviations to keep the names short and usable, your users will be able to see what each variable name means in the data guidance. <strong>Avoid starting variable names with a numeric character.</strong></p>
+<p>Aggregates should be included for all filters where possible. There will be some situations where aggregation does not work, this will not break the platform, though may make the data less user-friendly. In general, if you can’t aggregate, e.g.&nbsp;if you have headcount and fte, then this is an indication that they are instead separate measures and should have separate indicator columns rather than forcing them into a filter column.</p>
+<p><strong>For aggregate rows you should refer to these as ‘Total’.</strong> When using filters such as school type or FSM eligibility this can be quite simple, as shown in the example below:</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>time_identifier</th>
+<th>geographic_level</th>
+<th>country_code</th>
+<th>country_name</th>
+<th>school_type</th>
+<th>FSM_status</th>
+<th>headcount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>201819</td>
+<td>Academic year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>Total</td>
+<td>Eligible</td>
+<td>590</td>
+</tr>
+<tr class="even">
+<td>201819</td>
+<td>Academic year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>Primary</td>
+<td>Eligible</td>
+<td>280</td>
+</tr>
+<tr class="odd">
+<td>201819</td>
+<td>Academic year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>Secondary</td>
+<td>Eligible</td>
+<td>310</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It is possible that you wish to include a filter that only has a single level, like FSM_status in the above example that only has ‘Eligible’. This is to be expected, and you do not need to unnecessarily double the size of your file by adding a ‘Total’ that duplicates what is already there. Where this is the case, do not include this filter in the EES metadata as the platform does not need to read that column into the table tool.</p>
+<hr>
+<section id="grouping-filters" class="level3">
+<h3 class="anchored" data-anchor-id="grouping-filters">Grouping filters</h3>
+<hr>
+<p>For some filters, this can be more complicated. You might have a great number of different filters that you would rather group together in a two-level hierarchy. You can do this by grouping a filter by a filter group. This essentially uses another filter column to provide a higher group level. This also may be helpful for EES users when creating tables. For example, you may want to group percentages into wider rate bands.</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 18%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>time_identifier</th>
+<th>geographic_level</th>
+<th>country_code</th>
+<th>country_name</th>
+<th>absence_band_group</th>
+<th>absence_band</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2018</td>
+<td>Calendar year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>60.0 – 69.9</td>
+<td>67.0 - 67.9</td>
+</tr>
+<tr class="even">
+<td>2018</td>
+<td>Calendar year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>60.0 – 69.9</td>
+<td>62.0 - 62.9</td>
+</tr>
+<tr class="odd">
+<td>2018</td>
+<td>Calendar year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>10.0 – 19.9</td>
+<td>16.0 - 16.9</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<p>You can also see an example with apprenticeship data file, including the corresponding EES metadata, below:</p>
+<hr>
+<p>Data file.</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 4%">
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 9%">
+<col style="width: 10%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>…</th>
+<th>country_name</th>
+<th>appr_type</th>
+<th>appr_exact</th>
+<th>starters</th>
+<th>drop_outs</th>
+<th>drop_out_rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2018</td>
+<td>…</td>
+<td>England</td>
+<td>Hair and beauty</td>
+<td>Hairdressing</td>
+<td>200</td>
+<td>10</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td>2018</td>
+<td>…</td>
+<td>England</td>
+<td>Hair and beauty</td>
+<td>Beauty therapy</td>
+<td>100</td>
+<td>2</td>
+<td>0.02</td>
+</tr>
+<tr class="odd">
+<td>2018</td>
+<td>…</td>
+<td>England</td>
+<td>Rail engineering</td>
+<td>Track signalling</td>
+<td>80</td>
+<td>4</td>
+<td>0.05</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<p>Corresponding EES metadata file.</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>col_name</th>
+<th>col_type</th>
+<th>label</th>
+<th>indicator_grouping</th>
+<th>indicator_unit</th>
+<th>filter_hint</th>
+<th>filter_grouping_column</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>starters</td>
+<td>Indicator</td>
+<td>Number of learners starting an apprenticeship</td>
+<td>Apprentice starts</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>drop_outs</td>
+<td>Indicator</td>
+<td>Number of learners not completing an apprenticeship</td>
+<td>Apprentice drop-outs</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>drop_out_rate</td>
+<td>Indicator</td>
+<td>Percentage of pupils not completing an apprenticeship</td>
+<td>Apprentice drop-outs</td>
+<td>%</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>appr_exact</strong></td>
+<td>Filter</td>
+<td>Type of apprenticeship</td>
+<td></td>
+<td></td>
+<td>Select the apprenticeship types you’re interested in</td>
+<td><strong>appr_type</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<div class="alert alert-dismissible alert-danger">
+<p>
+You must not include grouping filters as separate rows in the EES metadata, they should only be referenced in the filter_grouping_column.
+</p>
+</div>
+<hr>
+</section>
+<section id="dates-as-filters" class="level3">
+<h3 class="anchored" data-anchor-id="dates-as-filters">Dates as filters</h3>
+<hr>
+<p>If you are publishing data with a date assigned (e.g.&nbsp;daily data), you can add date in as an additional filter.</p>
+<p>It is important to maintain a <strong>yyyy-mm-dd</strong> format as demonstrated below, so that EES lists dates in the correct order in the table builder.</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>time_identifier</th>
+<th>date</th>
+<th>geographic_level</th>
+<th>country_code</th>
+<th>country_name</th>
+<th>absence_band</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2020</td>
+<td>Week 50</td>
+<td>2020-05-14</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>67.0 - 67.9</td>
+</tr>
+<tr class="even">
+<td>2020</td>
+<td>Week 50</td>
+<td>2020-05-15</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>62.0 - 62.9</td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td>Week 50</td>
+<td>2020-05-16</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>16.0 - 16.9</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>R automatically outputs dates in this format, but you can also change this in excel if needed, by selecting the column to change and switching from “General” to the specified date format:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/change_date_format.PNG" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+<div class="jumbotron">
+
+<h3 class="anchored">
+Remember
+</h3>
+<hr class="my-4">
+<ul>
+<li>All filters should have a ‘Total’ aggregation where possible.</li>
+<li>If a filter has one level, you should not include it in the EES metadata.</li>
+<li>Where filters do not aggregate, consider if you should have the levels as indicators instead.</li>
+<li>Grouping filters is an option, but only group filters where you decide it is better for your users.</li>
+<li>If a filter is used to group another, then it should not appear as a separate row in the EES metadata.</li>
+</ul>
+</div>
+<hr>
+</section>
+</section>
+<section id="indicators" class="level1">
+<h1>Indicators</h1>
+<hr>
+<p>The indicators are the variables showing the measurements/statistics themselves, such as the number of pupils. These can be of different formats (e.g.&nbsp;text, numeric), although are numeric by default. The number of indicators will vary across publications and data files.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>
+<strong>Every variable in your dataset should have its own column, and each column should be a single data type</strong>. E.g. do not create an indicator column called “pupils” that has both the number and percentage of pupils in it. Instead, create two separate columns for each measure.
+</p>
+</div>
+<p>As an example, the number and percentage of pupil enrolments are the indicators in this dataset:</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 7%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 17%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>…</th>
+<th>country_name</th>
+<th>school_type</th>
+<th>enrolments_num</th>
+<th>enrolments_pc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>201819</td>
+<td>…</td>
+<td>England</td>
+<td>Total</td>
+<td>200</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>201819</td>
+<td>…</td>
+<td>England</td>
+<td>Primary</td>
+<td>150</td>
+<td>75</td>
+</tr>
+<tr class="odd">
+<td>201819</td>
+<td>…</td>
+<td>England</td>
+<td>Secondary</td>
+<td>50</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Like filters, indicator names must not include spaces, and ideally be formatted in <a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake_case</a> for ease of use. You can use abbreviations to keep the names short and usable, your users will be able to see what each variable name means in the data guidance. <strong>Avoid starting variable names with a numeric character.</strong></p>
+<p>In EES, the platform itself will format large numeric values to include commas, so you do not need to have commas for separating large numbers in your data file.</p>
+<p>If you are including percentages and want to show 79% in EES, you would have the value 79 in your data file and specify % as the unit for that column in the EES metadata. As best practice we recommend that you include as much detail as possible in your underlying files when it comes to decimal places. As a default EES will round decimals to 2 d.p. in the platform, though if you would prefer to display your data to a different number of d.p. in the platform please use the <a href="#ees-metadata">indicator_dp</a> column to specify this in the .csv metadata. Likewise with financial data, for don’t include £ in the values in the data file, leave those cells as numeric only, include it as an indicator unit instead.</p>
+<p>In line with GSS best practice for communicating uncertainty, when using confidence intervals you should report the upper and lower bounds as separate columns rather than as one confidence interval column:</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 5%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>…</th>
+<th>country_name</th>
+<th>school_type</th>
+<th>estimate</th>
+<th><strong>est_lower_ci</strong></th>
+<th><strong>est_upper_ci</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>201819</td>
+<td>…</td>
+<td>England</td>
+<td>Total</td>
+<td>100</td>
+<td><strong>96.7</strong></td>
+<td><strong>103.3</strong></td>
+</tr>
+<tr class="even">
+<td>201819</td>
+<td>…</td>
+<td>England</td>
+<td>Primary</td>
+<td>50</td>
+<td><strong>48.9</strong></td>
+<td><strong>51.1</strong></td>
+</tr>
+<tr class="odd">
+<td>201819</td>
+<td>…</td>
+<td>England</td>
+<td>Secondary</td>
+<td>50</td>
+<td><strong>49.5</strong></td>
+<td><strong>50.5</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<section id="indicator-grouping" class="level3">
+<h3 class="anchored" data-anchor-id="indicator-grouping">Indicator grouping</h3>
+<hr>
+<p>Many of our publications contain a large number of indicators. To improve the experience of the user in the platform we can group these under headings as shown on the right. In the example, you can see how the different indicators have been grouped into ‘Admissions’, ‘Applications’, and ‘Preferences breakdowns’ in the EES metadata, followed by how this will appear in the table tool for users.</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>col_name</th>
+<th>col_type</th>
+<th>label</th>
+<th>indicator_grouping</th>
+<th>indicator_unit</th>
+<th>filter_hint</th>
+<th>filter_grouping_column</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>nc_year</td>
+<td>Filter</td>
+<td>NC Year</td>
+<td></td>
+<td></td>
+<td>Filter by national curriculum year</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>admissions</td>
+<td>Indicator</td>
+<td>Number of admissions</td>
+<td><strong>Admissions</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>applications</td>
+<td>Indicator</td>
+<td>Number of applications received</td>
+<td><strong>Applications</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>online_apps</td>
+<td>Indicator</td>
+<td>Number of online applications</td>
+<td><strong>Applications</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>online_apps_%</td>
+<td>Indicator</td>
+<td>Percentage of online applications</td>
+<td><strong>Applications</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<p>Example of how this would look in Explore Education Statistics:</p>
+<hr>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/indicator_group.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Department for Education, 2023</div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">This page is maintained by statistics.development@education.gov.uk</div>
+  </div>
+</footer>
+
+
+
+</body></html>

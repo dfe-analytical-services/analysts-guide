@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Analyst’s Guide - R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../learning-development/git.html" rel="next">
+<link href="../learning-development/sql.html" rel="prev">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KBJCBD114T"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KBJCBD114T', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"headline",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../learning-development/learning-support.html">Learning resources</a></li><li class="breadcrumb-item"><a href="../learning-development/r.html">R</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="mailto:statistics.development@education.gov.uk" rel="" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-microsoft-teams"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a50f82a2718184a0e98ba86c3d411a02f%40thread.skype/conversations?groupId=6572094f-43a3-4537-bcf0-fc27dc6557ed&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            DfE analysts network
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3ae3c8551e86094e259a60848fcff4dbc1%40thread.skype/conversations?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            Statistics production
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            DfE R community
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-camera-reels"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Statistician%27s%20Guide%20to%20the%20Galaxy?csf=1&amp;web=1&amp;e=owScaj">
+            Guide to the Galaxy sessions
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Explore%20Education%20Statistics?csf=1&amp;web=1&amp;e=HVpi0D">
+            EES show and tells
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series?csf=1&amp;web=1&amp;e=H0pcSH">
+            RAP knowledge share series
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/sites/sarpi/g/AC/Coffee%20and%20Coding.aspx?xsdata=MDV8MDF8fGU5YTkwYWU1OTNiNjQzZTIyZTM2MDhkYjVhY2MxN2JlfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2MzgyMDM2MDQ4MjEyMjUwMTR8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPbTFsWlhScGJtZGZXVlJuZUUxRVVUTlphbGwwVGpKUk1FNTVNREJhYW1zMVRGUnJNbHBYV1hSTmVtTjZXbXBCTWxwdFZUQlBWMVV3UUhSb2NtVmhaQzUyTWk5dFpYTnpZV2RsY3k4eE5qZzBOell6TmpneE5qRXh8YjdlZWE0MGYzNDg5NGYxYzJlMzYwOGRiNWFjYzE3YmV8MmE3NzU1YzRmOWMyNDZlOTkwYWVmMjlkZjY5NjczZWE%3D&amp;sdata=ajlKYUZuNHFyNU9XSm5WR3ZZaUZHZDB4bjVJYkJzRFZNc0U1Uit5V1Q5cz0%3D&amp;ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CTess%2EWILLIAMS%40EDUCATION%2EGOV%2EUK&amp;OR=Teams%2DHL&amp;CT=1684763684990&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA0MDIwMjcwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D">
+            Coffee and coding sessions
+            </a>
+          </li>
+      </ul>
+    </div>
+    <a href="https://explore-education-statistics.service.gov.uk/" rel="" title="Explore education statistics" class="quarto-navigation-tool px-1" aria-label="Explore education statistics"><i class="bi bi-graph-up"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-2" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-2">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide">
+            Source code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide/issues/new">
+            Suggest changes
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Learning resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Statistics production</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/pub.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">creating-statistics/ud.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/ees.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/embedded-charts.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/examples.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">understanding-users/user-eng.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">understanding-users/user-analytics.qmd</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Writing and visualising</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+ <span class="menu-text">creating-statistics/cd.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">publishing-statistics/dashboards.qmd</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP expectations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP FAQs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for Statistics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">ADA and databricks</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-r" id="toc-what-is-r" class="nav-link active" data-scroll-target="#what-is-r">What is R</a></li>
+  <li><a href="#what-is-r-for" id="toc-what-is-r-for" class="nav-link" data-scroll-target="#what-is-r-for">What is R for</a></li>
+  <li><a href="#how-to-install-r" id="toc-how-to-install-r" class="nav-link" data-scroll-target="#how-to-install-r">How to install R</a></li>
+  <li><a href="#best-places-to-start" id="toc-best-places-to-start" class="nav-link" data-scroll-target="#best-places-to-start">Best places to start</a></li>
+  <li><a href="#best-practice" id="toc-best-practice" class="nav-link" data-scroll-target="#best-practice">Best practice</a></li>
+  <li><a href="#how-to-work-with-r" id="toc-how-to-work-with-r" class="nav-link" data-scroll-target="#how-to-work-with-r">How to work with R</a>
+  <ul class="collapse">
+  <li><a href="#r-projects" id="toc-r-projects" class="nav-link" data-scroll-target="#r-projects">R Projects</a></li>
+  <li><a href="#outlines" id="toc-outlines" class="nav-link" data-scroll-target="#outlines">Outlines</a></li>
+  <li><a href="#renv" id="toc-renv" class="nav-link" data-scroll-target="#renv">renv</a></li>
+  </ul></li>
+  <li><a href="#quick-reference-lookup" id="toc-quick-reference-lookup" class="nav-link" data-scroll-target="#quick-reference-lookup">Quick reference lookup</a></li>
+  <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources">Other resources</a></li>
+  <li><a href="#excel-functions-in-r" id="toc-excel-functions-in-r" class="nav-link" data-scroll-target="#excel-functions-in-r">Excel functions in R</a></li>
+  <li><a href="#sql-functions-in-r" id="toc-sql-functions-in-r" class="nav-link" data-scroll-target="#sql-functions-in-r">SQL functions in R</a></li>
+  <li><a href="#tips-for-using-r" id="toc-tips-for-using-r" class="nav-link" data-scroll-target="#tips-for-using-r">Tips for using R</a>
+  <ul class="collapse">
+  <li><a href="#specifying-a-version-of-r-to-use" id="toc-specifying-a-version-of-r-to-use" class="nav-link" data-scroll-target="#specifying-a-version-of-r-to-use">Specifying a version of R to use</a></li>
+  <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding">Rounding</a></li>
+  <li><a href="#passing-variables-as-arguments" id="toc-passing-variables-as-arguments" class="nav-link" data-scroll-target="#passing-variables-as-arguments">Passing variables as arguments</a></li>
+  <li><a href="#reverse-additive-filters" id="toc-reverse-additive-filters" class="nav-link" data-scroll-target="#reverse-additive-filters">Reverse additive filters</a></li>
+  <li><a href="#file-locations" id="toc-file-locations" class="nav-link" data-scroll-target="#file-locations">File locations</a></li>
+  <li><a href="#interweaving-vectors" id="toc-interweaving-vectors" class="nav-link" data-scroll-target="#interweaving-vectors">Interweaving vectors</a></li>
+  <li><a href="#making-charts-interactive" id="toc-making-charts-interactive" class="nav-link" data-scroll-target="#making-charts-interactive">Making charts interactive</a></li>
+  <li><a href="#replace-all-values-with-another" id="toc-replace-all-values-with-another" class="nav-link" data-scroll-target="#replace-all-values-with-another">Replace all values with another</a></li>
+  <li><a href="#temporary-groups" id="toc-temporary-groups" class="nav-link" data-scroll-target="#temporary-groups">Temporary groups</a></li>
+  <li><a href="#finding-package-dependencies" id="toc-finding-package-dependencies" class="nav-link" data-scroll-target="#finding-package-dependencies">Finding package dependencies</a></li>
+  <li><a href="#visualise-dependencies" id="toc-visualise-dependencies" class="nav-link" data-scroll-target="#visualise-dependencies">Visualise dependencies</a></li>
+  <li><a href="#reproducible-random-numbers" id="toc-reproducible-random-numbers" class="nav-link" data-scroll-target="#reproducible-random-numbers">Reproducible random numbers</a></li>
+  <li><a href="#automatic-logging" id="toc-automatic-logging" class="nav-link" data-scroll-target="#automatic-logging">Automatic logging</a></li>
+  <li><a href="#running-sql-scripts-from-r" id="toc-running-sql-scripts-from-r" class="nav-link" data-scroll-target="#running-sql-scripts-from-r">Running SQL scripts from R</a></li>
+  <li><a href="#cant-find-make-error" id="toc-cant-find-make-error" class="nav-link" data-scroll-target="#cant-find-make-error">Can’t find make error</a></li>
+  <li><a href="#packages-not-downloading-due-to-wininet-error-renv-0.17" id="toc-packages-not-downloading-due-to-wininet-error-renv-0.17" class="nav-link" data-scroll-target="#packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/learning-development/r.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">R</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p class="text-muted">
+Guidance and tips for using the programming language R
+</p>
+<hr>
+<section id="what-is-r" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-r">What is R</h2>
+<p>R is an open-source programming language specifically aimed at statisticians and data analysts.</p>
+<hr>
+</section>
+<section id="what-is-r-for" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-r-for">What is R for</h2>
+<p>R can be used for almost anything you can think of, notably data analysis, data visualisation, and creating reports and dashboards. It can also be used to extract data from SQL databases and run SQL queries.</p>
+<hr>
+</section>
+<section id="how-to-install-r" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-install-r">How to install R</h2>
+<p>Download R (language) and RStudio (IDE) from the DfE software center. We also recommend that you download RTools (a helpful R extension) at the same time.</p>
+<p>There are usually a couple of different versions available for software on the software center, we’d recommend you always go for the latest (newest) version possible.</p>
+<!-- gif getting this from the software center -->
+<hr>
+</section>
+<section id="best-places-to-start" class="level2">
+<h2 class="anchored" data-anchor-id="best-places-to-start">Best places to start</h2>
+<ul>
+<li><p>The DfE Analytics Academy host an <a href="https://trello.com/invite/b/QdDx3VmA/96f273b3438db2bb8ee5feae3943c3d4/analytics-academy-an-r-training-course" target="_blank" rel="noopener noreferrer">online R training course</a>. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.</p></li>
+<li><p>There is also the <a href="https://dfe-analytical-services.github.io/r-training-course/" target="_blank" rel="noopener noreferrer">DfE R training guide</a>, which is a great starting point and reference to guide you through how to get started using R and RStudio.</p></li>
+<li><p>As an alternative, with a number of options for beginners to R, <a href="https://education.rstudio.com/learn/beginner/" target="_blank" rel="noopener noreferrer">RStudio Education</a> provide a variety of materials to suit different learning styles.</p></li>
+</ul>
+<hr>
+</section>
+<section id="best-practice" class="level2">
+<h2 class="anchored" data-anchor-id="best-practice">Best practice</h2>
+<p>Tips for reaching best practice in R can be found on our <a href="../RAP/rap.html#Clean_final_code">RAP page</a>, with guidance on meeting best practice in RAP for clean final code. This makes it easier to read and pick up if another person is running your code.</p>
+<hr>
+</section>
+<section id="how-to-work-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-work-with-r">How to work with R</h2>
+<section id="r-projects" class="level3">
+<h3 class="anchored" data-anchor-id="r-projects">R Projects</h3>
+<hr>
+<p>Whenever you are using R, you should work in an RProject. This just makes sure you are set up in the correct working directory, so your code is pointing at the right folders and files.</p>
+<p><a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects" target="_blank" rel="noopener noreferrer">This guide for using projects in R</a> is a really useful article to help you set up a project.</p>
+<p>You can check which project you are working in by looking in the top right hand corner of RStudio:</p>
+<p><img src="../images/Rproj.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="outlines" class="level3">
+<h3 class="anchored" data-anchor-id="outlines">Outlines</h3>
+<hr>
+<p>In RStudio you can greatly increase the navigability of your code by taking advantage of outlines. <a href="https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections" target="_blank" rel="noopener noreferrer">More information on folding and navigating outlines in RStudio</a> can be found online, though when using rmarkdown reports, remember to use names first, such as <code>## Rows that aren't matching: r nrow(joined %&gt;% filter(matching == FALSE))</code>, rather than having the R code first, so that they are easy to discern in the outline.</p>
+<hr>
+</section>
+<section id="renv" class="level3">
+<h3 class="anchored" data-anchor-id="renv">renv</h3>
+<hr>
+<p>You should use the <a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank" rel="noopener noreferrer">renv package</a> for package and version control in R.</p>
+<p>Packages and versions of R regularly update. Over time, this can cause code to break - e.g.&nbsp;if different dependencies are required for later versions of packages to work. Using renv creates a “snapshot” of your code and packages at the time you created it, which anyone can then recreate when they come to use your code.</p>
+<p>This is really important for reproducibility, and will help you meet elements of great practice with <a href="../RAP/rap.html#recyclable-code-for-future-use">recyclable code for future use</a>.</p>
+<hr>
+<section id="renvrestore" class="level4">
+<h4 class="anchored" data-anchor-id="renvrestore">renv::restore()</h4>
+<hr>
+<p>Sometimes renv::restore() can fail, and when in specific renv-controlled projects install.packages() will fail saying that packages aren’t available even when they clearly are. There are a couple of workarounds we have found that get around this failure.</p>
+<ol type="1">
+<li>Configuring the proxy settings by running the below in R - this also helps if you are getting timeout issues when trying to webscrape with R:</li>
+</ol>
+<pre><code>Sys.setenv(no_proxy="*") 
+</code></pre>
+<ol start="2" type="1">
+<li>Specifying the renv library as the install location. It’s a bit of a fudge, though these lines are helpful to get the packages from the renv lockfile installed and you running the project when needed:</li>
+</ol>
+<pre><code>myPath &lt;- .libPaths()[1]
+
+forceInstall &lt;- function(pkg, path) {
+missing &lt;- suppressWarnings(eval(parse(text= paste0("!require(",pkg,")"))))
+
+if(missing == FALSE){
+message(pkg, " is already installed.")
+} else{
+install.packages(pkg, lib = path)
+}
+}
+
+forceInstall("jsonlite", myPath)
+
+renvPackages &lt;- names(jsonlite::fromJSON("renv.lock", flatten = TRUE)$Packages)
+
+invisible(lapply(renvPackages, forceInstall, path = myPath))</code></pre>
+<p>More manual equivalent to use for specific packages:</p>
+<pre><code>.libPaths() # note down output 1, and reuse in the lib argument of install.packages() as below
+
+install.packages("rmarkdown", lib = "C:/Users/swong/OneDrive - Department for Education/Documents/stats-production-guidance/renv/library/R-4.0/x86_64-w64-mingw32")
+</code></pre>
+<hr>
+</section>
+<section id="updating-packages-in-renv" class="level4">
+<h4 class="anchored" data-anchor-id="updating-packages-in-renv">Updating packages in renv</h4>
+<hr>
+<p>To update a single package run:</p>
+<p><code>renv::update("dplyr")</code></p>
+<p>To update all packages run:</p>
+<p><code>renv::update()</code></p>
+<hr>
+</section>
+<section id="installing-old-package-versions-in-renv" class="level4">
+<h4 class="anchored" data-anchor-id="installing-old-package-versions-in-renv">Installing old package versions in renv</h4>
+<hr>
+<p>This is surprisingly neat to do. Let’s say you wanted to roll back to version 1.0.2 of dplyr, you would run the following:</p>
+<p><code>renv::install("dplyr@1.0.2")</code></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="quick-reference-lookup" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference-lookup">Quick reference lookup</h2>
+<ul>
+<li>If you want a useful guide for R syntax or functions, then look no further than the <a href="https://rstudio.com/resources/cheatsheets/" target="_blank" rel="noopener noreferrer">R cheat sheets</a>, these can be an invaluable point of reference. Below we’ve included a few particularly relevant ones:
+<ul>
+<li>Introduction to the <a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf" target="_blank" rel="noopener noreferrer">RStudio environment</a></li>
+<li><a href="http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf" target="_blank" rel="noopener noreferrer">Base R</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf" target="_blank" rel="noopener noreferrer">Importing data into R</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf" target="_blank" rel="noopener noreferrer">dplyr</a> for data manipulation</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/strings.pdf" target="_blank" rel="noopener noreferrer">stringr</a> for string manipulation</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/regex.pdf" target="_blank" rel="noopener noreferrer">Regex</a></li>
+<li><a href="https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf" target="_blank" rel="noopener noreferrer">RMarkdown</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/shiny.pdf" target="_blank" rel="noopener noreferrer">RShiny</a></li>
+<li><a href="https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf" target="_blank" rel="noopener noreferrer">ggplot2</a> for data visualisations</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf" target="_blank" rel="noopener noreferrer">purrr</a> for applying functions</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="other-resources" class="level2">
+<h2 class="anchored" data-anchor-id="other-resources">Other resources</h2>
+<ul>
+<li><p>Here is another free introduction to R course by <a href="https://www.quantargo.com/courses/course-r-introduction/" target="_blank" rel="noopener noreferrer">Quantargo</a>.</p></li>
+<li><p><a href="https://bookdown.org/yihui/rmarkdown/" target="_blank" rel="noopener noreferrer">R Markdown: The Definitive Guide</a>, hopefully this one should be relatively self-explanatory!</p></li>
+<li><p><a href="https://datascienceineducation.com/" target="_blank" rel="noopener noreferrer">Data science in education</a> provides a heavily detailed guide for beginners in R learning to process data, with some well written out sections that may be of interest.</p></li>
+<li><p>Handy guide to <a href="https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections" target="_blank" rel="noopener noreferrer">collapsing and sectioning R code</a> for easy navigation in RStudio.</p></li>
+<li><p>Here are <a href="https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da" target="_blank" rel="noopener noreferrer">5 handy tidyverse functions</a> that you should know if you’re using R to process data. Number two is especially useful for those processing wide data into a tidy format!</p></li>
+<li><p>MoJ have produced <a href="https://github.com/moj-analytical-services/writing_functions_in_r" target="_blank" rel="noopener noreferrer">guidance on writing functions in R</a></p></li>
+<li><p>If you’re wondering how best to make the jump to R from Excel and SQL, take a look at this <a href="https://educationgovuk.sharepoint.com/sites/sarpi/g/WorkplaceDocuments/Forms/AllItems.aspx?FolderCTID=0x012000C61C1076C17C5547A6D6D8C2A27B5D97&amp;View=%7B2B35083D%2D7626%2D48E2%2D9615%2D451544742692%7D&amp;id=%2Fsites%2Fsarpi%2Fg%2FWorkplaceDocuments%2FInducation%20learning%20and%20career%20development%2FCoffee%20and%20Coding%2F181121%5FDavd%5FExceltoR%2FSQL%5FEXCEL%5Fto%5FR%5FHow%5Fto%5FMake%5Fthe%5FJump%2Ehtml&amp;parent=%2Fsites%2Fsarpi%2Fg%2FWorkplaceDocuments%2FInducation%20learning%20and%20career%20development%2FCoffee%20and%20Coding%2F181121%5FDavd%5FExceltoR" target="_blank" rel="noopener noreferrer">coffee and coding presention</a> by David Sands.</p></li>
+<li><p>Malcolm Barrett has done some slides on <a href="https://malco.io/slides/hs_dplyr/#1" target="_blank" rel="noopener noreferrer">dplyr</a>, <a href="https://malco.io/slides/hs_ggplot2/#1" target="_blank" rel="noopener noreferrer">ggplot2</a>, and using <a href="https://lar-purrr.netlify.app/#1" target="_blank" rel="noopener noreferrer">purrr</a> which may be useful if you’re looking at learning more about any of those packages.</p></li>
+<li><p>Also check out the <a href="https://garthtarr.github.io/meatR/janitor.html" target="_blank" rel="noopener noreferrer">janitor</a> package, it has some particularly powerful functions that are worth a look for tidying and QA’ing data.</p></li>
+</ul>
+<hr>
+</section>
+<section id="excel-functions-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="excel-functions-in-r">Excel functions in R</h2>
+<p>R can do everything you do in excel, but takes out the human error. The reference table below shows how you would carry out popular Excel commands in R.</p>
+<p>R comes in with a built-in dataset called “iris”. We’ll use this for all examples so you can recreate them in your local area.</p>
+<p><strong>REMEMBER:</strong> R is case sensitive, so all references to column names/entries need to be as-is in the dataset you are looking at. <a href="https://www.rdocumentation.org/packages/janitor/versions/1.2.0/topics/clean_names" target="_blank">Functions exist</a> that can translate all your columns to lower or snake case for ease!</p>
+<table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 63%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Common Excel Task</strong></th>
+<th><strong>Example with iris </strong></th>
+<th><strong>How to do in R with dplyr</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Select specific columns</strong></td>
+<td>Select only species and petal length</td>
+<td><code>iris %&gt;% select(Species, Petal.Length)</code></td>
+</tr>
+<tr class="even">
+<td><strong>List unique entries in field (column)</strong></td>
+<td>Find the unique entries for the “Species” column in iris</td>
+<td><code>iris %&gt;% select(Species) %&gt;% distinct()</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Filter/select based on criteria</strong></td>
+<td>Filter for sepal length &gt;4 and sepal width &lt;2.5, but NOT “versicolor” species</td>
+<td><code>iris %&gt;% filter(Sepal.Length &gt; 4 &amp;</code> <br> <code>Sepal.Width &lt;2.5 &amp; Species != "versicolor")</code></td>
+</tr>
+<tr class="even">
+<td><strong>Filter for multiple criteria in same column</strong></td>
+<td>Filter for all “setosa” and “versicolor” species</td>
+<td><code>iris %&gt;% filter(Species %in% c("setosa", "versicolor")</code></td>
+</tr>
+<tr class="odd">
+<td><strong>If else with OR</strong></td>
+<td>Create new column called “size_group” based on length or width of petal</td>
+<td><code>iris %&gt;% mutate(size_group =</code><br><code>if_else( Petal.Length &gt; 4 | Petal.Width &gt;1.5, "Large", "Small"))</code></td>
+</tr>
+<tr class="even">
+<td><strong>Multiple if else</strong></td>
+<td>Create new column called “flower_price” based on species and petal length</td>
+<td><code>iris %&gt;%  mutate(flower_price = case_when(</code> <br> <code>Species == "setosa" &amp; Petal.Length &gt; 1.5 ~"top band",</code><br><code>Species == "versicolor" &amp; Petal.Length &lt; 4 ~"low_band",</code><br> <code>TRUE ~ "mid_band"))</code></td>
+</tr>
+<tr class="odd">
+<td><strong>COUNTIF</strong></td>
+<td>Count the number of species if they have a petal length &gt;1.5</td>
+<td><code>iris %&gt;% filter(Petal.Length &gt; 1.5 ) %&gt;%</code><br><code>group_by(Species) %&gt;% count()</code></td>
+</tr>
+<tr class="even">
+<td><strong>SUMIF</strong></td>
+<td>Sum petal width of species if sepal width &lt;3</td>
+<td><code>iris %&gt;% filter(Sepal.Width &lt;3) %&gt;%</code><br><code>group_by(Species) %&gt;%</code><br><code>summarise(Petal.Width = sum(Petal.Width))</code></td>
+</tr>
+<tr class="odd">
+<td><strong>VLOOKUP</strong></td>
+<td>Lookup to a table called “lookup”</td>
+<td><code>iris %&gt;%  left_join(lookup, by.x="Species", by.y ="plant_species")</code></td>
+</tr>
+<tr class="even">
+<td><strong>Order by</strong></td>
+<td>Order dataset by descending petal width</td>
+<td><code>iris %&gt;% arrange(desc(Petal.Width))</code></td>
+</tr>
+</tbody>
+</table>
+<p>More tips for moving from using Excel to using R can be found in the <a href="https://github.com/dfe-analytical-services/excel-to-R/wiki/Excel-to-R---how-do-I..." target="_blank">excel-to-R wiki</a>.</p>
+<hr>
+</section>
+<section id="sql-functions-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="sql-functions-in-r">SQL functions in R</h2>
+<p>R can do a lot of the things that are possible in SQL. The reference table below shows how you would carry out some popular SQL commands in R.</p>
+<p><strong>REMEMBER:</strong> R is case sensitive, so all references to column names/entries need to be as-is in the dataset you are looking at. <a href="https://www.rdocumentation.org/packages/janitor/versions/1.2.0/topics/clean_names" target="_blank">Functions exist</a> that can translate all your columns to lower or snake case for ease!</p>
+<table class="table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Common SQL Task</th>
+<th>How to do in R (with dplyr)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>SELECT * FROM TABLE</strong></td>
+<td><code>table %&gt;% select()</code></td>
+</tr>
+<tr class="even">
+<td><strong>SELECT ColA, ColB, ColC FROM TABLE</strong></td>
+<td><code>table %&gt;% select(ColA, ColB, ColC)</code></td>
+</tr>
+<tr class="odd">
+<td><strong>SELECT DISTINCT ColA FROM TABLE</strong></td>
+<td><code>table %&gt;% select(ColA) %&gt;% distinct()</code></td>
+</tr>
+<tr class="even">
+<td><strong>TABLE A LEFT JOIN (TABLE B) ON TABLEA.x = TABLEB.y</strong></td>
+<td><code>tableA %&gt;% left_join(TableB, by = c(x = y))</code></td>
+</tr>
+<tr class="odd">
+<td><strong>CASE WHEN x = 1 THEN 1, WHEN x =2 THEN 2, ELSE 0 END AS New_column_name</strong></td>
+<td><code>%&gt;% mutate (New_column_name = case_when (x == 1 ~ 1, x == 2 ~ 2, TRUE ~ 0))</code></td>
+</tr>
+<tr class="even">
+<td><strong>CONCAT(LEA, ESTAB) AS LAESTAB</strong></td>
+<td><code>%&gt;% mutate(LAESTAB = paste0(LEA, ESTAB))</code></td>
+</tr>
+<tr class="odd">
+<td><strong>SELECT COUNT(*) FROM TABLE</strong></td>
+<td><code>table %&gt;% nrow()</code></td>
+</tr>
+<tr class="even">
+<td><strong>SELECT COUNT(ColA) FROM TABLE</strong></td>
+<td><code>table %&gt;% count(colA)</code></td>
+</tr>
+<tr class="odd">
+<td><strong>SELECT Date_column = CONVERT(DATE, Date_column) FROM TABLE</strong></td>
+<td><code>table %&gt;% mutate(Date_column = as.Date(Date_column))</code></td>
+</tr>
+<tr class="even">
+<td><strong>SELECT Number_column = CONVERT(INT, Number_column ) FROM TABLE</strong></td>
+<td><code>table %&gt;% mutate(Number_column = as.numeric(Number_column))</code></td>
+</tr>
+<tr class="odd">
+<td><strong>SELECT String_column = CONVERT(VARCHAR, String_column ) FROM TABLE</strong></td>
+<td><code>table %&gt;% mutate(String_column = as.character(String_column))</code></td>
+</tr>
+<tr class="even">
+<td><strong>DROP TableA</strong></td>
+<td><code>rm(TableA)</code></td>
+</tr>
+</tbody>
+</table>
+<p>More tips for moving from using SQL to using R can be found in the <a href="https://github.com/dfe-analytical-services/excel-to-R/wiki/SQL-to-R-how-do-I..." target="_blank">SQL-to-R wiki</a>.</p>
+<hr>
+</section>
+<section id="tips-for-using-r" class="level2">
+<h2 class="anchored" data-anchor-id="tips-for-using-r">Tips for using R</h2>
+<p>A selection of handy bits of code and workarounds for common issues. More useful code snippets can also be found in our <a href="https://github.com/dfe-analytical-services/automated-data-qa" target="_blank" rel="noopener noreferrer">github repo</a></p>
+<hr>
+<section id="specifying-a-version-of-r-to-use" class="level3">
+<h3 class="anchored" data-anchor-id="specifying-a-version-of-r-to-use">Specifying a version of R to use</h3>
+<hr>
+<p>This can be done most easily by navigating in RStudio through <code>Tools &gt; Global options &gt; General &gt; Basic &gt; R version (change)</code>. It’s likely you’ll need to restart RStudio for the changes to take affect.</p>
+<hr>
+</section>
+<section id="rounding" class="level3">
+<h3 class="anchored" data-anchor-id="rounding">Rounding</h3>
+<hr>
+<p>The base R function of round() rounds 5’s downwards. To round them upwards you can create a custom function like the one below:</p>
+<pre><code>roundFiveUp &lt;- function(x, n){ 
+    z = abs(x)*10^n 
+    z = z + 0.5 + sqrt(.Machine$double.eps) 
+    z = trunc(z) 
+    z = z/10^n 
+    positiveNegative = sign(x) 
+    return(z * positiveNegative) 
+}</code></pre>
+<p>This function can also be found in the <a href="https://github.com/dfe-analytical-services/dfeR" target="_blank" rel="noopener noreferrer">dfeR R package</a>.</p>
+<hr>
+</section>
+<section id="passing-variables-as-arguments" class="level3">
+<h3 class="anchored" data-anchor-id="passing-variables-as-arguments">Passing variables as arguments</h3>
+<hr>
+<p>This can be worked around by using a combination of <code>eval()</code> and <code>parse()</code>, as shown in the below function:</p>
+<pre><code>showFilterLevels &lt;- function(data, meta) {
+  filters &lt;- meta %&gt;%
+    filter(col_type == "Filter") %&gt;%
+    pull(col_name)
+
+  levelsTable &lt;- function(filter) {
+    return(eval(parse(text = paste0("data %&gt;% select(", filter, ") %&gt;% distinct()"))))
+  }
+
+  output &lt;- lapply(filters, levelsTable)
+
+  return(output)
+}</code></pre>
+<hr>
+</section>
+<section id="reverse-additive-filters" class="level3">
+<h3 class="anchored" data-anchor-id="reverse-additive-filters">Reverse additive filters</h3>
+<hr>
+<p>You might want to filter your dataset based on multiple negative conditions. Normally to filter on multiple conditions, you would use <code>filter(condition1 &amp; condition2)</code>. The “filter” function does not work well with negative conditions (i.e.&nbsp;filtering for cases where condition 1 and condition 2 are not met). Instead, you can use <code>subset(!(condition1 &amp; condition2)</code>.</p>
+<hr>
+</section>
+<section id="file-locations" class="level3">
+<h3 class="anchored" data-anchor-id="file-locations">File locations</h3>
+<hr>
+<p>Struggling to get files to talk to one another, or get code to find and use another R script? Use <code>here::here()</code> and marvel at it’s wondrous ability to magic away issues.</p>
+<hr>
+</section>
+<section id="interweaving-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="interweaving-vectors">Interweaving vectors</h3>
+<hr>
+<p>There’s an easy way to interweave multiple vectors into one single vector using <code>c(rbind())</code>. The example below shows two vectors, but you can have even more if you need.</p>
+<pre><code>#Two vectors, x and y
+x &lt;- 1:3
+y &lt;- 4:6
+
+#Run code to interweave
+c(rbind(x, y))
+
+#Output below
+# [1] 1 4 2 5 3 6</code></pre>
+<hr>
+</section>
+<section id="making-charts-interactive" class="level3">
+<h3 class="anchored" data-anchor-id="making-charts-interactive">Making charts interactive</h3>
+<hr>
+<p>When pulling ggplot charts into RMarkdown reports, you can consider making them even more user-friendly and interactive with plotly. <a href="https://plotly.com/ggplot2" target="_blank" rel="noopener noreferrer">Further information on how to make your charts interactive with plotly</a> can be found online.</p>
+<pre><code>#Simple ggplot chart called "p"
+p &lt;- ggplot(dat, aes(x=xvar, y=yvar)) +
+    geom_point(shape=1)      # Use hollow circles
+
+#Apply ggplotly() to it to make it interactive
+fig &lt;- ggplotly(p)
+</code></pre>
+<hr>
+</section>
+<section id="replace-all-values-with-another" class="level3">
+<h3 class="anchored" data-anchor-id="replace-all-values-with-another">Replace all values with another</h3>
+<hr>
+<p>Have you ever needed to replace every value in your data with another? This can come in handy when you are looking at suppression, e.g.&nbsp;converting all NAs to “z” or all values under a certain threshold to “c”.</p>
+<pre><code>data %&gt;% mutate_all(~ replace(., . == "Value to replace", "Replacement"))
+</code></pre>
+<hr>
+</section>
+<section id="temporary-groups" class="level3">
+<h3 class="anchored" data-anchor-id="temporary-groups">Temporary groups</h3>
+<hr>
+<p>The group_by() function in dplyr is really useful, but can be fiddly if you only want to use it for one operation in a chunk of code. The with_groups() function from <a href="https://dplyr.tidyverse.org/reference/with_groups.html" target="_blank" rel="noopener noreferrer">dplyr</a> lets you do this, saving you having to group and ungroup data each time.</p>
+<pre><code>data %&gt;% mutate(annual_average = with_groups(time_period, mean))
+</code></pre>
+<hr>
+</section>
+<section id="finding-package-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="finding-package-dependencies">Finding package dependencies</h3>
+<hr>
+<p>Often we’ll take chunks of code and reuse them for new projects. This can lead to building up a long list of packages to install, not all of which end up being used in your new code. The <strong>NCmisc</strong> package is a really handy way to check which packages and functions are used in your code.</p>
+<p>Firstly, load up all the packages the code has <code>library()</code> commands for, then run the following:</p>
+<pre><code>list.functions.in.file('your-filename-here.R', alphabetic = TRUE)</code></pre>
+<hr>
+</section>
+<section id="visualise-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="visualise-dependencies">Visualise dependencies</h3>
+<hr>
+<p>The <a href="https://github.com/crsh/depgraph" target="_blank" rel="noopener noreferrer">depgraph package</a> allows you to plot a graph of all the dependencies in your R project, which can be a useful tool to help you cut down on the number of package dependencies. Briefly, in these graphs you can look for “hot spots” in the network (big bright dots), which represent packages that have many upstream dependencies but are potentially easy to remove because they have few downstream dependencies (that is, only your package depends on them).</p>
+<pre><code>plot_dependency_graph(
+  pkg = multibridge_pkg
+  , suggests = FALSE
+  , option = "cividis"
+)
+</code></pre>
+<hr>
+</section>
+<section id="reproducible-random-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="reproducible-random-numbers">Reproducible random numbers</h3>
+<hr>
+<p>The <a href="https://www.rdocumentation.org/packages/simEd/versions/2.0.0/topics/set.seed" target="_blank" rel="noopener noreferrer">set.seed()</a> function generates a sequence of random numbers, starting from the value you define in the brackets. This ensures you get the same sequence of random numbers each time you run set.seed() with the same value, which is helpful to test that your results are reproducible.</p>
+<pre><code># random sampling
+&gt; sample(LETTERS, 5)
+[1] "K" "N" "R" "Z" "G"
+&gt; sample(LETTERS, 5)
+[1] "L" "P" "J" "E" "D"
+
+# reproducible random sampling
+&gt; set.seed(42); sample(LETTERS, 5)
+[1] "Q" "E" "A" "J" "D"
+&gt; set.seed(42); sample(LETTERS, 5)
+[1] "Q" "E" "A" "J" "D"
+</code></pre>
+<hr>
+</section>
+<section id="automatic-logging" class="level3">
+<h3 class="anchored" data-anchor-id="automatic-logging">Automatic logging</h3>
+<hr>
+<p>The <a href="https://cran.r-project.org/web/packages/tidylog/readme/README.html" target="_blank" rel="noopener noreferrer">tidylog package</a> is a really useful tool for providing automated feedback on dplyr and tidyr operations.</p>
+<pre><code>library(tidylog)
+
+filtered &lt;- filter(mtcars, cyl == 4)
+#&gt; filter: removed 21 rows (66%), 11 rows remaining
+mutated &lt;- mutate(mtcars, new_var = wt ** 2)
+#&gt; mutate: new variable 'new_var' (double) with 29 unique values and 0% NA</code></pre>
+<hr>
+</section>
+<section id="running-sql-scripts-from-r" class="level3">
+<h3 class="anchored" data-anchor-id="running-sql-scripts-from-r">Running SQL scripts from R</h3>
+<hr>
+<p>R can be used to execute SQL scripts to extract data from a database as well as querying the database directly via R. For using R to execute a SQL script you’ll need the SQL script/s to be in your R Project and to make a connection via R to the database.</p>
+<pre><code># Library calls ====
+
+library(odbc)
+library(DBI)
+
+# DB connection ====
+
+con &lt;- DBI::dbConnect(odbc::odbc(),
+                      Driver = "ODBC Driver 17 for SQL Server",
+                      Server = "server_name",
+                      Database = "database_name",
+                      UID = "",
+                      PWD = "",
+                      Trusted_Connection = "Yes"
+)
+
+# Function to read in sql scripts ====
+
+getSQL &lt;- function(filepath){
+  con = file(filepath, "r")
+  sql.string &lt;- ""
+  
+  while (TRUE){
+    line &lt;- readLines(con, n = 1)
+    
+    if ( length(line) == 0 ){
+      break
+    }
+    
+    line &lt;- gsub("\\t", " ", line)
+    
+    if(grepl("--",line) == TRUE){
+      line &lt;- paste(sub("--","/*",line),"*/")
+    }
+    
+    sql.string &lt;- paste(sql.string, line)
+  }
+  
+  close(con)
+  return(sql.string)
+}
+
+# Execute SQL query and pull into R ====
+
+my_table &lt;- dbGetQuery(con, getSQL("my_query_script.sql"))
+</code></pre>
+<p>If you’re struggling to get your SQL scripts to execute from R, try adding the following two lines to the top of your SQL script to force the formatting required for it to work:</p>
+<pre><code>SET ANSI_PADDING OFF
+SET NOCOUNT ON;</code></pre>
+<hr>
+</section>
+<section id="cant-find-make-error" class="level3">
+<h3 class="anchored" data-anchor-id="cant-find-make-error">Can’t find make error</h3>
+<hr>
+<p>This error will appear when trying to restore old package versions using <code>renv::restore()</code>. It is usually due to Rtools not being properly installed, and therefore your system is struggling to install the older version of the package that hasn’t been provided by CRAN.ware centre.</p>
+<p>The solution takes a few minutes, but is relatively straightforward, you can <a href="https://cran.r-project.org/bin/windows/Rtools/" target="_blank">install Rtools as a direct download from CRAN</a>. On there, pick the right version of RTools for your version of R, download the file and install.</p>
+<p>Set the install location to your c drive, for example, if installing for R4.2.2, install RTools42 to <code>C:\rtools42</code> (this is the default location).</p>
+<p>Once it’s installed close and reopen RStudio and run <code>renv::restore()</code> again - it should hopefully now restore and install your packages successfully!</p>
+<hr>
+</section>
+<section id="packages-not-downloading-due-to-wininet-error-renv-0.17" class="level3">
+<h3 class="anchored" data-anchor-id="packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</h3>
+<hr>
+<p>Packages are generally downloaded from CRAN using one of two methods: wininet or curl. Since renv version 0.17, analysts potentially hit an error associated with renv defaulting to wininet, whilst R defaults to curl, causing package downloads to fail. To fix this issue, analysts should change their default download method with renv to be curl. This can be done across all R-projects on your machine, by setting the default in your global R environment file. To do this, open up a bash terminal and enter the following command:</p>
+<p><code>echo 'RENV_DOWNLOAD_METHOD = "curl")' &gt;&gt; ~/.Renviron</code></p>
+<p>Then restart R-Studio and downloads with renv should now succeed.</p>
+<hr>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../learning-development/sql.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SQL</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../learning-development/git.html" class="pagination-link">
+        <span class="nav-page-text">Git</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Department for Education, 2023</div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">This page is maintained by statistics.development@education.gov.uk</div>
+  </div>
+</footer>
+
+
+
+</body></html>

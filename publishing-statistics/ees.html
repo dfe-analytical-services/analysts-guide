@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Analyst’s Guide - Explore Education Statistics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../publishing-statistics/embedded-charts.html" rel="next">
+<link href="../creating-statistics/ud.html" rel="prev">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KBJCBD114T"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KBJCBD114T', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"headline",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../publishing-statistics/pub.html">Statistics production</a></li><li class="breadcrumb-item"><a href="../publishing-statistics/ees.html">Explore Education Statistics</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="mailto:statistics.development@education.gov.uk" rel="" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-microsoft-teams"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a50f82a2718184a0e98ba86c3d411a02f%40thread.skype/conversations?groupId=6572094f-43a3-4537-bcf0-fc27dc6557ed&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            DfE analysts network
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3ae3c8551e86094e259a60848fcff4dbc1%40thread.skype/conversations?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            Statistics production
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            DfE R community
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-camera-reels"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Statistician%27s%20Guide%20to%20the%20Galaxy?csf=1&amp;web=1&amp;e=owScaj">
+            Guide to the Galaxy sessions
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Explore%20Education%20Statistics?csf=1&amp;web=1&amp;e=HVpi0D">
+            EES show and tells
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series?csf=1&amp;web=1&amp;e=H0pcSH">
+            RAP knowledge share series
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/sites/sarpi/g/AC/Coffee%20and%20Coding.aspx?xsdata=MDV8MDF8fGU5YTkwYWU1OTNiNjQzZTIyZTM2MDhkYjVhY2MxN2JlfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2MzgyMDM2MDQ4MjEyMjUwMTR8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPbTFsWlhScGJtZGZXVlJuZUUxRVVUTlphbGwwVGpKUk1FNTVNREJhYW1zMVRGUnJNbHBYV1hSTmVtTjZXbXBCTWxwdFZUQlBWMVV3UUhSb2NtVmhaQzUyTWk5dFpYTnpZV2RsY3k4eE5qZzBOell6TmpneE5qRXh8YjdlZWE0MGYzNDg5NGYxYzJlMzYwOGRiNWFjYzE3YmV8MmE3NzU1YzRmOWMyNDZlOTkwYWVmMjlkZjY5NjczZWE%3D&amp;sdata=ajlKYUZuNHFyNU9XSm5WR3ZZaUZHZDB4bjVJYkJzRFZNc0U1Uit5V1Q5cz0%3D&amp;ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CTess%2EWILLIAMS%40EDUCATION%2EGOV%2EUK&amp;OR=Teams%2DHL&amp;CT=1684763684990&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA0MDIwMjcwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D">
+            Coffee and coding sessions
+            </a>
+          </li>
+      </ul>
+    </div>
+    <a href="https://explore-education-statistics.service.gov.uk/" rel="" title="Explore education statistics" class="quarto-navigation-tool px-1" aria-label="Explore education statistics"><i class="bi bi-graph-up"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-2" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-2">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/statisticians-guide">
+            Source code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/statisticians-guide/issues/new">
+            Suggest changes
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Learning resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Statistics production</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/pub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publication checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../creating-statistics/ud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open Data Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/ees.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Explore Education Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/embedded-charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Embedded visualisations in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good examples in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../understanding-users/user-eng.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">User engagement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../understanding-users/user-analytics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EES analytics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Writing and visualising</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../creating-statistics/cd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing and visualising</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/dashboards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Public dashboards</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP expectations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP FAQs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for Statistics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">ADA and databricks</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#accessing-ees" id="toc-accessing-ees" class="nav-link active" data-scroll-target="#accessing-ees">Accessing EES</a>
+  <ul class="collapse">
+  <li><a href="#environments" id="toc-environments" class="nav-link" data-scroll-target="#environments">Environments</a>
+  <ul class="collapse">
+  <li><a href="#getting-access-to-admin" id="toc-getting-access-to-admin" class="nav-link" data-scroll-target="#getting-access-to-admin">Getting access to admin</a></li>
+  </ul></li>
+  <li><a href="#roles-and-permissions" id="toc-roles-and-permissions" class="nav-link" data-scroll-target="#roles-and-permissions">Roles and permissions</a></li>
+  <li><a href="#requesting-a-new-publication" id="toc-requesting-a-new-publication" class="nav-link" data-scroll-target="#requesting-a-new-publication">Requesting a new publication</a></li>
+  <li><a href="#admin-dashboard" id="toc-admin-dashboard" class="nav-link" data-scroll-target="#admin-dashboard">Admin dashboard</a></li>
+  <li><a href="#external-user-access" id="toc-external-user-access" class="nav-link" data-scroll-target="#external-user-access">External user access</a></li>
+  </ul></li>
+  <li><a href="#creating-releases" id="toc-creating-releases" class="nav-link" data-scroll-target="#creating-releases">Creating releases</a>
+  <ul class="collapse">
+  <li><a href="#data-and-files" id="toc-data-and-files" class="nav-link" data-scroll-target="#data-and-files">Data and files</a>
+  <ul class="collapse">
+  <li><a href="#subject-titles" id="toc-subject-titles" class="nav-link" data-scroll-target="#subject-titles">Subject titles</a></li>
+  <li><a href="#uploading-files" id="toc-uploading-files" class="nav-link" data-scroll-target="#uploading-files">Uploading files</a></li>
+  <li><a href="#ordering-filters-and-indicators" id="toc-ordering-filters-and-indicators" class="nav-link" data-scroll-target="#ordering-filters-and-indicators">Ordering filters and indicators</a></li>
+  <li><a href="#ancillary-file-uploads" id="toc-ancillary-file-uploads" class="nav-link" data-scroll-target="#ancillary-file-uploads">Ancillary file uploads</a></li>
+  <li><a href="#public-data-guidance" id="toc-public-data-guidance" class="nav-link" data-scroll-target="#public-data-guidance">Public data guidance</a></li>
+  <li><a href="#replacing-data" id="toc-replacing-data" class="nav-link" data-scroll-target="#replacing-data">Replacing data</a></li>
+  </ul></li>
+  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes">Footnotes</a></li>
+  <li><a href="#data-blocks-tables-and-charts" id="toc-data-blocks-tables-and-charts" class="nav-link" data-scroll-target="#data-blocks-tables-and-charts">Data blocks (tables and charts)</a>
+  <ul class="collapse">
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#charts" id="toc-charts" class="nav-link" data-scroll-target="#charts">Charts</a></li>
+  </ul></li>
+  <li><a href="#content" id="toc-content" class="nav-link" data-scroll-target="#content">Content</a>
+  <ul class="collapse">
+  <li><a href="#headline-facts-and-figures" id="toc-headline-facts-and-figures" class="nav-link" data-scroll-target="#headline-facts-and-figures">Headline facts and figures</a></li>
+  <li><a href="#drafting-text" id="toc-drafting-text" class="nav-link" data-scroll-target="#drafting-text">Drafting text</a></li>
+  <li><a href="#footnotes-1" id="toc-footnotes-1" class="nav-link" data-scroll-target="#footnotes-1">Footnotes</a></li>
+  <li><a href="#reviewing-content" id="toc-reviewing-content" class="nav-link" data-scroll-target="#reviewing-content">Reviewing content</a></li>
+  </ul></li>
+  <li><a href="#embedding-r-shiny-blocks" id="toc-embedding-r-shiny-blocks" class="nav-link" data-scroll-target="#embedding-r-shiny-blocks">Embedding R-Shiny blocks</a></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a>
+  <ul class="collapse">
+  <li><a href="#adding-new-definitions" id="toc-adding-new-definitions" class="nav-link" data-scroll-target="#adding-new-definitions">Adding new definitions</a></li>
+  <li><a href="#linking-to-definitions" id="toc-linking-to-definitions" class="nav-link" data-scroll-target="#linking-to-definitions">Linking to definitions</a></li>
+  <li><a href="#linking-from-your-release" id="toc-linking-from-your-release" class="nav-link" data-scroll-target="#linking-from-your-release">Linking from your release</a></li>
+  </ul></li>
+  <li><a href="#sign-off" id="toc-sign-off" class="nav-link" data-scroll-target="#sign-off">Sign off</a>
+  <ul class="collapse">
+  <li><a href="#errors-and-warnings" id="toc-errors-and-warnings" class="nav-link" data-scroll-target="#errors-and-warnings">Errors and warnings</a></li>
+  <li><a href="#how-to-approve-a-release" id="toc-how-to-approve-a-release" class="nav-link" data-scroll-target="#how-to-approve-a-release">How to approve a release</a></li>
+  <li><a href="#next-release-expected" id="toc-next-release-expected" class="nav-link" data-scroll-target="#next-release-expected">Next release expected</a></li>
+  </ul></li>
+  <li><a href="#pre-release-access" id="toc-pre-release-access" class="nav-link" data-scroll-target="#pre-release-access">Pre-release access</a></li>
+  </ul></li>
+  <li><a href="#release-amendments" id="toc-release-amendments" class="nav-link" data-scroll-target="#release-amendments">Release amendments</a>
+  <ul class="collapse">
+  <li><a href="#release-notes" id="toc-release-notes" class="nav-link" data-scroll-target="#release-notes">Release notes</a></li>
+  </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#methodology-formatting" id="toc-methodology-formatting" class="nav-link" data-scroll-target="#methodology-formatting">Methodology formatting</a></li>
+  <li><a href="#methodology-images" id="toc-methodology-images" class="nav-link" data-scroll-target="#methodology-images">Methodology images</a></li>
+  </ul></li>
+  <li><a href="#managing-publications" id="toc-managing-publications" class="nav-link" data-scroll-target="#managing-publications">Managing publications</a>
+  <ul class="collapse">
+  <li><a href="#publication-management" id="toc-publication-management" class="nav-link" data-scroll-target="#publication-management">Publication management</a></li>
+  <li><a href="#create-new-release" id="toc-create-new-release" class="nav-link" data-scroll-target="#create-new-release">Create new release</a></li>
+  <li><a href="#managing-legacy-releases" id="toc-managing-legacy-releases" class="nav-link" data-scroll-target="#managing-legacy-releases">Managing legacy releases</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/statisticians-guide/edit/main/publishing-statistics/ees.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/statisticians-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Explore Education Statistics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p class="text-muted">
+Guidance for how to use the features in the Explore Education Statistics platform
+</p>
+<hr>
+<p>Explore Education Statistics (EES) is the Department’s official statistics dissemination platform, designed to make DFE’s published statistics and data easier to find, access, use and understand.</p>
+<p><strong>The EES platform consists of two applications:</strong></p>
+<ol type="1">
+<li><p>The <a href="https://explore-education-statistics.service.gov.uk/" target="_blank">public</a> website, where users access stats</p></li>
+<li><p>The <a href="https://admin.explore-education-statistics.service.gov.uk/" target="_blank">admin</a> website, where production teams create their stats</p></li>
+</ol>
+<div class="alert alert-dismissible alert-info">
+<p>The majority of the admin side of EES is only supported in Google Chrome and Microsoft Edge and will not work correctly in Internet Explorer. The public website and pre-release previews of releases in admin can be viewed using Internet Explorer, though we still recommend that people use Chrome or Edge instead.</p>
+</div>
+<p>Both applications were released to Minimal Viable Product (MVP) standard in March 2020, we will be iterating and improving the functionality based on user feedback throughout 2020 and 2021.</p>
+<p>Maintenance and use of the platform is supported by the <a href="mailto:explore.statistics@education.gov.uk">Statistics Development Team</a>.</p>
+<hr>
+<section id="accessing-ees" class="level1">
+<h1>Accessing EES</h1>
+<hr>
+<section id="environments" class="level2">
+<h2 class="anchored" data-anchor-id="environments">Environments</h2>
+<p>As stated above, EES consists of two parts. We also have four versions (environments) of EES, the banner for the admin part of each environment will inform you which environment you are on, this is also colour coded:</p>
+<ul>
+<li><p><strong>Development</strong> - Green - where changes are first merged in, and often the first time different pieces of work from different developers will interact properly</p></li>
+<li><p><strong>Test</strong> - Pink - where our developers can carry out manual testing of any new features to make sure things work as expected</p></li>
+<li><p><strong>Pre-production</strong> - Yellow - a sandbox area for analysts to carry out functionality testing</p></li>
+</ul>
+<p>Admin pre-production - <a href="https://admin.pre-production.explore-education-statistics.service.gov.uk" target="_blank">https://admin.pre-production.explore-education-statistics.service.gov.uk</a></p>
+<p>Public pre-production - <a href="https://pre-production.explore-education-statistics.service.gov.uk" target="_blank">https://pre-production.explore-education-statistics.service.gov.uk</a></p>
+<ul>
+<li><strong>Production</strong> - Red - the real service, anyone creating real releases that they intend to publish to the public should be using this environment</li>
+</ul>
+<p>Admin production - <a href="https://admin.explore-education-statistics.service.gov.uk" target="_blank">https://admin.explore-education-statistics.service.gov.uk</a></p>
+<p>Public production - <a href="https://explore-education-statistics.service.gov.uk" target="_blank">https://explore-education-statistics.service.gov.uk</a></p>
+<p>There is no overlap between the environments and content created on one cannot be moved to any other.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>If you are bookmarking links, please be careful to bookmark the links below exactly as they are shown. Often when signing in you will be redirected via other url’s as a part of the authentication process, and bookmarking those may lead to errors.</p>
+</div>
+<p>Teams can use the pre-production environment to familiarise themselves with the platform and test out what is possible. The core functionality across the environments is identical except for new changes, which are deployed through the different environments before they make it to production.</p>
+<p>On the pre-production environment, all analysts have full permissions to create publications and releases, and can see everything else that other analysts are making. This is unique to the pre-production environment, on the production environment analysts will only have access to releases that they have been granted specific access to.</p>
+<p>When accessing the pre-production environment you may be asked for a username and password, these are as follows: dfe, dataresearch.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>The pre-production environment is not suitable for unpublished data. Unpublished data should only be uploaded to the production environment.</p>
+</div>
+<section id="getting-access-to-admin" class="level3">
+<h3 class="anchored" data-anchor-id="getting-access-to-admin">Getting access to admin</h3>
+<p>Access to the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the Statistics Development Team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using gov.uk Notify.</p>
+<p>To be invited to the service for full access teams need to email the <a href="mailto:explore.statistics@education.gov.uk">Explore Statistics Mailbox</a>, stating who needs access, what permissions they require (analyst or approver), and for which publications these apply. This email should be sent by the Team Leader, or accompanied with the relevant Team Leader’s approval. Once access has been granted you will receive an email inviting you to use the platform.</p>
+<div class="alert alert-dismissible alert-info">
+<p>Jobshare emails can not be used to access EES. Specific personal emails should be used instead, in the same way as you sign in to windows on your machine.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="roles-and-permissions" class="level2">
+<h2 class="anchored" data-anchor-id="roles-and-permissions">Roles and permissions</h2>
+<p>The Statistics Development Team are responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored via their main mailbox - explore.statistics@education.gov.uk.</p>
+<p>The following roles exist within EES admin and are assigned to a specific release:</p>
+<ul>
+<li><p><strong>Pre-release</strong></p>
+<p>Any user invited for pre-release is given a pre-release user role. During the hours of pre-release they can:</p>
+<ul>
+<li>Preview the release page, including downloading files</li>
+<li>Preview the table tool page for that release</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p><strong>Analyst - contributor</strong></p>
+<p>Any analyst working on a release within EES admin will have the contributor role. They can:</p>
+<ul>
+<li>Edit release details</li>
+<li>Upload data and other files</li>
+<li>Create footnotes, datablocks and charts</li>
+<li>Edit and comment on release content</li>
+<li>Invite PRA users</li>
+<li>Move the release status between draft and ready for higher review</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p><strong>Analyst - approver</strong></p>
+<p>The responsible statistician for a statistics release will have the approver role, allowing them to sign off releases for publication. This will usually be the responsible G5 or G6 for the statistics publication. They can do everything a contributor can, as well as:</p>
+<ul>
+<li>Move the release status between draft, ready for review and approved</li>
+<li>Schedule the release for publication (either immediately or for a specific date)</li>
+</ul></li>
+</ul>
+<p><br></p>
+<p>There is also a publication owner role, which is assigned at publication level to a users account:</p>
+<ul>
+<li><p><strong>Publication owner</strong></p>
+<p>This permissions level gives publication owners control over their publications. They can do anything a contributor can for all releases within the publication. On top of this the publication owner also has access to:</p>
+<ul>
+<li>Manage publication level details</li>
+<li>Create new releases within a publication</li>
+<li>Create an amendment of the latest published release within a publication</li>
+<li>Cancel an amendment before it is published</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p><strong>BAU</strong></p>
+<p>The administrative role:</p>
+<ul>
+<li>This role is assigned to a user and gives full access including administrative tools, typically only used by the Statistics Development Team and EES developers.</li>
+</ul></li>
+</ul>
+<p>See below for a diagram of the responsibilities of each role as part of the publication process in EES:</p>
+<p><img src="../images/EES_roles.svg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="requesting-a-new-publication" class="level2">
+<h2 class="anchored" data-anchor-id="requesting-a-new-publication">Requesting a new publication</h2>
+<p>If you have not published on EES before, or if you’re creating a brand new publication, you will need to contact us to create the publication for you before you can get started.</p>
+<p>The hierarchy of content within EES is as follows -</p>
+<p><img src="../images/ees-hierarchy.PNG" class="img-fluid"></p>
+<p>Publications are organised into topics and themes (as shown on the EES <a href="https://explore-education-statistics.service.gov.uk/find-statistics" target="_blank">Find Statistics page</a>), and then within each publication there are releases - where the latest release includes the latest statistics for that publication. For example:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Level</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Theme</td>
+<td style="text-align: left;">Pupils and Schools</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Topic</td>
+<td style="text-align: left;">Pupil absence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Publication</td>
+<td style="text-align: left;">Pupil absence in schools in England</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Release</td>
+<td style="text-align: left;">2018/19</td>
+</tr>
+</tbody>
+</table>
+<p>Each publication should have a lead statistician’s name and contact details attached to it as a requirement of the Code of Practice. You may use a team email address but the name and telephone number of a named statistician should also be provided.</p>
+<p>Methodology documentation is also attached at a publication level within EES - meaning one standalone piece should be written to cover all releases for the given publication within the service.</p>
+<p>If you want to request a new publication, please be prepared to give the following:</p>
+<ul>
+<li>The heading and subheading that you want the publication to sit under in our site (take a look at the current structure <a href="https://explore-education-statistics.service.gov.uk/find-statistics" target="_blank" rel="noopener noreferrer">here</a>), feel free to either use existing ones, or suggest new ones</li>
+<li>The exact title of the publication</li>
+<li>A summary of less than 160 characters (including spaces) that describes your publication series</li>
+<li>If the methodology already exists elsewhere and you have a URL for it, or if you want to <a href="#methodology">create one</a></li>
+<li>Team name</li>
+<li>Team email address</li>
+<li>Lead statistician name</li>
+<li>Lead statistician contact number</li>
+<li>The <a href="../creating-statistics/ud.html#List_of_allowable_time_values">time period</a> of the release you’re creating</li>
+<li>Whether they are National statistics, an ad-hoc publication, or official statistics</li>
+<li>List of email addresses of analysts who need access to the release and at what <a href="#roles-and-permissions">permission levels</a></li>
+</ul>
+<p>Publication details can be <a href="#managing-publications">managed by publication owners</a> or via requests to the <a href="mailto:explore.statistics@education.gov.uk">Explore Statistics Mailbox</a>.</p>
+<hr>
+</section>
+<section id="admin-dashboard" class="level2">
+<h2 class="anchored" data-anchor-id="admin-dashboard">Admin dashboard</h2>
+<div class="alert alert-dismissible alert-warning">
+<p>Use Google Chrome or Microsoft Edge to access and use the admin part of Explore Education Statistics.</p>
+</div>
+<p>When you enter the service you’ll see the admin dashboard, here what you can see will be dependent on your access permissions i.e.&nbsp;you’ll only see the publications that you have been granted access to. Within the test environment users are set up with full permissions (i.e.&nbsp;they can see/do everything) though in our production environment this will be restricted.</p>
+<p>The Statistics Development Team will be responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored via their EES mailbox - explore.statistics@education.gov.uk.</p>
+<p><img src="../images/EES-admin-dashboard.PNG" class="img-fluid"></p>
+<p>Within this dashboard you can view and manage existing publications, including creating and editing their releases. You can use the drop down lists to find releases by theme/topic/publication or use the draft and scheduled releases tabs to see releases that are in progress.</p>
+<hr>
+</section>
+<section id="external-user-access" class="level2">
+<h2 class="anchored" data-anchor-id="external-user-access">External user access</h2>
+<p>Access to EES for users outside of DfE is difficult as the authentication and security on the service relies on the DfE Azure Active Directory and associated infrastructure. It is possible to request that external users from other government organisations have access, and they can then be added as collaborating analysts on a release or as pre-release viewers.</p>
+<p>If you have external users you’d like to request access for, please send the following to explore.statistics@education.gov.uk, <em>at least two weeks</em> in advance of requiring access. Due to the dependency on DfE’s digital security we cannot guarantee access or how long it may take.</p>
+<ul>
+<li>Email addresses of users to be added</li>
+<li>Reason for access</li>
+<li>Length of time access is needed</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="creating-releases" class="level1">
+<h1>Creating releases</h1>
+<hr>
+<p>New releases can be <a href="#create-new-release">created by publication owners</a> or via requests to the <a href="mailto:explore.statistics@education.gov.uk">Explore Statistics Mailbox</a>. If you’re requesting a new release via the mailbox, please give the following:</p>
+<ul>
+<li>Name of the publication (including theme and topic that it sits under)</li>
+<li>Time period for the release</li>
+<li><a href="../creating-statistics/ud.html#List_of_allowable_time_values">Time identifier</a> for the release</li>
+<li>Type of release (National, Official, Ad-hoc etc)</li>
+</ul>
+<p>Once you have created your release you will see enter the ’create release dashboard, here you need to work through the following tabs to create your release:</p>
+<ol type="1">
+<li><p>Data and files (uploading data files, ancillary files and creating data guidance)</p></li>
+<li><p>Footnotes (creating footnotes and assigning to relevant data)</p></li>
+<li><p>Data blocks (creating summary tables, charts and key stats indicators)</p></li>
+<li><p>Content (drafting release content)</p></li>
+<li><p>Sign off (moving through the approval process)</p></li>
+<li><p>Pre-release access (invite users to pre-release and create public pre-release list)</p></li>
+</ol>
+<p><img src="../images/EES-create-release-dashboard.PNG" class="img-fluid"></p>
+<hr>
+<section id="data-and-files" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-files">Data and files</h2>
+<p>Here you will update your data files and accompanying metadata. You need to make sure that the data has passed through our <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank">data screener checks</a> before trying to upload it.</p>
+<div class="alert alert-dismissible alert-info">
+<p>All data files are accessible in the downloadable files for users to explore in the same format as they are uploaded.</p>
+</div>
+<hr>
+<section id="subject-titles" class="level3">
+<h3 class="anchored" data-anchor-id="subject-titles">Subject titles</h3>
+<hr>
+<p>You’ll need to give a ‘subject title’ to each data file you upload. The subject name should be a simple user-friendly title for the data included within the file - it is what users will see wherever the file is referenced within EES. The actual file name and data guidance can include more technical / coverage information.</p>
+<p>When adding a subject name think about the general user and how the subjects will appear in the service:</p>
+<ul>
+<li><p>You don’t need to include the publication name in the subject name as this is always already implied within EES</p></li>
+<li><p>You don’t need to list what filters are in each file in the title, users can see this in the data guidance</p></li>
+<li><p>You don’t need to include the date ranges covered in each file in the title, users can see this in the data guidance</p></li>
+<li><p>Your subject names should be short and snappy, clearly explain what is in each file. Some good examples of this in practice are included below:</p>
+<ul>
+<li>Early years provision by provider type</li>
+<li>Exclusions and suspensions by pupil characteristics</li>
+<li>ITT new entrants by subject and training route</li>
+</ul></li>
+</ul>
+<p>You can make changes the subject title for your data file after it has been uploaded if needed using the ‘Edit title’ option.</p>
+<hr>
+</section>
+<section id="uploading-files" class="level3">
+<h3 class="anchored" data-anchor-id="uploading-files">Uploading files</h3>
+<hr>
+<p>When uploading files you have a choice between uploading as separate CSV files or as a combined ZIP file.</p>
+<p>For data files greater than 80mb we recommend uploading as a ZIP file.</p>
+<p>Once you click to upload the file a ‘Status’ will be visible that shows the progress of the import process. It will go through the following stages:</p>
+<ul>
+<li>Queued</li>
+<li>Validating</li>
+<li>Importing</li>
+<li>Complete</li>
+</ul>
+<p>This may take a little while depending on the size of your file and if there are numerous files queued for import. You cannot view the dataset or use it to create tables/charts until this status is ‘COMPLETE’.</p>
+<div class="alert alert-dismissible alert-warning">
+<p>If you believe your file is ‘stuck’ please contact explore.statistics@education.gov.uk, with details of the file and the release that you are uploading to.</p>
+</div>
+<hr>
+</section>
+<section id="ordering-filters-and-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="ordering-filters-and-indicators">Ordering filters and indicators</h3>
+<hr>
+<p>To save time when creating tables and charts, and to aid users who view your data themselves via the table tool, you can now save custom orders for your filters and indicators. You can do this in the data and files page after uploading underlying data files, via the ‘reorder filters and indicators’ tab. Once there just choose which file you want to reorder and then click and drag the items until they’re in the order you want them to show in the table tool. This then becomes the default order for this filter or indicator and will apply in all charts and tables automatically.</p>
+<p><img src="../images/order-filters-indicators.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="ancillary-file-uploads" class="level3">
+<h3 class="anchored" data-anchor-id="ancillary-file-uploads">Ancillary file uploads</h3>
+<hr>
+<p>Any files you want to make available for users to download but aren’t intended the table tool should be added as an ancillary file upload. These files will need to meet all requirements of the new <a href="https://www.gov.uk/guidance/publishing-accessible-documents" target="_blank">accesibility regulations</a> before they can be published.</p>
+<p>Examples of ancillary files may be:</p>
+<ul>
+<li>Infographic pages</li>
+<li>Supplementary data that isn’t intended for the table tool</li>
+<li>Additional technical documentation</li>
+</ul>
+<p>For ensuring that spreadsheets are accessible see the guidance from <a href="https://gov.wales/how-create-accessible-excel-spreadsheets" target="_blank">.gov.wales</a>, and this <a href="https://gss.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/" target="_blank">blog post</a> that walks you through some ways that you can recreate the experience of using spreadsheets.</p>
+<div class="alert alert-dismissible alert-info">
+<p>Any data files that only consist of Planning area, and/or Institution level data should be uploaded as an ancillary file, rather than as a data file.</p>
+</div>
+<hr>
+</section>
+<section id="public-data-guidance" class="level3">
+<h3 class="anchored" data-anchor-id="public-data-guidance">Public data guidance</h3>
+<hr>
+<p>Here you should also create your <a href="https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england/meta-guidance" target="_blank">public data guidance</a> document, this replaces the information that would have previously been uploaded as a pdf and is designed to help users understand and use the data they download from your release.</p>
+<p><img src="../images/admin-public-meta-start.PNG" class="img-fluid"></p>
+<p>The document will automatically update as you add new data files to your release, however you will need to add an overview of all the data included in the release and short summaries for each data file before the release can be published.</p>
+<p>A list of variables in each file with an associated label (taken from metadata uploads) and associated footnotes will also be displayed for each file.</p>
+<p><img src="../images/admin-public-meta-detail.PNG" class="img-fluid"></p>
+<div class="alert alert-dismissible alert-danger">
+<p>Releases cannot be published without a completed metadata document. If not filled in an error will be flagged during sign off.</p>
+</div>
+<hr>
+</section>
+<section id="replacing-data" class="level3">
+<h3 class="anchored" data-anchor-id="replacing-data">Replacing data</h3>
+<hr>
+<p>If you just need to change the subject title for your data file you do not need to go through the whole replacement process, just click the ‘Edit title’ option.</p>
+<p>However, if you notice a mistake in your data file you can replace it with another. When replacing a data file the platform will attempt to recreate any data blocks and footnotes that were built using the previous file.</p>
+<div class="alert alert-dismissible alert-warning">
+<p>The replacement file must contain the exact same column names and types as the original. For example, a character column named “date” must also be replaced with a character column named “date”. A numeric column named “date” will not work in the replacement.</p>
+</div>
+<p><img src="../images/replace-data-start.png" class="img-fluid"></p>
+<p>The first step is to upload the new file.</p>
+<p><img src="../images/replace-data-step1.PNG" class="img-fluid"></p>
+<p>One you’ve chosen and uploaded your replacement file it will need to go through the usual import process before it can check if retaining existing data blocks and footnotes will be possible.</p>
+<p><img src="../images/replace-data-step2.PNG" class="img-fluid"></p>
+<p>Once the upload is finished a report will appear which highlights whether existing data blocks and footnotes can be replaced successfully. If you want to keep any data blocks and footnotes you’ve built you will need to make sure that your replacement data file still contains the information (indicators, filters, geographic_levels and time_periods) that was used to create them.</p>
+<p><img src="../images/replace-data-success.PNG" class="img-fluid"></p>
+<p>If it’s not possible for a data block or footnote to be recreated using the replacing data file a warning will appear and you’ll be prompted to either edit or delete them before completing the replacement.</p>
+<p><img src="../images/replace-data-fail.PNG" class="img-fluid"></p>
+<div class="alert alert-dismissible alert-danger">
+<p>Remember to double check any data blocks or footnotes that were recreated by the platform before publishing your release.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="footnotes" class="level2">
+<h2 class="anchored" data-anchor-id="footnotes">Footnotes</h2>
+<p>We generally advise against using footnotes, unless they’re absolutely necessary (think about how many people will actually be reading them!). Consider where you could signpost to the methodology /data guidance / commentary instead. However, if you do want to add footnotes to your data, this should be done using the EES footnote function.</p>
+<p>Footnotes are added via footnotes tab - rather than writing multiple tables and assigning individual footnotes, you write footnotes and assign them to certain indicators and filters so they appear when users select them in the table builder. For example in the below, the footnote “This is a footnote” is assigned to “Headcount” indicator for all options within the “School type” filter.</p>
+<p><img src="../images/footnote_example.PNG" class="img-fluid"></p>
+<p>If you’d rather, you can assign a footnote to the whole data file by ticking this box.</p>
+<p><img src="../images/All_indicators.PNG" class="img-fluid"></p>
+<p>You can assign the same footnote across multiple data files.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>We recommend that you only add footnotes once you are certain the data file is final. If you have to delete the data file, all the assigned footnotes will be deleted alongside it.</p>
+</div>
+<hr>
+</section>
+<section id="data-blocks-tables-and-charts" class="level2">
+<h2 class="anchored" data-anchor-id="data-blocks-tables-and-charts">Data blocks (tables and charts)</h2>
+<p>A data block is a smaller cut of data from your original file that you can embed into your publication as a presentation table, build charts from, or link users directly to.</p>
+<hr>
+<section id="tables" class="level3">
+<h3 class="anchored" data-anchor-id="tables">Tables</h3>
+<hr>
+<p>Here you can create data blocks, using the admin table tool to create and save your summary tables. Remember to use the reorder table headers tool to restructure your table however you want it before you save.</p>
+<p>Once you’re happy with your table, give it a title and some source information before clicking save. The source should be the source of the data used to create the data file that was then used for the data block table, for example ‘School Census’.</p>
+<p>The manage data blocks page will list all the data blocks you have created, highlighting which have charts, are used in content and are saved as highlight tables.</p>
+<p><img src="../images/ees-manage-data-blocks.PNG" class="img-fluid"></p>
+<hr>
+<section id="featured-tables" class="level4">
+<h4 class="anchored" data-anchor-id="featured-tables">Featured tables</h4>
+<hr>
+<p>You can also choose to highlight a data block table as a ‘featured table’ which means it will show in a list of featured tables within the table tool. This is designed to help users get to tables of interest more quickly (without having to create tables themselves).</p>
+<p>There is an option to choose if a table is a ‘featured table’ when saving each data block, here you can name the table and add a description giving the table coverage:</p>
+<p><img src="../images/EES-create-release-table-highlight.PNG" class="img-fluid"></p>
+<p>Each featured table will then be listed to the user within the table tool. Featured tables do not have to be embedded within your release content to be included in this list.</p>
+<p><img src="../images/EES-table-tool-highlights.PNG" class="img-fluid"></p>
+<hr>
+</section>
+<section id="fast-track-links" class="level4">
+<h4 class="anchored" data-anchor-id="fast-track-links">Fast track links</h4>
+<hr>
+<p>Any data block tables that are created and saved within the admin app will also be assigned a ‘fast-track link’, this url can then be used throughout your release as a way to direct users to specific tables (within the table tool) more quickly so they can interact and explore the data further. It will appear at the top of the page like this:</p>
+<p><img src="../images/EES-create-release-fasttrack-url.PNG" class="img-fluid"></p>
+<p>When your release is published, any embedded data block tables within the release will have an ‘explore data button’ beneath them which will utilise these fast track links to quickly direct users to the table within the table tool so they can explore the data further. You can also use fast-track links as a hyperlink within release commentary (without having to embed the data block).</p>
+<p>In your fast-track titles, you don’t want to overload information, but still want to direct the user to the right place. Remember they can go back to the table tool through your featured tables to change filters and indicators as needed.</p>
+<p>Fast-track titles should explain:</p>
+<ul>
+<li><strong>What</strong> the table is showing in the simplest terms</li>
+<li><strong>Who/Where</strong> the data covers (e.g.&nbsp;characteristic groups and geography levels)</li>
+<li><strong>When</strong> the data in the table is reported for</li>
+</ul>
+<p>Here are a few examples of good fast-track titles in EES:</p>
+<ul>
+<li>Number of Schools and Pupils, by School Type, 2015/16 to 2020/21</li>
+<li>Absence Rates by School Type, 2016/17 to 2020/21</li>
+<li>Free School Meals, by Region, 2015/16 to 2020/21</li>
+</ul>
+<div class="alert alert-dismissible alert-info">
+<p><strong>What is the difference between a fast-track link and a permalink?</strong></p>
+<p>EES also offers ‘permalinks’ for any table created in the table tool which allows a user to save a link to a permanent, static, version of a table they have created. Analysts can make use of these permalinks when answering queries or in PQ and FOI responses.</p>
+<p>Fast-track links are similar to permalinks however instead of linking to a static version of a table they link to an ‘active’ version of the table within the table tool - meaning users can interact and change what’s shown in the table from within the table tool if they choose to.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="charts" class="level3">
+<h3 class="anchored" data-anchor-id="charts">Charts</h3>
+<hr>
+<p>After building and saving a data block table you will see a ‘Chart’ tab appears. This tab will take you to the EES chart builder, where you can choose to add a chart to your data block.</p>
+<p>The first step to creating a chart is choosing the chart type, currently the EES chart builder can build line charts, horizontal/vertical bar charts (including stacked and clustered) and maps.</p>
+<p>After choosing your chart type you then need to work through the following stages to build your chart. In each stage you’ll be shown a live preview as you make changes.</p>
+<hr>
+<section id="chart-configuration" class="level4">
+<h4 class="anchored" data-anchor-id="chart-configuration">Chart configuration</h4>
+<hr>
+<p>Within the ‘chart configuration’ tab you can add a title, alt text, move the legend and change chart dimensions.</p>
+<div class="alert alert-dismissible alert-info">
+<p>Make sure to review your chart dimensions before you publish. Users should be able to read the labels on the axes and see the legend without having to scroll.</p>
+</div>
+<p><img src="../images/EES-charts-create.PNG" class="img-fluid"></p>
+<p>Note, within the vertical and horizontal bar chart types you can also create stacked bar charts by clicking the ‘Stacked bars’ option within the chart configuration tab</p>
+<hr>
+</section>
+<section id="data-sets" class="level4">
+<h4 class="anchored" data-anchor-id="data-sets">Data sets</h4>
+<hr>
+<p>Here is where you add data to the chart. You can add each series one at a time or all together.</p>
+<p><img src="../images/EES-charts-add-data.PNG" class="img-fluid"></p>
+<hr>
+</section>
+<section id="legend" class="level4">
+<h4 class="anchored" data-anchor-id="legend">Legend</h4>
+<hr>
+<p>You can edit the chart legend, and styling of your series via the Legend tab.</p>
+<p><img src="../images/EES-charts-legend.PNG" class="img-fluid"></p>
+<div class="alert alert-dismissible alert-info">
+<p>To select specify custom colours outside of the defaults, you can double click on the colour codes at the bottom of the colour picked until you get to the type of code you’re wanting to input (e.g.&nbsp;hex code) and then enter the code manually.</p>
+</div>
+<hr>
+</section>
+<section id="x-axis-major-axis" class="level4">
+<h4 class="anchored" data-anchor-id="x-axis-major-axis">X axis (major axis)</h4>
+<hr>
+<p>Here is where you configure the x-axis: You can alter gridlines, labels, sort, limit and add reference lines.</p>
+<p><img src="../images/EES-charts-xaxis.PNG" class="img-fluid"></p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Size of axis</td>
+<td>Change the width of the space given to axis tick labels</td>
+</tr>
+<tr class="even">
+<td>Show grid lines</td>
+<td>Turn grid lines on and off</td>
+</tr>
+<tr class="odd">
+<td>Show axis</td>
+<td>Turn the axis on and off, you can also add a unit to the axis tick labels</td>
+</tr>
+<tr class="even">
+<td>Sorting</td>
+<td>Change how the data within the chart is sorted</td>
+</tr>
+<tr class="odd">
+<td>Tick display type</td>
+<td>Alter how often axis tick labels are shown, labels will automatically skip values where there are too many to show without overlapping</td>
+</tr>
+<tr class="even">
+<td>Axis range</td>
+<td>Alter the range of data shown in the chart</td>
+</tr>
+<tr class="odd">
+<td>Label</td>
+<td>Add an axis label, you can also choose the width for the space given to it</td>
+</tr>
+<tr class="even">
+<td>Reference lines</td>
+<td>Add/remove reference lines to the chart</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="y-axis-minor-axis" class="level4">
+<h4 class="anchored" data-anchor-id="y-axis-minor-axis">Y axis (minor axis)</h4>
+<hr>
+<p>Then follow a similar process for the y axis configuration, play around until the chart looks how you want it to.</p>
+<p><img src="../images/EES-charts-yaxis.PNG" class="img-fluid"></p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Size of axis</td>
+<td>Change the width of the space given to axis tick labels</td>
+</tr>
+<tr class="even">
+<td>Group data by</td>
+<td>Change how the data within the chart is grouped</td>
+</tr>
+<tr class="odd">
+<td>Show grid lines</td>
+<td>Turn grid lines on and off</td>
+</tr>
+<tr class="even">
+<td>Show axis</td>
+<td>Turn the axis on and off, you can also add a unit to the axis tick labels</td>
+</tr>
+<tr class="odd">
+<td>Sorting</td>
+<td>Change how the data within the chart is sorted</td>
+</tr>
+<tr class="even">
+<td>Tick display type</td>
+<td>Alter how often axis tick labels are shown, labels will automatically skip values where there are too many to show without overlapping</td>
+</tr>
+<tr class="odd">
+<td>Axis range</td>
+<td>Alter the range of data shown in the chart</td>
+</tr>
+<tr class="even">
+<td>Label</td>
+<td>Add an axis label, you can also choose the width for the space given to it</td>
+</tr>
+<tr class="odd">
+<td>Reference lines</td>
+<td>Add/remove reference lines to the chart</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="changing-chart-type" class="level4">
+<h4 class="anchored" data-anchor-id="changing-chart-type">Changing chart type</h4>
+<hr>
+<p>If you create your chart and then change your mind as to what chart type would be best you can just click to change it and it will try to save all the options that you had applied previously.</p>
+<p><img src="../images/EES-charts-change-type.PNG" class="img-fluid"></p>
+<div class="alert alert-dismissible alert-info">
+<p>Remember to save your chart when you’re done.</p>
+</div>
+<hr>
+</section>
+<section id="maps" class="level4">
+<h4 class="anchored" data-anchor-id="maps">Maps</h4>
+<hr>
+<p>You can create maps too, currently this is possible for regional, LA and LAD data.</p>
+<p>You can change the boundaries you are plotting onto via the “chart configuration” tab, the latest boundary file will automatically be selected, but if you are visualising historic data, you may want an older boundary file. Please <a href="mailto:explore.statistics@education.gov.uk">contact us</a> if the boundary you want to plot is unavailable.</p>
+<p><img src="../images/map_config.png" class="img-fluid"></p>
+<p>Then to create a map, add the cuts of data you want to display in the “data sets” tab of the chart builder.</p>
+<p><img src="../images/map_add_data.PNG" class="img-fluid"></p>
+<p>You can change the colour scale of the chart in the “legend” tab.</p>
+<p><img src="../images/map_change_legend.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="other-chart-types" class="level4">
+<h4 class="anchored" data-anchor-id="other-chart-types">Other chart types</h4>
+<hr>
+<p>You should only use complex charts where there is a clear user need, as simple charts are the easiest for users to understand. If you have a an infographic or a chart that is too complex to build within our chart builder you can use the ‘Choose an infographic as alternative’ option to upload an image to your data block or use the <strong>Add embed block</strong> feature to embed an R-Shiny based plot (see the section on <a href="embedded-charts.html">embedded blocks</a> for further information).</p>
+<p>Infographic alternatives should be .svg format and you can use the sizing options within the data block editor to size your image appropriately.</p>
+<div class="alert alert-dismissible alert-info">
+<p>Accessibility matters for infographics too, consider the following if you do need to upload an image -</p>
+<ul>
+<li>Keep them simple</li>
+<li>Use colours that are available in EES - see our <a href="../creating-statistics/cd.html#Charts-in-EES">visualisation guidance</a> for more details</li>
+<li>Don’t put borders around images</li>
+<li>Read the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" target="_blank">GSS guidance on the use of colour in visualisations</a> and follow the steps provided to check your visualisations</li>
+<li>Try to avoid adding text to your images other than axis labels and limited annotations. Titles and headings can be added in the “chart configuration” tab instead</li>
+</ul>
+</div>
+<p>You can use R to create infographics and the following code gives an example of how to create a basic line chart or stacked bar chart using the appropriate GSS sequential colour palette.</p>
+<pre><code># Load the necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# This is the GSS standard categorical colour palette
+gss_categorical_palette &lt;- data.frame(
+  names = c('Dark Blue', 'Turquoise', 'Dark pink', 'Orange', 'Dark grey', 'Light purple'),
+  hex = c("#12436D",    '#28A197', "#801650", "#F46A25", "#3D3D3D", "#A285D1"),
+  id = c(1,2,3,4,5,6))
+
+# Set up a dummy data-set.
+# Note the line factor(...,levels=...) allows you to order your filter values in
+# the final plot based on the ordering entered into the levels keyword. If left,
+# it'll default to alphabetical.
+data &lt;- data.frame(
+  time_period=c("2018/19","2018/19","2018/19","2018/19","2018/19","2018/19",
+                "2019/20","2019/20","2019/20","2019/20","2019/20","2019/20",
+                "2020/21","2020/21","2020/21","2020/21","2020/21","2020/21"),
+  Filter=c(gss_categorical_palette$names,
+            gss_categorical_palette$names,
+            gss_categorical_palette$names),
+  indicator1=sample(4:16,18,replace=TRUE) +
+    c(gss_categorical_palette$id,gss_categorical_palette$id,gss_categorical_palette$id)*3
+  ) %&gt;%
+  mutate(
+    time_period=as.factor(time_period),
+    Filter=factor(Filter,levels=gss_categorical_palette$names)
+    )
+
+# Create a line chart
+ggplot(data, aes(x=time_period, y=indicator1, group=Filter, colour=Filter )) +
+  geom_line(size=1.2) +
+  scale_color_manual(values=gss_categorical_palette$hex) +
+  theme_classic() +
+  theme(
+    legend.position = "bottom",
+    text = element_text(size = 14, family = "Arial"),
+    strip.text.x = element_text(size = 20)
+  ) +
+  ylab("Indicator 1") +
+  xlab("Time period")
+
+# Create a stacked bar chart
+ggplot(data, aes(x=time_period, y=indicator1,  fill=Filter )) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values=gss_categorical_palette$hex) +
+  theme_classic() +
+  theme(
+    legend.position = "bottom",
+    text = element_text(size = 14, family = "Arial"),
+    strip.text.x = element_text(size = 20)
+  ) +
+  ylab("Indicator 1") +
+  xlab("Time period")</code></pre>
+<p>The above code should produce something along the lines of the following plots:</p>
+<p><img src="../images/ggplot_eesstyled_line.PNG" class="img-fluid" alt="EES style line chart produced in ggplot"> <img src="../images/ggplot_eesstyled_bar.PNG" class="img-fluid" alt="EES style bar chart produced in ggplot"></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="content" class="level2">
+<h2 class="anchored" data-anchor-id="content">Content</h2>
+<p>In the content tab you can now start creating your release, embedding the data blocks you’ve created as you go.</p>
+<!-- we should gif -->
+<p>You can use the page view toggles, that float in the bottom left of the page, to jump between edit and preview mode for the release and to view a preview of the table tool.</p>
+<!-- we should gif -->
+<p>Add any headline and/or key stats and figures for your release in the headline facts and figures section.</p>
+<p>You can then create accordion sections to start adding your main release commentary. These sections are made up of text blocks and data blocks which can be reordered as needed.</p>
+<section id="headline-facts-and-figures" class="level3">
+<h3 class="anchored" data-anchor-id="headline-facts-and-figures">Headline facts and figures</h3>
+<p>Use the ‘Add secondary stats’ button to add a data block to your headline stats section.</p>
+<p>Use the ‘Key stats’ options to add key statistic tiles to your release. For each tile you first have to have created a data block that contains only one number.</p>
+<p><img src="../images/key-stat.PNG" class="img-fluid"></p>
+<p>After embedding a key stat tile you can then edit it to add trend information and a description of what the indicator is.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Indicator name</td>
+<td>Automatically generated from your data</td>
+</tr>
+<tr class="even">
+<td>Latest value</td>
+<td>Automatically generated from your data</td>
+</tr>
+<tr class="odd">
+<td>Trend</td>
+<td>A short one-sentence description of the trend; try to avoid only stating the change from the previous year and talk about the longer-term trend where appropriate</td>
+</tr>
+<tr class="even">
+<td>Guidance title</td>
+<td>E.g. ‘What is NEET?’ or ‘What are permanent exclusions?’</td>
+</tr>
+<tr class="odd">
+<td>Guidance text</td>
+<td>A simple description in plain English of what the indicator is</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="drafting-text" class="level3">
+<h3 class="anchored" data-anchor-id="drafting-text">Drafting text</h3>
+<hr>
+<section id="about-these-statistics" class="level4">
+<h4 class="anchored" data-anchor-id="about-these-statistics">About these statistics</h4>
+<hr>
+<p>We recommend that the first accordion section in each release should be ‘About these statistics’. Do not assume that users will read it, the nature of interactive pages means that the reader may start at any accordion section so remember to include essential information in the section to which it refers.</p>
+<p>Avoid filling this section with:</p>
+<ul>
+<li>Crucial caveats or information necessary for accurate interpretation of the statistics, these should be included within the main commentary next to the point they relate to</li>
+<li>Technical information that is not relevant to the interpretation of the statistics should be saved for the methodology</li>
+<li>Definitions should be included within the main commentary when they are first mentioned</li>
+<li>Lists or descriptions of what is in the commentary as these should be clear from the contents and accordion headings</li>
+</ul>
+<p>Try to focus the ‘About these statistics’ section on:</p>
+<ul>
+<li>Say why the data are collected and what they are used for or could be used for, including relevant policies and targets</li>
+<li>The different geographical levels for which data is published</li>
+<li>Non-essential but important information about the statistics, such as:
+<ul>
+<li>The data collection window, mode of data collection and response rates in terms of whether these are representative</li>
+<li>Clarification of the population coverage</li>
+<li>Changes in data collection or analysis methods from previous releases</li>
+</ul></li>
+<li>Links to relevant related statistics including the cause of any differences</li>
+<li>Further useful detail on specific measures used in the release</li>
+<li>Non-urgent notices to users such as minor error corrections and delays or changes to the next publication. If there is something important which you want all users to know about then give it its own accordion section.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="footnotes-1" class="level3">
+<h3 class="anchored" data-anchor-id="footnotes-1">Footnotes</h3>
+<hr>
+<div class="alert alert-dismissible alert-danger">
+<p>Do not use footnotes in the text of your content. They’re designed for reference in print, not web pages. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.</p>
+</div>
+<hr>
+<section id="tables-in-content" class="level4">
+<h4 class="anchored" data-anchor-id="tables-in-content">Tables in content</h4>
+<hr>
+<p>Any data tables should be included as data blocks, however you can also embed static html tables within a text box. These should only be used to present textual tables or for any small presentations of data that are not possible to do in a data block at the moment.</p>
+
+<!-- gif adding in a html table -->
+<p>You can create static html tables for presenting information that isn’t embedded in a data block. However, remember that <em>all of the data</em> included or referred to in your content should be available (or createable) from the downloadable open data files.</p>
+<hr>
+</section>
+<section id="footnotes-for-tables-in-content" class="level4">
+<h4 class="anchored" data-anchor-id="footnotes-for-tables-in-content">Footnotes for tables in content</h4>
+<hr>
+<p>If you are including a table in text that needs footnotes, it’s generally advised to include this in the commentary surrounding the table. However, if you think a footnote is still necessary, then we advise writing out the word ‘note’, with the number of the note you need to refer to, and put it in square brackets, for example: ‘Number of people in employment [note 1]’. For more guidance on footnotes outside of EES, see the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-6" target="_blank">Analysis Function guidance on symbols, footnotes and codes</a>.</p>
+<hr>
+</section>
+</section>
+<section id="reviewing-content" class="level3">
+<h3 class="anchored" data-anchor-id="reviewing-content">Reviewing content</h3>
+<hr>
+<p>While a release is in draft mode, comments can be added to text to help teams collaborate. Simply highlight the text you want to comment on and click on the speech bubble in the editing bar to add a comment.</p>
+<p><img src="../images/comment.png" class="img-fluid"></p>
+<p>Comments can be edited at a later date, and can also be marked as resolved so that you can see which comments have been addressed and which are still outstanding.</p>
+<p>When someone is editing a text box, it will now be instantly frozen for all other users preventing two users from editing the same block of text at the same time. You will be able to see the name of the user who is making edits, and will see the edits coming through every few seconds as their changes autosave.</p>
+<p><img src="../images/freeze_text.png" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="embedding-r-shiny-blocks" class="level2">
+<h2 class="anchored" data-anchor-id="embedding-r-shiny-blocks">Embedding R-Shiny blocks</h2>
+<p>If you need to include a type of chart that isn’t possible using the standard EES chart options, for example an interactive chart with filters, you can embed a block to display a custom R-Shiny produced chart.</p>
+<p>To embed a shiny chart, you’ll first need to create an R-Shiny application containing the chart using the DfE tiny-shiny template and get it hosted on our DfE GitHub and ShinyApps accounts. More details on both of these are available in the tiny-shiny section of this guidance.</p>
+<p>Once you’ve got the R-Shiny app set up and hosted, you can embed it using the <strong>Add embed block</strong> button in the content area. This will give you the option to enter a URL, where you can enter the URL of the shiny app. Valid URLs to use in the embed block dialogue box are limited to only those on the DfE ShinyApps server (and the internal rsconnect when needed for draft publications).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/tinyshiny-ees-block.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The EES interface for embedding a Shiny chart</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="glossary" class="level2">
+<h2 class="anchored" data-anchor-id="glossary">Glossary</h2>
+<p>Our glossary on EES is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics - https://explore-education-statistics.service.gov.uk/glossary.</p>
+<hr>
+<section id="adding-new-definitions" class="level3">
+<h3 class="anchored" data-anchor-id="adding-new-definitions">Adding new definitions</h3>
+<hr>
+<p>Contact us at explore.statistics@education.gov.uk, with the title and definition and we can add this for you. It’s worth having a check on the glossary for similar or related terms, and whether you should be looking to harmonise with other teams.</p>
+<hr>
+</section>
+<section id="linking-to-definitions" class="level3">
+<h3 class="anchored" data-anchor-id="linking-to-definitions">Linking to definitions</h3>
+<hr>
+<p>You can link to any term in the glossary by appending the glossary url with #name-of-definition, replacing any spaces with hyphens.</p>
+<p>For example, to link to the definition for ‘Respite care’, you would use the following link:</p>
+<p>https://explore-education-statistics.service.gov.uk/glossary#respite-care</p>
+<p>You can test this works by typing the url into your browser, it should take you to that specific definition on the glossary page. If you’re unsure at all, or have special characters in the title of your glossary entry, please ask us for support on getting the right link.</p>
+<hr>
+</section>
+<section id="linking-from-your-release" class="level3">
+<h3 class="anchored" data-anchor-id="linking-from-your-release">Linking from your release</h3>
+<hr>
+<p>When writing your release content, highlight a word or phrase and click the link icon in the text editor bar.</p>
+<p><img src="../images/ees-glossary-texteditor.PNG" class="img-fluid"></p>
+<p>Then, paste your glossary url into the box that appears.</p>
+<p><img src="../images/ees-glossary-paste.PNG" class="img-fluid"></p>
+<p>That’s it, the system will automatically recognise that the link is for the glossary and will do the rest. You can then change to the preview mode to see how this would then appear to public users, and test that the box appears with the definition.</p>
+<p><img src="../images/ees-glossary-text.PNG" class="img-fluid"></p>
+<p><img src="../images/ees-glossary-modal.PNG" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="sign-off" class="level2">
+<h2 class="anchored" data-anchor-id="sign-off">Sign off</h2>
+<p>Once you’re happy with your release you need to go to the sign off page and change it’s status in order to move it through the release pipeline.</p>
+<p>There are three statuses:</p>
+<ol type="1">
+<li><strong>In draft</strong> (where the production team work on drafting the release)</li>
+<li><strong>Ready for higher review</strong> (where the senior statistician checks over the release before approving)</li>
+<li><strong>Approved for publication</strong> (after approval has been given, releases in this status will be published on their scheduled date)</li>
+</ol>
+<div class="alert alert-dismissible alert-warning">
+<p>Only users with <a href="#roles-and-permissions">approver</a> permissions (usually G6 or above) can sign off the release for publication.</p>
+</div>
+<hr>
+<section id="errors-and-warnings" class="level3">
+<h3 class="anchored" data-anchor-id="errors-and-warnings">Errors and warnings</h3>
+<hr>
+<p>There’s quite a few things to remember to do as you build your release so to help ensure you haven’t missed anything a release checklist is also available via the sign off page</p>
+<p>The checklist can be accessed by clicking to edit release status.</p>
+<p>Remember to check over it before you submit your release for approval as a release that has outstanding warnings on it will not be able to be published.</p>
+<p><img src="../images/ees-release-checklist.PNG" class="img-fluid"></p>
+<hr>
+</section>
+<section id="how-to-approve-a-release" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-approve-a-release">How to approve a release</h3>
+<hr>
+<p>Releases are approved via the sign off tab. The release date is also set during this stage of the process. All releases scheduled for a specific date will be published at 9:30am on that day.</p>
+<p><img src="../images/ees-approving-release.PNG" class="img-fluid"></p>
+<p>The approver has the ability to approve the release to be published on a specific date or to publish as soon as possible. Publishing as soon as possible is useful for publishing amendments to existing releases.</p>
+<div class="alert alert-dismissible alert-info">
+<p>This page also gives you the expected release url which may be useful to know for other things, for example, sending to the web team to add to your gov.uk announcement page.</p>
+</div>
+<hr>
+</section>
+<section id="next-release-expected" class="level3">
+<h3 class="anchored" data-anchor-id="next-release-expected">Next release expected</h3>
+<hr>
+<p>You also have the option to add a date for when the next release is expected. This will appear at the top of a release page and give users an idea of when to expect the next release in the publication series. You can provide the planned month and year of the next release within this publication.</p>
+<p>If this is added but then needs to be changed or removed later in the year it is easy to do so, by creating an amendment and setting a new next release expected date on sign-off.</p>
+<hr>
+</section>
+</section>
+<section id="pre-release-access" class="level2">
+<h2 class="anchored" data-anchor-id="pre-release-access">Pre-release access</h2>
+<p>Prior to each release going live the production team are also able to grant pre-release access to a named group of users 24 hours before it goes live. These users do not require full access to the whole admin service. They will be able to see preview versions of any releases they have been granted access to.</p>
+<p>This preview is only accessible for the 24 hours before the publication date, the emails may go out to users before then. We expect teams will continue to send an email at 09:30 on pre-release day, including any additional briefing and the link to the pre-release area.</p>
+<div class="alert alert-dismissible alert-info">
+<p>Jobshare emails should not be sent invites for pre-release. The personal emails for the specific individuals should be used instead, as jobshare emails do not have active accounts with DfE to access EES.</p>
+</div>
+<div class="alert alert-dismissible alert-danger">
+<p>Pre-release access via Explore Education Statistics is currently limited to DFE users only, if you need to share your release with external users you will need to do so outside of the system.</p>
+</div>
+
+<centre>
+
+<title>
+EES PRA one pager
+</title>
+<meta charset="utf-8">
+
+
+<div class="mxgraph" style="max-width:100%;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-10-20T16:01:02.280Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36\&quot; etag=\&quot;u54yy4Q2arZoT8qL_QMa\&quot; version=\&quot;13.8.1\&quot; type=\&quot;google\&quot;><diagram id=\&quot;GmQ-00HEmiX2ExrvTGiP\&quot; name=\&quot;Page-1\&quot;>7Vpbd9o4EP4t+8DpExzfMPBICDQ9J7ubDelu+7RH2AJrY1uuLHPpr98ZWb5hJyRtaNPTkpBIo4tHM59mRiP37Fm0fytIEvzOfRr2LMPf9+zLnmWZjmX18NfwDzll5GrCRjA/JxkVYck+Uz2yoGbMp6mm5STJeShZ0iR6PI6pJxs0IgTfNbuteeg3CAnZ0AYbSFh6JKStbv8wXwaaarqTquGKsk2gHz22RnnDinj3G8GzWD8v5jHNWyJSTKMfmQbE57sayZ737JngXOalaD+jIYq1KbHFA60ly4LG8ikD/r76wO3UCT+Nb4x/d+/+8m5ur/p6GVsSZloUPcsNYb6LNCExci0PWkjupwxZvdgFTNI+NHtAn0KXmIuIhFUHKG3w/43gfuZJxnEeSUmEzMRbGA2FA8+UkvFPgIRE0L6gISUp1ojn0TRVeOFZUvAEi8vZyh+g5VpyaClFUFyvWTC6zPm83AFwgRbIKNTNaxaGMx5yAXWlNiDxWGpwmg7UScg2MVQ8EDEVuVA8Fm+wfYhVKfg9LSbpWfZCffRMNfpsjD8ly3WlaT1uqZB0XyNpJb6lPKJSHKCLbh0O8xGHYvOZA03ZVdAtd1ZQR62mEb1bNuXcFWygoJHzDBSNz4iijzx7ozjYUIm843Q0IixUC4b1Ag2+IYvvkRJQQeuY2jK6g1KFLE/NsKpABnj5Ba8KXrY1fnX4mjyIr1WhrPmHm+s/b+fQa375fja9e/fnH1Be3kFpefdutqzpePWggkFEsqnFlopQkAwcx1Q3RMz3cfiFoCn7TFZqKgPqCWexVIIYXvSGlzhXJnmq1d9Eg+UUdc2L0aFj9XkZHVuThoptu0PDjtWhYftcGi7g1KFilEOnCcGGfi5QNCC2mew7nNDtvH87v55Pl4iN6Ww2X9axkE/+yuBgm0dwMNtwGBv480Jb3mjAwe2Cgz3qgINzNjiYLThc8V0RMJTBQTNmSCWRLAV1pNo1MLT0830CQsP2OUQjRIcjy1pfl0Rou+NVmuTAOaqfREWHqS+AEtK1fAwmXU6kcjNGr+00zmn6R03Lbxhtq+B2wMAangsGVgsG79MMowRw6OAdmYouUd0kSUJcSR++PFbFhPIkpComQNAEZEuV46dxGYf6BaKqQCEPHCpQ7ZhiM48XVmq+JgbzAXn48TVIOW1SnocV+8xYMd2mD3HbNsMcT9pgmZwNLHYLLHcPRoENtW4hmtS6XYOsLAP8MTDNM5H+VDo1bauh06FttnXqjNo6NQ3zXEp1Tod+tzSi0Qrk3BniKZNwFzDcq+oPUXqX+C+lYstA9NYMF6lwQUMPWO+pAypCYU2pj4f8334iP+CaDRiMbKcrPrTHHZ7gbAHBsIWDhdqqAQ2TXH8eCIRgbgiDwWbwWGAhp2XHBIRCIOi6EV3iERMsvT2leQAxqIUXjkGLWGKw4dtBdt8OPJ86rIAsOeYKaC1Onx+xfkPrdGZUDpuHltGwC5W243xLVLod1ulIJdTf0CKO50IGfMNjEs4r6pFEqz7XnCdai/9RKQ9aznhuONLxkRK8TGzLNMULJhFSMIkefUQe2jVIIjBZczJfhKJ5VPPgr2G3bJtJ2pfXYlcS9NlabAj9xVUKqhCHD7pRVT7i5INhUb3c64fltUNR2zNZDoNybRTUqkFYKcZ8S8SMn4gYc/LSkFFDp0KQQ62DPqVXM98goWaDRk7ziDS26vA72d/W66jgmnNQgbdcylfguSsd+8rw/C0xVmDnJMiKGV+LXXo47fn1afUpotSYQCfM/hgqKdJMp/hqZ+THW4ytqAJ2eXDSYfKbEOTwJo/ASOz3ipudPM1enpJJ4xwGTj/N8zB83T5z/0rGP3TXY43HXZH42G7HPO65Yh6rK1P7E1uX8r76pHWxXpV1sdop1i+2LsqsHBmY92l1D5cJZKcrb5bAUtcwiT6n57YjUpZnledueJTUEnUpblJM3xU2qzimM5GieZIs+mVBHrEgztj6/hakndU9r19LvQAO3qFCUbd/604MJtkqZGmgxpW+7c2JfDBDBraMdNwr5Gkr0XGob+L0laQu+mXPfjXBQOfMzpTA+Bn3pOt03r927cmz3bBb7eR5SzdpQBIsski9TVXXxHEGSaLjLqnXZEXDG54ydflmX664lDyCDiE2XJSvUNXEvVYf6KIeNk2T/K0vjA9IUVmzPSLlQvNzGUiJr4tNURLWwvNjZ8AgcF0zQJQYQLwKVJ9g4neBdNisCwhIw76q9DMAdp8hStaIN2vhwtFtEXLvvm9a40GCmHkO4nTG97sAzHSb73DYw47LmSKl2kjkm+e6nbG6Evk/OsCMkwBbUwIeBkz+YuLimB8TT2VWtbgYGjotPI3cNpwK2suj6QmJ12e5ku8iVucopW0VV5g1sY478tnDs4m1fcvy429S++QmDVlMlQ9YC0r7W5iXC+0VADAQ4yzwYnSBYdWX7d0q+ngNMDMnkzbMOi7zCtozYAbV6oXmPJ9ZvTBuz/8H</diagram></mxfile>&quot;}">
+
+</div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+
+</centre>
+
+<p>Inviting users for pre-release access and building the public pre-release list can be found within the ‘Pre-release access’ tab on the dashboard.</p>
+<p>Once the release has been marked as approved, go to the ‘Pre-release access’ tab and add the relevant email addresses to grant pre-release access. All invited users will receive an email to say that they have been given pre-release access and will get a url where the preview release will be available.</p>
+<p><img src="../images/EES-invite-pra.PNG" class="img-fluid"></p>
+<p>You should also create the public facing pre-release access page by clicking the ‘Public access list’ tab.</p>
+<p><img src="../images/EES-public-pra-list.PNG" class="img-fluid"></p>
+<p>After creating your pre-release access list a text editor will appear where you can list the roles that have been given early access to the release. This list will then appear in the list of file downloads at the top of each release.</p>
+<p><img src="../images/EES-create-public-pra-list.PNG" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="release-amendments" class="level1">
+<h1>Release amendments</h1>
+<hr>
+<p>If you need to make an amendment to release that has already been published this is possible to do from within the admin dashboard if you are a publication owner. If you need to create an amendment and your publication owner is not available, please contact the Statistics Development Team to do this for you.</p>
+<p><img src="../images/EES-amend-release.PNG" class="img-fluid"></p>
+<p>Creating an amendment of a release will create a new version for which you can make any changes and then choose to republish, either as soon as possible or on a given date.</p>
+<hr>
+<section id="release-notes" class="level2">
+<h2 class="anchored" data-anchor-id="release-notes">Release notes</h2>
+<p>When publishing a new amendment you should add a ‘release note’ to your release so users can be informed of what has changed:</p>
+<p><img src="../images/EES-release-note.PNG" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<hr>
+<p>Methodologies work in a very similar way to the written content of a release, the text editor and static tables you can use are built on the same foundations.</p>
+<p>If you have not created or published a methodology page on EES before, the first thing your publication owner will need to do is create a methodology page.</p>
+<p><img src="../images/EES-create-methodology.PNG" class="img-fluid"></p>
+<p>Once created you can then edit the methodology content in a similar way to how you would create release page content.</p>
+<p>Methodologies should follow our recommended <a href="../resources/Methodology template EES.docx">methodology template</a>, to ensure all the essential details are covered.</p>
+<p>Once the drafting has finished, a methodology should be set as ‘approved for publication’, currently approved methodology changes will be published immediately so make sure you are ready for the changes to go live before approving.</p>
+<p>If you want to revise an existing methodology page you can amend the methodology which will generate a new version for you to edit.</p>
+<p><img src="../images/EES-amend-methodology.PNG" class="img-fluid"></p>
+<p>Once you’re happy with your amendment it just needs to be <a href="#sign-off">approved</a> in the usual way for it to be published.</p>
+<hr>
+<section id="methodology-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="methodology-formatting">Methodology formatting</h2>
+<p>Subheadings make it easier for your users to navigate through your methodology. When editing text blocks in your methodology, you can do this by highlighting your subheading and selecting “Heading 3” in place of “Paragraph”:</p>
+<p><img src="../images/methodology_subheadings.PNG" class="img-fluid"></p>
+<p>You can add further subheadings underneath this but try to limit the number of subheadings per accordion to 10 at the most. Too many subheadings will make it tricky for users to find what they are looking for.</p>
+<hr>
+</section>
+<section id="methodology-images" class="level2">
+<h2 class="anchored" data-anchor-id="methodology-images">Methodology images</h2>
+<p>You can add images to methodology pages via the content editor.</p>
+<p><img src="../images/ees-wysiwyg-images.png" class="img-fluid"></p>
+<p>When uploading an image you will need to add alt text via by clicking the eye symbol, you may also choose to add an image caption.</p>
+<p><img src="../images/ees-wysiwyg-alt-text.PNG" class="img-fluid"></p>
+<div class="alert alert-dismissible alert-info">
+<p>Accessibility matters for uploaded images too, consider the following if you do need to upload an image -</p>
+<ul>
+<li>Keep them simple</li>
+<li>Use <a href="https://design-system.service.gov.uk/styles/colour/" target="_blank">GDS colours</a></li>
+<li>Don’t put borders around images</li>
+<li>Ensure there is a high enough colour contrast ratio between elements. You can use a <a href="https://contrast-checker.glitch.me/" target="_blank">colour contrast checker</a> to check the colours you’re using</li>
+<li>Try to avoid adding text to your images other than axis labels and limited annotations.</li>
+</ul>
+</div>
+<hr>
+</section>
+</section>
+<section id="managing-publications" class="level1">
+<h1>Managing publications</h1>
+<hr>
+<p>We have a type of role within EES admin called ‘Publication Owner’. This permissions level gives publication owners control over their publications.</p>
+<p>Options available to publication owners:</p>
+<p><img src="../images/publicationowner-options.png" class="img-fluid"></p>
+<hr>
+<section id="publication-management" class="level2">
+<h2 class="anchored" data-anchor-id="publication-management">Publication management</h2>
+<p>Use this page to change the details for your publication, such as the contact information or to add links to legacy releases on gov.uk.</p>
+<p>Any updates here will affect all releases in the series and will be published immediately.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>It is possible to change the publication title via this page, however this should be used rarely and will not affect the publications url if one or more published releases exist.</p>
+</div>
+<p><img src="../images/manage-publication.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="create-new-release" class="level2">
+<h2 class="anchored" data-anchor-id="create-new-release">Create new release</h2>
+<p>After finding the publication you want to create a release for, just press the button to create a new release.</p>
+<p>Currently the following types of release can be created in EES:</p>
+<ul>
+<li>National Statistics (includes OSR tick mark logo at the top of the release page)</li>
+<li>Official Statistics</li>
+<li>Adhoc Statistics</li>
+</ul>
+<p>When creating a release you will be asked to fill in some release summary fields.</p>
+<div class="alert alert-dismissible alert-info">
+<p>The time period for the release should reflect the time period of the data that this latest release adds to the time series.</p>
+</div>
+<hr>
+</section>
+<section id="managing-legacy-releases" class="level2">
+<h2 class="anchored" data-anchor-id="managing-legacy-releases">Managing legacy releases</h2>
+<p>Past publications on other services can be added to the previous releases links that appear on the top right of a release page by using the ‘Manage legacy releases’ section. In here you can add links to previous releases and choose the order in which they appear.</p>
+<p>This section can be found by publication owners in the publication management section.</p>
+<hr>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../creating-statistics/ud.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Open Data Standards</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../publishing-statistics/embedded-charts.html" class="pagination-link">
+        <span class="nav-page-text">Embedded visualisations in EES</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Department for Education, 2023</div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">This page is maintained by statistics.development@education.gov.uk</div>
+  </div>
+</footer>
+
+
+
+</body></html>

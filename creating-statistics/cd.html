@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Analyst’s Guide - Writing and visualising</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../publishing-statistics/dashboards.html" rel="next">
+<link href="../understanding-users/user-analytics.html" rel="prev">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KBJCBD114T"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KBJCBD114T', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"headline",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../creating-statistics/cd.html">Writing and visualising</a></li><li class="breadcrumb-item"><a href="../creating-statistics/cd.html">Writing and visualising</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="mailto:statistics.development@education.gov.uk" rel="" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-microsoft-teams"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a50f82a2718184a0e98ba86c3d411a02f%40thread.skype/conversations?groupId=6572094f-43a3-4537-bcf0-fc27dc6557ed&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            DfE analysts network
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3ae3c8551e86094e259a60848fcff4dbc1%40thread.skype/conversations?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            Statistics production
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9">
+            DfE R community
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-camera-reels"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Statistician%27s%20Guide%20to%20the%20Galaxy?csf=1&amp;web=1&amp;e=owScaj">
+            Guide to the Galaxy sessions
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Explore%20Education%20Statistics?csf=1&amp;web=1&amp;e=HVpi0D">
+            EES show and tells
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series?csf=1&amp;web=1&amp;e=H0pcSH">
+            RAP knowledge share series
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/sites/sarpi/g/AC/Coffee%20and%20Coding.aspx?xsdata=MDV8MDF8fGU5YTkwYWU1OTNiNjQzZTIyZTM2MDhkYjVhY2MxN2JlfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2MzgyMDM2MDQ4MjEyMjUwMTR8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPbTFsWlhScGJtZGZXVlJuZUUxRVVUTlphbGwwVGpKUk1FNTVNREJhYW1zMVRGUnJNbHBYV1hSTmVtTjZXbXBCTWxwdFZUQlBWMVV3UUhSb2NtVmhaQzUyTWk5dFpYTnpZV2RsY3k4eE5qZzBOell6TmpneE5qRXh8YjdlZWE0MGYzNDg5NGYxYzJlMzYwOGRiNWFjYzE3YmV8MmE3NzU1YzRmOWMyNDZlOTkwYWVmMjlkZjY5NjczZWE%3D&amp;sdata=ajlKYUZuNHFyNU9XSm5WR3ZZaUZHZDB4bjVJYkJzRFZNc0U1Uit5V1Q5cz0%3D&amp;ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CTess%2EWILLIAMS%40EDUCATION%2EGOV%2EUK&amp;OR=Teams%2DHL&amp;CT=1684763684990&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA0MDIwMjcwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D">
+            Coffee and coding sessions
+            </a>
+          </li>
+      </ul>
+    </div>
+    <a href="https://explore-education-statistics.service.gov.uk/" rel="" title="Explore education statistics" class="quarto-navigation-tool px-1" aria-label="Explore education statistics"><i class="bi bi-graph-up"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-2" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-2">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/statisticians-guide">
+            Source code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/statisticians-guide/issues/new">
+            Suggest changes
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Learning resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Statistics production</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/pub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publication checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../creating-statistics/ud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open Data Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/ees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Explore Education Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/embedded-charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Embedded visualisations in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good examples in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../understanding-users/user-eng.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">User engagement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../understanding-users/user-analytics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EES analytics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Writing and visualising</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../creating-statistics/cd.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Writing and visualising</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../publishing-statistics/dashboards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Public dashboards</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP expectations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP FAQs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for Statistics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">ADA and databricks</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
+  <li><a href="#publication-summaries" id="toc-publication-summaries" class="nav-link" data-scroll-target="#publication-summaries">Publication summaries</a></li>
+  <li><a href="#key-messages" id="toc-key-messages" class="nav-link" data-scroll-target="#key-messages">Key Messages</a>
+  <ul class="collapse">
+  <li><a href="#headline-sections" id="toc-headline-sections" class="nav-link" data-scroll-target="#headline-sections">Headline sections</a></li>
+  </ul></li>
+  <li><a href="#writing-content" id="toc-writing-content" class="nav-link" data-scroll-target="#writing-content">Writing content</a>
+  <ul class="collapse">
+  <li><a href="#content-headings" id="toc-content-headings" class="nav-link" data-scroll-target="#content-headings">Content headings</a></li>
+  <li><a href="#accordion-section-content" id="toc-accordion-section-content" class="nav-link" data-scroll-target="#accordion-section-content">Accordion section content</a></li>
+  <li><a href="#writing-about-characteristics" id="toc-writing-about-characteristics" class="nav-link" data-scroll-target="#writing-about-characteristics">Writing about characteristics</a>
+  <ul class="collapse">
+  <li><a href="#writing-about-ethnicity" id="toc-writing-about-ethnicity" class="nav-link" data-scroll-target="#writing-about-ethnicity">Writing about ethnicity</a></li>
+  </ul></li>
+  <li><a href="#reporting-and-interpreting-numbers" id="toc-reporting-and-interpreting-numbers" class="nav-link" data-scroll-target="#reporting-and-interpreting-numbers">Reporting and interpreting numbers</a></li>
+  <li><a href="#creating-hyperlinks" id="toc-creating-hyperlinks" class="nav-link" data-scroll-target="#creating-hyperlinks">Creating hyperlinks</a></li>
+  <li><a href="#search-engine-optimisation" id="toc-search-engine-optimisation" class="nav-link" data-scroll-target="#search-engine-optimisation">Search engine optimisation</a></li>
+  </ul></li>
+  <li><a href="#data-visualisation" id="toc-data-visualisation" class="nav-link" data-scroll-target="#data-visualisation">Data visualisation</a>
+  <ul class="collapse">
+  <li><a href="#visualisation-titles" id="toc-visualisation-titles" class="nav-link" data-scroll-target="#visualisation-titles">Visualisation titles</a></li>
+  <li><a href="#using-data-blocks-effectively" id="toc-using-data-blocks-effectively" class="nav-link" data-scroll-target="#using-data-blocks-effectively">Using data blocks effectively</a></li>
+  <li><a href="#charts-in-ees" id="toc-charts-in-ees" class="nav-link" data-scroll-target="#charts-in-ees">Charts in EES</a></li>
+  <li><a href="#colours-in-charts" id="toc-colours-in-charts" class="nav-link" data-scroll-target="#colours-in-charts">Colours in charts</a>
+  <ul class="collapse">
+  <li><a href="#categorical-colour-palette" id="toc-categorical-colour-palette" class="nav-link" data-scroll-target="#categorical-colour-palette">Categorical colour palette</a></li>
+  <li><a href="#sequential-colour-palette" id="toc-sequential-colour-palette" class="nav-link" data-scroll-target="#sequential-colour-palette">Sequential colour palette</a></li>
+  <li><a href="#focus-palette" id="toc-focus-palette" class="nav-link" data-scroll-target="#focus-palette">Focus palette</a></li>
+  <li><a href="#larger-palettes" id="toc-larger-palettes" class="nav-link" data-scroll-target="#larger-palettes">Larger palettes</a></li>
+  </ul></li>
+  <li><a href="#visualising-breaks-in-a-timeseries" id="toc-visualising-breaks-in-a-timeseries" class="nav-link" data-scroll-target="#visualising-breaks-in-a-timeseries">Visualising breaks in a timeseries</a></li>
+  </ul></li>
+  <li><a href="#writing-methodology" id="toc-writing-methodology" class="nav-link" data-scroll-target="#writing-methodology">Writing methodology</a>
+  <ul class="collapse">
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  </ul></li>
+  <li><a href="#advice-and-support" id="toc-advice-and-support" class="nav-link" data-scroll-target="#advice-and-support">Advice and support</a>
+  <ul class="collapse">
+  <li><a href="#publication-scrums" id="toc-publication-scrums" class="nav-link" data-scroll-target="#publication-scrums">Publication scrums</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/statisticians-guide/edit/main/creating-statistics/cd.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/statisticians-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Writing and visualising</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p class="text-muted">
+Things to consider when writing statistical commentary
+</p>
+<hr>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<hr>
+<p>DfE publishes over 60 distinct Official Statistics collections each year, as well as numerous experimental and ad-hoc releases.</p>
+<p>The layout, structure, and length of these releases vary significantly across the Department - making it confusing and hard to navigate across releases.</p>
+<p>When writing content to a general audience, statisticians must explain the answers in words that the audience can understand.</p>
+<p>Migration to a new statistics dissemination platform - Explore Education Statistics (EES) - presents an opportunity for publications to be reviewed and for the way this is communicated to be more consistent and accessible.</p>
+<p>Teams should continually improve their publications, assessing against best practice using our <a href="#checklist">content checklist</a>.</p>
+<p>All of our publications should be designed around our users first and foremost, and you should consider this page in conjuction with any <a href="../understanding-users/user-eng.html">user engagement</a> activities you are carrying out.</p>
+<p>We are running publication scrums where teams can put forward their publication(s) for review by a group of volunteer analysts, providing feedback as ‘unfamiliar new readers’ to discuss ideas for further improvements. For more information, see the <a href="#publication-scrums">publication scrums</a> section.</p>
+<hr>
+</section>
+<section id="checklist" class="level1">
+<h1>Checklist</h1>
+<hr>
+<p>The guidance on content design is in the form of a handy checklist, co-produced with local statisticians, and supported by the <a href="https://gss.civilservice.gov.uk/the-good-practice-team-gpt/#:~:text=The%20Good%20Practice%20Team%20(GPT)%20is%20here%20to%20help%20the,for%20National%20Statistics%20(ONS)" target="_blank" rel="noopener noreferrer">Good Practice Team</a>. This builds on ONS’s Best Practice guidance on <a href="https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/" target="_blank" rel="noopener noreferrer">Data Visualisation</a> and <a href="https://gss.civilservice.gov.uk/policy-store/writing-about-statistics-2/" target="_blank" rel="noopener noreferrer">Writing about Statistics</a>.</p>
+<p>The content checklist is for teams to use throughout their project cycle, so that good content design is at the heart of what they deliver at all stages, rather than considered late in the process - <a href="../resources/Content_Design_Logbook.xlsx">Content design checklist (.xlsx)</a>.</p>
+<p>There is also a dashboards version of the content design checklist, that runs through a number of things to think about when developing dashboards to compliment official statistics - <a href="../resources/Content_Design_Logbook_Dashboards.xlsx">Dashboards checklist (.xlsx)</a>.</p>
+<hr>
+</section>
+<section id="publication-summaries" class="level1">
+<h1>Publication summaries</h1>
+<hr>
+<p>Publication summaries are a key tool in helping users find the statistics that they’re looking for. We use them on gov.uk pages and in the EES find statistics page.</p>
+<p>Like on gov.uk, you only have 181 characters – to make sure you are fully utilising these, have a look through the following advice:</p>
+<ul>
+<li><p>Use plain language to use terms and phrases that users are likely to use e.g.&nbsp;gender pay gap versus Annual Survey of Hours and Earnings.</p></li>
+<li><p>Is it clear what the geographical coverage of this publication is e.g.&nbsp;England?</p></li>
+<li><p>Is it clear how frequently the releases are published?</p></li>
+<li><p>Is it clear what breakdowns you cover? E.g. Ethnicity, Gender, SEN?</p></li>
+<li><p>Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g.&nbsp;Free School Meals (FSM)</p></li>
+<li><p>Avoid phrases like “This release covers” as this wastes characters and delays users getting to the main information.</p></li>
+<li><p>Have you looked at the EES analytics to see what users key search terms on your publication are? Are key words front loaded In your summary?</p></li>
+<li><p>Don’t waste space on including definitions of a topic within the summary.</p></li>
+</ul>
+<hr>
+<!--
+
+---
+
+## Aims of Guidance and Checklist
+
+---
+
+
+1. **Encourage people to follow agreed best practice**. We want to co-produce with statistics producers an agreed set of best practice principles using a range of existing resources.
+
+2. **Help people tell the statistical story**. It is our responsibility, as experts, to describe the patterns and trends in our statistics objectively in a way that is clearly and easy to understand to a range of audiences. It is our role to give insight and show users what the numbers mean and convey the important messages appropriately.
+
+3. **Improve consistency across DfE**. Developing best practice standards and adhering to those standards will promote quality products that users will find useful.
+
+4. **Statistical Commentary**. This section is where your numbers come to life, it’s more than a simple description of the data, but a chance to help users understand the meaning of patterns, trends and limitations, and build on any factual and public information already known about the subject matter.
+
+5. **Data visualisation**. To support points 2 to 4 above we need to maximise the use of tools to aid storytelling and provide a visual context for our users.
+
+---
+
+## Aiming for Best Practice
+
+---
+
+Through the aid of this guidance we want producers of official statistics to be aiming for Best Practice. However, it is important to be realistic about what can be achieved with the tools we have available and identifying where the gaps are whilst finding solutions to make the necessary improvements. This check list should help teams identify what more could be done to take them to achieve Best Practice. The Central Statistics and Standards Unit will be on hand to help with this process.
+
+Further information on each point can be obtained from the [GSS writing about Statistics: Guide for Producers](https://gss.civilservice.gov.uk/policy-store/writing-about-statistics-2/#page){target="_blank" rel="noopener noreferrer"}.
+
+---
+
+## Writing about Statistics
+
+---
+
+People who write about statistics should seek to conduct a coherent statistical inquiry about the relationship between the concepts under study. When communicating this to a general audience, statisticians must explain the answers in words that the audience can understand. Unfortunately, few courses teach how to write a clear narrative linking numeric evidence to substantive questions, or how to present statistics in words that non-statisticians can comprehend easily. This can leave general audiences struggling to understand what questions those numbers are intended to answer or what conclusions they support. Below are some high-level questions/statements that producers of statistics can ask themselves to help write engaging and clear narrative:
+
+<br>
+
+1. **Start with a blank canvas and decide what you are going to talk about**
+      a. If you were briefing someone senior on the statistics, which statistics would you highlight?
+      b. What are the messages that will pull in the reader?
+      c. Do you know who your users are and what they need (not want)?
+
+<br>
+
+2. **What are you going to say about the story - have you highlighted the key trends, big changes and explained them where appropriate, whilst using numbers in text sparingly?**
+      a. **Interpretation** – why is it happening? Why are we seeing these changes? Is the series we’re looking at influenced by another factor
+      b. **Context** – why is it interesting? Help the audience understand whether the numbers you’re describing are big/small, good/bad etc. Where possible place new figures in the context of longer-term trends; relevant policies or targets; international comparisons; any key limitations etc.
+      c. Don’t treat it as an update to a previous iteration
+
+<br>
+
+3. **How are you going to tell the story– it should be concise, focus on the most interesting points and be intelligible for a lay reader?**
+      a. Reading is hard, we want users to be able to find and reuse our lines.
+      b. **Headlines** – aim for 3-4 headline bullets summarising the key points from your release. Follow a 30second rule
+      c. **Length** – aim for no more than 10 pages. Shorter publications are easier to read, write and QA. Follow a 10-minute rule – if it takes longer than that to read through the report then it’s unlikely that anyone will.
+      d. **Sections** – aim for no more than 10, each focussed on a few key messages, ideally no more than one page in length
+      e. **Structure** – use structure to tell a logical and consistent story
+      f. **Methodology** – be upfront about important caveats but the majority of explanatory or technical content and detailed definitions can be moved to supporting documentation. Where necessary, explain rather than define key concepts
+      g. **Charts** –At a high level, try to keep charts as simple as possible. Follow a 10 second rule – if it takes longer than this to intuitively understand the key messages, something has gone wrong in design.
+      h. **Concision** - Use as few words as possible Be brief, clear, and concise.
+      i. **Short words** – use short, easy ‘plain English’ words people already know. Avoid jargon that needs to be translated by journalists.
+      j. **Short sentences** – aim for an average of 12-15 words per sentence. Avoid parentheses as far as possible.
+      k. **Short paragraphs** - avoid large blocks of text, they are very hard to read and users end up scanning text and missing detail.
+      l. **Tone** - Use active voice
+      m. **Balance accuracy and clarity** – from GSS guidance - Users will understand that even with a well understood term like “unemployment” there are detailed classificatory decisions taken. These do not need to be spelt out in the main messages.
+
+<br>
+
+4. **Check what you have written**
+      a. Look over your work
+      b. Get others who do not know subject area to review (within pre-release access rules)
+!-->
+</section>
+<section id="key-messages" class="level1">
+<h1>Key Messages</h1>
+<hr>
+<p>Start by introducing the topic of your work and the questions you seek to answer with the numbers that follow. To help set the scene for your statistics, begin with a topic sentence that introduces the variables and the W’s (when, where and what).</p>
+<p>Examples (NB. Fictional):</p>
+<p><strong>Poor</strong>: (No introductory sentence) “In 2020, there were 11,000 gun-related homicides (Figure 1)”</p>
+<p>This jumps directly to presenting the data without orientating the reader to the topic and objectives.</p>
+<p><strong>Better</strong>: “What factors explain the observed rise and fall in overall homicides in England in the 2000s?”</p>
+<p>This uses a rhetorical question to introduce the context (where and when) and the pattern to be investigated (the time trend). However, this does not specify the possible explanatory factors.</p>
+<p><strong>Best</strong>: “Was the substantial rise and fall in the number of homicides in the 2000s in England (Figure 1) observed across all age groups and types of weapons (Figure 2)?” There have been no numbers presented yet, just a statement that establishes the purpose of the statistics. Introducing your topic is important especially when presenting a series of charts or tables.</p>
+<p>Below is a session by Robert Cuffe from the BBC talking to DfE statisticians about writing our publications and highlighting key messages in a way they can be used by journalists and the media.</p>
+<div data-align="center">
+<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/b44d821a-9b5c-437a-b321-673c4304c350?autoplay=false&amp;showinfo=false" allowfullscreen="" style="border:none;">
+</iframe>
+</div>
+<hr>
+<section id="headline-sections" class="level2">
+<h2 class="anchored" data-anchor-id="headline-sections">Headline sections</h2>
+<p>It is common to use bullet points to draw out key headline messages, either for policy lines or for general interest. Here are some top tips for writing headlines:</p>
+<ul>
+<li>Ask yourself if this is the most important, useful and relevant point to make? Why? What is new?</li>
+<li>We recommend a maximum of six top headlines</li>
+<li>You shouldn’t be trying to summarise all the findings in the publication</li>
+<li>For regular publications, headlines won’t necessarily be the same every time</li>
+<li>Headlines should be a single sentence making a single point, and be able to stand alone from the publication</li>
+<li>Headlines should make sense to everyone and anyone (no jargon)</li>
+<li>Structure headlines as: what has happened; why is this important - don’t give numbers without context</li>
+<li>At least of your headlines should put the latest figures in the context of the longer-term change</li>
+<li>Round figures in headlines, you don’t need lots of decimal places</li>
+<li>If there is essential context for the headline facts then put this here</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="writing-content" class="level1">
+<h1>Writing content</h1>
+<hr>
+<p>For tips on creating accessible content have a look at our <a href="../resources/Accessibility.docx">accessibility top tips (.docx)</a></p>
+<hr>
+<section id="content-headings" class="level2">
+<h2 class="anchored" data-anchor-id="content-headings">Content headings</h2>
+<p>Throughout the commentary, active sub-headings outline the main messages making them memorable for users. They should be a short summary of the contents - <strong>aim for 10 words or less</strong> - rather than a full statistical headline. <strong>Avoid using exaggerated or sensationalist language</strong> that you would not use in your main commentary such as “highest ever” or “only”. Be neutral in selecting the message to use in the heading rather than favouring positive or negative messages.</p>
+<hr>
+</section>
+<section id="accordion-section-content" class="level2">
+<h2 class="anchored" data-anchor-id="accordion-section-content">Accordion section content</h2>
+<p>You should split your release into sections that each focus on one or two key messages, with a recommended maximum of 10 sections in the release. <strong>The whole release should take no more than 10 minutes to read.</strong> Our <a href="https://rsconnect/rsc/ees-analytics/" target="_blank" rel="noopener noreferrer">analytics app</a> contains insights on how long it takes the average user to read your release.</p>
+<p>To keep the release short only include information if there is something interesting to say - the commentary is there to tell a story, people looking for specific figures will use the table tool, or download the underlying data instead. <strong>Do not try to summarise every number in the commentary.</strong></p>
+<p>Avoid having large blocks of text as they are hard to read and users scan them and miss the detail. Graphs and tables break up the content but only include these where they add value; <strong>you do not need a graph or chart in every section.</strong></p>
+<p>Use plain English and shorter sentences, aim for an average of 15-20 words per sentence. Do not overload sentences with numbers and avoid ‘elevator commentary’ that describes small movements in the whole series without giving any insight (use a summary table instead if it is interesting, or leave it out entirely). <strong>Be impartial and objective; avoid using sensationalist terms or terms that reflect a judgement such as “very few” “only” or “strong”.</strong></p>
+<p>Explain complex concepts in plain English within the text. Remember that for many of our users, confidence intervals and significant differences are complex concepts that need explaining.</p>
+<div class="alert alert-dismissible alert-info">
+<p>Do not use footnotes in the text of your content. They’re designed for reference in print, not web pages. Always consider the user need first. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.</p>
+</div>
+<hr>
+</section>
+<section id="writing-about-characteristics" class="level2">
+<h2 class="anchored" data-anchor-id="writing-about-characteristics">Writing about characteristics</h2>
+<p>There is a wide range of guidance available from the GSS, ONS and the Cabinet Office around writing about characteristics. Statistics content published on EES should adhere to the principles outlined by the above. The data harmonisation champions group are in the process of collating the most recent guidance from all these sources and summarising it below.</p>
+<p>If you need some steer on how to report on a particular characteristics, the below links provide some useful starting points:</p>
+<ul>
+<li><a href="https://analysisfunction.civilservice.gov.uk/policy-store/ethnicity-harmonised-standard/" target="_blank">Analysis Function Data Harmonisation</a></li>
+<li><a href="https://www.ethnicity-facts-figures.service.gov.uk/style-guide/writing-about-ethnicity" target="_blank">Cabinet Office guidance on writing about statistics</a></li>
+</ul>
+<p>You can also get in touch with the DfE Data Harmonisation Champions Group via <a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a>.</p>
+<hr>
+<section id="writing-about-ethnicity" class="level3">
+<h3 class="anchored" data-anchor-id="writing-about-ethnicity">Writing about ethnicity</h3>
+<hr>
+<p>For the official names of ethnicity filters to use in data files, please check our guidance on <a href="../creating-statistics/ud.html#ethnicity">creating statistics</a>. The below outlines some key points in writing about ethnicity in publication content.</p>
+<hr>
+<section id="ethnic-minorities-and-not-bame" class="level4">
+<h4 class="anchored" data-anchor-id="ethnic-minorities-and-not-bame">Ethnic minorities and not BAME</h4>
+<hr>
+<p>As outlined in the CRED report, grouping ethnicity at a higher level than the 5 major ethnic groups should be avoided as it risks masking the true disparities between, and/or life experiences of, people from different ethnic groups.</p>
+<p>There will, however, be specific cases where data quality or comparisons with past metrics does not allow for statistics to be produced at the level of the major or minor ethnic groups. In these cases, the group ‘ethnic minorities’ should be used exclusively to refer to all ethnic groups except the White British group, this includes White minorities, such as Gypsy, Roma and Irish Traveller groups.</p>
+<p>For comparisons with the White group as a whole, ‘all other ethnic groups combined’ or ‘ethnic minorities (excluding White minorities)’ should be used. It may also be necessary to refer to ‘White’ and ‘other than White’ if space is limited, but this should be avoided if possible.</p>
+<p>Do not use the terms ‘non-White’, BAME (Black, Asian, and Minority Ethnic), or BME (Black and minority ethnic). These terms can be perceived as demeaning and can be confusing as to what groups are being included and excluded. For comparison with past metrics, BAME and BME should be replaced by the term “ethnic minorities (excluding White minorities)” unless White minorities were specifically mentioned.</p>
+<hr>
+</section>
+<section id="ordering-of-groups" class="level4">
+<h4 class="anchored" data-anchor-id="ordering-of-groups">Ordering of groups</h4>
+<hr>
+<p>There are several methods of ordering the ethnic groups, depending on where and how they are used:</p>
+<ul>
+<li><p>Alphabetical: use in tables and when listing ethnic groups (with ‘Other’ and sometimes ‘Unknown’ as a final category)</p></li>
+<li><p>In expected order of size (with largest first): useful in charts and visualisations as it makes data and patterns easier to read</p></li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="reporting-and-interpreting-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-and-interpreting-numbers">Reporting and interpreting numbers</h2>
+<p>Reporting the numbers you work with is an important first step toward writing effective numeric descriptions. By including numbers in text, table or chart, you give the user the raw materials with which to perform comparisons across time, places or groups. However, if you stop there, you leave it to your readers to figure out how those data answer the question at hand.</p>
+<p><strong>Poor</strong>: “In 2010, there were 20, 370 overall homicides related to crime, 13,000 which were related to gun incidents, 7,370 related to other weapons. In 2020, they were 18,900 overall homicides, 11,000 which were related to gun incidents, 9,900 related to other weapons (Figure 1)”.</p>
+<p>The description above simply lists statistics from charts without explaining how they relate to one another or how the statistics address the initial question in the opening paragraph.</p>
+<p><strong>Better</strong>: “The total number of homicides rose until the mid-2000s and then declined until 2020. As shown in Figure 1, the increase and subsequent decrease in homicides were driven by trends in gun-related homicides. In 2020, there was roughly 1.5 times as many homicides were committed with guns as with other types of weapons (11,000 versus 7265; Figure 1); whereas in 2010, roughly 2 times as many homicides were committed with guns versus other weapons, 13000 and 6500, respectively. Figure 2 examines whether gun-related homicides showed the same time trend among all age groups. As shown in Figure 2 in the two youngest groups of offenders, gun-related homicides increased substantially between 2000 and 2010, and then decreased steadily until 2020. In contrast, the number of gun related homicides committed by older offenders decreased slowly throughout the time-period shown”.</p>
+<p>Try to use prose to summarise the patterns so your user can see the general relationship in the table or chart – the forest not the individual trees. Try not to report every number from the table or chart or pick a few arbitrary numbers to contrast in sentence form without considering whether or not those numbers represent an underlying general pattern. Paint the big picture rather than reiterating all the little details. This will help you tell a clear story with numbers as evidence.</p>
+<hr>
+</section>
+<section id="creating-hyperlinks" class="level2">
+<h2 class="anchored" data-anchor-id="creating-hyperlinks">Creating hyperlinks</h2>
+<p>Avoid using full URLs in text. Hyperlinks should be used and they should provide a clear description of the destination. Avoid using ‘For more information <strong>click here</strong>’. Screen readers often collate all links on a page into one list, so having numerous ‘click here’ links listed is confusing to the user and gives no description of the destinations. ‘For more information see <strong>Guidance to support the summer 2021 exams</strong>’ is an example of a good hyperlink.</p>
+<p>Best practice on creating hyperlinks, particularly how to name them and common pitfalls to avoid can be found on this <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks" target="_blank" rel="noopener noreferrer">introduction to html guide</a>. Those of us using EES don’t need to worry about writing the raw html for the anchor links, and should instead focus on the section referring to how to name and title links.</p>
+<hr>
+</section>
+<section id="search-engine-optimisation" class="level2">
+<h2 class="anchored" data-anchor-id="search-engine-optimisation">Search engine optimisation</h2>
+<p>Search engine optimisation (SEO) makes it easier for users to find your data through search engines like Google. Some top tips include:</p>
+<ul>
+<li><p>Keeping your release title shorter than 50-60 characters. This means the full title can be displayed on the search engine results</p></li>
+<li><p>Avoid listing key words: search engines penalise anything not recognised as a full sentence.</p></li>
+<li><p>Make use of our <a href="https://rsconnect/rsc/ees-analytics/" target="_blank" rel="noopener noreferrer">analytics app</a> to explore what your users are doing: what accordions are they clicking on, what are they searching for? This could give an idea of what content you should focus on in future, and which areas are no longer of interest to most of your users.</p></li>
+</ul>
+<p>Following best practice in writing about statistics is of increasing importance. As shown in the below example any sentence could be pulled out into a snippet and shown in a search engine to users who are searching for related information:</p>
+<p><img src="../images/google-snippet.png" class="img-fluid"></p>
+<p>We should make a concerted effort to ensure that we are answering the questions people are interested in as search engines are getting smarter and pulling this information directly out of webpages. See the following example of a google search using a snippet from one of our publications as an answer in the search engine results itself:</p>
+<p><img src="../images/google-peopleAlsoAsk.png" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="data-visualisation" class="level1">
+<h1>Data visualisation</h1>
+<hr>
+<p>EES allows you to build charts and tables to visually represent information from your release, this can be particularly helpful to show trends over time, across geographies or highlight interesting stories in the data.</p>
+<hr>
+<section id="visualisation-titles" class="level2">
+<h2 class="anchored" data-anchor-id="visualisation-titles">Visualisation titles</h2>
+<p>For tables and charts, active titles are descriptive and tell the trend by <strong>highlighting the main story</strong>. They should be short - aim for 10 words or less and avoid going over more than one line. Active titles give users the main message without having to find the text that accompanies the chart, and makes it easier for journalists to use your chart directly without having to write their own summary.</p>
+<p>Put information such as the measure, source, population, geographical coverage and time period in a caption if they are not obvious from the chart content. Add further context and information in the main text. <strong>Remember that tables and charts should be usable even if isolated</strong> from the rest of the release.</p>
+<hr>
+</section>
+<section id="using-data-blocks-effectively" class="level2">
+<h2 class="anchored" data-anchor-id="using-data-blocks-effectively">Using data blocks effectively</h2>
+<p><strong>Aim for fewer tables, and keep them small. As a guide, we suggest no more than one table per accordion section.</strong></p>
+<p>Presentation tables are the tables you include within the accordion sections of your release to quickly visualise numbers. Unlike the underlying data files, the presentation tables focus on specific parts of the story you are telling. They are distinct from, and should never be a copy of an underlying data file.</p>
+<p>You should only be including small tables sparingly where they add value to your release and not use them as a straight copy of the ready-made Excel tables previously published on gov.uk. The data itself is there for users to access through other means, therefore any data in the commentary should only be there if it is enhancing the story.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>You do not need to recreate all of the old excel tables, users can find the numbers they are interested in using the table tool, or analyse the underlying data if they want the data behind the release.</p>
+</div>
+<hr>
+</section>
+<section id="charts-in-ees" class="level2">
+<h2 class="anchored" data-anchor-id="charts-in-ees">Charts in EES</h2>
+<p>Any charts in your release should be appropriate for the data, reinforcing the key messages. For more detailed information on how to build charts in EES, visit our <a href="../publishing-statistics/ees.html#Charts">EES charts guidance section</a>.</p>
+<p>Any analyst building charts in or outside of EES should make themselves familiar with the [GSS data visualisation guidance](<a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts" target="_blank">GSS colours in visualisations guidance</a>.</p>
+<p>More complex charts cannot currently be built in EES. You should only use complex charts where there is a clear user need, as simple charts are the easiest for users to understand. Please see the <a href="https://style.ons.gov.uk/category/data-visualisation/chart-type/" target="_blank">ONS guidance for visualisations</a> or contact the <a href="mailto:statistics.development@education.gov.uk">Statstics Development Team</a> if you’re considering a more complex chart built outside of EES.</p>
+<p>DWP have created a <a href="https://dataviztraining.dwpdata.info/index.html" target="_blank">Data Visualisation Thinking</a> course that may be useful to look at when creating more complex charts.</p>
+<hr>
+</section>
+<section id="colours-in-charts" class="level2">
+<h2 class="anchored" data-anchor-id="colours-in-charts">Colours in charts</h2>
+<p>The most important consideration when using colour is to avoid relying on it for interpretation. It should be seen as an enhancement, and your charts should be understandable without it.</p>
+<p>For any charts made outside of EES you should use the suggested colours from the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts" target="_blank">GSS colours in visualisations guidance</a>. The following sections show the colours that are available for charts in EES and suggest the way to use them with one another, more detail on why can be found in the GSS guidance itself.</p>
+<p>We strongly recommend you stick to the codes as outlined, if you can’t for any reason, please make sure you follow the guidance on <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9" target="_blank">developing your own colour palette</a> and get in touch with us so we can understand why.</p>
+<hr>
+<section id="categorical-colour-palette" class="level3">
+<h3 class="anchored" data-anchor-id="categorical-colour-palette">Categorical colour palette</h3>
+<hr>
+<p>Categorical data can be divided into groups or categories by using names or labels. This palette has four colours. We recommend a limit of four categories as best practice for basic data visualisations. The ordering of the palette is important as not all colours are accessible when paired together.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Colour name</th>
+<th>Hex code</th>
+<th>RGB</th>
+<th>CYMK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dark blue</td>
+<td>#12436D</td>
+<td>18, 67, 109</td>
+<td>36, 16, 0, 57</td>
+</tr>
+<tr class="even">
+<td>Turquoise</td>
+<td>#28A197</td>
+<td>40, 161, 151</td>
+<td>75, 0, 6, 37</td>
+</tr>
+<tr class="odd">
+<td>Dark pink</td>
+<td>#801650</td>
+<td>128, 22, 80</td>
+<td>0, 83, 38, 50</td>
+</tr>
+<tr class="even">
+<td>Orange</td>
+<td>#F46A25</td>
+<td>244, 106, 37</td>
+<td>0, 57, 85, 4</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="sequential-colour-palette" class="level3">
+<h3 class="anchored" data-anchor-id="sequential-colour-palette">Sequential colour palette</h3>
+<hr>
+<p>Sequential data is any sort of data where the order of series has some meaning. For example, age groups ascending in age. This palette has three colours and even this pushes the boundaries for contrast ratios. Any charts made with shades of a specific hue should be accessible without colour.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Colour name</th>
+<th>Hex code</th>
+<th>RGB</th>
+<th>CYMK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dark blue</td>
+<td>#12436D</td>
+<td>18, 67, 109</td>
+<td>36, 16, 0, 57</td>
+</tr>
+<tr class="even">
+<td>Mid blue</td>
+<td>#2073BC</td>
+<td>32, 115, 188</td>
+<td>0, 57, 85, 4</td>
+</tr>
+<tr class="odd">
+<td>Light blue</td>
+<td>#6BACE6</td>
+<td>107, 172, 230</td>
+<td>75, 0, 6, 37</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="focus-palette" class="level3">
+<h3 class="anchored" data-anchor-id="focus-palette">Focus palette</h3>
+<hr>
+<p>On focus charts, colour is used to highlight specific elements to help users understand the information. One line out of many will be highlighted as a colour and the rest of the series remain grey.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Colour name</th>
+<th>Hex code</th>
+<th>RGB</th>
+<th>CYMK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dark blue</td>
+<td>#12436D</td>
+<td>18, 67, 109</td>
+<td>36, 16, 0, 57</td>
+</tr>
+<tr class="even">
+<td>Grey</td>
+<td>#BFBFBF</td>
+<td>191, 191, 191</td>
+<td>0, 0, 0, 25</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="larger-palettes" class="level3">
+<h3 class="anchored" data-anchor-id="larger-palettes">Larger palettes</h3>
+<hr>
+<p>All charts should be made as simple as possible so that the message is easy to understand and interpret.</p>
+<p>If you do want to use additional colours you need to ensure that the chart is understandable without colour as no series with more than four colours will ever be fully accessible alone.</p>
+<p>For categorical data, we recommend the following extensions to the categorical palette. Once again, the ordering is important. If you’re making a chart in EES these are not default colours, so you will need to use the colour picker to specify them.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Colour name</th>
+<th>Hex code</th>
+<th>RGB</th>
+<th>CYMK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dark blue</td>
+<td>#12436D</td>
+<td>18, 67, 109</td>
+<td>36, 16, 0, 57</td>
+</tr>
+<tr class="even">
+<td>Turquoise</td>
+<td>#28A197</td>
+<td>40, 161, 151</td>
+<td>75, 0, 6, 37</td>
+</tr>
+<tr class="odd">
+<td>Dark pink</td>
+<td>#801650</td>
+<td>128, 22, 80</td>
+<td>0, 83, 38, 50</td>
+</tr>
+<tr class="even">
+<td>Orange</td>
+<td>#F46A25</td>
+<td>244, 106, 37</td>
+<td>0, 57, 85, 4</td>
+</tr>
+<tr class="odd">
+<td>Dark grey</td>
+<td>#3D3D3D</td>
+<td>61, 61, 61</td>
+<td>0, 0, 0, 76</td>
+</tr>
+<tr class="even">
+<td>Light purple</td>
+<td>#A285D1</td>
+<td>162, 133, 209</td>
+<td>22, 36, 0, 18</td>
+</tr>
+</tbody>
+</table>
+<p>For larger palettes when using sequential data, we recommend using <a href="https://colorbrewer2.org/#type=sequential" target="_blank">ColorBrewer</a> to find the hex codes for multiple shades of a given hue.</p>
+<hr>
+</section>
+</section>
+<section id="visualising-breaks-in-a-timeseries" class="level2">
+<h2 class="anchored" data-anchor-id="visualising-breaks-in-a-timeseries">Visualising breaks in a timeseries</h2>
+<p>We recommend including any missing data from breaks in a time series in your data file using the appropriate <a href="../creating-statistics/ud.html#data-symbols">GSS symbol</a>, such as in this example table:</p>
+<table class="table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>2013/14</th>
+<th>2014/15</th>
+<th>2015/16</th>
+<th>2016/17</th>
+<th>2017/18</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of pupil enrollments</td>
+<td>3,627,985</td>
+<td>3,713,774</td>
+<td>3,796,146</td>
+<td>x</td>
+<td>3,885,774</td>
+</tr>
+<tr class="even">
+<td>Number of schools</td>
+<td>16,705</td>
+<td>16,723</td>
+<td>16,736</td>
+<td>x</td>
+<td>16,739</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-dismissible alert-info">
+<p>There may be times when including missing data increases the file size too much, or becomes unwieldy, if you’re unsure and would like advice on your data contact <a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a>.</p>
+</div>
+<p>By including the missing data in your open data files you can then create charts in EES that represent this. Start off by creating a data block with the data you want to build the chart from.</p>
+<p><img src="../images/ees-missing-data-table.png" class="img-fluid"></p>
+<p>On the chart configuration tab there is a toggle for visualising non-numeric values in the data as 0. On the first chart configuration tab, there’s a check box that will toggle between showing and hiding them.</p>
+<p><img src="../images/ees-non-numeric-toggle.png" class="img-fluid"></p>
+<p>When selected, you will then see that this data appears in the chart as if the indicator values are 0.</p>
+<p><img src="../images/ees-missing-data-chart.png" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="writing-methodology" class="level1">
+<h1>Writing methodology</h1>
+<hr>
+<p>Appropriate methodological information should be made available for all published Official Statistics releases.</p>
+<p>You are able to create these methodology documents within the Explore Education Statistics platform and then can attach them to relevant releases.</p>
+<p>It is recommended that you write your methodology document as a .html page on the platform. If you do not have time to do this, you can either contact us to help you with that, or you can upload a PDF version. If you are uploading a pdf version then you need to make sure this is accessible.</p>
+<p>For releases that have a .html methodology page the relevant link will display as an accordion section under the “help and support” section.</p>
+<hr>
+<section id="glossary" class="level2">
+<h2 class="anchored" data-anchor-id="glossary">Glossary</h2>
+<p>The <a href="https://explore-education-statistics.service.gov.uk/glossary" target="_blank" rel="noopener noreferrer">glossary in Explore Education Statistics</a> is intended for definitions used across all publications. Please send any definitions you would like adding to the glossary to the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a>.</p>
+<p>Once definitions have been added, you can add them as URL links into your commentary. E.g. to see the definition for ‘Otherwise vulnerable’, you’d make that phrase a hyperlink, and use https://explore-education-statistics.service.gov.uk/glossary#otherwise-vulnerable as the link.</p>
+<p>Before creating a new definition, check the glossary to see if one is already there. When creating glossary entries you should use standard DfE definitions, only write your own if it is something that relates specifically to your statistics. Do not use technical terms in your definition, stick to plain English.</p>
+<p>Include essential definitions in the commentary where they are relevant, you should not expect users to go to the glossary or about these statistics section for information they need to understand the statistics. Do not use the glossary to explain methodology such as classification decisions, explain these in the text if essential or otherwise in the methodology document.</p>
+<hr>
+</section>
+</section>
+<section id="advice-and-support" class="level1">
+<h1>Advice and support</h1>
+<hr>
+<p>There are no hard rules to follow on content design and the layout of individual statistics releases will vary. Publication teams have the power to use the above guidance to ensure your statistics are as accessible and understandable as possible.</p>
+<p>We’re all well-practiced at breaking complex results down into simple messages whether it’s for inducting new starters, providing briefing for new Ministers, or explaining our work for friends and family - we just need to apply the same standards to our headline reporting.</p>
+<p>For those looking for more targeted advice and support there’s a DfE Content Design Champions Group and we’re open to offering direct feedback and scrum sessions to review publications if there’s sufficient demand. Contact the <a href="mailto:explore.statistics@education.gov.uk">Statistics Development Team</a> if you’re interested in these or would like any advice.</p>
+<p>More detailed advice and guidance on content design best practice is available from a number of resources across Government and beyond:</p>
+<ul>
+<li><a href="https://gss.civilservice.gov.uk/wp-content/uploads/2018/11/Writing-about-statistics-Edition-2.0-October-2018-1.pdf" target="_blank" rel="noopener noreferrer">GSS best practice guidance</a></li>
+<li><a href="https://teams.microsoft.com/_" target="_blank" rel="noopener noreferrer">GSS best practice hints and tips</a></li>
+<li><a href="http://www.unece.org/stats/documents/writing.html" target="_blank" rel="noopener noreferrer">UNECE drafting guidance</a></li>
+<li><a href="https://support.office.com/en-gb/article/test-your-document-s-readability-85b4969e-e80a-4777-8dd3-f7fc3c8b3fd2" target="_blank" rel="noopener noreferrer">This link</a> provides details on how to get readability scores on your drafting in Word.</li>
+<li>Similarly, the <a href="http://www.hemingwayapp.com/" target="_blank">Hemingway app</a> is an online tool to assess readability. Whilst we might not want to use this directly for final drafting, it is useful to highlight areas of particular complexity in our current narrative. Additionally, the GSS Good Practice team set an exercise to try to write about your results without using any numbers: this can be really helpful to help understand the story you’re trying to tell with your statistics.</li>
+<li>As an illustrative example of work in other Departments - DWP’s Fraud &amp; Error statistics <a href="https://www.gov.uk/government/statistics/fraud-and-error-in-the-benefit-system-201213-estimates" target="_blank" rel="noopener noreferrer">before</a> (128 page release), and <a href="https://www.gov.uk/government/statistics/fraud-and-error-in-the-benefit-system-financial-year-2017-to-2018-estimates" target="_blank" rel="noopener noreferrer">after</a> their own modernisation work are worth a look.</li>
+</ul>
+<hr>
+<section id="publication-scrums" class="level2">
+<h2 class="anchored" data-anchor-id="publication-scrums">Publication scrums</h2>
+<p>The Statistics Services Unit organise regular publication scrums, which enable publications to be looked at with fresh eyes through a workshop with volunteers and the publication team. The content checklist, which breaks down the components of producing Best Practice content into smaller chunks with prompt questions is used <a href="../resources/Content_Design_Logbook.xlsx" target="_blank" rel="noopener noreferrer">(Download content checklist)</a>, along with workshop slides.</p>
+<p>If you are responsible for signing off publications, then please download and see the Statistics Leadership Group paper highlighting <a href="../resources/Content_Design_Scrums_Insights_final.docx">top tips for content design</a>.</p>
+<p>One of the early outcomes from running publication scrums, was that great content design is more of an art form than science and the scrum process was found to be really useful in enabling a wider element of scrutiny and friendly challenge, in an enjoyable environment to consider publication content.</p>
+<p>You can experience how a scrum runs through watching this scrum-along (features the scrum up until groups breakout to discuss different elements) and <a href="https://educationgovuk.sharepoint.com/:p:/r/sites/lvewp00086/WorkplaceDocuments/CSSU/Statistics%20Strategy%20Team/Content%20Design%20Scrums%20materials/Content%20Design%20Scrum.pptx?d=wb13c1dc2628647718ef9fd1690653547&amp;csf=1&amp;web=1&amp;e=qKLAYn" target="_blank" rel="noopener noreferrer">supporting slides</a></p>
+<div data-align="center">
+<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/73fa0d31-b8b3-4889-bfcf-c76c33c1fe87?autoplay=false&amp;showinfo=false" allowfullscreen="" style="border:none;">
+</iframe>
+</div>
+<p>A full before / after scrum along is available to <a href="https://educationgovuk-my.sharepoint.com/:v:/r/personal/heather_brown_education_gov_uk/Documents/Recordings/Content%20Design%20Scrum_%20Progression%20Measures%20Statistics-20210628_123245-Meeting%20Recording.mp4?csf=1&amp;web=1&amp;e=xc032a" target="_blank">watch</a>, with slides available to <a href="../resources/Content_Design_Scrum_Progression.pptx">download separately</a>.</p>
+<p>For a walk through of some of the end to end benefits the scrums have had, take a look at this <a href="https://educationgovuk-my.sharepoint.com/:v:/r/personal/heather_brown_education_gov_uk/Documents/Recordings/Content%20Design%20Scrum_%20Progression%20Measures%20Statistics-20210628_123245-Meeting%20Recording.mp4?csf=1&amp;web=1&amp;e=xc032a" target="_blank">video for Schools and pupils Statistics Team</a>.</p>
+<p>Finally, an example of a team who has been through the scrum process for 3 publications talk through their realised benefits, showcasing the type of benefits potentially others could also realise is also available to <a href="https://educationgovuk-my.sharepoint.com/:v:/g/personal/heather_brown_education_gov_uk/EQx_j1oEh0BMqLbMLtnf2ikB4FJIBfEjKptqIDUkoZVgvg?e=a0xHNJ" target="_blank">watch on sharepoint</a>.</p>
+<p>If you’re interested in being involved in future scrums, please get in <a href="mailto:statistics.development@education.gov.uk">contact us</a>.</p>
+<hr>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../understanding-users/user-analytics.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">EES analytics</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../publishing-statistics/dashboards.html" class="pagination-link">
+        <span class="nav-page-text">Public dashboards</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Department for Education, 2023</div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">This page is maintained by statistics.development@education.gov.uk</div>
+  </div>
+</footer>
+
+
+
+</body></html>
