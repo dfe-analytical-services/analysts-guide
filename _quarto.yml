@@ -82,6 +82,8 @@ website:
           - learning-development/sql.qmd
           - learning-development/r.qmd
           - learning-development/git.qmd
+          - learning-development/python.qmd
+
       - section: "Statistics production"
         contents:
           - statistics-production/pub.qmd
