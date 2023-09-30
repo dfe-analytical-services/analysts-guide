@@ -1,6 +1,6 @@
-[![Publish to pages](https://github.com/dfe-analytical-services/statisticians-guide/actions/workflows/publish.yml/badge.svg)](https://github.com/dfe-analytical-services/statisticians-guide/actions/workflows/publish.yml)
+[![Publish to pages](https://github.com/dfe-analytical-services/analysts-guide/actions/workflows/publish.yml/badge.svg)](https://github.com/dfe-analytical-services/analysts-guide/actions/workflows/publish.yml)
 
-# Statistician's Guide
+# Analysts's Guide
 
 ## Introduction
 
@@ -10,7 +10,7 @@ A quarto-based static website used as a central place to hold guidance, helpful 
 
 ## Hosted environments
 
-The guidance website is deployed to https://dfe-analytical-services.github.io/statisticians-guide/.
+The guidance website is deployed to https://dfe-analytical-services.github.io/analysts-guide/.
 
 ---
 
@@ -18,19 +18,15 @@ The guidance website is deployed to https://dfe-analytical-services.github.io/st
 
 ### i. Software requirements 
 
-- Installation of R 4.2.0 or higher
-
-- Installation of RTools41 or higher
+- See [getting started with Quarto](https://quarto.org/docs/get-started/)
 
 ### ii. Programming skills required
 
-- Basic knowledge of [Quarto](https://rmarkdown.rstudio.com/articles_intro.html)
+- Basic knowledge of [Quarto](https://rmarkdown.rstudio.com/articles_intro.html) and markdown
 
 - Understanding of [Quarto websites](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)
   
 ### iii. Access
-
-- The source repository is available publicly on GitHub.
 
 - A number of internal DfE videos are embedded, unless you have specific access via DfE kit they will not appear. If you are interested in their content please get in touch with us.
 
@@ -42,7 +38,7 @@ Each page of the site is a single quarto document, with index.qmd as the homepag
 
 ### Tests
 
-There are currently no automated tests on this project, though we hope to add some soon.
+There are currently no automated tests on this project.
 
 ### Diagrams
 
@@ -58,7 +54,7 @@ PRA - https://app.diagrams.net/#G1x1VLZghqCCnmDWHqgjpdU6fSSehms4FL
 
 ## Contribution
 
-If you're interested in contributing to this project, get in touch with us and we can arrange access to the source repository in GitHub.
+If you're interested in contributing to this project, have a read of the [contributing guidelines](https://github.com/dfe-analytical-services/analysts-guide/blob/main/CONTRIBUTING.md).
 
 ---
 
