@@ -2,12 +2,11 @@ project:
   type: website
   
 website: 
-#  reader-mode: true
   page-navigation: true
   back-to-top-navigation: true
-  title: "Statistician's Guide" 
-  site-url: "https://dfe-analytical-services.github.io/statisticians-guide/" 
-  repo-url: https://github.com/dfe-analytical-services/statisticians-guide
+  title: "Analyst's Guide" 
+  site-url: "https://dfe-analytical-services.github.io/analysts-guide"
+  repo-url: https://github.com/dfe-analytical-services/analysts-guide
   repo-actions: [edit, issue]
   google-analytics: "G-KBJCBD114T"
   cookie-consent: 
@@ -21,24 +20,6 @@ website:
   search:
     location: navbar
     type: textbox
-  
-  #### -- Starting attempt at navbar alternative --
-  # navbar:
-  #   background: primary
-  #   search: true
-  #   left:
-  #     - text: "Homepage"
-  #       file: index.qmd
-  #     - text: "Learning resources"
-  #       menu:
-  #         - text: "General resources"
-  #           file: learning-development.qmd
-  #         - text: "SQL"
-  #           file: sql.qmd
-  #         - text: "R"
-  #           file: r.qmd
-  #         - text: "Git"
-  #           file: git.qmd
           
   sidebar:
     logo: "images/duck_guidance.png"
@@ -82,10 +63,10 @@ website:
         
       - icon: github
         menu:
-          - href: https://github.com/dfe-analytical-services/statisticians-guide
+          - href: https://github.com/dfe-analytical-services/analysts-guide
             target: _blank
             text: "Source code"
-          - href: https://github.com/dfe-analytical-services/statisticians-guide/issues/new
+          - href: https://github.com/dfe-analytical-services/analysts-guide/issues/new
             target: _blank
             text: "Suggest changes"
             
@@ -101,27 +82,27 @@ website:
           - learning-development/sql.qmd
           - learning-development/r.qmd
           - learning-development/git.qmd
-      - section: "Creating statistics"
-        contents:
-          - creating-statistics/ud.qmd
-          - creating-statistics/cd.qmd
-      - section: "Publishing statistics"
+      - section: "Statistics production"
         contents:
           - publishing-statistics/pub.qmd
-          - publishing-statistics/dashboards.qmd
+          - creating-statistics/ud.qmd
           - publishing-statistics/ees.qmd
           - publishing-statistics/embedded-charts.qmd
           - publishing-statistics/examples.qmd
-      - section: "Understanding users"
-        contents:
           - understanding-users/user-eng.qmd
           - understanding-users/user-analytics.qmd
+      - section: "Writing and visualising"
+        contents:
+          - creating-statistics/cd.qmd
+          - publishing-statistics/dashboards.qmd
       - section: "Reproducible Analytical Pipelines (RAP)"
         contents: 
           - RAP/rap-expectations.qmd
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
           - RAP/rap-statistics.qmd
+      - section: "ADA and databricks"
+        contents: 
 
 format:
   html:

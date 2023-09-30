@@ -1,0 +1,33 @@
+---
+title: "Python"
+---
+
+<p class="text-muted">Guidance and tips for using Python</p>
+
+---
+
+## What is Python
+
+
+It is a version control software. It is by far the best of its kind and is widely used by software developers and data scientists.
+
+---
+
+## What is Python for
+
+Python is a high-level, general-purpose programming language that is designed to be easily readible.
+
+---
+
+## How to install Python
+
+
+
+---
+
+## Best places to start
+
+The Python Software Foundation provides an [introduction for beginners to Python](https://www.python.org/about/gettingstarted/).
+
+We recommend making use of the following communities:
+- Python DfE community on teams

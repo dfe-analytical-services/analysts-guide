@@ -1,5 +1,5 @@
 ---
-title: "Statistician's Guide"
+title: "Analysts's Guide"
 date: "Last updated: `r Sys.Date()`"
 author: "statistics.development@education.gov.uk"
 site: "_site.yml"
@@ -12,13 +12,9 @@ library(fontawesome)
 
 ---
 
-This website is a guide aimed at anyone working in analysis or statistics in the Department for Education (DfE). It details best practice and learning resources across a number of areas listed out on this page.
+This website is a guide aimed at anyone working in analysis or statistics in the Department for Education (DfE). It includes tips on best practice and learning resources across a number of areas.
 
-If viewed in its entirety, it provides a walk-through guide for statisticians from processing to publication, as well as being a single reference point that is easy to navigate if you just need to check on a specific part of the process, link off to other resources, or access specific guidance.
-
-There is already a wealth of resources out there, and therefore this site unashamedly aims to pool the relevant resources into one place. There are some things that this site does not yet have, it will develop and change over time. 
-
-We hope it can prove a useful resource for everyone from the most experienced right through to those just starting out. If you have any feedback, suggested additions, or wish to challenge any of the guidance, please contact us using the envelope button in the top right corner.
+We hope it can prove a useful community driven resource for everyone from the most experienced analyst right through to those just starting out. If you have any feedback, suggested additions, or wish to challenge any of the guidance, feel free to use the GitHub links to suggest changes directly, or contact us at the email you can find at the bottom of the page.
 
 
 ## Learning and development
@@ -30,43 +26,51 @@ We hope it can prove a useful resource for everyone from the most experienced ri
 - Guidance and tips for accessing data via databases with SQL
 
 [R](learning-development/r.html)
-- Guidance and tips for using the programming language R
+- Guidance and tips for using R
 
 [Git](learning-development/git.html)
 - Guidance and tips for version control with Git
 
-## Creating statistics
+[Python](learning-development/python.html)
+- Guidance and tips for using Python [NEW PAGE]
 
-[Open data standards](creating-statistics/ud.html)
-- Guidance on how to structure data files
 
-[Writing and visualising](creating-statistics/cd.html)
-- Things to consider when writing statistical commentary
+## Statistics production
 
-## Publishing statistics
-
-[How to publish](publishing-statistics/pub.html)
+[How to publish](statistics-production/pub.html)
 - Guidance for how to publish different types of statistics
 
-[Public dashboards](publishing-statistics/dashboards.html)
-- Guidance for publishing official statistics dashboards
+[Open data standards](statistics-production/ud.html)
+- Guidance on how to structure data files
 
-[Using EES](publishing-statistics/ees.html)
+[Publication pipelines](statistics-production/stats_rap_redirect.html)
+- Link to the RAP for stats? [NEW PAGE / REDIRECT]
+
+[Using EES](statistics-production/ees.html)
 - How to use the features in Explore Education Statistics
 
-[Good examples in EES](publishing-statistics/examples.html)
-- Examples of good practice in Explore Eduaction Statistics
+[Good examples in EES](statistics-production/examples.html)
+- Examples of good practice in Explore Education Statistics
 
-[Embedded visualisations in EES](publishing-statistics/embedded-charts.html)
+[Embedded visualisations in EES](statistics-production/embedded-charts.html)
 - How to embed R-Shiny charts in EES publications
 
-## Understanding users
-
-[User engagement](understanding-users/user-eng.html)
+[User engagement](statistics-production/user-eng.html)
 - Guidance on understanding and engaging with the users of published statistics
 
-[EES analytics](understanding-users/user_analytics.html)
+[EES analytics](statistics-production/user_analytics.html)
 - Understanding how users are interacting with your publications
+
+## Writing and visualising data
+
+[Public dashboards](writing-visualising/dashboards.html)
+- Guidance for publishing public facing statistics dashboards
+
+[Writing about statistics](writing-visualising/cd.html)
+- Things to consider when writing about statistics and data
+
+[Visualising data](writing-visualising/visualising.html)
+- Resources and best practice to guide you when visualising data [NEW PAGE]
 
 ## Reproducible Analytical Pipelines (RAP)
 
@@ -82,61 +86,14 @@ We hope it can prove a useful resource for everyone from the most experienced ri
 [RAP in statistics](RAP/rap-statistics.html)
 - Detailed RAP guidance for statistics publications
 
-## Our resources
+## ADA and databricks
 
+[Something]()
+- ? TBC
 
+## Contact us
 
-We also have a number of other applications for statistics production teams to use to help them in their processes, they can be accessed at the links below when using a DfE device.
-
-
-
-### EES data screening app
-
-
-
-This application allows you to screen your data files against the underlying data standards for Official and National statistical publications. If your file passes the checks it also gives you some basic options for exploring the data in the file.
-
- - [EES data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"}
-
- - [Data screener code on GitHub](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}
-
-
-
-### EES analytics
-
-
-
-There is an R Shiny dashboard that provides access to the Google Analytics data for the Explore Education Statistics platform.
-
- - [Explore Education Statistics analytics dashboard](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"}
-
- - Code is not yet publicly available, it is stored in Azure DevOps, contact us if you are interested in seeing it or contributing.
-
-
-
-### Publication RAP self-assessment tool
-
-
-
-A self assessment tool allowing official statistics publications to understand how their production processes match up against RAP expectations.
-
- - [RAP self-assessment tool](https://rsconnect/rsc/publication-self-assessment/){target="_blank" rel="noopener noreferrer"}
-
- - [RAP self-assessment code mirrored on GitHub](https://github.com/dfe-analytical-services/publication-self-assessment-copy){target="_blank" rel="noopener noreferrer"}
-
-
-
-### Template code
-
-- [Template DfE R Shiny dashboard](https://github.com/dfe-analytical-services/shiny-template){target="_blank" rel="noopener noreferrer"}
-
-- [Template QA code repository](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}
-
-- [dfeR R package](https://github.com/dfe-analytical-services/dfeR){target="_blank" rel="noopener noreferrer"}
-
-## Our mailbox
-
-Our mailbox is always monitored and is available for anyone in DfE to ask questions about analysis, whether that is about RAP, building dashboards, coding support, learning and development or statistics publications.
+Our mailbox is always monitored and is available for anyone in DfE to ask questions about statistics, whether that is about RAP, building dashboards, coding support, learning and development or statistics publications.
 
 - [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)
 - 9am-5pm, Monday-Friday, aim to reply within 1-2 days

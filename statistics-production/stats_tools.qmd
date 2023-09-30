@@ -1,0 +1,56 @@
+---
+title: "Tools for statistics"
+---
+
+<p class="text-muted">Guidance for how to use the tools available for statistics publishers</p>
+
+---
+
+
+We also have a number of tools for statistics production teams to use to help them in their processes, they can be accessed at the links below when using a DfE device.
+
+
+
+### EES data screening app
+
+
+
+This application allows you to screen your data files against the underlying data standards for Official and National statistical publications. If your file passes the checks it also gives you some basic options for exploring the data in the file.
+
+ - [EES data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"}
+
+ - [Data screener code on GitHub](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}
+
+
+
+### EES analytics
+
+
+
+There is an R Shiny dashboard that provides access to the Google Analytics data for the Explore Education Statistics platform.
+
+ - [Explore Education Statistics analytics dashboard](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"}
+
+ - Code is not yet publicly available, it is stored in Azure DevOps, contact us if you are interested in seeing it or contributing.
+
+
+
+### Publication RAP self-assessment tool
+
+
+
+A self assessment tool allowing official statistics publications to understand how their production processes match up against RAP expectations.
+
+ - [RAP self-assessment tool](https://rsconnect/rsc/publication-self-assessment/){target="_blank" rel="noopener noreferrer"}
+
+ - [RAP self-assessment code mirrored on GitHub](https://github.com/dfe-analytical-services/publication-self-assessment-copy){target="_blank" rel="noopener noreferrer"}
+
+
+
+### Template code
+
+- [Template DfE R Shiny dashboard](https://github.com/dfe-analytical-services/shiny-template){target="_blank" rel="noopener noreferrer"}
+
+- [Template QA code repository](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}
+
+- [dfeR R package](https://github.com/dfe-analytical-services/dfeR){target="_blank" rel="noopener noreferrer"}
