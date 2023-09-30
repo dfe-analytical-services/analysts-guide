@@ -84,17 +84,17 @@ website:
           - learning-development/git.qmd
       - section: "Statistics production"
         contents:
-          - publishing-statistics/pub.qmd
-          - creating-statistics/ud.qmd
-          - publishing-statistics/ees.qmd
-          - publishing-statistics/embedded-charts.qmd
-          - publishing-statistics/examples.qmd
-          - understanding-users/user-eng.qmd
-          - understanding-users/user-analytics.qmd
+          - statistics-production/pub.qmd
+          - statistics-production/ud.qmd
+          - statistics-production/ees.qmd
+          - statistics-production/embedded-charts.qmd
+          - statistics-production/examples.qmd
+          - statistics-production/user-eng.qmd
+          - statistics-production/user-analytics.qmd
       - section: "Writing and visualising"
         contents:
-          - creating-statistics/cd.qmd
-          - publishing-statistics/dashboards.qmd
+          - writing-visualising/cd.qmd
+          - writing-visualising/dashboards.qmd
       - section: "Reproducible Analytical Pipelines (RAP)"
         contents: 
           - RAP/rap-expectations.qmd
@@ -112,7 +112,6 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: true
-
 
 filters:
   - include-files.lua
