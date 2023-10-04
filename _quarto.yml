@@ -104,6 +104,7 @@ website:
           - RAP/rap-statistics.qmd
       - section: "ADA and databricks"
         contents: 
+          - ADA/ada.qmd
 
 format:
   html:
