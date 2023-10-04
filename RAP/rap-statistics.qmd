@@ -142,7 +142,7 @@ The Statistics Development Team invites teams to take part in our partnership pr
 
 ---
 
-The first place to start for your teams RAP is to store the raw data you use to create underlying data in a Microsoft SQL Server database. This is similar to a sharepoint area or a shared folder, but it's a dedicated data storage area which allows multiple users to use the same file at once, and for you to run code against the data in one place.
+The first place to start for your teams RAP is to store the raw data you use to create underlying data in a Microsoft SQL Server database. This is similar to a Sharepoint area or a shared folder, but it's a dedicated data storage area which allows multiple users to use the same file at once, and for you to run code against the data in one place.
 
 ---
 
@@ -565,7 +565,7 @@ There is also plenty of guidance around the internet for [best practice](https:/
 
 ---
 
-If you ever find yourself writing html, or creating it through rmarkdown, you can check your html using [w3's validator](https://validator.w3.org/){target="_blank" rel="noopener noreferrer"}.
+If you ever find yourself writing HTML, or creating it through RMarkdown, you can check your HTML using [W3's validator](https://validator.w3.org/){target="_blank" rel="noopener noreferrer"}.
 
 ---
 
@@ -689,7 +689,7 @@ While peer reviewing code within the team is often practical, having external an
 
 ---
 
-## Automated quality assurance
+## Automated quality assurance (QA)
 
 
 Any data files that have been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability.
@@ -837,7 +837,7 @@ Consider:
 
 ---
 
-_When you assume you make an 'ass' out of 'u' and 'me'_. Everyone knows this saying, yet few of us heed it's warning. 
+_When you assume you make an 'ass' out of 'u' and 'me'_. Everyone knows this saying, yet few of us heed its warning. 
 
 The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.
 
@@ -1001,7 +1001,7 @@ The [Self-assessment tool](https://github.com/dfe-analytical-services/publicatio
 
 If you do not already have git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
 
-For now, take a look at at the [resources for learning Git](../learning-development/learning-development.html#git) on the learning resources page.
+For now, take a look at at the [resources for learning git](../learning-development/learning-development.html#git) on the learning resources page.
 
 ---
 

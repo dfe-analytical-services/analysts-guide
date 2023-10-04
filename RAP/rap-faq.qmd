@@ -28,7 +28,7 @@ No. Reproducible Analytical Pipelines (RAPs) are automated statistical and analy
 
 Doing RAP is doing analysis using the best methods available to us, which is an expectation of the statistics code of practice.
 
-The tools we recommend for statistics production RAP are SQL, Git and R. Other suitable alternatives that allow you to meet the core principles can also be used, but you should check this with the Statistics Development Team first. Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.
+The tools we recommend for statistics production RAP are SQL, Git and R. Other suitable alternatives that allow you to meet the core principles can also be used, but you should check this with the Statistics Development Team first. Ideally any tools used would be open source. Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.
 
 Using R for parts of the process does get you close to a lot of the RAP principles with little effort, which is why we recommend it as one of the tools you should use.
 
@@ -44,7 +44,7 @@ No -- RAP is a cross government strategy, and all departments are expected to us
 
 Here is a great [blog post from NHS digital on 'Why we're getting our data teams to RAP'](https://digital.nhs.uk/blog/data-points-blog/2023/why-were-getting-our-data-teams-to-rap).
 
-RAP is also a strategic objective of [Analysis function strategy for 22-25](https://analysisfunction.civilservice.gov.uk/about-us/analysis-function-strategy/#strategic-objective-2-promoting-impactful-and-efficient-analysis-through-innovative-tools-and-cutting-edge-techniques):
+RAP is also a strategic objective of [Analysis Function strategy for 22-25](https://analysisfunction.civilservice.gov.uk/about-us/analysis-function-strategy/#strategic-objective-2-promoting-impactful-and-efficient-analysis-through-innovative-tools-and-cutting-edge-techniques):
 
 > delivering the [Reproducible Analytical Pipelines (RAP) Strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/) and action plan to embed RAP across government, ensuring our processes are automated, efficient, and high quality which frees up resource to add value and insight in our analysis.
 
@@ -54,7 +54,7 @@ RAP is also a strategic objective of [Analysis function strategy for 22-25](http
 
 ---
 
-The levels within RAP good practice are in line with what a lot of teams are doing already, take time to understand what the different steps mean and don't panic about the quantity of them as they've intentionally been broken down into the smallest level that was sensible.
+The levels within RAP good practice are in line with what a lot of teams are doing already, take time to understand what the different steps mean and don't panic about the quantity of them as they've intentionally been broken down into the smallest level that was sensible. Ideally your work should meet as many of the RAP criteria as possible, but even the use of some RAP principles when you're just starting out are better than none. 
 
 Statistics publications are some of the most important pieces of statistics work that the department does. It's important we get that data right; RAP can help us automate the production and QA of outputs in a way that gives us the most confidence in the statistics and causes the least burden for you.
 
@@ -66,7 +66,7 @@ Statistics publications are some of the most important pieces of statistics work
 
 Not at all. When fully implemented and accompanied with the relevant skills, RAP has the opposite effect as each stage of the process is clearly written as code.
 
-We recognise there is a sizeable skill gap, and that until this is addressed there can be a risk of feeling like code is a black box. This isn't a reason to avoid RAP though, instead it's a big reason why we need to push ahead with prioritising upskilling ourselves to implement it.
+We recognise there is a sizeable skill gap, and that until this is addressed there can be a risk of feeling like code is a black box. This isn't a reason to avoid RAP though, instead it's a big reason why we need to push ahead with prioritising upskilling ourselves to implement it. An element of RAP is having documentation for your analytical processes. Having good documentation will help to support your team as they are learning new skills, particularly when you have new starters who are taking on pieces of work for the first time. 
 
 ---
 
@@ -92,7 +92,7 @@ Questions about how to get started with RAP.
 
 No. Anyone undertaking any analytical processes should now be using RAP processes, and coding is a critical analytical skill. RAP is a cross-government strategy and there is an expectation in all departments for all analysts to move to this way of working.
 
-We all must ensure that analysis is reproducible, transparent, and robust using coding and code management best practices (GSG competency framework).
+We all must ensure that analysis is reproducible, transparent, and robust using coding and code management best practices (Analysis Function competency framework).
 
 ---
 
@@ -148,7 +148,7 @@ This is highly unlikely and is more likely to be from a lack of knowledge of wha
 
 Yes. We recommend different tools for different purposes, SQL should be used for querying source data and large data processes, R should be used for more complicated data manipulation, QA, and analysis. There's a grey area in the middle where you can do some things in either tool, sometimes you'll need to test for yourself which way is faster (e.g., linking datasets or transforming tables).
 
-SQL scripts should be run in an automated way using R, instead of manually running them and copying the outputs. The difference we're talking about here is whether you process data on the database server or on the machine you're running R. A simplistic rule of thumb is do large scale processing on the database side (e.g., filtering and aggregating), and then only bring the data you need for manipulation / complicated processing into R.
+SQL scripts should be run in an automated way using R, instead of manually running them and copying the outputs. The difference we're talking about here is whether you process data on the database server or on the machine where you're running R. A simplistic rule of thumb is do large scale processing on the database side (e.g., filtering and aggregating), and then only bring the data you need for manipulation / complicated processing into R.
 
 ---
 
@@ -165,11 +165,11 @@ Questions on how to implement RAP.
 This is a misconception of our guidance that we will be clarifying and improving the phrasing of. The two steps this refers to are:
 
 -   Can the publication be reproduced using a single code script?
--   Are data files produced via single code script(s) with integrated QA?'
+-   Are data files produced via single code script(s) with integrated QA?
 
-We're not suggesting all code lives in a single script. These steps in the RAP guidance are to encourage the repository being structured so that one clicks of a button can run the entire process from the source data through to the final output in order.
+We're not suggesting all code lives in a single script. These steps in the RAP guidance are to encourage the repository being structured so that one click of a button can run the entire process from the source data through to the final output in order.
 
-This means that you should have one 'centralized' script that details all of the different scripts in your repository. This single run script then provides a single reference point for where all of your code and scripts live, and in what order they're executed, which is fantastic piece documentation to have!
+This means that you should have one 'centralized' script that details all of the different scripts in your repository. This single run script then provides a single reference point for where all of your code and scripts live, and in what order they're executed, which is a fantastic piece documentation to have!
 
 ---
 
@@ -213,7 +213,9 @@ Questions learning more about RAP and developing skills.
 
 Absolutely. Currently the best way to do this is to ask other teams to share code directly with you. If we can all make more progress with using Git, then this will make it much easier to share repositories and have code open by default for interested analysts to browse.
 
-We are also starting up a knowledge share series, so keep an eye out for that and make sure to contribute yourselves. We'd also encourage analysts to make more use of teams to post questions and ask about other people in our area doing similar types of analysis, no question is too big or too small!
+We run a regular RAP Knowledge Share series in which we share good practice and examples of work. We record each session so that you can refer back to them at a later date if you want to. Previous recordings can be found on [Sharepoint](https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series). Upcoming sessions are advertised on the DfE analysts network mailing list.
+
+We'd also encourage analysts to make more use of the RAP Community channel in the DfE Analyst Network Teams group to post questions and ask about other people doing similar types of analysis, no question is too big or too small!
 
 ---
 
