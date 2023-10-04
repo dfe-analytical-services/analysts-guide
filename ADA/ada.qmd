@@ -1,0 +1,23 @@
+---
+  title: "Analytical Data Access (ADA) and databricks"
+---
+  
+  <p class="text-muted">Guidance for analysts on how to interact with and use data stored in ADA using databricks</p>
+    
+---
+
+# About the ADA project
+
+---
+
+The Analytical Data Access (ADA) service has been created to support analysts, engineers and policy team members.
+
+It brings together:
+*	a searchable data catalogue - the Data Discovery Platform (DDP)
+*	a workbench of tools for analysing data - including Databricks
+*	a form for requesting access to data
+*	a support section - with walkthrough instructions
+*	a collection of data reports and dashboards
+*	a news and updates area.
+
+As long as you're connected to the network - it's available to anyone who works for the Department of Education.

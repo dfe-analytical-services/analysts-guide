@@ -88,8 +88,8 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 ## ADA and databricks
 
-[Something]()
-- ? TBC
+[ADA and databricks](ADA/ada.html)
+- Guidance for analysts on how to interact with and use data stored in ADA using databricks
 
 ## Contact us
 
