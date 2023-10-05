@@ -11,7 +11,7 @@ title: "Publication scrums"
 
 ---
 
-Teams should continually improve their publications, assessing against best practice using our [content checklist](#checklist).
+Teams should continually improve their publications, assessing against best practice using our [content checklist](#checklists).
 
 All of our publications should be designed around our users first and foremost, and you should consider this page in conjuction with any [user engagement](../understanding-users/user-eng.html) activities you are carrying out.
 
@@ -19,15 +19,38 @@ All of our publications should be designed around our users first and foremost, 
 
 ## Get involved
 
-We are running publication scrums where teams can put forward their publication(s) for review by a group of volunteer analysts, providing feedback as ‘unfamiliar new readers’ to discuss ideas for further improvements.
+We regularly run publication scrums where teams can put forward their publication(s) for review by a group of volunteer analysts, providing feedback as ‘unfamiliar new readers’ and to discuss ideas for future improvements. The sessions usually last for 1-2 hours.
+
+If you're interested in being involved in future scrums, please get in [contact us](mailto:statistics.development@education.gov.uk).
 
 ---
 
-## Checklist
+## Checklists
 
 
-The guidance on content design is in the form of a handy checklist, co-produced with local statisticians, and supported by the [Good Practice Team](https://gss.civilservice.gov.uk/the-good-practice-team-gpt/#:~:text=The%20Good%20Practice%20Team%20(GPT)%20is%20here%20to%20help%20the,for%20National%20Statistics%20(ONS)){target="_blank" rel="noopener noreferrer"}. This builds on ONS’s Best Practice guidance on [Data Visualisation](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/){target="_blank" rel="noopener noreferrer"} and [Writing about Statistics](https://gss.civilservice.gov.uk/policy-store/writing-about-statistics-2/){target="_blank" rel="noopener noreferrer"}.
+The guidance on content design is in the form of a handy checklist, co-produced with local statisticians, and supported by the [Good Practice Team](https://gss.civilservice.gov.uk/the-good-practice-team-gpt/#:~:text=The%20Good%20Practice%20Team%20(GPT)%20is%20here%20to%20help%20the,for%20National%20Statistics%20(ONS)). This builds on ONS’s Best Practice guidance on [Data Visualisation](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/)and [Writing about Statistics](https://gss.civilservice.gov.uk/policy-store/writing-about-statistics-2/).
 
 The content checklist is for teams to use throughout their project cycle, so that good content design is at the heart of what they deliver at all stages, rather than considered late in the process - [Content design checklist (.xlsx)](../resources/Content_Design_Logbook.xlsx).
 
 There is also a dashboards version of the content design checklist, that runs through a number of things to think about when developing dashboards to compliment official statistics - [Dashboards checklist (.xlsx)](../resources/Content_Design_Logbook_Dashboards.xlsx).
+
+If you are responsible for signing off publications, then please download and see the Statistics Leadership Group paper highlighting [top tips for content design](../resources/Content_Design_Scrums_Insights_final.docx).
+
+
+---
+
+## Scrum information
+
+You can experience how a scrum runs through watching this scrum-along (features the scrum up until groups breakout to discuss different elements) and [supporting slides](https://educationgovuk.sharepoint.com/:p:/r/sites/lvewp00086/WorkplaceDocuments/CSSU/Statistics%20Strategy%20Team/Content%20Design%20Scrums%20materials/Content%20Design%20Scrum.pptx?d=wb13c1dc2628647718ef9fd1690653547&csf=1&web=1&e=qKLAYn)
+
+<div align=center>
+<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/73fa0d31-b8b3-4889-bfcf-c76c33c1fe87?autoplay=false&showinfo=false" allowfullscreen style="border:none;"></iframe>
+</div>
+
+A full before / after scrum along is available to [watch](https://educationgovuk-my.sharepoint.com/:v:/r/personal/heather_brown_education_gov_uk/Documents/Recordings/Content%20Design%20Scrum_%20Progression%20Measures%20Statistics-20210628_123245-Meeting%20Recording.mp4?csf=1&web=1&e=xc032a), with slides available to [download separately](../resources/Content_Design_Scrum_Progression.pptx).
+
+For a walk through of some of the end to end benefits the scrums have had, take a look at this [video for Schools and pupils Statistics Team](https://educationgovuk-my.sharepoint.com/:v:/r/personal/heather_brown_education_gov_uk/Documents/Recordings/Content%20Design%20Scrum_%20Progression%20Measures%20Statistics-20210628_123245-Meeting%20Recording.mp4?csf=1&web=1&e=xc032a).
+
+Finally, an example of a team who has been through the scrum process for 3 publications talk through their realised benefits, showcasing the type of benefits potentially others could also realise is also available to [watch on sharepoint](https://educationgovuk-my.sharepoint.com/:v:/g/personal/heather_brown_education_gov_uk/EQx_j1oEh0BMqLbMLtnf2ikB4FJIBfEjKptqIDUkoZVgvg?e=a0xHNJ).
+
+---

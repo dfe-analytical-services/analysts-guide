@@ -1,0 +1,112 @@
+---
+title: "Writing about data"
+---
+
+<p class="text-muted">Things to consider when writing about data</p>
+
+
+---
+
+# Introduction
+
+---
+
+Commentary should do much more than just describe the statistics in words. It should help the user to understand the meaning of patterns, trends and limitations, and build on any factual and public information already known about the subject matter.
+
+Clear, insightful and professionally sound commentary supports informed decision-making and democratic debate.
+
+> Statistics and data should be presented clearly, explained meaningfully and provide authoritative insights that serve the public good. (Code of Practice for Statistics, United Kingdom (UK) Statistics Authority, 2018)
+
+---
+
+# Key messages
+
+---
+
+Start by introducing the topic of your work and the questions you seek to answer with the numbers that follow. To help set the scene for your statistics, begin with a topic sentence that introduces the variables and the W’s (when, where and what).
+
+Examples (NB. Fictional):
+
+**Poor**: (No introductory sentence) “In 2020, there were 11,000 gun-related homicides (Figure 1)”
+
+This jumps directly to presenting the data without orientating the reader to the topic and objectives.
+
+**Better**: “What factors explain the observed rise and fall in overall homicides in England in the 2000s?”
+
+This uses a rhetorical question to introduce the context (where and when) and the pattern to be investigated (the time trend). However, this does not specify the possible explanatory factors.
+
+**Best**: “Was the substantial rise and fall in the number of homicides in the 2000s in England (Figure 1) observed across all age groups and types of weapons (Figure 2)?”
+There have been no numbers presented yet, just a statement that establishes the purpose of the statistics. Introducing your topic is important especially when presenting a series of charts or tables.
+
+Below is a session by Robert Cuffe from the BBC talking to DfE statisticians about writing our publications and highlighting key messages in a way they can be used by journalists and the media.
+
+<div align=center>
+<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/b44d821a-9b5c-437a-b321-673c4304c350?autoplay=false&amp;showinfo=false" allowfullscreen style="border:none;"></iframe>
+</div>
+
+---
+
+## Headline sections
+
+
+It is common to use bullet points to draw out key headline messages, either for policy lines or for general interest. Here are some top tips for writing headlines:
+
+* Ask yourself if this is the most important, useful and relevant point to make? Why? What is new?
+* We recommend a maximum of six top headlines
+* You shouldn't be trying to summarise all the findings in the publication
+* For regular publications, headlines won't necessarily be the same every time
+* Headlines should be a single sentence making a single point, and be able to stand alone from the publication
+* Headlines should make sense to everyone and anyone (no jargon)
+* Structure headlines as: what has happened; why is this important - don't give numbers without context
+* At least of your headlines should put the latest figures in the context of the longer-term change
+* Round figures in headlines, you don't need lots of decimal places
+* If there is essential context for the headline facts then put this here
+
+---
+
+## Reporting and interpreting numbers
+
+
+Reporting the numbers you work with is an important first step toward writing effective numeric descriptions. By including numbers in text, table or chart, you give the user the raw materials with which to perform comparisons across time, places or groups. However, if you stop there, you leave it to your readers to figure out how those data answer the question at hand.
+
+> **Poor**: “In 2010, there were 20, 370 overall homicides related to crime, 13,000 which were related to gun incidents, 7,370 related to other weapons. In 2020, they were 18,900 overall homicides, 11,000 which were related to gun incidents, 9,900 related to other weapons (Figure 1)”.
+
+The description above simply lists statistics from charts without explaining how they relate to one another or how the statistics address the initial question in the opening paragraph.
+
+> **Better**: “The total number of homicides rose until the mid-2000s and then declined until 2020. As shown in Figure 1, the increase and subsequent decrease in homicides were driven by trends in gun-related homicides. In 2020, there was roughly 1.5 times as many homicides were committed with guns as with other types of weapons (11,000 versus 7265; Figure 1); whereas in 2010, roughly 2 times as many homicides were committed with guns versus other weapons, 13000 and 6500, respectively.  Figure 2 examines whether gun-related homicides showed the same time trend among all age groups. As shown in Figure 2 in the two youngest groups of offenders, gun-related homicides increased substantially between 2000 and 2010, and then decreased steadily until 2020. In contrast, the number of gun related homicides committed by older offenders decreased slowly throughout the time-period shown”.
+
+Try to use prose to summarise the patterns so your user can see the general relationship in the table or chart – the forest not the individual trees. Try not to report every number from the table or chart or pick a few arbitrary numbers to contrast in sentence form without considering whether or not those numbers represent an underlying general pattern. Paint the big picture rather than reiterating all the little details. This will help you tell a clear story with numbers as evidence.
+
+---
+
+# Accessibility
+
+---
+
+You should always write with your audience in mind. If you are writing something that will be available publicly, make sure that you [write content that is accessible for everyone](https://gds.blog.gov.uk/2016/02/23/writing-content-for-everyone/).
+
+The Analysis Function have create a guide for [what you need to know about accessibility as an analyst](https://analysisfunction.civilservice.gov.uk/policy-store/accessibility-legislation-what-you-need-to-know/).
+
+For tips on creating accessible content have a look at our [accessibility top tips (.docx)](../resources/Accessibility.docx).
+
+---
+
+## Creating hyperlinks
+
+
+Avoid using full URLs in text. Hyperlinks should be used and they should provide a clear description of the destination. Avoid using 'For more information **click here**'. Screen readers often collate all links on a page into one list, so having numerous ‘click here’ links listed is confusing to the user and gives no description of the destinations. ‘For more information see **Guidance to support the summer 2021 exams**’ is an example of a good hyperlink.
+
+Best practice on creating hyperlinks, particularly how to name them and common pitfalls to avoid can be found on this [introduction to html guide](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks){target="_blank" rel="noopener noreferrer"}. Those of us using EES don't need to worry about writing the raw html for the anchor links, and should instead focus on the section referring to how to name and title links.
+
+---
+
+# Advice and support
+
+---
+
+More detailed advice and guidance on content design best practice is available from a number of resources across Government and beyond:
+
+- [GSS best practice guidance](https://analysisfunction.civilservice.gov.uk/policy-store/writing-about-statistics-2/)
+- [How to get readability scores in Microsoft Word](https://support.office.com/en-gb/article/test-your-document-s-readability-85b4969e-e80a-4777-8dd3-f7fc3c8b3fd2)
+- Similarly, the [Hemingway app](http://www.hemingwayapp.com/) is an online tool to assess readability. Whilst we might not want to use this directly for final drafting, it is useful to highlight areas of particular complexity in our current narrative.
+- As an illustrative example of work in other Departments - [DWP's Fraud & Error statistics before](https://www.gov.uk/government/statistics/fraud-and-error-in-the-benefit-system-201213-estimates) (128 page release), and [DWP's Fraud & Error statistics after](https://www.gov.uk/government/statistics/fraud-and-error-in-the-benefit-system-financial-year-2017-to-2018-estimates) their own modernisation work are worth a look.
