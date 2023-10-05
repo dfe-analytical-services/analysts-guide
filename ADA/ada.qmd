@@ -13,6 +13,7 @@
 The Analytical Data Access (ADA) service has been created to support analysts, engineers and policy team members.
 
 It brings together:
+
 *	a searchable data catalogue - the Data Discovery Platform (DDP)
 *	a workbench of tools for analysing data - including Databricks
 *	a form for requesting access to data
@@ -21,3 +22,46 @@ It brings together:
 *	a news and updates area.
 
 As long as you're connected to the network - it's available to anyone who works for the Department of Education.
+
+---
+
+# Plans for the future
+
+---
+
+The ambition is to enable access to all datasets across DfE and ESFA and retire the legacy applications. This will create common ways of working.
+
+---
+
+# Top Tips
+
+---
+
+---
+
+## How Databricks works
+
+---
+
+See the [ADA support page on how Databricks works](https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works).
+
+
+---
+
+## Walkthrough a simple analysis
+
+---
+
+See the [ADA support page on using R, python and SQL in Databricks](https://analytical-data-access.azurewebsites.net/get-support/using-r-python-and-sql-in-databricks)
+
+
+---
+
+## Helpful getting started videos
+
+---
+
+See the collection of [getting started videos](https://educationgovuk.sharepoint.com/:f:/r/sites/ADA-SuperUserForum/Shared%20Documents/General/Getting%20started%20videos?csf=1&web=1&e=RCFSib) covering the basics of Databricks and using notebooks. 
+
+
+

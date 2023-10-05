@@ -105,6 +105,7 @@ website:
       - section: "ADA and databricks"
         contents: 
           - ADA/ada.qmd
+          - ADA/databricks_rstudio.qmd
 
 format:
   html:
