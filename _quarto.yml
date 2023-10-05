@@ -4,7 +4,7 @@ project:
 website: 
   page-navigation: true
   back-to-top-navigation: true
-  title: "Analyst's Guide" 
+  title: "Analysts' Guide" 
   site-url: "https://dfe-analytical-services.github.io/analysts-guide"
   repo-url: https://github.com/dfe-analytical-services/analysts-guide
   repo-actions: [edit, issue]
