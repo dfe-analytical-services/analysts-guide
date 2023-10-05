@@ -88,10 +88,10 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 ## Analytical Data Access (ADA) and Databricks
 
-[ADA and databricks](ADA/ada.html)
+[ADA and Databricks](ADA/ada.html)
 - Guidance for analysts on how to interact with and use data stored in ADA using Databricks
 
-[Using RStudio with databricks](ADA/databricks_rstudio.html)
+[Using RStudio with Databricks](ADA/databricks_rstudio.html)
 - Guidance for analysts on how to connect to Databricks from RStudio.
 
 ## Contact us

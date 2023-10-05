@@ -102,7 +102,7 @@ website:
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
           - RAP/rap-statistics.qmd
-      - section: "ADA and databricks"
+      - section: "ADA and Databricks"
         contents: 
           - ADA/ada.qmd
           - ADA/databricks_rstudio.qmd

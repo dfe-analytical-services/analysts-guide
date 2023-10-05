@@ -554,10 +554,8 @@ Then restart R-Studio and downloads with renv should now succeed.
 
 ---
 
-## Using R with ADA/Databricks
+## Using R with ADA / Databricks
 
----
+See our [guidance on how to connect to Databricks from R Studio](../ADA/databricks_rstudio.html)
 
-See our [guidance on how to connect to databricks from R Studio](../ADA/databricks_rstudio.html)
-
-You can also view example R code using the [databricks code template notebooks](../ADA/ada.html#databricks-code-templates)
+You can also view example R code using the [Databricks code template notebooks](../ADA/ada.html#databricks-code-templates)
