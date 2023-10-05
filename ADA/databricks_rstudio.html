@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analyst’s Guide - RAP FAQs</title>
+<title>Analyst’s Guide - Setup Databricks with RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../RAP/rap-statistics.html" rel="next">
-<link href="../RAP/rap-support.html" rel="prev">
+<link href="../ADA/ada.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -102,7 +101,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../RAP/rap-expectations.html">Reproducible Analytical Pipelines (RAP)</a></li><li class="breadcrumb-item"><a href="../RAP/rap-faq.html">RAP FAQs</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">ADA and Databricks</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio.html">Setup Databricks with RStudio</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -317,13 +316,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
@@ -338,7 +337,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link active">
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP FAQs</span></a>
   </div>
 </li>
@@ -352,13 +351,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">ADA and Databricks</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
@@ -367,7 +366,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ADA/databricks_rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Setup Databricks with RStudio</span></a>
   </div>
 </li>
@@ -383,50 +382,17 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#frequently-asked-questions" id="toc-frequently-asked-questions" class="nav-link active" data-scroll-target="#frequently-asked-questions">Frequently asked questions</a>
-  <ul class="collapse">
-  <li><a href="#what-is-rap" id="toc-what-is-rap" class="nav-link" data-scroll-target="#what-is-rap">What is RAP</a>
-  <ul class="collapse">
-  <li><a href="#what-is-rap-is-it-just-using-r" id="toc-what-is-rap-is-it-just-using-r" class="nav-link" data-scroll-target="#what-is-rap-is-it-just-using-r">What is RAP, is it just using R?</a></li>
-  <li><a href="#is-this-specific-to-dfe" id="toc-is-this-specific-to-dfe" class="nav-link" data-scroll-target="#is-this-specific-to-dfe">Is this specific to DfE?</a></li>
-  <li><a href="#im-overwhelmed-by-all-the-steps-is-rap-really-necessary" id="toc-im-overwhelmed-by-all-the-steps-is-rap-really-necessary" class="nav-link" data-scroll-target="#im-overwhelmed-by-all-the-steps-is-rap-really-necessary">I’m overwhelmed by all the steps, is RAP really necessary?</a></li>
-  <li><a href="#will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes" id="toc-will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes" class="nav-link" data-scroll-target="#will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes">Will implementing RAP lead to a disconnect with the data and ‘black box’ processes?</a></li>
-  <li><a href="#teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps" id="toc-teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps" class="nav-link" data-scroll-target="#teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps">Teams vary, and what my team does is different to others, if I’m happy with my approach, can I ignore some of the RAP steps?</a></li>
-  </ul></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
-  <ul class="collapse">
-  <li><a href="#can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere" id="toc-can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere" class="nav-link" data-scroll-target="#can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere">Can I leave the R stuff to others in my team whilst I focus elsewhere?</a></li>
-  <li><a href="#implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it" id="toc-implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it" class="nav-link" data-scroll-target="#implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it">Implementing RAP takes time to setup initially, how can we prioritise it?</a></li>
-  </ul></li>
-  <li><a href="#tools-for-rap" id="toc-tools-for-rap" class="nav-link" data-scroll-target="#tools-for-rap">Tools for RAP</a>
-  <ul class="collapse">
-  <li><a href="#do-i-need-to-rewrite-existing-sql-code-into-r" id="toc-do-i-need-to-rewrite-existing-sql-code-into-r" class="nav-link" data-scroll-target="#do-i-need-to-rewrite-existing-sql-code-into-r">Do I need to rewrite existing SQL code into R?</a></li>
-  <li><a href="#im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this" id="toc-im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this" class="nav-link" data-scroll-target="#im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this">I’m sometimes limited by the access and tools I have (ESFA servers, EDAP, Databricks), is there anything that can be done about this?</a></li>
-  <li><a href="#what-happens-if-we-cant-reproduce-our-current-processes-using-r" id="toc-what-happens-if-we-cant-reproduce-our-current-processes-using-r" class="nav-link" data-scroll-target="#what-happens-if-we-cant-reproduce-our-current-processes-using-r">What happens if we can’t reproduce our current processes using R?</a></li>
-  <li><a href="#r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead" id="toc-r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead" class="nav-link" data-scroll-target="#r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead">R isn’t always the quickest tool for processing data, can we use SQL instead?</a></li>
-  </ul></li>
-  <li><a href="#implementing-rap" id="toc-implementing-rap" class="nav-link" data-scroll-target="#implementing-rap">Implementing RAP</a>
-  <ul class="collapse">
-  <li><a href="#having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this" id="toc-having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this" class="nav-link" data-scroll-target="#having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this">Having a single script for code doesn’t seem the best way to do it, why are you suggesting this?</a></li>
-  <li><a href="#how-do-i-dual-run-for-qa-if-our-process-is-in-code" id="toc-how-do-i-dual-run-for-qa-if-our-process-is-in-code" class="nav-link" data-scroll-target="#how-do-i-dual-run-for-qa-if-our-process-is-in-code">How do I dual run for QA if our process is in code?</a></li>
-  <li><a href="#should-i-have-separate-repositories-or-branches-in-git-for-each-release" id="toc-should-i-have-separate-repositories-or-branches-in-git-for-each-release" class="nav-link" data-scroll-target="#should-i-have-separate-repositories-or-branches-in-git-for-each-release">Should I have separate repositories or branches in Git for each release?</a></li>
-  <li><a href="#we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough" id="toc-we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough" class="nav-link" data-scroll-target="#we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough">We should have plain text documentation to accompany the process, code and comments don’t feel like enough?</a></li>
-  </ul></li>
-  <li><a href="#learning-about-rap" id="toc-learning-about-rap" class="nav-link" data-scroll-target="#learning-about-rap">Learning about RAP</a>
-  <ul class="collapse">
-  <li><a href="#can-i-look-at-what-other-people-are-doing" id="toc-can-i-look-at-what-other-people-are-doing" class="nav-link" data-scroll-target="#can-i-look-at-what-other-people-are-doing">Can I look at what other people are doing?</a></li>
-  <li><a href="#i-dont-have-the-skills-to-implement-rap-how-do-i-get-them" id="toc-i-dont-have-the-skills-to-implement-rap-how-do-i-get-them" class="nav-link" data-scroll-target="#i-dont-have-the-skills-to-implement-rap-how-do-i-get-them">I don’t have the skills to implement RAP, how do I get them?</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
+  <li><a href="#downloading-an-odbc-driver" id="toc-downloading-an-odbc-driver" class="nav-link" data-scroll-target="#downloading-an-odbc-driver">Downloading an ODBC driver</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/rap-faq.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">RAP FAQs</h1>
+<h1 class="title">Setup Databricks with RStudio</h1>
 </div>
 
 
@@ -442,171 +408,84 @@ cookieconsent.run({
 </header>
 
 <p class="text-muted">
-This guidance is to help answer questions about RAP and act as a tool for anyone managing those implementing RAP.
+The following instructions set up an ODBC connection between your laptop and your DataBricks cluster, which can then be used in R/RStudio to query data using an ODBC based package.
 </p>
 <hr>
-<section id="frequently-asked-questions" class="level1">
-<h1>Frequently asked questions</h1>
+<section id="pre-requisites" class="level1">
+<h1>Pre-requisites</h1>
 <hr>
-<p>If you have any questions you’d like answering or adding, let us know by emailing <a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a>.</p>
-<hr>
-<section id="what-is-rap" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-rap">What is RAP</h2>
-<p>General questions about Reproducible Analytical Pipelines and why analysts need to care about it.</p>
-<hr>
-<section id="what-is-rap-is-it-just-using-r" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-rap-is-it-just-using-r">What is RAP, is it just using R?</h3>
-<hr>
-<p>No.&nbsp;Reproducible Analytical Pipelines (RAPs) are automated statistical and analytical processes. They incorporate elements of software engineering best practice to ensure that the pipelines are reproducible, auditable, efficient, and high quality.</p>
-<p>Doing RAP is doing analysis using the best methods available to us, which is an expectation of the statistics code of practice.</p>
-<p>The tools we recommend for statistics production RAP are SQL, Git and R. Other suitable alternatives that allow you to meet the core principles can also be used, but you should check this with the Statistics Development Team first. Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.</p>
-<p>Using R for parts of the process does get you close to a lot of the RAP principles with little effort, which is why we recommend it as one of the tools you should use.</p>
-<p>More details and learning resources for the recommended tools can be found in our <a href="rap.html#appropriate-tools">appropriate tools guidance</a>.</p>
-<hr>
-</section>
-<section id="is-this-specific-to-dfe" class="level3">
-<h3 class="anchored" data-anchor-id="is-this-specific-to-dfe">Is this specific to DfE?</h3>
-<hr>
-<p>No – RAP is a cross government strategy, and all departments are expected to use this way of working. See the <a href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/" target="_blank">analytical function page on RAP</a> to see other examples of departments utilising RAP and seeing the benefits.</p>
-<p>Here is a great <a href="https://digital.nhs.uk/blog/data-points-blog/2023/why-were-getting-our-data-teams-to-rap" target="_blank">blog post from NHS digital on ‘Why we’re getting our data teams to RAP’</a>.</p>
-<p>RAP is also a strategic objective of <a href="https://analysisfunction.civilservice.gov.uk/about-us/analysis-function-strategy/#strategic-objective-2-promoting-impactful-and-efficient-analysis-through-innovative-tools-and-cutting-edge-techniques" target="_blank">Analysis function strategy for 22-25</a>:</p>
-<blockquote class="blockquote">
-<p>delivering the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/" target="_blank">Reproducible Analytical Pipelines (RAP) Strategy</a> and action plan to embed RAP across government, ensuring our processes are automated, efficient, and high quality which frees up resource to add value and insight in our analysis.</p>
-</blockquote>
-<hr>
-</section>
-<section id="im-overwhelmed-by-all-the-steps-is-rap-really-necessary" class="level3">
-<h3 class="anchored" data-anchor-id="im-overwhelmed-by-all-the-steps-is-rap-really-necessary">I’m overwhelmed by all the steps, is RAP really necessary?</h3>
-<hr>
-<p>The levels within RAP good practice are in line with what a lot of teams are doing already, take time to understand what the different steps mean and don’t panic about the quantity of them as they’ve intentionally been broken down into the smallest level that was sensible.</p>
-<p>Statistics publications are some of the most important pieces of statistics work that the department does. It’s important we get that data right; RAP can help us automate the production and QA of outputs in a way that gives us the most confidence in the statistics and causes the least burden for you.</p>
-<hr>
-</section>
-<section id="will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes" class="level3">
-<h3 class="anchored" data-anchor-id="will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes">Will implementing RAP lead to a disconnect with the data and ‘black box’ processes?</h3>
-<hr>
-<p>Not at all. When fully implemented and accompanied with the relevant skills, RAP has the opposite effect as each stage of the process is clearly written as code.</p>
-<p>We recognise there is a sizeable skill gap, and that until this is addressed there can be a risk of feeling like code is a black box. This isn’t a reason to avoid RAP though, instead it’s a big reason why we need to push ahead with prioritising upskilling ourselves to implement it.</p>
-<hr>
-</section>
-<section id="teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps" class="level3">
-<h3 class="anchored" data-anchor-id="teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps">Teams vary, and what my team does is different to others, if I’m happy with my approach, can I ignore some of the RAP steps?</h3>
-<hr>
-<p>No, you should not ignore any of the steps. If you think any of the steps aren’t applicable to you, talk to the Statistics Development Team so we can understand more about the processes in your area. It may well be that you’re meeting it without realising, there’s a misunderstanding, or there’s something more we can add to the guidance.</p>
-<p>If you have unique or nuanced processes, RAP helps you document these and make your area more resilient to turnover of people. RAP is all about automating the process and documenting it in a standardised way to make it easily reproducible.</p>
-<hr>
-</section>
-</section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>Questions about how to get started with RAP.</p>
-<hr>
-<section id="can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere" class="level3">
-<h3 class="anchored" data-anchor-id="can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere">Can I leave the R stuff to others in my team whilst I focus elsewhere?</h3>
-<hr>
-<p>No.&nbsp;Anyone undertaking any analytical processes should now be using RAP processes, and coding is a critical analytical skill. RAP is a cross-government strategy and there is an expectation in all departments for all analysts to move to this way of working.</p>
-<p>We all must ensure that analysis is reproducible, transparent, and robust using coding and code management best practices (GSG competency framework).</p>
-<hr>
-</section>
-<section id="implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it" class="level3">
-<h3 class="anchored" data-anchor-id="implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it">Implementing RAP takes time to setup initially, how can we prioritise it?</h3>
-<hr>
-<p>There is a clear expectation that this is the direction for analysis in government, ultimately, it’s a part of the new digital skills required for the role of analysts. If we’re not prioritising improving our analysis in line with RAP principles, we’re not approaching our work correctly.</p>
-<p>We have support from senior leadership, and this is a department priority, so you should be building in time for it. If you are having difficulties prioritising RAP after talking with your line management chain, please get in touch with the Statistics Development Team.</p>
-<p>In the long term, implementing RAP will significantly reduce the time it takes to run your pipeline, and so while it requires time upfront, it creates more time in the future to prioritise other things. It also improves the quality and reproducibility of our work, giving numerous business benefits.</p>
-<hr>
-</section>
-</section>
-<section id="tools-for-rap" class="level2">
-<h2 class="anchored" data-anchor-id="tools-for-rap">Tools for RAP</h2>
-<p>Questions about what tools and software to use when applying RAP principles.</p>
-<hr>
-<section id="do-i-need-to-rewrite-existing-sql-code-into-r" class="level3">
-<h3 class="anchored" data-anchor-id="do-i-need-to-rewrite-existing-sql-code-into-r">Do I need to rewrite existing SQL code into R?</h3>
-<hr>
-<p>No.&nbsp;In fact, we recommend you don’t necessarily do this!</p>
-<p>SQL is a useful tool in its own right and some processes are better using SQL code executed on the databases.</p>
-<p>What we recommend, is that all of your code is within a single R project, and the SQL scripts are executed via R, this helps with documenting the process, but keeps the SQL code and benefits of doing heavy processes on the database side. See the final question in this ‘Tools for RAP’ section for more information.</p>
-<hr>
-</section>
-<section id="im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this" class="level3">
-<h3 class="anchored" data-anchor-id="im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this">I’m sometimes limited by the access and tools I have (ESFA servers, EDAP, Databricks), is there anything that can be done about this?</h3>
-<hr>
-<p>The first step is to let us (the Statistics Development Team) know so we can understand the wider landscape and escalate. There isn’t really a quick fix, but the first step is raising awareness.</p>
-<hr>
-</section>
-<section id="what-happens-if-we-cant-reproduce-our-current-processes-using-r" class="level3">
-<h3 class="anchored" data-anchor-id="what-happens-if-we-cant-reproduce-our-current-processes-using-r">What happens if we can’t reproduce our current processes using R?</h3>
-<hr>
-<p>This is highly unlikely and is more likely to be from a lack of knowledge of what is possible in R – if you’re struggling to reproduce processes, please contact the Statistics Development Team so they’re aware of your processes and can help you implement RAP principles.</p>
-<hr>
-</section>
-<section id="r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead" class="level3">
-<h3 class="anchored" data-anchor-id="r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead">R isn’t always the quickest tool for processing data, can we use SQL instead?</h3>
-<hr>
-<p>Yes. We recommend different tools for different purposes, SQL should be used for querying source data and large data processes, R should be used for more complicated data manipulation, QA, and analysis. There’s a grey area in the middle where you can do some things in either tool, sometimes you’ll need to test for yourself which way is faster (e.g., linking datasets or transforming tables).</p>
-<p>SQL scripts should be run in an automated way using R, instead of manually running them and copying the outputs. The difference we’re talking about here is whether you process data on the database server or on the machine you’re running R. A simplistic rule of thumb is do large scale processing on the database side (e.g., filtering and aggregating), and then only bring the data you need for manipulation / complicated processing into R.</p>
-<hr>
-</section>
-</section>
-<section id="implementing-rap" class="level2">
-<h2 class="anchored" data-anchor-id="implementing-rap">Implementing RAP</h2>
-<p>Questions on how to implement RAP.</p>
-<hr>
-<section id="having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this" class="level3">
-<h3 class="anchored" data-anchor-id="having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this">Having a single script for code doesn’t seem the best way to do it, why are you suggesting this?</h3>
-<hr>
-<p>This is a misconception of our guidance that we will be clarifying and improving the phrasing of. The two steps this refers to are:</p>
+<p>You must have:</p>
 <ul>
-<li>Can the publication be reproduced using a single code script?</li>
-<li>Are data files produced via single code script(s) with integrated QA?’</li>
+<li>Access to Databricks</li>
+<li>Access to a SQL Warehouse on DataBricks</li>
+<li>R and RStudio downloaded</li>
 </ul>
-<p>We’re not suggesting all code lives in a single script. These steps in the RAP guidance are to encourage the repository being structured so that one clicks of a button can run the entire process from the source data through to the final output in order.</p>
-<p>This means that you should have one ‘centralized’ script that details all of the different scripts in your repository. This single run script then provides a single reference point for where all of your code and scripts live, and in what order they’re executed, which is fantastic piece documentation to have!</p>
 <hr>
 </section>
-<section id="how-do-i-dual-run-for-qa-if-our-process-is-in-code" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-i-dual-run-for-qa-if-our-process-is-in-code">How do I dual run for QA if our process is in code?</h3>
+<section id="downloading-an-odbc-driver" class="level1">
+<h1>Downloading an ODBC driver</h1>
 <hr>
-<p>You don’t need to be dual running if your process is automated, it’s not the best way to QA. See our guidance on QA for more details on how you can approach it or talk to us if you’re unsure.</p>
-<hr>
-</section>
-<section id="should-i-have-separate-repositories-or-branches-in-git-for-each-release" class="level3">
-<h3 class="anchored" data-anchor-id="should-i-have-separate-repositories-or-branches-in-git-for-each-release">Should I have separate repositories or branches in Git for each release?</h3>
-<hr>
-<p>More information on recommended ways of working with Git can be found in <a href="rap.html#Open_source_repositories">our guidance on repositories</a>.</p>
-<p>In short, a single repository should be used for all releases of your publication, there’s no need to have multiple as all the history is saved within previous commits.</p>
-<hr>
-</section>
-<section id="we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough" class="level3">
-<h3 class="anchored" data-anchor-id="we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough">We should have plain text documentation to accompany the process, code and comments don’t feel like enough?</h3>
-<hr>
-<p>Yes, you should have some plain text documentation, this is a part of the guidance on RAP and a part of the ‘documentation’ step to ‘good’ practice.</p>
-<p>The README in your repository is the place for traditional ‘desk notes’ and text explanations of bits of the process and context required, we have <a href="rap.html#Writing_a_README_file">guidance on writing READMEs on the statistics production website</a>.</p>
-<hr>
-</section>
-</section>
-<section id="learning-about-rap" class="level2">
-<h2 class="anchored" data-anchor-id="learning-about-rap">Learning about RAP</h2>
-<p>Questions learning more about RAP and developing skills.</p>
-<hr>
-<section id="can-i-look-at-what-other-people-are-doing" class="level3">
-<h3 class="anchored" data-anchor-id="can-i-look-at-what-other-people-are-doing">Can I look at what other people are doing?</h3>
-<hr>
-<p>Absolutely. Currently the best way to do this is to ask other teams to share code directly with you. If we can all make more progress with using Git, then this will make it much easier to share repositories and have code open by default for interested analysts to browse.</p>
-<p>We are also starting up a knowledge share series, so keep an eye out for that and make sure to contribute yourselves. We’d also encourage analysts to make more use of teams to post questions and ask about other people in our area doing similar types of analysis, no question is too big or too small!</p>
-<hr>
-</section>
-<section id="i-dont-have-the-skills-to-implement-rap-how-do-i-get-them" class="level3">
-<h3 class="anchored" data-anchor-id="i-dont-have-the-skills-to-implement-rap-how-do-i-get-them">I don’t have the skills to implement RAP, how do I get them?</h3>
-<hr>
-<p>See the top section on the <a href="#support-on-offer">support on offer</a>!</p>
-<p>Plus, if you’re ever unsure at all, you can always contact <a href="mailto:statisics.development@education.gov.uk">statisics.development@education.gov.uk</a> who will be able to help you find resources that work for you or do bespoke training for your team’s needs.</p>
-<hr>
+<ol type="1">
+<li><p>Install the ‘Simba Spark ODBC’ driver from the software centre.</p>
+<ol type="i">
+<li><p>Open the Software Centre via the start menu.</p></li>
+<li><p>In the ‘Applications’ tab, click ‘Simba Spark ODBC Driver 64-bit’. <img src="../images/databricks-software-centre.png" class="img-fluid"></p></li>
+<li><p>Click install.</p></li>
+</ol></li>
+<li><p>Get connection details for the SQL Warehouse from Databricks. To set up the connection you will need a few details from a SQL Warehouse within DataBricks.</p>
+<ol type="i">
+<li><p>Login to <a href="https://adb-6882499576863257.17.azuredatabricks.net/?o=6882499576863257" target="_blank">Databricks</a></p></li>
+<li><p>Click on the ‘SQL Warehouses’ tab in the sidebar. <img src="../images/databricks-SQL-warehouses.png" class="img-fluid"></p></li>
+<li><p>Click on the name of the warehouse you want to connect to, and click the ‘connection details’ tab.</p></li>
+<li><p>Make a note of the ‘Server hostname’, ‘Port’, and ‘HTTP Path’.</p></li>
+</ol></li>
+<li><p>Get a personal access token from Databricks for authentication.</p>
+<ol type="i">
+<li><p>In Databricks, click on your email address in the top right corner, then click ‘User settings’.</p></li>
+<li><p>Go to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button. <img src="../images/databricks-access-tokens.png" class="img-fluid"></p></li>
+<li><p>Click the ‘Generate new token’ button.</p></li>
+<li><p>Name the token, then click ‘Generate’. <em>Note that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate.</em></p></li>
+<li><p>Make a note of the ‘Databricks access token’ it has given you. <strong>It is important to copy this somewhere as you will not be able to see it through Databricks again.</strong></p></li>
+</ol></li>
+<li><p>Setup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.</p>
+<ol type="i">
+<li><p>In the start menu, search ‘ODBC’ and open ‘ODBC Data Sources (64-bit)’.</p></li>
+<li><p>On the ‘User DSN’ tab click the ‘Add…’ button.</p></li>
+<li><p>In the ‘Create New Data Source’ window, select ‘Simba Spark ODBC Driver’ and click ‘Finish’.</p></li>
+<li><p>In the ‘Simba Spark ODBC Driver DSN Setup’ window,</p>
+<ol type="a">
+<li>Enter a ‘Data Source Name’ and ‘Description’. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio. <em>As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.</em></li>
+<li>Set the remaning options to the settings below.
+<ul>
+<li>Enter the ‘Server Hostname’ for your cluster in the ‘Host(s):’ field (you noted this down in step 2).</li>
+<li>Enter the word ‘token’ into the ‘User Name:’ field, then enter your ‘Databricks access token’ in the ‘Password:’ field.</li>
+<li>Click the ‘HTTP Options…’ button and enter the ‘HTTP Path’ of your Databricks cluster, then click ‘Okay’.</li>
+<li>Click the ‘SSL Options…’ button and tick the ‘Enable SSL’ box, then click the ‘OK’ button.</li>
+<li><img src="../images/odbc-driver-settings.png" class="img-fluid"></li>
+</ul></li>
+<li>Click the ‘Test’ button to verify the connection has worked. You should see the following message. <em>If you get an error here, repeat steps 5.e.i – 5.e.ix again and ensure all the values are correct.</em></li>
+</ol>
+<p><img src="../images/databricks-test-connection.png" class="img-fluid"></p>
+<ol start="4" type="a">
+<li>Click the ‘OK’ button to exist the ‘Test Results’ window, then the ‘OK’ button in the ‘Simba Spark ODBC Driver DSN Setup’ window.</li>
+</ol></li>
+</ol></li>
+<li><p>Connect through RStudio. Now the connection between our laptop and Databricks works we can use it to query data stored in Databricks from RStudio.</p>
+<ol type="i">
+<li><p>Open RStudio, install the ‘RODBC’ package and load the ‘RODBC’ library.</p></li>
+<li><p>Create a connection variable by passing the ‘Data Source Name’ you gave to your ODBC connection to the odbcConnect() function. <code>conn &lt;- obbcConnect("DatabricksSQL Warehouse")</code></p></li>
+</ol></li>
+<li><p>Query Data. You can now use your connection variable to send SQL queries to Databricks.</p>
+<ol type="i">
+<li>Use the <code>sqlQuery()</code> function with the connection variable to see what data catalogues are available on DataBricks <em>Databricks uses the American spelling of ‘catalog’.</em> <img src="../images/databricks-catalogs-rstudio.png" class="img-fluid"></li>
+<li>Use the <code>sqlQuery(conn, "USE CATALOG preprod_catalog_p02")</code> command to tell Databricks which catalogue to use. <em>Ensure that you have the correct permissions for the catalogue first. If you don’t you will need to contact the ADA team.</em></li>
+<li>You can now send SQL queries like you would using any other database. To see information about all the tables you have access to you can query the INFORMATION_SCHEMA using the <code>"SELECT * FROM INFORMATION_SCHEMA.TABLES"</code> query like so;</li>
+</ol>
+<pre><code>tables &lt;- sqlQuery(con, "SELECT * FROM INFORMATION_SCHEMA.TABLES")
+View(tables)</code></pre></li>
+</ol>
 
 
-</section>
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -960,14 +839,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../RAP/rap-support.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">RAP support</span>
+      <a href="../ADA/ada.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Analytical Data Access (ADA) and databricks</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../RAP/rap-statistics.html" class="pagination-link">
-        <span class="nav-page-text">RAP for Statistics</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

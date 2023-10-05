@@ -351,8 +351,27 @@ cookieconsent.run({
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">ADA and databricks</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">ADA and Databricks</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analytical Data Access (ADA) and databricks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup Databricks with RStudio</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -398,6 +417,7 @@ cookieconsent.run({
   <li><a href="#cant-find-make-error" id="toc-cant-find-make-error" class="nav-link" data-scroll-target="#cant-find-make-error">Can’t find make error</a></li>
   <li><a href="#packages-not-downloading-due-to-wininet-error-renv-0.17" id="toc-packages-not-downloading-due-to-wininet-error-renv-0.17" class="nav-link" data-scroll-target="#packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</a></li>
   </ul></li>
+  <li><a href="#using-r-with-ada-databricks" id="toc-using-r-with-ada-databricks" class="nav-link" data-scroll-target="#using-r-with-ada-databricks">Using R with ADA / Databricks</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/learning-development/r.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -932,9 +952,14 @@ SET NOCOUNT ON;</code></pre>
 <p><code>echo 'RENV_DOWNLOAD_METHOD = "curl")' &gt;&gt; ~/.Renviron</code></p>
 <p>Then restart R-Studio and downloads with renv should now succeed.</p>
 <hr>
-
-
 </section>
+</section>
+<section id="using-r-with-ada-databricks" class="level2">
+<h2 class="anchored" data-anchor-id="using-r-with-ada-databricks">Using R with ADA / Databricks</h2>
+<p>See our <a href="../ADA/databricks_rstudio.html">guidance on how to connect to Databricks from R Studio</a></p>
+<p>You can also view example R code using the <a href="../ADA/ada.html#databricks-code-templates">Databricks code template notebooks</a></p>
+
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
