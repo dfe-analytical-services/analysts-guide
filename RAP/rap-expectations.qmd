@@ -12,7 +12,7 @@ title: "RAP expectations"
 
 As government analysts working with statistics, we are required to ensure that our analysis is reproducible, transparent, and robust, using coding and code management best practices (source [GSG competency framework](https://analysisfunction.civilservice.gov.uk/policy-store/competency-framework-for-the-government-statistician-group-gsg/)). Reproducible Analytical Pipelines (RAP) are a cross-government requirement to help analysts adopt best practices.
 
-We expect any analyst working in statistics production to know and be able to implement RAP principles, using the recommended tools to meet at least good and great practice. You can see examples of good, great, and best practice on our [RAP in statistics guidance page](../RAP/rap-statistics.html).
+We expect any analyst to know and be able to implement RAP principles, using the recommended tools to meet at least good and great practice. You can see examples of good, great, and best practice on our [RAP in statistics guidance page](../RAP/rap-statistics.html).
 
 We expect managers of analysts working in statistics production to support and prioritise the development required to build the skills needed to implement RAP using the recommended tools. Managers should ensure that the processes for any publications they own meet at least good and great practice.
 

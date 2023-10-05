@@ -111,6 +111,7 @@ format:
       light: slate
       dark: united
     code-copy: true
+    highlight-style: printing
     code-overflow: wrap
     toc: true
 

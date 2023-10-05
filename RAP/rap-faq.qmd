@@ -169,7 +169,7 @@ This is a misconception of our guidance that we will be clarifying and improving
 
 We're not suggesting all code lives in a single script. These steps in the RAP guidance are to encourage the repository being structured so that one click of a button can run the entire process from the source data through to the final output in order.
 
-This means that you should have one 'centralized' script that details all of the different scripts in your repository. This single run script then provides a single reference point for where all of your code and scripts live, and in what order they're executed, which is a fantastic piece documentation to have!
+This means that you should have one 'centralized' script that details all of the different scripts in your repository. This single run script then provides a single reference point for where all of your code and scripts live, and in what order they're executed, which is a fantastic piece of documentation to have!
 
 ---
 
@@ -213,7 +213,7 @@ Questions learning more about RAP and developing skills.
 
 Absolutely. Currently the best way to do this is to ask other teams to share code directly with you. If we can all make more progress with using Git, then this will make it much easier to share repositories and have code open by default for interested analysts to browse.
 
-We run a regular RAP Knowledge Share series in which we share good practice and examples of work. We record each session so that you can refer back to them at a later date if you want to. Previous recordings can be found on [Sharepoint](https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series). Upcoming sessions are advertised on the DfE analysts network mailing list.
+We run a regular RAP Knowledge Share series in which we share good practice and examples of work. We record each session so that you can refer back to them at a later date if you want to. Previous recordings can be found in our [RAP knowledge share Sharepoint folder](https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series). Upcoming sessions are advertised on the DfE analysts network mailing list.
 
 We'd also encourage analysts to make more use of the RAP Community channel in the DfE Analyst Network Teams group to post questions and ask about other people doing similar types of analysis, no question is too big or too small!
 
