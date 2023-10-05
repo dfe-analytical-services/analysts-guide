@@ -185,6 +185,32 @@ Publication details can be [managed by publication owners](#managing-publication
 
 ---
 
+### Publication summaries
+
+---
+
+Publication summaries are a key tool in helping users find the statistics that they're looking for. We use them on gov.uk pages and in the EES find statistics page.
+
+Like on gov.uk, you only have 181 characters – to make sure you are fully utilising these, have a look through the following advice:
+
+- Use plain language to use terms and phrases that users are likely to use e.g. gender pay gap versus Annual Survey of Hours and Earnings.
+
+- Is it clear what the geographical coverage of this publication is e.g. England?
+
+- Is it clear how frequently the releases are published?
+
+- Is it clear what breakdowns you cover? E.g. Ethnicity, Gender, SEN?
+
+- Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g. Free School Meals (FSM)
+
+- Avoid phrases like "This release covers" as this wastes characters and delays users getting to the main information.
+
+- Have you looked at the EES analytics to see what users key search terms on your publication are? Are key words front loaded In your summary?
+
+- Don’t waste space on including definitions of a topic within the summary.
+
+---
+
 ## Admin dashboard
 
 

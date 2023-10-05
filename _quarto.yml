@@ -88,13 +88,14 @@ website:
           - statistics-production/pub.qmd
           - statistics-production/ud.qmd
           - statistics-production/ees.qmd
+          - statistics-production/scrums.qmd
           - statistics-production/embedded-charts.qmd
           - statistics-production/examples.qmd
           - statistics-production/user-eng.qmd
           - statistics-production/user-analytics.qmd
       - section: "Writing and visualising"
         contents:
-          - writing-visualising/cd.qmd
+          - writing-visualising/visualising.qmd
           - writing-visualising/dashboards.qmd
       - section: "Reproducible Analytical Pipelines (RAP)"
         contents: 

@@ -11,133 +11,17 @@ title: "Writing and visualising"
 
 ---
 
-DfE publishes over 60 distinct Official Statistics collections each year, as well as numerous experimental and ad-hoc releases.
 
-The layout, structure, and length of these releases vary significantly across the Department - making it confusing and hard to navigate across releases.
 
-When writing content to a general audience, statisticians must explain the answers in words that the audience can understand.
 
-Migration to a new statistics dissemination platform - Explore Education Statistics (EES) - presents an opportunity for publications to be reviewed and for the way this is communicated to be more consistent and accessible.
 
-Teams should continually improve their publications, assessing against best practice using our [content checklist](#checklist).
 
-All of our publications should be designed around our users first and foremost, and you should consider this page in conjuction with any [user engagement](../understanding-users/user-eng.html) activities you are carrying out.
 
-We are running publication scrums where teams can put forward their publication(s) for review by a group of volunteer analysts, providing feedback as ‘unfamiliar new readers’ to discuss ideas for further improvements. For more information, see the [publication scrums](#publication-scrums) section.
+
 
 
 ---
 
-# Checklist
-
----
-
-The guidance on content design is in the form of a handy checklist, co-produced with local statisticians, and supported by the [Good Practice Team](https://gss.civilservice.gov.uk/the-good-practice-team-gpt/#:~:text=The%20Good%20Practice%20Team%20(GPT)%20is%20here%20to%20help%20the,for%20National%20Statistics%20(ONS)){target="_blank" rel="noopener noreferrer"}. This builds on ONS’s Best Practice guidance on [Data Visualisation](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/){target="_blank" rel="noopener noreferrer"} and [Writing about Statistics](https://gss.civilservice.gov.uk/policy-store/writing-about-statistics-2/){target="_blank" rel="noopener noreferrer"}.
-
-The content checklist is for teams to use throughout their project cycle, so that good content design is at the heart of what they deliver at all stages, rather than considered late in the process - [Content design checklist (.xlsx)](../resources/Content_Design_Logbook.xlsx).
-
-There is also a dashboards version of the content design checklist, that runs through a number of things to think about when developing dashboards to compliment official statistics - [Dashboards checklist (.xlsx)](../resources/Content_Design_Logbook_Dashboards.xlsx).
-
----
-
-# Publication summaries
-
----
-
-Publication summaries are a key tool in helping users find the statistics that they're looking for. We use them on gov.uk pages and in the EES find statistics page.
-
-Like on gov.uk, you only have 181 characters – to make sure you are fully utilising these, have a look through the following advice:
-
-- Use plain language to use terms and phrases that users are likely to use e.g. gender pay gap versus Annual Survey of Hours and Earnings.
-
-- Is it clear what the geographical coverage of this publication is e.g. England?
-
-- Is it clear how frequently the releases are published?
-
-- Is it clear what breakdowns you cover? E.g. Ethnicity, Gender, SEN?
-
-- Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g. Free School Meals (FSM)
-
-- Avoid phrases like "This release covers" as this wastes characters and delays users getting to the main information.
-
-- Have you looked at the EES analytics to see what users key search terms on your publication are? Are key words front loaded In your summary?
-
-- Don’t waste space on including definitions of a topic within the summary.
-
----
-
-<!--
----
-
-## Aims of Guidance and Checklist
-
----
-
-1. **Encourage people to follow agreed best practice**. We want to co-produce with statistics producers an agreed set of best practice principles using a range of existing resources.
-
-2. **Help people tell the statistical story**. It is our responsibility, as experts, to describe the patterns and trends in our statistics objectively in a way that is clearly and easy to understand to a range of audiences. It is our role to give insight and show users what the numbers mean and convey the important messages appropriately.
-
-3. **Improve consistency across DfE**. Developing best practice standards and adhering to those standards will promote quality products that users will find useful.
-
-4. **Statistical Commentary**. This section is where your numbers come to life, it’s more than a simple description of the data, but a chance to help users understand the meaning of patterns, trends and limitations, and build on any factual and public information already known about the subject matter.
-
-5. **Data visualisation**. To support points 2 to 4 above we need to maximise the use of tools to aid storytelling and provide a visual context for our users.
-
----
-
-## Aiming for Best Practice
-
----
-
-Through the aid of this guidance we want producers of official statistics to be aiming for Best Practice. However, it is important to be realistic about what can be achieved with the tools we have available and identifying where the gaps are whilst finding solutions to make the necessary improvements. This check list should help teams identify what more could be done to take them to achieve Best Practice. The Central Statistics and Standards Unit will be on hand to help with this process.
-
-Further information on each point can be obtained from the [GSS writing about Statistics: Guide for Producers](https://gss.civilservice.gov.uk/policy-store/writing-about-statistics-2/#page){target="_blank" rel="noopener noreferrer"}.
-
----
-
-## Writing about Statistics
-
----
-
-People who write about statistics should seek to conduct a coherent statistical inquiry about the relationship between the concepts under study. When communicating this to a general audience, statisticians must explain the answers in words that the audience can understand. Unfortunately, few courses teach how to write a clear narrative linking numeric evidence to substantive questions, or how to present statistics in words that non-statisticians can comprehend easily. This can leave general audiences struggling to understand what questions those numbers are intended to answer or what conclusions they support. Below are some high-level questions/statements that producers of statistics can ask themselves to help write engaging and clear narrative:
-
-<br>
-
-1. **Start with a blank canvas and decide what you are going to talk about**
-      a. If you were briefing someone senior on the statistics, which statistics would you highlight?
-      b. What are the messages that will pull in the reader?
-      c. Do you know who your users are and what they need (not want)?
-
-<br>
-
-2. **What are you going to say about the story - have you highlighted the key trends, big changes and explained them where appropriate, whilst using numbers in text sparingly?**
-      a. **Interpretation** – why is it happening? Why are we seeing these changes? Is the series we’re looking at influenced by another factor
-      b. **Context** – why is it interesting? Help the audience understand whether the numbers you’re describing are big/small, good/bad etc. Where possible place new figures in the context of longer-term trends; relevant policies or targets; international comparisons; any key limitations etc.
-      c. Don’t treat it as an update to a previous iteration
-
-<br>
-
-3. **How are you going to tell the story– it should be concise, focus on the most interesting points and be intelligible for a lay reader?**
-      a. Reading is hard, we want users to be able to find and reuse our lines.
-      b. **Headlines** – aim for 3-4 headline bullets summarising the key points from your release. Follow a 30second rule
-      c. **Length** – aim for no more than 10 pages. Shorter publications are easier to read, write and QA. Follow a 10-minute rule – if it takes longer than that to read through the report then it’s unlikely that anyone will.
-      d. **Sections** – aim for no more than 10, each focussed on a few key messages, ideally no more than one page in length
-      e. **Structure** – use structure to tell a logical and consistent story
-      f. **Methodology** – be upfront about important caveats but the majority of explanatory or technical content and detailed definitions can be moved to supporting documentation. Where necessary, explain rather than define key concepts
-      g. **Charts** –At a high level, try to keep charts as simple as possible. Follow a 10 second rule – if it takes longer than this to intuitively understand the key messages, something has gone wrong in design.
-      h. **Concision** - Use as few words as possible Be brief, clear, and concise.
-      i. **Short words** – use short, easy ‘plain English’ words people already know. Avoid jargon that needs to be translated by journalists.
-      j. **Short sentences** – aim for an average of 12-15 words per sentence. Avoid parentheses as far as possible.
-      k. **Short paragraphs** - avoid large blocks of text, they are very hard to read and users end up scanning text and missing detail.
-      l. **Tone** - Use active voice
-      m. **Balance accuracy and clarity** – from GSS guidance - Users will understand that even with a well understood term like “unemployment” there are detailed classificatory decisions taken. These do not need to be spelt out in the main messages.
-
-<br>
-
-4. **Check what you have written**
-      a. Look over your work
-      b. Get others who do not know subject area to review (within pre-release access rules)
-!-->
 
 
 # Key Messages

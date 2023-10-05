@@ -49,6 +49,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Using EES](statistics-production/ees.html)
 - How to use the features in Explore Education Statistics
 
+[Publication scrums](statistics-production/scrums.html)
+- Information on the scrums we run and tips for writing statistical commentary
+
 [Good examples in EES](statistics-production/examples.html)
 - Examples of good practice in Explore Education Statistics
 
@@ -61,13 +64,10 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [EES analytics](statistics-production/user_analytics.html)
 - Understanding how users are interacting with your publications
 
-## Writing and visualising data
+## Visualising data
 
 [Public dashboards](writing-visualising/dashboards.html)
 - Guidance for publishing public facing statistics dashboards
-
-[Writing about statistics](writing-visualising/cd.html)
-- Things to consider when writing about statistics and data
 
 [Visualising data](writing-visualising/visualising.html)
 - Resources and best practice to guide you when visualising data [NEW PAGE]

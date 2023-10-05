@@ -1,0 +1,33 @@
+---
+title: "Publication scrums"
+---
+
+<p class="text-muted">Things to consider when writing statistics publications</p>
+
+
+---
+
+# Introduction
+
+---
+
+Teams should continually improve their publications, assessing against best practice using our [content checklist](#checklist).
+
+All of our publications should be designed around our users first and foremost, and you should consider this page in conjuction with any [user engagement](../understanding-users/user-eng.html) activities you are carrying out.
+
+---
+
+## Get involved
+
+We are running publication scrums where teams can put forward their publication(s) for review by a group of volunteer analysts, providing feedback as ‘unfamiliar new readers’ to discuss ideas for further improvements.
+
+---
+
+## Checklist
+
+
+The guidance on content design is in the form of a handy checklist, co-produced with local statisticians, and supported by the [Good Practice Team](https://gss.civilservice.gov.uk/the-good-practice-team-gpt/#:~:text=The%20Good%20Practice%20Team%20(GPT)%20is%20here%20to%20help%20the,for%20National%20Statistics%20(ONS)){target="_blank" rel="noopener noreferrer"}. This builds on ONS’s Best Practice guidance on [Data Visualisation](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/){target="_blank" rel="noopener noreferrer"} and [Writing about Statistics](https://gss.civilservice.gov.uk/policy-store/writing-about-statistics-2/){target="_blank" rel="noopener noreferrer"}.
+
+The content checklist is for teams to use throughout their project cycle, so that good content design is at the heart of what they deliver at all stages, rather than considered late in the process - [Content design checklist (.xlsx)](../resources/Content_Design_Logbook.xlsx).
+
+There is also a dashboards version of the content design checklist, that runs through a number of things to think about when developing dashboards to compliment official statistics - [Dashboards checklist (.xlsx)](../resources/Content_Design_Logbook_Dashboards.xlsx).
