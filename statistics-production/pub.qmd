@@ -187,6 +187,6 @@ Before you publish a release you should have:
 
 Dashboards built to meet a particular user need can be another helpful tool to help users access and understand your data, and can be hosted outside of EES or gov.uk.
 
-Guidance to follow when creating and publishing dashboards is available via the [dashboards](dashboards.html) page.
+Guidance to follow when creating and publishing dashboards is available via the [dashboards](../writing-visualising/dashboards.html) page.
 
 ---
