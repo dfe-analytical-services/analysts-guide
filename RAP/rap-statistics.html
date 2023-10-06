@@ -485,7 +485,7 @@ cookieconsent.run({
   <li><a href="#review-of-code-within-team" id="toc-review-of-code-within-team" class="nav-link" data-scroll-target="#review-of-code-within-team">Review of code within team</a></li>
   <li><a href="#review-of-code-from-outside-the-team" id="toc-review-of-code-from-outside-the-team" class="nav-link" data-scroll-target="#review-of-code-from-outside-the-team">Review of code from outside the team</a></li>
   </ul></li>
-  <li><a href="#automated-quality-assurance" id="toc-automated-quality-assurance" class="nav-link" data-scroll-target="#automated-quality-assurance">Automated quality assurance</a>
+  <li><a href="#automated-quality-assurance-qa" id="toc-automated-quality-assurance-qa" class="nav-link" data-scroll-target="#automated-quality-assurance-qa">Automated quality assurance (QA)</a>
   <ul class="collapse">
   <li><a href="#basic-automated-qa" id="toc-basic-automated-qa" class="nav-link" data-scroll-target="#basic-automated-qa">Basic automated QA</a></li>
   <li><a href="#publication-specific-automated-qa" id="toc-publication-specific-automated-qa" class="nav-link" data-scroll-target="#publication-specific-automated-qa">Publication specific automated QA</a></li>
@@ -582,7 +582,7 @@ Guidance for how to implement the principles of Reproducible Analytical Pipeline
 <section id="rap-in-practice" class="level1">
 <h1>RAP in practice</h1>
 <hr>
-<p>The diagram below highlights what RAP means for us, and the varying levels in which it can be applied. The expectation is that all publications will meet the department’s baseline implementation of RAP in the self-assessment tool. It’s worth acknowledging that some teams are already working around great and best practice levels, and that we appreciate every team’s situation is unique, our guidance is designed to be applicable across all official statistcs publications by DfE.</p>
+<p>The diagram below highlights what RAP means for us, and the varying levels in which it can be applied in all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice. The expectation is that all publications will meet the department’s baseline implementation of RAP in the self-assessment tool. It’s worth acknowledging that some teams are already working around great and best practice levels, and that we appreciate every team’s situation is unique, our guidance is designed to be applicable across all official statistics publications by DfE.</p>
 
 
 <title>
@@ -617,15 +617,13 @@ hex-diagram
 </section>
 <section id="where-we-need-to-focus" class="level2">
 <h2 class="anchored" data-anchor-id="where-we-need-to-focus">Where we need to focus</h2>
-<p>Most teams have already made progress with their production of tidy data files, and the release of the automated screener has now tied up that end point of the pipeline that we are all currently working towards. The standard pipeline for all teams will roughly resemble this:</p>
-<div class="cell-output-display">
-<p><img src="../images/RAP-Process-Overview.png" class="img-fluid"></p>
-</div>
+<p>Most teams have already made progress with their production of tidy data files, and the release of the automated screener has now tied up that end point of the pipeline that we are all currently working towards.</p>
 <p>The key now is for us to build on the work so far and focus on how we improve the quality and efficiency of our production processes up to that point. To do this, we need to make a concerted effort to standardise how we store and access our data, before then automating what we can to reduce the burden of getting the numbers ready and see the benefits of RAP. The exact meaning of this will vary within teams.</p>
 <hr>
 </section>
 <section id="how-to-get-started" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-get-started">How to get started</h2>
+<p>Check your analysis against the Good, Great and Best practice standards under <a href="../RAP/rap-statistics.html#rap-in-practice">RAP in practice</a>.</p>
 <p>Measure your publication against the RAP levels using our <a href="https://rsconnect/rsc/publication-self-assessment/" target="_blank" rel="noopener noreferrer">self assessment tool</a>. This will give you a good starting point and initial points to work on to progress to the next level of RAP.</p>
 <p>Once you’ve assessed your publication, have a look through our guidance below to narrow down how you can get started with improving those parts of your process.</p>
 <p>The Statistics Development Team invites teams to take part in our partnership programme to develop their skills and implement RAP principles to a relevant project. Visit our page on <a href="../learning-development/learning-development.html#Support_available">getting started with the partnership programme</a> for more details.</p>
@@ -635,7 +633,7 @@ hex-diagram
 <section id="preparing-data" class="level1">
 <h1>Preparing data</h1>
 <hr>
-<p>The first place to start for your teams RAP is to store the raw data you use to create underlying data in a Microsoft SQL Server database. This is similar to a sharepoint area or a shared folder, but it’s a dedicated data storage area which allows multiple users to use the same file at once, and for you to run code against the data in one place.</p>
+<p>The first place to start for your teams RAP is to store the raw data you use to create underlying data in a Microsoft SQL Server database. This is similar to a Sharepoint area or a shared folder, but it’s a dedicated data storage area which allows multiple users to use the same file at once, and for you to run code against the data in one place.</p>
 <hr>
 <section id="all-source-data-stored-in-a-database" class="level2">
 <h2 class="anchored" data-anchor-id="all-source-data-stored-in-a-database">All source data stored in a database</h2>
@@ -663,33 +661,34 @@ hex-diagram
 <h3 class="anchored" data-anchor-id="moving-data-to-different-areas">Moving data to different areas</h3>
 <hr>
 <p>If your data is already in SQL, you can use this snippet of R code to move tables from one area (e.g.&nbsp;the iStore) to another (e.g.&nbsp;your team’s modelling area) to ensure all data are stored in a database.</p>
-<pre><code>library(odbc)
-library(dplyr)
-library(dbplyr)
-library(DBI)
-
-# Step 1.1.: Connect to source server -------------------------------------------
-con_source &lt;- dbConnect(odbc(),
-                     Driver = "SQL Server Native Client 11.0",
-                     Server = "Name_of_source_server",
-                     Database = "Source_database",
-                     Trusted_Connection = "yes"
-)
-
-# Step 1.2.: Connect to target server
-con_target &lt;- dbConnect(odbc(),
-                        Driver = "SQL Server Native Client 11.0",
-                        Server = "Name_of_target_server",
-                        Database = "Your_target_database",
-                        Trusted_Connection = "yes"
-)
-
-# Step 2.1.: Pull the table from the source database
-table_for_transfer &lt;- tbl(con_source,in_schema("schema_name", "table_name")) %&gt;% collect()
-
-# Step 2.2.: Copy table into target database 
-dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfer)
-</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1.1.: Connect to source server -------------------------------------------</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>con_source <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">odbc</span>(),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Driver =</span> <span class="st">"SQL Server Native Client 11.0"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Server =</span> <span class="st">"Name_of_source_server"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Database =</span> <span class="st">"Source_database"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Trusted_Connection =</span> <span class="st">"yes"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1.2.: Connect to target server</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>con_target <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">odbc</span>(),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Driver =</span> <span class="st">"SQL Server Native Client 11.0"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Server =</span> <span class="st">"Name_of_target_server"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Database =</span> <span class="st">"Your_target_database"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Trusted_Connection =</span> <span class="st">"yes"</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2.1.: Pull the table from the source database</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>table_for_transfer <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con_source,<span class="fu">in_schema</span>(<span class="st">"schema_name"</span>, <span class="st">"table_name"</span>)) <span class="sc">%&gt;%</span> <span class="fu">collect</span>()</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2.2.: Copy table into target database </span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con_target,<span class="st">"whatever_you_want_to_call_new_table"</span>, table_for_transfer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <hr>
 </section>
 <section id="importing-data-to-sql-server" class="level3">
@@ -720,7 +719,9 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 </div>
 <p>This should take you to a new window which contains the raw data from the CSV file. Copy the URL from this page, as this is what we can use to pull the latest data into our code.</p>
 <p>You can now use this URL as you would use a file path in a <code>read.csv()</code> query. For example;</p>
-<pre><code>devolved_area_lookup &lt;- read.csv("https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/master/data/english_devolved_areas.csv")</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devolved_area_lookup <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/master/data/english_devolved_areas.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>The above code snippet will load in the data as it would with any other CSV, however the benefit is if that data file is updated on GitHub, when you run the code it will always pull the latest version. This is especially useful for look up tables and reference data, and is best RAP practice as it removed the need for any manual steps (like downloading, copying &amp; pasting or manually updating the data/code)!</p>
 <hr>
 </section>
@@ -759,7 +760,7 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 <p><a href="https://vimeo.com/33727555" target="_blank" rel="noopener noreferrer">Here is a video</a> of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at <a href="https://www.youtube.com/watch?v=1ELALQlO-yM" target="_blank" rel="noopener noreferrer">applied data tidying in R, by RStudio</a>.</p>
 <p>Using the <code>%&gt;%</code> pipe in R can be incredibly powerful, and make your code much easier to follow, as well as more efficient. If you aren’t yet familiar with this, have a look at <a href="https://seananderson.ca/2014/09/13/dplyr-intro/" target="_blank" rel="noopener noreferrer">this article</a> that provides a useful beginners guide to piping and the kinds of functions you can use it for. The possibilities stretch about as far as your imagination, and if you have a function or task you want to do within a pipe, googling ‘how do I do X in dplyr r’ will usually start to point you in the right direction, alternatively you can <a href="mailto:statistics.development@education.gov.uk">contact us</a>, and we’ll be happy to help you figure out how to do what you need.</p>
 <p>A quick example of how powerful this is is below, where my_data is processed to create new columns, have column names renamed, have the column names tidied using the <a href="https://garthtarr.github.io/meatR/janitor.html" target="_blank" rel="noopener noreferrer">janitor</a> package, blank rows and columns removed, data filtered to only include specific geographic levels, and rows rearranged in order, all in a few lines of easy to follow code:</p>
-<div class="cell">
+<div class="cell" style="background-color: #f7fdfa">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>processed_regional_data <span class="ot">&lt;-</span> my_data <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">newPercentageColumn =</span> (numberColumn <span class="sc">/</span> totalPopulationColumn) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">newPercentageColumn =</span> percentageRate,</span>
@@ -868,7 +869,7 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 <li>Are there any fixed variables that are prone to changing such as geographic boundaries, that you could start preparing for changes now by making it easy to adapt in future?</li>
 </ul>
 <p>For example, if you refer to the year of publication in your code a lot, consider replacing every instance with a named variable, which you only need to change once at the start of your code. In the example below, the year is set at the top of the code, and is used to define “prev_year”, both of which are used further down the code to filter the data based on year.</p>
-<div class="cell">
+<div class="cell" style="background-color: #f7fdfa">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>this_year <span class="ot">&lt;-</span> <span class="dv">2020</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>prev_year <span class="ot">&lt;-</span> this_year <span class="sc">-</span> <span class="dv">1</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -931,7 +932,7 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 <section id="html" class="level4">
 <h4 class="anchored" data-anchor-id="html">HTML</h4>
 <hr>
-<p>If you ever find yourself writing html, or creating it through rmarkdown, you can check your html using <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">w3’s validator</a>.</p>
+<p>If you ever find yourself writing HTML, or creating it through RMarkdown, you can check your HTML using <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3’s validator</a>.</p>
 <hr>
 </section>
 </section>
@@ -990,18 +991,21 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 <hr>
 <p>Peer reviewing code and not sure where to start? Improving code performance can be a great quick-win for many production teams. There will be cases where code you are reviewing does things in a slightly different way to how you would: profiling the R code with the microbenchmark package is a way to objectively figure out which method is more efficient.</p>
 <p>For example below, we are testing out case_when, if_else and ifelse.</p>
-<pre><code>microbenchmark::microbenchmark( 
-   case_when(1:1000 &lt; 3 ~ "low", TRUE ~ "high"), 
-   if_else(1:1000 &lt; 3, "low", "high"),
-   ifelse(1:1000 &lt; 3, "low", "high") 
-)</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>( </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">case_when</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"low"</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"high"</span>), </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">if_else</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ifelse</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>) </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Running the code outputs a table in the R console, giving profile stats for each expression. Here, it is clear that on average, if_else() is the fastest function for the job.</p>
-<pre><code>Unit: microseconds
-                                         expr     min       lq     mean   median       uq      max neval
- case_when(1:1000 &lt; 3 ~ "low", TRUE ~ "high") 167.901 206.2510 372.7321 300.2515 420.1005 4187.001   100
-           if_else(1:1000 &lt; 3, "low", "high")  55.301  74.0010 125.8741 103.7015 138.3010  538.201   100
-            ifelse(1:1000 &lt; 3, "low", "high") 266.200 339.4505 466.7650 399.7010 637.6010  851.502   100
-</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Unit<span class="sc">:</span> microseconds</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                                         expr     min       lq     mean   median       uq      max neval</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">case_when</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"low"</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"high"</span>) <span class="fl">167.901</span> <span class="fl">206.2510</span> <span class="fl">372.7321</span> <span class="fl">300.2515</span> <span class="fl">420.1005</span> <span class="fl">4187.001</span>   <span class="dv">100</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">if_else</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>)  <span class="fl">55.301</span>  <span class="fl">74.0010</span> <span class="fl">125.8741</span> <span class="fl">103.7015</span> <span class="fl">138.3010</span>  <span class="fl">538.201</span>   <span class="dv">100</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">ifelse</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>) <span class="fl">266.200</span> <span class="fl">339.4505</span> <span class="fl">466.7650</span> <span class="fl">399.7010</span> <span class="fl">637.6010</span>  <span class="fl">851.502</span>   <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <hr>
 </section>
 </section>
@@ -1023,8 +1027,8 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 <hr>
 </section>
 </section>
-<section id="automated-quality-assurance" class="level2">
-<h2 class="anchored" data-anchor-id="automated-quality-assurance">Automated quality assurance</h2>
+<section id="automated-quality-assurance-qa" class="level2">
+<h2 class="anchored" data-anchor-id="automated-quality-assurance-qa">Automated quality assurance (QA)</h2>
 <p>Any data files that have been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability.</p>
 <p>Some teams are already making great progress with automated QA and realising the benefits of it. The Statistics Development Team are working with these to provide generalised code that teams can use as a starting point for automated QA. The intention is that teams can then run this as a minimum, before then looking to develop more area specific checks to the script and/or continue with current checking processes in tandem. If your team already use, or are working towards using, automated QA then get in touch as we’d be keen to see what you have.</p>
 <p>It is assumed that when using R, automated scripts will output .html reports that the team can read through to understand their data and identify any issues, and save as a part of their process documentation.</p>
@@ -1125,7 +1129,7 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 <section id="version-control" class="level1">
 <h1>Version control</h1>
 <hr>
-<p><em>When you assume you make an ‘ass’ out of ‘u’ and ‘me’</em>. Everyone knows this saying, yet few of us heed it’s warning.</p>
+<p><em>When you assume you make an ‘ass’ out of ‘u’ and ‘me’</em>. Everyone knows this saying, yet few of us heed its warning.</p>
 <p>The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.</p>
 <p>As we work with code to process our data more and more, we can begin to utilise version control software to make this process much easier, allowing simultaneous collaboration on files.</p>
 <hr>
@@ -1192,27 +1196,30 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 <h3 class="anchored" data-anchor-id="commenting-in-code">Commenting in code</h3>
 <hr>
 <p>When writing code, whether that is SQL, R, or something else, make sure you’re commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this:</p>
-<pre><code>----------------------------------------------------------------------------------------------
--- Script Name:     Section 251 Table A 2019 - s251_tA_2019.sql
--- Description:     Extraction of data from IStore and production of underlying data file
--- Author:          Cam Race
--- Creation Date:   15/11/2019
-----------------------------------------------------------------------------------------------
-
-----------------------------------------------------------------------------------------------
---//  Process
--- 1. Extract the data for each available year
--- 2. Match in extra geographical information
--- 3. Create aggregations - both categorical and geographical totals
--- 4. Tidy up and output results
--- 5. Metadata creation
-----------------------------------------------------------------------------------------------</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Script Name<span class="sc">:</span>     Section <span class="dv">251</span> Table A <span class="dv">2019</span> <span class="sc">-</span> s251_tA_2019.sql</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Description<span class="sc">:</span>     Extraction of data from IStore and production of underlying data file</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Author<span class="sc">:</span>          Cam Race</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Creation Date<span class="sc">:</span>   <span class="dv">15</span><span class="sc">/</span><span class="dv">11</span><span class="sc">/</span><span class="dv">2019</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span><span class="er">//</span>  Process</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">1.</span> Extract the data <span class="cf">for</span> each available year</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">2.</span> Match <span class="cf">in</span> extra geographical information</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">3.</span> Create aggregations <span class="sc">-</span> both categorical and geographical totals</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">4.</span> Tidy up and output results</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">5.</span> Metadata creation</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Commented lines should begin with – (SQL) or # (R), followed by one space and your comment. Remember that <strong>comments should explain the why, not the what.</strong></p>
 <p>In SQL you can also use <code>/**</code> and <code>**/</code> to bookend comments over multiple lines.</p>
 <p>In rmarkdown documents you can bookend comments by using <code>&lt;!--</code> and <code>--&gt;</code>.</p>
 <p>Use commented lines of - to break up your files into scannable chunks based upon the structure and subheadings, like the R example below:</p>
-<pre><code># Importing the data -----------------------------------------------------------------------------------
-</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the data -------------------------------------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Doing this can visually break up your code into sections that are easy to navigate around. It will also add that section to your outline, which can be used in RStudio using Ctrl-Shift-O. More details on the possibilities for this can be found in the <a href="https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections" target="_blank" rel="noopener noreferrer">RStudio guidance on folding and sectioning code</a>.</p>
 <p>You might be thinking that it would be nice if there was software that could help you with documentation, if so, read on, as Git is an incredibly powerful tool that can help us easily and thoroughly document versions of our files. If you’re at the stage where you are developing your own functions and packages in R, then take a look at <a href="https://roxygen2.r-lib.org/" target="_blank" rel="noopener noreferrer">roxygen2</a> as well.</p>
 <hr>
@@ -1240,7 +1247,7 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 <section id="version-control-with-git" class="level2">
 <h2 class="anchored" data-anchor-id="version-control-with-git">Version control with git</h2>
 <p>If you do not already have git downloaded, you can <a href="https://git-scm.com/downloads" target="_blank">download the latest version from their website</a>.</p>
-<p>For now, take a look at at the <a href="../learning-development/learning-development.html#git">resources for learning Git</a> on the learning resources page.</p>
+<p>For now, take a look at at the <a href="../learning-development/learning-development.html#git">resources for learning git</a> on the learning resources page.</p>
 <hr>
 <section id="version-controlled-final-code-scripts" class="level3">
 <h3 class="anchored" data-anchor-id="version-controlled-final-code-scripts">Version controlled final code scripts</h3>
@@ -1249,7 +1256,7 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 <p><img src="../images/great.svg" class="img-fluid"></p>
 </div>
 <p><strong>What does this mean?</strong></p>
-<p>This means having the final copies of code and documentation saved in a git-controlled Azure DevOps repo in the official-statistics-production area.</p>
+<p>This means having the final copies of code and documentation saved in a git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available.</p>
 <p><strong>Why do it?</strong></p>
 <p>Having the final copy of the scripts version controlled gives assurance around how the data was created. It also allows teams to easily record any last minute changes to the code after the initial final version by using the version control to log this.</p>
 <p><strong>How to get started</strong></p>

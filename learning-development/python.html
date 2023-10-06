@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -402,9 +436,13 @@ cookieconsent.run({
    
   <ul>
   <li><a href="#what-is-python" id="toc-what-is-python" class="nav-link active" data-scroll-target="#what-is-python">What is Python</a></li>
-  <li><a href="#what-is-python-for" id="toc-what-is-python-for" class="nav-link" data-scroll-target="#what-is-python-for">What is Python for</a></li>
   <li><a href="#how-to-install-python" id="toc-how-to-install-python" class="nav-link" data-scroll-target="#how-to-install-python">How to install Python</a></li>
   <li><a href="#best-places-to-start" id="toc-best-places-to-start" class="nav-link" data-scroll-target="#best-places-to-start">Best places to start</a></li>
+  <li><a href="#best-practice" id="toc-best-practice" class="nav-link" data-scroll-target="#best-practice">Best practice</a></li>
+  <li><a href="#how-to-work-with-python" id="toc-how-to-work-with-python" class="nav-link" data-scroll-target="#how-to-work-with-python">How to work with Python</a>
+  <ul class="collapse">
+  <li><a href="#libraries-and-packages" id="toc-libraries-and-packages" class="nav-link" data-scroll-target="#libraries-and-packages">Libraries and packages</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/learning-development/python.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -434,12 +472,7 @@ Guidance and tips for using Python
 <hr>
 <section id="what-is-python" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-python">What is Python</h2>
-<p>It is a version control software. It is by far the best of its kind and is widely used by software developers and data scientists.</p>
-<hr>
-</section>
-<section id="what-is-python-for" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-python-for">What is Python for</h2>
-<p>Python is a high-level, general-purpose programming language that is designed to be easily readible.</p>
+<p>Python is a high-level, general-purpose programming language. It has a number of uses, some of which are statistical analysis and data visualisation. Python code has a strong emphasis on readability and formatting. Although the majority of analysts in DfE tend to use R or SQL, Python is also available as an option.</p>
 <hr>
 </section>
 <section id="how-to-install-python" class="level2">
@@ -448,10 +481,40 @@ Guidance and tips for using Python
 </section>
 <section id="best-places-to-start" class="level2">
 <h2 class="anchored" data-anchor-id="best-places-to-start">Best places to start</h2>
-<p>The Python Software Foundation provides an <a href="https://www.python.org/about/gettingstarted/" target="_blank">introduction for beginners to Python</a>.</p>
-<p>We recommend making use of the following communities: - Python DfE community on teams</p>
+<p>There is guidance on the Python Wiki for <a href="https://wiki.python.org/moin/BeginnersGuide/Programmers" target="_blank">programmers</a> and <a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers" target="_blank">non-programmers</a>. Each of the guides includes a list of interactive courses that you can work through to improve your skills.</p>
+<p><a href="https://datasciencecampus.ons.gov.uk/capability/data-science-campus-faculty/reproducible-analytical-pipeline-journey/" target="_blank">The ONS Data Science Campus</a> offers training courses on Reproducible Analytical Pipelines (RAP) in Python, but be aware that there is less Python expertise in the Department which might make QA of code more difficult.</p>
+<p>We recommend making use of the following communities: - Python DfE community on Teams</p>
+<hr>
+</section>
+<section id="best-practice" class="level2">
+<h2 class="anchored" data-anchor-id="best-practice">Best practice</h2>
+<p>Python is different to other programming languages in that it has its own style guide, <a href="https://peps.python.org/pep-0008/#introduction" target="_blank">PEP-8</a>. PEP-8 is one of many guidance documents known as Python Enhancement Proposals (PEPs) which govern the style of the language, any future changes or updates, and backwards compatibility features. <a href="https://peps.python.org/pep-0020/" target="_blank">PEP-20</a> outlines the guiding principles for Python’s design.</p>
+<p>Python can be a little fussy about the layout of your code, especially whitespace, and your code may fail if it is not indented correctly.</p>
+<hr>
+</section>
+<section id="how-to-work-with-python" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-work-with-python">How to work with Python</h2>
+<section id="libraries-and-packages" class="level3">
+<h3 class="anchored" data-anchor-id="libraries-and-packages">Libraries and packages</h3>
+<p>Python packages work slightly differently to R packages. You might hear reference to libraries in Python. A library is a collection of related packages that perform similar functions. One of the most popular libraries is called <a href="https://numpy.org/doc/stable/user/absolute_beginners.html" target="_blank">NumPy</a> and it allows you to work with numerical data more easily.</p>
+<p>To access the features of a library and use them within your code, you need to install the library. Using NumPy as the example, you can do this using the syntax</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>PIP is the standard package installer for Python and so must be mentioned at the start of the line of code.</p>
+<p>Once you have installed your library, you then need to import it so that you can use it within your code. To make your life easier, you can give it a shortened name so that you don’t have to write NumPy every time you want to use one of the features, like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>import numpy as np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you only install a library and then don’t import it, you won’t be able to use its features. You can either import a library as a whole, or you can just import certain functions from it if you know you won’t need to use them all.</p>
+<p>NumPy contains an array function. If you want to use it, you would do so as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>arr <span class="ot">=</span> <span class="fu">np.array</span>( [[ <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],[ <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>]] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that you must use <strong>np.</strong> before <strong>array</strong> to get it to work, otherwise Python won’t know where to look for the array function. When you imported NumPy, if you gave it a different shortened name, you’d use that name instead.</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

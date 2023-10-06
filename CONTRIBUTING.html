@@ -436,16 +436,33 @@ cookieconsent.run({
 <section id="quarto-guidance" class="level3">
 <h3 class="anchored" data-anchor-id="quarto-guidance">Quarto guidance</h3>
 <p>For more information specific to how a quarto site works, and for examples of what is possible within a static quarto site, see the main <a href="https://quarto.org/" target="_blank">Quarto website</a>.</p>
-<!-- TODO: add more details on
-
-- adding images (in the right folder, code to do so)
-- adding links (within page, within site, external to site)]
-- adding videos / other content
-- redirecting pages where changing / removing
-- checking for broken links when changing headings
-- building locally before raising a pull request
-
--->
+<section id="adding-images-in-the-right-folder-code-to-do-so" class="level4">
+<h4 class="anchored" data-anchor-id="adding-images-in-the-right-folder-code-to-do-so">Adding images (in the right folder, code to do so)</h4>
+</section>
+<section id="adding-links-within-page-within-site-external-to-site" class="level4">
+<h4 class="anchored" data-anchor-id="adding-links-within-page-within-site-external-to-site">Adding links (within page, within site, external to site)]</h4>
+</section>
+<section id="adding-videos-other-content" class="level4">
+<h4 class="anchored" data-anchor-id="adding-videos-other-content">Adding videos / other content</h4>
+</section>
+<section id="redirecting-pages-where-changing-removing" class="level4">
+<h4 class="anchored" data-anchor-id="redirecting-pages-where-changing-removing">Redirecting pages where changing / removing</h4>
+</section>
+<section id="checking-for-broken-links-when-changing-headings" class="level4">
+<h4 class="anchored" data-anchor-id="checking-for-broken-links-when-changing-headings">Checking for broken links when changing headings</h4>
+</section>
+<section id="building-locally-before-raising-a-pull-request" class="level4">
+<h4 class="anchored" data-anchor-id="building-locally-before-raising-a-pull-request">Building locally before raising a pull request</h4>
+</section>
+<section id="changing-the-appearance-of-code-blocks" class="level4">
+<h4 class="anchored" data-anchor-id="changing-the-appearance-of-code-blocks">Changing the appearance of code blocks</h4>
+<p>You can modify the <code>highlight-style</code> element in the <code>quarto.yml</code> file to change the display of code blocks using predefined themes. This will change the appearance of all code snippets across the entire Analysts’ guide. The current theme is set to “printing” but there is a list of other available themes <a href="https://quarto.org/docs/output-formats/html-code.html#highlighting" target="_blank">on the Quarto website</a>.</p>
+<p>Some things to be aware of before you make changes:</p>
+<ul>
+<li><p>Some of the themes are adaptive, meaning that if you change the site view from dark mode to light mode then the theme will also change accordingly.</p></li>
+<li><p>The appearance of code snippets will only change if the language (e.g.&nbsp;R, Python) is defined at the start of the snippet (e.g.&nbsp;<code>``` {r connection_example, eval=FALSE}</code>). Including <code>eval=FALSE</code> stops your code snippet from actually running. If no language is defined, the snippet appearance will need to be modified manually and this can cause some issues.</p></li>
+</ul>
+</section>
 </section>
 <section id="issues" class="level3">
 <h3 class="anchored" data-anchor-id="issues">Issues</h3>
@@ -460,7 +477,13 @@ cookieconsent.run({
 </section>
 <section id="make-changes" class="level3">
 <h3 class="anchored" data-anchor-id="make-changes">Make Changes</h3>
-<p>Key things to remember when making or proposing changes: - Where guidance already exists elsewhere it should be linked to rather than duplicated - When adding images, save them in the /images folder - When adding files for download, save them in the /resources folder - Don’t commit rendered .html files for pages - If your changes remove or edit a pre-existing anchor link, consider how that will be redirected for users who may have bookmarked it</p>
+<p>Key things to remember when making or proposing changes:</p>
+<ul>
+<li><p>Where guidance already exists elsewhere it should be linked to rather than duplicated</p></li>
+<li><p>When adding images, save them in the /images folder</p></li>
+<li><p>When adding files for download, save them in the /resources folder - Don’t commit rendered .html files for pages</p></li>
+<li><p>If your changes remove or edit a pre-existing anchor link, consider how that will be redirected for users who may have bookmarked it</p></li>
+</ul>
 <section id="make-changes-in-the-ui" class="level4">
 <h4 class="anchored" data-anchor-id="make-changes-in-the-ui">Make changes in the UI</h4>
 <p>Click <strong>Edit this page</strong> at the bottom of the right hand table of contents of any page to make small changes such as a typo, sentence fix, or a broken link. This takes you to the <code>.Qmd</code> file where you can make your changes and <a href="#pull-request">create a pull request</a> for a review.</p>
@@ -478,8 +501,16 @@ cookieconsent.run({
 <section id="pull-request" class="level3">
 <h3 class="anchored" data-anchor-id="pull-request">Pull Request</h3>
 <p>All pull requests should be made against the main branch.</p>
-<p>When you’re finished with the changes, create a pull request, also known as a PR. - Don’t forget to <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue" target="_blank">link PR to issue</a> if you are solving one.</p>
-<p>Once you submit your PR, a repository admin will review your proposal. We may ask questions or request additional information. - We may ask for changes to be made before a PR can be merged, either using <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request" target="_blank">suggested changes</a> or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes and then commit them to your branch. - As you update your PR and apply changes, mark each conversation as <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request#resolving-conversations" target="_blank">resolved</a>. - If you run into any merge issues, checkout this <a href="https://github.com/skills/resolve-merge-conflicts" target="_blank">Git tutorial</a> to help you resolve merge conflicts and other issues.</p>
+<p>When you’re finished with the changes, create a pull request, also known as a PR.</p>
+<ul>
+<li>Don’t forget to <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue" target="_blank">link PR to issue</a> if you are solving one.</li>
+</ul>
+<p>Once you submit your PR, a repository admin will review your proposal. We may ask questions or request additional information.</p>
+<ul>
+<li><p>We may ask for changes to be made before a PR can be merged, either using <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request" target="_blank">suggested changes</a> or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes and then commit them to your branch.</p></li>
+<li><p>As you update your PR and apply changes, mark each conversation as <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request#resolving-conversations" target="_blank">resolved</a>.</p></li>
+<li><p>If you run into any merge issues, checkout this <a href="https://github.com/skills/resolve-merge-conflicts" target="_blank">Git tutorial</a> to help you resolve merge conflicts and other issues.</p></li>
+</ul>
 </section>
 </section>
 <section id="support" class="level2">
