@@ -466,11 +466,15 @@ We recommend that you only add footnotes once you are certain the data file is f
 ## Data blocks (tables and charts)
 
 
-A data block is a smaller cut of data from your original file that you can embed into your publication as a presentation table, build charts from, or link users directly to.
+A data block is a smaller cut of data from your original file that you can embed into your publication as a presentation table, build charts from, and link users directly to.
+
+The 'Data blocks' tab will list all the data blocks you have created, highlighting which have charts, are used in content and are saved as highlight tables. Here you can also choose to create a new data block.
+
+![](../images/ees-manage-data-blocks.PNG)
 
 ---
 
-### Using effectively
+### Using data blocks effectively
 
 ---
 
@@ -478,7 +482,9 @@ A data block is a smaller cut of data from your original file that you can embed
 
 Presentation tables are the tables you include within the accordion sections of your release to quickly visualise numbers. Unlike the underlying data files, the presentation tables focus on specific parts of the story you are telling. They are distinct from, and should never be a copy of an underlying data file.
 
-You should only be including small tables sparingly where they add value to your release and not use them as a straight copy of the ready-made Excel tables previously published on gov.uk. The data itself is there for users to access through other means, therefore any data in the commentary should only be there if it is enhancing the story.
+**Do** include them where they add value to your release. 
+
+**Don't** include them as a straight copy of the ready-made Excel tables previously published on gov.uk
 
 <div class="alert alert-dismissible alert-danger">
 You do not need to recreate all of the old excel tables, users can find the numbers they are interested in using the table tool, or analyse the underlying data if they want the data behind the release.
@@ -491,14 +497,27 @@ You do not need to recreate all of the old excel tables, users can find the numb
 
 ---
 
-Here you can create data blocks, using the admin table tool to create and save your summary tables. Remember to use the reorder table headers tool to restructure your table however you want it before you save.
+By default, every data block will include a table. 
 
-Once you're happy with your table, give it a title and some source information before clicking save. The source should be the source of the data used to create the data file that was then used for the data block table, for example 'School Census'.
 
-The manage data blocks page will list all the data blocks you have created, highlighting which have charts, are used in content and are saved as highlight tables.
+You will be taken through 4 steps to create the data block:
 
-![](../images/ees-manage-data-blocks.PNG)
+1. Data set: select the data set you want to use
+2. National / Regional: choose the geographic level you want to display
+3. Time period: select which time periods you want to include
+4. Indicators/Filters: select the indicators and filters to be included
 
+![](../images/ees-create-data-block.PNG)
+
+Once you have configured the data source for the data block, you can then preview the table displaying the chosen variables.
+
+You can reorder table headers with the 'Move and reorder table headers' button to restructure your table however you want it before you save.
+
+Once you are happy with your table, you can then fill in the Data block details:
+
+* Name of the datablock - this won't be visible to users, it is for your own reference so you can differentiate between your data blocks
+* Table title - this is the title of the datablock that will be visible to users
+* Source - this should be the source of the data used to create the data file (not the data file itself) e.g., 'School Census'. 
 
 ---
 
@@ -508,7 +527,7 @@ The manage data blocks page will list all the data blocks you have created, high
 
 You can also choose to highlight a data block table as a ‘featured table’ which means it will show in a list of featured tables within the table tool. This is designed to help users get to tables of interest more quickly (without having to create tables themselves).
 
-There is an option to choose if a table is a 'featured table' when saving each data block, here you can name the table and add a description giving the table coverage:
+There is an option to choose if a table is a 'featured table' when saving each data block, here you can name the table and add a description giving the table coverage (**please don't just repeat the table name in the description**):
 
 ![](../images/EES-create-release-table-highlight.PNG)
 
@@ -522,7 +541,7 @@ Each featured table will then be listed to the user within the table tool. Featu
 
 ---
 
-Any data block tables that are created and saved within the admin app will also be assigned a ‘fast-track link’, this url can then be used throughout your release as a way to direct users to specific tables (within the table tool) more quickly so they can interact and explore the data further.  It will appear at the top of the page like this:
+Any data block tables that are created and saved will be assigned a ‘fast-track link’, this URL can then be used throughout your release as a way to direct users to specific tables within the table tool more quickly so they can interact with and explore the data further.  It will appear at the top of the page like this:
 
 ![](../images/EES-create-release-fasttrack-url.PNG)
 
