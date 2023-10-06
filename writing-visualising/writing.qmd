@@ -15,7 +15,9 @@ Commentary should do much more than just describe the statistics in words. It sh
 
 Clear, insightful and professionally sound commentary supports informed decision-making and democratic debate.
 
-> Statistics and data should be presented clearly, explained meaningfully and provide authoritative insights that serve the public good. (Code of Practice for Statistics, United Kingdom (UK) Statistics Authority, 2018)
+> Statistics and data should be presented clearly, explained meaningfully and provide authoritative insights that serve the public good.
+>
+> ([Code of Practice for Statistics, V3: Clarity and insight, United Kingdom (UK) Statistics Authority, 2018](https://code.statisticsauthority.gov.uk/the-code/value/v3-clarity-and-insight/))
 
 ---
 

@@ -19,7 +19,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 ## Learning and development
 
-[General resources](learning-development/learning-support.html)
+[Learning support](learning-development/learning-support.html)
 - Useful learning resources, and support to get you started
 
 [SQL](learning-development/sql.html)
@@ -37,7 +37,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 ## Statistics production
 
-[How to publish](statistics-production/pub.html)
+[Routes for publishing](statistics-production/pub.html)
 - Guidance for how to publish different types of statistics
 
 [RAP in statistics](RAP/rap-statistics.html)
@@ -46,7 +46,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Open data standards](statistics-production/ud.html)
 - Guidance on how to structure data files
 
-[Using EES](statistics-production/ees.html)
+[Explore Education Statistics (EES)](statistics-production/ees.html)
 - How to use the features in Explore Education Statistics
 
 [Good examples in EES](statistics-production/examples.html)
@@ -64,7 +64,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [EES analytics](statistics-production/user_analytics.html)
 - Understanding how users are interacting with your publications
 
-## Visualising data
+## Writing and visualising
 
 [Public dashboards](writing-visualising/dashboards.html)
 - Guidance for publishing public facing statistics dashboards
@@ -86,15 +86,15 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [RAP FAQs](RAP/rap-faq.html)
 - Frequently asked questions about RAP
 
-[RAP in statistics](RAP/rap-statistics.html)
+[RAP for Statistics](RAP/rap-statistics.html)
 - Detailed RAP guidance for statistics publications
 
 ## Analytical Data Access (ADA) and Databricks
 
-[ADA and Databricks](ADA/ada.html)
+[Analytical Data Access (ADA) and Databricks](ADA/ada.html)
 - Guidance for analysts on how to interact with and use data stored in ADA using Databricks
 
-[Using RStudio with Databricks](ADA/databricks_rstudio.html)
+[Setup Databricks with RStudio](ADA/databricks_rstudio.html)
 - Guidance for analysts on how to connect to Databricks from RStudio.
 
 ## Contact us

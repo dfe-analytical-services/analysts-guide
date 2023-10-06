@@ -1,8 +1,8 @@
 ---
-title: "Explore Education Statistics"
+title: "Explore Education Statistics (EES)"
 ---
 
-<p class="text-muted">Guidance for how to use the features in the Explore Education Statistics platform</p>
+<p class="text-muted">Guidance for how to use the features in the Explore Education Statistics (EES) platform</p>
 
 ---
 

@@ -96,9 +96,9 @@ website:
           - statistics-production/user-analytics.qmd
       - section: "Writing and visualising"
         contents:
+          - writing-visualising/dashboards.qmd
           - writing-visualising/visualising.qmd
           - writing-visualising/writing.qmd
-          - writing-visualising/dashboards.qmd
       - section: "Reproducible Analytical Pipelines (RAP)"
         contents: 
           - RAP/rap-expectations.qmd
