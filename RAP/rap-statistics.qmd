@@ -1,5 +1,6 @@
 ---
 title: "RAP for Statistics"
+
 ---
 
 ```{r include=FALSE}
@@ -71,7 +72,7 @@ The collection of, and routine checking of data as it is coming into the departm
 
 ---
 
-The diagram below highlights what RAP means for us, and the varying levels in which it can be applied. The expectation is that all publications will meet the department's baseline implementation of RAP in the self-assessment tool. It's worth acknowledging that some teams are already working around great and best practice levels, and that we appreciate every team's situation is unique, our guidance is designed to be applicable across all official statistcs publications by DfE.
+The diagram below highlights what RAP means for us, and the varying levels in which it can be applied in all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice. The expectation is that all publications will meet the department's baseline implementation of RAP in the self-assessment tool. It's worth acknowledging that some teams are already working around great and best practice levels, and that we appreciate every team's situation is unique, our guidance is designed to be applicable across all official statistics publications by DfE.
 
 
 <html>
@@ -117,11 +118,7 @@ Some teams will already be looking at best practice, while others will still hav
 
 
 
-Most teams have already made progress with their production of tidy data files, and the release of the automated screener has now tied up that end point of the pipeline that we are all currently working towards. The standard pipeline for all teams will roughly resemble this:
-
-
-`r knitr::include_graphics("../images/RAP-Process-Overview.png")`
-
+Most teams have already made progress with their production of tidy data files, and the release of the automated screener has now tied up that end point of the pipeline that we are all currently working towards. 
 
 The key now is for us to build on the work so far and focus on how we improve the quality and efficiency of our production processes up to that point. To do this, we need to make a concerted effort to standardise how we store and access our data, before then automating what we can to reduce the burden of getting the numbers ready and see the benefits of RAP. The exact meaning of this will vary within teams.
 
@@ -129,6 +126,7 @@ The key now is for us to build on the work so far and focus on how we improve th
 
 ## How to get started
 
+Check your analysis against the Good, Great and Best practice standards under [RAP in practice](/RAP/rap-statistics.html#rap-in-practice).
 
 Measure your publication against the RAP levels using our [self assessment tool](https://rsconnect/rsc/publication-self-assessment/){target="_blank" rel="noopener noreferrer"}. This will give you a good starting point and initial points to work on to progress to the next level of RAP.
 
@@ -142,7 +140,7 @@ The Statistics Development Team invites teams to take part in our partnership pr
 
 ---
 
-The first place to start for your teams RAP is to store the raw data you use to create underlying data in a Microsoft SQL Server database. This is similar to a sharepoint area or a shared folder, but it's a dedicated data storage area which allows multiple users to use the same file at once, and for you to run code against the data in one place.
+The first place to start for your teams RAP is to store the raw data you use to create underlying data in a Microsoft SQL Server database. This is similar to a Sharepoint area or a shared folder, but it's a dedicated data storage area which allows multiple users to use the same file at once, and for you to run code against the data in one place.
 
 ---
 
@@ -189,7 +187,7 @@ There are a few different options, depending on where you want your new area to 
 
 If your data is already in SQL, you can use this snippet of R code to move tables from one area (e.g. the iStore) to another (e.g. your team's modelling area) to ensure all data are stored in a database.
 
-```
+``` {r connection_example, eval=FALSE}
 library(odbc)
 library(dplyr)
 library(dbplyr)
@@ -261,7 +259,7 @@ This should take you to a new window which contains the raw data from the CSV fi
 
 You can now use this URL as you would use a file path in a `read.csv()` query. For example;
 
-```
+```{r devolved_lookup, eval=FALSE}
 devolved_area_lookup <- read.csv("https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/master/data/english_devolved_areas.csv")
 ```
 
@@ -325,7 +323,7 @@ Using the `%>%` pipe in R can be incredibly powerful, and make your code much ea
 A quick example of how powerful this is is below, where my_data is processed to create new columns, have column names renamed, have the column names tidied using the [janitor](https://garthtarr.github.io/meatR/janitor.html){target="_blank" rel="noopener noreferrer"} package, blank rows and columns removed, data filtered to only include specific geographic levels, and rows rearranged in order, all in a few lines of easy to follow code:
 
 
-```{r example, eval=FALSE}
+```{r example, eval=FALSE, style="background-color: #f7fdfa"}
 processed_regional_data <- my_data %>% 
   mutate(newPercentageColumn = (numberColumn / totalPopulationColumn) * 100) %>% 
   rename(newPercentageColumn = percentageRate,
@@ -478,7 +476,7 @@ Review your code and consider the following:
 
 For example, if you refer to the year of publication in your code a lot, consider replacing every instance with a named variable, which you only need to change once at the start of your code. In the example below, the year is set at the top of the code, and is used to define "prev_year", both of which are used further down the code to filter the data based on year.
 
-``` {r this_last_year, eval=FALSE}
+``` {r this_last_year, eval=FALSE, style="background-color: #f7fdfa"}
 
 this_year <- 2020
 prev_year <- this_year - 1
@@ -565,7 +563,7 @@ There is also plenty of guidance around the internet for [best practice](https:/
 
 ---
 
-If you ever find yourself writing html, or creating it through rmarkdown, you can check your html using [w3's validator](https://validator.w3.org/){target="_blank" rel="noopener noreferrer"}.
+If you ever find yourself writing HTML, or creating it through RMarkdown, you can check your HTML using [W3's validator](https://validator.w3.org/){target="_blank" rel="noopener noreferrer"}.
 
 ---
 
@@ -645,7 +643,7 @@ Peer reviewing code and not sure where to start? Improving code performance can 
 
 For example below, we are testing out case_when, if_else and ifelse.
 
-```
+``` {r microbenchmark, eval=FALSE}
 microbenchmark::microbenchmark( 
    case_when(1:1000 < 3 ~ "low", TRUE ~ "high"), 
    if_else(1:1000 < 3, "low", "high"),
@@ -655,7 +653,7 @@ microbenchmark::microbenchmark(
 
 Running the code outputs a table in the R console, giving profile stats for each expression. Here, it is clear that on average, if_else() is the fastest function for the job.
 
-```
+``` {r code_outputs, eval=FALSE}
 Unit: microseconds
                                          expr     min       lq     mean   median       uq      max neval
  case_when(1:1000 < 3 ~ "low", TRUE ~ "high") 167.901 206.2510 372.7321 300.2515 420.1005 4187.001   100
@@ -689,7 +687,7 @@ While peer reviewing code within the team is often practical, having external an
 
 ---
 
-## Automated quality assurance
+## Automated quality assurance (QA)
 
 
 Any data files that have been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability.
@@ -837,7 +835,7 @@ Consider:
 
 ---
 
-_When you assume you make an 'ass' out of 'u' and 'me'_. Everyone knows this saying, yet few of us heed it's warning. 
+_When you assume you make an 'ass' out of 'u' and 'me'_. Everyone knows this saying, yet few of us heed its warning. 
 
 The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.
 
@@ -932,22 +930,22 @@ Take a look at the sections below for further guidance on improving your documen
 
 When writing code, whether that is SQL, R, or something else, make sure you're commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this: 
 
-```
-----------------------------------------------------------------------------------------------
+```{r comments_example, eval=FALSE}
+----------------------------------------------------------------------------------------
 -- Script Name:		Section 251 Table A 2019 - s251_tA_2019.sql
 -- Description:		Extraction of data from IStore and production of underlying data file
 -- Author:		    Cam Race
 -- Creation Date:   15/11/2019
-----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 
-----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 --//  Process
 -- 1. Extract the data for each available year
 -- 2. Match in extra geographical information
 -- 3. Create aggregations - both categorical and geographical totals
 -- 4. Tidy up and output results
 -- 5. Metadata creation
-----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 ```
 
 Commented lines should begin with -- (SQL) or # (R), followed by one space and your comment. Remember that **comments should explain the why, not the what.** 
@@ -959,8 +957,8 @@ In rmarkdown documents you can bookend comments by using `<!--` and `-->`.
 Use commented lines of - to break up your files into scannable chunks based upon the structure and subheadings, like the R example below:
 
 
-```
-# Importing the data -----------------------------------------------------------------------------------
+``` {r comments_example_2, eval=FALSE}
+# Importing the data -------------------------------------------------------------------
 
 ```
 
@@ -1001,7 +999,7 @@ The [Self-assessment tool](https://github.com/dfe-analytical-services/publicatio
 
 If you do not already have git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
 
-For now, take a look at at the [resources for learning Git](../learning-development/learning-development.html#git) on the learning resources page.
+For now, take a look at at the [resources for learning git](../learning-development/learning-development.html#git) on the learning resources page.
 
 ---
 
@@ -1013,7 +1011,7 @@ For now, take a look at at the [resources for learning Git](../learning-developm
 
 **What does this mean?**
 
-This means having the final copies of code and documentation saved in a git-controlled Azure DevOps repo in the official-statistics-production area.
+This means having the final copies of code and documentation saved in a git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available. 
 
 **Why do it?**
 
@@ -1167,7 +1165,7 @@ To clone code, they will need to do the following:
 
 3. After running those lines, type in the following with your repository URL in the "YOUR_URL_HERE" space. This will clone the online repository to your local area.
 
-``` {r git_team_steps, eval=FALSE}
+``` {r git_team_steps, eval=FALSE} 
 git clone YOUR_URL_HERE
 ```
 
