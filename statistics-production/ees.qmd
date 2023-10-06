@@ -1,8 +1,8 @@
 ---
-title: "Explore Education Statistics"
+title: "Explore Education Statistics (EES)"
 ---
 
-<p class="text-muted">Guidance for how to use the features in the Explore Education Statistics platform</p>
+<p class="text-muted">Guidance for how to use the features in the Explore Education Statistics (EES) platform</p>
 
 ---
 
@@ -182,6 +182,32 @@ If you want to request a new publication, please be prepared to give the followi
 
 
 Publication details can be [managed by publication owners](#managing-publications) or via requests to the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk).
+
+---
+
+### Publication summaries
+
+---
+
+Publication summaries are a key tool in helping users find the statistics that they're looking for. We use them on gov.uk pages and in the EES find statistics page.
+
+Like on gov.uk, you only have 181 characters – to make sure you are fully utilising these, have a look through the following advice:
+
+- Use plain language to use terms and phrases that users are likely to use e.g. gender pay gap versus Annual Survey of Hours and Earnings.
+
+- Is it clear what the geographical coverage of this publication is e.g. England?
+
+- Is it clear how frequently the releases are published?
+
+- Is it clear what breakdowns you cover? E.g. Ethnicity, Gender, SEN?
+
+- Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g. Free School Meals (FSM)
+
+- Avoid phrases like "This release covers" as this wastes characters and delays users getting to the main information.
+
+- Have you looked at the EES analytics to see what users key search terms on your publication are? Are key words front loaded In your summary?
+
+- Don’t waste space on including definitions of a topic within the summary.
 
 ---
 
@@ -419,6 +445,23 @@ A data block is a smaller cut of data from your original file that you can embed
 
 ---
 
+### Using effectively
+
+---
+
+**Aim for fewer tables, and keep them small. As a guide, we suggest no more than one table per accordion section.**
+
+Presentation tables are the tables you include within the accordion sections of your release to quickly visualise numbers. Unlike the underlying data files, the presentation tables focus on specific parts of the story you are telling. They are distinct from, and should never be a copy of an underlying data file.
+
+You should only be including small tables sparingly where they add value to your release and not use them as a straight copy of the ready-made Excel tables previously published on gov.uk. The data itself is there for users to access through other means, therefore any data in the commentary should only be there if it is enhancing the story.
+
+<div class="alert alert-dismissible alert-danger">
+You do not need to recreate all of the old excel tables, users can find the numbers they are interested in using the table tool, or analyse the underlying data if they want the data behind the release.
+</div>
+
+
+---
+
 ### Tables
 
 ---
@@ -511,7 +554,23 @@ Make sure to review your chart dimensions before you publish. Users should be ab
 
 ![](../images/EES-charts-create.PNG)
 
-Note, within the vertical and horizontal bar chart types you can also create stacked bar charts by clicking the 'Stacked bars' option within the chart configuration tab
+
+Note, within the vertical and horizontal bar chart types you can also create stacked bar charts by clicking the 'Stacked bars' option within the chart configuration tab.
+
+---
+
+#### Non-numeric values
+
+---
+
+On the chart configuration tab there is a toggle for visualising non-numeric values in the data as 0. On the first chart configuration tab, there's a check box that will toggle between showing and hiding them.
+
+![](../images/ees-non-numeric-toggle.png)
+
+
+When selected, you will then see that this data appears in the chart as if the indicator values are 0.
+
+![](../images/ees-missing-data-chart.png)
 
 ---
 
@@ -614,6 +673,28 @@ Then to create a map, add the cuts of data you want to display in the "data sets
 You can change the colour scale of the chart in the "legend" tab.
 
 ![](../images/map_change_legend.png)
+
+---
+
+#### Breaks in a series
+
+---
+
+We recommend including any missing data from breaks in a time series in your data file using the appropriate [GSS symbol](../creating-statistics/ud.html#data-symbols), such as in this example table:
+
+| | 2013/14 | 2014/15 | 2015/16 | 2016/17 | 2017/18 |
+| - | ------| --------| --------| --------| --------|
+| Number of pupil enrollments | 3,627,985 | 3,713,774 | 3,796,146 | x | 3,885,774 |
+| Number of schools | 16,705 | 16,723 | 16,736 | x | 16,739 |
+
+<div class="alert alert-dismissible alert-info">
+There may be times when including missing data increases the file size too much, or becomes unwieldy, if you're unsure and would like advice on your data contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+</div>
+
+By including the missing data in your open data files you can then create charts in EES that represent this. Start off by creating a data block with the data you want to build the chart from.
+
+![](../images/ees-missing-data-table.png)
+
 
 ---
 
@@ -738,7 +819,23 @@ After embedding a key stat tile you can then edit it to add trend information an
 
 ---
 
-### Drafting text
+### Accordion section content
+
+---
+
+You should split your release into sections that each focus on one or two key messages, with a recommended maximum of 10 sections in the release. **The whole release should take no more than 10 minutes to read.** Our [analytics app](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"} contains insights on how long it takes the average user to read your release.
+
+To keep the release short only include information if there is something interesting to say - the commentary is there to tell a story, people looking for specific figures will use the table tool, or download the underlying data instead. **Do not try to summarise every number in the commentary.**
+
+Avoid having large blocks of text as they are hard to read and users scan them and miss the detail. Graphs and tables break up the content but only include these where they add value; **you do not need a graph or chart in every section.**
+
+Use plain English and shorter sentences, aim for an average of 15-20 words per sentence. Do not overload sentences with numbers and avoid 'elevator commentary' that describes small movements in the whole series without giving any insight (use a summary table instead if it is interesting, or leave it out entirely). **Be impartial and objective; avoid using sensationalist terms or terms that reflect a judgement such as "very few" "only" or "strong".**
+
+Explain complex concepts in plain English within the text. Remember that for many of our users, confidence intervals and significant differences are complex concepts that need explaining.
+
+<div class="alert alert-dismissible alert-danger">
+Do not use footnotes in the text of your content. They’re designed for reference in print, not web pages. Always consider the user need first. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.
+</div>
 
 ---
 
@@ -769,6 +866,55 @@ Try to focus the 'About these statistics' section on:
 
 ---
 
+### Writing about characteristics
+
+---
+
+There is a wide range of guidance available from the GSS, ONS and the Cabinet Office around writing about characteristics. Statistics content published on EES should adhere to the principles outlined by the above. The data harmonisation champions group are in the process of collating the most recent guidance from all these sources and summarising it below.
+
+If you need some steer on how to report on a particular characteristics, the below links provide some useful starting points:
+
+* [Analysis Function Data Harmonisation](https://analysisfunction.civilservice.gov.uk/policy-store/ethnicity-harmonised-standard/)
+* [Cabinet Office guidance on writing about statistics](https://www.ethnicity-facts-figures.service.gov.uk/style-guide/writing-about-ethnicity)
+
+You can also get in touch with the DfE Data Harmonisation Champions Group via [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+
+---
+
+### Writing about ethnicity
+
+---
+
+For the official names of ethnicity filters to use in data files, please check our guidance on [creating statistics](../creating-statistics/ud.html#ethnicity). The below outlines some key points in writing about ethnicity in publication content.
+
+---
+
+#### Ethnic minorities and not BAME
+
+---
+
+As outlined in the CRED report, grouping ethnicity at a higher level than the 5 major ethnic groups should be avoided as it risks masking the true disparities between, and/or life experiences of, people from different ethnic groups.
+
+There will, however, be specific cases where data quality or comparisons with past metrics does not allow for statistics to be produced at the level of the major or minor ethnic groups. In these cases, the group ‘ethnic minorities’ should be used exclusively to refer to all ethnic groups except the White British group, this includes White minorities, such as Gypsy, Roma and Irish Traveller groups.
+
+For comparisons with the White group as a whole, ‘all other ethnic groups combined’ or ‘ethnic minorities (excluding White minorities)’ should be used. It may also be necessary to refer to ‘White’ and ‘other than White’ if space is limited, but this should be avoided if possible.
+
+Do not use the terms ‘non-White’, BAME (Black, Asian, and Minority Ethnic), or BME (Black and minority ethnic). These terms can be perceived as demeaning and can be confusing as to what groups are being included and excluded. For comparison with past metrics, BAME and BME should be replaced by the term "ethnic minorities (excluding White minorities)" unless White minorities were specifically mentioned.
+
+---
+
+#### Ordering of groups
+
+---
+
+There are several methods of ordering the ethnic groups, depending on where and how they are used:
+
+*	Alphabetical: use in tables and when listing ethnic groups (with ‘Other’ and sometimes ‘Unknown’ as a final category)
+
+*	In expected order of size (with largest first): useful in charts and visualisations as it makes data and patterns easier to read
+
+---
+
 ### Footnotes
 
 ---
@@ -781,18 +927,18 @@ Do not use footnotes in the text of your content. They’re designed for referen
 
 #### Tables in content
 
-----
+---
 
 Any data tables should be included as data blocks, however you can also embed static html tables within a text box. These should only be used to present textual tables or for any small presentations of data that are not possible to do in a data block at the moment.
 
 <!-- gif adding in a html table -->
 You can create static html tables for presenting information that isn't embedded in a data block. However, remember that *all of the data* included or referred to in your content should be available (or createable) from the downloadable open data files.
 
-----
+---
 
 #### Footnotes for tables in content
 
-----
+---
 
 If you are including a table in text that needs footnotes, it's generally advised to include this in the commentary surrounding the table. However, if you think a footnote is still necessary, then we advise writing out the word ‘note’, with the number of the note you need to refer to, and put it in square brackets, for example: ‘Number of people in employment [note 1]’. For more guidance on footnotes outside of EES, see the [Analysis Function guidance on symbols, footnotes and codes](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-6).
 
@@ -800,7 +946,7 @@ If you are including a table in text that needs footnotes, it's generally advise
 
 ### Reviewing content
 
-----
+---
 
 While a release is in draft mode, comments can be added to text to help teams collaborate. Simply highlight the text you want to comment on and click on the speech bubble in the editing bar to add a comment.
 
@@ -811,6 +957,28 @@ Comments can be edited at a later date, and can also be marked as resolved so th
 When someone is editing a text box, it will now be instantly frozen for all other users preventing two users from editing the same block of text at the same time. You will be able to see the name of the user who is making edits, and will see the edits coming through every few seconds as their changes autosave.
 
 ![](../images/freeze_text.png)
+
+---
+
+## Search engine optimisation
+
+
+Search engine optimisation (SEO) makes it easier for users to find your data through search engines like Google. Some top tips include:
+
+* Keeping your release title shorter than 50-60 characters. This means the full title can be displayed on the search engine results
+
+* Avoid listing key words: search engines penalise anything not recognised as a full sentence.
+
+* Make use of our [analytics app](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"} to explore what your users are doing: what accordions are they clicking on, what are they searching for? This could give an idea of what content you should focus on in future, and which areas are no longer of interest to most of your users.
+
+Following best practice in writing about statistics is of increasing importance. As shown in the below example any sentence could be pulled out into a snippet and shown in a search engine to users who are searching for related information:
+
+![](../images/google-snippet.png)
+
+We should make a concerted effort to ensure that we are answering the questions people are interested in as search engines are getting smarter and pulling this information directly out of webpages. See the following example of a google search using a snippet from one of our publications as an answer in the search engine results itself:
+
+![](../images/google-peopleAlsoAsk.png)
+
 
 ---
 
@@ -832,7 +1000,7 @@ Once you've got the R-Shiny app set up and hosted, you can embed it using the **
 ## Glossary
 
 
-Our glossary on EES is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics - https://explore-education-statistics.service.gov.uk/glossary.
+The [glossary in Explore Education Statistics](https://explore-education-statistics.service.gov.uk/glossary) is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics - https://explore-education-statistics.service.gov.uk/glossary.
 
 ---
 
@@ -1013,6 +1181,8 @@ When publishing a new amendment you should add a 'release note' to your release 
 # Methodology
 
 ---
+
+Appropriate methodological information must be made available for all published Official Statistics releases.
 
 Methodologies work in a very similar way to the written content of a release, the text editor and static tables you can use are built on the same foundations.
 

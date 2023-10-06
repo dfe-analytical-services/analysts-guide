@@ -1,0 +1,111 @@
+---
+title: "Visualising data"
+---
+
+<p class="text-muted">Things to consider when visualising data</p>
+
+
+---
+
+# Introduction
+
+---
+
+Any analyst building charts should make themselves familiar with the [Analysis Function data visualisation guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/).
+
+---
+
+## Visualisation titles
+
+
+For tables and charts, active titles are descriptive and tell the trend by **highlighting the main story**. They should be short, aim for 10 words or less and avoid going over more than one line. Active titles give users the main message without having to find the text that accompanies the chart, and makes it easier for journalists to use your chart directly without having to write their own summary.
+
+Put information such as the measure, source, population, geographical coverage and time period in a caption if they are not obvious from the chart content. Add further context and information in the main text. **Remember that tables and charts should be usable even if isolated** from the rest of the release.
+
+---
+
+## Charts 
+
+The majority of charts should be line or bar charts and be kept simple, and you should use the [Analysis Function guidance on choosing charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-3) to help guide your decision. You should only use complex charts where there is a clear user need, as simple charts are the easiest for users to understand
+
+DWP have created a [Data Visualisation Thinking](https://dataviztraining.dwpdata.info/index.html) course that may be useful to look at when creating more complex charts.
+
+---
+
+## Colours
+
+
+The most important consideration when using colour is to avoid relying on it for interpretation. It should be seen as an enhancement, and your charts should be understandable without it.
+
+Where not constraint by other style guides, you should use the suggested colours from the [GSS colours in visualisations guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts). The following sections show the colours that are recommended for charts and suggest the way to use them with one another, more detail on why can be found in the Analysis Function guidance itself.
+
+We strongly recommend you stick to the codes as outlined, if you can't for any reason, please make sure you follow the guidance on [developing your own colour palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9) to ensure that you are considering whether the colours are accessible to all.
+
+---
+
+### Categorical colour palette
+
+---
+
+Categorical data can be divided into groups or categories by using names or labels. This palette has four colours. We recommend a limit of four categories as best practice for basic data visualisations. The ordering of the palette is important as not all colours are accessible when paired together.
+
+
+| Colour name       | Hex code | RGB           | CYMK          |
+|-------------------|----------|---------------|---------------|
+| Dark blue         | #12436D  | 18, 67, 109   | 36, 16, 0, 57 |
+| Turquoise         | #28A197  | 40, 161, 151  | 75, 0, 6, 37  |
+| Dark pink         | #801650  | 128, 22, 80   | 0, 83, 38, 50 |
+| Orange            | #F46A25  | 244, 106, 37  | 0, 57, 85, 4  |
+
+---
+
+### Sequential colour palette
+
+---
+
+Sequential data is any sort of data where the order of series has some meaning. For example, age groups ascending in age. This palette has three colours and even this pushes the boundaries for contrast ratios. Any charts made with shades of a specific hue should be accessible without colour.
+
+| Colour name       | Hex code | RGB           | CYMK          |
+|-------------------|----------|---------------|---------------|
+| Dark blue         | #12436D  | 18, 67, 109   | 36, 16, 0, 57 |
+| Mid blue          | #2073BC  | 32, 115, 188  | 0, 57, 85, 4  |
+| Light blue        | #6BACE6  | 107, 172, 230 | 75, 0, 6, 37  |
+
+---
+
+### Focus palette
+
+---
+
+On focus charts, colour is used to highlight specific elements to help users understand the information. One line out of many will be highlighted as a colour and the rest of the series remain grey.
+
+
+| Colour name       | Hex code | RGB           | CYMK          |
+|-------------------|----------|---------------|---------------|
+| Dark blue         | #12436D  | 18, 67, 109   | 36, 16, 0, 57 |
+| Grey              | #BFBFBF  | 191, 191, 191 | 0, 0, 0, 25   |
+
+---
+
+### Larger palettes
+
+---
+
+All charts should be made as simple as possible so that the message is easy to understand and interpret.
+
+If you do want to use additional colours you need to ensure that the chart is understandable without colour as no series with more than four colours will ever be fully accessible alone.
+
+For categorical data, we recommend the following extensions to the categorical palette. Once again, the ordering is important. If you're making a chart in EES these are not default colours, so you will need to use the colour picker to specify them.
+
+| Colour name       | Hex code | RGB           | CYMK          |
+|-------------------|----------|---------------|---------------|
+| Dark blue         | #12436D  | 18, 67, 109   | 36, 16, 0, 57 |
+| Turquoise         | #28A197  | 40, 161, 151  | 75, 0, 6, 37  |
+| Dark pink         | #801650  | 128, 22, 80   | 0, 83, 38, 50 |
+| Orange            | #F46A25  | 244, 106, 37  | 0, 57, 85, 4  |
+| Dark grey         | #3D3D3D  | 61, 61, 61    | 0, 0, 0, 76   |
+| Light purple      | #A285D1  | 162, 133, 209 | 22, 36, 0, 18 |
+
+For larger palettes when using sequential data, we recommend using [ColorBrewer](https://colorbrewer2.org/#type=sequential) to find the hex codes for multiple shades of a given hue.
+
+---
