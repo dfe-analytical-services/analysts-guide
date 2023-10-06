@@ -31,42 +31,55 @@ Maintenance and use of the platform is supported by the [Statistics Development 
 
 As stated above, EES consists of two parts. We also have four versions (environments) of EES, the banner for the admin part of each environment will inform you which environment you are on, this is also colour coded:
 
-- **Development** - Green - where changes are first merged in, and often the first time different pieces of work from different developers will interact properly
+* **Development** - Green
+    
+    Where changes are first merged in, and often the first time different pieces of work from different developers will interact properly
 
-- **Test** - Pink - where our developers can carry out manual testing of any new features to make sure things work as expected
+* **Test** - Pink
+    
+    Where our developers can carry out manual testing of any new features to make sure things work as expected
 
-- **Pre-production** - Yellow - a sandbox area for analysts to carry out functionality testing
+* **Pre-production** - Yellow
+    
+    A sandbox area for analysts to carry out functionality testing.
+  
+  Teams can use the pre-production environment to familiarise themselves with the platform and test out what is possible. All analysts have full permissions to create publications and releases, and can see everything else that other analysts are making. This is unique to the pre-production environment.
+  
+  There are two separate pre-production sites to mirror the public sites so that teams can familiarise themselves with both sides of EES:
+  
+    + [Admin pre-production](https://admin.pre-production.explore-education-statistics.service.gov.uk): where teams can test out creating publications and releases.
+    
+    + [Public pre-production](https://pre-production.explore-education-statistics.service.gov.uk): where teams can test out how their releases might look on the public site.
 
-[Admin pre-production](https://admin.pre-production.explore-education-statistics.service.gov.uk)
+  When accessing the pre-production environment you may be asked for a username and password, these are as follows: dfe, dataresearch.
 
-[Public pre-production](https://pre-production.explore-education-statistics.service.gov.uk)
+  <div class="alert alert-dismissible alert-danger">
+The pre-production environment is not suitable for unpublished data. Unpublished data should only be uploaded to the production environment.
+</div>
 
-- **Production** - Red - the real service, anyone creating real releases that they intend to publish to the public should be using this environment
+* **Production** - Red
+    
+    The real service, anyone creating real releases that they intend to publish to the public should be using this environment. 
+    
+    Analysts will only have access to releases that they have been granted specific access to.
+    
+    As mentioned, there are two public sites:
 
-[Admin production](https://admin.explore-education-statistics.service.gov.uk)
+    + [Admin production](https://admin.explore-education-statistics.service.gov.uk): where teams will create their releases
 
-[Public production](https://explore-education-statistics.service.gov.uk)
+    + [Public production](https://explore-education-statistics.service.gov.uk): where any member of the public can access the published releases
 
-There is no overlap between the environments and content created on one cannot be moved to any other.
+There is no overlap between the environments and content created on one cannot be moved to any other. The core functionality across the environments is identical except for new changes, which are deployed through the different environments before they make it to production.
 
 <div class="alert alert-dismissible alert-danger">
 If you are bookmarking links, please be careful to bookmark the links below exactly as they are shown. Often when signing in you will be redirected via other url's as a part of the authentication process, and bookmarking those may lead to errors.
 </div>
 
-Teams can use the pre-production environment to familiarise themselves with the platform and test out what is possible. The core functionality across the environments is identical except for new changes, which are deployed through the different environments before they make it to production.
-
-On the pre-production environment, all analysts have full permissions to create publications and releases, and can see everything else that other analysts are making. This is unique to the pre-production environment, on the production environment analysts will only have access to releases that they have been granted specific access to.
-
-When accessing the pre-production environment you may be asked for a username and password, these are as follows: dfe, dataresearch.
-
-<div class="alert alert-dismissible alert-danger">
-The pre-production environment is not suitable for unpublished data. Unpublished data should only be uploaded to the production environment.
-</div>
-
+---
 
 ### Getting access to admin
 
-Access to the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the Statistics Development Team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using gov.uk Notify.
+Access to both the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the Statistics Development Team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using gov.uk Notify.
 
 To be invited to the service for full access teams need to email the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk), stating who needs access, what permissions they require (analyst or approver), and for which publications these apply. This email should be sent by the Team Leader, or accompanied with the relevant Team Leader’s approval. Once access has been granted you will receive an email inviting you to use the platform.
 
