@@ -2,11 +2,7 @@
 title: "Python"
 ---
 
-<p class="text-muted">
-
-Guidance and tips for using Python
-
-</p>
+<p class="text-muted"> Guidance and tips for using Python </p>
 
 ------------------------------------------------------------------------
 

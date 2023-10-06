@@ -79,7 +79,7 @@ Click **Edit this page** at the bottom of the right hand table of contents of an
 
 4.  Commit and push the changes to your working branch.
 
-### Pull Request {#pull-request}
+### Pull Request 
 
 All pull requests should be made against the main branch.
 
