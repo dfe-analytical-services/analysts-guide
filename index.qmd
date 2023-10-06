@@ -1,5 +1,5 @@
 ---
-title: "Analysts's Guide"
+title: "Analysts' Guide"
 date: "Last updated: `r Sys.Date()`"
 author: "statistics.development@education.gov.uk"
 site: "_site.yml"
@@ -19,7 +19,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 ## Learning and development
 
-[General resources](learning-development/learning-support.html)
+[Learning support](learning-development/learning-support.html)
 - Useful learning resources, and support to get you started
 
 [SQL](learning-development/sql.html)
@@ -32,21 +32,21 @@ We hope it can prove a useful community driven resource for everyone from the mo
 - Guidance and tips for version control with Git
 
 [Python](learning-development/python.html)
-- Guidance and tips for using Python [NEW PAGE]
+- Guidance and tips for using Python
 
 
 ## Statistics production
 
-[How to publish](statistics-production/pub.html)
+[Routes for publishing](statistics-production/pub.html)
 - Guidance for how to publish different types of statistics
+
+[RAP in statistics](RAP/rap-statistics.html)
+- Detailed RAP guidance for statistics publications
 
 [Open data standards](statistics-production/ud.html)
 - Guidance on how to structure data files
 
-[Publication pipelines](statistics-production/stats_rap_redirect.html)
-- Link to the RAP for stats? [NEW PAGE / REDIRECT]
-
-[Using EES](statistics-production/ees.html)
+[Explore Education Statistics (EES)](statistics-production/ees.html)
 - How to use the features in Explore Education Statistics
 
 [Good examples in EES](statistics-production/examples.html)
@@ -55,22 +55,25 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Embedded visualisations in EES](statistics-production/embedded-charts.html)
 - How to embed R-Shiny charts in EES publications
 
+[Publication scrums](statistics-production/scrums.html)
+- Information on the scrums we run and tips for writing statistical commentary
+
 [User engagement](statistics-production/user-eng.html)
 - Guidance on understanding and engaging with the users of published statistics
 
 [EES analytics](statistics-production/user_analytics.html)
 - Understanding how users are interacting with your publications
 
-## Writing and visualising data
+## Writing and visualising
 
 [Public dashboards](writing-visualising/dashboards.html)
 - Guidance for publishing public facing statistics dashboards
 
-[Writing about statistics](writing-visualising/cd.html)
-- Things to consider when writing about statistics and data
-
 [Visualising data](writing-visualising/visualising.html)
-- Resources and best practice to guide you when visualising data [NEW PAGE]
+- Resources and best practice to guide you when visualising data
+
+[Writing about data](writing-visualising/writing.html)
+- Resources and best practice for writing about data
 
 ## Reproducible Analytical Pipelines (RAP)
 
@@ -83,15 +86,15 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [RAP FAQs](RAP/rap-faq.html)
 - Frequently asked questions about RAP
 
-[RAP in statistics](RAP/rap-statistics.html)
+[RAP for Statistics](RAP/rap-statistics.html)
 - Detailed RAP guidance for statistics publications
 
 ## Analytical Data Access (ADA) and Databricks
 
-[ADA and Databricks](ADA/ada.html)
+[Analytical Data Access (ADA) and Databricks](ADA/ada.html)
 - Guidance for analysts on how to interact with and use data stored in ADA using Databricks
 
-[Using RStudio with Databricks](ADA/databricks_rstudio.html)
+[Setup Databricks with RStudio](ADA/databricks_rstudio.html)
 - Guidance for analysts on how to connect to Databricks from RStudio.
 
 ## Contact us
