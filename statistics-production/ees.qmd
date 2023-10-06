@@ -213,19 +213,19 @@ Publication summaries are a key tool in helping users find the statistics that t
 
 You only have 160 characters – to make sure you are fully utilising these, have a look through the following advice:
 
-- Use plain language to use terms and phrases that users are likely to use e.g. gender pay gap versus Annual Survey of Hours and Earnings.
+* Use plain language to use terms and phrases that users are likely to use e.g. gender pay gap versus Annual Survey of Hours and Earnings.
 
-- Is it clear what the geographical coverage of this publication is e.g. England?
+* Is it clear what the geographical coverage of this publication is e.g. England?
 
-- Is it clear how frequently the releases are published?
+* Is it clear how frequently the releases are published?
 
-- Is it clear what breakdowns you cover? E.g. Ethnicity, Gender, SEN?
+* Is it clear what breakdowns you cover? E.g. Ethnicity, Gender, SEN?
 
-- Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g. Free School Meals (FSM)
+* Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g. Free School Meals (FSM)
 
-- Avoid phrases like "This release covers" as this wastes characters and delays users getting to the main information.
+* Avoid phrases like "This release covers" as this wastes characters and delays users getting to the main information.
 
-- Have you looked at the EES analytics to see what users key search terms on your publication are? Are key words front loaded In your summary?
+* Have you looked at the EES analytics to see what users key search terms on your publication are? Are key words front loaded In your summary?
 
 - Don’t waste space on including definitions of a topic within the summary.
 
@@ -255,9 +255,9 @@ It is possible to request that external users from other government organisation
 
 If you have external users you'd like to request access for, please send the following details to the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk), **at least two weeks** in advance of requiring access. Due to the dependency on DfE's digital security we cannot guarantee access or how long it may take.
 
-- Email addresses of users to be added
-- Reason for access
-- Length of time access is needed
+* Email addresses of users to be added
+* Reason for access
+* Length of time access is needed
 
 ---
 
@@ -265,14 +265,13 @@ If you have external users you'd like to request access for, please send the fol
 
 ---
 
-New releases can be [created by publication owners](#create-new-release) or via requests to the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk). If you're requesting a new release via the mailbox, please give the following:
+New releases can be [created by publication owners](#create-new-release). To create a new release in a publication series, navigate to the relevant publication and click 'Create new release', you will then need to enter the following information:
 
-+ Name of the publication (including theme and topic that it sits under)
-+ Time period for the release
-+ [Time identifier](../creating-statistics/ud.html#List_of_allowable_time_values) for the release
-+ Type of release (National, Official, Ad-hoc etc)
+* [Time identifier](../statistics-production/ud.html#list_of_allowable_time_values) for the release
+* Time period for the release
+* Type of release (National, Official, Ad-hoc etc)
 
-Once you have created your release you will see enter the ‘create release dashboard, here you need to work through the following tabs to create your release:
+Once you have created your release you will see the dashboard to edit your release, here you need to work through the following tabs to create your release:
 
 1.	Data and files (uploading data files, ancillary files and creating data guidance)
 
@@ -289,15 +288,19 @@ Once you have created your release you will see enter the ‘create release dash
 
 ![](../images/EES-create-release-dashboard.PNG)
 
+If you are experiencing issues or need help with creating a new release, you can get in touch with the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk).
+
 ---
 
 ## Data and files
 
 
-Here you will update your data files and accompanying metadata. You need to make sure that the data has passed through our [data screener checks](https://rsconnect/rsc/dfe-published-data-qa/) before trying to upload it.
+You need to make sure that the data files and accompanying [metadata](../statistics-production/ud.html#ees-metadata) have passed through our [data screener checks](https://rsconnect/rsc/dfe-published-data-qa/) before trying to upload it.
 
-<div class="alert alert-dismissible alert-info">
-All data files are accessible in the downloadable files for users to explore in the same format as they are uploaded.
+All data files uploaded will be available to download for users to explore (this will be in the same format as they are uploaded).
+
+<div class="alert alert-dismissible alert-danger">
+Releases cannot be published without a completed metadata document. If not filled in an error will be flagged during sign off.
 </div>
 
 ---
@@ -306,22 +309,22 @@ All data files are accessible in the downloadable files for users to explore in 
 
 ---
 
-You'll need to give a 'subject title' to each data file you upload. The subject name should be a simple user-friendly title for the data included within the file - it is what users will see wherever the file is referenced within EES. The actual file name and data guidance can include more technical / coverage information.
+You'll need to give a 'Subject title' to each data file you upload. This is what users will see whenever the file is referenced within EES so it should be a simple user-friendly title. The actual file name and data guidance can include more technical / coverage information.
 
-When adding a subject name think about the general user and how the subjects will appear in the service:
+When adding a Subject title, think about the general user and how they will appear in the service:
 
-* You don't need to include the publication name in the subject name as this is always already implied within EES
+* You don't need to include the publication name in the title as this is always already implied within EES
 
 * You don't need to list what filters are in each file in the title, users can see this in the data guidance
 
 * You don't need to include the date ranges covered in each file in the title, users can see this in the data guidance
 
-* Your subject names should be short and snappy, clearly explain what is in each file. Some good examples of this in practice are included below:
-  + Early years provision by provider type
-  + Exclusions and suspensions by pupil characteristics
-  + ITT new entrants by subject and training route
+* Your Subject titles should be short and snappy and clearly explain what is in each file. Some good examples of this in practice are included below:
+  * Early years provision by provider type
+  * Exclusions and suspensions by pupil characteristics
+  * ITT new entrants by subject and training route
 
-You can make changes the subject title for your data file after it has been uploaded if needed using the 'Edit title' option.
+You can make changes to the Subject title for your data file after it has been uploaded using the 'Edit title' option.
 
 ---
 
@@ -333,14 +336,7 @@ When uploading files you have a choice between uploading as separate CSV files o
 
 For data files greater than 80mb we recommend uploading as a ZIP file.
 
-Once you click to upload the file a ‘Status’ will be visible that shows the progress of the import process. It will go through the following stages:
-
-* Queued
-* Validating
-* Importing
-* Complete
-
-This may take a little while depending on the size of your file and if there are numerous files queued for import. You cannot view the dataset or use it to create tables/charts until this status is ‘COMPLETE’.
+Once you click to upload the file a ‘Status’ will be visible that shows the progress of the import process. This may take a little while depending on the size of your file and if there are numerous files queued for import. You cannot view the dataset or use it to create tables/charts until this status is ‘COMPLETE’.
 
 <div class="alert alert-dismissible alert-warning">
 If you believe your file is ‘stuck’ please contact explore.statistics@education.gov.uk, with details of the file and the release that you are uploading to.
@@ -352,7 +348,15 @@ If you believe your file is ‘stuck’ please contact explore.statistics@educat
 
 ---
 
-To save time when creating tables and charts, and to aid users who view your data themselves via the table tool, you can now save custom orders for your filters and indicators. You can do this in the data and files page after uploading underlying data files, via the ‘reorder filters and indicators’ tab. Once there just choose which file you want to reorder and then click and drag the items until they’re in the order you want them to show in the table tool. This then becomes the default order for this filter or indicator and will apply in all charts and tables automatically.
+You can save custom orders for your [filters](../statistics-production/ud.html#introduction-to-filters) and [indicators](../statistics-production/ud.html#introduction-to-indicators). This can help to save time when creating tables and charts, and to aid users who view your data themselves via the table tool.
+
+To reorder your filters and indicators:
+
+* Go to the data and files page after uploading underlying data files
+* Go to the 'Reorder filters and indicators’ tab (within the data and files page)
+* Choose which file you want to reorder and then click and drag the items until they’re in the order you want them to show in the table tool. 
+
+This then becomes the default order for this filter or indicator and will apply in all charts and tables automatically.
 
 ![](../images/order-filters-indicators.png)
 
@@ -363,7 +367,7 @@ To save time when creating tables and charts, and to aid users who view your dat
 
 ---
 
-Any files you want to make available for users to download but aren't intended the table tool should be added as an ancillary file upload. These files will need to meet all requirements of the new [accesibility regulations](https://www.gov.uk/guidance/publishing-accessible-documents) before they can be published.
+Any files you want to make available for users to download but aren't intended for the table tool should be added as an ancillary file upload. These files will need to meet all requirements of the new [accesibility regulations](https://www.gov.uk/guidance/publishing-accessible-documents) before they can be published.
 
 Examples of ancillary files may be:
 
@@ -371,10 +375,10 @@ Examples of ancillary files may be:
 * Supplementary data that isn't intended for the table tool
 * Additional technical documentation
 
-For ensuring that spreadsheets are accessible see the guidance from [.gov.wales](https://gov.wales/how-create-accessible-excel-spreadsheets), and this [blog post](https://gss.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/) that walks you through some ways that you can recreate the experience of using spreadsheets.
+To ensure that spreadsheets are accessible, see the guidance from [gov.wales](https://gov.wales/how-create-accessible-excel-spreadsheets), and this [Analysis Function guidance](https://analysisfunction.civilservice.gov.uk/policy-store/making-analytical-publications-accessible/).
 
 <div class="alert alert-dismissible alert-info">
-Any data files that only consist of Planning area, and/or Institution level data should be uploaded as an ancillary file, rather than as a data file.
+Any data files that only consist of Planning area data should be uploaded as an ancillary file, rather than as a data file.
 </div>
 
 ---
@@ -383,18 +387,18 @@ Any data files that only consist of Planning area, and/or Institution level data
 
 ---
 
-Here you should also create your [public data guidance](https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england/meta-guidance) document, this replaces the information that would have previously been uploaded as a pdf and is designed to help users understand and use the data they download from your release.
+Within the 'Data and files' page, you can also create your public data guidance. This replaces the information that would have previously been uploaded as a pdf on GOV.UK and is designed to help users understand and use the data they download from your release. See the [Permanent and fixed period exclusions data guidance](https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england/meta-guidance) for an example.
+
+The 'Data files' section of the document will automatically update as you add new data files to your release, however you will need to add an overview of all the data included in the release and short summaries for each data file before the release can be published.
 
 ![](../images/admin-public-meta-start.PNG)
-
-The document will automatically update as you add new data files to your release, however you will need to add an overview of all the data included in the release and short summaries for each data file before the release can be published.
 
 A list of variables in each file with an associated label (taken from metadata uploads) and associated footnotes will also be displayed for each file.
 
 ![](../images/admin-public-meta-detail.PNG)
 
 <div class="alert alert-dismissible alert-danger">
-Releases cannot be published without a completed metadata document. If not filled in an error will be flagged during sign off.
+Releases cannot be published without a completed data guidance. If not filled in an error will be flagged during sign off.
 </div>
 
 ---
@@ -403,7 +407,7 @@ Releases cannot be published without a completed metadata document. If not fille
 
 ---
 
-If you just need to change the subject title for your data file you do not need to go through the whole replacement process, just click the 'Edit title' option.
+If you just need to change the [Subject titles](#subject-titles) for your data file(s) you do not need to go through the whole replacement process, just click the 'Edit title' option.
 
 However, if you notice a mistake in your data file you can replace it with another. When replacing a data file the platform will attempt to recreate any data blocks and footnotes that were built using the previous file.
 
@@ -411,6 +415,7 @@ However, if you notice a mistake in your data file you can replace it with anoth
 The replacement file must contain the exact same column names and types as the original. For example, a character column named "date" must also be replaced with a character column named "date". A numeric column named "date" will not work in the replacement.
 </div>
 
+Navigate to the file you wish to replace, and you should see a 'Replace data' option in the 'Actions' row.
 
 ![](../images/replace-data-start.png)
 
