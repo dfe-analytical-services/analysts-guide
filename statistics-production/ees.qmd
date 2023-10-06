@@ -574,6 +574,22 @@ Fast-track links are similar to permalinks however instead of linking to a stati
 
 ---
 
+#### Tables in content
+
+---
+
+There might be some instances where you aren't able to make a table quite as you would like within a data block. If this is the case, you can also build a table manually within the text editor when adding content to your publication.
+
+Navigate to the 'Content' tab. In the text editor, you can add in a table using the table icon.
+
+![](../images/ees-table-in-content.PNG)
+
+<div class="alert alert-dismissible alert-warning">
+It's essential to make sure any data used in tables within text are available in the underlying data files of the release.
+</div>
+
+---
+
 ### Charts
 
 ---
