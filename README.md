@@ -1,6 +1,6 @@
 [![Publish to pages](https://github.com/dfe-analytical-services/analysts-guide/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/dfe-analytical-services/analysts-guide/actions/workflows/publish.yml)
 
-# Analysts's Guide
+# Analysts' Guide
 
 ## Introduction
 

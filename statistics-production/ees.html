@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analyst’s Guide - Explore Education Statistics</title>
+<title>Analysts’ Guide - Explore Education Statistics (EES)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,7 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../statistics-production/embedded-charts.html" rel="next">
+<link href="../statistics-production/examples.html" rel="next">
 <link href="../statistics-production/ud.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -102,7 +102,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../statistics-production/pub.html">Statistics production</a></li><li class="breadcrumb-item"><a href="../statistics-production/ees.html">Explore Education Statistics</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../statistics-production/pub.html">Statistics production</a></li><li class="breadcrumb-item"><a href="../statistics-production/ees.html">Explore Education Statistics (EES)</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -251,7 +251,13 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Publication checklists</span></a>
+ <span class="menu-text">Routes for publishing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -263,7 +269,13 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Explore Education Statistics</span></a>
+ <span class="menu-text">Explore Education Statistics (EES)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good examples in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -274,8 +286,8 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Good examples in EES</span></a>
+  <a href="../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publication scrums</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -303,14 +315,20 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../writing-visualising/cd.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing and visualising</span></a>
+  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Public dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Public dashboards</span></a>
+  <a href="../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualising data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing about data</span></a>
   </div>
 </li>
       </ul>
@@ -390,7 +408,10 @@ cookieconsent.run({
   <li><a href="#getting-access-to-admin" id="toc-getting-access-to-admin" class="nav-link" data-scroll-target="#getting-access-to-admin">Getting access to admin</a></li>
   </ul></li>
   <li><a href="#roles-and-permissions" id="toc-roles-and-permissions" class="nav-link" data-scroll-target="#roles-and-permissions">Roles and permissions</a></li>
-  <li><a href="#requesting-a-new-publication" id="toc-requesting-a-new-publication" class="nav-link" data-scroll-target="#requesting-a-new-publication">Requesting a new publication</a></li>
+  <li><a href="#requesting-a-new-publication" id="toc-requesting-a-new-publication" class="nav-link" data-scroll-target="#requesting-a-new-publication">Requesting a new publication</a>
+  <ul class="collapse">
+  <li><a href="#publication-summaries" id="toc-publication-summaries" class="nav-link" data-scroll-target="#publication-summaries">Publication summaries</a></li>
+  </ul></li>
   <li><a href="#admin-dashboard" id="toc-admin-dashboard" class="nav-link" data-scroll-target="#admin-dashboard">Admin dashboard</a></li>
   <li><a href="#external-user-access" id="toc-external-user-access" class="nav-link" data-scroll-target="#external-user-access">External user access</a></li>
   </ul></li>
@@ -408,16 +429,20 @@ cookieconsent.run({
   <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes">Footnotes</a></li>
   <li><a href="#data-blocks-tables-and-charts" id="toc-data-blocks-tables-and-charts" class="nav-link" data-scroll-target="#data-blocks-tables-and-charts">Data blocks (tables and charts)</a>
   <ul class="collapse">
+  <li><a href="#using-effectively" id="toc-using-effectively" class="nav-link" data-scroll-target="#using-effectively">Using effectively</a></li>
   <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
   <li><a href="#charts" id="toc-charts" class="nav-link" data-scroll-target="#charts">Charts</a></li>
   </ul></li>
   <li><a href="#content" id="toc-content" class="nav-link" data-scroll-target="#content">Content</a>
   <ul class="collapse">
   <li><a href="#headline-facts-and-figures" id="toc-headline-facts-and-figures" class="nav-link" data-scroll-target="#headline-facts-and-figures">Headline facts and figures</a></li>
-  <li><a href="#drafting-text" id="toc-drafting-text" class="nav-link" data-scroll-target="#drafting-text">Drafting text</a></li>
+  <li><a href="#accordion-section-content" id="toc-accordion-section-content" class="nav-link" data-scroll-target="#accordion-section-content">Accordion section content</a></li>
+  <li><a href="#writing-about-characteristics" id="toc-writing-about-characteristics" class="nav-link" data-scroll-target="#writing-about-characteristics">Writing about characteristics</a></li>
+  <li><a href="#writing-about-ethnicity" id="toc-writing-about-ethnicity" class="nav-link" data-scroll-target="#writing-about-ethnicity">Writing about ethnicity</a></li>
   <li><a href="#footnotes-1" id="toc-footnotes-1" class="nav-link" data-scroll-target="#footnotes-1">Footnotes</a></li>
   <li><a href="#reviewing-content" id="toc-reviewing-content" class="nav-link" data-scroll-target="#reviewing-content">Reviewing content</a></li>
   </ul></li>
+  <li><a href="#search-engine-optimisation" id="toc-search-engine-optimisation" class="nav-link" data-scroll-target="#search-engine-optimisation">Search engine optimisation</a></li>
   <li><a href="#embedding-r-shiny-blocks" id="toc-embedding-r-shiny-blocks" class="nav-link" data-scroll-target="#embedding-r-shiny-blocks">Embedding R-Shiny blocks</a></li>
   <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a>
   <ul class="collapse">
@@ -456,7 +481,7 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Explore Education Statistics</h1>
+<h1 class="title">Explore Education Statistics (EES)</h1>
 </div>
 
 
@@ -472,7 +497,7 @@ cookieconsent.run({
 </header>
 
 <p class="text-muted">
-Guidance for how to use the features in the Explore Education Statistics platform
+Guidance for how to use the features in the Explore Education Statistics (EES) platform
 </p>
 <hr>
 <p>Explore Education Statistics (EES) is the Department’s official statistics dissemination platform, designed to make DFE’s published statistics and data easier to find, access, use and understand.</p>
@@ -633,6 +658,23 @@ Guidance for how to use the features in the Explore Education Statistics platfor
 </ul>
 <p>Publication details can be <a href="#managing-publications">managed by publication owners</a> or via requests to the <a href="mailto:explore.statistics@education.gov.uk">Explore Statistics Mailbox</a>.</p>
 <hr>
+<section id="publication-summaries" class="level3">
+<h3 class="anchored" data-anchor-id="publication-summaries">Publication summaries</h3>
+<hr>
+<p>Publication summaries are a key tool in helping users find the statistics that they’re looking for. We use them on gov.uk pages and in the EES find statistics page.</p>
+<p>Like on gov.uk, you only have 181 characters – to make sure you are fully utilising these, have a look through the following advice:</p>
+<ul>
+<li><p>Use plain language to use terms and phrases that users are likely to use e.g.&nbsp;gender pay gap versus Annual Survey of Hours and Earnings.</p></li>
+<li><p>Is it clear what the geographical coverage of this publication is e.g.&nbsp;England?</p></li>
+<li><p>Is it clear how frequently the releases are published?</p></li>
+<li><p>Is it clear what breakdowns you cover? E.g. Ethnicity, Gender, SEN?</p></li>
+<li><p>Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g.&nbsp;Free School Meals (FSM)</p></li>
+<li><p>Avoid phrases like “This release covers” as this wastes characters and delays users getting to the main information.</p></li>
+<li><p>Have you looked at the EES analytics to see what users key search terms on your publication are? Are key words front loaded In your summary?</p></li>
+<li><p>Don’t waste space on including definitions of a topic within the summary.</p></li>
+</ul>
+<hr>
+</section>
 </section>
 <section id="admin-dashboard" class="level2">
 <h2 class="anchored" data-anchor-id="admin-dashboard">Admin dashboard</h2>
@@ -798,6 +840,17 @@ Guidance for how to use the features in the Explore Education Statistics platfor
 <h2 class="anchored" data-anchor-id="data-blocks-tables-and-charts">Data blocks (tables and charts)</h2>
 <p>A data block is a smaller cut of data from your original file that you can embed into your publication as a presentation table, build charts from, or link users directly to.</p>
 <hr>
+<section id="using-effectively" class="level3">
+<h3 class="anchored" data-anchor-id="using-effectively">Using effectively</h3>
+<hr>
+<p><strong>Aim for fewer tables, and keep them small. As a guide, we suggest no more than one table per accordion section.</strong></p>
+<p>Presentation tables are the tables you include within the accordion sections of your release to quickly visualise numbers. Unlike the underlying data files, the presentation tables focus on specific parts of the story you are telling. They are distinct from, and should never be a copy of an underlying data file.</p>
+<p>You should only be including small tables sparingly where they add value to your release and not use them as a straight copy of the ready-made Excel tables previously published on gov.uk. The data itself is there for users to access through other means, therefore any data in the commentary should only be there if it is enhancing the story.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>You do not need to recreate all of the old excel tables, users can find the numbers they are interested in using the table tool, or analyse the underlying data if they want the data behind the release.</p>
+</div>
+<hr>
+</section>
 <section id="tables" class="level3">
 <h3 class="anchored" data-anchor-id="tables">Tables</h3>
 <hr>
@@ -858,7 +911,16 @@ Guidance for how to use the features in the Explore Education Statistics platfor
 <p>Make sure to review your chart dimensions before you publish. Users should be able to read the labels on the axes and see the legend without having to scroll.</p>
 </div>
 <p><img src="../images/EES-charts-create.PNG" class="img-fluid"></p>
-<p>Note, within the vertical and horizontal bar chart types you can also create stacked bar charts by clicking the ‘Stacked bars’ option within the chart configuration tab</p>
+<p>Note, within the vertical and horizontal bar chart types you can also create stacked bar charts by clicking the ‘Stacked bars’ option within the chart configuration tab.</p>
+<hr>
+</section>
+<section id="non-numeric-values" class="level4">
+<h4 class="anchored" data-anchor-id="non-numeric-values">Non-numeric values</h4>
+<hr>
+<p>On the chart configuration tab there is a toggle for visualising non-numeric values in the data as 0. On the first chart configuration tab, there’s a check box that will toggle between showing and hiding them.</p>
+<p><img src="../images/ees-non-numeric-toggle.png" class="img-fluid"></p>
+<p>When selected, you will then see that this data appears in the chart as if the indicator values are 0.</p>
+<p><img src="../images/ees-missing-data-chart.png" class="img-fluid"></p>
 <hr>
 </section>
 <section id="data-sets" class="level4">
@@ -1010,6 +1072,55 @@ Guidance for how to use the features in the Explore Education Statistics platfor
 <p><img src="../images/map_change_legend.png" class="img-fluid"></p>
 <hr>
 </section>
+<section id="breaks-in-a-series" class="level4">
+<h4 class="anchored" data-anchor-id="breaks-in-a-series">Breaks in a series</h4>
+<hr>
+<p>We recommend including any missing data from breaks in a time series in your data file using the appropriate <a href="../creating-statistics/ud.html#data-symbols">GSS symbol</a>, such as in this example table:</p>
+<table class="table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>2013/14</th>
+<th>2014/15</th>
+<th>2015/16</th>
+<th>2016/17</th>
+<th>2017/18</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of pupil enrollments</td>
+<td>3,627,985</td>
+<td>3,713,774</td>
+<td>3,796,146</td>
+<td>x</td>
+<td>3,885,774</td>
+</tr>
+<tr class="even">
+<td>Number of schools</td>
+<td>16,705</td>
+<td>16,723</td>
+<td>16,736</td>
+<td>x</td>
+<td>16,739</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-dismissible alert-info">
+<p>There may be times when including missing data increases the file size too much, or becomes unwieldy, if you’re unsure and would like advice on your data contact <a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a>.</p>
+</div>
+<p>By including the missing data in your open data files you can then create charts in EES that represent this. Start off by creating a data block with the data you want to build the chart from.</p>
+<p><img src="../images/ees-missing-data-table.png" class="img-fluid"></p>
+<hr>
+</section>
 <section id="other-chart-types" class="level4">
 <h4 class="anchored" data-anchor-id="other-chart-types">Other chart types</h4>
 <hr>
@@ -1136,8 +1247,17 @@ ggplot(data, aes(x=time_period, y=indicator1,  fill=Filter )) +
 </table>
 <hr>
 </section>
-<section id="drafting-text" class="level3">
-<h3 class="anchored" data-anchor-id="drafting-text">Drafting text</h3>
+<section id="accordion-section-content" class="level3">
+<h3 class="anchored" data-anchor-id="accordion-section-content">Accordion section content</h3>
+<hr>
+<p>You should split your release into sections that each focus on one or two key messages, with a recommended maximum of 10 sections in the release. <strong>The whole release should take no more than 10 minutes to read.</strong> Our <a href="https://rsconnect/rsc/ees-analytics/" target="_blank" rel="noopener noreferrer">analytics app</a> contains insights on how long it takes the average user to read your release.</p>
+<p>To keep the release short only include information if there is something interesting to say - the commentary is there to tell a story, people looking for specific figures will use the table tool, or download the underlying data instead. <strong>Do not try to summarise every number in the commentary.</strong></p>
+<p>Avoid having large blocks of text as they are hard to read and users scan them and miss the detail. Graphs and tables break up the content but only include these where they add value; <strong>you do not need a graph or chart in every section.</strong></p>
+<p>Use plain English and shorter sentences, aim for an average of 15-20 words per sentence. Do not overload sentences with numbers and avoid ‘elevator commentary’ that describes small movements in the whole series without giving any insight (use a summary table instead if it is interesting, or leave it out entirely). <strong>Be impartial and objective; avoid using sensationalist terms or terms that reflect a judgement such as “very few” “only” or “strong”.</strong></p>
+<p>Explain complex concepts in plain English within the text. Remember that for many of our users, confidence intervals and significant differences are complex concepts that need explaining.</p>
+<div class="alert alert-dismissible alert-danger">
+<p>Do not use footnotes in the text of your content. They’re designed for reference in print, not web pages. Always consider the user need first. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.</p>
+</div>
 <hr>
 <section id="about-these-statistics" class="level4">
 <h4 class="anchored" data-anchor-id="about-these-statistics">About these statistics</h4>
@@ -1163,6 +1283,43 @@ ggplot(data, aes(x=time_period, y=indicator1,  fill=Filter )) +
 <li>Links to relevant related statistics including the cause of any differences</li>
 <li>Further useful detail on specific measures used in the release</li>
 <li>Non-urgent notices to users such as minor error corrections and delays or changes to the next publication. If there is something important which you want all users to know about then give it its own accordion section.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="writing-about-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="writing-about-characteristics">Writing about characteristics</h3>
+<hr>
+<p>There is a wide range of guidance available from the GSS, ONS and the Cabinet Office around writing about characteristics. Statistics content published on EES should adhere to the principles outlined by the above. The data harmonisation champions group are in the process of collating the most recent guidance from all these sources and summarising it below.</p>
+<p>If you need some steer on how to report on a particular characteristics, the below links provide some useful starting points:</p>
+<ul>
+<li><a href="https://analysisfunction.civilservice.gov.uk/policy-store/ethnicity-harmonised-standard/" target="_blank">Analysis Function Data Harmonisation</a></li>
+<li><a href="https://www.ethnicity-facts-figures.service.gov.uk/style-guide/writing-about-ethnicity" target="_blank">Cabinet Office guidance on writing about statistics</a></li>
+</ul>
+<p>You can also get in touch with the DfE Data Harmonisation Champions Group via <a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a>.</p>
+<hr>
+</section>
+<section id="writing-about-ethnicity" class="level3">
+<h3 class="anchored" data-anchor-id="writing-about-ethnicity">Writing about ethnicity</h3>
+<hr>
+<p>For the official names of ethnicity filters to use in data files, please check our guidance on <a href="../creating-statistics/ud.html#ethnicity">creating statistics</a>. The below outlines some key points in writing about ethnicity in publication content.</p>
+<hr>
+<section id="ethnic-minorities-and-not-bame" class="level4">
+<h4 class="anchored" data-anchor-id="ethnic-minorities-and-not-bame">Ethnic minorities and not BAME</h4>
+<hr>
+<p>As outlined in the CRED report, grouping ethnicity at a higher level than the 5 major ethnic groups should be avoided as it risks masking the true disparities between, and/or life experiences of, people from different ethnic groups.</p>
+<p>There will, however, be specific cases where data quality or comparisons with past metrics does not allow for statistics to be produced at the level of the major or minor ethnic groups. In these cases, the group ‘ethnic minorities’ should be used exclusively to refer to all ethnic groups except the White British group, this includes White minorities, such as Gypsy, Roma and Irish Traveller groups.</p>
+<p>For comparisons with the White group as a whole, ‘all other ethnic groups combined’ or ‘ethnic minorities (excluding White minorities)’ should be used. It may also be necessary to refer to ‘White’ and ‘other than White’ if space is limited, but this should be avoided if possible.</p>
+<p>Do not use the terms ‘non-White’, BAME (Black, Asian, and Minority Ethnic), or BME (Black and minority ethnic). These terms can be perceived as demeaning and can be confusing as to what groups are being included and excluded. For comparison with past metrics, BAME and BME should be replaced by the term “ethnic minorities (excluding White minorities)” unless White minorities were specifically mentioned.</p>
+<hr>
+</section>
+<section id="ordering-of-groups" class="level4">
+<h4 class="anchored" data-anchor-id="ordering-of-groups">Ordering of groups</h4>
+<hr>
+<p>There are several methods of ordering the ethnic groups, depending on where and how they are used:</p>
+<ul>
+<li><p>Alphabetical: use in tables and when listing ethnic groups (with ‘Other’ and sometimes ‘Unknown’ as a final category)</p></li>
+<li><p>In expected order of size (with largest first): useful in charts and visualisations as it makes data and patterns easier to read</p></li>
 </ul>
 <hr>
 </section>
@@ -1201,6 +1358,20 @@ ggplot(data, aes(x=time_period, y=indicator1,  fill=Filter )) +
 <hr>
 </section>
 </section>
+<section id="search-engine-optimisation" class="level2">
+<h2 class="anchored" data-anchor-id="search-engine-optimisation">Search engine optimisation</h2>
+<p>Search engine optimisation (SEO) makes it easier for users to find your data through search engines like Google. Some top tips include:</p>
+<ul>
+<li><p>Keeping your release title shorter than 50-60 characters. This means the full title can be displayed on the search engine results</p></li>
+<li><p>Avoid listing key words: search engines penalise anything not recognised as a full sentence.</p></li>
+<li><p>Make use of our <a href="https://rsconnect/rsc/ees-analytics/" target="_blank" rel="noopener noreferrer">analytics app</a> to explore what your users are doing: what accordions are they clicking on, what are they searching for? This could give an idea of what content you should focus on in future, and which areas are no longer of interest to most of your users.</p></li>
+</ul>
+<p>Following best practice in writing about statistics is of increasing importance. As shown in the below example any sentence could be pulled out into a snippet and shown in a search engine to users who are searching for related information:</p>
+<p><img src="../images/google-snippet.png" class="img-fluid"></p>
+<p>We should make a concerted effort to ensure that we are answering the questions people are interested in as search engines are getting smarter and pulling this information directly out of webpages. See the following example of a google search using a snippet from one of our publications as an answer in the search engine results itself:</p>
+<p><img src="../images/google-peopleAlsoAsk.png" class="img-fluid"></p>
+<hr>
+</section>
 <section id="embedding-r-shiny-blocks" class="level2">
 <h2 class="anchored" data-anchor-id="embedding-r-shiny-blocks">Embedding R-Shiny blocks</h2>
 <p>If you need to include a type of chart that isn’t possible using the standard EES chart options, for example an interactive chart with filters, you can embed a block to display a custom R-Shiny produced chart.</p>
@@ -1216,7 +1387,7 @@ ggplot(data, aes(x=time_period, y=indicator1,  fill=Filter )) +
 </section>
 <section id="glossary" class="level2">
 <h2 class="anchored" data-anchor-id="glossary">Glossary</h2>
-<p>Our glossary on EES is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics - https://explore-education-statistics.service.gov.uk/glossary.</p>
+<p>The <a href="https://explore-education-statistics.service.gov.uk/glossary" target="_blank">glossary in Explore Education Statistics</a> is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics - https://explore-education-statistics.service.gov.uk/glossary.</p>
 <hr>
 <section id="adding-new-definitions" class="level3">
 <h3 class="anchored" data-anchor-id="adding-new-definitions">Adding new definitions</h3>
@@ -1340,6 +1511,7 @@ EES PRA one pager
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
 <hr>
+<p>Appropriate methodological information must be made available for all published Official Statistics releases.</p>
 <p>Methodologies work in a very similar way to the written content of a release, the text editor and static tables you can use are built on the same foundations.</p>
 <p>If you have not created or published a methodology page on EES before, the first thing your publication owner will need to do is create a methodology page.</p>
 <p><img src="../images/EES-create-methodology.PNG" class="img-fluid"></p>
@@ -1774,8 +1946,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../statistics-production/embedded-charts.html" class="pagination-link">
-        <span class="nav-page-text">Embedded visualisations in EES</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../statistics-production/examples.html" class="pagination-link">
+        <span class="nav-page-text">Good examples in EES</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

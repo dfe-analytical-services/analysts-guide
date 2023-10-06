@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="statistics.development@education.gov.uk">
-<meta name="dcterms.date" content="2023-10-06">
 
-<title>Analysts’ Guide</title>
+<title>Analysts’ Guide - Visualising data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,26 +23,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./learning-development/learning-support.html" rel="next">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../writing-visualising/writing.html" rel="next">
+<link href="../writing-visualising/dashboards.html" rel="prev">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,7 +102,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../writing-visualising/dashboards.html">Writing and visualising</a></li><li class="breadcrumb-item"><a href="../writing-visualising/visualising.html">Visualising data</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -117,8 +116,8 @@ cookieconsent.run({
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" rel="" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -195,7 +194,7 @@ cookieconsent.run({
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -210,31 +209,31 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Learning support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/sql.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/r.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/git.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
@@ -251,55 +250,55 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/pub.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Routes for publishing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/ud.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open Data Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/ees.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore Education Statistics (EES)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Good examples in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Embedded visualisations in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Publication scrums</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">User engagement</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EES analytics</span></a>
   </div>
 </li>
@@ -307,28 +306,28 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Writing and visualising</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Public dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Visualising data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing about data</span></a>
   </div>
 </li>
@@ -345,25 +344,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP expectations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP FAQs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
@@ -380,13 +379,13 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/ada.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analytical Data Access (ADA) and databricks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/databricks_rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup Databricks with RStudio</span></a>
   </div>
 </li>
@@ -402,40 +401,34 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-and-development" id="toc-learning-and-development" class="nav-link active" data-scroll-target="#learning-and-development">Learning and development</a></li>
-  <li><a href="#statistics-production" id="toc-statistics-production" class="nav-link" data-scroll-target="#statistics-production">Statistics production</a></li>
-  <li><a href="#writing-and-visualising" id="toc-writing-and-visualising" class="nav-link" data-scroll-target="#writing-and-visualising">Writing and visualising</a></li>
-  <li><a href="#reproducible-analytical-pipelines-rap" id="toc-reproducible-analytical-pipelines-rap" class="nav-link" data-scroll-target="#reproducible-analytical-pipelines-rap">Reproducible Analytical Pipelines (RAP)</a></li>
-  <li><a href="#analytical-data-access-ada-and-databricks" id="toc-analytical-data-access-ada-and-databricks" class="nav-link" data-scroll-target="#analytical-data-access-ada-and-databricks">Analytical Data Access (ADA) and Databricks</a></li>
-  <li><a href="#contact-us" id="toc-contact-us" class="nav-link" data-scroll-target="#contact-us">Contact us</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#visualisation-titles" id="toc-visualisation-titles" class="nav-link" data-scroll-target="#visualisation-titles">Visualisation titles</a></li>
+  <li><a href="#charts" id="toc-charts" class="nav-link" data-scroll-target="#charts">Charts</a></li>
+  <li><a href="#colours" id="toc-colours" class="nav-link" data-scroll-target="#colours">Colours</a>
+  <ul class="collapse">
+  <li><a href="#categorical-colour-palette" id="toc-categorical-colour-palette" class="nav-link" data-scroll-target="#categorical-colour-palette">Categorical colour palette</a></li>
+  <li><a href="#sequential-colour-palette" id="toc-sequential-colour-palette" class="nav-link" data-scroll-target="#sequential-colour-palette">Sequential colour palette</a></li>
+  <li><a href="#focus-palette" id="toc-focus-palette" class="nav-link" data-scroll-target="#focus-palette">Focus palette</a></li>
+  <li><a href="#larger-palettes" id="toc-larger-palettes" class="nav-link" data-scroll-target="#larger-palettes">Larger palettes</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/writing-visualising/visualising.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysts’ Guide</h1>
+<h1 class="title">Visualising data</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>statistics.development@education.gov.uk </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 6, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -443,56 +436,201 @@ cookieconsent.run({
 
 </header>
 
+<p class="text-muted">
+Things to consider when visualising data
+</p>
 <hr>
-<p>This website is a guide aimed at anyone working in analysis or statistics in the Department for Education (DfE). It includes tips on best practice and learning resources across a number of areas.</p>
-<p>We hope it can prove a useful community driven resource for everyone from the most experienced analyst right through to those just starting out. If you have any feedback, suggested additions, or wish to challenge any of the guidance, feel free to use the GitHub links to suggest changes directly, or contact us at the email you can find at the bottom of the page.</p>
-<section id="learning-and-development" class="level2">
-<h2 class="anchored" data-anchor-id="learning-and-development">Learning and development</h2>
-<p><a href="learning-development/learning-support.html">Learning support</a> - Useful learning resources, and support to get you started</p>
-<p><a href="learning-development/sql.html">SQL</a> - Guidance and tips for accessing data via databases with SQL</p>
-<p><a href="learning-development/r.html">R</a> - Guidance and tips for using R</p>
-<p><a href="learning-development/git.html">Git</a> - Guidance and tips for version control with Git</p>
-<p><a href="learning-development/python.html">Python</a> - Guidance and tips for using Python</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<hr>
+<p>Any analyst building charts should make themselves familiar with the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/" target="_blank">Analysis Function data visualisation guidance</a>.</p>
+<hr>
+<section id="visualisation-titles" class="level2">
+<h2 class="anchored" data-anchor-id="visualisation-titles">Visualisation titles</h2>
+<p>For tables and charts, active titles are descriptive and tell the trend by <strong>highlighting the main story</strong>. They should be short, aim for 10 words or less and avoid going over more than one line. Active titles give users the main message without having to find the text that accompanies the chart, and makes it easier for journalists to use your chart directly without having to write their own summary.</p>
+<p>Put information such as the measure, source, population, geographical coverage and time period in a caption if they are not obvious from the chart content. Add further context and information in the main text. <strong>Remember that tables and charts should be usable even if isolated</strong> from the rest of the release.</p>
+<hr>
 </section>
-<section id="statistics-production" class="level2">
-<h2 class="anchored" data-anchor-id="statistics-production">Statistics production</h2>
-<p><a href="statistics-production/pub.html">Routes for publishing</a> - Guidance for how to publish different types of statistics</p>
-<p><a href="RAP/rap-statistics.html">RAP in statistics</a> - Detailed RAP guidance for statistics publications</p>
-<p><a href="statistics-production/ud.html">Open data standards</a> - Guidance on how to structure data files</p>
-<p><a href="statistics-production/ees.html">Explore Education Statistics (EES)</a> - How to use the features in Explore Education Statistics</p>
-<p><a href="statistics-production/examples.html">Good examples in EES</a> - Examples of good practice in Explore Education Statistics</p>
-<p><a href="statistics-production/embedded-charts.html">Embedded visualisations in EES</a> - How to embed R-Shiny charts in EES publications</p>
-<p><a href="statistics-production/scrums.html">Publication scrums</a> - Information on the scrums we run and tips for writing statistical commentary</p>
-<p><a href="statistics-production/user-eng.html">User engagement</a> - Guidance on understanding and engaging with the users of published statistics</p>
-<p><a href="statistics-production/user_analytics.html">EES analytics</a> - Understanding how users are interacting with your publications</p>
+<section id="charts" class="level2">
+<h2 class="anchored" data-anchor-id="charts">Charts</h2>
+<p>The majority of charts should be line or bar charts and be kept simple, and you should use the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-3" target="_blank">Analysis Function guidance on choosing charts</a> to help guide your decision. You should only use complex charts where there is a clear user need, as simple charts are the easiest for users to understand</p>
+<p>DWP have created a <a href="https://dataviztraining.dwpdata.info/index.html" target="_blank">Data Visualisation Thinking</a> course that may be useful to look at when creating more complex charts.</p>
+<hr>
 </section>
-<section id="writing-and-visualising" class="level2">
-<h2 class="anchored" data-anchor-id="writing-and-visualising">Writing and visualising</h2>
-<p><a href="writing-visualising/dashboards.html">Public dashboards</a> - Guidance for publishing public facing statistics dashboards</p>
-<p><a href="writing-visualising/visualising.html">Visualising data</a> - Resources and best practice to guide you when visualising data</p>
-<p><a href="writing-visualising/writing.html">Writing about data</a> - Resources and best practice for writing about data</p>
+<section id="colours" class="level2">
+<h2 class="anchored" data-anchor-id="colours">Colours</h2>
+<p>The most important consideration when using colour is to avoid relying on it for interpretation. It should be seen as an enhancement, and your charts should be understandable without it.</p>
+<p>Where not constraint by other style guides, you should use the suggested colours from the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts" target="_blank">GSS colours in visualisations guidance</a>. The following sections show the colours that are recommended for charts and suggest the way to use them with one another, more detail on why can be found in the Analysis Function guidance itself.</p>
+<p>We strongly recommend you stick to the codes as outlined, if you can’t for any reason, please make sure you follow the guidance on <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9" target="_blank">developing your own colour palette</a> to ensure that you are considering whether the colours are accessible to all.</p>
+<hr>
+<section id="categorical-colour-palette" class="level3">
+<h3 class="anchored" data-anchor-id="categorical-colour-palette">Categorical colour palette</h3>
+<hr>
+<p>Categorical data can be divided into groups or categories by using names or labels. This palette has four colours. We recommend a limit of four categories as best practice for basic data visualisations. The ordering of the palette is important as not all colours are accessible when paired together.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Colour name</th>
+<th>Hex code</th>
+<th>RGB</th>
+<th>CYMK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dark blue</td>
+<td>#12436D</td>
+<td>18, 67, 109</td>
+<td>36, 16, 0, 57</td>
+</tr>
+<tr class="even">
+<td>Turquoise</td>
+<td>#28A197</td>
+<td>40, 161, 151</td>
+<td>75, 0, 6, 37</td>
+</tr>
+<tr class="odd">
+<td>Dark pink</td>
+<td>#801650</td>
+<td>128, 22, 80</td>
+<td>0, 83, 38, 50</td>
+</tr>
+<tr class="even">
+<td>Orange</td>
+<td>#F46A25</td>
+<td>244, 106, 37</td>
+<td>0, 57, 85, 4</td>
+</tr>
+</tbody>
+</table>
+<hr>
 </section>
-<section id="reproducible-analytical-pipelines-rap" class="level2">
-<h2 class="anchored" data-anchor-id="reproducible-analytical-pipelines-rap">Reproducible Analytical Pipelines (RAP)</h2>
-<p><a href="RAP/rap-expectations.html">RAP expectations</a> - Guidance for all analysts on expectations of RAP</p>
-<p><a href="RAP/rap-managers.html">RAP support</a> - Details on support available for RAP in DfE</p>
-<p><a href="RAP/rap-faq.html">RAP FAQs</a> - Frequently asked questions about RAP</p>
-<p><a href="RAP/rap-statistics.html">RAP for Statistics</a> - Detailed RAP guidance for statistics publications</p>
+<section id="sequential-colour-palette" class="level3">
+<h3 class="anchored" data-anchor-id="sequential-colour-palette">Sequential colour palette</h3>
+<hr>
+<p>Sequential data is any sort of data where the order of series has some meaning. For example, age groups ascending in age. This palette has three colours and even this pushes the boundaries for contrast ratios. Any charts made with shades of a specific hue should be accessible without colour.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Colour name</th>
+<th>Hex code</th>
+<th>RGB</th>
+<th>CYMK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dark blue</td>
+<td>#12436D</td>
+<td>18, 67, 109</td>
+<td>36, 16, 0, 57</td>
+</tr>
+<tr class="even">
+<td>Mid blue</td>
+<td>#2073BC</td>
+<td>32, 115, 188</td>
+<td>0, 57, 85, 4</td>
+</tr>
+<tr class="odd">
+<td>Light blue</td>
+<td>#6BACE6</td>
+<td>107, 172, 230</td>
+<td>75, 0, 6, 37</td>
+</tr>
+</tbody>
+</table>
+<hr>
 </section>
-<section id="analytical-data-access-ada-and-databricks" class="level2">
-<h2 class="anchored" data-anchor-id="analytical-data-access-ada-and-databricks">Analytical Data Access (ADA) and Databricks</h2>
-<p><a href="ADA/ada.html">Analytical Data Access (ADA) and Databricks</a> - Guidance for analysts on how to interact with and use data stored in ADA using Databricks</p>
-<p><a href="ADA/databricks_rstudio.html">Setup Databricks with RStudio</a> - Guidance for analysts on how to connect to Databricks from RStudio.</p>
+<section id="focus-palette" class="level3">
+<h3 class="anchored" data-anchor-id="focus-palette">Focus palette</h3>
+<hr>
+<p>On focus charts, colour is used to highlight specific elements to help users understand the information. One line out of many will be highlighted as a colour and the rest of the series remain grey.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Colour name</th>
+<th>Hex code</th>
+<th>RGB</th>
+<th>CYMK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dark blue</td>
+<td>#12436D</td>
+<td>18, 67, 109</td>
+<td>36, 16, 0, 57</td>
+</tr>
+<tr class="even">
+<td>Grey</td>
+<td>#BFBFBF</td>
+<td>191, 191, 191</td>
+<td>0, 0, 0, 25</td>
+</tr>
+</tbody>
+</table>
+<hr>
 </section>
-<section id="contact-us" class="level2">
-<h2 class="anchored" data-anchor-id="contact-us">Contact us</h2>
-<p>Our mailbox is always monitored and is available for anyone in DfE to ask questions about statistics, whether that is about RAP, building dashboards, coding support, learning and development or statistics publications.</p>
-<ul>
-<li><a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a></li>
-<li>9am-5pm, Monday-Friday, aim to reply within 1-2 days</li>
-</ul>
+<section id="larger-palettes" class="level3">
+<h3 class="anchored" data-anchor-id="larger-palettes">Larger palettes</h3>
+<hr>
+<p>All charts should be made as simple as possible so that the message is easy to understand and interpret.</p>
+<p>If you do want to use additional colours you need to ensure that the chart is understandable without colour as no series with more than four colours will ever be fully accessible alone.</p>
+<p>For categorical data, we recommend the following extensions to the categorical palette. Once again, the ordering is important. If you’re making a chart in EES these are not default colours, so you will need to use the colour picker to specify them.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Colour name</th>
+<th>Hex code</th>
+<th>RGB</th>
+<th>CYMK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dark blue</td>
+<td>#12436D</td>
+<td>18, 67, 109</td>
+<td>36, 16, 0, 57</td>
+</tr>
+<tr class="even">
+<td>Turquoise</td>
+<td>#28A197</td>
+<td>40, 161, 151</td>
+<td>75, 0, 6, 37</td>
+</tr>
+<tr class="odd">
+<td>Dark pink</td>
+<td>#801650</td>
+<td>128, 22, 80</td>
+<td>0, 83, 38, 50</td>
+</tr>
+<tr class="even">
+<td>Orange</td>
+<td>#F46A25</td>
+<td>244, 106, 37</td>
+<td>0, 57, 85, 4</td>
+</tr>
+<tr class="odd">
+<td>Dark grey</td>
+<td>#3D3D3D</td>
+<td>61, 61, 61</td>
+<td>0, 0, 0, 76</td>
+</tr>
+<tr class="even">
+<td>Light purple</td>
+<td>#A285D1</td>
+<td>162, 133, 209</td>
+<td>22, 36, 0, 18</td>
+</tr>
+</tbody>
+</table>
+<p>For larger palettes when using sequential data, we recommend using <a href="https://colorbrewer2.org/#type=sequential" target="_blank">ColorBrewer</a> to find the hex codes for multiple shades of a given hue.</p>
+<hr>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -846,10 +984,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../writing-visualising/dashboards.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Public dashboards</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./learning-development/learning-support.html" class="pagination-link">
-        <span class="nav-page-text">Learning support</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../writing-visualising/writing.html" class="pagination-link">
+        <span class="nav-page-text">Writing about data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
