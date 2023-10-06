@@ -574,22 +574,6 @@ Fast-track links are similar to permalinks however instead of linking to a stati
 
 ---
 
-#### Tables in content
-
----
-
-There might be some instances where you aren't able to make a table quite as you would like within a data block. If this is the case, you can also build a table manually within the text editor when adding content to your publication.
-
-Navigate to the 'Content' tab. In the text editor, you can add in a table using the table icon.
-
-![](../images/ees-table-in-content.PNG)
-
-<div class="alert alert-dismissible alert-warning">
-It's essential to make sure any data used in tables within text are available in the underlying data files of the release.
-</div>
-
----
-
 ### Charts
 
 ---
@@ -926,6 +910,23 @@ Try to focus the 'About these statistics' section on:
 
 ---
 
+#### Tables in content
+
+---
+
+Any data tables should be included as data blocks, however, there might be some instances where you aren't able to add the table you need within a data block. If this is the case, you can embed static html tables within a text box. These should only be used to present textual tables or for any small presentations of data that are not possible to do in a data block at the moment.
+
+Navigate to the 'Content' tab. In the text editor, you can add in a table using the table icon.
+
+![](../images/ees-table-in-content.PNG)
+
+<!-- gif adding in a html table -->
+<div class="alert alert-dismissible alert-warning">
+Remember that *all of the data* included or referred to in your content should be available (or able to be created) from the downloadable open data files.
+</div>
+
+---
+
 ### Writing about characteristics
 
 ---
@@ -949,11 +950,12 @@ For the official names of ethnicity filters to use in data files, please see our
 
 **Ethnic minorities and not BAME**
 
-Grouping ethnicity at a higher level than the 5 major ethnic groups should be avoided. In cases where this is not possible, the group 'ethnic minorities' should be used exclusively to refer to all ethnic groups except the White British group. For further information see our [guidance on reporting on broad ethnic minorities categories](../statistics-production/ud.html#reporting-on-broad-ethnic-minorities-categories-e.g.,-bame)
+Grouping ethnicity at a higher level than the 5 major ethnic groups should be avoided. In cases where this is not possible, the group 'ethnic minorities' should be used exclusively to refer to all ethnic groups except the White British group. For further information see our [guidance on reporting on broad ethnic minorities categories](../statistics-production/ud.html#reporting-on-broad-ethnic-minorities-categories-e.g.,-bame).
+
 
 **Ordering of ethnic groups**
 
-We recommend ordering ethnic groups either alphabetically, or in expected order of size (with largest first). For further information see our [guidance on GSS ethnicity categories](../statistics-production/ud.html#gss-ethnicity-categories)
+We recommend ordering ethnic groups either alphabetically, or in expected order of size (with largest first). For further information see our [guidance on GSS ethnicity categories](../statistics-production/ud.html#gss-ethnicity-categories).
 
 ---
 
@@ -965,16 +967,6 @@ We recommend ordering ethnic groups either alphabetically, or in expected order 
 Do not use footnotes in the text of your content. They’re designed for reference in print, not web pages. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.
 </div>
 
----
-
-#### Tables in content
-
----
-
-Any data tables should be included as data blocks, however you can also embed static html tables within a text box. These should only be used to present textual tables or for any small presentations of data that are not possible to do in a data block at the moment.
-
-<!-- gif adding in a html table -->
-You can create static html tables for presenting information that isn't embedded in a data block. However, remember that *all of the data* included or referred to in your content should be available (or createable) from the downloadable open data files.
 
 ---
 
