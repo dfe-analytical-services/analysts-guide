@@ -77,6 +77,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 ## Reproducible Analytical Pipelines (RAP)
 
+[RAP in statistics](RAP/rap-statistics.html)
+- Detailed RAP guidance for statistics publications
+
 [RAP expectations](RAP/rap-expectations.html)
 - Guidance for all analysts on expectations of RAP
 
@@ -85,9 +88,6 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 [RAP FAQs](RAP/rap-faq.html)
 - Frequently asked questions about RAP
-
-[RAP for Statistics](RAP/rap-statistics.html)
-- Detailed RAP guidance for statistics publications
 
 ## Analytical Data Access (ADA) and Databricks
 
