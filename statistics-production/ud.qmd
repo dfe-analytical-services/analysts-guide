@@ -19,9 +19,11 @@ metadata_data_example <- read_excel("../data_examples/metadata_data_example.xlsx
 
 ---
 
-The aim is to apply a consistent, logical, structure to all data files so that they are easier to use and analyse, minimising the time spent cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using the data, as well as opening up further opportunities for linking data.
+With open data standards, our aim is to apply a consistent, logical structure to all data files so that they are easier to use and analyse, minimising the time spent deciphering and cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using our data, as well as opening up further opportunities for linking data.
 
-Our publication data is released under the terms of the [Open Government License](http://www.nationalarchives.gov.uk/doc/open-government-licence/){target="_blank" rel="noopener noreferrer"} and by following these standards will meet at least 3 stars for [Open Data](https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats){target="_blank" rel="noopener noreferrer"}.
+The guidance and standards here explicitly apply to all data files prepared for and uploaded to the Explore Education Statistics platform, but much of the content below equally applies to any data being prepared and disseminated both within the department and externally. 
+
+Data published via Explore Education Statistics is released under the terms of the [Open Government License](http://www.nationalarchives.gov.uk/doc/open-government-licence/){target="_blank" rel="noopener noreferrer"} and by following the data standards provided here, published (or any other) data meets at least 3 stars for [Open Data](https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats){target="_blank" rel="noopener noreferrer"}.
 
 ---
 
