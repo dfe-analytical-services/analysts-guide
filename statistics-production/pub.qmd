@@ -1,5 +1,5 @@
 ---
-title: "Publication checklists"
+title: "Routes for publishing"
 ---
 
 <p class="text-muted">Guidance for how to publish different types of statistics</p>

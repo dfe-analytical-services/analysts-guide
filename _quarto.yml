@@ -4,7 +4,7 @@ project:
 website: 
   page-navigation: true
   back-to-top-navigation: true
-  title: "Analyst's Guide" 
+  title: "Analysts' Guide" 
   site-url: "https://dfe-analytical-services.github.io/analysts-guide"
   repo-url: https://github.com/dfe-analytical-services/analysts-guide
   repo-actions: [edit, issue]
@@ -86,24 +86,29 @@ website:
       - section: "Statistics production"
         contents:
           - statistics-production/pub.qmd
+          - RAP/rap-statistics.qmd
           - statistics-production/ud.qmd
           - statistics-production/ees.qmd
-          - statistics-production/embedded-charts.qmd
           - statistics-production/examples.qmd
+          - statistics-production/embedded-charts.qmd
+          - statistics-production/scrums.qmd
           - statistics-production/user-eng.qmd
           - statistics-production/user-analytics.qmd
       - section: "Writing and visualising"
         contents:
-          - writing-visualising/cd.qmd
           - writing-visualising/dashboards.qmd
+          - writing-visualising/visualising.qmd
+          - writing-visualising/writing.qmd
       - section: "Reproducible Analytical Pipelines (RAP)"
         contents: 
           - RAP/rap-expectations.qmd
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
           - RAP/rap-statistics.qmd
-      - section: "ADA and databricks"
+      - section: "ADA and Databricks"
         contents: 
+          - ADA/ada.qmd
+          - ADA/databricks_rstudio.qmd
 
 format:
   html:
@@ -111,6 +116,7 @@ format:
       light: slate
       dark: united
     code-copy: true
+    highlight-style: printing
     code-overflow: wrap
     toc: true
 

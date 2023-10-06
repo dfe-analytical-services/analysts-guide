@@ -2,32 +2,64 @@
 title: "Python"
 ---
 
-<p class="text-muted">Guidance and tips for using Python</p>
+<p class="text-muted"> Guidance and tips for using Python </p>
 
----
+------------------------------------------------------------------------
 
 ## What is Python
 
+Python is a high-level, general-purpose programming language. It has a number of uses, some of which are statistical analysis and data visualisation. Python code has a strong emphasis on readability and formatting. Although the majority of analysts in DfE tend to use R or SQL, Python is also available as an option.
 
-It is a version control software. It is by far the best of its kind and is widely used by software developers and data scientists.
-
----
-
-## What is Python for
-
-Python is a high-level, general-purpose programming language that is designed to be easily readible.
-
----
+------------------------------------------------------------------------
 
 ## How to install Python
 
-
-
----
+------------------------------------------------------------------------
 
 ## Best places to start
 
-The Python Software Foundation provides an [introduction for beginners to Python](https://www.python.org/about/gettingstarted/).
+There is guidance on the Python Wiki for [programmers](https://wiki.python.org/moin/BeginnersGuide/Programmers) and [non-programmers](https://wiki.python.org/moin/BeginnersGuide/NonProgrammers). Each of the guides includes a list of interactive courses that you can work through to improve your skills.
 
-We recommend making use of the following communities:
-- Python DfE community on teams
+[The ONS Data Science Campus](https://datasciencecampus.ons.gov.uk/capability/data-science-campus-faculty/reproducible-analytical-pipeline-journey/) offers training courses on Reproducible Analytical Pipelines (RAP) in Python, but be aware that there is less Python expertise in the Department which might make QA of code more difficult.
+
+We recommend making use of the following communities: - Python DfE community on Teams
+
+------------------------------------------------------------------------
+
+## Best practice
+
+Python is different to other programming languages in that it has its own style guide, [PEP-8](https://peps.python.org/pep-0008/#introduction). PEP-8 is one of many guidance documents known as Python Enhancement Proposals (PEPs) which govern the style of the language, any future changes or updates, and backwards compatibility features. [PEP-20](https://peps.python.org/pep-0020/) outlines the guiding principles for Python's design.
+
+Python can be a little fussy about the layout of your code, especially whitespace, and your code may fail if it is not indented correctly.
+
+------------------------------------------------------------------------
+
+## How to work with Python
+
+### Libraries and packages
+
+Python packages work slightly differently to R packages. You might hear reference to libraries in Python. A library is a collection of related packages that perform similar functions. One of the most popular libraries is called [NumPy](https://numpy.org/doc/stable/user/absolute_beginners.html) and it allows you to work with numerical data more easily.
+
+To access the features of a library and use them within your code, you need to install the library. Using NumPy as the example, you can do this using the syntax
+
+```{r install_code, eval=FALSE} 
+pip install numpy
+```
+
+PIP is the standard package installer for Python and so must be mentioned at the start of the line of code.
+
+Once you have installed your library, you then need to import it so that you can use it within your code. To make your life easier, you can give it a shortened name so that you don't have to write NumPy every time you want to use one of the features, like this:
+
+```{r import_code, eval=FALSE}
+import numpy as np
+```
+
+If you only install a library and then don't import it, you won't be able to use its features. You can either import a library as a whole, or you can just import certain functions from it if you know you won't need to use them all.
+
+NumPy contains an array function. If you want to use it, you would do so as follows:
+
+```{r array_code, eval=FALSE}
+arr = np.array( [[ 1, 2, 3],[ 4, 2, 5]] )
+```
+
+Note that you must use **np.** before **array** to get it to work, otherwise Python won't know where to look for the array function. When you imported NumPy, if you gave it a different shortened name, you'd use that name instead.
