@@ -443,13 +443,15 @@ Remember to double check any data blocks or footnotes that were recreated by the
 
 ## Footnotes
 
-We generally advise against using footnotes, unless they're absolutely necessary (think about how many people will actually be reading them!). Consider where you could signpost to the methodology /data guidance / commentary instead. However, if you do want to add footnotes to your data, this should be done using the EES footnote function. 
+We generally advise against using footnotes, unless they're absolutely necessary (think about how many people will actually be reading them!). However, if you do want to add footnotes to your data, this should be done using the EES footnote function and **not** added in-text. 
 
-Footnotes are added via footnotes tab - rather than writing multiple tables and assigning individual footnotes, you write footnotes and assign them to certain indicators and filters so they appear when users select them in the table builder. For example in the below, the footnote "This is a footnote" is assigned to "Headcount" indicator for all options within the "School type" filter.
+Footnotes can be added via the footnotes tab. Rather than writing multiple tables and assigning individual footnotes, you write footnotes and assign them to certain indicators and filters so they appear when users select them in the table builder. 
+
+For example in the below, the footnote "This is a footnote" is assigned to the "Headcount" indicator for all options within the "School type" filter.
 
 ![](../images/footnote_example.PNG)
 
-If you'd rather, you can assign a footnote to the whole data file by ticking this box.
+If you would rather, you can assign a footnote to the whole data file by ticking this box.
 
 ![](../images/All_indicators.PNG)
 
