@@ -28,8 +28,14 @@ Maintenance and use of the platform is supported by the [Statistics Development 
 
 ## Environments
 
+<div class="alert alert-dismissible alert-warning">
+If you are bookmarking links, please be careful to bookmark the links below exactly as they are shown. Often when signing in you will be redirected via other URL's as a part of the authentication process, and bookmarking those may lead to errors.
+</div>
 
-As stated above, EES consists of two parts. We also have four versions (environments) of EES, the banner for the admin part of each environment will inform you which environment you are on, this is also colour coded:
+As stated above, EES consists of two parts. We also have four versions (environments) of EES, the banner for the admin part of each environment will inform you which environment you are on, this is also colour coded.
+
+There is no overlap between the environments and content created on one cannot be moved to any other. The core functionality across the environments is identical except for new changes, which are deployed through the different environments before they make it to production.
+
 
 * **Development** - Green
     
@@ -69,11 +75,6 @@ The pre-production environment is not suitable for unpublished data. Unpublished
 
     + [Public production](https://explore-education-statistics.service.gov.uk): where any member of the public can access the published releases
 
-There is no overlap between the environments and content created on one cannot be moved to any other. The core functionality across the environments is identical except for new changes, which are deployed through the different environments before they make it to production.
-
-<div class="alert alert-dismissible alert-danger">
-If you are bookmarking links, please be careful to bookmark the links below exactly as they are shown. Often when signing in you will be redirected via other url's as a part of the authentication process, and bookmarking those may lead to errors.
-</div>
 
 ---
 
