@@ -619,21 +619,6 @@ Note, within the vertical and horizontal bar chart types you can also create sta
 
 ---
 
-#### Non-numeric values
-
----
-
-On the chart configuration tab there is a toggle for visualising non-numeric values in the data as 0. On the first chart configuration tab, there's a check box that will toggle between showing and hiding them.
-
-![](../images/ees-non-numeric-toggle.png)
-
-
-When selected, you will then see that this data appears in the chart as if the indicator values are 0.
-
-![](../images/ees-missing-data-chart.png)
-
----
-
 #### Data sets
 
 ---
@@ -754,6 +739,21 @@ There may be times when including missing data increases the file size too much,
 By including the missing data in your open data files you can then create charts in EES that represent this. Start off by creating a data block with the data you want to build the chart from.
 
 ![](../images/ees-missing-data-table.png)
+
+---
+
+#### Non-numeric values
+
+---
+
+On the chart configuration tab there is a toggle for visualising non-numeric values in the data as 0. On the first chart configuration tab, there's a check box that will toggle between showing and hiding them.
+
+![](../images/ees-non-numeric-toggle.png)
+
+
+When selected, you will then see that this data appears in the chart as if the indicator values are 0.
+
+![](../images/ees-missing-data-chart.png)
 
 
 ---
@@ -945,33 +945,15 @@ You can also get in touch with the DfE Data Harmonisation Champions Group via [s
 
 ---
 
-For the official names of ethnicity filters to use in data files, please check our guidance on [creating statistics](../creating-statistics/ud.html#ethnicity). The below outlines some key points in writing about ethnicity in publication content.
+For the official names of ethnicity filters to use in data files, please see our guidance on [common harmonised variables](../statistics-production/ud.html#ethnicity). The below outlines some key points in writing about ethnicity in publication content.
 
----
+**Ethnic minorities and not BAME**
 
-#### Ethnic minorities and not BAME
+Grouping ethnicity at a higher level than the 5 major ethnic groups should be avoided. In cases where this is not possible, the group 'ethnic minorities' should be used exclusively to refer to all ethnic groups except the White British group. For further information see our [guidance on reporting on broad ethnic minorities categories](../statistics-production/ud.html#reporting-on-broad-ethnic-minorities-categories-e.g.,-bame)
 
----
+**Ordering of ethnic groups**
 
-As outlined in the CRED report, grouping ethnicity at a higher level than the 5 major ethnic groups should be avoided as it risks masking the true disparities between, and/or life experiences of, people from different ethnic groups.
-
-There will, however, be specific cases where data quality or comparisons with past metrics does not allow for statistics to be produced at the level of the major or minor ethnic groups. In these cases, the group ‘ethnic minorities’ should be used exclusively to refer to all ethnic groups except the White British group, this includes White minorities, such as Gypsy, Roma and Irish Traveller groups.
-
-For comparisons with the White group as a whole, ‘all other ethnic groups combined’ or ‘ethnic minorities (excluding White minorities)’ should be used. It may also be necessary to refer to ‘White’ and ‘other than White’ if space is limited, but this should be avoided if possible.
-
-Do not use the terms ‘non-White’, BAME (Black, Asian, and Minority Ethnic), or BME (Black and minority ethnic). These terms can be perceived as demeaning and can be confusing as to what groups are being included and excluded. For comparison with past metrics, BAME and BME should be replaced by the term "ethnic minorities (excluding White minorities)" unless White minorities were specifically mentioned.
-
----
-
-#### Ordering of groups
-
----
-
-There are several methods of ordering the ethnic groups, depending on where and how they are used:
-
-*	Alphabetical: use in tables and when listing ethnic groups (with ‘Other’ and sometimes ‘Unknown’ as a final category)
-
-*	In expected order of size (with largest first): useful in charts and visualisations as it makes data and patterns easier to read
+We recommend ordering ethnic groups either alphabetically, or in expected order of size (with largest first). For further information see our [guidance on GSS ethnicity categories](../statistics-production/ud.html#gss-ethnicity-categories)
 
 ---
 
