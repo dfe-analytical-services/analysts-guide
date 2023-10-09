@@ -10,13 +10,15 @@
 
 --- 
     
-User engagement is about building sustainable relationships and feedback loops between statistics producers, users and potential users of statistics and other relevant stakeholders.
+User engagement is about building sustainable relationships and feedback loops between statistics producers, users (and potential users) of statistics and other relevant stakeholders.
 
-Being user centred is a key departmental priority. It is critical that we actively engage with the users of our statistics, and not just the ones who shout the loudest. There are thousands of users out there and teams should be actively be getting feedback on their publications from a variety of users - policy colleagues, local authorities, schools, media, and the general public to name but a few.
+Being user centred is a key departmental priority. It's critical that we actively engage with the users of our statistics. There are thousands of users out there and teams should be actively be getting feedback on their publications from a variety of users - policy colleagues, local authorities, schools, media, and the general public to name but a few.
 
-Users of statistics come from a broad range of different backgrounds and organisations and may need to use our statistics for a wide variety of reasons. We need to do our best to understand these different kinds of users and cater for them all.
+The [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/) states that:
 
-The [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/) states that “users of statistics and data should be at the centre of statistical production; their needs should be understood, their views sought and acted on, and their use of statistics supported”. The quality pillar of the Code of Practice also reminds us that statistics should fit their intended uses. Producers of statistics will only know whether this element of quality continues to be achieved by regularly engaging with a full range of users.
+*“users of statistics and data should be at the centre of statistical production; their needs should be understood, their views sought and acted on, and their use of statistics supported”*. 
+
+Producers of statistics will only know whether this element of quality continues to be achieved by regularly engaging with a full range of users.
 
 ---
 
