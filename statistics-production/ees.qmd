@@ -1288,9 +1288,7 @@ Accessibility matters for uploaded images too, consider the following if you do 
 
 We have a type of role within EES admin called ‘Publication Owner’. This permissions level gives publication owners control over their publications.
 
-Options available to publication owners:
-
-![](../images/publicationowner-options.png)
+See [roles and permissions](#roles-and-permissions) to see what options are available to publication owners.
 
 
 ---
@@ -1320,6 +1318,8 @@ Currently the following types of release can be created in EES:
 * National Statistics (includes OSR tick mark logo at the top of the release page)
 * Official Statistics
 * Adhoc Statistics
+* Management Information
+* Experimental Statistics
 
 When creating a release you will be asked to fill in some release summary fields.
 
