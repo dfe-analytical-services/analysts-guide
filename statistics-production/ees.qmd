@@ -724,12 +724,6 @@ By including the missing data in your open data files you can then create charts
 
 ![](../images/ees-missing-data-table.png)
 
----
-
-#### Non-numeric values
-
----
-
 On the chart configuration tab there is a toggle for visualising non-numeric values in the data as 0. On the first chart configuration tab, there's a check box that will toggle between showing and hiding them.
 
 ![](../images/ees-non-numeric-toggle.png)
@@ -1335,5 +1329,7 @@ The time period for the release should reflect the time period of the data that 
 Past publications on other services can be added to the previous releases links that appear on the top right of a release page by using the 'Manage legacy releases' section. In here you can add links to previous releases and choose the order in which they appear.
 
 This section can be found by publication owners in the publication management section.
+
+
 
 ---
