@@ -95,7 +95,15 @@ For more information, get in touch with the team at [explore.statistics@educatio
 
 ---
 
-In 2021 the annual ‘Local Authority School Places Scorecard’ publication was cancelled, due to Covid- 19, allowing time for user-engagement and development of the scorecard. This is a dashboard publication allowing users to select a specific local authority in England, to view it’s progress in providing quality school places. Firstly, internal feedback was sought and received, and generally users found the Scorecard a useful tool. Longer-term additions were identified, however short-term development was also needed to improve the accessibility of the Scorecard so this was the first developmental focus. The Scorecard has been previously published as an excel-based dashboard, however this method of publication was no longer viable due to new rules and regulations for official statistics publications. A new platform was therefore needed and R shiny was suggested as an accessible platform. A new version of a previously published scorecard was produced in R shiny. This was then published externally to gather feedback from users to check they could obtain the required information. The scorecard contained a link to a short survey and over 90 internal and external users responded (after email invitations were sent allowing a month to complete).  Most users found the R shiny version easier to use compared to the excel based dashboard which was positive. Suggestions for improvement were gathered and quite a few users mentioned they missed the one-page format of the excel scorecard (the R shiny version has tabs to get to some visualisations) and found some of the newer charts slightly confusing. Therefore solutions were proposed e.g. a downloadable one page PDF summary and alternative charts/clearer guidance. Development work is still ongoing with the new R shiny scorecard due for publication in June 2022. When published this should include improvements to address the most frequent suggestions mentioned in the survey, to ensure users can gather the information they need from the scorecard. For any further information contact Natalie Paterson in the Pupil Place Planning Data team.
+In 2021 the annual [Local Authority School Places Scorecard](https://explore-education-statistics.service.gov.uk/find-statistics/local-authority-school-places-scorecards) publication was cancelled, due to Covid- 19, allowing time for user-engagement and development of the scorecard. This is a dashboard publication allowing users to select a specific local authority in England, to view it’s progress in providing quality school places. 
+
+Firstly, internal feedback was sought and received, and generally users found the Scorecard a useful tool. Longer-term additions were identified, however short-term development was also needed to improve the accessibility of the Scorecard so this was the first developmental focus. The Scorecard has been previously published as an excel-based dashboard, however this method of publication was no longer viable due to new rules and regulations for official statistics publications. 
+
+A new platform was therefore needed and R shiny was suggested as an accessible platform. A new version of a previously published scorecard was produced in R shiny. This was then published externally to gather feedback from users to check they could obtain the required information. 
+
+The scorecard contained a link to a short survey and over 90 internal and external users responded (after email invitations were sent allowing a month to complete).  Most users found the R shiny version easier to use compared to the excel based dashboard which was positive. Suggestions for improvement were gathered and quite a few users mentioned they missed the one-page format of the excel scorecard (the R shiny version has tabs to get to some visualisations) and found some of the newer charts slightly confusing. Therefore solutions were proposed e.g. a downloadable one page PDF summary and alternative charts/clearer guidance. Development work is still ongoing to ensure users can gather the information they need from the scorecard. 
+
+For any further information contact the [Pupil Place Planning Data team](mailto:SCAP.PPP@education.gov.uk).
 
 ---
 
@@ -103,7 +111,15 @@ In 2021 the annual ‘Local Authority School Places Scorecard’ publication was
 
 ---
 
-In 2020 we created a new statistical release which incorporated changes to the annual [Outcomes for children looked after by LAs](https://www.gov.uk/government/collections/statistics-looked-after-children) statistical release and outcomes within the [Characteristics of children in need](https://www.gov.uk/government/collections/statistics-children-in-need) statistical release, proposed by the department in September 2020. Improving these statistics was a commitment made at the end of the [CIN review](https://www.gov.uk/government/publications/children-in-need-of-help-and-protection-data-and-analysis). As part of the review of the National Statistics, an ad-hoc release was published [(Outcomes of children in need including looked after children)](https://explore-education-statistics.service.gov.uk/find-statistics/outcomes-of-children-in-need-including-looked-after-children) and we asked users to submit feedback on the proposals through the running of a consultation via Gov.UK to which people could respond [(Children in need and looked after children statistics: proposed changes)](https://www.gov.uk/government/publications/children-in-need-and-looked-after-children-statistics-proposed-changes). We involved policy colleagues (including policy analysts) in the proposed changes ahead of publishing. We engaged with colleagues across the department to identify known users and user groups and notified them of the request for feedback on the proposals We also followed up with a reminder as we got closer to the deadline. As part of this process, we had a meeting with the main stakeholders (the board of the National Association of Virtual School Heads). These key were very keen to respond to the proposals but were having difficulty with resource and time to provide a comprehensive response, so we agreed to have a meeting to talk through everything and we took notes. Reaching out to users and actively engaging with them produced a great result - we received a wide range of feedback from a range of sources including previously unknown users. We received external and internal feedback. We published the results of the feedback on the proposals on gov.uk, including a summary of the feedback received and what we were able to incorporate into the new publication. This was not an official Government consultation and we had to negotiate with gov.uk on how to publish the documents. We were advised that going forward, it would be preferable for user engagement of this type to be published alongside the statistical releases as part of the new EES platform. For any further information contact Bree Waine.
+In 2020 we created a new statistical release which incorporated changes to the annual [Outcomes for children looked after by LAs](https://www.gov.uk/government/collections/statistics-looked-after-children) statistical release and outcomes within the [Characteristics of children in need](https://www.gov.uk/government/collections/statistics-children-in-need) statistical release. Improving these statistics was a commitment made at the end of the [CIN review](https://www.gov.uk/government/publications/children-in-need-of-help-and-protection-data-and-analysis). 
+
+As part of the review of the National Statistics, an ad-hoc release was published [(Outcomes of children in need including looked after children)](https://explore-education-statistics.service.gov.uk/find-statistics/outcomes-of-children-in-need-including-looked-after-children) and we asked users to submit feedback on the proposals through the running of a consultation via Gov.UK to which people could respond [(Children in need and looked after children statistics: proposed changes)](https://www.gov.uk/government/publications/children-in-need-and-looked-after-children-statistics-proposed-changes). 
+
+We involved policy colleagues (including policy analysts) in the proposed changes ahead of publishing. We engaged with colleagues across the department to identify known users and user groups and notified them of the request for feedback on the proposals. We also followed up with a reminder as we got closer to the deadline. 
+
+As part of this process, we had a meeting with the main stakeholders (the board of the National Association of Virtual School Heads). These key stakeholders were very keen to respond to the proposals but were having difficulty with resource and time to provide a comprehensive response, so we agreed to have a meeting to talk through everything and we took notes. 
+
+Reaching out to users and actively engaging with them produced a great result - we received a wide range of feedback from a range of sources including previously unknown users. We received external and internal feedback. We published the results of the feedback on the proposals on gov.uk, including a summary of the feedback received and what we were able to incorporate into the new publication. This was not an official Government consultation and we had to negotiate with gov.uk on how to publish the documents. We were advised that going forward, it would be preferable for user engagement of this type to be published alongside the statistical releases as part of the new EES platform. For any further information contact Bree Waine.
 
 ---
 
@@ -162,54 +178,58 @@ DfE are working with ONS and others to consider how to take forward work in this
 >
 >In addition and more broadly, the department is working with ONS Best Practice Team to consider guidance around user engagement and how best to take forward the strategy for the department.  In line with this, as part of these developments we will be reviewing and refreshing our current [public-facing user engagement strategy](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/287444/User_engagement_policy.pdf) which will then be reviewed annually.
 
-Teams are encouraged to already start to think about who their users are, the channels they use to understand their needs and the user experience. Publication teams should keep abreast of [user analytics](user-analytics.html) to understand more about how users use and access their statistics and whether further improvements could be made. In addition, teams should also think about the ways they can glean feedback on their publication(s), this may include internal checks regards enhancements such as participating in [content design scrum(s)](../creating-statistics/cd.html#publication-scrums).
+Teams are encouraged to already start to think about who their users are, the channels they use to understand their needs and the user experience. 
+
+Publication teams should keep abreast of [user analytics](user-analytics.html) to understand more about how users use and access their statistics and whether further improvements could be made. 
+
+In addition, teams should also think about the ways they can glean feedback on their publication(s), this may include internal checks regards enhancements such as participating in [content design scrum(s)](scrums.html).
 
 ---
 
 ## Consultations
 
 
-If you are considering changes to your publication and are contemplating a formal consultation do get in touch with HOP office early on to discuss.
+If you are considering changes to your publication and are contemplating a formal consultation do get in touch with [HOP office](mailto:Hop.statistics@education.gov.uk) early on to discuss.
 
-To read more about consultations for background information please see the following two links: 
-
-- [Code of Practice on Consultations](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/100807/file47158.pdf)
-- [Consultation principles: guidance - WWW.GOV.UK](https://www.gov.uk/government/publications/consultation-principles-guidance)
-
-With the first of the above links, please bear in mind this was written back in 2008 so certain aspects may have been updated but the background and principles do remain the same.
-
-Some examples of previous consultations are included below:
+For background information about consultation, please see:
+* [Code of Practice on Consultations](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/100807/file47158.pdf) - please bear in mind this was written back in 2008 so certain aspects may have been updated but the background and principles do remain the same.
+* [Consultation principles: guidance](https://www.gov.uk/government/publications/consultation-principles-guidance)
 
 
-- [Outcome and experience data - Office for Students](https://www.officeforstudents.org.uk/publications/student-outcomes-and-teaching-excellence-consultations/outcome-and-experience-data/)
-- [Consultation on Data Futures and data collection - Office for Students](https://www.officeforstudents.org.uk/publications/consultation-on-data-futures-and-data-collection/)
-- [Surveys on childcare and early years in England - GOV.UK (www.gov.uk)](https://www.gov.uk/government/consultations/surveys-on-childcare-and-early-years-in-england)
-- [Proposed cessation of 'Income related benefits: estimates of take-up' statistics - GOV.UK (www.gov.uk)](https://www.gov.uk/government/consultations/the-publication-income-related-benefits-estimates-of-take-up)
-- [Proposals for a new statistical series to count unemployed claimants - GOV.UK (www.gov.uk)](https://www.gov.uk/government/consultations/proposals-for-a-new-statistical-series-to-count-unemployed-claimants)
+Examples of previous consultations:
+
+
+- [Outcome and experience data](https://www.officeforstudents.org.uk/publications/student-outcomes-and-teaching-excellence-consultations/outcome-and-experience-data/)
+- [Consultation on Data Futures and data collection](https://www.officeforstudents.org.uk/publications/consultation-on-data-futures-and-data-collection/)
+- [Surveys on childcare and early years in England](https://www.gov.uk/government/consultations/surveys-on-childcare-and-early-years-in-england)
+- [Proposed cessation of 'Income related benefits: estimates of take-up' statistics](https://www.gov.uk/government/consultations/the-publication-income-related-benefits-estimates-of-take-up)
+- [Proposals for a new statistical series to count unemployed claimants](https://www.gov.uk/government/consultations/proposals-for-a-new-statistical-series-to-count-unemployed-claimants)
 
 ---
 
 ## Surveys
 
 
-We routinely publish statistical releases, but who is using these and why?  It’s important to understand your user types and need, so we (public and department) get best value from what we do.  Using these insights can help us to continually improve our products and services. Having a survey with your releases is a great way to glean this feedback.  Examples of statistical publication surveys, as well as ONS top tips on user surveys are below/attached.  It would be great to include your examples too, as well as capture your lessons learned and tips, so do send these to us. If you do want further advice, please contact Heather Brown or Ian Hewson.
+We routinely publish statistical releases, but who is using these and why?  It’s important to understand your user types and need, so we (public and department) can get best value from what we do.  Using user insights can help us to continually improve our products and services. 
 
-[User survey and questionnaire design top tips (word document)](../resources/2022_02_14_questionaire_toptips.docx)
+Having a survey with your releases is a great way to glean this feedback.
 
-[Results from survey of statistics users (word document)](../resources/Survey_results.docx)
+The ONS has published [10 top tips for creating a user feedback survey](../resources/2022_02_14_questionaire_toptips.docx) if you want more information on creating a survey. You can also preview an example of [results from a survey of statistics users](../resources/Survey_Results.docx) to see how useful it can be to gain insights into the users of your statistics.
 
----
-
-### Examples
+It would be great to include your examples too, as well as capture your lessons learned and tips, so do [send these to us](mailto:explore.statistics@education.gov.uk).
 
 ---
 
-[Higher Education Institutions Enrolments and Qualifications statistical bulletins - readership survey September 2019 (economy-ni.gov.uk)](https://www.economy-ni.gov.uk/sites/default/files/publications/economy/HEI-enrolments-and-qualifications-readership-survey-2019-analysis.pdf)
+### Examples of surveys
 
-[Further Education & skills/Apprenticeships and traineeships release feedback survey - IH  (Edit) Microsoft Forms (office.com)](https://forms.office.com/Pages/DesignPage.aspx#FormId=yXfS-grGoU2187O4s0qC-Smt4Lxi0bhIoLzmfJwWOYpUMkcwQUdPVjdDQThWT0JJN1ZGVkNYRzI2TC4u&Token=7765ec7fba284e96b0a40c92b97811e6)
+---
+
+[Higher Education Institutions Enrolments and Qualifications statistical bulletins - readership survey September 2019](https://www.economy-ni.gov.uk/sites/default/files/publications/economy/HEI-enrolments-and-qualifications-readership-survey-2019-analysis.pdf)
+
+[Further Education & skills/Apprenticeships and traineeships release feedback survey](https://forms.office.com/Pages/DesignPage.aspx#FormId=yXfS-grGoU2187O4s0qC-Smt4Lxi0bhIoLzmfJwWOYpUMkcwQUdPVjdDQThWT0JJN1ZGVkNYRzI2TC4u&Token=7765ec7fba284e96b0a40c92b97811e6)
 
 [Higher Education Statistics - Department for Education - Citizen Space](https://consult.education.gov.uk/he-education-strategy-and-policy/higher-education-statistics/)
 
-[Statistics-and-data_user-feedback-survey_Land-and-Property-Data-Team_RoS.._.pdf](https://www.ros.gov.uk/__data/assets/pdf_file/0008/149129/Statistics-and-data_user-feedback-survey_Land-and-Property-Data-Team_RoS.._.pdf)
+[User feedback survey for statistics and data published by Land and Property Data Team at Registers of Scotland](https://www.ros.gov.uk/__data/assets/pdf_file/0008/149129/Statistics-and-data_user-feedback-survey_Land-and-Property-Data-Team_RoS.._.pdf)
 
 ---
