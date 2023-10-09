@@ -1207,7 +1207,11 @@ Creating an amendment of a release will create a new version for which you can m
 ## Release notes
 
 
-When publishing a new amendment you should add a 'release note' to your release so users can be informed of what has changed:
+When publishing a new amendment you should add a 'release note' to your release so users can be informed of what has changed. Try to keep this brief while remaining informative - it's important to include detail of what has changed, so that a user can see if there is any data they are interested in has changed.
+
+If a user is subscribed to your release, they are notified of any amendments you make and the public release note that you complete for your amendment also goes into this email.
+
+See our guidance on Good examples in EES for a [best practice example of a public amendment note](../statistics-production/examples.html#public-amendment-notes).
 
 ![](../images/EES-release-note.PNG)
 
