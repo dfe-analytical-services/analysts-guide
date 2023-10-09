@@ -994,7 +994,7 @@ When someone is editing a text box, it will now be instantly frozen for all othe
 
 ---
 
-## Search engine optimisation
+## Getting found online
 
 
 Search engine optimisation (SEO) makes it easier for users to find your data through search engines like Google. Some top tips include:
@@ -1109,9 +1109,9 @@ Only users with [approver](#roles-and-permissions) permissions (usually G6 or ab
 
 There's quite a few things to remember to do as you build your release so to help ensure you haven't missed anything a release checklist is also available via the sign off page
 
-The checklist can be accessed by clicking to edit release status.
+The checklist can be accessed by clicking edit release status in the Sign off page.
 
-Remember to check over it before you submit your release for approval as a release that has outstanding warnings on it will not be able to be published.
+Remember to check over it before you submit your release for approval as a release that has outstanding errors on it will not be able to be published.
 
 ![](../images/ees-release-checklist.PNG)
 
@@ -1123,9 +1123,9 @@ Remember to check over it before you submit your release for approval as a relea
 
 Releases are approved via the sign off tab. The release date is also set during this stage of the process. All releases scheduled for a specific date will be published at 9:30am on that day.
 
-![](../images/ees-approving-release.PNG)
-
 The approver has the ability to approve the release to be published on a specific date or to publish as soon as possible. Publishing as soon as possible is useful for publishing amendments to existing releases.
+
+![](../images/ees-approving-release.PNG)
 
 <div class="alert alert-dismissible alert-info">
 This page also gives you the expected release url which may be useful to know for other things, for example, sending to the web team to add to your gov.uk announcement page.
@@ -1148,16 +1148,13 @@ If this is added but then needs to be changed or removed later in the year it is
 ## Pre-release access
 
 
-Prior to each release going live the production team are also able to grant pre-release access to a named group of users 24 hours before it goes live. These users do not require full access to the whole admin service. They will be able to see preview versions of any releases they have been granted access to.
+Prior to each release going live the production team are also able to grant pre-release access to a named group of users 24 hours before it goes live. These users do not require full access to the whole admin service. They will be able to see preview versions of any releases they have been granted pre-release access to.
 
-This preview is only accessible for the 24 hours before the publication date, the emails may go out to users before then. We expect teams will continue to send an email at 09:30 on pre-release day, including any additional briefing and the link to the pre-release area.
+This preview is only accessible for the 24 hours before the publication date, although the emails may go out to users before then. We expect teams will continue to send an email at 09:30 on pre-release day, including any additional briefing and the link to the pre-release area.
 
+### Granting pre-release access
 <div class="alert alert-dismissible alert-info">
-Jobshare emails should not be sent invites for pre-release. The personal emails for the specific individuals should be used instead, as jobshare emails do not have active accounts with DfE to access EES.
-</div>
-
-<div class="alert alert-dismissible alert-danger">
-Pre-release access via Explore Education Statistics is currently limited to DFE users only, if you need to share your release with external users you will need to do so outside of the system.
+Jobshare emails and shared mailboxes should not be sent invites for pre-release. The personal emails for the specific individuals should be used instead, as jobshare emails/shared mailboxes do not have active accounts with DfE to access EES.
 </div>
 
 <html>
@@ -1179,7 +1176,12 @@ Once the release has been marked as approved, go to the  ‘Pre-release access�
 
 ![](../images/EES-invite-pra.PNG)
 
+### Public pre-release access lists
 You should also create the public facing pre-release access page by clicking the ‘Public access list’ tab.
+
+<div class="alert alert-dismissible alert-warning">
+All official statistics (that is, official statistics, national statistics and ad-hoc statistics) are required to publish a public facing pre-release access page.
+</div>
 
 ![](../images/EES-public-pra-list.PNG)
 
