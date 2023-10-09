@@ -1222,9 +1222,7 @@ See our guidance on Good examples in EES for a [best practice example of a publi
 
 ---
 
-Appropriate methodological information must be made available for all published Official Statistics releases.
-
-Methodologies work in a very similar way to the written content of a release, the text editor and static tables you can use are built on the same foundations.
+Appropriate methodological information must be made available for all published Official Statistics releases. Methodologies can follow our recommended [methodology template](../resources/Methodology template EES.docx), to ensure all the essential details are covered.
 
 If you have not created or published a methodology page on EES before, the first thing your publication owner will need to do is create a methodology page.
 
@@ -1232,10 +1230,13 @@ If you have not created or published a methodology page on EES before, the first
 
 Once created you can then edit the methodology content in a similar way to how you would create release page content.
 
-Methodologies should follow our recommended [methodology template](../resources/Methodology template EES.docx), to ensure all the essential details are covered.
+Once the drafting has finished, a methodology should be set as 'approved for publication'. 
 
-Once the drafting has finished, a methodology should be set as 'approved for publication', currently approved methodology changes will be published immediately so make sure you are ready for the changes to go live before approving.
+<div class="alert alert-dismissible alert-warning">
+Any approved methodology changes will be published immediately so make sure you are ready for the changes to go live before approving.
+</div>
 
+## Methodology amendments
 If you want to revise an existing methodology page you can amend the methodology which will generate a new version for you to edit.
 
 ![](../images/EES-amend-methodology.PNG)
