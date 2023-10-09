@@ -15,7 +15,7 @@ Any analyst building charts should make themselves familiar with the [Analysis F
 
 ---
 
-## Visualisation titles
+## Active titles
 
 
 For tables and charts, active titles are descriptive and tell the trend by **highlighting the main story**. They should be short, aim for 10 words or less and avoid going over more than one line. Active titles give users the main message without having to find the text that accompanies the chart, and makes it easier for journalists to use your chart directly without having to write their own summary.
