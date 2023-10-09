@@ -17,7 +17,7 @@ Files can be downloaded from multiple areas across the platform and often users 
 
 ---
 
-[Full guidance for naming files](../creating-statistics/ud.html#File_names).
+[Full guidance for naming files](../statistics-production/ud.html#file-names).
 
 The [Education and training statistics for the UK](https://explore-education-statistics.service.gov.uk/find-statistics/education-and-training-statistics-for-the-uk) release has some good examples of file names which clearly explain what is in the file, while falling well under 35-50 characters in length, e.g.:
 
@@ -33,7 +33,7 @@ The file names do not have time periods in them, making them easier for users to
 
 ---
 
-[Full guidance for naming subject files](ees.html#Subject_titles).
+[Full guidance for naming subject files](ees.html#subject-titles).
 
 [The School Workforce Census](https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england) applies this guidance well, with short and simple titles that make sense to a non-expert, e.g.:
 
@@ -49,7 +49,7 @@ These titles are not cluttered with geographies and time periods, which automati
 
 ---
 
-[Full guidance for using supporting files in EES](ees.html#Ancillary_file_uploads).
+[Full guidance for using supporting files in EES](ees.html#ancillary-file-uploads).
 
 [The Initial Teacher Training performance profiles](https://explore-education-statistics.service.gov.uk/find-statistics/initial-teacher-training-performance-profiles/2019-20) publication is one example of needing to upload a file outside of the regular data/metadata structure. Their provider-level tables also contain national and regional data, which is not supported in EES at the time of writing. The file has a clear title, and data guidance clearly explains what is in the file.
 
@@ -64,11 +64,11 @@ The public data guidance is a key element of your release, to help direct users 
 
 ---
 
-### Public data guidance
+### Public data guidance - files
 
 ---
 
-[Full guidance for public data guidance](ees.html#Public_data_guidance).
+[Full guidance for public data guidance](ees.html#public-data-guidance).
 
 [The School Workforce Census](https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england), along with having sensible brief file names, also has great examples of useful data guidance, which explain what is in each file without overloading the user with information:
 
@@ -80,7 +80,7 @@ The public data guidance is a key element of your release, to help direct users 
 
 ---
 
-[Full guidance for public data guidance](ees.html#Public_data_guidance).
+[Full guidance for public data guidance](ees.html#public-data-guidance).
 
 [The NEET annual brief](https://explore-education-statistics.service.gov.uk/find-statistics/neet-statistics-annual-brief) is a good example of a public metadata overview section done well. It follows the EES template, goes into just the right amount of detail, and is easy to understand.
 
@@ -113,7 +113,7 @@ The [Further Education: outcome based success measures](https://explore-educatio
 
 ---
 
-[Full guidance on creating charts](ees.html#Charts), and [guidance on creating footnotes](ees.html#Footnotes).
+[Full guidance on creating charts](ees.html#charts), and [guidance on creating footnotes](ees.html#footnotes).
 
 The [Widening participation in higher education](https://explore-education-statistics.service.gov.uk/find-statistics/widening-participation-in-higher-education) publication has a good example of a chart built with a long timeseries in the chart builder, with sparing use of footnotes. For example below, a line in the chart indicates a point where comparisons cannot be made, and a key caveat around the comparability of years is included as a footnote, which is needed to interpret the data and chart accurately.
 
@@ -138,7 +138,7 @@ Good alt-text descriptions in charts will not just repeat the title of the chart
 
 ---
 
-[Full guidance on creating featured tables](../publishing-statistics/ees.html#featured-tables).
+[Full guidance on creating featured tables](ees.html#featured-tables).
 
 Good featured tables have short, easy to understand titles, and point users to commonly requested tables or other tables that might be interesting to a wide range of users. For example, the [pupil absence in schools: autumn term](https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england-autumn-term) release has a good example of a clear title, with further information (including date and geographic coverage) left in the description. Leaving these out of the main title makes it much easier for users to navigate through multiple featured tables:
 
@@ -149,7 +149,7 @@ Good featured tables have short, easy to understand titles, and point users to c
 ## Content
 
 
-Clear, concise content is required to direct your users to the right place, and keep them engaged with your release. Our [content guidance page](../creating-statistics/cd.html) contains a raft of great advice on how to structure your release and write for the general public.
+Clear, concise content is required to direct your users to the right place, and keep them engaged with your release. Our [content guidance page](ees.html#content) contains a raft of great advice on how to structure your release and write for the general public.
 
 ---
 
@@ -157,7 +157,7 @@ Clear, concise content is required to direct your users to the right place, and 
 
 ---
 
-[Full guidance on creating a headline section](../creating-statistics/cd.html#Headline_facts_and_figures)
+[Full guidance on creating a headline section](ees.html#headline-facts-and-figures)
 
 The [Education, health and care plans](https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans) release has a good example of a headlines section. There are a sensible number of key statistics, and the summary below gives an overview of trends without diving into the numbers and overwhelming the user.
 
@@ -173,7 +173,7 @@ The [Exclusions](https://explore-education-statistics.service.gov.uk/find-statis
 
 ---
 
-[Full guidance on writing content for accordions](../creating-statistics/cd.html#Accordion_section_content)
+[Full guidance on writing content for accordions](ees.html#accordion-section-content)
 
 
 The [parental responsibility measures release](https://explore-education-statistics.service.gov.uk/find-statistics/parental-responsibility-measures) has good examples of writing for the public in accordion content. Content in each accordion is short and follows the "pyramid" principle of having essential information at the top, summarising the trend, then going into detail at the bottom.
@@ -185,7 +185,7 @@ The [parental responsibility measures release](https://explore-education-statist
 
 ---
 
-[Full guidance on using active headings and titles](../creating-statistics/cd.html#Active_headings_and_titles_-_content)
+[Full guidance on using active headings and titles](../writing-visualising/visualising.html#active-titles)
 
 The [EHCP](https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans) release has some great examples of active subheadings within accordions, which explain the overall trends without overloading users with detail.
 
@@ -204,7 +204,7 @@ The summary of the [CIN / CLA outcomes release](https://explore-education-statis
 
 ---
 
-[Full guidance on creating a methodology in EES](ees.html#Methodology4).
+[Full guidance on creating a methodology in EES](ees.html#methodology).
 
 Good methodologies will broadly cover topics in our recommended [methodology template](../resources/Methodology template EES.docx). The [Graduate outcomes (LEO)](https://explore-education-statistics.service.gov.uk/methodology/graduate-outcomes-leo-methodology) methodology broadly follows this outline, making use of effective formatting in EES to help users navigate through accordions, although definitions can be moved to the EES glossary.
 
@@ -224,7 +224,7 @@ Keeping track of processes for approving and amending releases is crucial for tr
 
 ---
 
-[Full guidance for creating public amendment notes](ees.html#Release_notes).
+[Full guidance for creating public amendment notes](ees.html#release-notes).
 
 [The Pupil absence in England - Autumn and Spring terms](https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england-autumn-and-spring-terms) publication has some good examples of release notes.
 
@@ -239,7 +239,7 @@ These notes clearly explain to the user what has changed, which files were affec
 
 ---
 
-[Full guidance for creating public amendment notes](ees.html#Sign_off).
+[Full guidance for creating public amendment notes](ees.html#sign-off).
 
 The [COVID attendance](https://explore-education-statistics.service.gov.uk/find-statistics/attendance-in-education-and-early-years-settings-during-the-coronavirus-covid-19-outbreak) publication has fortnightly releases at the time of writing, and the team have a good process for sign-off. This includes detailed information at each stage to confirm who has signed off, who has requested an action be taken, and who has carried out the action.
 
