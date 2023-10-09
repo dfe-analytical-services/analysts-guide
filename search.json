@@ -74,7 +74,7 @@
     "href": "statistics-production/examples.html#data-guidance",
     "title": "Good examples in EES",
     "section": "Data guidance",
-    "text": "Data guidance\nThe public data guidance is a key element of your release, to help direct users to the right file to download or build tables with. It is frequently highlighted by users of our stats as a really helpful element of EES. You will be prompted to fill in data guidance in the release checklist. Any release that does not have a complete public data guidance will not be blocked from approval and publishing.\n\n\nPublic data guidance\n\nFull guidance for public data guidance.\nThe School Workforce Census, along with having sensible brief file names, also has great examples of useful data guidance, which explain what is in each file without overloading the user with information:\n\n\n\n\nPublic data guidance - overview\n\nFull guidance for public data guidance.\nThe NEET annual brief is a good example of a public metadata overview section done well. It follows the EES template, goes into just the right amount of detail, and is easy to understand.\n\nNEET data guidance on EES."
+    "text": "Data guidance\nThe public data guidance is a key element of your release, to help direct users to the right file to download or build tables with. It is frequently highlighted by users of our stats as a really helpful element of EES. You will be prompted to fill in data guidance in the release checklist. Any release that does not have a complete public data guidance will not be blocked from approval and publishing.\n\n\nPublic data guidance - files\n\nFull guidance for public data guidance.\nThe School Workforce Census, along with having sensible brief file names, also has great examples of useful data guidance, which explain what is in each file without overloading the user with information:\n\n\n\n\nPublic data guidance - overview\n\nFull guidance for public data guidance.\nThe NEET annual brief is a good example of a public metadata overview section done well. It follows the EES template, goes into just the right amount of detail, and is easy to understand.\n\nNEET data guidance on EES."
   },
   {
     "objectID": "statistics-production/examples.html#charts-and-tables",
@@ -581,6 +581,13 @@
     "text": "Headline sections\nIt is common to use bullet points to draw out key headline messages, either for policy lines or for general interest. Here are some top tips for writing headlines:\n\nAsk yourself if this is the most important, useful and relevant point to make? Why? What is new?\nWe recommend a maximum of six top headlines\nYou shouldn’t be trying to summarise all the findings in the publication\nFor regular publications, headlines won’t necessarily be the same every time\nHeadlines should be a single sentence making a single point, and be able to stand alone from the publication\nHeadlines should make sense to everyone and anyone (no jargon)\nStructure headlines as: what has happened; why is this important - don’t give numbers without context\nAt least of your headlines should put the latest figures in the context of the longer-term change\nRound figures in headlines, you don’t need lots of decimal places\nIf there is essential context for the headline facts then put this here"
   },
   {
+    "objectID": "writing-visualising/writing.html#active-subheadings",
+    "href": "writing-visualising/writing.html#active-subheadings",
+    "title": "Writing about data",
+    "section": "Active subheadings",
+    "text": "Active subheadings\nAs with active titles for charts, active subheadings are descriptive and tell the trend by highlighting the main story. Active subheadings not only help to structure your writing, but also help users by highlighting the main message(s) you want to convey in your data.\nSee a good example of active subheadings in practice."
+  },
+  {
     "objectID": "writing-visualising/writing.html#reporting-and-interpreting-numbers",
     "href": "writing-visualising/writing.html#reporting-and-interpreting-numbers",
     "title": "Writing about data",
@@ -602,11 +609,11 @@
     "text": "Things to consider when visualising data"
   },
   {
-    "objectID": "writing-visualising/visualising.html#visualisation-titles",
-    "href": "writing-visualising/visualising.html#visualisation-titles",
+    "objectID": "writing-visualising/visualising.html#active-titles",
+    "href": "writing-visualising/visualising.html#active-titles",
     "title": "Visualising data",
-    "section": "Visualisation titles",
-    "text": "Visualisation titles\nFor tables and charts, active titles are descriptive and tell the trend by highlighting the main story. They should be short, aim for 10 words or less and avoid going over more than one line. Active titles give users the main message without having to find the text that accompanies the chart, and makes it easier for journalists to use your chart directly without having to write their own summary.\nPut information such as the measure, source, population, geographical coverage and time period in a caption if they are not obvious from the chart content. Add further context and information in the main text. Remember that tables and charts should be usable even if isolated from the rest of the release."
+    "section": "Active titles",
+    "text": "Active titles\nFor tables and charts, active titles are descriptive and tell the trend by highlighting the main story. They should be short, aim for 10 words or less and avoid going over more than one line. Active titles give users the main message without having to find the text that accompanies the chart, and makes it easier for journalists to use your chart directly without having to write their own summary.\nPut information such as the measure, source, population, geographical coverage and time period in a caption if they are not obvious from the chart content. Add further context and information in the main text. Remember that tables and charts should be usable even if isolated from the rest of the release."
   },
   {
     "objectID": "writing-visualising/visualising.html#charts",
@@ -1145,7 +1152,7 @@
     "href": "statistics-production/pub.html#linking-to-gov.uk",
     "title": "Routes for publishing",
     "section": "Linking to gov.uk",
-    "text": "Linking to gov.uk\nYou will need to arrange a gov.uk statistics publication page so that it links to EES. Here is how to do that:\nTwo days ahead of publication, you’ll need to raise a ticket with the Digital communications (gov.uk) team and ask them to create a new gov.uk statistics page with a link to EES, connect it to the announcement and add to any collections.\nIn your request, you’ll need to include:\n\ntitle, summary sentence and ‘detail’ for the new page – you can include a link to previous releases if you want it to be the same\nthe link for your EES release – if you don’t have it you can update the ticket when the link is available\nthe link for the announcement\nthe link of any gov.uk collections it needs to be added to\nan email with clearance from your deputy director\nan email confirming communications are happy for it to go if it’s for stats that aren’t pre-announced or it’s an update to stats made after publication – so that they can prepare reactive lines\n\nHere are examples of how the page will look like:\n\nPrimary School Performance Tables 2018\nHigher Education Student Statistics 2018 to 2019\n\n\nYou can find what the link to your EES release will be by looking at the ‘Sign off’ page within the release dashboard on EES.\n\n\nText to update the collection page:\nIn addition, you will also need to raise a ticket with the Digital communications (gov.uk) team to update your collection page/s with the following text:\n\nFrom [publication date], the Department for Education will be publishing the [publication title] on a new statistics site, Explore Education Statistics (EES).\n\nWhen you raise the ticket please ensure that all the documents you submit are in an accessible format as stated in the accessibility guidance. There is also guidance on accessibility for Excel workbooks in Teams."
+    "text": "Linking to gov.uk\nYou will need to arrange a gov.uk statistics publication page so that it links to EES. Here is how to do that:\nTwo days ahead of publication, you’ll need to raise a ticket with the Digital communications (gov.uk) team and ask them to create a new gov.uk statistics page with a link to EES, connect it to the announcement and add to any collections.\nIn your request, you’ll need to include:\n\ntitle, summary sentence and ‘detail’ for the new page – you can include a link to previous releases if you want it to be the same\nthe link for your EES release – if you don’t have it you can update the ticket when the link is available\nthe link for the announcement\nthe link of any gov.uk collections it needs to be added to\nan email with clearance from your deputy director\nan email confirming communications are happy for it to go if it’s for stats that aren’t pre-announced or it’s an update to stats made after publication – so that they can prepare reactive lines\n\nHere are examples of how the page will look like:\n\nPrimary School Performance Tables 2018\nHigher Education Student Statistics 2018 to 2019\n\n\nYou can find what the link to your EES release will be by looking at the ‘Sign off’ page within the release dashboard on EES."
   },
   {
     "objectID": "statistics-production/pub.html#how-to-publish-1",
@@ -1160,13 +1167,6 @@
     "title": "Routes for publishing",
     "section": "Publication checklist",
     "text": "Publication checklist\nBefore you start creating your release you should have:\n\nAnnounced the upcoming release via gov.uk\nSent metadata form to HoP\n\nBefore you publish a release you should have:\n\nChecked that the data meets accessibility requirements, ideally as a .csv file, or an accessible Excel file where this is not possible\nWritten footnotes where appropriate\nPassed the release for higher review (senior sign-off)\nSent the final files and sign-off email to the digital communications (gov.uk) team"
-  },
-  {
-    "objectID": "statistics-production/pub.html#how-to-publish-2",
-    "href": "statistics-production/pub.html#how-to-publish-2",
-    "title": "Routes for publishing",
-    "section": "How to publish",
-    "text": "How to publish\nWe recommend that teams use R Shiny to build and publish dashboards. Shiny applications are easily made accessible, and underlying code for Shiny apps can be published alongside for transparency.\nFor more information on publishing dashboards, including template code and how to get started, see our Public dashboards page."
   },
   {
     "objectID": "statistics-production/embedded-charts.html",
