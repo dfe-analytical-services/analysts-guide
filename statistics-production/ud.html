@@ -497,13 +497,14 @@ Guidance on how to structure data files
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <hr>
-<p>The aim is to apply a consistent, logical, structure to all data files so that they are easier to use and analyse, minimising the time spent cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using the data, as well as opening up further opportunities for linking data.</p>
-<p>Our publication data is released under the terms of the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/" target="_blank" rel="noopener noreferrer">Open Government License</a> and by following these standards will meet at least 3 stars for <a href="https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats" target="_blank" rel="noopener noreferrer">Open Data</a>.</p>
+<p>With open data standards, our aim is to apply a consistent, logical structure to all data files so that they are easier to use and analyse, minimising the time spent deciphering and cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using our data, as well as opening up further opportunities for linking data.</p>
+<p>The guidance and standards here explicitly apply to all data files prepared for and uploaded to the Explore Education Statistics platform, but much of the content below equally applies to any data being prepared and disseminated both within the department and externally.</p>
+<p>Data published via EES is released under the terms of the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/" target="_blank" rel="noopener noreferrer">Open Government License</a> and by following the data standards provided here, published (or any other) data meets at least 3 stars for <a href="https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats" target="_blank" rel="noopener noreferrer">Open Data</a>.</p>
 <hr>
 <section id="how-to-check-against-these-standards" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-check-against-these-standards">How to check against these standards</h2>
 <p>An <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">interactive data screener</a> has been developed in R Shiny to automate checks against the standards as a final stage of automated quality assurance before upload to EES.</p>
-<p>This can be run on any data file, though requires the <a href="#ees-metadata">EES metadata</a> to be able to process the file. The app runs on our rsconnect servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa" target="_blank" rel="noopener noreferrer">GitHub</a>, and you can get in touch with us at statistics.development@education.gov.uk.</p>
+<p>This can be run on any data file, though requires an associated <a href="#ees-metadata">EES metadata file</a> to be able to process the file. The app runs on our Posit Connect (formerly RSConnect) servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa" target="_blank" rel="noopener noreferrer">GitHub</a>, and you can get in touch with us at statistics.development@education.gov.uk.</p>
 <div class="alert alert-dismissible alert-danger">
 <p>All data and EES metadata files must be run through the <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">screening app</a> before uploading to EES.</p>
 </div>
@@ -515,13 +516,13 @@ Guidance on how to structure data files
 </section>
 <section id="overview-of-ees-data-files" class="level2">
 <h2 class="anchored" data-anchor-id="overview-of-ees-data-files">Overview of EES data files</h2>
-<p>For data to be used with the table tool and charts in EES, it needs to be provided to the following overall specifications:</p>
+<p>For data to be used with the table tool and charts in EES, it needs to meet the following overall specifications:</p>
 <ul>
 <li>The data should be contained in a <a href="#data-format">text file with comma separated values</a> and with the extension .csv.</li>
 <li>The first row of the data file should contain <a href="#variable-names">machine readable column names</a> in <a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake case</a>.</li>
-<li>The data should be layed out in line with <a href="#tidy-data-structure">tidy data principles</a>, consisting of filters (categories) and indicators (values).</li>
+<li>The data should be layed out in line with <a href="#tidy-data-structure">tidy data principles</a>, consisting of filters (category fields) and indicators (value fields).</li>
 <li>The file should contain the <a href="#time-and-geography">necessary mandatory columns</a> (i.e.&nbsp;time_period, time_identifier, geographical_level, country_code and country_name);</li>
-<li>The data file should have an accompanying <a href="#ees-metadata">meta-data csv file</a>, which contains information on the nature of the columns in the data file:
+<li>The data file should have an accompanying <a href="#ees-metadata">metadata csv file</a>, which contains information on the nature of the columns in the data file:
 <ul>
 <li>whether a given column is a filter or indicator;</li>
 <li>human readable name for use in tables and charts on EES;</li>
@@ -530,8 +531,9 @@ Guidance on how to structure data files
 <li>units for indicator fields (e.g.&nbsp;£, %);</li>
 </ul></li>
 <li>The data should use the <a href="#data-symbols">appropriate GSS codes</a> for suppressed, low, not available and not applicable entries.</li>
+<li>The data field IDs, labels and items should conform to <a href="#common-harmonised-variables">DfE harmonised variables</a> where available.</li>
 </ul>
-<p>An example pair of data and meta-data files are illustrated in the files and tables below.</p>
+<p>An example pair of data and metadata files are illustrated in the files and tables below.</p>
 <hr>
 <section id="example-data-file-ees_demo_datafile.csv" class="level3">
 <h3 class="anchored" data-anchor-id="example-data-file-ees_demo_datafile.csv">Example data file (<a href="../data_examples/ees_demo_datafile.csv">ees_demo_datafile.csv</a>)</h3>
@@ -836,7 +838,7 @@ Guidance on how to structure data files
 <hr>
 <section id="tidy-data-structure" class="level2">
 <h2 class="anchored" data-anchor-id="tidy-data-structure">Tidy data structure</h2>
-<p>The move to the new platform provided the ideal opportunity to standardise and ‘tidy’ up our data to give users the consistency that they ask for. Our standards draw upon the ideas of tidy data - this means applying a logical structure to datasets so they are easier to use and analyse, minimising the time spent cleaning the data before use.</p>
+<p>The DfE is committed to working with and publishing standardised ‘tidy’ data to give users, both internal and external, consistent machine readable data that can be easily transformed and analysed in modern programming languages used for data processing. Our standards draw upon the ideas of tidy data - this means applying a logical structure to datasets so they are easier to use and analyse, minimising the time spent cleaning the data before use.</p>
 <p>Here is a quick summary video of what exactly tidy data is.</p>
 <center>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oQuupzfX9OQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
@@ -2074,7 +2076,7 @@ Remember
 <section id="common-harmonised-variables" class="level1">
 <h1>Common harmonised variables</h1>
 <hr>
-<p>Wherever possible variables should confirm to the DfE harmonisation strategy. Having consistent variables across publications allows users to more quickly navigate and understand our statistics, whilst also facilitating more advanced methods of interacting with our data platform such as automated data retrieval for dashboards and other secondary statistics services.</p>
+<p>Wherever possible variables should confirm to the DfE harmonisation strategy. Having consistent variables across data files held by the DfE, and in particular across data files in publications, allows users to more quickly navigate and understand our statistics. In the EES context, harmonisation will also facilitate more advanced methods of interacting with our data platform such as automated data retrieval for dashboards and other secondary statistics services, whilst also helping with performance and cost effectiveness of the EES platform.</p>
 <hr>
 <section id="ethnicity" class="level2">
 <h2 class="anchored" data-anchor-id="ethnicity">Ethnicity</h2>
