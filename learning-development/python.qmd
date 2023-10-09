@@ -14,15 +14,19 @@ Python is a high-level, general-purpose programming language. It has a number of
 
 ## How to install Python
 
+You can download Python (language) and PyCharm (IDE) from the DfE software center.
+
+![](../images/install_python.png)
+
 ------------------------------------------------------------------------
 
 ## Best places to start
 
+For getting set up, and help through any initial issues we recommend making use of the [DfE Python community on Teams](https://teams.microsoft.com/l/team/19%3a74b8d5bbf49644f2882fcc4274c03a70%40thread.tacv2/conversations?groupId=1238e58a-44e4-4d0d-bb1f-dcefa3d2e64f&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9).
+
 There is guidance on the Python Wiki for [programmers](https://wiki.python.org/moin/BeginnersGuide/Programmers) and [non-programmers](https://wiki.python.org/moin/BeginnersGuide/NonProgrammers). Each of the guides includes a list of interactive courses that you can work through to improve your skills.
 
 [The ONS Data Science Campus](https://datasciencecampus.ons.gov.uk/capability/data-science-campus-faculty/reproducible-analytical-pipeline-journey/) offers training courses on Reproducible Analytical Pipelines (RAP) in Python, but be aware that there is less Python expertise in the Department which might make QA of code more difficult.
-
-We recommend making use of the following communities: - Python DfE community on Teams
 
 ------------------------------------------------------------------------
 
