@@ -25,16 +25,16 @@ Producers of statistics will only know whether this element of quality continues
 ## USER hub
 
 
-The USER hub is now available on the [GSS website](https://gss.civilservice.gov.uk/user-support-and-engagement-resource-hub/), this is a central resource to help producers of statistics develop the knowledge, skills and techniques needed to engage effectively with their audiences.
+The User Support and Engagement Resource (USER) hub is now available on the [GSS website](https://gss.civilservice.gov.uk/user-support-and-engagement-resource-hub/). This is a central resource to help producers of statistics develop the knowledge, skills and techniques needed to engage effectively with their audiences.
 
 ---
 
 ## Improving your own engagmenent
 
 
-Download this [top tips document](../resources/2021_05_14_Top_Tips.docx){target="_blank" rel="noopener noreferrer"} produced for the GSS, as a starting point for understanding how you can improve your user engagement.
+Download this [top tips document](../resources/2021_05_14_Top_Tips.docx){target="_blank" rel="noopener noreferrer"} as a starting point for understanding how you can improve your user engagement.
 
-Through our work engaging users on EES we have built up a list of interested users who have stated a willingness to be contacted about opportunities to be involved in user testing of our statistics on the platform, if you have any suggestions for things for us to test on EES with these users, please contact [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk).
+If you have any suggestions of things for us to test on EES with users who have volunteered to do user testing, please contact [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk).
 
 More advice and guidance will follow in this space. In the meantime, if you're interested in user engagement please contact Heather Brown.
 
@@ -47,24 +47,44 @@ More advice and guidance will follow in this space. In the meantime, if you're i
 
 ---
 
-Explore Education Statistics was born from a discovery project, where the emphasis of the discovery was to understand who the users of the Department’s official statistics are, what they need, and where the DfE are currently meeting, exceeding or failing to meet those needs. We spoke to over 90 users directly, via 1 to 1 sessions or workshops and had over 130 survey responses. We used this research to create user personas and user stories which we then assessed ourselves against to see how well we were meeting those needs - the result of this was a recommendation that we needed to do something better. [Our discovery report](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721729/HiveIT_-_DfE_dissemination_discovery.pdf) is published on gov.uk.
+Explore Education Statistics (EES) was born from a [discovery project](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721729/HiveIT_-_DfE_dissemination_discovery.pdf), where the emphasis of the discovery was to understand who the users of the Department’s official statistics are, what they need, and where the DfE are currently meeting, exceeding or failing to meet those needs. 
 
-Following the discovery we moved through to the alpha phase, where we built prototypes and carried out extensive user testing to firm up the functionality that might be required - focussing on different user journeys and the user experience at each step. We then passed a GDS service assessment where our approach was tested against the [GDS service standard](https://www.gov.uk/service-manual/service-standard) before moving into the private beta phase where we started building the service for real. We user-tested every bit of the journey thoroughly and used feedback from users to iterate on the functionality we were making available. User testing was primarily through 1 on 1 sessions where users would be set activities to work through and we would watch how the user clicked through each part of the relevant journey and to ask what they might expect to see at any different steps of the process - both when creating/publishing statistics releases and using releases after publishing. We also ran workshops and carried out user surveys to collect as much evidence as possible, for more information on this take a look at the [write up of our private beta phase on Hive IT's website](https://hiveit.co.uk/our-work/dfe-private-beta/).
+**Initial user research**
+
+We spoke to over 90 users directly, via 1 to 1 sessions or workshops and had over 130 survey responses. We used this research to create user personas and user stories which we then assessed ourselves against to see how well we were meeting those needs - the result of this was a recommendation that we needed to do something better.
+
+**The alpha phase**
+
+Following the discovery, we moved to the alpha phase, where we built prototypes and carried out extensive user testing to firm up the functionality that might be required - focusing on different user journeys and the user experience at each step. 
+
+**The private beta phase**
+
+We then passed a GDS service assessment where our approach was tested against the [GDS service standard](https://www.gov.uk/service-manual/service-standard) before moving into the private beta phase where we started building the service for real. 
+
+**User testing**
+
+We user-tested every bit of the journey thoroughly and used feedback from users to iterate on the functionality we were making available. User testing was primarily through 1 on 1 sessions where users would be set activities to work through and we would watch how the user clicked through each part of the relevant journey and to ask what they might expect to see at any different steps of the process - both when creating/publishing statistics releases and using releases after publishing. We also ran workshops and carried out user surveys to collect as much evidence as possible, for more information on this take a look at the [write up of our private beta phase on Hive IT's website](https://hiveit.co.uk/our-work/dfe-private-beta/).
 
 ![](../images/dfe-beta-engagements.jpg)
 
-In March 2020 we wrapped up the build of the service and were given the green light via a GDS service assessment to move into our public beta phase. That’s when we started using the service for real and teams started publishing statistics via EES only. Ongoing user feedback has been really important throughout public beta as it has helped us move the service from a minimal viable product to one that works in the best way possible for everyone. We also use this engagement to help us understand how well we are meeting our KPIs, which we review regularly to see how well we are meeting the original aims of the service thinking back to our original discovery and what users told us they needed. There are a number of ongoing feedback routes open to users during the public beta phase of the service:
+**EES goes live**
 
-- Beta banner (service focus)
+In March 2020 we were given the green light via a GDS service assessment to move into our public beta phase. That’s when we started using the service for real and teams started publishing statistics via EES only. Ongoing user feedback has been really important throughout public beta as it has helped us move the service from a minimal viable product to one that works in the best way possible for everyone. We also use this engagement to help us understand how well we are meeting our KPIs, which we review regularly to see how well we are meeting the original aims of the service thinking back to our [original discovery](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721729/HiveIT_-_DfE_dissemination_discovery.pdf) and what users told us they needed. 
+
+**Ongoing feedback routes**
+
+There are a number of ongoing feedback routes open to users during the public beta phase of the service:
+
+* Beta banner (service focus)
 Users can submit feedback through the beta banner from any EES page, and responses are managed by the statistics development team. Feedback so far has mostly been aimed at the service functionality more generally but we do regularly get publication specific feedback which we share with the relevant teams. 
 
-- Formal user testing (service focus)
+* Formal user testing (service focus)
 Our EES team will speak to users via user testing sessions to help inform future iterations to functionality.
 
-- In-release feedback requests (publication focus)
-Some teams have been including specific calls for feedback within their release pages e.g. - https://explore-education-statistics.service.gov.uk/find-statistics/apprenticeships-and-traineeships 
+* In-release feedback requests (publication focus)
+Some teams have been including specific calls for feedback within their release pages e.g. the [apprenticeships and traineeships publication](https://explore-education-statistics.service.gov.uk/find-statistics/apprenticeships-and-traineeships) 
 
-- Google analytics
+* Google analytics
 We collect user analytics to help us understand what users are doing with our statistics. This information is shared with production teams via our [EES analytics app](https://rsconnect/rsc/ees-analytics/). 
 
 For more information, get in touch with the team at [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk).
