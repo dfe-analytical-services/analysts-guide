@@ -185,7 +185,7 @@ The [parental responsibility measures release](https://explore-education-statist
 
 ---
 
-[Full guidance on using active headings and titles](../writing-visualising/visualising.html#active-titles)
+[Full guidance on using active headings and titles](../writing-visualising/writing.html#active-subheadings)
 
 The [EHCP](https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans) release has some great examples of active subheadings within accordions, which explain the overall trends without overloading users with detail.
 
