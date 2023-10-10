@@ -66,6 +66,15 @@ It is common to use bullet points to draw out key headline messages, either for 
 
 ---
 
+## Active subheadings
+
+As with [active titles for charts](../writing-visualising/visualising.html#active-titles), active subheadings are descriptive and tell the trend by highlighting the main story. Active subheadings not only help to structure your writing, but also help users by highlighting the main message(s) you want to convey in your data.
+
+
+See a [good example of active subheadings in practice](../statistics-production/examples.html#active-subheadings). 
+
+---
+
 ## Reporting and interpreting numbers
 
 
