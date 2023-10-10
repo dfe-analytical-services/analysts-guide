@@ -354,6 +354,8 @@ This then becomes the default order for this filter or indicator and will apply 
 
 ---
 
+Supporting files should not be used as the default. Wherever possible you should upload your data as data files that can then be used in the table tool.
+
 Any files you want to make available for users to download but aren't intended for the table tool should be added as a supporting file upload. These files will need to meet all requirements of the new [accesibility regulations](https://www.gov.uk/guidance/publishing-accessible-documents) before they can be published.
 
 Examples of supporting files may be:
