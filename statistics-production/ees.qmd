@@ -360,7 +360,6 @@ Examples of supporting files may be:
 
 * Infographic pages
 * Supplementary data that isn't intended for the table tool
-* Additional technical documentation
 
 To ensure that spreadsheets are accessible, see the guidance from [gov.wales](https://gov.wales/how-create-accessible-excel-spreadsheets), and this [Analysis Function guidance](https://analysisfunction.civilservice.gov.uk/policy-store/making-analytical-publications-accessible/).
 
