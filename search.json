@@ -319,7 +319,7 @@
     "href": "learning-development/learning-support.html",
     "title": "Learning support",
     "section": "",
-    "text": "A collection of useful learning resources, and information on support and resources to get you started\nAs statistics producers we require a variety of tools to be able to process our data. Below are the recommended tools that will give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.\nFor best practice when using software and coding in our process, see our guidance on RAP expectations the DfE Good Code Practice guide."
+    "text": "A collection of useful learning resources, and information on support and resources to get you started\nAs analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.\nFor best practice when using software and coding in our process, see our guidance on RAP expectations and the DfE Good Code Practice guide."
   },
   {
     "objectID": "learning-development/learning-support.html#email-support",
@@ -340,7 +340,7 @@
     "href": "learning-development/learning-support.html#partnership-programme",
     "title": "Learning support",
     "section": "Partnership programme",
-    "text": "Partnership programme\n\nDedicated resource to support development work, either building skills or working on statistics outputs.\nA short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.\nContact statistics.development@education.gov.uk if you’re interested in finding out more about the support we can give."
+    "text": "Partnership programme\n\nDedicated resource to support development work, either building skills or working on analytical or statistical outputs.\nA short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.\nContact statistics.development@education.gov.uk if you’re interested in finding out more about the support we can give."
   },
   {
     "objectID": "learning-development/learning-support.html#specific-resources",
@@ -816,14 +816,14 @@
     "href": "learning-development/python.html#how-to-install-python",
     "title": "Python",
     "section": "How to install Python",
-    "text": "How to install Python"
+    "text": "How to install Python\nYou can download Python (language) and PyCharm (IDE) from the DfE software center."
   },
   {
     "objectID": "learning-development/python.html#best-places-to-start",
     "href": "learning-development/python.html#best-places-to-start",
     "title": "Python",
     "section": "Best places to start",
-    "text": "Best places to start\nThere is guidance on the Python Wiki for programmers and non-programmers. Each of the guides includes a list of interactive courses that you can work through to improve your skills.\nThe ONS Data Science Campus offers training courses on Reproducible Analytical Pipelines (RAP) in Python, but be aware that there is less Python expertise in the Department which might make QA of code more difficult.\nWe recommend making use of the following communities: - Python DfE community on Teams"
+    "text": "Best places to start\nFor getting set up, and help through any initial issues we recommend making use of the DfE Python community on Teams.\nThere is guidance on the Python Wiki for programmers and non-programmers. Each of the guides includes a list of interactive courses that you can work through to improve your skills.\nThe ONS Data Science Campus offers training courses on Reproducible Analytical Pipelines (RAP) in Python, but be aware that there is less Python expertise in the Department which might make QA of code more difficult."
   },
   {
     "objectID": "learning-development/python.html#best-practice",
@@ -907,7 +907,7 @@
     "href": "learning-development/sql.html#tips-for-using-sql",
     "title": "SQL",
     "section": "Tips for using SQL",
-    "text": "Tips for using SQL\n\nSetting up a SQL area\n\nBefore you set up a SQL database, make sure you have the following information to pass on:\n\nThe name of the database you want to set up - Different servers will have different naming conventions, make sure to check this with the server owner before you confirm the name.\nWho the database owners should be - This will most likely be yourself, but you can have multiple (e.g. your team leader). It can be helpful to have more than one owner, so one can grant permissions when the other is unavailable.\nWho should have access, and what their access levels should be - Users can have read or read/write access. Make sure you have a list of users (with their AD names) and their access levels ready.\nThe database structure - Do you need certain schemas setting up? This will help organise your database. Without schemas, all tables will be saved under [dbo].\n\nThere are a few common servers that statistics producers make use of at DfE. Use the following contacts below to pass on the above information to get your new database set up:\n\nPDR (T1PRMDRSQL,55842) - contact the PDR team\nPDB16 (3DCPRI-PDB16) - raise a request through the service desk under “non-standard” &gt; “any other request”\nAnalyse & Modelling server (T1PRANMSQL,60125) - raise a request on the service desk under the following options:\n\n\n\n\n\nManaging access\n\nTo gain access to a SQL database, you must have written confirmation from the database owner specifying whether your access is read-only or both read and write.\nIf the area you require access to is in the T1PRMDRSQL,55842 SQL server, contact the PDR team with your permission attached, stating the name of the database you want access to.\nIf the area is in any other server, raise a request through the central IT service portal under “non-standard” &gt; “any other request”. In your request make sure you attach the written confirmation and specify:\n\nThe server name\nThe database name\nWhether it’s read or write access you need\n\n\n\n\n\nMoving data to different areas\n\nInformation on how to do this in R can be found in our processes and RAP page"
+    "text": "Tips for using SQL\n\nSetting up a SQL area\n\nBefore you set up a SQL database, make sure you have the following information to pass on:\n\nThe name of the database you want to set up - Different servers will have different naming conventions, make sure to check this with the server owner before you confirm the name.\nWho the database owners should be - This will most likely be yourself, but you can have multiple (e.g. your team leader). It can be helpful to have more than one owner, so one can grant permissions when the other is unavailable.\nWho should have access, and what their access levels should be - Users can have read or read/write access. Make sure you have a list of users (with their AD names) and their access levels ready.\nThe database structure - Do you need certain schemas setting up? This will help organise your database. Without schemas, all tables will be saved under [dbo].\n\nThere are a few common servers that statistics producers (and analysts in general) make use of at DfE. Use the following contacts below to pass on the above information to get your new database set up:\n\nPDR (T1PRMDRSQL,55842) - contact the PDR team\nPDB16 (3DCPRI-PDB16) - raise a request through the service desk under “non-standard” &gt; “any other request”\nAnalyse & Modelling server (T1PRANMSQL,60125) - raise a request on the service desk under the following options:\n\n\n\n\n\nManaging access\n\nTo gain access to a SQL database, you must have written confirmation from the database owner specifying whether your access is read-only or both read and write.\nIf the area you require access to is in the T1PRMDRSQL,55842 SQL server, contact the PDR team with your permission attached, stating the name of the database you want access to.\nIf the area is in any other server, raise a request through the central IT service portal under “non-standard” &gt; “any other request”. In your request make sure you attach the written confirmation and specify:\n\nThe server name\nThe database name\nWhether it’s read or write access you need\n\n\n\n\n\nMoving data to different areas\n\nInformation on how to do this in R can be found in our processes and RAP page"
   },
   {
     "objectID": "learning-development/r.html",
@@ -935,7 +935,7 @@
     "href": "learning-development/r.html#how-to-install-r",
     "title": "R",
     "section": "How to install R",
-    "text": "How to install R\nDownload R (language) and RStudio (IDE) from the DfE software center. We also recommend that you download RTools (a helpful R extension) at the same time.\nThere are usually a couple of different versions available for software on the software center, we’d recommend you always go for the latest (newest) version possible."
+    "text": "How to install R\nDownload R (language) and RStudio (IDE) from the DfE software center. We also recommend that you download RTools (a helpful R extension) at the same time."
   },
   {
     "objectID": "learning-development/r.html#best-places-to-start",
