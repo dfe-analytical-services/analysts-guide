@@ -308,8 +308,10 @@ When adding a Subject title, think about the general user and how they will appe
 
 * Your Subject titles should be short and snappy and clearly explain what is in each file. Some good examples of this in practice are included below:
   * Early years provision by provider type
-  * Exclusions and suspensions by pupil characteristics
+  * Teacher vacancies
   * ITT new entrants by subject and training route
+  * Average pay of further education workforce
+  * Qualified entrants to teaching
 
 You can make changes to the Subject title for your data file after it has been uploaded using the 'Edit title' option.
 
