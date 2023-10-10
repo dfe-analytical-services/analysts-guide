@@ -19,9 +19,11 @@ metadata_data_example <- read_excel("../data_examples/metadata_data_example.xlsx
 
 ---
 
-The aim is to apply a consistent, logical, structure to all data files so that they are easier to use and analyse, minimising the time spent cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using the data, as well as opening up further opportunities for linking data.
+With open data standards, our aim is to apply a consistent, logical structure to all data files so that they are easier to use and analyse, minimising the time spent deciphering and cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using our data, as well as opening up further opportunities for linking data.
 
-Our publication data is released under the terms of the [Open Government License](http://www.nationalarchives.gov.uk/doc/open-government-licence/){target="_blank" rel="noopener noreferrer"} and by following these standards will meet at least 3 stars for [Open Data](https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats){target="_blank" rel="noopener noreferrer"}.
+The guidance and standards here explicitly apply to all data files prepared for and uploaded to the Explore Education Statistics platform, but much of the content below equally applies to any data being prepared and disseminated both within the department and externally. 
+
+Data published via EES is released under the terms of the [Open Government License](http://www.nationalarchives.gov.uk/doc/open-government-licence/){target="_blank" rel="noopener noreferrer"} and by following the data standards provided here, published (or any other) data meets at least 3 stars for [Open Data](https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats){target="_blank" rel="noopener noreferrer"}.
 
 ---
 
@@ -30,7 +32,7 @@ Our publication data is released under the terms of the [Open Government License
 
 An [interactive data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} has been developed in R Shiny to automate checks against the standards as a final stage of automated quality assurance before upload to EES.
 
-This can be run on any data file, though requires the [EES metadata](#ees-metadata) to be able to process the file. The app runs on our rsconnect servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on [GitHub](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}, and you can get in touch with us at statistics.development@education.gov.uk.
+This can be run on any data file, though requires an associated [EES metadata file](#ees-metadata) to be able to process the file. The app runs on our Posit Connect (formerly RSConnect) servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on [GitHub](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}, and you can get in touch with us at statistics.development@education.gov.uk.
 
 <div class="alert alert-dismissible alert-danger">
   All data and EES metadata files must be run through the [screening app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} before uploading to EES.
@@ -47,21 +49,22 @@ This can be run on any data file, though requires the [EES metadata](#ees-metada
 ## Overview of EES data files
 
 
-For data to be used with the table tool and charts in EES, it needs to be provided to the following overall specifications:
+For data to be used with the table tool and charts in EES, it needs to meet the following overall specifications:
 
 * The data should be contained in a [text file with comma separated values](#data-format) and with the extension .csv.
 * The first row of the data file should contain [machine readable column names](#variable-names) in [snake case](https://en.wikipedia.org/wiki/Snake_case){target="_blank" rel="noopener noreferrer"}.
-* The data should be layed out in line with [tidy data principles](#tidy-data-structure), consisting of filters (categories) and indicators (values).
+* The data should be layed out in line with [tidy data principles](#tidy-data-structure), consisting of filters (category fields) and indicators (value fields).
 * The file should contain the [necessary mandatory columns](#time-and-geography) (i.e. time_period, time_identifier, geographical_level, country_code and country_name);
-* The data file should have an accompanying [meta-data csv file](#ees-metadata), which contains information on the nature of the columns in the data file:
+* The data file should have an accompanying [metadata csv file](#ees-metadata), which contains information on the nature of the columns in the data file:
   * whether a given column is a filter or indicator;
   * human readable name for use in tables and charts on EES;
   * filter grouping information;
   * number of decimal places to display for indicator fields (i.e. allowing a lower precision to be presented in the dervied tables than the underlying data - useful for minimising rounding errors in aggregates);
   * units for indicator fields (e.g. £, %);
 * The data should use the [appropriate GSS codes](#data-symbols) for suppressed, low, not available and not applicable entries.
+* The data field IDs, labels and items should conform to [DfE harmonised variables](#common-harmonised-variables) where available.
 
-An example pair of data and meta-data files are illustrated in the files and tables below.
+An example pair of data and metadata files are illustrated in the files and tables below.
 
 ---
 
@@ -149,7 +152,7 @@ For publishing on EES specifically, please note the following points:
 ## Tidy data structure
 
 
-The move to the new platform provided the ideal opportunity to standardise and 'tidy' up our data to give users the consistency that they ask for. Our standards draw upon the ideas of tidy data - this means applying a logical structure to datasets so they are easier to use and analyse, minimising the time spent cleaning the data before use.
+The DfE is committed to working with and publishing standardised 'tidy' data to give users, both internal and external, consistent machine readable data that can be easily transformed and analysed in modern programming languages used for data processing. Our standards draw upon the ideas of tidy data - this means applying a logical structure to datasets so they are easier to use and analyse, minimising the time spent cleaning the data before use.
 
 Here is a quick summary video of what exactly tidy data is.
 
@@ -767,10 +770,10 @@ This approach will work for basic filtering of providers and schools but it may 
 ---
 
 Wherever possible variables should confirm to the DfE harmonisation strategy.
-Having consistent variables across publications allows users to more quickly
-navigate and understand our statistics, whilst also facilitating more advanced
+Having consistent variables across data files held by the DfE, and in particular across data files in publications, allows users to more quickly
+navigate and understand our statistics. In the EES context, harmonisation will also facilitate more advanced
 methods of interacting with our data platform such as automated data retrieval
-for dashboards and other secondary statistics services.
+for dashboards and other secondary statistics services, whilst also helping with performance and cost effectiveness of the EES platform.
 
 ---
 

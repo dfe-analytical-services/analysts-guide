@@ -10,15 +10,13 @@ title: "RAP expectations"
 
 ---
 
-As government analysts working with statistics, we are required to ensure that our analysis is reproducible, transparent, and robust, using coding and code management best practices (source [GSG competency framework](https://analysisfunction.civilservice.gov.uk/policy-store/competency-framework-for-the-government-statistician-group-gsg/)). RAP is a cross-government requirement to help analysts adopt best practices.
+As government analysts working with statistics, we are required to ensure that our analysis is reproducible, transparent, and robust, using coding and code management best practices (source [GSG competency framework](https://analysisfunction.civilservice.gov.uk/policy-store/competency-framework-for-the-government-statistician-group-gsg/)). Reproducible Analytical Pipelines (RAP) are a cross-government requirement to help analysts adopt best practices.
 
-We expect any analyst working in statistics production to know and be able to implement RAP principles, using the recommended tools to meet at least good and great practice. 
+We expect any analyst to know and be able to implement RAP principles, using the recommended tools to meet at least good and great practice. You can see examples of good, great, and best practice on our [RAP in statistics guidance page](../RAP/rap-statistics.html).
 
 We expect managers of analysts working in statistics production to support and prioritise the development required to build the skills needed to implement RAP using the recommended tools. Managers should ensure that the processes for any publications they own meet at least good and great practice.
 
-More information, including definitions of the different levels of good, great, and best practice is on our [RAP in statistics guidance page](../RAP/rap-statistics.html).
-
-The [cross-government RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/) states a number of explicit expectations for analysts involved in the process, which are detailed in the following sections: [analyst leaders](#analyst-leaders), [analyst managers](#analyst-managers) and [analysts](#analysts).
+Although RAP is often discussed in the context of statistics production, RAP principles can also be applied to other analysis work. The [cross-government RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/) states a number of explicit expectations for analysts involved in the process, which are detailed in the following sections: [analyst leaders](#analyst-leaders), [analyst managers](#analyst-managers) and [analysts](#analysts).
 
 ---
 

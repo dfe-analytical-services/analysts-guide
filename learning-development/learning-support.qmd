@@ -6,10 +6,9 @@ title: "Learning support"
 
 ---
 
+As analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.
 
-As statistics producers we require a variety of tools to be able to process our data. Below are the recommended tools that will give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.
-
-For best practice when using software and coding in our process, see our [guidance on RAP expectations](../RAP/rap-expectations.html){target="_blank" rel="noopener noreferrer"} the [DfE Good Code Practice guide](https://dfe-analytical-services.github.io/good-code-practice/index.html){target="_blank" rel="noopener noreferrer"}.
+For best practice when using software and coding in our process, see our [guidance on RAP expectations](../RAP/rap-expectations.html) and the [DfE Good Code Practice guide](https://dfe-analytical-services.github.io/good-code-practice/index.html).
 
 ## Email support
 
@@ -25,7 +24,7 @@ For best practice when using software and coding in our process, see our [guidan
 
 ## Partnership programme
 
- *	Dedicated resource to support development work, either building skills or working on statistics outputs.
+ *	Dedicated resource to support development work, either building skills or working on analytical or statistical outputs.
  *	A short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.
  * Contact statistics.development@education.gov.uk if you're interested in finding out more about the support we can give.
 
@@ -40,7 +39,7 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 ---
 
-**Google is the single most powerful learning resource out there**, whether it leads you to a Stack Overflow answer to your problem, or to an online training course, it will have your needs covered. We appreciate that it can be daunting and overwhelming at first though, which is why we're pooling together links to particularly relevant resources on this page. Let us know if there's any you'd like to see added!
+**Google and other web-search ingines are the single most powerful learning resource out there**, whether it leads you to a Stack Overflow answer to your problem, or to an online training course, it will have your needs covered. We appreciate that it can be daunting and overwhelming at first though, which is why we're pooling together links to particularly relevant resources on this page. Let us know if there's any you'd like to see added!
 
 - [The DfE Analytics Academy online R training course](https://trello.com/invite/b/QdDx3VmA/96f273b3438db2bb8ee5feae3943c3d4/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"} - walks you through how to get set up with R, as well as setting tasks using DfE data to learn fundamental skills in R.
 
@@ -68,7 +67,7 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 ---
 
-For more information on how to use these tools in statistics publications, please see the [processes and RAP](../RAP/rap-statistics.html){target="_blank" rel="noopener noreferrer"} page.
+For more information on how to use these tools in analysis and statistics publications, please see the [processes and RAP](../RAP/rap-statistics.html){target="_blank" rel="noopener noreferrer"} page.
 
 
 This is by no means a finite list of resources, we want this to be added to and for it to develop over time - if you have any resources that you think could be added then we'd love to [hear from you](mailto:statistics.development@education.gov.uk). 

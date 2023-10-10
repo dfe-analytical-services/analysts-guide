@@ -58,6 +58,28 @@ If you're interested in contributing to this project, have a read of the [contri
 
 ---
 
+## Past versions
+
+---
+
+For ease of record keeping and slight nostalgia, past iterations of the site prior to the move to this repo in October 2023 have been listed below:
+
+- July 2023, [Statisticians Guide, Quarto site used until name change, available on GitHub](https://github.com/dfe-analytical-services/statisticians-guide)
+
+- April 2023, [Quarto prototype](https://github.com/dfe-analytical-services/stats-production-guidance-quarto)
+
+- Feb 2023, [Ruby prototype](https://github.com/dfe-analytical-services/dfe-stats-production-guidance)
+
+- March 2021, [Stats Production Guidance - RMarkdown website, public facing clone on GitHub](https://github.com/dfe-analytical-services/stats-production-guidance-copy)
+
+- March 2020, [Stats Production Guidance - RMarkdown website, code available on Azure DevOps - internal to DfE](https://dfe-gov-uk.visualstudio.com/stats-development/_git/stats-production-guidance)
+
+- March 2020, [RAP bookdown site, code available on Azure DevOps - internal to DfE](https://dfe-gov-uk.visualstudio.com/stats-development/_git/RAP-Guidance-Stats-Production)
+
+- Before this it was a bunch of loose Word documents.
+
+---
+
 ## Contact
 
 statistics.development@education.gov.uk.

@@ -25,8 +25,6 @@ R can be used for almost anything you can think of, notably data analysis, data 
 
 Download R (language) and RStudio (IDE) from the DfE software center. We also recommend that you download RTools (a helpful R extension) at the same time.
 
-There are usually a couple of different versions available for software on the software center, we'd recommend you always go for the latest (newest) version possible.
-
 <!-- gif getting this from the software center -->
 
 ---
