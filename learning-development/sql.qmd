@@ -104,7 +104,7 @@ Before you set up a SQL database, make sure you have the following information t
 * Who should have access, and what their access levels should be - Users can have read or read/write access. Make sure you have a list of users (with their AD names) and their access levels ready.
 * The database structure - Do you need certain schemas setting up? This will help organise your database. Without schemas, all tables will be saved under [dbo]. 
 
-There are a few common servers that statistics producers make use of at DfE. Use the following contacts below to pass on the above information to get your new database set up:
+There are a few common servers that statistics producers (and analysts in general) make use of at DfE. Use the following contacts below to pass on the above information to get your new database set up:
 
 * PDR (T1PRMDRSQL\SQLPROD,55842) - contact the [PDR team](mailto:PupilData.REPOSITORY@education.gov.uk)
 * PDB16 (3DCPRI-PDB16\ACSQLS) - raise a request through the service desk under "non-standard" > "any other request"
