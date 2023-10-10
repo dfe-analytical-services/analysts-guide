@@ -325,9 +325,7 @@ For data files greater than 80mb we recommend uploading as a ZIP file.
 
 Once you click to upload the file a ‘Status’ will be visible that shows the progress of the import process. This may take a little while depending on the size of your file and if there are numerous files queued for import. You cannot view the dataset or use it to create tables/charts until this status is ‘COMPLETE’.
 
-<div class="alert alert-dismissible alert-warning">
-If you believe your file is ‘stuck’ please contact explore.statistics@education.gov.uk, with details of the file and the release that you are uploading to.
-</div>
+If you are having any issues uploading a file, please contact explore.statistics@education.gov.uk.
 
 ---
 
