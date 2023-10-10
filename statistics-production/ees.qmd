@@ -491,7 +491,7 @@ You will be taken through 4 steps to create the data block:
 1. Data set: select the data set you want to use
 2. National / Regional: choose the geographic level you want to display
 3. Time period: select which time periods you want to include
-4. Indicators/Filters: select the indicators and filters to be included
+4. Indicators / Filters: select the indicators and filters to be included
 
 ![](../images/ees-create-data-block.PNG)
 
@@ -1014,7 +1014,7 @@ Once you've got the R-Shiny app set up and hosted, you can embed it using the **
 ## Glossary
 
 
-The [glossary in Explore Education Statistics](https://explore-education-statistics.service.gov.uk/glossary) is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics - https://explore-education-statistics.service.gov.uk/glossary.
+The [glossary in Explore Education Statistics](https://explore-education-statistics.service.gov.uk/glossary) is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics.
 
 ---
 
