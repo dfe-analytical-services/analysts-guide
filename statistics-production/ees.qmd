@@ -343,7 +343,7 @@ To reorder your filters and indicators:
 * Go to the 'Reorder filters and indicators’ tab (within the data and files page)
 * Choose which file you want to reorder and then click and drag the items until they’re in the order you want them to show in the table tool. 
 
-This then becomes the default order for this filter or indicator and will apply in all charts and tables automatically.
+This then becomes the default order for this filter or indicator and will apply in all charts and tables automatically (including the order that the options will be shown to users in the table tool on the public website).
 
 ![](../images/order-filters-indicators.png)
 
