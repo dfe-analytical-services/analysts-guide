@@ -364,9 +364,7 @@ Examples of ancillary files may be:
 
 To ensure that spreadsheets are accessible, see the guidance from [gov.wales](https://gov.wales/how-create-accessible-excel-spreadsheets), and this [Analysis Function guidance](https://analysisfunction.civilservice.gov.uk/policy-store/making-analytical-publications-accessible/).
 
-<div class="alert alert-dismissible alert-info">
-Any data files that only consist of Planning area data should be uploaded as an ancillary file, rather than as a data file.
-</div>
+If you are unsure of whether you should be using supporting files, contact the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk) for advice.
 
 ---
 
