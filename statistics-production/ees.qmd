@@ -225,7 +225,7 @@ You only have 160 characters – to make sure you are fully utilising these, hav
 Use Google Chrome or Microsoft Edge to access and use the admin part of Explore Education Statistics.
 </div>
 
-When you enter the [admin](https://admin.explore-education-statistics.service.gov.uk/) website you’ll see the admin dashboard. What you can see here will be dependent on your access permissions i.e. you’ll only see the publications that you have been granted access to.
+When you enter the [admin website](https://admin.explore-education-statistics.service.gov.uk/) you’ll see the admin dashboard. What you can see here will be dependent on your access permissions i.e. you’ll only see the publications that you have been granted access to.
 
 The Statistics Development Team will be responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored via the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk).
 
