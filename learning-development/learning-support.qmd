@@ -7,7 +7,7 @@ title: "Learning support"
 ---
 
 
-As analysts we require a variety of tools to be able to process our data. For best practice when using software and coding in our process, see our [guidance on RAP expectations](../RAP/rap-expectations.html){target="_blank" rel="noopener noreferrer"} the [DfE Good Code Practice guide](https://dfe-analytical-services.github.io/good-code-practice/index.html){target="_blank" rel="noopener noreferrer"}.
+As analysts we require a variety of tools to be able to process our data. For best practice when using software and coding in our process, see our [guidance on RAP expectations](../RAP/rap-expectations.html) and the [DfE Good Code Practice guide](https://dfe-analytical-services.github.io/good-code-practice/index.html).
 
 ## Email support
 
