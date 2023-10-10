@@ -25,7 +25,7 @@ For best practice when using software and coding in our process, see our [guidan
 
 ## Partnership programme
 
- *	Dedicated resource to support development work, either building skills or working on analytical/statistical outputs.
+ *	Dedicated resource to support development work, either building skills or working on analytical or statistical outputs.
  *	A short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.
  * Contact statistics.development@education.gov.uk if you're interested in finding out more about the support we can give.
 
