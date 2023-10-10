@@ -260,7 +260,7 @@ New releases can be [created by publication owners](#create-new-release). To cre
 
 Once you have created your release you will see the dashboard to edit your release, here you need to work through the following tabs to create your release:
 
-1.	Data and files (uploading data files, ancillary files and creating data guidance)
+1.	Data and files (uploading data files, supporting files and creating data guidance)
 
 2.  Footnotes (creating footnotes and assigning to relevant data)
 
@@ -350,13 +350,13 @@ This then becomes the default order for this filter or indicator and will apply 
 
 ---
 
-### Ancillary file uploads
+### Supporting file uploads
 
 ---
 
-Any files you want to make available for users to download but aren't intended for the table tool should be added as an ancillary file upload. These files will need to meet all requirements of the new [accesibility regulations](https://www.gov.uk/guidance/publishing-accessible-documents) before they can be published.
+Any files you want to make available for users to download but aren't intended for the table tool should be added as a supporting file upload. These files will need to meet all requirements of the new [accesibility regulations](https://www.gov.uk/guidance/publishing-accessible-documents) before they can be published.
 
-Examples of ancillary files may be:
+Examples of supporting files may be:
 
 * Infographic pages
 * Supplementary data that isn't intended for the table tool
