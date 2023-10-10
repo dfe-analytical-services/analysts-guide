@@ -159,7 +159,7 @@ If you have not published on EES before, or if you're creating a brand new publi
 
 If you want to request a new publication, please be prepared to provide us with the following information:
 
-* Theme and topic that you want the publication to sit under in our site (use [existing ones](https://explore-education-statistics.service.gov.uk/find-statistics){target="_blank" rel="noopener noreferrer"}, or suggest new ones)
+* Theme that you want the publication to sit under in our site (use [existing ones](https://explore-education-statistics.service.gov.uk/find-statistics){target="_blank" rel="noopener noreferrer"}, or suggest new ones)
 * Title of the publication (exactly as you want it to appear on the site)
 * Publication summary (see our guidance on [publication summaries](#publication-summaries) for more information on what to include)
 * If the methodology already exists elsewhere and you have a URL for it, or if you want to [create one](#methodology)
@@ -178,16 +178,15 @@ The hierarchy of content within EES is as follows:
 Methodology documentation is attached at a publication level within EES - meaning one standalone piece should be written to cover all releases for the given publication within the service.
 
 
-Themes and topics
+### Themes
 
-Publications are organised into topics and themes (as shown on the EES [Find Statistics page](https://explore-education-statistics.service.gov.uk/find-statistics)), and then within each publication there are releases - where the latest release includes the latest statistics for that publication. 
+Publications are organised into themes (as shown on the EES [Find Statistics page](https://explore-education-statistics.service.gov.uk/find-statistics)), and then within each publication there are releases - where the latest release includes the latest statistics for that publication. 
 
 For example:
 
 | Level | Example |
 |:------|:------|
 | Theme | Pupils and Schools |
-| Topic | Pupil absence |
 | Publication title | Pupil absence in schools in England |
 
 
