@@ -160,21 +160,13 @@ If you have not published on EES before, or if you're creating a brand new publi
 If you want to request a new publication, please be prepared to provide us with the following information:
 
 * Theme and topic that you want the publication to sit under in our site (use [existing ones](https://explore-education-statistics.service.gov.uk/find-statistics){target="_blank" rel="noopener noreferrer"}, or suggest new ones)
-
 * Title of the publication (exactly as you want it to appear on the site)
-
 * Publication summary (see our guidance on [publication summaries](#publication-summaries) for more information on what to include)
-
 * If the methodology already exists elsewhere and you have a URL for it, or if you want to [create one](#methodology)
-
 * Team name and email address
-
 * Lead statistician name and contact number (contact number is optional)
-
 * [Time periods](../statistics-production/ud.html#list_of_allowable_time_values) of the releases you’re creating
-
 * Badging (whether they are National statistics, an ad-hoc publication, or official statistics)
-
 * Who needs access to the publication (list of email addresses of analysts who need access to the release and at what [permission levels](#roles-and-permissions))
 
 Publication details can be [managed by publication owners](#managing-publications) or via requests to the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk).
