@@ -1227,14 +1227,14 @@ Once you're happy with your amendment it just needs to be [approved](#sign-off) 
 
 ---
 
-<!--> ## Methodology formatting
+## Methodology subheadings
 
 
 Subheadings make it easier for your users to navigate through your methodology. When editing text blocks in your methodology, you can do this by highlighting your subheading and selecting "Heading 3" in place of "Paragraph":
 
 ![](../images/methodology_subheadings.PNG)
 
-You can add further subheadings underneath this but try to limit the number of subheadings per accordion to 10 at the most. Too many subheadings will make it tricky for users to find what they are looking for. <-->
+You can add further subheadings underneath this but try to limit the number of subheadings per accordion to 10 at the most. Too many subheadings will make it tricky for users to find what they are looking for. 
 
 ---
 
