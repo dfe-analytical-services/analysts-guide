@@ -187,7 +187,7 @@ At a minumum you should be requesting feedback from users via a survey hosted on
 
 ![](../images/betaBanner.png)
 
-Google Analytics is a free service that collects information on who visits your webpage and how they interact with it. You can set up basic Google Analytics for your published dashboard in a few simple steps outlined in this article: [Add Google Analytics to a Shiny app](https://shiny.rstudio.com/articles/google-analytics.html) and view a more complex example in this [example file](https://github.com/dfe-analytical-services/exclusion-statistics/blob/master/www/google-analytics.js). If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact statistics.development@education.gov.uk.
+Google Analytics is a free service that collects information on who visits your webpage and how they interact with it. You can set up basic Google Analytics for your published dashboard in a few simple steps outlined in this article: [Add Google Analytics to a Shiny app](https://shiny.rstudio.com/articles/google-analytics.html) and view a more complex example in this [example file](https://github.com/dfe-analytical-services/exclusion-statistics/blob/master/www/google-analytics.js). If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact [Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
 ---
 
@@ -199,7 +199,7 @@ Peer review is a quality assurance activity, where an analyst other than the ori
 - Dashboards must always be peer reviewed within the team they are created.
 - Dashboards should also be peer reviewed by analysts outside of the subject area of the team.
 
-The Central Statistics Unit has a number of analysts experience with R Shiny dashboards and are happy to review any dashboards created, contact statistcs.development@education.gov.uk if you're interested in this. For more guidance on how to peer review, see the [peer review section of the Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html).
+The Central Statistics Unit has a number of analysts experience with R Shiny dashboards and are happy to review any dashboards created, contact [Statistics Development Team](mailto:statistics.development@education.gov.uk) if you're interested in this. For more guidance on how to peer review, see the [peer review section of the Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html).
 
 ---
 
@@ -241,7 +241,7 @@ You will need:
 * Approval from your DD
 * If the data underlying the dashboard is currently unpublished, you will need to create dummy data to use in GitHub until the data becomes published (see [dummy data guidance](#dummy-data) section).
 
-To set up a new app, send the above to statistics.development@education.gov.uk. If your code is not yet hosted in the dfe-analytical-services area you can request for the repository to be moved at the same time as sending approvals.
+To set up a new app, send the above to [Statistics Development Team](mailto:statistics.development@education.gov.uk). If your code is not yet hosted in the dfe-analytical-services area you can request for the repository to be moved at the same time as sending approvals.
 
 ---
 
@@ -274,7 +274,7 @@ Adding the file name alone will ensure it is ignored no matter where in the proj
 
 This [.GitIgnore guidance page](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=.gitignore%20is%20a%20plain%20text%20file%20in%20which,a%20single%20backslash%20%28%29%20to%20escape%20the%20character.) has great guidance on how you can utilize wildcards to capture all the files you might want to ignore.
 
-If you have any questions on this process please do contact us at statistics.development@education.gov.uk.
+If you have any questions on this process please do contact us at [Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
 ---
 
@@ -313,7 +313,7 @@ This checklist outlines the standard procedure for teams who are wishing to prod
 Getting set up:
 
 * Create an account on [GitHub](https://github.com/)
-* Ask the [Statistics Deveopment Team](mailto:statistics.development@education.gov.uk) to create you a repository in the [DfE analytical services area](https://github.com/dfe-analytical-services), providing the name of the dashboard and the GitHub accounts of anyone who will be contributing to the code. You should aim to have two analysts working on the code development and a line manager for review purposes. Further colleagues with review responsibilities (policy colleagues, G6 and above, etc.) can be given access to a demo-site, rather than the repository (see guidance for this below in 'Setting up a development/demo dashboard area').
+* Ask the [Statistics Development Team](mailto:statistics.development@education.gov.uk) to create you a repository in the [DfE analytical services area](https://github.com/dfe-analytical-services), providing the name of the dashboard and the GitHub accounts of anyone who will be contributing to the code. You should aim to have two analysts working on the code development and a line manager for review purposes. Further colleagues with review responsibilities (policy colleagues, G6 and above, etc.) can be given access to a demo-site, rather than the repository (see guidance for this below in 'Setting up a development/demo dashboard area').
 * Clone the repo to your device so you can develop your code. Open the repo page in GitHub, click the green 'Code' button, and copy the URL it provides. Then, open R Studio on your device, click file > new project > version control > git, paste the repository URL you copied from GitHub, give your local project area a name, and choose where to save it (i.e. on your computer's C:\ drive, outside of the OneDrive-synced folders).
 
 Once you're set up, there are certain parts of the code you need to update:
@@ -334,7 +334,7 @@ Setting up a development/demo dashboard area:
 
 * While developing your dashboard, you may want a private, demo-version to share with policy or senior colleagues for review and feedback. This version must use either published data or dummy data and can not use unpublished data, since this cannot be uploaded to GitHub until the day of publication (see our [dummy data guidance](#dummy-data) for public dashboards).
 * Ensure that prior to contacting the statistics development team, you have updated all of the URL's and other items listed above.
-* You must contact the [Statistics Deveopment Team](mailto:statistics.development@education.gov.uk) to add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io. Once this is done you will have a browser link you can use to access the dashboard. We can make this private such that there is a list of approved viewers who must log in to view the dashboard - please provide the email addresses of any colleagues who you wish to have access to the private version during development.
+* You must contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) to add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io. Once this is done you will have a browser link you can use to access the dashboard. We can make this private such that there is a list of approved viewers who must log in to view the dashboard - please provide the email addresses of any colleagues who you wish to have access to the private version during development.
 
 
 You must have done the following before a dashboard can be published (the statistics development team must review and approve that these have been met):
@@ -356,7 +356,7 @@ You must have done the following before a dashboard can be published (the statis
 
 We expect all dashboards to follow a minimum set of standards to ensure coherence between our products and a minimum standard of quality for our end users.
 
-These standards are constantly evolving, and all feedback and contributions are welcome, contact us at statistics.development@education.gov.uk.
+These standards are constantly evolving, and all feedback and contributions are welcome, contact us at [Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
 ---
 
@@ -588,14 +588,14 @@ See our [Git](../learning-development/git.html#storing-secure-variables) page fo
 ---
 
 DfE Shiny applications are published via the DfE Analytical Services [shinyapps.io](https://www.shinyapps.io/) account. You need to alert the statistics development team of any new dashboard publication as early in development as possible and keep us updated on expected publication date. Update the stats development team on any subsequent data or major functional updates to the dashboard publication at least a week prior to re-publishing with the update. Deploying to shinyapps requires the DfE platform codes to be entered into the repository secrets area of your app. This needs to be done by the stats development team.
-Authorisation of a publication should be requested from the relevant G6 or DD and the stats development team (with the former authorisation e-mail being forwarded on to the [Statistics Deveopment Team](mailto:statistics.development@education.gov.uk)).
+Authorisation of a publication should be requested from the relevant G6 or DD and the stats development team (with the former authorisation e-mail being forwarded on to the [Statistics Development Team](mailto:statistics.development@education.gov.uk)).
 
-If you are publishing a dashboard using already published data, then all of your code and data should be on GitHub. You may have decided to password-protect the dashboard URL, in which case, you should make the [Statistics Deveopment Team](mailto:statistics.development@education.gov.uk) aware of your publication date so that they can remove the password-protection at 9:30 on publication day, making the dashboard visible to the public.
+If you are publishing a dashboard using already published data, then all of your code and data should be on GitHub. You may have decided to password-protect the dashboard URL, in which case, you should make the [Statistics Development Team](mailto:statistics.development@education.gov.uk) aware of your publication date so that they can remove the password-protection at 9:30 on publication day, making the dashboard visible to the public.
 
 If you are publishing a new dashboard for the first time that uses unpublished data, then you should have followed the [guidance on using dummy data](#dummy-data). This means that the unpublished data should not be added to GitHub until the day of publication. You should follow steps 1-9 in the below section on the day before and day of publication.
 
 <div class="alert alert-dismissible alert-danger">
-  Be sure to read the guidance carefully, **do not** commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact [Statistics Deveopment Team](mailto:statistics.development@education.gov.uk) immediately with the full details of what has been uploaded to GitHub and when.
+  Be sure to read the guidance carefully, **do not** commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact [Statistics Development Team](mailto:statistics.development@education.gov.uk) immediately with the full details of what has been uploaded to GitHub and when.
 </div>
 
 ---
