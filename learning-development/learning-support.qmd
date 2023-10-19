@@ -17,10 +17,36 @@ For best practice when using software and coding in our process, see our [guidan
 
 ## Technical workshops
 
- *	In person workshops covering specific technical skills in practice
- *	3 hours long, with people working in small groups
- *	Recently circled the sites running an introduction to Git, and introduction to R and RAP.
- * Contact statistics.development@education.gov.uk to register interest in workshops happening at your site or to request new topics!
+We currently offer two in person workshops covering specific technical skills in practice. Each workshop is around 3 hours long, and you will work in small groups. We travel to deliver workshops based on demand, so please get in touch and let us know if you'd like to join the waiting list in your area for one or both of the sessions. 
+
+Our current workshops are:
+
+**Introduction to Git and Azure DevOps**
+
+In this workshop, we cover:
+
+*	What are git, Dev Ops and GitHub and what are the differences?
+*	How can they help your work?
+*	How to start working with git and Dev Ops in the DfE ecosystem
+*	Managing projects and tasks with Dev Ops Boards
+*	Basic version control with git – add/stage, commit, push and pull
+*	Working with branches
+*	Tracking changes and who made them
+*	Merging, pull requests and merge conflicts
+
+**Introduction to R and RAP** 
+
+In this workshop, we cover:
+
+* Setting up an R project
+* Writing your own functions
+* Aggregating & filtering data
+* Using if statements
+* Joining data
+* Using R to run SQL 
+* Creating plots (with ggplot2)
+
+Contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) to register interest in workshops happening at your site or to request new topics!
 
 ## Partnership programme
 
@@ -70,7 +96,7 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 For more information on how to use these tools in analysis and statistics publications, please see the [processes and RAP](../RAP/rap-statistics.html){target="_blank" rel="noopener noreferrer"} page.
 
 
-This is by no means a finite list of resources, we want this to be added to and for it to develop over time - if you have any resources that you think could be added then we'd love to [hear from you](mailto:statistics.development@education.gov.uk). 
+This is by no means a finite list of resources, we want this to be added to and for it to develop over time - if you have any resources that you think could be added then we'd love to hear from you, so please email us at [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk). 
 
 
 If you are stuck at all, have any questions, want to find a resource, or even just want a second pair of eyes to double check something, contact us using the envelope in the top right corner and we'll be more than happy to help.
