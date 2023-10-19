@@ -570,24 +570,42 @@ If you ever find yourself writing HTML, or creating it through RMarkdown, you ca
 ## Peer reviewing code
 
 
-Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to 'idiot check' our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it's quality and value.
+Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to 'idiot check' our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it's quality and value. The [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html) contains detailed guidance on peer review, but we have summarised some of the information here for you as well. 
 
 Prior to receiving code for peer review, the author should ensure that all code files are clean, commented appropriately and for larger projects should be held in a repo with an appropriate [README](#writing-a-readme-file) file.
 
-When peer reviewing code you should be consider the following questions - 
+When peer reviewing code you should consider the following questions - 
 
+* Do you understand what the code does? If not, is there supporting documentation or code comments that allow you to understand it? 
 * Does the code do what the author intended?
-* If you’re able to run the code, does it run without errors? If warnings are displayed, are they explained?
-* If the project has unit/integration tests, do they pass?
+* Have any dependencies (either on separate pieces of code, data files, or packages) been documented? 
 * Are there any tests / checks that could be added into the code that would help to give greater confidence that it is doing what it is intended to?
 * Are there comments explaining why any decisions have been made?
 * Is the code written and structured sensibly?
-* Are there any ways to make the code more efficient (either in number of lines or raw speed)?
+* Are there any ways to make the code more efficient (either in number of lines or raw speed)? Is there duplication that could be simplified using functions?
 * Does the code follow best practice for styling and structure?
 * Are there any other teams/bits of code you're aware of that do similar things and would be useful to point the authors towards?
 * At the end of the review, was there any information you needed to ask about that should be made more apparent in the code or documentation?
 
-Depending on your access you may or may not be able to run the code yourself, but there should be enough information within the code and documentation to be able to respond to these questions. 
+Depending on your access you may or may not be able to run the code yourself, but there should be enough information within the code and documentation to be able to respond to the questions above. If you are able to run the code, you could also check - 
+
+* Does the code run without errors? If warnings are displayed, are they explained? 
+* If the project has unit/integration tests, do they pass?
+* Can you replicate previous output using the same code and input data? 
+
+If you would like a more thorough list of questions to follow, then the Duck Book has checklists available for three levels of peer review, based on risk:
+
+* [Lower](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_lower.html)
+* [Moderate](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_moderate.html)
+* [Higher](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_higher.html)
+
+If you're unfamiliar with giving feedback on someone's code then it can be daunting at first. Feedback should always be constructive and practical. It is recommended that you use the CEDAR model to structure your comments:
+
+* Context - describe the issue and the potential impact
+* Examples - give specific examples of when and where the issue has been present (specifying the line numbers of the code where the issue can be found can be useful here)
+* Diagnosis - use the example to discuss why this approach was taken, what could have been done differently and why alternatives could be an improvement
+* Actions - ask the person receiving feedback to suggest actions that they could follow to avoid this issue in future
+* Review - if you have time, revisit the discussion to look for progress following on from the feedback
 
 ---
 
