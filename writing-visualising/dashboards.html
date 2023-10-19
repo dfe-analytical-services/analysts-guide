@@ -610,7 +610,7 @@ Guidance for publishing public statistics dashboards
 <p>Collecting the right engagement data means you’ll be alerted to potential problems with your service. And when you make a change to the service, you’ll be able to tell whether it had the effect you expected. In practice this will often mean setting up analytics and feedback surveys for dashboards and monitoring the data you get back.</p>
 <p>At a minumum you should be requesting feedback from users via a survey hosted on the dashboard and reviewing this on a regular basis. An example of this kind of feedback survey is the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-XMiKzsnr8xJoWM_DeGwIu9UNDJHOEJDRklTNVA1SDdLOFJITEwyWU1OQS4u" target="_blank">beta banner survey</a> on Explore Education Statistics.</p>
 <p><img src="../images/betaBanner.png" class="img-fluid"></p>
-<p>Google Analytics is a free service that collects information on who visits your webpage and how they interact with it. You can set up basic Google Analytics for your published dashboard in a few simple steps outlined in this article: <a href="https://shiny.rstudio.com/articles/google-analytics.html" target="_blank">Add Google Analytics to a Shiny app</a> and view a more complex example in this <a href="https://github.com/dfe-analytical-services/exclusion-statistics/blob/master/www/google-analytics.js" target="_blank">example file</a>. If you’re planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact statistics.development@education.gov.uk.</p>
+<p>Google Analytics is a free service that collects information on who visits your webpage and how they interact with it. You can set up basic Google Analytics for your published dashboard in a few simple steps outlined in this article: <a href="https://shiny.rstudio.com/articles/google-analytics.html" target="_blank">Add Google Analytics to a Shiny app</a> and view a more complex example in this <a href="https://github.com/dfe-analytical-services/exclusion-statistics/blob/master/www/google-analytics.js" target="_blank">example file</a>. If you’re planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a>.</p>
 <hr>
 </section>
 <section id="peer-review" class="level2">
@@ -620,7 +620,7 @@ Guidance for publishing public statistics dashboards
 <li>Dashboards must always be peer reviewed within the team they are created.</li>
 <li>Dashboards should also be peer reviewed by analysts outside of the subject area of the team.</li>
 </ul>
-<p>The Central Statistics Unit has a number of analysts experience with R Shiny dashboards and are happy to review any dashboards created, contact statistcs.development@education.gov.uk if you’re interested in this. For more guidance on how to peer review, see the <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html" target="_blank">peer review section of the Duck Book</a>.</p>
+<p>The Central Statistics Unit has a number of analysts experience with R Shiny dashboards and are happy to review any dashboards created, contact <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> if you’re interested in this. For more guidance on how to peer review, see the <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html" target="_blank">peer review section of the Duck Book</a>.</p>
 <hr>
 </section>
 </section>
@@ -652,7 +652,7 @@ Guidance for publishing public statistics dashboards
 <li>Approval from your DD</li>
 <li>If the data underlying the dashboard is currently unpublished, you will need to create dummy data to use in GitHub until the data becomes published (see <a href="#dummy-data">dummy data guidance</a> section).</li>
 </ul>
-<p>To set up a new app, send the above to statistics.development@education.gov.uk. If your code is not yet hosted in the dfe-analytical-services area you can request for the repository to be moved at the same time as sending approvals.</p>
+<p>To set up a new app, send the above to <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a>. If your code is not yet hosted in the dfe-analytical-services area you can request for the repository to be moved at the same time as sending approvals.</p>
 <hr>
 <section id="dummy-data" class="level3">
 <h3 class="anchored" data-anchor-id="dummy-data">Dummy data</h3>
@@ -674,7 +674,7 @@ Guidance for publishing public statistics dashboards
 <p>The .gitignore file is a plain text file that tells git to ignore specified files in commits and pushes to the repo. Therefore, the first step when wanting to test unpublished data in a dashboard is to add the unpublished data file names to the .gitignore file.</p>
 <p>Adding the file name alone will ensure it is ignored no matter where in the project area you save it (i.e.&nbsp;in any folder). Once this is done, you can add your unpublished data file to your local area, run the app locally, and make edits/commits without uploading the data to Github.</p>
 <p>This <a href="https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=.gitignore%20is%20a%20plain%20text%20file%20in%20which,a%20single%20backslash%20%28%29%20to%20escape%20the%20character." target="_blank">.GitIgnore guidance page</a> has great guidance on how you can utilize wildcards to capture all the files you might want to ignore.</p>
-<p>If you have any questions on this process please do contact us at statistics.development@education.gov.uk.</p>
+<p>If you have any questions on this process please do contact us at <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a>.</p>
 <hr>
 </section>
 </section>
@@ -699,7 +699,7 @@ Guidance for publishing public statistics dashboards
 <p>Getting set up:</p>
 <ul>
 <li>Create an account on <a href="https://github.com/" target="_blank">GitHub</a></li>
-<li>Ask the <a href="mailto:statistics.development@education.gov.uk">Statistics Deveopment Team</a> to create you a repository in the <a href="https://github.com/dfe-analytical-services" target="_blank">DfE analytical services area</a>, providing the name of the dashboard and the GitHub accounts of anyone who will be contributing to the code. You should aim to have two analysts working on the code development and a line manager for review purposes. Further colleagues with review responsibilities (policy colleagues, G6 and above, etc.) can be given access to a demo-site, rather than the repository (see guidance for this below in ‘Setting up a development/demo dashboard area’).</li>
+<li>Ask the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> to create you a repository in the <a href="https://github.com/dfe-analytical-services" target="_blank">DfE analytical services area</a>, providing the name of the dashboard and the GitHub accounts of anyone who will be contributing to the code. You should aim to have two analysts working on the code development and a line manager for review purposes. Further colleagues with review responsibilities (policy colleagues, G6 and above, etc.) can be given access to a demo-site, rather than the repository (see guidance for this below in ‘Setting up a development/demo dashboard area’).</li>
 <li>Clone the repo to your device so you can develop your code. Open the repo page in GitHub, click the green ‘Code’ button, and copy the URL it provides. Then, open R Studio on your device, click file &gt; new project &gt; version control &gt; git, paste the repository URL you copied from GitHub, give your local project area a name, and choose where to save it (i.e.&nbsp;on your computer’s C:&nbsp;drive, outside of the OneDrive-synced folders).</li>
 </ul>
 <p>Once you’re set up, there are certain parts of the code you need to update:</p>
@@ -720,7 +720,7 @@ Guidance for publishing public statistics dashboards
 <ul>
 <li>While developing your dashboard, you may want a private, demo-version to share with policy or senior colleagues for review and feedback. This version must use either published data or dummy data and can not use unpublished data, since this cannot be uploaded to GitHub until the day of publication (see our <a href="#dummy-data">dummy data guidance</a> for public dashboards).</li>
 <li>Ensure that prior to contacting the statistics development team, you have updated all of the URL’s and other items listed above.</li>
-<li>You must contact the <a href="mailto:statistics.development@education.gov.uk">Statistics Deveopment Team</a> to add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io. Once this is done you will have a browser link you can use to access the dashboard. We can make this private such that there is a list of approved viewers who must log in to view the dashboard - please provide the email addresses of any colleagues who you wish to have access to the private version during development.</li>
+<li>You must contact the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> to add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io. Once this is done you will have a browser link you can use to access the dashboard. We can make this private such that there is a list of approved viewers who must log in to view the dashboard - please provide the email addresses of any colleagues who you wish to have access to the private version during development.</li>
 </ul>
 <p>You must have done the following before a dashboard can be published (the statistics development team must review and approve that these have been met):</p>
 <ul>
@@ -740,7 +740,7 @@ Guidance for publishing public statistics dashboards
 <section id="standards-to-follow" class="level2">
 <h2 class="anchored" data-anchor-id="standards-to-follow">Standards to follow</h2>
 <p>We expect all dashboards to follow a minimum set of standards to ensure coherence between our products and a minimum standard of quality for our end users.</p>
-<p>These standards are constantly evolving, and all feedback and contributions are welcome, contact us at statistics.development@education.gov.uk.</p>
+<p>These standards are constantly evolving, and all feedback and contributions are welcome, contact us at <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a>.</p>
 <hr>
 <section id="accessibility-testing" class="level3">
 <h3 class="anchored" data-anchor-id="accessibility-testing">Accessibility testing</h3>
@@ -900,11 +900,11 @@ CI
 <section id="publishing-your-dashboard" class="level2">
 <h2 class="anchored" data-anchor-id="publishing-your-dashboard">Publishing your dashboard</h2>
 <hr>
-<p>DfE Shiny applications are published via the DfE Analytical Services <a href="https://www.shinyapps.io/" target="_blank">shinyapps.io</a> account. You need to alert the statistics development team of any new dashboard publication as early in development as possible and keep us updated on expected publication date. Update the stats development team on any subsequent data or major functional updates to the dashboard publication at least a week prior to re-publishing with the update. Deploying to shinyapps requires the DfE platform codes to be entered into the repository secrets area of your app. This needs to be done by the stats development team. Authorisation of a publication should be requested from the relevant G6 or DD and the stats development team (with the former authorisation e-mail being forwarded on to the <a href="mailto:statistics.development@education.gov.uk">Statistics Deveopment Team</a>).</p>
-<p>If you are publishing a dashboard using already published data, then all of your code and data should be on GitHub. You may have decided to password-protect the dashboard URL, in which case, you should make the <a href="mailto:statistics.development@education.gov.uk">Statistics Deveopment Team</a> aware of your publication date so that they can remove the password-protection at 9:30 on publication day, making the dashboard visible to the public.</p>
+<p>DfE Shiny applications are published via the DfE Analytical Services <a href="https://www.shinyapps.io/" target="_blank">shinyapps.io</a> account. You need to alert the statistics development team of any new dashboard publication as early in development as possible and keep us updated on expected publication date. Update the stats development team on any subsequent data or major functional updates to the dashboard publication at least a week prior to re-publishing with the update. Deploying to shinyapps requires the DfE platform codes to be entered into the repository secrets area of your app. This needs to be done by the stats development team. Authorisation of a publication should be requested from the relevant G6 or DD and the stats development team (with the former authorisation e-mail being forwarded on to the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a>).</p>
+<p>If you are publishing a dashboard using already published data, then all of your code and data should be on GitHub. You may have decided to password-protect the dashboard URL, in which case, you should make the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> aware of your publication date so that they can remove the password-protection at 9:30 on publication day, making the dashboard visible to the public.</p>
 <p>If you are publishing a new dashboard for the first time that uses unpublished data, then you should have followed the <a href="#dummy-data">guidance on using dummy data</a>. This means that the unpublished data should not be added to GitHub until the day of publication. You should follow steps 1-9 in the below section on the day before and day of publication.</p>
 <div class="alert alert-dismissible alert-danger">
-<p>Be sure to read the guidance carefully, <strong>do not</strong> commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact <a href="mailto:statistics.development@education.gov.uk">Statistics Deveopment Team</a> immediately with the full details of what has been uploaded to GitHub and when.</p>
+<p>Be sure to read the guidance carefully, <strong>do not</strong> commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> immediately with the full details of what has been uploaded to GitHub and when.</p>
 </div>
 <hr>
 <section id="updating-data-in-a-dashboard" class="level3">
