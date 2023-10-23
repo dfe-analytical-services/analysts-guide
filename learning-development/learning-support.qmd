@@ -25,7 +25,7 @@ Our current workshops are:
 
 In this workshop, we cover:
 
-*	What are git, Dev Ops and GitHub and what are the differences?
+*	What are git, DevOps and GitHub and what are the differences?
 *	How can they help your work?
 *	How to start working with git and Dev Ops in the DfE ecosystem
 *	Managing projects and tasks with Dev Ops Boards
@@ -65,7 +65,7 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 ---
 
-**Google and other web-search ingines are the single most powerful learning resource out there**, whether it leads you to a Stack Overflow answer to your problem, or to an online training course, it will have your needs covered. We appreciate that it can be daunting and overwhelming at first though, which is why we're pooling together links to particularly relevant resources on this page. Let us know if there's any you'd like to see added!
+**Google and other web-search engines are the single most powerful learning resource out there**, whether it leads you to a Stack Overflow answer to your problem, or to an online training course, it will have your needs covered. We appreciate that it can be daunting and overwhelming at first though, which is why we're pooling together links to particularly relevant resources on this page. Let us know if there's any you'd like to see added!
 
 - [The DfE Analytics Academy online R training course](https://trello.com/invite/b/QdDx3VmA/96f273b3438db2bb8ee5feae3943c3d4/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"} - walks you through how to get set up with R, as well as setting tasks using DfE data to learn fundamental skills in R.
 
@@ -99,7 +99,7 @@ For more information on how to use these tools in analysis and statistics public
 This is by no means a finite list of resources, we want this to be added to and for it to develop over time - if you have any resources that you think could be added then we'd love to hear from you, so please email us at [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk). 
 
 
-If you are stuck at all, have any questions, want to find a resource, or even just want a second pair of eyes to double check something, contact us using the envelope in the top right corner and we'll be more than happy to help.
+If you are stuck at all, have any questions, want to find a resource, or even just want a second pair of eyes to double check something, contact us using the envelope in the top left corner and we'll be more than happy to help.
 
 
 ---
