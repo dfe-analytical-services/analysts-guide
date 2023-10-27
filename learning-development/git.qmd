@@ -81,7 +81,7 @@ However, you can still run the full suite of git commands by simply typing them 
 
 - [Happy Git](https://happygitwithr.com/big-picture.html){target="_blank" rel="noopener noreferrer"} is a useful (though detailed) guide to setting up and using git.
 
-- Adam Robinson and Zach Waller have produced [guidance for how to use git in Azure DevOps (formally VSTS)](https://dfe-analytical-services.github.io/vsts-for-analysis/){target="_blank" rel="noopener noreferrer"}, which gives a detailed guide on how to use version control software in DfE analysis.
+- Adam Robinson and Zach Waller have produced [guidance for how to use git in Azure DevOps (formally VSTS)](https://dfe-analytical-services.github.io/azure-devops-for-analysis/index.html){target="_blank" rel="noopener noreferrer"}, which gives a detailed guide on how to use version control software in DfE analysis.
 
 - While also mentioned above as a resource for learning R, chapter 6 of ESFA's [guide to R and Git](https://rsconnect/rsc/esfa-r-training/git-building-intuition.html){target="_blank" rel="noopener noreferrer"} is also worth looking at for Git alone.
 
