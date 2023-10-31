@@ -26,7 +26,7 @@ Download SSMS from the DfE software center, talk to your team about getting acce
 
 There are usually a couple of different versions available for software on the software center, we'd recommend you always go for the latest (newest) version possible.
 
-<!-- gif getting this from the software center -->
+If you can't find the option in the software centre, then you may need to raise a [service desk request to make SQL server management studio visible](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=55d3f68edb7b66005ca2fddabf96197e) in your software centre.
 
 ---
 
@@ -50,6 +50,8 @@ Here are some tips to follow best practice in your SQL code, making it easier to
 * Comments should go near the top of your query, or at least near the closest SELECT
 * Try to only comment on things that aren't obvious about the query (e.g. why hardcoded filters are used, how to update them)
 * Where possible, use [Common Table Expressions (CTEs)](https://www.essentialsql.com/introduction-common-table-expressions-ctes/){target="_blank" rel="noopener noreferrer"} early and often, and name them descriptively (e.g. "pupil_age_table" rather than "p")
+
+[GitLab](https://about.gitlab.com/) have produced a full [SQL style guide](https://about.gitlab.com/handbook/business-technology/data-team/platform/sql-style-guide/), which we recommend following where possible.
 
 ---
 
