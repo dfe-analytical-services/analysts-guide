@@ -51,6 +51,8 @@ Here are some tips to follow best practice in your SQL code, making it easier to
 * Try to only comment on things that aren't obvious about the query (e.g. why hardcoded filters are used, how to update them)
 * Where possible, use [Common Table Expressions (CTEs)](https://www.essentialsql.com/introduction-common-table-expressions-ctes/){target="_blank" rel="noopener noreferrer"} early and often, and name them descriptively (e.g. "pupil_age_table" rather than "p")
 
+[GitLab](https://about.gitlab.com/) have produced a full [SQL style guide](https://about.gitlab.com/handbook/business-technology/data-team/platform/sql-style-guide/), which we recommend following where possible.
+
 ---
 
 ## How to work with SQL
