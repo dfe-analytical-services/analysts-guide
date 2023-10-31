@@ -585,7 +585,7 @@
     "href": "learning-development/sql.html#how-to-install-sql",
     "title": "SQL",
     "section": "How to install SQL",
-    "text": "How to install SQL\nDownload SSMS from the DfE software center, talk to your team about getting access to the appropriate SQL servers and databases where the data you need to access is held and start writing SQL queries.\nThere are usually a couple of different versions available for software on the software center, we’d recommend you always go for the latest (newest) version possible."
+    "text": "How to install SQL\nDownload SSMS from the DfE software center, talk to your team about getting access to the appropriate SQL servers and databases where the data you need to access is held and start writing SQL queries.\nThere are usually a couple of different versions available for software on the software center, we’d recommend you always go for the latest (newest) version possible.\nIf you can’t find the option in the software centre, then you may need to raise a service desk request to make SQL server management studio visible in your software centre."
   },
   {
     "objectID": "learning-development/sql.html#best-place-to-start",
@@ -599,7 +599,7 @@
     "href": "learning-development/sql.html#best-practice",
     "title": "SQL",
     "section": "Best practice",
-    "text": "Best practice\nHere are some tips to follow best practice in your SQL code, making it easier to read and pick up if another person is running your code. Following best practice guidance will help you to achieve RAP best practice with clean final code\n\nAvoid any trailing whitespace\nAlways capitalize SQL keywords (e.g., SELECT or AS)\nVariable names should be in snake case - lower case words separated by underscores (e.g. pupil_age instead of PupilAge)\nComments should go near the top of your query, or at least near the closest SELECT\nTry to only comment on things that aren’t obvious about the query (e.g. why hardcoded filters are used, how to update them)\nWhere possible, use Common Table Expressions (CTEs) early and often, and name them descriptively (e.g. “pupil_age_table” rather than “p”)"
+    "text": "Best practice\nHere are some tips to follow best practice in your SQL code, making it easier to read and pick up if another person is running your code. Following best practice guidance will help you to achieve RAP best practice with clean final code\n\nAvoid any trailing whitespace\nAlways capitalize SQL keywords (e.g., SELECT or AS)\nVariable names should be in snake case - lower case words separated by underscores (e.g. pupil_age instead of PupilAge)\nComments should go near the top of your query, or at least near the closest SELECT\nTry to only comment on things that aren’t obvious about the query (e.g. why hardcoded filters are used, how to update them)\nWhere possible, use Common Table Expressions (CTEs) early and often, and name them descriptively (e.g. “pupil_age_table” rather than “p”)\n\nGitLab have produced a full SQL style guide, which we recommend following where possible."
   },
   {
     "objectID": "learning-development/sql.html#how-to-work-with-sql",
