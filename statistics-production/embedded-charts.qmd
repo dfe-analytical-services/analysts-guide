@@ -19,9 +19,9 @@ Prior to publication, either dummy data or the already published data should be 
 If you need a live version of the dashboard with the unpublished data for pre-release reviews and access, the following options are available:
 
 * Demo the chart in R-Studio
-* Create a copy of the chart repository on Dev Ops, deploy this to rsconnect and use the rsconnect link as the embedded URL prior to publication (note this will need updating to the public ShinyApps link before the publication goes live).
+* Create a copy of the chart repository on DevOps, deploy this to rsconnect and use the rsconnect link as the embedded URL prior to publication (note this will need updating to the public ShinyApps link before the publication goes live).
 
-We are currently putting in place a case to provide an in ternal shiny server platform, which will allow greater control of security around our data and allow draft Shiny applications to use unpublished data for internal use.
+We are currently putting in place a case to provide an internal shiny server platform, which will allow greater control of security around our data and allow draft Shiny applications to use unpublished data for internal use.
 
 ---
 
