@@ -136,6 +136,14 @@ The Statistics Development Team invites teams to take part in our partnership pr
 
 ---
 
+# How does RAP fit into ADA/Databricks
+
+---
+
+See the [ADA guidance on statistics publications](../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your statistics publication pipelines. 
+
+---
+
 # Preparing data
 
 ---
