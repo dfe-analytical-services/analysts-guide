@@ -17,10 +17,36 @@ For best practice when using software and coding in our process, see our [guidan
 
 ## Technical workshops
 
- *	In person workshops covering specific technical skills in practice
- *	3 hours long, with people working in small groups
- *	Recently circled the sites running an introduction to Git, and introduction to R and RAP.
- * Contact statistics.development@education.gov.uk to register interest in workshops happening at your site or to request new topics!
+We currently offer two in person workshops covering specific technical skills in practice. Each workshop is around 3 hours long, and you will work in small groups. We travel to deliver workshops based on demand, so please get in touch and let us know if you'd like to join the waiting list in your area for one or both of the sessions. 
+
+Our current workshops are:
+
+**Introduction to Git and Azure DevOps**
+
+In this workshop, we cover:
+
+*	What are git, DevOps and GitHub and what are the differences?
+*	How can they help your work?
+*	How to start working with git and DevOps in the DfE ecosystem
+*	Managing projects and tasks with DevOps Boards
+*	Basic version control with git – add/stage, commit, push and pull
+*	Working with branches
+*	Tracking changes and who made them
+*	Merging, pull requests and merge conflicts
+
+**Introduction to R and RAP** 
+
+In this workshop, we cover:
+
+* Setting up an R project
+* Writing your own functions
+* Aggregating & filtering data
+* Using if statements
+* Joining data
+* Using R to run SQL 
+* Creating plots (with ggplot2)
+
+Contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) to register interest in workshops happening at your site or to request new topics!
 
 ## Partnership programme
 
@@ -39,7 +65,7 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 ---
 
-**Google and other web-search ingines are the single most powerful learning resource out there**, whether it leads you to a Stack Overflow answer to your problem, or to an online training course, it will have your needs covered. We appreciate that it can be daunting and overwhelming at first though, which is why we're pooling together links to particularly relevant resources on this page. Let us know if there's any you'd like to see added!
+**Google and other web-search engines are the single most powerful learning resource out there**, whether it leads you to a Stack Overflow answer to your problem, or to an online training course, it will have your needs covered. We appreciate that it can be daunting and overwhelming at first though, which is why we're pooling together links to particularly relevant resources on this page. Let us know if there's any you'd like to see added!
 
 - [The DfE Analytics Academy online R training course](https://trello.com/invite/b/QdDx3VmA/96f273b3438db2bb8ee5feae3943c3d4/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"} - walks you through how to get set up with R, as well as setting tasks using DfE data to learn fundamental skills in R.
 
@@ -70,10 +96,10 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 For more information on how to use these tools in analysis and statistics publications, please see the [processes and RAP](../RAP/rap-statistics.html){target="_blank" rel="noopener noreferrer"} page.
 
 
-This is by no means a finite list of resources, we want this to be added to and for it to develop over time - if you have any resources that you think could be added then we'd love to [hear from you](mailto:statistics.development@education.gov.uk). 
+This is by no means a finite list of resources, we want this to be added to and for it to develop over time - if you have any resources that you think could be added then we'd love to hear from you, so please email us at [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk). 
 
 
-If you are stuck at all, have any questions, want to find a resource, or even just want a second pair of eyes to double check something, contact us using the envelope in the top right corner and we'll be more than happy to help.
+If you are stuck at all, have any questions, want to find a resource, or even just want a second pair of eyes to double check something, contact us using the envelope in the top left corner and we'll be more than happy to help.
 
 
 ---
