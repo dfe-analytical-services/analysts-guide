@@ -15,7 +15,6 @@ R is an open-source programming language specifically aimed at statisticians and
 
 ## What is R for
 
-
 R can be used for almost anything you can think of, notably data analysis, data visualisation, and creating reports and dashboards. It can also be used to extract data from SQL databases and run SQL queries.
 
 ---
@@ -252,15 +251,22 @@ More tips for moving from using SQL to using R can be found in the [SQL-to-R wik
 
 ## Interacting with a SQL database from within R-scripts
 
----
+R can be used to execute SQL scripts to extract data from a database as well as querying the database directly via R. There are two primary ways to do this: 
 
-R can be used to execute SQL scripts to extract data from a database as well as querying the database directly via R. There are two primary ways to do this: 1. executing a SQL script as is within R and 2. using dbplyr to create SQL code for you. Which you use will depend on how comfortable with SQL and R and also if you already have existing SQL scripts that you want to execute or you're writing new database queries.
+1. executing a SQL script as is within R and 
+2. using dbplyr to create SQL code for you. 
+
+Which you use will depend on how comfortable with SQL and R and also if you already have existing SQL scripts that you want to execute or you're writing new database queries.
+
+---
 
 ### Executing SQL scripts from within R
 
+---
+
 This is primarily useful if you already have existing SQl scripts that you want to build into an R controlled pipeline. For using R to execute a SQL script you'll need the SQL script/s to be in your R Project and to make a connection via R to the database.
 
-```
+``` {r eval=FALSE}
 # Library calls ====
 
 library(odbc)
@@ -312,7 +318,7 @@ my_table <- dbGetQuery(con, getSQL("my_query_script.sql"))
 If you're struggling to get your SQL scripts to execute from R, try adding the following two lines to the top of your SQL script to force the formatting required for it to work:
 
 
-```
+``` {r eval=FALSE}
 SET ANSI_PADDING OFF
 SET NOCOUNT ON;
 ```
@@ -321,15 +327,19 @@ SET NOCOUNT ON;
 
 ### Using dbplyr to create database queries
 
-If you're familiar with dplyr then using the dbplyr package to interact with a SQL database is a good way to go. It allows you to use common dplyr functions such as select(), filter(), mutate(), group_by(), summarise() and arrange() with a SQL database.
+---
 
-As with sending a SQL script, you'll need to create the connection to the database first:
+If you're familiar with dplyr then using the dbplyr package to interact with a SQL database is a good way to go. It allows you to use common dplyr functions such as `select()`, `filter()`, `mutate()`, `group_by()`, `summarise()` and `arrange()` with a SQL database.
 
-```
+As with sending a SQL script, you'll need to create the connection to the database as in the previous example and then create piped queries as you would with dplyr:
+
+``` {r eval=FALSE}
 # Library calls ====
 
 library(odbc)
 library(DBI)
+library(dplyr)
+library(dbplyr)
 
 # DB connection ====
 
@@ -341,11 +351,7 @@ con <- DBI::dbConnect(odbc::odbc(),
                       PWD = "",
                       Trusted_Connection = "Yes"
 )
-```
 
-Once you've established a connection, you can then create piped queries as you would with dplyr:
-
-```
 query_result <- collect(
   tbl(con, Id(schema='dbo', table='table_name')) %>%
   select(example_id_column, example_filter_column, example_indicator_column) %>%
@@ -353,30 +359,35 @@ query_result <- collect(
 )
 ```
 
-The key differences to just using dplyr are:
+The key differences to just using dplyr with a data frame are:
 
 - we use tbl() to point to the SQL table on the SQL database in place of supplying a data-frame
 - we use the collect() function to tell R to collate the commands and run them on the SQL database
 
+---
+
 ### Common issues interacting with a SQL database from within R
+
+---
 
 #### DBI varchar(max) column ordering bug
 
 A known bug in DBI is that if a SQL table contains columns of type varchar(max), then any queries including those columns will fail if those columns aren't the last to be called in the query. This is a bit esoteric, but you can identify this issue if you're getting the following error message when you run your query:
 
-```
+``` {r eval=FALSE}
 Error: nanodbc/nanodbc.cpp:3166: 07009: [Microsoft][SQL Server Native Client 11.0]Invalid Descriptor Index 
 Warning message:
 In dbClearResult(rs) : Result already cleared
 ```
 
 There are a couple of solutions to this:
+
 - avoid creating tables containing varchar(max) columns (i.e. always set a field length for your character fields)
 - make sure all varchar(max) columns are placed last in ay select query that you write
 
 This latter route can be automated using the following function: 
 
-```
+``` {r eval=FALSE}
 tbl_fix_nvarchar <- function(con, schema, table){
   column.types <- dbGetQuery(
     con,
