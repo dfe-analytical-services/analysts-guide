@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -415,7 +449,13 @@ cookieconsent.run({
   <li><a href="#quick-reference-lookup" id="toc-quick-reference-lookup" class="nav-link" data-scroll-target="#quick-reference-lookup">Quick reference lookup</a></li>
   <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources">Other resources</a></li>
   <li><a href="#excel-functions-in-r" id="toc-excel-functions-in-r" class="nav-link" data-scroll-target="#excel-functions-in-r">Excel functions in R</a></li>
-  <li><a href="#sql-functions-in-r" id="toc-sql-functions-in-r" class="nav-link" data-scroll-target="#sql-functions-in-r">SQL functions in R</a></li>
+  <li><a href="#sql-function-equivalents-in-r" id="toc-sql-function-equivalents-in-r" class="nav-link" data-scroll-target="#sql-function-equivalents-in-r">SQL function equivalents in R</a></li>
+  <li><a href="#interacting-with-a-sql-database-from-within-r-scripts" id="toc-interacting-with-a-sql-database-from-within-r-scripts" class="nav-link" data-scroll-target="#interacting-with-a-sql-database-from-within-r-scripts">Interacting with a SQL database from within R-scripts</a>
+  <ul class="collapse">
+  <li><a href="#executing-sql-scripts-from-within-r" id="toc-executing-sql-scripts-from-within-r" class="nav-link" data-scroll-target="#executing-sql-scripts-from-within-r">Executing SQL scripts from within R</a></li>
+  <li><a href="#using-dbplyr-to-create-database-queries" id="toc-using-dbplyr-to-create-database-queries" class="nav-link" data-scroll-target="#using-dbplyr-to-create-database-queries">Using dbplyr to create database queries</a></li>
+  <li><a href="#common-issues-interacting-with-a-sql-database-from-within-r" id="toc-common-issues-interacting-with-a-sql-database-from-within-r" class="nav-link" data-scroll-target="#common-issues-interacting-with-a-sql-database-from-within-r">Common issues interacting with a SQL database from within R</a></li>
+  </ul></li>
   <li><a href="#tips-for-using-r" id="toc-tips-for-using-r" class="nav-link" data-scroll-target="#tips-for-using-r">Tips for using R</a>
   <ul class="collapse">
   <li><a href="#specifying-a-version-of-r-to-use" id="toc-specifying-a-version-of-r-to-use" class="nav-link" data-scroll-target="#specifying-a-version-of-r-to-use">Specifying a version of R to use</a></li>
@@ -431,7 +471,6 @@ cookieconsent.run({
   <li><a href="#visualise-dependencies" id="toc-visualise-dependencies" class="nav-link" data-scroll-target="#visualise-dependencies">Visualise dependencies</a></li>
   <li><a href="#reproducible-random-numbers" id="toc-reproducible-random-numbers" class="nav-link" data-scroll-target="#reproducible-random-numbers">Reproducible random numbers</a></li>
   <li><a href="#automatic-logging" id="toc-automatic-logging" class="nav-link" data-scroll-target="#automatic-logging">Automatic logging</a></li>
-  <li><a href="#running-sql-scripts-from-r" id="toc-running-sql-scripts-from-r" class="nav-link" data-scroll-target="#running-sql-scripts-from-r">Running SQL scripts from R</a></li>
   <li><a href="#cant-find-make-error" id="toc-cant-find-make-error" class="nav-link" data-scroll-target="#cant-find-make-error">Can’t find make error</a></li>
   <li><a href="#packages-not-downloading-due-to-wininet-error-renv-0.17" id="toc-packages-not-downloading-due-to-wininet-error-renv-0.17" class="nav-link" data-scroll-target="#packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</a></li>
   </ul></li>
@@ -679,8 +718,8 @@ install.packages("rmarkdown", lib = "C:/Users/swong/OneDrive - Department for Ed
 <p>More tips for moving from using Excel to using R can be found in the <a href="https://github.com/dfe-analytical-services/excel-to-R/wiki/Excel-to-R---how-do-I..." target="_blank">excel-to-R wiki</a>.</p>
 <hr>
 </section>
-<section id="sql-functions-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="sql-functions-in-r">SQL functions in R</h2>
+<section id="sql-function-equivalents-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="sql-function-equivalents-in-r">SQL function equivalents in R</h2>
 <p>R can do a lot of the things that are possible in SQL. The reference table below shows how you would carry out some popular SQL commands in R.</p>
 <p><strong>REMEMBER:</strong> R is case sensitive, so all references to column names/entries need to be as-is in the dataset you are looking at. <a href="https://www.rdocumentation.org/packages/janitor/versions/1.2.0/topics/clean_names" target="_blank">Functions exist</a> that can translate all your columns to lower or snake case for ease!</p>
 <table class="table">
@@ -747,6 +786,152 @@ install.packages("rmarkdown", lib = "C:/Users/swong/OneDrive - Department for Ed
 </table>
 <p>More tips for moving from using SQL to using R can be found in the <a href="https://github.com/dfe-analytical-services/excel-to-R/wiki/SQL-to-R-how-do-I..." target="_blank">SQL-to-R wiki</a>.</p>
 <hr>
+</section>
+<section id="interacting-with-a-sql-database-from-within-r-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="interacting-with-a-sql-database-from-within-r-scripts">Interacting with a SQL database from within R-scripts</h2>
+<p>R can be used to execute SQL scripts to extract data from a database as well as querying the database directly via R. There are two primary ways to do this:</p>
+<ol type="1">
+<li>executing a SQL script as is within R and</li>
+<li>using dbplyr to create SQL code for you.</li>
+</ol>
+<p>Which you use will depend on how comfortable with SQL and R and also if you already have existing SQL scripts that you want to execute or you’re writing new database queries.</p>
+<hr>
+<section id="executing-sql-scripts-from-within-r" class="level3">
+<h3 class="anchored" data-anchor-id="executing-sql-scripts-from-within-r">Executing SQL scripts from within R</h3>
+<hr>
+<p>This is primarily useful if you already have existing SQl scripts that you want to build into an R controlled pipeline. For using R to execute a SQL script you’ll need the SQL script/s to be in your R Project and to make a connection via R to the database.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Library calls ====</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># DB connection ====</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Driver =</span> <span class="st">"ODBC Driver 17 for SQL Server"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Server =</span> <span class="st">"server_name"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Database =</span> <span class="st">"database_name"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">UID =</span> <span class="st">""</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">PWD =</span> <span class="st">""</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Trusted_Connection =</span> <span class="st">"Yes"</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to read in sql scripts ====</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>getSQL <span class="ot">&lt;-</span> <span class="cf">function</span>(filepath){</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  con <span class="ot">=</span> <span class="fu">file</span>(filepath, <span class="st">"r"</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  sql.string <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="cn">TRUE</span>){</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    line <span class="ot">&lt;-</span> <span class="fu">readLines</span>(con, <span class="at">n =</span> <span class="dv">1</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ( <span class="fu">length</span>(line) <span class="sc">==</span> <span class="dv">0</span> ){</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    line <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">t"</span>, <span class="st">" "</span>, line)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">grepl</span>(<span class="st">"--"</span>,line) <span class="sc">==</span> <span class="cn">TRUE</span>){</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>      line <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">sub</span>(<span class="st">"--"</span>,<span class="st">"/*"</span>,line),<span class="st">"*/"</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    sql.string <span class="ot">&lt;-</span> <span class="fu">paste</span>(sql.string, line)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">close</span>(con)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(sql.string)</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Execute SQL query and pull into R ====</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>my_table <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, <span class="fu">getSQL</span>(<span class="st">"my_query_script.sql"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you’re struggling to get your SQL scripts to execute from R, try adding the following two lines to the top of your SQL script to force the formatting required for it to work:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>SET ANSI_PADDING OFF</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>SET NOCOUNT ON;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+<section id="using-dbplyr-to-create-database-queries" class="level3">
+<h3 class="anchored" data-anchor-id="using-dbplyr-to-create-database-queries">Using dbplyr to create database queries</h3>
+<hr>
+<p>If you’re familiar with dplyr then using the dbplyr package to interact with a SQL database is a good way to go. It allows you to use common dplyr functions such as <code>select()</code>, <code>filter()</code>, <code>mutate()</code>, <code>group_by()</code>, <code>summarise()</code> and <code>arrange()</code> with a SQL database.</p>
+<p>As with sending a SQL script, you’ll need to create the connection to the database as in the previous example and then create piped queries as you would with dplyr:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Library calls ====</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># DB connection ====</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(),</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Driver =</span> <span class="st">"ODBC Driver 17 for SQL Server"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Server =</span> <span class="st">"server_name"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Database =</span> <span class="st">"database_name"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">UID =</span> <span class="st">""</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                      <span class="at">PWD =</span> <span class="st">""</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Trusted_Connection =</span> <span class="st">"Yes"</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>query_result <span class="ot">&lt;-</span> <span class="fu">collect</span>(</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl</span>(con, <span class="fu">Id</span>(<span class="at">schema=</span><span class="st">'dbo'</span>, <span class="at">table=</span><span class="st">'table_name'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(example_id_column, example_filter_column, example_indicator_column) <span class="sc">%&gt;%</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(example_filter_column<span class="sc">==</span><span class="st">'Filter entry 1'</span>, example_indicator_column <span class="sc">&lt;=</span> <span class="dv">120</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The key differences to just using dplyr with a data frame are:</p>
+<ul>
+<li>we use tbl() to point to the SQL table on the SQL database in place of supplying a data-frame</li>
+<li>we use the collect() function to tell R to collate the commands and run them on the SQL database</li>
+</ul>
+<hr>
+</section>
+<section id="common-issues-interacting-with-a-sql-database-from-within-r" class="level3">
+<h3 class="anchored" data-anchor-id="common-issues-interacting-with-a-sql-database-from-within-r">Common issues interacting with a SQL database from within R</h3>
+<hr>
+<section id="dbi-varcharmax-column-ordering-bug" class="level4">
+<h4 class="anchored" data-anchor-id="dbi-varcharmax-column-ordering-bug">DBI varchar(max) column ordering bug</h4>
+<p>A known bug in DBI is that if a SQL table contains columns of type varchar(max), then any queries including those columns will fail if those columns aren’t the last to be called in the query. This is a bit esoteric, but you can identify this issue if you’re getting the following error message when you run your query:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> nanodbc<span class="sc">/</span>nanodbc.cpp<span class="sc">:</span><span class="dv">3166</span><span class="sc">:</span> <span class="dv">07009</span><span class="sc">:</span> [Microsoft][SQL Server Native Client <span class="fl">11.0</span>]Invalid Descriptor Index </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Warning message<span class="sc">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>In <span class="fu">dbClearResult</span>(rs) <span class="sc">:</span> Result already cleared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are a couple of solutions to this:</p>
+<ul>
+<li>avoid creating tables containing varchar(max) columns (i.e.&nbsp;always set a field length for your character fields)</li>
+<li>make sure all varchar(max) columns are placed last in ay select query that you write</li>
+</ul>
+<p>This latter route can be automated using the following function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tbl_fix_nvarchar <span class="ot">&lt;-</span> <span class="cf">function</span>(con, schema, table){</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  column.types <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    con,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="st">"SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH FROM INFORMATION_SCHEMA.COLUMNS "</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">"WHERE TABLE_NAME='"</span>,table,<span class="st">"'"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  ct <span class="ot">&lt;-</span> column.types <span class="sc">%&gt;%</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">cml =</span> <span class="fu">case_when</span>(</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>(CHARACTER_MAXIMUM_LENGTH) <span class="sc">~</span> <span class="dv">10</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      CHARACTER_MAXIMUM_LENGTH <span class="sc">==</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">~</span> <span class="dv">100000</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="fu">as.double</span>(CHARACTER_MAXIMUM_LENGTH)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(cml) <span class="sc">%&gt;%</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(COLUMN_NAME)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl</span>(con, <span class="fu">Id</span>(<span class="at">schema=</span>schema, <span class="at">table=</span>table)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">all_of</span>(ct))</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This queries the properties of the SQL table that you’re interacting with, identifies any varchar(max) columns (i.e.&nbsp;where CHARACTER_MAXIMUM_LENGTH equals 1) and then creates a column ordering in your query whereby any varchar(max) columns present are placed to the end.</p>
+</section>
+</section>
 </section>
 <section id="tips-for-using-r" class="level2">
 <h2 class="anchored" data-anchor-id="tips-for-using-r">Tips for using R</h2>
@@ -896,61 +1081,6 @@ filtered &lt;- filter(mtcars, cyl == 4)
 #&gt; filter: removed 21 rows (66%), 11 rows remaining
 mutated &lt;- mutate(mtcars, new_var = wt ** 2)
 #&gt; mutate: new variable 'new_var' (double) with 29 unique values and 0% NA</code></pre>
-<hr>
-</section>
-<section id="running-sql-scripts-from-r" class="level3">
-<h3 class="anchored" data-anchor-id="running-sql-scripts-from-r">Running SQL scripts from R</h3>
-<hr>
-<p>R can be used to execute SQL scripts to extract data from a database as well as querying the database directly via R. For using R to execute a SQL script you’ll need the SQL script/s to be in your R Project and to make a connection via R to the database.</p>
-<pre><code># Library calls ====
-
-library(odbc)
-library(DBI)
-
-# DB connection ====
-
-con &lt;- DBI::dbConnect(odbc::odbc(),
-                      Driver = "ODBC Driver 17 for SQL Server",
-                      Server = "server_name",
-                      Database = "database_name",
-                      UID = "",
-                      PWD = "",
-                      Trusted_Connection = "Yes"
-)
-
-# Function to read in sql scripts ====
-
-getSQL &lt;- function(filepath){
-  con = file(filepath, "r")
-  sql.string &lt;- ""
-  
-  while (TRUE){
-    line &lt;- readLines(con, n = 1)
-    
-    if ( length(line) == 0 ){
-      break
-    }
-    
-    line &lt;- gsub("\\t", " ", line)
-    
-    if(grepl("--",line) == TRUE){
-      line &lt;- paste(sub("--","/*",line),"*/")
-    }
-    
-    sql.string &lt;- paste(sql.string, line)
-  }
-  
-  close(con)
-  return(sql.string)
-}
-
-# Execute SQL query and pull into R ====
-
-my_table &lt;- dbGetQuery(con, getSQL("my_query_script.sql"))
-</code></pre>
-<p>If you’re struggling to get your SQL scripts to execute from R, try adding the following two lines to the top of your SQL script to force the formatting required for it to work:</p>
-<pre><code>SET ANSI_PADDING OFF
-SET NOCOUNT ON;</code></pre>
 <hr>
 </section>
 <section id="cant-find-make-error" class="level3">
