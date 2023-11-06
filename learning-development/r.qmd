@@ -15,7 +15,6 @@ R is an open-source programming language specifically aimed at statisticians and
 
 ## What is R for
 
-
 R can be used for almost anything you can think of, notably data analysis, data visualisation, and creating reports and dashboards. It can also be used to extract data from SQL databases and run SQL queries.
 
 ---
@@ -223,7 +222,7 @@ More tips for moving from using Excel to using R can be found in the [excel-to-R
 
 ---
 
-## SQL functions in R
+## SQL function equivalents in R
 
 
 R can do a lot of the things that are possible in SQL. The reference table below shows how you would carry out some popular SQL commands in R.
@@ -248,8 +247,169 @@ R can do a lot of the things that are possible in SQL. The reference table below
 
 More tips for moving from using SQL to using R can be found in the [SQL-to-R wiki](https://github.com/dfe-analytical-services/excel-to-R/wiki/SQL-to-R-how-do-I...).  
 
+---
+
+## Interacting with a SQL database from within R-scripts
+
+R can be used to execute SQL scripts to extract data from a database as well as querying the database directly via R. There are two primary ways to do this: 
+
+1. executing a SQL script as is within R and 
+2. using dbplyr to create SQL code for you. 
+
+Which you use will depend on how comfortable with SQL and R and also if you already have existing SQL scripts that you want to execute or you're writing new database queries.
 
 ---
+
+### Executing SQL scripts from within R
+
+---
+
+This is primarily useful if you already have existing SQl scripts that you want to build into an R controlled pipeline. For using R to execute a SQL script you'll need the SQL script/s to be in your R Project and to make a connection via R to the database.
+
+``` {r eval=FALSE}
+# Library calls ====
+
+library(odbc)
+library(DBI)
+
+# DB connection ====
+
+con <- DBI::dbConnect(odbc::odbc(),
+                      Driver = "ODBC Driver 17 for SQL Server",
+                      Server = "server_name",
+                      Database = "database_name",
+                      UID = "",
+                      PWD = "",
+                      Trusted_Connection = "Yes"
+)
+
+# Function to read in sql scripts ====
+
+getSQL <- function(filepath){
+  con = file(filepath, "r")
+  sql.string <- ""
+  
+  while (TRUE){
+    line <- readLines(con, n = 1)
+    
+    if ( length(line) == 0 ){
+      break
+    }
+    
+    line <- gsub("\\t", " ", line)
+    
+    if(grepl("--",line) == TRUE){
+      line <- paste(sub("--","/*",line),"*/")
+    }
+    
+    sql.string <- paste(sql.string, line)
+  }
+  
+  close(con)
+  return(sql.string)
+}
+
+# Execute SQL query and pull into R ====
+
+my_table <- dbGetQuery(con, getSQL("my_query_script.sql"))
+
+```
+
+If you're struggling to get your SQL scripts to execute from R, try adding the following two lines to the top of your SQL script to force the formatting required for it to work:
+
+
+``` {r eval=FALSE}
+SET ANSI_PADDING OFF
+SET NOCOUNT ON;
+```
+
+---
+
+### Using dbplyr to create database queries
+
+---
+
+If you're familiar with dplyr then using the dbplyr package to interact with a SQL database is a good way to go. It allows you to use common dplyr functions such as `select()`, `filter()`, `mutate()`, `group_by()`, `summarise()` and `arrange()` with a SQL database.
+
+As with sending a SQL script, you'll need to create the connection to the database as in the previous example and then create piped queries as you would with dplyr:
+
+``` {r eval=FALSE}
+# Library calls ====
+
+library(odbc)
+library(DBI)
+library(dplyr)
+library(dbplyr)
+
+# DB connection ====
+
+con <- DBI::dbConnect(odbc::odbc(),
+                      Driver = "ODBC Driver 17 for SQL Server",
+                      Server = "server_name",
+                      Database = "database_name",
+                      UID = "",
+                      PWD = "",
+                      Trusted_Connection = "Yes"
+)
+
+query_result <- collect(
+  tbl(con, Id(schema='dbo', table='table_name')) %>%
+  select(example_id_column, example_filter_column, example_indicator_column) %>%
+  filter(example_filter_column=='Filter entry 1', example_indicator_column <= 120)
+)
+```
+
+The key differences to just using dplyr with a data frame are:
+
+- we use tbl() to point to the SQL table on the SQL database in place of supplying a data-frame
+- we use the collect() function to tell R to collate the commands and run them on the SQL database
+
+---
+
+### Common issues interacting with a SQL database from within R
+
+---
+
+#### DBI varchar(max) column ordering bug
+
+A known bug in DBI is that if a SQL table contains columns of type varchar(max), then any queries including those columns will fail if those columns aren't the last to be called in the query. This is a bit esoteric, but you can identify this issue if you're getting the following error message when you run your query:
+
+``` {r eval=FALSE}
+Error: nanodbc/nanodbc.cpp:3166: 07009: [Microsoft][SQL Server Native Client 11.0]Invalid Descriptor Index 
+Warning message:
+In dbClearResult(rs) : Result already cleared
+```
+
+There are a couple of solutions to this:
+
+- avoid creating tables containing varchar(max) columns (i.e. always set a field length for your character fields)
+- make sure all varchar(max) columns are placed last in ay select query that you write
+
+This latter route can be automated using the following function: 
+
+``` {r eval=FALSE}
+tbl_fix_nvarchar <- function(con, schema, table){
+  column.types <- dbGetQuery(
+    con,
+    paste0("SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH FROM INFORMATION_SCHEMA.COLUMNS ",
+          "WHERE TABLE_NAME='",table,"'")
+  )
+  
+  ct <- column.types %>%
+    mutate(cml = case_when(
+      is.na(CHARACTER_MAXIMUM_LENGTH) ~ 10,
+      CHARACTER_MAXIMUM_LENGTH == -1 ~ 100000,
+      TRUE ~ as.double(CHARACTER_MAXIMUM_LENGTH)
+    )
+    ) %>%
+    arrange(cml) %>%
+    pull(COLUMN_NAME)
+
+  tbl(con, Id(schema=schema, table=table)) %>% select(all_of(ct))
+}
+```
+
+This queries the properties of the SQL table that you're interacting with, identifies any varchar(max) columns (i.e. where CHARACTER_MAXIMUM_LENGTH equals 1) and then creates a column ordering in your query whereby any varchar(max) columns present are placed to the end.
 
 ## Tips for using R
 
@@ -457,71 +617,6 @@ filtered <- filter(mtcars, cyl == 4)
 #> filter: removed 21 rows (66%), 11 rows remaining
 mutated <- mutate(mtcars, new_var = wt ** 2)
 #> mutate: new variable 'new_var' (double) with 29 unique values and 0% NA
-```
-
----
-
-### Running SQL scripts from R
-
----
-
-R can be used to execute SQL scripts to extract data from a database as well as querying the database directly via R. For using R to execute a SQL script you'll need the SQL script/s to be in your R Project and to make a connection via R to the database.
-
-```
-# Library calls ====
-
-library(odbc)
-library(DBI)
-
-# DB connection ====
-
-con <- DBI::dbConnect(odbc::odbc(),
-                      Driver = "ODBC Driver 17 for SQL Server",
-                      Server = "server_name",
-                      Database = "database_name",
-                      UID = "",
-                      PWD = "",
-                      Trusted_Connection = "Yes"
-)
-
-# Function to read in sql scripts ====
-
-getSQL <- function(filepath){
-  con = file(filepath, "r")
-  sql.string <- ""
-  
-  while (TRUE){
-    line <- readLines(con, n = 1)
-    
-    if ( length(line) == 0 ){
-      break
-    }
-    
-    line <- gsub("\\t", " ", line)
-    
-    if(grepl("--",line) == TRUE){
-      line <- paste(sub("--","/*",line),"*/")
-    }
-    
-    sql.string <- paste(sql.string, line)
-  }
-  
-  close(con)
-  return(sql.string)
-}
-
-# Execute SQL query and pull into R ====
-
-my_table <- dbGetQuery(con, getSQL("my_query_script.sql"))
-
-```
-
-If you're struggling to get your SQL scripts to execute from R, try adding the following two lines to the top of your SQL script to force the formatting required for it to work:
-
-
-```
-SET ANSI_PADDING OFF
-SET NOCOUNT ON;
 ```
 
 ---
