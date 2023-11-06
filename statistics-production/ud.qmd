@@ -686,6 +686,7 @@ Where you have multiple geographic levels in a file, leave any not applicable co
 | RSC region | rsc_region_lead_name | For RSC region data, we generally define them into lead RSC regions where the majority of the data is from. |
 | Parliamentary constituency | pcon_code, pcon_name | |
 | Local authority district | lad_code, lad_name | |
+| Local skills improvement plan area | lsip_code, lsip_name | |
 | Local enterprise partnership | local_enterprise_partnership_code, local_enterprise_partnership_name | |
 | English devolved area | english_devolved_area_code, english_devolved_area_name | |
 | Opportunity area | opportunity_area_code, opportunity_area_name | |
