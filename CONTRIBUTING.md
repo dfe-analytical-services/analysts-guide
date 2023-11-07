@@ -43,6 +43,12 @@ Some things to be aware of before you make changes:
 
 -   The appearance of code snippets will only change if the language (e.g. R, Python) is defined at the start of the snippet (e.g. ```` ``` {r connection_example, eval=FALSE} ````). Including `eval=FALSE` stops your code snippet from actually running. If no language is defined, the snippet appearance will need to be modified manually and this can cause some issues.
 
+### Adding images from draw.io
+
+You can create images, flowcharts, and diagrams using [draw.io](http://draw.io). To add them to the Analysts' guide, we recommend embedding them, by selecting File > Embed > HTML. The image below shows the options that you should select when embedding a diagram
+
+![](../images/embed-drawio.png)
+
 ### Issues
 
 #### Create a new issue
