@@ -49,13 +49,50 @@ We strongly recommend you stick to the codes as outlined, if you can't for any r
 
 Categorical data can be divided into groups or categories by using names or labels. This palette has four colours. We recommend a limit of four categories as best practice for basic data visualisations. The ordering of the palette is important as not all colours are accessible when paired together.
 
+```{=html}
+<table> 
+  <thead>
+    <tr>
+      <th>Colour Name</th>
+      <th>Hex Code</th>
+      <th>RGB</th>
+      <th>CYMK</th>
+      <th>Colour Example</th>
+    </tr>
+  <tbody>
+    <tr>
+      <td>Dark blue</td>
+      <td>#12436D</td>
+      <td>18, 67, 109</td>
+      <td>36, 16, 0, 57</td>
+      <td style="background-color:#12436D;"> </td>
+    </tr>
+    <tr>
+      <td>Turquoise</td>
+      <td>#28A197</td>
+      <td>40, 161, 151</td>
+      <td>75, 0, 6, 37</td>
+      <td style="background-color:#28A197;"> </td>
+    </tr>
+    <tr>
+      <td>Dark Pink</td>
+      <td>#801650</td>
+      <td>128, 22, 80</td>
+      <td>0, 83, 38, 50</td>
+      <td style="background-color:#801650;"> </td>
+    </tr>
+    <tr> 
+    <td>Orange</td>
+      <td>#F46A25</td>
+      <td>244, 106, 37</td>
+      <td>0, 57, 85, 4</td>
+      <td style="background-color:#F46A25;"> </td>
+    </tr>
+  </tbody>
+  </table>
 
-| Colour name       | Hex code | RGB           | CYMK          |
-|-------------------|----------|---------------|---------------|
-| Dark blue         | #12436D  | 18, 67, 109   | 36, 16, 0, 57 |
-| Turquoise         | #28A197  | 40, 161, 151  | 75, 0, 6, 37  |
-| Dark pink         | #801650  | 128, 22, 80   | 0, 83, 38, 50 |
-| Orange            | #F46A25  | 244, 106, 37  | 0, 57, 85, 4  |
+```
+
 
 ---
 
@@ -65,11 +102,43 @@ Categorical data can be divided into groups or categories by using names or labe
 
 Sequential data is any sort of data where the order of series has some meaning. For example, age groups ascending in age. This palette has three colours and even this pushes the boundaries for contrast ratios. Any charts made with shades of a specific hue should be accessible without colour.
 
-| Colour name       | Hex code | RGB           | CYMK          |
-|-------------------|----------|---------------|---------------|
-| Dark blue         | #12436D  | 18, 67, 109   | 36, 16, 0, 57 |
-| Mid blue          | #2073BC  | 32, 115, 188  | 0, 57, 85, 4  |
-| Light blue        | #6BACE6  | 107, 172, 230 | 75, 0, 6, 37  |
+```{=html}
+<table> 
+  <thead>
+    <tr>
+      <th>Colour Name</th>
+      <th>Hex Code</th>
+      <th>RGB</th>
+      <th>CYMK</th>
+      <th>Colour Example</th>
+    </tr>
+  <tbody>
+    <tr>
+      <td>Dark blue</td>
+      <td>#12436D</td>
+      <td>18, 67, 109</td>
+      <td>36, 16, 0, 57</td>
+      <td style="background-color:#12436D;"> </td>
+    </tr>
+    <tr>
+      <td>Mid Blue</td>
+      <td>#2073BC</td>
+      <td>32, 115, 188</td>
+      <td>0, 57, 85, 4</td>
+      <td style="background-color:#2073BC;"> </td>
+    </tr>
+    <tr>
+      <td>Light Blue</td>
+      <td>#6BACE6</td>
+      <td>107, 172, 230</td>
+      <td>75, 0, 6, 37</td>
+      <td style="background-color:#6BACE6;"> </td>
+    </tr>
+  </tbody>
+  </table>
+
+```
+
 
 ---
 
@@ -79,11 +148,35 @@ Sequential data is any sort of data where the order of series has some meaning. 
 
 On focus charts, colour is used to highlight specific elements to help users understand the information. One line out of many will be highlighted as a colour and the rest of the series remain grey.
 
+```{=html}
+<table> 
+  <thead>
+    <tr>
+      <th>Colour Name</th>
+      <th>Hex Code</th>
+      <th>RGB</th>
+      <th>CYMK</th>
+      <th>Colour Example</th>
+    </tr>
+  <tbody>
+    <tr>
+      <td>Dark blue</td>
+      <td>#12436D</td>
+      <td>18, 67, 109</td>
+      <td>36, 16, 0, 57</td>
+      <td style="background-color:#12436D;"> </td>
+    </tr>
+    <tr>
+      <td>Grey</td>
+      <td>#BFBFBF</td>
+      <td>191, 191, 191</td>
+      <td>0, 0, 0, 25</td>
+      <td style="background-color:#BFBFBF;"> </td>
+    </tr>
+  </tbody>
+  </table>
 
-| Colour name       | Hex code | RGB           | CYMK          |
-|-------------------|----------|---------------|---------------|
-| Dark blue         | #12436D  | 18, 67, 109   | 36, 16, 0, 57 |
-| Grey              | #BFBFBF  | 191, 191, 191 | 0, 0, 0, 25   |
+```
 
 ---
 
@@ -97,14 +190,64 @@ If you do want to use additional colours you need to ensure that the chart is un
 
 For categorical data, we recommend the following extensions to the categorical palette. Once again, the ordering is important. If you're making a chart in EES these are not default colours, so you will need to use the colour picker to specify them.
 
-| Colour name       | Hex code | RGB           | CYMK          |
-|-------------------|----------|---------------|---------------|
-| Dark blue         | #12436D  | 18, 67, 109   | 36, 16, 0, 57 |
-| Turquoise         | #28A197  | 40, 161, 151  | 75, 0, 6, 37  |
-| Dark pink         | #801650  | 128, 22, 80   | 0, 83, 38, 50 |
-| Orange            | #F46A25  | 244, 106, 37  | 0, 57, 85, 4  |
-| Dark grey         | #3D3D3D  | 61, 61, 61    | 0, 0, 0, 76   |
-| Light purple      | #A285D1  | 162, 133, 209 | 22, 36, 0, 18 |
+```{=html}
+<table> 
+  <thead>
+    <tr>
+      <th>Colour Name</th>
+      <th>Hex Code</th>
+      <th>RGB</th>
+      <th>CYMK</th>
+      <th>Colour Example</th>
+    </tr>
+  <tbody>
+    <tr>
+      <td>Dark blue</td>
+      <td>#12436D</td>
+      <td>18, 67, 109</td>
+      <td>36, 16, 0, 57</td>
+      <td style="background-color:#12436D;"> </td>
+    </tr>
+       <tr>
+      <td>Turquoise</td>
+      <td>#28A197</td>
+      <td>40, 161, 151</td>
+      <td>75, 0, 6, 37</td>
+      <td style="background-color:#28A197;"> </td>
+    </tr>
+    <tr>
+      <td>Dark Pink</td>
+      <td>#801650</td>
+      <td>128, 22, 80</td>
+      <td>0, 83, 38, 50</td>
+      <td style="background-color:#801650;"> </td>
+    </tr>
+    <tr> 
+    <td>Orange</td>
+      <td>#F46A25</td>
+      <td>244, 106, 37</td>
+      <td>0, 57, 85, 4</td>
+      <td style="background-color:#F46A25;"> </td>
+    </tr>
+    <tr>
+      <td>Dark Grey</td>
+      <td>#3D3D3D</td>
+      <td>61, 61, 61</td>
+      <td>0, 0, 0, 76</td>
+      <td style="background-color:#3D3D3D;"> </td>
+    </tr>
+    <tr>
+      <td>Light Purple</td>
+      <td>#A285D1</td>
+      <td>162, 133, 209</td>
+      <td>22, 36, 0, 18</td>
+      <td style="background-color:#A285D1;"> </td>
+    </tr>
+  </tbody>
+  </table>
+
+```
+
 
 For larger palettes when using sequential data, we recommend using [ColorBrewer](https://colorbrewer2.org/#type=sequential) to find the hex codes for multiple shades of a given hue.
 
