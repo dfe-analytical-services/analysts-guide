@@ -467,13 +467,14 @@ Things to consider when visualising data
 <h3 class="anchored" data-anchor-id="categorical-colour-palette">Categorical colour palette</h3>
 <hr>
 <p>Categorical data can be divided into groups or categories by using names or labels. This palette has four colours. We recommend a limit of four categories as best practice for basic data visualisations. The ordering of the palette is important as not all colours are accessible when paired together.</p>
-<table class="table">
+<table data-quarto-postprocess="true" class="table">
 <thead>
 <tr class="header">
-<th>Colour name</th>
-<th>Hex code</th>
-<th>RGB</th>
-<th>CYMK</th>
+<th data-quarto-table-cell-role="th">Colour Name</th>
+<th data-quarto-table-cell-role="th">Hex Code</th>
+<th data-quarto-table-cell-role="th">RGB</th>
+<th data-quarto-table-cell-role="th">CYMK</th>
+<th data-quarto-table-cell-role="th">Colour Example</th>
 </tr>
 </thead>
 <tbody>
@@ -482,40 +483,47 @@ Things to consider when visualising data
 <td>#12436D</td>
 <td>18, 67, 109</td>
 <td>36, 16, 0, 57</td>
+<td style="background-color: #12436D"></td>
 </tr>
 <tr class="even">
 <td>Turquoise</td>
 <td>#28A197</td>
 <td>40, 161, 151</td>
 <td>75, 0, 6, 37</td>
+<td style="background-color: #28A197"></td>
 </tr>
 <tr class="odd">
-<td>Dark pink</td>
+<td>Dark Pink</td>
 <td>#801650</td>
 <td>128, 22, 80</td>
 <td>0, 83, 38, 50</td>
+<td style="background-color: #801650"></td>
 </tr>
 <tr class="even">
 <td>Orange</td>
 <td>#F46A25</td>
 <td>244, 106, 37</td>
 <td>0, 57, 85, 4</td>
+<td style="background-color: #F46A25"></td>
 </tr>
 </tbody>
 </table>
+
+
 <hr>
 </section>
 <section id="sequential-colour-palette" class="level3">
 <h3 class="anchored" data-anchor-id="sequential-colour-palette">Sequential colour palette</h3>
 <hr>
 <p>Sequential data is any sort of data where the order of series has some meaning. For example, age groups ascending in age. This palette has three colours and even this pushes the boundaries for contrast ratios. Any charts made with shades of a specific hue should be accessible without colour.</p>
-<table class="table">
+<table data-quarto-postprocess="true" class="table">
 <thead>
 <tr class="header">
-<th>Colour name</th>
-<th>Hex code</th>
-<th>RGB</th>
-<th>CYMK</th>
+<th data-quarto-table-cell-role="th">Colour Name</th>
+<th data-quarto-table-cell-role="th">Hex Code</th>
+<th data-quarto-table-cell-role="th">RGB</th>
+<th data-quarto-table-cell-role="th">CYMK</th>
+<th data-quarto-table-cell-role="th">Colour Example</th>
 </tr>
 </thead>
 <tbody>
@@ -524,34 +532,40 @@ Things to consider when visualising data
 <td>#12436D</td>
 <td>18, 67, 109</td>
 <td>36, 16, 0, 57</td>
+<td style="background-color: #12436D"></td>
 </tr>
 <tr class="even">
-<td>Mid blue</td>
+<td>Mid Blue</td>
 <td>#2073BC</td>
 <td>32, 115, 188</td>
 <td>0, 57, 85, 4</td>
+<td style="background-color: #2073BC"></td>
 </tr>
 <tr class="odd">
-<td>Light blue</td>
+<td>Light Blue</td>
 <td>#6BACE6</td>
 <td>107, 172, 230</td>
 <td>75, 0, 6, 37</td>
+<td style="background-color: #6BACE6"></td>
 </tr>
 </tbody>
 </table>
+
+
 <hr>
 </section>
 <section id="focus-palette" class="level3">
 <h3 class="anchored" data-anchor-id="focus-palette">Focus palette</h3>
 <hr>
 <p>On focus charts, colour is used to highlight specific elements to help users understand the information. One line out of many will be highlighted as a colour and the rest of the series remain grey.</p>
-<table class="table">
+<table data-quarto-postprocess="true" class="table">
 <thead>
 <tr class="header">
-<th>Colour name</th>
-<th>Hex code</th>
-<th>RGB</th>
-<th>CYMK</th>
+<th data-quarto-table-cell-role="th">Colour Name</th>
+<th data-quarto-table-cell-role="th">Hex Code</th>
+<th data-quarto-table-cell-role="th">RGB</th>
+<th data-quarto-table-cell-role="th">CYMK</th>
+<th data-quarto-table-cell-role="th">Colour Example</th>
 </tr>
 </thead>
 <tbody>
@@ -560,15 +574,19 @@ Things to consider when visualising data
 <td>#12436D</td>
 <td>18, 67, 109</td>
 <td>36, 16, 0, 57</td>
+<td style="background-color: #12436D"></td>
 </tr>
 <tr class="even">
 <td>Grey</td>
 <td>#BFBFBF</td>
 <td>191, 191, 191</td>
 <td>0, 0, 0, 25</td>
+<td style="background-color: #BFBFBF"></td>
 </tr>
 </tbody>
 </table>
+
+
 <hr>
 </section>
 <section id="larger-palettes" class="level3">
@@ -577,13 +595,14 @@ Things to consider when visualising data
 <p>All charts should be made as simple as possible so that the message is easy to understand and interpret.</p>
 <p>If you do want to use additional colours you need to ensure that the chart is understandable without colour as no series with more than four colours will ever be fully accessible alone.</p>
 <p>For categorical data, we recommend the following extensions to the categorical palette. Once again, the ordering is important. If you’re making a chart in EES these are not default colours, so you will need to use the colour picker to specify them.</p>
-<table class="table">
+<table data-quarto-postprocess="true" class="table">
 <thead>
 <tr class="header">
-<th>Colour name</th>
-<th>Hex code</th>
-<th>RGB</th>
-<th>CYMK</th>
+<th data-quarto-table-cell-role="th">Colour Name</th>
+<th data-quarto-table-cell-role="th">Hex Code</th>
+<th data-quarto-table-cell-role="th">RGB</th>
+<th data-quarto-table-cell-role="th">CYMK</th>
+<th data-quarto-table-cell-role="th">Colour Example</th>
 </tr>
 </thead>
 <tbody>
@@ -592,39 +611,47 @@ Things to consider when visualising data
 <td>#12436D</td>
 <td>18, 67, 109</td>
 <td>36, 16, 0, 57</td>
+<td style="background-color: #12436D"></td>
 </tr>
 <tr class="even">
 <td>Turquoise</td>
 <td>#28A197</td>
 <td>40, 161, 151</td>
 <td>75, 0, 6, 37</td>
+<td style="background-color: #28A197"></td>
 </tr>
 <tr class="odd">
-<td>Dark pink</td>
+<td>Dark Pink</td>
 <td>#801650</td>
 <td>128, 22, 80</td>
 <td>0, 83, 38, 50</td>
+<td style="background-color: #801650"></td>
 </tr>
 <tr class="even">
 <td>Orange</td>
 <td>#F46A25</td>
 <td>244, 106, 37</td>
 <td>0, 57, 85, 4</td>
+<td style="background-color: #F46A25"></td>
 </tr>
 <tr class="odd">
-<td>Dark grey</td>
+<td>Dark Grey</td>
 <td>#3D3D3D</td>
 <td>61, 61, 61</td>
 <td>0, 0, 0, 76</td>
+<td style="background-color: #3D3D3D"></td>
 </tr>
 <tr class="even">
-<td>Light purple</td>
+<td>Light Purple</td>
 <td>#A285D1</td>
 <td>162, 133, 209</td>
 <td>22, 36, 0, 18</td>
+<td style="background-color: #A285D1"></td>
 </tr>
 </tbody>
 </table>
+
+
 <p>For larger palettes when using sequential data, we recommend using <a href="https://colorbrewer2.org/#type=sequential" target="_blank">ColorBrewer</a> to find the hex codes for multiple shades of a given hue.</p>
 <hr>
 
