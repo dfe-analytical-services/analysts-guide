@@ -424,7 +424,7 @@
     "href": "learning-development/r.html#quick-reference-lookup",
     "title": "R",
     "section": "Quick reference lookup",
-    "text": "Quick reference lookup\n\nIf you want a useful guide for R syntax or functions, then look no further than the R cheat sheets, these can be an invaluable point of reference. Below we’ve included a few particularly relevant ones:\n\nIntroduction to the RStudio environment\nBase R\nImporting data into R\ndplyr for data manipulation\nstringr for string manipulation\nRegex\nRMarkdown\nRShiny\nggplot2 for data visualisations\npurrr for applying functions"
+    "text": "Quick reference lookup\n\nIf you want a useful guide for R syntax or functions, then look no further than the R cheat sheets, these can be an invaluable point of reference. Below we’ve included a few particularly relevant ones:\n\nIntroduction to the RStudio environment\nBase R\ndplyr for data manipulation\nData import with the tidyverse\nstringr for string manipulation\nRegex\nRMarkdown\nRShiny\nggplot2 for data visualisations\npurrr for applying functions"
   },
   {
     "objectID": "learning-development/r.html#other-resources",
