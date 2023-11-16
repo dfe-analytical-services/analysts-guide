@@ -381,8 +381,9 @@ You must have done the following before a dashboard can be published (the statis
 
 - Push the new update branch created above
 - Verify all tests/checks pass on the pull request - fix if they don't
-- Get approval on GitHub Pull Request from appropriate reviewer (e.g. G7).
+- Get approval on GitHub Pull Request from appropriate reviewer (e.g. G7)
 - Complete the pull request to trigger the deploy
+  - Note that completing a pull request into the _main_ branch will be blocked until your PR is both approved and passes the automated tests
   - Deploys usually take between 5-30mins, check the GitHub Actions logs for progress
 - Test the functionality and data validity of the app once it's deployed to the live site.
 
