@@ -444,6 +444,75 @@ You must have done the following before a dashboard can be published (the statis
 * The underlying data for the dashboard must still be uploaded to EES in the tidy data format to be used in the table tool (check this using our [data screener](https://rsconnect/rsc/dfe-published-data-qa/))
 * Decide where you are going to provide the public the link to your dashboard. You can easily add a link to your EES publications. If you have a draft release that is going out on the same day as the dashboard, you can add the link into your EES draft while the shinyapps.io page is still private. This is because the link will not change when the dashboard is made public, the log-in screen will simply be removed.
 
+---
+
+## Procedure for a statistics (or statistics + development) update to your R-Shiny dashboard
+
+### 3-4 weeks before publication
+
+- Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk):
+  - and give us a planned publication date for the dashboard
+  - the contact details of the lead developer
+  - the contact details of the lead reviewer
+  - the contact details of the approver (G6)
+  - ask us to run a review & health check on your dashboard to make sure it's up to date with standards and is in a state to successfully deploy
+- Run an update of all R-packages used by the dashboard (`renv::update()`) to check that everything works as expected
+  - Once verified, merge this update into your main branch to update all packages on your live dashboard (this will help the publication deploy go quicker)
+
+### Adding general improvements not connected to new data
+
+- Create individual branches for specific improvements
+- Create / update UI tests for any new / changed functionality / behaviour
+- Merge these into a central development branch or into your main branch as each work item is completed
+
+### Prior to publication day
+
+- Create a new update branch on GitHub (branching from the most up to date version of your dashboard - i.e. either the main branch or the development branch if you've been making new updates on a development branch) where you intend to place your updates
+- Create a Pull Request between that branch and main (or development if you wish to test on development first)
+- Pull the new update branch into your local clone of the repo and add any new data and associated new functionality. Make the appropriate add / commits, but don't push this branch once you've got the new data in.
+- Run the local tests and record associated updates to UI tests caused by new data and/or functionality
+
+### Day of publication
+
+- Push the new update branch created above
+- Verify all tests/checks pass on the pull request - fix if they don't
+- Get approval on GitHub Pull Request from appropriate reviewer (e.g. G7)
+- Complete the pull request to trigger the deploy
+  - Note that completing a pull request into the _main_ branch will be blocked until your PR is both approved and passes the automated tests
+  - Deploys usually take between 5-30mins, check the GitHub Actions logs for progress
+- Test the functionality and data validity of the app once it's deployed to the live site.
+
+---
+
+## Procedure for a development only update to your R-Shiny dashboard
+
+### At beginning of the work
+
+- Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk):
+  - and give us an overview of planned developments for the dashboard
+  - the contact details of the lead developer
+  - the contact details of the lead reviewer
+  - the contact details of the approver (G6)
+  - ask us if it's necessary to run a review & health check on your dashboard to make sure it's up to date with standards and is in a state to successfully deploy
+- Run an update of all R-packages used by the dashboard (`renv::update()`) to check that everything works as expected
+
+### Adding general improvements not connected to new data
+
+- Create individual branches for specific improvements
+- Create / update UI tests for any new / changed functionality / behaviour
+- Merge these into a central development branch or into your main branch as each work item is completed
+
+### Day of publication
+
+- Create a Pull Request between your working branch and main (or development if you wish to test on development first)
+- Run the local tests and record associated updates to UI tests caused by new data and/or functionality
+- Verify all tests / checks pass on the pull request - fix if they don't
+- Get approval on GitHub Pull Request from appropriate reviewer (e.g. G7)
+- Complete the pull request to trigger the deploy
+  - Note that completing a pull request into the _main_ branch will be blocked until your PR is both approved and passes the automated tests
+  - Deploys usually take between 5-30mins, check the GitHub Actions logs for progress
+- Test the functionality and data validity of the app once it's deployed to the live site.
+
 --
 
 ## Standards to follow
