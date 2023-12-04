@@ -262,6 +262,8 @@ To set up a new app, send the above to [Statistics Development Team](mailto:stat
 - Run an update of all R-packages used by the dashboard (`renv::update()`) to check that everything works as expected
   - Once verified, merge this update into your main branch to update all packages on your live dashboard (this will help the publication deploy go quicker)
 
+---
+
 #### Adding general code changes not connected to new data
 
 ---
@@ -317,12 +319,12 @@ Note that wherever possible dashboard development updates should be done separat
 
 ---
 
-#### Adding general improvements not connected to new data
+#### Adding code changes
 
 ---
 
-- Create individual branches for specific improvements
-- Create / update UI tests for any new / changed functionality / behaviour
+- Create individual branches for specific areas of development
+- Create / update UI tests for any changes to functionality
 - Merge these into a central development branch or into your main branch as each work item is completed
 
 ---
