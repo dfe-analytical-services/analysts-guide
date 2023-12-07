@@ -91,3 +91,19 @@ You must have:
     tables <- sqlQuery(con, "SELECT * FROM INFORMATION_SCHEMA.TABLES")
     View(tables)
     ```
+
+
+------------------------------------------------------------------------
+
+# Pulling data into R studio from Databricks
+
+------------------------------------------------------------------------
+
+Once you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video that was orignally used in an ADA show and tell demonstrating two possible methods of how to do this. The recording is embedded below: 
+
+<div align="center">
+<iframe width="640" height="360" src="https://educationgovuk.sharepoint.com/sites/lvewp00086/_layouts/15/embed.aspx?UniqueId=e28e2a5d-8026-40a4-ace6-013358dbadba&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" allowfullscreen style="border:none;"></iframe>
+</div>
+
+A template of all of the code used in the above video can be found in the [ADA_RStudio_connect GitHub repo](https://github.com/dfe-analytical-services/ADA_RStudio_connect).
+
