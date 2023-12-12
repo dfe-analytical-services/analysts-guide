@@ -73,24 +73,9 @@ You must have:
 
         ![](../images/databricks-test-connection.png)
 
-        d.  Click the 'OK' button to exist the 'Test Results' window, then the 'OK' button in the 'Simba Spark ODBC Driver DSN Setup' window.
+        d.  Click the 'OK' button to exit the 'Test Results' window, then the 'OK' button in the 'Simba Spark ODBC Driver DSN Setup' window.
 
-5.  Connect through RStudio. Now the connection between our laptop and Databricks works we can use it to query data stored in Databricks from RStudio.
-
-    i)  Open RStudio, install the 'RODBC' package and load the 'RODBC' library.
-
-    ii) Create a connection variable by passing the 'Data Source Name' you gave to your ODBC connection to the odbcConnect() function. `conn <- obbcConnect("DatabricksSQL Warehouse")`
-
-6.  Query Data. You can now use your connection variable to send SQL queries to Databricks.
-
-    i)  Use the `sqlQuery()` function with the connection variable to see what data catalogues are available on DataBricks *Databricks uses the American spelling of 'catalog'.* ![](../images/databricks-catalogs-rstudio.png)
-    ii) Use the `sqlQuery(conn, "USE CATALOG preprod_catalog_p02")` command to tell Databricks which catalogue to use. *Ensure that you have the correct permissions for the catalogue first. If you don't you will need to contact the ADA team.*
-    iii) You can now send SQL queries like you would using any other database. To see information about all the tables you have access to you can query the INFORMATION_SCHEMA using the `"SELECT * FROM INFORMATION_SCHEMA.TABLES"` query like so;
-
-    ```         
-    tables <- sqlQuery(con, "SELECT * FROM INFORMATION_SCHEMA.TABLES")
-    View(tables)
-    ```
+5.  Connect through RStudio. Watch the below video and view the [ADA_RStudio_connect GitHub repo](https://github.com/dfe-analytical-services/ADA_RStudio_connect) for methods on connecting to Databricks and querying data from RStudio. 
 
 
 ------------------------------------------------------------------------
