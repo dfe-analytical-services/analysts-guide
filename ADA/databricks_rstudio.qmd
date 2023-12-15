@@ -65,7 +65,10 @@ You must have:
         a.  Enter a 'Data Source Name' and 'Description'. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio. *As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.*
         b.  Set the remaning options to the settings below.
             -   Enter the 'Server Hostname' for your cluster in the 'Host(s):' field (you noted this down in step 2).
+            -   In the Port section, remove the default number and use the Port number you noted in step 2. 
+            -   Set the Authentication Mechanism to 'User Name and Password'.
             -   Enter the word 'token' into the 'User Name:' field, then enter your 'Databricks access token' in the 'Password:' field.
+            -   Change the Thrift Transport option to HTTP.
             -   Click the 'HTTP Options...' button and enter the 'HTTP Path' of your Databricks cluster, then click 'Okay'.
             -   Click the 'SSL Options...' button and tick the 'Enable SSL' box, then click the 'OK' button.
             -   ![](../images/odbc-driver-settings.png)
