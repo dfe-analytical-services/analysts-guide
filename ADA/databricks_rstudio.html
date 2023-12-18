@@ -402,6 +402,7 @@ cookieconsent.run({
   <ul>
   <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
   <li><a href="#downloading-an-odbc-driver" id="toc-downloading-an-odbc-driver" class="nav-link" data-scroll-target="#downloading-an-odbc-driver">Downloading an ODBC driver</a></li>
+  <li><a href="#pulling-data-into-r-studio-from-databricks" id="toc-pulling-data-into-r-studio-from-databricks" class="nav-link" data-scroll-target="#pulling-data-into-r-studio-from-databricks">Pulling data into R studio from Databricks</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -476,7 +477,10 @@ The following instructions set up an ODBC connection between your laptop and you
 <li>Set the remaning options to the settings below.
 <ul>
 <li>Enter the ‘Server Hostname’ for your cluster in the ‘Host(s):’ field (you noted this down in step 2).</li>
+<li>In the Port section, remove the default number and use the Port number you noted in step 2.</li>
+<li>Set the Authentication Mechanism to ‘User Name and Password’.</li>
 <li>Enter the word ‘token’ into the ‘User Name:’ field, then enter your ‘Databricks access token’ in the ‘Password:’ field.</li>
+<li>Change the Thrift Transport option to HTTP.</li>
 <li>Click the ‘HTTP Options…’ button and enter the ‘HTTP Path’ of your Databricks cluster, then click ‘Okay’.</li>
 <li>Click the ‘SSL Options…’ button and tick the ‘Enable SSL’ box, then click the ‘OK’ button.</li>
 <li><img src="../images/odbc-driver-settings.png" class="img-fluid"></li>
@@ -485,23 +489,29 @@ The following instructions set up an ODBC connection between your laptop and you
 </ol>
 <p><img src="../images/databricks-test-connection.png" class="img-fluid"></p>
 <ol start="4" type="a">
-<li>Click the ‘OK’ button to exist the ‘Test Results’ window, then the ‘OK’ button in the ‘Simba Spark ODBC Driver DSN Setup’ window.</li>
+<li>Click the ‘OK’ button to exit the ‘Test Results’ window, then the ‘OK’ button in the ‘Simba Spark ODBC Driver DSN Setup’ window.</li>
 </ol></li>
 </ol></li>
-<li><p>Connect through RStudio. Now the connection between our laptop and Databricks works we can use it to query data stored in Databricks from RStudio.</p>
-<ol type="i">
-<li><p>Open RStudio, install the ‘RODBC’ package and load the ‘RODBC’ library.</p></li>
-<li><p>Create a connection variable by passing the ‘Data Source Name’ you gave to your ODBC connection to the odbcConnect() function. <code>conn &lt;- obbcConnect("DatabricksSQL Warehouse")</code></p></li>
-</ol></li>
-<li><p>Query Data. You can now use your connection variable to send SQL queries to Databricks.</p>
-<ol type="i">
-<li>Use the <code>sqlQuery()</code> function with the connection variable to see what data catalogues are available on DataBricks <em>Databricks uses the American spelling of ‘catalog’.</em> <img src="../images/databricks-catalogs-rstudio.png" class="img-fluid"></li>
-<li>Use the <code>sqlQuery(conn, "USE CATALOG preprod_catalog_p02")</code> command to tell Databricks which catalogue to use. <em>Ensure that you have the correct permissions for the catalogue first. If you don’t you will need to contact the ADA team.</em></li>
-<li>You can now send SQL queries like you would using any other database. To see information about all the tables you have access to you can query the INFORMATION_SCHEMA using the <code>"SELECT * FROM INFORMATION_SCHEMA.TABLES"</code> query like so;</li>
+<li><p>Connect through RStudio. Watch the below video and view the <a href="https://github.com/dfe-analytical-services/ADA_RStudio_connect" target="_blank">ADA_RStudio_connect GitHub repo</a> for methods on connecting to Databricks and querying data from RStudio.</p></li>
 </ol>
-<pre><code>tables &lt;- sqlQuery(con, "SELECT * FROM INFORMATION_SCHEMA.TABLES")
-View(tables)</code></pre></li>
-</ol>
+<hr>
+</section>
+<section id="pulling-data-into-r-studio-from-databricks" class="level1">
+<h1>Pulling data into R studio from Databricks</h1>
+<hr>
+<p>Once you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video demonstrating two possible methods of how to do this. The recording is embedded below:</p>
+<div data-align="center">
+<iframe src="https://educationgovuk.sharepoint.com/sites/lvewp00086/_layouts/15/embed.aspx?UniqueId=5fad039e-a763-40c8-8ea0-403aea712f4c&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen="" title="ADA_Rstudio_2.mp4">
+</iframe>
+</div>
+<p>A template of all of the code used in the above video can be found in the <a href="https://github.com/dfe-analytical-services/ADA_RStudio_connect" target="_blank">ADA_RStudio_connect GitHub repo</a>.</p>
+<p>Key takeaways from the video and example code:</p>
+<ul>
+<li>The main change here compared to connecting to SQL databases is the connection method. The installation and setup of the ODBC driver are all done pre-code, and the only part of the code that will need updating is your connection (usually your con variable).</li>
+<li>If your existing code was pulling in tables from SQL via the <code>RODBC</code> package or the <code>dbplyr</code> package, then this code should in theory run with minimal edits needed.</li>
+<li>If you were writing tables back into SQL from R, this is where your code may need the most edits.</li>
+<li>If your code is stored in a repo where multiple analysts contribute to and run the code, in order for the code to run for everyone you will all need to individually install the ODBC driver and <strong>give it the same name</strong> so that when the <code>con</code> variable is called, the name used in the code matches everyone’s individual driver and runs for everyone. If this is the case, please <strong>add a note about this to your repo’s readme file</strong> to help your future colleagues.</li>
+</ul>
 
 
 </section>
