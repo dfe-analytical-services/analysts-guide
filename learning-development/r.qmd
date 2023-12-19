@@ -34,7 +34,6 @@ Download R (language) and RStudio (IDE) from the DfE software center. We also re
 
 - There is also the [DfE R training guide](https://dfe-analytical-services.github.io/r-training-course/){target="_blank" rel="noopener noreferrer"}, which is a great starting point and reference to guide you through how to get started using R and RStudio.
 
-
 - As an alternative, with a number of options for beginners to R, [RStudio Education](https://education.rstudio.com/learn/beginner/){target="_blank" rel="noopener noreferrer"} provide a variety of materials to suit different learning styles.
 
 ---
@@ -639,11 +638,33 @@ Once it's installed close and reopen RStudio and run `renv::restore()` again - i
 
 ---
 
-Packages are generally downloaded from CRAN using one of two methods: wininet or curl. Since renv version 0.17, analysts potentially hit an error associated with renv defaulting to wininet, whilst R defaults to curl, causing package downloads to fail. To fix this issue, analysts should change their default download method with renv to be curl. This can be done across all R-projects on your machine, by setting the default in your global R environment file. To do this, open up a bash terminal and enter the following command:
+Packages are generally downloaded from CRAN using one of two methods: wininet or curl. Since renv version 0.17, analysts potentially hit an error associated with renv defaulting to wininet, whilst R defaults to curl, causing package downloads to fail. To fix this issue, analysts should change their default download method with renv to be curl. This can be done across all R-projects on your machine, by setting the default in your global R environment file (.Renviron). If you don't know where to find your .Renviron file, then you can run the command `usethis::edit_r_environ()` (you may have to install the `usethis` package first) to open it in R-Studio. Once you've got it open, then add the following line to the .Renviron file:
 
-`echo 'RENV_DOWNLOAD_METHOD = "curl")' >> ~/.Renviron`
+`RENV_DOWNLOAD_METHOD = "curl"`
 
 Then restart R-Studio and downloads with renv should now succeed.
+
+---
+
+### shinytest2 - Invalid path to Chrome error message
+
+---
+
+If when using shinytest2, you get the following error, then you'll need to set an environment variable to tell R where to find Chrome.
+
+`Error in initialize(...) : Invalid path to Chrome`
+
+To set the environment variable, you'll need to edit your .Renviron file. This will fix the error across all R projects. If you don't know where to find the .Renviron file, you can use the `usethis` package to open it in R-Studio using `usethis::edit_r_environ()`. Then set the `CHROMOTE_CHROME` environment variable to the path to `chrome.exe` on your computer. As an example it should look something like this:
+
+`CHROMOTE_CHROME = "C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe"`
+
+Note: remember to give the path using forward-slashes rather than back-slashes.
+
+Once you've added that and saved the .Renviron file, restart your R session and that should then be loaded and shinytest2 will run. You can double check that it's set the environment variable properly by running the following command:
+
+`Sys.getenv("CHROMOTE_CHROME")`
+
+That command should return the path that you entered for Chrome.
 
 ---
 
