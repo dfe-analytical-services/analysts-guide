@@ -473,6 +473,7 @@ cookieconsent.run({
   <li><a href="#automatic-logging" id="toc-automatic-logging" class="nav-link" data-scroll-target="#automatic-logging">Automatic logging</a></li>
   <li><a href="#cant-find-make-error" id="toc-cant-find-make-error" class="nav-link" data-scroll-target="#cant-find-make-error">Can’t find make error</a></li>
   <li><a href="#packages-not-downloading-due-to-wininet-error-renv-0.17" id="toc-packages-not-downloading-due-to-wininet-error-renv-0.17" class="nav-link" data-scroll-target="#packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</a></li>
+  <li><a href="#shinytest2---invalid-path-to-chrome-error-message" id="toc-shinytest2---invalid-path-to-chrome-error-message" class="nav-link" data-scroll-target="#shinytest2---invalid-path-to-chrome-error-message">shinytest2 - Invalid path to Chrome error message</a></li>
   </ul></li>
   <li><a href="#using-r-with-ada-databricks" id="toc-using-r-with-ada-databricks" class="nav-link" data-scroll-target="#using-r-with-ada-databricks">Using R with ADA / Databricks</a></li>
   </ul>
@@ -1095,9 +1096,22 @@ mutated &lt;- mutate(mtcars, new_var = wt ** 2)
 <section id="packages-not-downloading-due-to-wininet-error-renv-0.17" class="level3">
 <h3 class="anchored" data-anchor-id="packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</h3>
 <hr>
-<p>Packages are generally downloaded from CRAN using one of two methods: wininet or curl. Since renv version 0.17, analysts potentially hit an error associated with renv defaulting to wininet, whilst R defaults to curl, causing package downloads to fail. To fix this issue, analysts should change their default download method with renv to be curl. This can be done across all R-projects on your machine, by setting the default in your global R environment file. To do this, open up a bash terminal and enter the following command:</p>
-<p><code>echo 'RENV_DOWNLOAD_METHOD = "curl")' &gt;&gt; ~/.Renviron</code></p>
+<p>Packages are generally downloaded from CRAN using one of two methods: wininet or curl. Since renv version 0.17, analysts potentially hit an error associated with renv defaulting to wininet, whilst R defaults to curl, causing package downloads to fail. To fix this issue, analysts should change their default download method with renv to be curl. This can be done across all R-projects on your machine, by setting the default in your global R environment file (.Renviron). If you don’t know where to find your .Renviron file, then you can run the command <code>usethis::edit_r_environ()</code> (you may have to install the <code>usethis</code> package first) to open it in R-Studio. Once you’ve got it open, then add the following line to the .Renviron file:</p>
+<p><code>RENV_DOWNLOAD_METHOD = "curl"</code></p>
 <p>Then restart R-Studio and downloads with renv should now succeed.</p>
+<hr>
+</section>
+<section id="shinytest2---invalid-path-to-chrome-error-message" class="level3">
+<h3 class="anchored" data-anchor-id="shinytest2---invalid-path-to-chrome-error-message">shinytest2 - Invalid path to Chrome error message</h3>
+<hr>
+<p>If when using shinytest2, you get the following error, then you’ll need to set an environment variable to tell R where to find Chrome.</p>
+<p><code>Error in initialize(...) : Invalid path to Chrome</code></p>
+<p>To set the environment variable, you’ll need to edit your .Renviron file. This will fix the error across all R projects. If you don’t know where to find the .Renviron file, you can use the <code>usethis</code> package to open it in R-Studio using <code>usethis::edit_r_environ()</code>. Then set the <code>CHROMOTE_CHROME</code> environment variable to the path to <code>chrome.exe</code> on your computer. As an example it should look something like this:</p>
+<p><code>CHROMOTE_CHROME = "C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe"</code></p>
+<p>Note: remember to give the path using forward-slashes rather than back-slashes.</p>
+<p>Once you’ve added that and saved the .Renviron file, restart your R session and that should then be loaded and shinytest2 will run. You can double check that it’s set the environment variable properly by running the following command:</p>
+<p><code>Sys.getenv("CHROMOTE_CHROME")</code></p>
+<p>That command should return the path that you entered for Chrome.</p>
 <hr>
 </section>
 </section>
