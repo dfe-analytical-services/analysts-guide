@@ -95,13 +95,14 @@ However, you can still run the full suite of git commands by simply typing them 
 
 ## Tips for using Git
 
----
 
 ### Commits
 
 ---
 
-The best advice is to just commit regularly, like you would if you were saving a word document. Especially when you have working code or have just added something new. Each commit is a saved point in time that you can easily roll back to if needed. If you want to know more about how to do this, see the [reverting a commit](#reverting-a-commit) section below. 
+The best advice is to just commit regularly, like you would if you were saving a word document.
+
+Each commit is a saved point in time that you can easily roll back to if needed. If you want to know more about how to do this, see the [reverting a commit](#reverting-a-commit) section below. 
 
 ---
 
@@ -111,12 +112,14 @@ The best advice is to just commit regularly, like you would if you were saving a
 
 The best advice for commit messages is to keep them clear, simple and brief. 
 
-It is recommended to use the imperative tone e.g. 'Add fix for joining pupil table' rather than 'Added' or 'Adding'. Other general recommendations include:
+It is recommended to use the imperative tone e.g. `Add fix for joining pupil table` rather than `Added ...` or `Adding ...`. Other general recommendations include:
 
 - Keep it short (max 150 characters if possible) - committing regularly can help with this
-- Explain what the change is and why the change was needed. You generally don’t need to go into the detail of how the change was made as this should be visible from the code (e.g., 'Add x to prevent y' or 'Add x so that y can z')
-- Don’t assume the reviewer understands what the original problem was (would someone else looking at it, or even yourself in a week’s time know what the commit was doing)
-- Capitalise the first letter and don’t end with punctuation, it's unnecessary
+- Explain what the change is and why the change was needed. You generally don’t need to go into the detail of how the change was made as this should be visible from the code
+   - e.g., `Add x to prevent y` or `Add x so that y can z`
+- Don’t assume the reviewer understands what the original problem was
+   - would someone else looking at it, or even yourself in a week’s time know what the commit was doing?
+- Capitalise the first letter and don’t end with punctuation, it is unnecessary
 
 If you're struggling to know what to write, remember the reader (including future you) is unlikely to have much context when looking through the version log to find the right point in time, try considering the following:
 
