@@ -414,8 +414,8 @@ cookieconsent.run({
   <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources">Other resources</a></li>
   <li><a href="#tips-for-using-git" id="toc-tips-for-using-git" class="nav-link" data-scroll-target="#tips-for-using-git">Tips for using Git</a>
   <ul class="collapse">
-  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
   <li><a href="#commits" id="toc-commits" class="nav-link" data-scroll-target="#commits">Commits</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
   <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link" data-scroll-target="#pull-requests">Pull requests</a></li>
   <li><a href="#merging-a-branch-into-another-one" id="toc-merging-a-branch-into-another-one" class="nav-link" data-scroll-target="#merging-a-branch-into-another-one">Merging a branch into another one</a></li>
   <li><a href="#cherry-picking" id="toc-cherry-picking" class="nav-link" data-scroll-target="#cherry-picking">Cherry picking</a></li>
@@ -523,6 +523,59 @@ Guidance and tips for version control with Git
 </section>
 <section id="tips-for-using-git" class="level2">
 <h2 class="anchored" data-anchor-id="tips-for-using-git">Tips for using Git</h2>
+<section id="commits" class="level3">
+<h3 class="anchored" data-anchor-id="commits">Commits</h3>
+<hr>
+<p>The best advice is to just commit regularly, like you would if you were saving a word document.</p>
+<p>Each commit is a saved point in time that you can easily roll back to if needed. If you want to know more about how to do this, see the <a href="#reverting-a-commit">reverting a commit</a> section below.</p>
+<hr>
+<section id="commit-messages" class="level4">
+<h4 class="anchored" data-anchor-id="commit-messages">Commit messages</h4>
+<hr>
+<p>The best advice for commit messages is to keep them clear, simple and brief.</p>
+<p>It is recommended to use the imperative tone e.g.&nbsp;<code>Add fix for joining pupil table</code> rather than <code>Added ...</code> or <code>Adding ...</code>. Other general recommendations include:</p>
+<ul>
+<li>Keep it short (max 150 characters if possible) - committing regularly can help with this</li>
+<li>Explain what the change is and why the change was needed. You generally don’t need to go into the detail of how the change was made as this should be visible from the code
+<ul>
+<li>e.g., <code>Add x to prevent y</code> or <code>Add x so that y can z</code></li>
+</ul></li>
+<li>Don’t assume the reviewer understands what the original problem was
+<ul>
+<li>would someone else looking at it, or even yourself in a week’s time know what the commit was doing?</li>
+</ul></li>
+<li>Capitalise the first letter and don’t end with punctuation, it is unnecessary</li>
+</ul>
+<p>If you’re struggling to know what to write, remember the reader (including future you) is unlikely to have much context when looking through the version log to find the right point in time, try considering the following:</p>
+<ul>
+<li>Why have I made these changes?</li>
+<li>What effect have my changes made?</li>
+<li>Why was the change needed?</li>
+<li>What are the changes in reference to?</li>
+</ul>
+<p>Never leave a commit message blank. The information you include could really pay off later when you need to remember what you worked on, or share it with other people.</p>
+<p>There are specific conventions outlined in <a href="https://www.conventionalcommits.org/en/v1.0.0/" target="_blank">conventional commits</a>, that are worth familiarising yourself as you begin to use Git more. Following these conventions will help you write messages that are consistent with <a href="https://github.blog/2023-01-25-100-million-developers-and-counting/" target="_blank">over 100 million other Git users</a> around the world.</p>
+<hr>
+</section>
+<section id="in-rstudio" class="level4">
+<h4 class="anchored" data-anchor-id="in-rstudio">In RStudio</h4>
+<hr>
+<p>Once you are happy with changes and want them to be in the latest version of your branch for all of your team to see, you can push “commits” up.</p>
+<ul>
+<li>When you make a change to a file, this will pop up in the “Git” window of your R console. Select the files you want to commit by ticking the “staged” box next to them.</li>
+</ul>
+<p><img src="../images/git_stage.png" class="img-fluid"></p>
+<ul>
+<li>This will bring up a new window. Add a comment describing your additions/changes, and click commit. You will see all the staged files disappear. Then click “Push” to push the committed files up to the online repository for all to use.</li>
+</ul>
+<p><img src="../images/git_push.png" class="img-fluid"></p>
+<ul>
+<li>When another member of your team makes a commit and you want to pull this into your local area to check and work off the latest version, click on the blue “pull” button.</li>
+</ul>
+<p><img src="../images/pull_git.png" class="img-fluid"></p>
+<hr>
+</section>
+</section>
 <section id="branches" class="level3">
 <h3 class="anchored" data-anchor-id="branches">Branches</h3>
 <hr>
@@ -541,25 +594,6 @@ Guidance and tips for version control with Git
 <li><p>When working on your project, make sure that you are in the right branch. You can check this by navigating to the “Git” tab in RStudio as demonstrated below.</p></li>
 </ul>
 <p><img src="../images/select_branch.png" class="img-fluid"></p>
-<hr>
-</section>
-<section id="commits" class="level3">
-<h3 class="anchored" data-anchor-id="commits">Commits</h3>
-<hr>
-<p>Once you are happy with changes and want them to be in the latest version of your branch for all of your team to see, you can push “commits” up.</p>
-<ul>
-<li>When you make a change to a file, this will pop up in the “Git” window of your R console. Select the files you want to commit by ticking the “staged” box next to them.</li>
-</ul>
-<p><img src="../images/git_stage.png" class="img-fluid"></p>
-<ul>
-<li>This will bring up a new window. Add a comment describing your additions/changes, and click commit. You will see all the staged files disappear. Then click “Push” to push the committed files up to the online repository for all to use.</li>
-</ul>
-<p><img src="../images/git_push.png" class="img-fluid"></p>
-<ul>
-<li>When another member of your team makes a commit and you want to pull this into your local area to check and work off the latest version, click on the blue “pull” button.</li>
-</ul>
-<p><img src="../images/pull_git.png" class="img-fluid"></p>
-<p>Committing regularly is strongly recommended as each commit is a saved point in time that you can easily roll back to if needed. If you want to know more about how to do this, see the <a href="#reverting-a-commit">reverting a commit</a> section below.</p>
 <hr>
 </section>
 <section id="pull-requests" class="level3">
