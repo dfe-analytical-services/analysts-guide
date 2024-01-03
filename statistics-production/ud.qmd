@@ -78,7 +78,7 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 
 ::: {.table-responsive}
 
-| time_period | ... | country_name | region_code | region_name | gender | school_phase | number_children | percent_children |
+| time_period | ... | country_name | region_code | region_name | gender | school_phase | children_count  | children_percent |
 |-------------|-----|--------------|-------------|-------------|--------|--------------|-----------------|------------------|
 | 202021      | ... | England      |             |             | Total  | Total        | 1000            | 100.000          |
 | 202021      | ... | England      |             |             | Male   | Total        | 490             | 49.000           |
@@ -110,13 +110,13 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 |------------------|-----------|--------------|--------------------|----------------|--------------|-------------|------------------------|
 | gender           | Filter    | Gender       |                    |                |              | Filter by pupil gender |             |
 | school_phase     | Filter    | School phase |                    |                |              | Filter by the phase of the school |  |
-| number_children  | Indicator | Number of children |              |                |              |             |                        |
-| percent_children | Indicator | Percentage of children |          | %              | 1            |             |                        |
+| children_count  | Indicator | Number of children |              |                |              |             |                        |
+| children_percent | Indicator | Percentage of children |          | %              | 1            |             |                        |
 
 :::
 
 <div class="alert alert-dismissible alert-info">
-Note that for the percent_children column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users' needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.
+Note that for the children_percent column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users' needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.
 </div>
 
 Further information on all of the requirements for appropriately prepared data files follow in the sections below.
@@ -191,7 +191,7 @@ A single filter column should contain all the possible filter values for a singl
 
 In general, analysts should use a separate column for each filter in accordance with tidy data principles. This is especially the case where data are presented for combinations of filters (i.e. cross tabulations). User testing has shown this to be the most effective way to structure data for the best user experience with the table tool.
 
-| ... | FSM       | Sex       | number_pupils |
+| ... | FSM       | Sex       | pupil_count   |
 |-----|-----------|-----------|---------------|
 | ... | Total     | Total     | 1209          |
 | ... | Total     | Female    | 567           |
@@ -207,7 +207,7 @@ Where data is broken down across combinations of different filters, teams should
 
 A possible exception to the above structure is where no filter combinations/cross-tabulations are present in a given data file. For example, this may be the case if a publication requires a highlights level table that shows a result across breakdowns of sex (Male, Female, etc) and Free School Meal status (FSM, non-FSM), but not combinations of the two (Female and FSM, Male and FSM, Female and non-FSM and Male and non-FSM). In this case, analysts may choose to use a overarching collated filter columns named breakdown_topic and breakdown as follows:
 
-| ... | breakdown_topic | breakdown | number_pupils |
+| ... | breakdown_topic | breakdown | pupil_count |
 |-----|-----------------|-----------|---------------|
 | ... | Total           | Total     | 1209          |
 | ... | Sex             | Female    | 567           |
@@ -243,7 +243,7 @@ The number of indicators should be kept to a minimum, whilst maintaining differe
 
 ::: {.table-responsive}
 
-| ... | number_pupils_passing_95 | number_pupils_passing_94 | percentage_pupils_passing_95 | percentage_pupils_passing_94 |
+| ... | pupil_count_passing_95 | pupil_count_passing_94 | pupil_percent_passing_95 | pupil_percent_passing_94 |
 |-----|--------------------------|--------------------------|--------------------------|--------------------------|
 | ... |  567                 |    642                      |  45.7                      |    51.8                      |
 
@@ -251,7 +251,7 @@ The number of indicators should be kept to a minimum, whilst maintaining differe
 
 Creating a tidy form of this data would look something more like this:
 
-| ... | grade_range | number_pupils | percentage_pupils |
+| ... | grade_range | pupil_count | pupil_percent |
 |-----|--------------------------|--------------------------|--------------------------|
 | ... | 9 to 5                   |  567                     | 45.7                     |
 | ... | 9 to 4                   | 642                      | 51.8                     |
@@ -502,8 +502,8 @@ Each row represents a column in the data file.
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|---|
 | gender | Filter | Gender | | | | Filter by pupil gender | |
 | school_phase | Filter | School phase | | | | Filter by the phase of the school | |
-| number_children | Indicator | Number of children | | | | | |
-| percent_children | Indicator | Percentage of children | | % | 1 | | |
+| children_count | Indicator | Number of children | | | | | |
+| children_percent | Indicator | Percentage of children | | % | 1 | | |
 
 :::
 
@@ -1085,10 +1085,10 @@ Many of our publications contain a large number of indicators. To improve the ex
 | col_name | col_type | label | indicator_grouping | indicator_unit | filter_hint | filter_grouping_column |
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|
 | nc_year | Filter | NC Year | | | Filter by national curriculum year | |
-| admissions | Indicator | Number of admissions | **Admissions** | | | |
-| applications | Indicator | Number of applications received | **Applications** | | | |
-| online_apps | Indicator | Number of online applications | **Applications** | | | |
-| online_apps_% | Indicator | Percentage of online applications | **Applications** | | | |
+| admissions_count | Indicator | Number of admissions | **Admissions** | | | |
+| applications_count | Indicator | Number of applications received | **Applications** | | | |
+| applications_online_count | Indicator | Number of online applications | **Applications** | | | |
+| applications_online_percent | Indicator | Percentage of online applications | **Applications** | | | |
 
 :::
 
