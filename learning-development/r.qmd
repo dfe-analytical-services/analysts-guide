@@ -654,9 +654,13 @@ If when using shinytest2, you get the following error, then you'll need to set a
 
 `Error in initialize(...) : Invalid path to Chrome`
 
+First step to resolve this is to set the path to chrome.exe (the Chrome application file itself where you've installed it) via the console for the current session. Set the `CHROMOTE_CHROME` environment variable to the path to the chrome.exe file on your computer. As an example it should look something like this: 
+
+`Sys.setenv(CHROMOTE_CHROME = "C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe")`
+
 To set the environment variable, you'll need to edit your .Renviron file. This will fix the error across all R projects. If you don't know where to find the .Renviron file, you can use the `usethis` package to open it in R-Studio using `usethis::edit_r_environ()`. Then set the `CHROMOTE_CHROME` environment variable to the path to `chrome.exe` on your computer. As an example it should look something like this:
 
-`CHROMOTE_CHROME = "C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe"`
+`CHROMOTE_CHROME="C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe"`
 
 Note: remember to give the path using forward-slashes rather than back-slashes.
 
