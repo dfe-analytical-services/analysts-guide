@@ -502,14 +502,47 @@ Each test should produce one "expected results" JSON file. You can track particu
 For example, the [SCAP LA school places scorecards app](https://github.com/dfe-analytical-services/la-school-places-scorecards/blob/main/tests/shinytest/UI_tests.R) has tests that check that the app functions as expected when different combinations of filters are selected.
 
 Each test is separated out by comments, clearly stating what is being tested.
- - **app$setInputs()** tells the UI test to select an input in the app
- - **app$snapshot()** tells the UI test which outputs to capture (i.e. which outputs you'd expect to change and want to test)
+ - `app$setInputs()` tells the UI test to select an input in the app
+ - `app$snapshot()` tells the UI test which outputs to capture (i.e. which outputs you'd expect to change and want to test)
 
 ![](../images/ui_test.PNG)
 
 The expected outputs are saved in a [UI_tests-expected](https://github.com/dfe-analytical-services/la-school-places-scorecards/tree/main/tests/shinytest/UI_tests-expected) folder, and every time you run a UI test, the outputs will be compared to these expected snapshots.
 
 An example of a basic shiny test to check that your app loads up correctly can be found in our [shiny template repo](https://github.com/dfe-analytical-services/shiny-template).
+
+---
+
+#### Migration to shinytest2
+
+---
+
+The shinytest package has been superceded by the [shinytest2 package](https://rstudio.github.io/shinytest2/). If you already have shinytest UI tests in place for your dashboard, there is a function available to migrate these tests for you so that you do not have to rewrite them all yourself. 
+
+There is [guidance on migrating to shinytest2](https://rstudio.github.io/shinytest2/articles/z-migration.html) available. To complete the migration, run `shinytest2::migrate_from_shinytest(PATH_TO_APP)`, making sure to include the full filepath. The function will search for your "tests" folder, and will then look inside the folder for any scripts containing tests. A new `testthat` folder will be automatically created, containing the code that runs your tests, as well as the snapshots generated when your tests are run. 
+
+There are a couple of potential issues that you may run into:
+
+**Chromote**
+
+Shinytest2 makes use of the Chromote package, which needs to connect to your local instance of Google Chrome. Sometimes your copy of Chrome might be installed in a different place to where Chromote expects to find it, which means that your tests will not be able to run. There is information on how to resolve this issue [in the Tips for Using R section](../learning-development/r.html#shinytest2---invalid-path-to-chrome-error-message)
+
+**Formatting of line endings**
+
+The migration function will only work if specific line endings are used in your code. If you receive an error that looks like this, then you may be having this issue:
+
+``` 
+Error in parse(text = test_text) : <text>:21:1: unexpected input
+20: app$snapshot()
+21: 
+    ^
+```
+
+You can modify the type of line endings used in your test code by going to `Tools > Global Options > Code` inside RStudio. In the "Saving" tab, there is a drop down box called "Line Ending Conversion". You need to change this to "Posix (LF)" as in the image below:
+
+![](../images/modify_line_endings.PNG)
+
+You should then save your test script, and re-run the `shinytest2::migrate_from_shinytest(PATH_TO_APP)` command. 
 
 ---
 
