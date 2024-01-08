@@ -706,11 +706,13 @@ The Central Statistics Unit has a number of analysts experience with R Shiny das
 
 ---
 
+By using the official DfE R-Shiny template and the dfeshiny package (and keeping pace with updates), teams will be able to create a dashboard that conforms to a standard DfE styling.
+
 All dashboards should have a link to the source code, and information about who to contact for feedback/issues. You should be familiar with and follow the [gov.uk style guide](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style) as appropriate.
 
 Teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. Be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
 
-Charts using ggplot2 and plotly can take custom palettes using the `scale_fill_manual()` function, e.g. below:
+Charts using ggplot2 can take custom palettes using the `scale_fill_manual()` function, e.g. below:
 
 ```
 # Create colour palette using recommended colours (based on gov.uk design system)
@@ -732,13 +734,7 @@ ggplot(aes(y=value, x="",
 
 ```
 
-Further examples are given on the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page.
-
-You can use in-line CSS to make these style changes, or make edits to the style sheet. Editing the style sheet is a neater solution if you want to apply changes across your app, and keeps your UI code clean. You can find out how styles are configured by running your app, right clicking and selecting "Inspect" to view the element you wish to change. You can then find these lines in the CSS stylesheet and change a number of things including fonts, font colours and background colours.
-
-The [SCAP LA school places scorecards app](https://department-for-education.shinyapps.io/la-school-places-scorecards){target="_blank" rel="noopener noreferrer"} is one example of a public facing dashboard that meets these styling requirements.
-
-![](../images/styling.PNG)
+Further examples are given on the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page. In addition, we recommend the `ggiraph` package for rendering plots.
 
 ---
 
