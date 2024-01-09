@@ -109,6 +109,7 @@ website:
         contents: 
           - ADA/ada.qmd
           - ADA/databricks_rstudio.qmd
+          - ADA/databricks_excel.qmd
 
 format:
   html:

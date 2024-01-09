@@ -1,92 +1,93 @@
 ---
-  title: "Setup Databricks with RStudio"
+  title: "Setup Databricks with Excel"
 ---
   
   <p class="text-muted">The following instructions set up an ODBC connection between your laptop and your DataBricks cluster. Once this connection is set up, Databricks data can then be imported into Microsoft Excel via PowerQuery.</p>
     
-    ------------------------------------------------------------------------
+------------------------------------------------------------------------
     
-    # Pre-requisites
+# Pre-requisites
+  
+------------------------------------------------------------------------
     
-    ------------------------------------------------------------------------
+You must have:
     
-    You must have:
-    
-    -   Access to Databricks
+  -   Access to Databricks
   -   Access to a SQL Warehouse on DataBricks
   -   Microsoft Excel
   
-  ------------------------------------------------------------------------
+------------------------------------------------------------------------
     
-    # Downloading an ODBC driver
+# Downloading an ODBC driver
     
-    ------------------------------------------------------------------------
+------------------------------------------------------------------------
     
-    Note that if you have already downloaded and set up an ODBC driver to connect Databricks to RStudio, then you do not need to repeat these steps to connect to Excel, and can skip to the next section.
+Note that if you have already downloaded and set up an ODBC driver to connect Databricks to RStudio, then you do not need to repeat these steps to connect to Excel, and can skip to the next section.
     
-    1.  Install the 'Simba Spark ODBC' driver from the software centre.
+1.  Install the 'Simba Spark ODBC' driver from the software centre.
   
-  i)  Open the Software Centre via the start menu.
+    i)  Open the Software Centre via the start menu.
 
-ii) In the 'Applications' tab, click 'Simba Spark ODBC Driver 64-bit'. ![](../images/databricks-software-centre.png)
+    ii) In the 'Applications' tab, click 'Simba Spark ODBC Driver 64-bit'. ![](../images/databricks-software-centre.png)
 
-iii) Click install.
+    iii) Click install.
 
 2.  Get connection details for the SQL Warehouse from Databricks. To set up the connection you will need a few details from a SQL Warehouse within DataBricks.
 
-i)  Login to [Databricks](https://adb-6882499576863257.17.azuredatabricks.net/?o=6882499576863257)
+    i)  Login to [Databricks](https://adb-6882499576863257.17.azuredatabricks.net/?o=6882499576863257)
 
-ii) Click on the 'SQL Warehouses' tab in the sidebar. ![](../images/databricks-SQL-warehouses.png)
+    ii) Click on the 'SQL Warehouses' tab in the sidebar. ![](../images/databricks-SQL-warehouses.png)
 
-iii) Click on the name of the warehouse you want to connect to, and click the 'connection details' tab.
+    iii) Click on the name of the warehouse you want to connect to, and click the 'connection details' tab.
 
-iv) Make a note of the 'Server hostname', 'Port', and 'HTTP Path'.
+    iv) Make a note of the 'Server hostname', 'Port', and 'HTTP Path'.
 
 3.  Get a personal access token from Databricks for authentication.
 
-i)  In Databricks, click on your email address in the top right corner, then click 'User settings'.
+    i)  In Databricks, click on your email address in the top right corner, then click 'User settings'.
 
-ii) Go to the 'Developer' tab in the side bar. Next to 'Access tokens', click the 'Manage' button. ![](../images/databricks-access-tokens.png)
+    ii) Go to the 'Developer' tab in the side bar. Next to 'Access tokens', click the 'Manage' button. ![](../images/databricks-access-tokens.png)
 
-iii) Click the 'Generate new token' button.
+    iii) Click the 'Generate new token' button.
 
-iv) Name the token, then click 'Generate'. *Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate.*
+    iv) Name the token, then click 'Generate'. *Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate.*
   
-  v)  Make a note of the 'Databricks access token' it has given you, then click 'Done'. **It is important to copy this somewhere as you will not be able to see it through Databricks again.**
+    v)  Make a note of the 'Databricks access token' it has given you, then click 'Done'. **It is important to copy this somewhere as you will not be able to see it through Databricks again.**
   
-  4.  Setup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.
+4.  Setup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.
 
-i)  In the start menu, search 'ODBC' and open 'ODBC Data Sources (64-bit)'.
+    i)  In the start menu, search 'ODBC' and open 'ODBC Data Sources (64-bit)'.
 
-ii) On the 'User DSN' tab click the 'Add...' button.
+    ii) On the 'User DSN' tab click the 'Add...' button.
 
-iii) In the 'Create New Data Source' window, select 'Simba Spark ODBC Driver' and click 'Finish'.
+    iii) In the 'Create New Data Source' window, select 'Simba Spark ODBC Driver' and click 'Finish'.
 
-iv) In the 'Simba Spark ODBC Driver DSN Setup' window,
+    iv) In the 'Simba Spark ODBC Driver DSN Setup' window,
 
-a.  Enter a 'Data Source Name' and 'Description'. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through Excel. *As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for.*
-  b.  Set the remaining options to the settings below.
--   Enter the 'Server Hostname' for your cluster in the 'Host(s):' field (you noted this down in step 2).
--   In the Port section, remove the default number and use the Port number you noted in step 2. 
--   Set the Authentication Mechanism to 'User Name and Password'.
--   Enter the word 'token' into the 'User Name:' field, then enter your 'Databricks access token' in the 'Password:' field.
--   Change the Thrift Transport option to HTTP.
--   Click the 'HTTP Options...' button and enter the 'HTTP Path' of your Databricks cluster, then click 'Okay'.
--   Click the 'SSL Options...' button and tick the 'Enable SSL' box, then click the 'OK' button.
--   ![](../images/odbc-driver-settings.png)
-c.  Click the 'Test' button to verify the connection has worked. You should see the following message. *If you get an error here, repeat steps 5.e.i -- 5.e.ix again and ensure all the values are correct.*
+        a.  Enter a 'Data Source Name' and 'Description'. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through Excel. *As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for.*
+        b.  Set the remaining options to the settings below.
+        -   Enter the 'Server Hostname' for your cluster in the 'Host(s):' field (you noted this down in step 2).
+        -   In the Port section, remove the default number and use the Port number you noted in step 2. 
+        -   Set the Authentication Mechanism to 'User Name and Password'.
+        -   Enter the word 'token' into the 'User Name:' field, then enter your 'Databricks access token' in the 'Password:' field.
+        -   Change the Thrift Transport option to HTTP.
+        -   Click the 'HTTP Options...' button and enter the 'HTTP Path' of your Databricks cluster, then click 'Okay'.
+        -   Click the 'SSL Options...' button and tick the 'Enable SSL' box, then click the 'OK' button.
+        
+        ![](../images/odbc-driver-settings.png)
+        c.  Click the 'Test' button to verify the connection has worked. You should see the following message. *If you get an error here, repeat steps 5.e.i -- 5.e.ix again and ensure all the values are correct.*
   
-  ![](../images/databricks-test-connection.png)
+        ![](../images/databricks-test-connection.png)
 
-d.  Click the 'OK' button to exit the 'Test Results' window, then the 'OK' button in the 'Simba Spark ODBC Driver DSN Setup' window.
+        d.  Click the 'OK' button to exit the 'Test Results' window, then the 'OK' button in the 'Simba Spark ODBC Driver DSN Setup' window.
 
 Your ODBC connection is now set up. We can now connect to databricks via Microsoft Excel.
 
 ------------------------------------------------------------------------
   
-  # Pulling data into R studio from Databricks
+# Pulling data into R studio from Databricks
   
-  ------------------------------------------------------------------------
+------------------------------------------------------------------------
   
   Once you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video demonstrating two possible methods of how to do this. The recording is embedded below: 
   
