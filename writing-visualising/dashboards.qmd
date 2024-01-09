@@ -327,6 +327,12 @@ If you are running an internal-only app then you can connect to our internal SQL
 
 ---
 
+Whilst not ideal, storing data in the dashboard repository is the current standard route to accessing data in DfE dashboards. As our systems mature, we will move away from this model and develop a more secure and optimal data storage and access process for dashboards.
+
+Note that the maximum allowable file size for GitHub repositories is 50 MB. Therefore if you are planning on using data in files larger than this limit, you will need to either break the data into smaller files or compress your data files before adding them to your repository. These steps should be taken before performing any commits incorporating the data.
+
+---
+
 #### Preventing early release of unpublished data
 
 ---
