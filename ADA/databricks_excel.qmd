@@ -2,7 +2,7 @@
   title: "Setup Databricks with RStudio"
 ---
   
-  <p class="text-muted">The following instructions set up an ODBC connection between your laptop and your DataBricks cluster, which can then be used in R/RStudio to query data using an ODBC based package.</p>
+  <p class="text-muted">The following instructions set up an ODBC connection between your laptop and your DataBricks cluster. Once this connection is set up, Databricks data can then be imported into Microsoft Excel via PowerQuery.</p>
     
     ------------------------------------------------------------------------
     
@@ -14,13 +14,15 @@
     
     -   Access to Databricks
   -   Access to a SQL Warehouse on DataBricks
-  -   R and RStudio downloaded
+  -   Microsoft Excel
   
   ------------------------------------------------------------------------
     
     # Downloading an ODBC driver
     
     ------------------------------------------------------------------------
+    
+    Note that if you have already downloaded and set up an ODBC driver to connect Databricks to RStudio, then you do not need to repeat these steps to connect to Excel, and can skip to the next section.
     
     1.  Install the 'Simba Spark ODBC' driver from the software centre.
   
@@ -50,7 +52,7 @@ iii) Click the 'Generate new token' button.
 
 iv) Name the token, then click 'Generate'. *Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate.*
   
-  v)  Make a note of the 'Databricks access token' it has given you. **It is important to copy this somewhere as you will not be able to see it through Databricks again.**
+  v)  Make a note of the 'Databricks access token' it has given you, then click 'Done'. **It is important to copy this somewhere as you will not be able to see it through Databricks again.**
   
   4.  Setup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.
 
@@ -62,8 +64,8 @@ iii) In the 'Create New Data Source' window, select 'Simba Spark ODBC Driver' an
 
 iv) In the 'Simba Spark ODBC Driver DSN Setup' window,
 
-a.  Enter a 'Data Source Name' and 'Description'. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio. *As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.*
-  b.  Set the remaning options to the settings below.
+a.  Enter a 'Data Source Name' and 'Description'. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through Excel. *As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for.*
+  b.  Set the remaining options to the settings below.
 -   Enter the 'Server Hostname' for your cluster in the 'Host(s):' field (you noted this down in step 2).
 -   In the Port section, remove the default number and use the Port number you noted in step 2. 
 -   Set the Authentication Mechanism to 'User Name and Password'.
@@ -78,8 +80,7 @@ c.  Click the 'Test' button to verify the connection has worked. You should see 
 
 d.  Click the 'OK' button to exit the 'Test Results' window, then the 'OK' button in the 'Simba Spark ODBC Driver DSN Setup' window.
 
-5.  Connect through RStudio. Watch the below video and view the [ADA_RStudio_connect GitHub repo](https://github.com/dfe-analytical-services/ADA_RStudio_connect) for methods on connecting to Databricks and querying data from RStudio. 
-
+Your ODBC connection is now set up. We can now connect to databricks via Microsoft Excel.
 
 ------------------------------------------------------------------------
   
