@@ -85,22 +85,25 @@ Your ODBC connection is now set up. We can now connect to databricks via Microso
 
 ------------------------------------------------------------------------
   
-# Pulling data into R studio from Databricks
+# Pulling data into Excel from Databricks
   
 ------------------------------------------------------------------------
   
-  Once you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video demonstrating two possible methods of how to do this. The recording is embedded below: 
+  Once you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into Excel. This can be done via PowerQuery.
   
-  <div align="center">
-  <iframe src="https://educationgovuk.sharepoint.com/sites/lvewp00086/_layouts/15/embed.aspx?UniqueId=5fad039e-a763-40c8-8ea0-403aea712f4c&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="ADA_Rstudio_2.mp4"></iframe>
-  </div>
+  Click 'Data' in the top ribbon, and then select 'Get Data', 'From Other Sources', 'From ODBC', as shown in the picture below.
   
-  A template of all of the code used in the above video can be found in the [ADA_RStudio_connect GitHub repo](https://github.com/dfe-analytical-services/ADA_RStudio_connect).
+  ![](../images/odbc_excel_connection.png)
 
-Key takeaways from the video and example code: 
-  
-  * The main change here compared to connecting to SQL databases is the connection method. The installation and setup of the ODBC driver are all done pre-code, and the only part of the code that will need updating is your connection (usually your con variable). 
-* If your existing code was pulling in tables from SQL via the `RODBC` package or the `dbplyr` package, then this code should in theory run with minimal edits needed. 
-* If you were writing tables back into SQL from R, this is where your code may need the most edits. 
-* If your code is stored in a repo where multiple analysts contribute to and run the code, in order for the code to run for everyone you will all need to individually install the ODBC driver and **give it the same name** so that when the `con` variable is called, the name used in the code matches everyone's individual driver and runs for everyone. If this is the case, please **add a note about this to your repo's readme file** to help your future colleagues.
+Select the 'Data Source name' that you chose in Step 4.iv.a above.
 
+Clicking 'Advanced options' will allow you to type in SQL code to query the data. This code can be the same as any existing code that you might use in Microsoft SQL Server Management Studio, with some notable differences:
+* To create temporary tables, you have to use the SQL command 'CREATE TEMPORARY VIEW'
+* If the column names of your table contain spaces, you must surround them with ` symbols (the grave symbol below the esc key)
+* If you have multiple queries (such as if you are creating temporary views and then querying the temporary view), these must be split up by semi-colons ;
+
+  ![](../images/odbc_sql_example.png)
+
+If, instead of using a SQL code, you want to use PowerQuery, click 'Ok' and you will see a list of tables. Use the drop down menu to select the table that you want. Then you should click 'Transform Data' rather than 'Load', because you will need to apply appropriate filters to your data before you load it to Excel. If you try to load a table that is too big, then you will likely crash Excel.
+
+This opens up the Power Query Editor. 
