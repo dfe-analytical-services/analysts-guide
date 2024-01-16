@@ -698,11 +698,14 @@ Where you have data for a legacy LA that does not have a 9-digit new code, leave
 
 When using geographies that can be measured in multiple ways, you can achieve this by including a [filter](#filters) such as level_methodology in the example below to state how you have measured the geographic level. For example, at Local authority level you may have data that was measured by the residence of the pupil and the location of the school:
 
+::: {.table-responsive}
 
 | geographic_level | old_la_code | la_name    | new_la_code | level_methodology | headcount |
 |------------------|-------------|------------|-------------|-------------------|-----------|
 | Local authority  | 373         | Sheffield  | E08000019   | Pupil residence   | 689       |
 | Local authority  | 373	     | Sheffield  | E08000019   | School location   | 567       |
+
+:::
 
 ---
 
