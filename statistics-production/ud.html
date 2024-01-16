@@ -467,6 +467,12 @@ cookieconsent.run({
   <ul class="collapse">
   <li><a href="#indicator-grouping" id="toc-indicator-grouping" class="nav-link" data-scroll-target="#indicator-grouping">Indicator grouping</a></li>
   </ul></li>
+  <li><a href="#reviewing-indicator-and-filter-field-naming" id="toc-reviewing-indicator-and-filter-field-naming" class="nav-link" data-scroll-target="#reviewing-indicator-and-filter-field-naming">Reviewing indicator and filter field naming</a>
+  <ul class="collapse">
+  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1">Introduction</a></li>
+  <li><a href="#field-names" id="toc-field-names" class="nav-link" data-scroll-target="#field-names">Field Names</a></li>
+  <li><a href="#field-entries" id="toc-field-entries" class="nav-link" data-scroll-target="#field-entries">Field entries</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/statistics-production/ud.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -563,8 +569,8 @@ Guidance on how to structure data files
 <th>region_name</th>
 <th>gender</th>
 <th>school_phase</th>
-<th>number_children</th>
-<th>percent_children</th>
+<th>children_count</th>
+<th>children_percent</th>
 </tr>
 </thead>
 <tbody>
@@ -787,7 +793,7 @@ Guidance on how to structure data files
 <td></td>
 </tr>
 <tr class="odd">
-<td>number_children</td>
+<td>children_count</td>
 <td>Indicator</td>
 <td>Number of children</td>
 <td></td>
@@ -797,7 +803,7 @@ Guidance on how to structure data files
 <td></td>
 </tr>
 <tr class="even">
-<td>percent_children</td>
+<td>children_percent</td>
 <td>Indicator</td>
 <td>Percentage of children</td>
 <td></td>
@@ -810,7 +816,7 @@ Guidance on how to structure data files
 </table>
 </div>
 <div class="alert alert-dismissible alert-info">
-<p>Note that for the percent_children column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users’ needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.</p>
+<p>Note that for the children_percent column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users’ needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.</p>
 </div>
 <p>Further information on all of the requirements for appropriately prepared data files follow in the sections below.</p>
 <p>Once you have prepared a draft data file, you should always run the file through our <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank">EES data file screener</a>. This will check for common issues that may prevent the file from being used appropriately by EES. Note that some issues may not prevent your file from uploading to EES, but would still cause undesired behaviour once on the platform, so it is imperative to screen data files before uploading.</p>
@@ -870,7 +876,7 @@ Guidance on how to structure data files
 <th>…</th>
 <th>FSM</th>
 <th>Sex</th>
-<th>number_pupils</th>
+<th>pupil_count</th>
 </tr>
 </thead>
 <tbody>
@@ -938,7 +944,7 @@ Guidance on how to structure data files
 <th>…</th>
 <th>breakdown_topic</th>
 <th>breakdown</th>
-<th>number_pupils</th>
+<th>pupil_count</th>
 </tr>
 </thead>
 <tbody>
@@ -1003,10 +1009,10 @@ Guidance on how to structure data files
 <thead>
 <tr class="header">
 <th>…</th>
-<th>number_pupils_passing_95</th>
-<th>number_pupils_passing_94</th>
-<th>percentage_pupils_passing_95</th>
-<th>percentage_pupils_passing_94</th>
+<th>pupil_count_passing_95</th>
+<th>pupil_count_passing_94</th>
+<th>pupil_percent_passing_95</th>
+<th>pupil_percent_passing_94</th>
 </tr>
 </thead>
 <tbody>
@@ -1032,8 +1038,8 @@ Guidance on how to structure data files
 <tr class="header">
 <th>…</th>
 <th>grade_range</th>
-<th>number_pupils</th>
-<th>percentage_pupils</th>
+<th>pupil_count</th>
+<th>pupil_percent</th>
 </tr>
 </thead>
 <tbody>
@@ -1094,7 +1100,82 @@ Guidance on how to structure data files
 <p><strong>Avoid starting variable names with a numeric character.</strong></p>
 <p>As with file names, you should avoid any special characters; for example, the following characters <code>\ / : * ? " &lt; &gt; | [ ] &amp; $ , . +</code> are all considered special characters and are used for specific tasks in an electronic environment, which can lead to confusion in some systems. The use of non-English language letters such as á, í, ñ, è, and õ, should also be avoided.</p>
 <p>Variable names should ideally be kept below 25-35 characters as long names are often cut off when viewing the data file and generally fail to get the information required across to users. It is a balance between giving enough information so it’s clear what it refers to and giving so much that it’s unhelpful. Remember to make use of your public data guidance and methodology for expanding on details.</p>
+<p>Titles should use abbreviations only when necessary to reduce the length of the title if required.</p>
+<section id="indicator-names" class="level4">
+<h4 class="anchored" data-anchor-id="indicator-names">Indicator names</h4>
+<p>Most indicators should be reducible to a simple context / title (e.g.&nbsp;schools, pupils, students, teachers, starts, apprenticeships, expenditure, income, etc) and a data type (e.g.&nbsp;count, sum, percent, score, average, median, fte, etc). Assuming this ideal (tidy data structure) case, the preferred layout is:</p>
+<p>{title}_{data type}</p>
+<p>For example:</p>
+<p>starts_count, starts_sum, starts_percent, starts_average, starts_median, absence_percent, pupils_count, pupils_percent</p>
+<p>Whilst data producers should generally aim to fit the basic layout above (i.e.&nbsp;by using filters to cover categorization and limiting criteria), there may be circumstances in which additional flags need to be included that can’t be placed in Filters. In these circumstances, the guidance is to follow the below ordering:</p>
+<p>{title}<em>{levels}</em>{above / below}<em>{exclusivity}</em>{additional}_{data type}</p>
+<p>If your data doesn’t appear to fit with just using the basic {title}_{data type} column naming format and you’d like to use the extended structure above, then please get in touch and we can work through how the extended structure can work with your data.</p>
+<p>The table below summarises these guidelines.</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 28%">
+<col style="width: 40%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Individual form</th>
+<th>Full indicator example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Title</td>
+<td>title / name e.g.&nbsp;population, pupils, starters</td>
+<td>population_count, pupil_count, starter_count</td>
+<td>title of the field, avoid abbreviations where possible</td>
+</tr>
+<tr class="even">
+<td>Data type</td>
+<td>count / percent</td>
+<td>pupil_count, pupil_percent</td>
+<td>Number or Percentage where applicable</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Levels</td>
+<td>l + (level number)</td>
+<td>population_count_l1</td>
+<td>l1, l2, l3 etc</td>
+</tr>
+<tr class="odd">
+<td>Above or Below</td>
+<td>plus / minus</td>
+<td>population_count_plus</td>
+<td>Using ‘plus’ or ‘minus’ to denote above or below</td>
+</tr>
+<tr class="even">
+<td>Exclusivity</td>
+<td>exc / inc</td>
+<td>population_count_exc_adult</td>
+<td>excludes or includes features</td>
+</tr>
+<tr class="odd">
+<td>Additional</td>
+<td>Further sub-identifiers should be included as filters rather than in indicator field names wherever possible</td>
+<td></td>
+<td>(e.g.&nbsp;male / female, English / maths, etc)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Through the above guidance, we aim to develop the DfE data catalogue into a consistent and predictable collection of data entries that anyone switching between different data files within the same publication or across different publications would more easily be able to navigate. As part of this, publication teams should regularly review their data files against this guidance and as outlined in the <a href="#reviewing-indicator-and-filter-field-naming">Reviewing indicator and filter field naming</a> section</p>
 <hr>
+</section>
 </section>
 <section id="how-to-export-data-with-utf-8-encoding" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-export-data-with-utf-8-encoding">How to export data with UTF-8 encoding</h3>
@@ -1308,7 +1389,7 @@ Guidance on how to structure data files
 <td></td>
 </tr>
 <tr class="odd">
-<td>number_children</td>
+<td>children_count</td>
 <td>Indicator</td>
 <td>Number of children</td>
 <td></td>
@@ -1318,7 +1399,7 @@ Guidance on how to structure data files
 <td></td>
 </tr>
 <tr class="even">
-<td>percent_children</td>
+<td>children_percent</td>
 <td>Indicator</td>
 <td>Percentage of children</td>
 <td></td>
@@ -1831,6 +1912,7 @@ Remember
 <h3 class="anchored" data-anchor-id="different-measures-of-geography">Different measures of geography</h3>
 <hr>
 <p>When using geographies that can be measured in multiple ways, you can achieve this by including a <a href="#filters">filter</a> such as level_methodology in the example below to state how you have measured the geographic level. For example, at Local authority level you may have data that was measured by the residence of the pupil and the location of the school:</p>
+<div class="table-responsive">
 <table class="table">
 <colgroup>
 <col style="width: 20%">
@@ -1869,6 +1951,7 @@ Remember
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 </section>
 <section id="allowable-geographic-levels" class="level3">
@@ -2601,8 +2684,8 @@ Remember
 <th>…</th>
 <th>country_name</th>
 <th>school_type</th>
-<th>enrolments_num</th>
-<th>enrolments_pc</th>
+<th>enrolments_count</th>
+<th>enrolments_percent</th>
 </tr>
 </thead>
 <tbody>
@@ -2728,7 +2811,7 @@ Remember
 <td></td>
 </tr>
 <tr class="even">
-<td>admissions</td>
+<td>admissions_count</td>
 <td>Indicator</td>
 <td>Number of admissions</td>
 <td><strong>Admissions</strong></td>
@@ -2737,7 +2820,7 @@ Remember
 <td></td>
 </tr>
 <tr class="odd">
-<td>applications</td>
+<td>applications_count</td>
 <td>Indicator</td>
 <td>Number of applications received</td>
 <td><strong>Applications</strong></td>
@@ -2746,7 +2829,7 @@ Remember
 <td></td>
 </tr>
 <tr class="even">
-<td>online_apps</td>
+<td>applications_online_count</td>
 <td>Indicator</td>
 <td>Number of online applications</td>
 <td><strong>Applications</strong></td>
@@ -2755,7 +2838,7 @@ Remember
 <td></td>
 </tr>
 <tr class="odd">
-<td>online_apps_%</td>
+<td>applications_online_percent</td>
 <td>Indicator</td>
 <td>Percentage of online applications</td>
 <td><strong>Applications</strong></td>
@@ -2779,6 +2862,134 @@ Remember
 </div>
 </div>
 <hr>
+</section>
+</section>
+<section id="reviewing-indicator-and-filter-field-naming" class="level1">
+<h1>Reviewing indicator and filter field naming</h1>
+<section id="introduction-1" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-1">Introduction</h2>
+<p>In order to create and maintain a consistent data catalogue, we suggest that teams perform a regular review of their data files against the guidance on this page.</p>
+</section>
+<section id="field-names" class="level2">
+<h2 class="anchored" data-anchor-id="field-names">Field Names</h2>
+<p>Each publication team should regularly review the indicator and filter field naming in their publications to maintain:</p>
+<ul>
+<li>consistency with the above field naming framework,</li>
+<li>consistency with centrally standardized field and</li>
+<li>internal consistency within their publications.</li>
+</ul>
+<p>The recommended process for this is to follow these steps:</p>
+<ul>
+<li>collate all col_name, col_type, label, indicator_grouping and filter_grouping_column fields from meta data files into one single csv file;</li>
+<li>check for indicators that contain information better suited to filter entries (in line with tidy data principles);</li>
+<li>check indicator and filter col_name entries against published current standard names and assign new col_name entries as appropriate;</li>
+<li>check indicator and filter col_name entries against standard naming conventions and assign new col_name entries as appropriate and</li>
+<li>check indicator and filter col_name entries for internal consistency and assign new col_name entries as appropriate.</li>
+</ul>
+<p>Please collate the above into a csv file similar to your publication meta csv files. This should have the following columns:</p>
+<ul>
+<li>col_name</li>
+<li>col_type</li>
+<li>label</li>
+<li>indicator_grouping</li>
+<li>filter_grouping_column</li>
+<li>col_name_new</li>
+<li>col_type_new</li>
+<li>label_new</li>
+<li>indicator_grouping_new</li>
+<li>filter_grouping_column_new</li>
+<li>discontinued</li>
+</ul>
+<p>Any “_new” entry where no update is to be made should be left blank, whilst any changes should be listed in the relevant column. Any discontinued col_names (i.e.&nbsp;with no single direct replacement) should have ‘y’ entered in the discontinued field. Any completely new fields with no previous direct precursor should contain blanks in the first 5 columns.</p>
+<div class="alert alert-dismissible alert-info">
+<p>Your team should then keep a copy as a log of any changes and also send a copy to explore.statistics@education.gov.uk so we can look to update our standardized list of field names where appropriate.</p>
+</div>
+</section>
+<section id="field-entries" class="level2">
+<h2 class="anchored" data-anchor-id="field-entries">Field entries</h2>
+<p>A further step teams can take to maintain standardization is to review the filter options or entries within their filters. For example, any ethnicity fields should conform to our published harmonized (GSS) ethnicity guidance.</p>
+<p>As with field names we recommend collating these into a master csv file covering your entire publication. Expected entries are:</p>
+<ul>
+<li>col_name</li>
+<li>filter_grouping_column</li>
+<li>filter_entry</li>
+<li>filter_grouping_entry</li>
+<li>filter_entry_new</li>
+<li>filter_grouping_entry_new</li>
+<li>discontinued</li>
+</ul>
+<p>For example, in tabulated form:</p>
+<div class="table-responsive">
+<table class="table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 17%">
+<col style="width: 10%">
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 20%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>col_name</th>
+<th>filter_grouping_column</th>
+<th>filter_entry</th>
+<th>filter_grouping_entry</th>
+<th>filter_entry_new</th>
+<th>filter_grouping_entry_new</th>
+<th>discontinued</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ethnicity_minor</td>
+<td>ethnicity_major</td>
+<td>Total</td>
+<td>Chinese</td>
+<td>Chinese</td>
+<td>Asian / Asian British</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ethnicity_minor</td>
+<td>ethnicity_major</td>
+<td>Indian</td>
+<td>Asian / Asian British</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ethnicity_minor</td>
+<td>ethnicity_major</td>
+<td>Gypsy</td>
+<td>White</td>
+<td>Gypsy or Irish Traveller</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ethnicity_minor</td>
+<td>ethnicity_major</td>
+<td>Irish</td>
+<td>White</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ethnicity_minor</td>
+<td>ethnicity_major</td>
+<td>Arab</td>
+<td>Other ethnic group</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 </section>
