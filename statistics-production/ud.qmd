@@ -331,9 +331,11 @@ For example:
 
 starts_count, starts_sum, starts_percent, starts_average, starts_median, absence_percent, pupils_count, pupils_percent
 
-Whilst data producers should generally aim to fit the basic layout above, there may be circumstances in which additional flags need to be included that can’t be placed in Filters. In these circumstances, the guidance is to follow the below ordering:
+Whilst data producers should generally aim to fit the basic layout above (i.e. by using filters to cover categorization and limiting criteria), there may be circumstances in which additional flags need to be included that can’t be placed in Filters. In these circumstances, the guidance is to follow the below ordering:
 
 {title}_{levels}_{above / below}_{exclusivity}_{additional}_{data type}
+
+If your data doesn't appear to fit with just using the basic {title}_{data type} column naming format and you'd like to use the extended structure above, then please get in touch and we can work through how the extended structure can work with your data.
 
 The table below summarises these guidelines.
 
@@ -1144,7 +1146,10 @@ Please collate the above into a csv file similar to your publication meta csv fi
 Any “_new” entry where no update is to be made should be left blank, whilst any changes should be listed in the relevant column. 
 Any discontinued col_names (i.e. with no single direct replacement) should have ‘y’ entered in the discontinued field. 
 Any completely new fields with no previous direct precursor should contain blanks in the first 5 columns.
+
+<div class="alert alert-dismissible alert-info">
 Your team should then keep a copy as a log of any changes and also send a copy to explore.statistics@education.gov.uk so we can look to update our standardized list of field names where appropriate.
+</div>
 
 ## Field entries
 
