@@ -78,7 +78,7 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 
 ::: {.table-responsive}
 
-| time_period | ... | country_name | region_code | region_name | gender | school_phase | number_children | percent_children |
+| time_period | ... | country_name | region_code | region_name | gender | school_phase | children_count  | children_percent |
 |-------------|-----|--------------|-------------|-------------|--------|--------------|-----------------|------------------|
 | 202021      | ... | England      |             |             | Total  | Total        | 1000            | 100.000          |
 | 202021      | ... | England      |             |             | Male   | Total        | 490             | 49.000           |
@@ -110,13 +110,13 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 |------------------|-----------|--------------|--------------------|----------------|--------------|-------------|------------------------|
 | gender           | Filter    | Gender       |                    |                |              | Filter by pupil gender |             |
 | school_phase     | Filter    | School phase |                    |                |              | Filter by the phase of the school |  |
-| number_children  | Indicator | Number of children |              |                |              |             |                        |
-| percent_children | Indicator | Percentage of children |          | %              | 1            |             |                        |
+| children_count  | Indicator | Number of children |              |                |              |             |                        |
+| children_percent | Indicator | Percentage of children |          | %              | 1            |             |                        |
 
 :::
 
 <div class="alert alert-dismissible alert-info">
-Note that for the percent_children column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users' needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.
+Note that for the children_percent column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users' needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.
 </div>
 
 Further information on all of the requirements for appropriately prepared data files follow in the sections below.
@@ -191,7 +191,7 @@ A single filter column should contain all the possible filter values for a singl
 
 In general, analysts should use a separate column for each filter in accordance with tidy data principles. This is especially the case where data are presented for combinations of filters (i.e. cross tabulations). User testing has shown this to be the most effective way to structure data for the best user experience with the table tool.
 
-| ... | FSM       | Sex       | number_pupils |
+| ... | FSM       | Sex       | pupil_count   |
 |-----|-----------|-----------|---------------|
 | ... | Total     | Total     | 1209          |
 | ... | Total     | Female    | 567           |
@@ -207,7 +207,7 @@ Where data is broken down across combinations of different filters, teams should
 
 A possible exception to the above structure is where no filter combinations/cross-tabulations are present in a given data file. For example, this may be the case if a publication requires a highlights level table that shows a result across breakdowns of sex (Male, Female, etc) and Free School Meal status (FSM, non-FSM), but not combinations of the two (Female and FSM, Male and FSM, Female and non-FSM and Male and non-FSM). In this case, analysts may choose to use a overarching collated filter columns named breakdown_topic and breakdown as follows:
 
-| ... | breakdown_topic | breakdown | number_pupils |
+| ... | breakdown_topic | breakdown | pupil_count |
 |-----|-----------------|-----------|---------------|
 | ... | Total           | Total     | 1209          |
 | ... | Sex             | Female    | 567           |
@@ -243,7 +243,7 @@ The number of indicators should be kept to a minimum, whilst maintaining differe
 
 ::: {.table-responsive}
 
-| ... | number_pupils_passing_95 | number_pupils_passing_94 | percentage_pupils_passing_95 | percentage_pupils_passing_94 |
+| ... | pupil_count_passing_95 | pupil_count_passing_94 | pupil_percent_passing_95 | pupil_percent_passing_94 |
 |-----|--------------------------|--------------------------|--------------------------|--------------------------|
 | ... |  567                 |    642                      |  45.7                      |    51.8                      |
 
@@ -251,7 +251,7 @@ The number of indicators should be kept to a minimum, whilst maintaining differe
 
 Creating a tidy form of this data would look something more like this:
 
-| ... | grade_range | number_pupils | percentage_pupils |
+| ... | grade_range | pupil_count | pupil_percent |
 |-----|--------------------------|--------------------------|--------------------------|
 | ... | 9 to 5                   |  567                     | 45.7                     |
 | ... | 9 to 4                   | 642                      | 51.8                     |
@@ -318,6 +318,42 @@ Variable names must be in the first row of your file as the header row, must not
 As with file names, you should avoid any special characters; for example, the following characters `\ / : * ? " < > | [ ] & $ , . +` are all considered special characters and are used for specific tasks in an electronic environment, which can lead to confusion in some systems. The use of non-English language letters such as á, í, ñ, è, and õ, should also be avoided.
 
 Variable names should ideally be kept below 25-35 characters as long names are often cut off when viewing the data file and generally fail to get the information required across to users. It is a balance between giving enough information so it's clear what it refers to and giving so much that it's unhelpful. Remember to make use of your public data guidance and methodology for expanding on details.
+
+Titles should use abbreviations only when necessary to reduce the length of the title if required.
+
+#### Indicator names
+
+Most indicators should be reducible to a simple context / title (e.g. schools, pupils, students, teachers, starts, apprenticeships, expenditure, income, etc) and a data type (e.g. count, sum, percent, score, average, median, fte, etc). Assuming this ideal (tidy data structure) case, the preferred layout is:
+
+{title}_{data type}
+
+For example:
+
+starts_count, starts_sum, starts_percent, starts_average, starts_median, absence_percent, pupils_count, pupils_percent
+
+Whilst data producers should generally aim to fit the basic layout above (i.e. by using filters to cover categorization and limiting criteria), there may be circumstances in which additional flags need to be included that can’t be placed in Filters. In these circumstances, the guidance is to follow the below ordering:
+
+{title}_{levels}_{above / below}_{exclusivity}_{additional}_{data type}
+
+If your data doesn't appear to fit with just using the basic {title}_{data type} column naming format and you'd like to use the extended structure above, then please get in touch and we can work through how the extended structure can work with your data.
+
+The table below summarises these guidelines.
+
+::: {.table-responsive}
+
+| Name | Individual form | Full indicator example | Description |
+|------|-----------------|------------------------|-------------|
+| Title | title / name e.g. population, pupils, starters | population_count, pupil_count, starter_count | title of the field, avoid abbreviations where possible |
+| Data type | count / percent | pupil_count, pupil_percent | Number or Percentage where applicable |
+| | | | |
+| Levels | l + (level number) | population_count_l1 | l1, l2, l3 etc |
+| Above or Below | plus / minus | population_count_plus | Using ‘plus’ or ‘minus’ to denote above or below |
+| Exclusivity	 | exc / inc | population_count_exc_adult | excludes or includes features |
+| Additional | Further sub-identifiers should be included as filters rather than in indicator field names wherever possible | | (e.g. male / female, English / maths, etc) |
+
+:::
+
+Through the above guidance, we aim to develop the DfE data catalogue into a consistent and predictable collection of data entries that anyone switching between different data files within the same publication or across different publications would more easily be able to navigate. As part of this, publication teams should regularly review their data files against this guidance and as outlined in the [Reviewing indicator and filter field naming](#reviewing-indicator-and-filter-field-naming) section
 
 ---
 
@@ -468,8 +504,8 @@ Each row represents a column in the data file.
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|---|
 | gender | Filter | Gender | | | | Filter by pupil gender | |
 | school_phase | Filter | School phase | | | | Filter by the phase of the school | |
-| number_children | Indicator | Number of children | | | | | |
-| percent_children | Indicator | Percentage of children | | % | 1 | | |
+| children_count | Indicator | Number of children | | | | | |
+| children_percent | Indicator | Percentage of children | | % | 1 | | |
 
 :::
 
@@ -662,11 +698,14 @@ Where you have data for a legacy LA that does not have a 9-digit new code, leave
 
 When using geographies that can be measured in multiple ways, you can achieve this by including a [filter](#filters) such as level_methodology in the example below to state how you have measured the geographic level. For example, at Local authority level you may have data that was measured by the residence of the pupil and the location of the school:
 
+::: {.table-responsive}
 
 | geographic_level | old_la_code | la_name    | new_la_code | level_methodology | headcount |
 |------------------|-------------|------------|-------------|-------------------|-----------|
 | Local authority  | 373         | Sheffield  | E08000019   | Pupil residence   | 689       |
 | Local authority  | 373	     | Sheffield  | E08000019   | School location   | 567       |
+
+:::
 
 ---
 
@@ -1012,7 +1051,7 @@ As an example, the number and percentage of pupil enrolments are the indicators 
 
 ::: {.table-responsive}
 
-| time_period | ... | country_name | school_type  | enrolments_num | enrolments_pc |
+| time_period | ... | country_name | school_type  | enrolments_count | enrolments_percent |
 |-------------|-----|--------------|--------------|------------|----------|
 | 201819      | ... | England      | Total        | 200        | 100      |
 | 201819      | ... | England      | Primary      | 150        | 75       |
@@ -1051,10 +1090,10 @@ Many of our publications contain a large number of indicators. To improve the ex
 | col_name | col_type | label | indicator_grouping | indicator_unit | filter_hint | filter_grouping_column |
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|
 | nc_year | Filter | NC Year | | | Filter by national curriculum year | |
-| admissions | Indicator | Number of admissions | **Admissions** | | | |
-| applications | Indicator | Number of applications received | **Applications** | | | |
-| online_apps | Indicator | Number of online applications | **Applications** | | | |
-| online_apps_% | Indicator | Percentage of online applications | **Applications** | | | |
+| admissions_count | Indicator | Number of admissions | **Admissions** | | | |
+| applications_count | Indicator | Number of applications received | **Applications** | | | |
+| applications_online_count | Indicator | Number of online applications | **Applications** | | | |
+| applications_online_percent | Indicator | Percentage of online applications | **Applications** | | | |
 
 :::
 
@@ -1070,3 +1109,75 @@ knitr::include_graphics("../images/indicator_group.png")
 ```
 
 ---
+
+# Reviewing indicator and filter field naming
+
+## Introduction
+
+In order to create and maintain a consistent data catalogue, we suggest that teams perform a regular review of their data files against the guidance on this page.
+
+## Field Names
+
+Each publication team should regularly review the indicator and filter field naming in their publications to maintain:
+
+* consistency with the above field naming framework, 
+* consistency with centrally standardized field and 
+* internal consistency within their publications.
+
+The recommended process for this is to follow these steps:
+
+* collate all col_name, col_type, label, indicator_grouping and filter_grouping_column fields from meta data files into one single csv file;
+* check for indicators that contain information better suited to filter entries (in line with tidy data principles);
+* check indicator and filter col_name entries against published current standard names and assign new col_name entries as appropriate;
+* check indicator and filter col_name entries against standard naming conventions and assign new col_name entries as appropriate and
+* check indicator and filter col_name entries for internal consistency and assign new col_name entries as appropriate.
+
+Please collate the above into a csv file similar to your publication meta csv files. This should have the following columns:
+
+* col_name
+* col_type
+* label
+* indicator_grouping
+* filter_grouping_column
+* col_name_new
+* col_type_new
+* label_new
+* indicator_grouping_new
+* filter_grouping_column_new
+* discontinued
+
+Any “_new” entry where no update is to be made should be left blank, whilst any changes should be listed in the relevant column. 
+Any discontinued col_names (i.e. with no single direct replacement) should have ‘y’ entered in the discontinued field. 
+Any completely new fields with no previous direct precursor should contain blanks in the first 5 columns.
+
+<div class="alert alert-dismissible alert-info">
+Your team should then keep a copy as a log of any changes and also send a copy to explore.statistics@education.gov.uk so we can look to update our standardized list of field names where appropriate.
+</div>
+
+## Field entries
+
+A further step teams can take to maintain standardization is to review the filter options or entries within their filters. For example, any ethnicity fields should conform to our published harmonized (GSS) ethnicity guidance.
+
+As with field names we recommend collating these into a master csv file covering your entire publication. Expected entries are:
+
+* col_name
+* filter_grouping_column
+* filter_entry
+* filter_grouping_entry
+* filter_entry_new
+* filter_grouping_entry_new
+* discontinued
+
+For example, in tabulated form:
+
+::: {.table-responsive}
+
+| col_name | filter_grouping_column | filter_entry | filter_grouping_entry | filter_entry_new | filter_grouping_entry_new | discontinued |
+|----------|------------------------|--------------|-----------------------|------------------|---------------------------|------------------|
+| ethnicity_minor | ethnicity_major | Total | Chinese | Chinese | Asian / Asian British	 |  | 
+| ethnicity_minor | ethnicity_major | Indian | Asian / Asian British |  |  |  | 
+| ethnicity_minor | ethnicity_major | Gypsy | White | Gypsy or Irish Traveller |  |  | 
+| ethnicity_minor | ethnicity_major | Irish | White |  |  |  | 
+| ethnicity_minor | ethnicity_major | Arab | Other ethnic group |  |  |  | 
+
+:::
