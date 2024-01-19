@@ -141,7 +141,7 @@ Google Analytics is a free service that collects information on who visits your 
 
 ---
 
-Accessibility
+# Accessibility
 
 ---
 
@@ -173,8 +173,6 @@ Tests can come in a variety of shapes and sizes, good starting points for analys
 
 You should aim to automate as much of your testing as possible and run your test suite as part of continuous integration (where your tests form part of your codebase). By testing your code automatically every time you make a change, you’ll be able to find defects more quickly. Getting fast feedback means you can respond to any problems quickly and make changes when you need to. You can also spot defects before they develop into bigger problems that are more complicated and expensive to fix.
 
-Further guidance on setting up testing can be found in the [DfE good code practice guide](https://dfe-analytical-services.github.io/good-code-practice/testing.html#testing-shiny-apps){target="_blank" rel="noopener noreferrer"}. Also see our guidance on testing R code on the [learning resources page](../learning-development/l+d.html#R).
-
 ---
 
 # Peer review
@@ -185,13 +183,6 @@ Peer review is a quality assurance activity, where an analyst other than the ori
 
 - Dashboards must always be peer reviewed within the team they are created.
 - Dashboards should also be peer reviewed by analysts outside of the subject area of the team.
-
----
-
-# Styling
-
----
-
 
 ---
 

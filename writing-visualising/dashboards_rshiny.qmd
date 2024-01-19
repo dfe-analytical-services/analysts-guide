@@ -1,5 +1,5 @@
 ---
-title: "Creating a public facing R-Shiny dashboard"
+title: "Creating R-Shiny dashboards"
 ---
 
 <p class="text-muted">Guidance for publishing public statistics dashboards with R-Shiny</p>
@@ -28,7 +28,7 @@ Finally, you should seek to make use of the community that is already out there,
 
 ---
 
-# DfE Dashboard template
+# DfE styling and the DfE R-Shiny template
 
 ---
 
@@ -42,9 +42,44 @@ The template provides code for a basic interactive dashboard, with an example li
 
 View the [latest version of the template dashboard](https://department-for-education.shinyapps.io/dfe-shiny-template/).
 
+By using the official DfE R-Shiny template and the dfeshiny package (and keeping pace with updates), teams will be able to create a dashboard that conforms to a standard DfE styling.
+
+All dashboards should have a link to the source code, and information about who to contact for feedback/issues. You should be familiar with and follow the [gov.uk style guide](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style) as appropriate.
+
 ---
 
-# Where to host your dashboard code
+## Consistency in R chart styling and colours
+
+Teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. Be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
+
+Charts using ggplot2 can take custom palettes using the `scale_fill_manual()` function, e.g. below:
+
+```
+# Create colour palette using recommended colours (based on gov.uk design system)
+
+dfe_colours <- c(
+  "#12436D", #`blue`
+  "#F46A25",#`orange`
+  "#801650",#`maroon`
+  "#28A197" #`turquoise`
+  )
+
+# Create chart using palette
+
+ggplot(aes(y=value, x="",
+                 fill = factor(rating),
+                 text = paste(rating, ": ", value, "%"))) +
+      geom_bar(stat="identity", position = position_fill(reverse = TRUE))+
+      scale_fill_manual(values = dfe_colours)
+
+```
+
+Further examples are given on the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page. In addition, we recommend the `ggiraph` package for rendering plots.
+
+
+---
+
+# Hosting dashboard code on GitHub
 
 ---
 
@@ -342,16 +377,6 @@ One example of a dashboard for Official statistics that meets these regulations 
 
 ---
 
-Testing is a way to capture desired behaviour of your code, in such a way that you can automatically verify that it keeps working the way you expect over time. It is essential for making sure that code works the way that you intend it to, and keeps working even after you make changes to the code so that your users have access to a stable service. You need to test your service regularly as part of quality assurance (QA) to make sure that it:
-
-- is easy to use for anyone who needs to use it, regardless of the device they’re using
-- is stable, secure and works quickly, regardless of how many people need to use it
-- can be iterated quickly to meet changes to user needs or the political environment
-
-Tests can come in a variety of shapes and sizes, good starting points for analysts new to testing are the [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/testing_code.html), and [DfE good code practice](https://dfe-analytical-services.github.io/good-code-practice/testing.html).
-
-You should aim to automate as much of your testing as possible and run your test suite as part of continuous integration (where your tests form part of your codebase). By testing your code automatically every time you make a change, you’ll be able to find defects more quickly. Getting fast feedback means you can respond to any problems quickly and make changes when you need to. You can also spot defects before they develop into bigger problems that are more complicated and expensive to fix.
-
 For dashboards created in R Shiny, we strongly recommend a mix of unit tests and UI tests (integration), run using GitHub Actions for continuous integration (CI). All applications should have an appropriate level of test coverage before being published. More information and details on how to get started with this can be found in the [testing R Shiny](#testing-r-shiny) section below.
 
 
@@ -401,7 +426,21 @@ For example, our [QA app](https://github.com/dfe-analytical-services/dfe-publish
 
 ---
 
-## Performance testing
+## Tests and deployment
+
+Both UI and unit tests need to be added to your app's deployment pipeline. This ensures that the app will not be published if any of the tests fail.
+
+We recommend using Github Actions to deploy the latest code whenever a push to your master branch occurs - this ensures that the published version of your app stays up to date.
+
+You should also use GitHub Actions to run the automated tests for your app, which we recommend are done on at least every pull request.
+
+If you’ve started from our [template repository](https://github.com/dfe-analytical-services/shiny-template) then all of this will be mostly set up for you to tweak and expand on, but if you haven't then you’ll need to add the yaml files from the [.github/workflows]() folder to your repository.
+
+GitHub actions are already well documented and [their own guidance](https://docs.github.com/en/actions) should be able to walk you through anything you need. That being said, if there's anything else you'd like to see here let us know.
+
+---
+
+# Dashboard performance
 
 ---
 
@@ -433,52 +472,3 @@ The documentation for the **profvis** package can be found here: [Profvis docume
 
 Whilst **profvis** can help identify any bottlenecks, this will ideally be complemented in the future by full load testing of dashboards, whereby the behaviour of dashboards under real-life high demand scenarios can be tested. However, this type of testing is unavailable whilst our applications are hosted on ShinyApps. We will offer support on load testing once we move dashboards on to our own server systems.
 
----
-
-## Tests and deployment
-
-Both UI and unit tests need to be added to your app's deployment pipeline. This ensures that the app will not be published if any of the tests fail.
-
-We recommend using Github Actions to deploy the latest code whenever a push to your master branch occurs - this ensures that the published version of your app stays up to date.
-
-You should also use GitHub Actions to run the automated tests for your app, which we recommend are done on at least every pull request.
-
-If you’ve started from our [template repository](https://github.com/dfe-analytical-services/shiny-template) then all of this will be mostly set up for you to tweak and expand on, but if you haven't then you’ll need to add the yaml files from the [.github/workflows]() folder to your repository.
-
-GitHub actions are already well documented and [their own guidance](https://docs.github.com/en/actions) should be able to walk you through anything you need. That being said, if there's anything else you'd like to see here let us know.
-
----
-
-# Styling
-
----
-
-By using the official DfE R-Shiny template and the dfeshiny package (and keeping pace with updates), teams will be able to create a dashboard that conforms to a standard DfE styling.
-
-All dashboards should have a link to the source code, and information about who to contact for feedback/issues. You should be familiar with and follow the [gov.uk style guide](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style) as appropriate.
-
-Teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. Be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
-
-Charts using ggplot2 can take custom palettes using the `scale_fill_manual()` function, e.g. below:
-
-```
-# Create colour palette using recommended colours (based on gov.uk design system)
-
-dfe_colours <- c(
-  "#12436D", #`blue`
-  "#F46A25",#`orange`
-  "#801650",#`maroon`
-  "#28A197" #`turquoise`
-  )
-
-# Create chart using palette
-
-ggplot(aes(y=value, x="",
-                 fill = factor(rating),
-                 text = paste(rating, ": ", value, "%"))) +
-      geom_bar(stat="identity", position = position_fill(reverse = TRUE))+
-      scale_fill_manual(values = dfe_colours)
-
-```
-
-Further examples are given on the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page. In addition, we recommend the `ggiraph` package for rendering plots.
