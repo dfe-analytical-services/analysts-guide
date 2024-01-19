@@ -60,7 +60,7 @@ Here are some tips to follow best practice in your SQL code, making it easier to
 
 SSMS is the best tool to get started with writing SQL queries and saving SQL scripts that produce your desired outputs. 
 
-Once you have saved SQL scripts or are more familiar with writing SQL queries on the fly, you can look at running your scripts or lines of SQL code [directly in R](../RAP/rap.html#Connecting_R_to_SQL). This will streamline your process, saving copying and pasting SQL outputs into csvs, and ultimately help with reaching RAP best practice by aiding production of [a single publication production script](../RAP/rap.html#Single_publication_production_script)
+Once you have saved SQL scripts or are more familiar with writing SQL queries on the fly, you can look at running your scripts or lines of SQL code [directly in R](../RAP/rap-statistics.html#connecting-r-to-sql). This will streamline your process, saving copying and pasting SQL outputs into csvs, and ultimately help with reaching RAP best practice by aiding production of [a single publication production script](../RAP/rap-statistics.html#whole-publication-production-scripts)
 
 ---
 
