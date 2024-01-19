@@ -141,28 +141,21 @@ Google Analytics is a free service that collects information on who visits your 
 
 ---
 
-# Accessibility
+Accessibility
 
 ---
 
-Government services must work for everyone who needs to use them. Public sector organisations have a legal duty to consider everyone’s needs when they’re designing and delivering services. Making a website or mobile app accessible means making sure it can be used by as many people as possible. This includes those with:
+In line with [recent legislation](https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps) for public sector websites, all dashboards need to meet the latest [Web Content Accessibility Guidance](https://www.w3.org/TR/WCAG21/).
 
-- impaired vision
-- motor difficulties
-- cognitive impairments or learning disabilities
-- deafness or impaired hearing
+As a minimum we expect all dashboards to be checked using Lighthouse and have an accessibility statement before being published. In addtion, R-Shiny dashboards should be tested with shinya11y.
 
-Accessibility means more than putting things online. It means making your content and design clear and simple enough so that most people can use it without needing to adapt it, while supporting those who do need to adapt things.
+Your statement should be written in line with the [accessibility statement guidance](https://www.gov.uk/guidance/make-your-website-or-app-accessible-and-publish-an-accessibility-statement#publish-your-accessibility-statement), and you can make use of a [template accessibility statement](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website) provided by .gov.uk.
 
-The accessibility regulations came into force for public sector bodies on 23 September 2018. They say you must make your website or mobile app more accessible by making it ‘perceivable, operable, understandable and robust’. The full name of the accessibility regulations is the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018. The accessibility regulations build on your existing obligations to people who have a disability under the Equality Act 2010 (or the Disability Discrimination Act 1995 in Northern Ireland).
+Lighthouse in Google Chrome is an easy way to quickly rate your accessibility. Open your app in Chrome, right click anywhere on the page and select "Inspect". From there, navigate to "Lighthouse" in the top grey bar, and click "Generate report". This generates scores for accessibility, best practices and SEO for your application or web page:
 
-These regulations apply to all dashboards created for Official statistics. All dashboards should:
+![](../images/lighthouse.gif)
 
-- have an [accessibility statement](https://www.gov.uk/guidance/make-your-website-or-app-accessible-and-publish-an-accessibility-statement#publish-your-accessibility-statement)
-- follow the [guidance below](#accessibility-testing) for testing against [WCAG 2.1 AA accessibility standard](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag)
-- use open data that is already available via EES
-
-Analysts should familiarise themselves with the gov.uk guidance on [service accessibility](https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction#meeting-government-accessibility-requirements)
+Automated tools can't check for everything and there's no substitute for giving your dashboard a manual check. You should consider what users need from your dashboard and ensure that that information is accessible to all. For example, can someone using a screen reader get the same information as you can see on the screen from a downloadable csv or from the alt text that you have provided? Everything that you can see, you should also be able to read with a screen reader. Use the [Edge narrator tool](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) to test out how your dashboard works in practice.
 
 ---
 
