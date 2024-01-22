@@ -578,7 +578,7 @@ If you ever find yourself writing HTML, or creating it through RMarkdown, you ca
 ## Peer reviewing code
 
 
-Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to 'idiot check' our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it's quality and value. The [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html) contains detailed guidance on peer review, but we have summarised some of the information here for you as well. 
+Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to 'idiot check' our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it's quality and value. The [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html) and [Tidyteam](https://code-review.tidyverse.org/) contain detailed guidance on peer review, but we have summarised some of the information here for you as well. 
 
 Prior to receiving code for peer review, the author should ensure that all code files are clean, commented appropriately and for larger projects should be held in a repo with an appropriate [README](#writing-a-readme-file) file.
 
