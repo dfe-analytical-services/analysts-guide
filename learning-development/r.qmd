@@ -30,7 +30,8 @@ Download R (language) and RStudio (IDE) from the DfE software center. We also re
 
 ## Best places to start
 
-- The DfE Analytics Academy host an [online R training course](https://trello.com/invite/b/QdDx3VmA/96f273b3438db2bb8ee5feae3943c3d4/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"}. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.
+- The DfE Analytics Academy host an [online R training course on trello](https://trello.com/b/QdDx3VmA/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"}. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.\
+**Note** if you have not accessed analytics academy before, you will need to log in or create a free trello account and request access the first time you open the link, and one of the admins will approve your request. 
 
 - There is also the [DfE R training guide](https://dfe-analytical-services.github.io/r-training-course/){target="_blank" rel="noopener noreferrer"}, which is a great starting point and reference to guide you through how to get started using R and RStudio.
 
