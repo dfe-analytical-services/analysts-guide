@@ -179,7 +179,7 @@ You will need:
 * A finished app that meets the accessibility and styling standards (see our [Dashboard procedure checklist](#dashboard-procedure-checklist))
 * Code in the dfe-analytical-services GitHub repo
 * Approval from your DD
-* If the data underlying the dashboard is currently unpublished, you will need to create dummy data to use in GitHub until the data becomes published (see [dummy data guidance](#dummy-data) section).
+* If the data underlying the dashboard is currently unpublished, you will need to create dummy data to use in GitHub until the data becomes published (see [dummy data guidance](#using-dummy-data) section).
 
 To set up a new app, send the above to [Statistics Development Team](mailto:statistics.development@education.gov.uk). If your code is not yet hosted in the dfe-analytical-services area you can request for the repository to be moved at the same time as sending approvals.
 
@@ -212,7 +212,7 @@ You must contact the statistics development team for the following:
 
 Setting up a development/demo dashboard area:
 
-* While developing your dashboard, you may want a private, demo-version to share with policy or senior colleagues for review and feedback. This version must use either published data or dummy data and can not use unpublished data, since this cannot be uploaded to GitHub until the day of publication (see our [dummy data guidance](#dummy-data) for public dashboards).
+* While developing your dashboard, you may want a private, demo-version to share with policy or senior colleagues for review and feedback. This version must use either published data or dummy data and can not use unpublished data, since this cannot be uploaded to GitHub until the day of publication (see our [dummy data guidance](#using-dummy-data) for public dashboards).
 * Ensure that prior to contacting the statistics development team, you have updated all of the URL's and other items listed above.
 * You must contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) to add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io. Once this is done you will have a browser link you can use to access the dashboard. We can make this private such that there is a list of approved viewers who must log in to view the dashboard - please provide the email addresses of any colleagues who you wish to have access to the private version during development.
 
@@ -320,7 +320,7 @@ The following provides a more detailed description of how you would do the above
 
 We don't yet have a database server set up that can be accessed by public facing dashboards, though we are working to put this in place. In the meantime, there are a few alternative options for storing data that the dashboard can run off.
 
-- Store the data within the repo (e.g. CSV files in a /data folder). Note that only published data should be stored in a repo. If your working on a dashboard that uses unpublished data then please see the [dummy data section](#dummy-data) for guidance.
+- Store the data within the repo (e.g. CSV files in a /data folder). Note that only published data should be stored in a repo. If your working on a dashboard that uses unpublished data then please see the [dummy data section](#using-dummy-data) for guidance.
 
 - Use Google sheets
 
@@ -354,7 +354,7 @@ If you see any  of the following errors, it is because you are trying to commit 
 
 `Error: data/test_data.csv is not logged as published or reference data in datafiles_log.csv and is not found in .gitignore.`
 
-Commit hooks run automatically whenever you try to commit changes, and prevent any unpublished data being uploaded to the GitHub repo (see the [public dashboards](#public-dashboards) and [dummy data](#dummy-data) sections) by checking the datafiles_log.csv file. 
+Commit hooks run automatically whenever you try to commit changes, and prevent any unpublished data being uploaded to the GitHub repo (see the [public dashboards](#public-dashboards) and [dummy data](#using-dummy-data) sections) by checking the datafiles_log.csv file. 
 
 If you would like to save an unpublished data file locally to test the dashboard you should use the .gitignore file to ensure git ignores this file in your commits (see the [testing with unpublished data guidance](#testing-with-unpublished-data)) and then list this file as unpublished in your datafiles_log.csv file.
 
@@ -374,7 +374,7 @@ Your dummy data should:
 
 ## Testing with unpublished data
 
-While you must use [dummy data](#dummy-data) in your GitHub repo, it is understandable that we should test the dashboard works with the real data before it goes live.
+While you must use [dummy data](#using-dummy-data) in your GitHub repo, it is understandable that we should test the dashboard works with the real data before it goes live.
 
 This can be done using the .gitignore file alongside the datafiles_log.csv and commit hooks explained in the [Stopping accidental data uploads guidance](#stopping-accidental-data-uploads). You can view the example files our [template repository](https://github.com/dfe-analytical-services/shiny-template).
 
