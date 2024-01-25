@@ -50,11 +50,71 @@ All dashboards should have a link to the source code, and information about who 
 
 ## Consistency in R chart styling and colours
 
+We recommend producing interactive charts using the `ggplot2` package to create the basic plots, in combination with the `ggiraph` package to add any required interactivity. Any ggplot2 chart type can be converted to being interactive using ggiraph by adding `_interactive` on to the plot type function call as illustrated with `geom_point()` below:
+
+``` {r ggiraph, eval=FALSE}
+# Creat an interactive chart that we can output in an R-Shiny application
+library(ggplot2)
+library(ggiraph)
+
+chart_iris <- ggplot(iris) +
+  geom_point_interactive(
+    aes(
+      x=Petal.Length, 
+      y=Petal.Width, 
+      colour=Species,
+      tooltip=paste(Species,'\nWidth=',Petal.Width,'\nLength=',Petal.Length)
+      )
+    )
+```
+
+Which produces the following chart with tooltips appeating when the user hovers over any given data point:
+
+``` {r ggiraph_run, echo=FALSE, eval=TRUE}
+# Just running the code within the quarto doc to show that it works!
+library(ggplot2)
+library(ggiraph)
+chart_iris <- ggplot(iris) +
+  geom_point_interactive(
+    aes(
+      x=Petal.Length, 
+      y=Petal.Width, 
+      colour=Species,
+      tooltip=paste(Species,'\nWidth=',Petal.Width,'\nLength=',Petal.Length)
+      )
+    )
+
+girafe(
+  ggobj = chart_iris,
+  options = list(
+    opts_selection(
+      type = "single", 
+      only_shiny = FALSE
+      )
+    ),
+  height_svg = 4.8,
+  width_svg = 7.4
+  )
+
+```
+
+To render this within a Shiny application, we would then need to add the following lines to the ui.R and server.R files respectively:
+
+``` {r ggiraph_ui, eval=FALSE}
+# Code to place ggiraph in ui.R
+girafeOutput("my_ggiraph_chart")
+```
+
+``` {r ggiraph_server, eval=FALSE}
+# Code to render ggiraph in server.R
+my_ggiraph_chart <- renderGirafe(chart_iris)
+```
+
 Teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. Be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
 
 Charts using ggplot2 can take custom palettes using the `scale_fill_manual()` function, e.g. below:
 
-```
+``` {r chart_colours, eval=FALSE}
 # Create colour palette using recommended colours (based on gov.uk design system)
 
 dfe_colours <- c(
@@ -74,8 +134,7 @@ ggplot(aes(y=value, x="",
 
 ```
 
-Further examples are given on the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page. In addition, we recommend the `ggiraph` package for rendering plots.
-
+Further examples are given on the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page.
 
 ---
 

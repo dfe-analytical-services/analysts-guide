@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.1",
+    "Version": "4.3.2",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -218,7 +218,7 @@
     },
     "htmltools": {
       "Package": "htmltools",
-      "Version": "0.5.6",
+      "Version": "0.5.7",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -231,7 +231,7 @@
         "rlang",
         "utils"
       ],
-      "Hash": "a2326a66919a3311f7fbb1e3bf568283"
+      "Hash": "2d7b3857980e0e0d0a1fd6f11928ab0f"
     },
     "jquerylib": {
       "Package": "jquerylib",
