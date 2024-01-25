@@ -114,8 +114,10 @@ Teams should pick from the [gov.uk design system colours](https://design-system.
 
 Charts using ggplot2 can take custom palettes using the `scale_fill_manual()` function, e.g. below:
 
-``` {r chart_colours, eval=FALSE}
+``` {r chart_colours, eval=TRUE}
 # Create colour palette using recommended colours (based on gov.uk design system)
+
+library(ggplot2)
 
 dfe_colours <- c(
   "#12436D", #`blue`
@@ -126,11 +128,17 @@ dfe_colours <- c(
 
 # Create chart using palette
 
-ggplot(aes(y=value, x="",
-                 fill = factor(rating),
-                 text = paste(rating, ": ", value, "%"))) +
-      geom_bar(stat="identity", position = position_fill(reverse = TRUE))+
-      scale_fill_manual(values = dfe_colours)
+ggplot(
+  mtcars,
+  aes(
+    x=gear,
+    fill = factor(cyl)
+    )
+  ) +
+  labs(x = 'Gears', fill = 'Cylinders') +
+  geom_bar(stat='count') +
+  scale_fill_manual(values = dfe_colours) +
+  theme_classic()
 
 ```
 
