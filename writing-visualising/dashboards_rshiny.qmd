@@ -68,7 +68,7 @@ chart_iris <- ggplot(iris) +
     )
 ```
 
-Which produces the following chart with tooltips appeating when the user hovers over any given data point:
+Which produces the following chart with tooltips appearing when the user hovers over any given data point:
 
 ``` {r ggiraph_run, echo=FALSE, eval=TRUE}
 # Just running the code within the quarto doc to show that it works!
@@ -110,7 +110,7 @@ girafeOutput("my_ggiraph_chart")
 my_ggiraph_chart <- renderGirafe(chart_iris)
 ```
 
-Teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. Be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
+In terms of colour choices, teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. Be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
 
 Charts using ggplot2 can take custom palettes using the `scale_fill_manual()` function, e.g. below:
 
@@ -154,11 +154,11 @@ All published dashboards should have their code hosted on the [dfe-analytical-se
 
 Given the above, all analysts intending to create a dashboard should ensure they have a good working understanding of git, GitHub and Azure DevOps. We strongly recommend our [Tech Skills workshop on git and Azure DevOps](../learning-development/learning-support.html#technical-workshops) to either get you started or refresh your memory.
 
+Analysts should not use their own private GitHub accounts for the development of DfE dashboards.
+
 <div class="alert alert-dismissible alert-danger">
   Be sure to read the guidance carefully, **do not** commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact [Statistics Development Team](mailto:statistics.development@education.gov.uk) immediately with the full details of what has been uploaded to GitHub and when.
 </div>
-
-Analysts should not use their own private GitHub accounts for the development of DfE dashboards.
 
 ---
 
@@ -417,7 +417,7 @@ If you're running the app from an internal database, you'll need to contact the 
 
 ---
 
-If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact [Statistics Development Team](mailto:statistics.development@education.gov.uk).
+If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
 The template has a google_analytics.html file which is set up to track all basic metrics, plus the inputs from both drop-downs. To set this up with your own app you will need a new tracking tag (the long number in the gtag()) which the statistics development team can provide you with. Please contact us in order to set this up.
 
