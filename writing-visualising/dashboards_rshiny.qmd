@@ -1,13 +1,13 @@
 ---
-title: "Creating R-Shiny dashboards"
+title: "Creating R Shiny dashboards"
 ---
 
-<p class="text-muted">Guidance for publishing public statistics dashboards with R-Shiny</p>
+<p class="text-muted">Guidance for publishing public statistics dashboards with R Shiny</p>
 
 
 ---
 
-# Learning R-Shiny
+# Learning R Shiny
 
 ---
 
@@ -28,7 +28,7 @@ Finally, you should seek to make use of the community that is already out there,
 
 ---
 
-# DfE styling and the DfE R-Shiny template
+# DfE styling and the DfE R Shiny template
 
 ---
 
@@ -42,7 +42,7 @@ The template provides code for a basic interactive dashboard, with an example li
 
 View the [latest version of the template dashboard](https://department-for-education.shinyapps.io/dfe-shiny-template/).
 
-By using the official DfE R-Shiny template and the dfeshiny package (and keeping pace with updates), teams will be able to create a dashboard that conforms to a standard DfE styling.
+By using the official DfE R Shiny template and the dfeshiny package (and keeping pace with updates), teams will be able to create a dashboard that conforms to a standard DfE styling.
 
 All dashboards should have a link to the source code, and information about who to contact for feedback/issues. You should be familiar with and follow the [gov.uk style guide](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style) as appropriate.
 
@@ -53,7 +53,7 @@ All dashboards should have a link to the source code, and information about who 
 We recommend producing interactive charts using the `ggplot2` package to create the basic plots, in combination with the `ggiraph` package to add any required interactivity. Any ggplot2 chart type can be converted to being interactive using ggiraph by adding `_interactive` on to the plot type function call as illustrated with `geom_point()` below:
 
 ``` {r ggiraph, eval=FALSE}
-# Creat an interactive chart that we can output in an R-Shiny application
+# Creat an interactive chart that we can output in an R Shiny application
 library(ggplot2)
 library(ggiraph)
 
@@ -156,11 +156,13 @@ As with charts, be careful when choosing colours, and make sure that colours hav
 
 ---
 
+<div class="alert alert-dismissible alert-danger">
+Analysts should not use their own private GitHub accounts for the development of DfE dashboards.
+</div>
+
 All published dashboards should have their code hosted on the [dfe-analytical-services project on GitHub](https://github.com/dfe-analytical-services/), both for full public transparency and to enable automated approval-based deployments to the DfE publication platform. For the purposes of the internal-only review of dashboards under development, analysts may also benefit from a hosting code on the DfE Azure based DevOps platform. For both of the above, analysts should contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
-Given the above, all analysts intending to create a dashboard should ensure they have a good working understanding of git, GitHub and Azure DevOps. We strongly recommend our [Tech Skills workshop on git and Azure DevOps](../learning-development/learning-support.html#technical-workshops) to either get you started or refresh your memory.
-
-Analysts should not use their own private GitHub accounts for the development of DfE dashboards.
+Given the above, all analysts intending to create a dashboard should ensure they have a good working understanding of Git, GitHub and Azure DevOps. We strongly recommend our [Tech Skills workshop on Git and Azure DevOps](../learning-development/learning-support.html#technical-workshops) to either get you started or refresh your memory.
 
 <div class="alert alert-dismissible alert-danger">
   Be sure to read the guidance carefully, **do not** commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact [Statistics Development Team](mailto:statistics.development@education.gov.uk) immediately with the full details of what has been uploaded to GitHub and when.
@@ -172,13 +174,13 @@ Analysts should not use their own private GitHub accounts for the development of
 
 ---
 
-DfE Shiny applications are currently published via the DfE Analytical Services [shinyapps.io](https://www.shinyapps.io/) account, with the authorisation and deployment of dashboards performed using GitHub. 
+Public facing DfE Shiny applications are currently published via the DfE Analytical Services [shinyapps.io](https://www.shinyapps.io/) account, with the authorisation and deployment of dashboards performed using GitHub. 
 
-You need to alert the statistics development team of any new dashboard publication as early in development as possible and keep us updated on expected publication date, data updates or major functional updates (at least 2 weeks before publication but preferably as soon as you know any updates are planned). As part of notifying the Statistics Development Team of your intention to develop a public facing dashboard, they will be able to set your GitHub repository up to publish to shinyapps.io and to have the necessary protections and security. 
+You need to alert the Statistics Development Team of any new dashboard publication as early in development as possible and keep us updated on the expected publication date so that we can review the dashboard against DfE standards and set up and support on the deployment to ShinyApps.io. In addition, please notify us of any planned data updates or significant functional updates (at least 2 weeks before publication but preferably as soon as you know any updates are required).
 
 All dashboard publications and major updates need authorisation from the relevant G6 or DD and the stats development team (with the former authorisation e-mail being forwarded on to the [Statistics Development Team](mailto:statistics.development@education.gov.uk)).
 
-The majority of dashboards made to support and augment our Official Statistics will be public facing. For public facing shiny apps you should publish via shinyapps.io. The statistics development team manage a subscription for this and can help you get set up.
+The majority of dashboards made to support and augment our Official Statistics will be public facing. For public facing shiny apps you should publish via shinyapps.io. The Statistics Development Team manage a subscription for this and can help you get set up.
 
 You will need:
 
@@ -199,8 +201,8 @@ This checklist outlines the standard procedure for teams who are wishing to prod
 Getting set up:
 
 * Create an account on [GitHub](https://github.com/)
-* Ask the [Statistics Development Team](mailto:statistics.development@education.gov.uk) to create you a repository in the [DfE analytical services area](https://github.com/dfe-analytical-services), providing the name of the dashboard and the GitHub accounts of anyone who will be contributing to the code. You should aim to have two analysts working on the code development and a line manager for review purposes. Further colleagues with review responsibilities (policy colleagues, G6 and above, etc.) can be given access to a demo-site, rather than the repository (see guidance for this below in 'Setting up a development/demo dashboard area').
-* Clone the repo to your device so you can develop your code. Open the repo page in GitHub, click the green 'Code' button, and copy the URL it provides. Then, open R Studio on your device, click file > new project > version control > git, paste the repository URL you copied from GitHub, give your local project area a name, and choose where to save it (i.e. on your computer's C:\ drive, outside of the OneDrive-synced folders).
+* Ask the [Statistics Development Team](mailto:statistics.development@education.gov.uk) to create you a repository in the [DfE analytical services area](https://github.com/dfe-analytical-services), providing the name of the dashboard and the GitHub accounts of anyone who will be contributing to the code. You should aim to have two analysts working on the code development and a line manager for review purposes. Further colleagues with review responsibilities (policy colleagues, G6 and above, etc.) can be given access to a demo-site, rather than the repository (see guidance for this below in 'Setting up a development / demo dashboard area').
+* Clone the repo to your device so you can develop your code. Open the repo page in GitHub, click the green 'Code' button, and copy the URL it provides. Then, open R Studio on your device, click file > new project > version control > Git, paste the repository URL you copied from GitHub, give your local project area a name, and choose where to save it (i.e. on your computer's C:\ drive, outside of the OneDrive-synced folders).
 
 Once you're set up, there are certain parts of the code you need to update:
 
@@ -211,7 +213,7 @@ Once you're set up, there are certain parts of the code you need to update:
 * Update the README.md file (you can do this easily directly in GitHub). This is the file that renders below your repo in GitHub for users to see.
 * Begin adding your own dashboard content. If you copy and paste any parts of the code (i.e. to create new tabs) you must change all of the IDs so there are no repeated IDs in the UI, otherwise the app will run with no UI elements. You should add UI and unit tests as you develop your code as a form of automated QA (see our [guidance on UI tests](#ui-tests) and [guidance on unit tests](#unit-tests)).
 
-You must contact the statistics development team for the following:
+You must contact the Statistics Development Team for the following:
 
 * To add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io.
 * To create an area for your team in Google Analytics, to track the user analytics of your dashboard.
@@ -219,10 +221,10 @@ You must contact the statistics development team for the following:
 Setting up a development/demo dashboard area:
 
 * While developing your dashboard, you may want a private, demo-version to share with policy or senior colleagues for review and feedback. This version must use either published data or dummy data and can not use unpublished data, since this cannot be uploaded to GitHub until the day of publication (see our [dummy data guidance](#using-dummy-data) for public dashboards).
-* Ensure that prior to contacting the statistics development team, you have updated all of the URL's and other items listed above.
+* Ensure that prior to contacting the Statistics Development Team, you have updated all of the URL's and other items listed above.
 * You must contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) to add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io. Once this is done you will have a browser link you can use to access the dashboard. We can make this private such that there is a list of approved viewers who must log in to view the dashboard - please provide the email addresses of any colleagues who you wish to have access to the private version during development.
 
-You must have done the following before a dashboard can be published (the statistics development team must review and approve that these have been met):
+You must have done the following before a dashboard can be published (the Statistics Development Team must review and approve that these have been met):
 
 * Accessibility testing the dashboard and updating the accessibility statement. The [accessibility testing guidance](#accessibility-testing) later in this section outlines how teams can do this.
 * You should test how your dashboard appears and performs on mobile devices. you can do this by opening your dashboard in chrome/edge, right clicking anywhere on the page and selecting 'inspect'. you will then see a new panel on the right hand side of your screen. To see your dashboard how a mobile user would, click the mobile/tablet button (see the image below).
@@ -236,7 +238,7 @@ You must have done the following before a dashboard can be published (the statis
 
 ---
 
-## Procedure for updating your R-Shiny dashboard with new data, new functionality or both
+## Procedure for updating your R Shiny dashboard with new data, new functionality or both
 
 As mentioned in the [public dashboards section](#public-dashboards), a public dashboard should not be updated with unpublished data until the data is published. However, it is possible to clone the repo and run it locally with unpublished data for testing purposes (see our [guidance on testing with unpublished data](#testing-with-unpublished-data)). This guidance applies to both adding real data to a dashboard that previously used dummy data, and to adding updated data to an existing dashboard.
 
@@ -362,7 +364,7 @@ If you see any  of the following errors, it is because you are trying to commit 
 
 Commit hooks run automatically whenever you try to commit changes, and prevent any unpublished data being uploaded to the GitHub repo (see the [public dashboards](#public-dashboards) and [dummy data](#using-dummy-data) sections) by checking the datafiles_log.csv file. 
 
-If you would like to save an unpublished data file locally to test the dashboard you should use the .gitignore file to ensure git ignores this file in your commits (see the [testing with unpublished data guidance](#testing-with-unpublished-data)) and then list this file as unpublished in your datafiles_log.csv file.
+If you would like to save an unpublished data file locally to test the dashboard you should use the .gitignore file to ensure Git ignores this file in your commits (see the [testing with unpublished data guidance](#testing-with-unpublished-data)) and then list this file as unpublished in your datafiles_log.csv file.
 
 ---
 
@@ -384,7 +386,7 @@ While you must use [dummy data](#using-dummy-data) in your GitHub repo, it is un
 
 This can be done using the .gitignore file alongside the datafiles_log.csv and commit hooks explained in the [Stopping accidental data uploads guidance](#stopping-accidental-data-uploads). You can view the example files our [template repository](https://github.com/dfe-analytical-services/shiny-template).
 
-The .gitignore file is a plain text file that tells git to ignore specified files in commits and pushes to the repo. Therefore, the first step when wanting to test unpublished data in a dashboard is to add the unpublished data file names to the .gitignore file.
+The .gitignore file is a plain text file that tells Git to ignore specified files in commits and pushes to the repo. Therefore, the first step when wanting to test unpublished data in a dashboard is to add the unpublished data file names to the .gitignore file.
 
 Adding the file name alone will ensure it is ignored no matter where in the project area you save it (i.e. in any folder). Once this is done, you can add your unpublished data file to your local area, run the app locally, and make edits/commits without uploading the data to Github.
 
@@ -419,19 +421,19 @@ If you're running the app from an internal database, you'll need to contact the 
 
 ---
 
-# Using Google Analytics with R-Shiny
+# Using Google Analytics with R Shiny
 
 ---
 
 If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
-The template has a google_analytics.html file which is set up to track all basic metrics, plus the inputs from both drop-downs. To set this up with your own app you will need a new tracking tag (the long number in the gtag()) which the statistics development team can provide you with. Please contact us in order to set this up.
+The template has a google_analytics.html file which is set up to track all basic metrics, plus the inputs from both drop-downs. To set this up with your own app you will need a new tracking tag (the long number in the gtag()) which the Statistics Development Team can provide you with. Please contact us in order to set this up.
 
 If you are hosting your dashboard at multiple URLs (i.e. to cope with expected high traffic) then all URLs will be tracked using one tracking tag and analytics for all URLs will all appear as one in the same report.
 
 ---
 
-# Accessibility testing in R-Shiny
+# Accessibility testing in R Shiny
 
 ---
 
@@ -439,7 +441,7 @@ To complement the general accessibility guidance provided on the dashboards page
 
 ![](../images/shinya11y_demo.gif)
 
-R-Shiny dashboards should also be tested using Lighthouse and via manual checks as outlined on the general dashboards page.
+R Shiny dashboards should also be tested using Lighthouse and via manual checks as outlined on the general dashboards page.
 
 One example of a dashboard for Official statistics that meets these regulations is the [SCAP LA school places scorecards app](https://department-for-education.shinyapps.io/la-school-places-scorecards). Their accessibility statement is clearly labelled, explains what checks have been carried out, what the known limitations are and the plans in place to fix them:
 
@@ -471,11 +473,11 @@ User interface (UI) tests should be used for all apps. These tests should check 
 * Content appears as expected when you switch between tabs
 * Content updates as expected when you change inputs
 
-The [shinytest2 package](https://rstudio.github.io/shinytest2/) (which supersedes [shinytest](https://rstudio.github.io/shinytest/)) is a really easy way to create these tests on an R-Shiny app. Simply load in the package and run `shinytest2::record_test()` to open up the testing environment to get started.
+The [shinytest2 package](https://rstudio.github.io/shinytest2/) (which supersedes [shinytest](https://rstudio.github.io/shinytest/)) is a really easy way to create these tests on an R Shiny app. Simply load in the package and run `shinytest2::record_test()` to open up the testing environment to get started.
 
 Each test should produce one "expected results" JSON file tracking the inputs and outputs used by your dashboard. You can check the naming of particular input and output elements within your app by holding CTRL and clicking on an element in the testing window.
 
-An example of the use of shinytest2 on a DfE R-Shiny app can be found in the [KS4 Ready Reckoners tool](https://github.com/dfe-analytical-services/KS4-ready-reckoners/blob/main/tests/testthat/test-shinytest2.R). This has a variety of tests that check that the app functions as expected when different combinations of filters are selected.
+An example of the use of shinytest2 on a DfE R Shiny app can be found in the [KS4 Ready Reckoners tool](https://github.com/dfe-analytical-services/KS4-ready-reckoners/blob/main/tests/testthat/test-shinytest2.R). This has a variety of tests that check that the app functions as expected when different combinations of filters are selected.
 
 For optimal readability, each test should be separated out by comments, clearly stating what is being tested. The testing uses the following functions to set inputs and record test results:
 
