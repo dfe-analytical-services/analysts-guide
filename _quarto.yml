@@ -97,6 +97,7 @@ website:
       - section: "Writing and visualising"
         contents:
           - writing-visualising/dashboards.qmd
+          - writing-visualising/dashboards_rshiny.qmd
           - writing-visualising/visualising.qmd
           - writing-visualising/writing.qmd
       - section: "Reproducible Analytical Pipelines (RAP)"

@@ -69,6 +69,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Public dashboards](writing-visualising/dashboards.html)
 - Guidance for publishing public facing statistics dashboards
 
+[Publishing an R-Shiny based dashboard](writing-visualising/dashboards_rshiny.html)
+- Guidance for publishing public facing statistics dashboards using R-Shiny
+
 [Visualising data](writing-visualising/visualising.html)
 - Resources and best practice to guide you when visualising data
 
