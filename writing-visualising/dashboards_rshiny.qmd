@@ -218,7 +218,7 @@ You must contact the Statistics Development Team for the following:
 * To add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io.
 * To create an area for your team in Google Analytics, to track the user analytics of your dashboard.
 
-Setting up a development/demo dashboard area:
+Setting up a development / demo dashboard area:
 
 * While developing your dashboard, you may want a private, demo-version to share with policy or senior colleagues for review and feedback. This version must use either published data or dummy data and can not use unpublished data, since this cannot be uploaded to GitHub until the day of publication (see our [dummy data guidance](#using-dummy-data) for public dashboards).
 * Ensure that prior to contacting the Statistics Development Team, you have updated all of the URL's and other items listed above.
