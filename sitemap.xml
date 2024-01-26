@@ -1,107 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio.html</loc>
-    <lastmod>2024-01-23T13:20:17.891Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/CODE_OF_CONDUCT.html</loc>
-    <lastmod>2024-01-23T13:20:16.911Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-support.html</loc>
-    <lastmod>2024-01-23T13:19:51.534Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-expectations.html</loc>
-    <lastmod>2024-01-23T13:19:50.518Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/scrums.html</loc>
-    <lastmod>2024-01-23T13:19:47.434Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/pub.html</loc>
-    <lastmod>2024-01-23T13:19:46.666Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/examples.html</loc>
-    <lastmod>2024-01-23T13:19:45.398Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/embedded-charts.html</loc>
-    <lastmod>2024-01-23T13:19:18.362Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/r.html</loc>
-    <lastmod>2024-01-23T13:19:17.510Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html</loc>
-    <lastmod>2024-01-23T13:18:53.630Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/python.html</loc>
-    <lastmod>2024-01-23T13:18:52.290Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/writing-visualising/writing.html</loc>
-    <lastmod>2024-01-23T13:18:06.877Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/writing-visualising/dashboards.html</loc>
-    <lastmod>2024-01-23T13:18:05.213Z</lastmod>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/CONTRIBUTING.html</loc>
+    <lastmod>2024-01-26T11:55:04.863Z</lastmod>
   </url>
   <url>
     <loc>https://dfe-analytical-services.github.io/analysts-guide/writing-visualising/visualising.html</loc>
-    <lastmod>2024-01-23T13:18:06.349Z</lastmod>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
   </url>
   <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/index.html</loc>
-    <lastmod>2024-01-23T13:18:29.473Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/sql.html</loc>
-    <lastmod>2024-01-23T13:18:52.806Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/learning-support.html</loc>
-    <lastmod>2024-01-23T13:18:54.110Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/stats_tools.html</loc>
-    <lastmod>2024-01-23T13:19:17.886Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/ud.html</loc>
-    <lastmod>2024-01-23T13:19:44.858Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/user-eng.html</loc>
-    <lastmod>2024-01-23T13:19:46.130Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/user-analytics.html</loc>
-    <lastmod>2024-01-23T13:19:47.058Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/ees.html</loc>
-    <lastmod>2024-01-23T13:19:50.102Z</lastmod>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/writing-visualising/dashboards_rshiny.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
   </url>
   <url>
     <loc>https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-faq.html</loc>
-    <lastmod>2024-01-23T13:19:51.142Z</lastmod>
+    <lastmod>2024-01-26T11:55:04.863Z</lastmod>
   </url>
   <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-statistics.html</loc>
-    <lastmod>2024-01-23T13:20:16.479Z</lastmod>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-support.html</loc>
+    <lastmod>2024-01-26T11:55:04.863Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/CODE_OF_CONDUCT.html</loc>
+    <lastmod>2024-01-26T11:55:04.863Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/ees.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/embedded-charts.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/pub.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/stats_tools.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/index.html</loc>
+    <lastmod>2024-01-26T11:55:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html</loc>
+    <lastmod>2024-01-26T11:55:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/sql.html</loc>
+    <lastmod>2024-01-26T11:55:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio.html</loc>
+    <lastmod>2024-01-26T11:55:04.863Z</lastmod>
   </url>
   <url>
     <loc>https://dfe-analytical-services.github.io/analysts-guide/ADA/ada.html</loc>
-    <lastmod>2024-01-23T13:20:17.367Z</lastmod>
+    <lastmod>2024-01-26T11:55:04.859Z</lastmod>
   </url>
   <url>
-    <loc>https://dfe-analytical-services.github.io/analysts-guide/CONTRIBUTING.html</loc>
-    <lastmod>2024-01-23T13:20:18.331Z</lastmod>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/r.html</loc>
+    <lastmod>2024-01-26T11:55:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/learning-support.html</loc>
+    <lastmod>2024-01-26T11:55:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/learning-development/python.html</loc>
+    <lastmod>2024-01-26T11:55:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/ud.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/user-eng.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/examples.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/scrums.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/statistics-production/user-analytics.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-expectations.html</loc>
+    <lastmod>2024-01-26T11:55:04.863Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-statistics.html</loc>
+    <lastmod>2024-01-26T11:55:04.863Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/writing-visualising/writing.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dfe-analytical-services.github.io/analysts-guide/writing-visualising/dashboards.html</loc>
+    <lastmod>2024-01-26T11:55:04.979Z</lastmod>
   </url>
 </urlset>
