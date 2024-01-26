@@ -110,7 +110,7 @@ girafeOutput("my_ggiraph_chart")
 my_ggiraph_chart <- renderGirafe(chart_iris)
 ```
 
-In terms of colour choices, teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. Be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
+For chart colours, teams should use the GSS colour palettes as outlined in the [Anlytical Function data visualisation guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). These are based on the gov.uk design system colours (described in the next section), but are optimised for charts to help with contrast and variations of colour blindness and are the colours used as default in Explore Education Statistics.
 
 Charts using ggplot2 can take custom palettes using the `scale_fill_manual()` function, e.g. below:
 
@@ -119,7 +119,7 @@ Charts using ggplot2 can take custom palettes using the `scale_fill_manual()` fu
 
 library(ggplot2)
 
-dfe_colours <- c(
+gss_colours <- c(
   "#12436D", #`blue`
   "#F46A25",#`orange`
   "#801650",#`maroon`
@@ -137,12 +137,18 @@ ggplot(
   ) +
   labs(x = 'Gears', fill = 'Cylinders') +
   geom_bar(stat='count') +
-  scale_fill_manual(values = dfe_colours) +
+  scale_fill_manual(values = gss_colours) +
   theme_classic()
 
 ```
 
 Further examples are given on the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page.
+
+## Use of colour outside of charts
+
+In terms of colour choices beyond charts, teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. 
+
+As with charts, be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
 
 ---
 
