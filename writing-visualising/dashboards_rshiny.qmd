@@ -511,15 +511,15 @@ The migrate_from_shinytest function will search for your "tests" folder, and the
 
 There are a couple of potential issues that you may run into when completing migration or running your tests:
 
-**Chromote**
+#### Chromote
 
 Shinytest2 makes use of the Chromote package, which needs to connect to your local instance of Google Chrome. Please make sure you have Google Chrome installed before you attempt to use shinytest2, otherwise it will not work. Sometimes your copy of Chrome might be installed in a different place to where Chromote expects to find it, which means that your tests will not be able to run. There is information on how to resolve this issue [in the Tips for Using R section](../learning-development/r.html#shinytest2---invalid-path-to-chrome-error-message)
 
-**Formatting of line endings**
+#### Formatting of line endings
 
 The migration function will only work if specific line endings (also known as carriage returns) are used in your code. It will not be immediately obvious to you what kind of line endings your code uses as default. If you receive an error that looks like this, or any error that seems to be pointing at the blank space at the end of a line of code, then you may be having this issue:
 
-``` 
+``` {r line_ending_error, eval=FALSE}
 Error in parse(text = test_text) : <text>:21:1: unexpected input
 20: app$snapshot()
 21: 
