@@ -85,7 +85,7 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 - [DfE Quality Assurance wiki](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx){target="_blank" rel="noopener noreferrer"} -  much of this is aimed at areas that use modelling, plenty of it is applicable to how we QA our data too.
 
-- [David Sands' Boons of R and Git](https://psysandsy.github.io/boons-r-git.html){target="_blank" rel="noopener noreferrer"} - a helpful guide o why R and Git are worth your time.
+- [David Sands' Boons of R and Git](https://psysandsy.github.io/boons-r-git.html){target="_blank" rel="noopener noreferrer"} - a helpful guide on why R and Git are worth your time.
 
 ---
 
