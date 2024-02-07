@@ -114,7 +114,7 @@ website:
 format:
   html:
     theme:
-      light: slate
+      light: cyborg
       dark: united
     code-copy: true
     highlight-style: printing
