@@ -503,19 +503,10 @@ An example of a basic shiny test to check that your app loads up correctly can b
 
 ---
 
+#### Preparing for migration
+
+
 As previously mentioned, the shinytest package has been superseded by the [shinytest2 package](https://rstudio.github.io/shinytest2/). If you already have shinytest UI tests in place for your dashboard, there is a function available to migrate these tests for you so that you do not have to rewrite them all yourself. 
-
-There is [guidance on migrating to shinytest2](https://rstudio.github.io/shinytest2/articles/z-migration.html) available. To complete the migration, run `shinytest2::migrate_from_shinytest(PATH_TO_APP)`, making sure to include the full file path to where your project is saved, e.g. `shinytest2::migrate_from_shinytest('C:/R projects/analysts-guide')`. If you copy your file path from Windows Explorer, remember to change the `\` to `/` otherwise you'll encounter an error.
-
-The migrate_from_shinytest function will search for your "tests" folder, and then look inside the folder for any scripts containing UI tests. A new `testthat` folder will be automatically created, containing the code that runs your tests, as well as the snapshots generated when your tests are run. Don't panic if your old test script is deleted as part of the migration, this is supposed to happen! It is recommended that someone who was familiar with the original tests completes QA of the new tests to make sure that everything looks as expected. 
-
-There are a couple of potential issues that you may run into when completing migration or running your tests:
-
-#### Chromote
-
-Shinytest2 makes use of the Chromote package, which needs to connect to your local instance of Google Chrome. Please make sure you have Google Chrome installed before you attempt to use shinytest2, otherwise it will not work. Sometimes your copy of Chrome might be installed in a different place to where Chromote expects to find it, which means that your tests will not be able to run. There is information on how to resolve this issue [in the Tips for Using R section](../learning-development/r.html#shinytest2---invalid-path-to-chrome-error-message)
-
-#### Formatting of line endings
 
 The migration function will only work if specific line endings (also known as carriage returns) are used in your code. It will not be immediately obvious to you what kind of line endings your code uses as default. If you receive an error that looks like this, or any error that seems to be pointing at the blank space at the end of a line of code, then you may be having this issue:
 
@@ -533,9 +524,33 @@ You can modify the type of line endings used in your test code by going to `Tool
 You will need to modify and save your pre-existing test script after changing your settings to get this to work (adding and deleting a letter or a space somewhere should do). Once you've saved your test script, go to `Session > Restart R`, and then re-run the `shinytest2::migrate_from_shinytest(PATH_TO_APP)` command. The migration should then be successful.
 
 
+There is [guidance on migrating to shinytest2](https://rstudio.github.io/shinytest2/articles/z-migration.html) available. To complete the migration, run `shinytest2::migrate_from_shinytest(PATH_TO_APP)`, making sure to include the full file path to where your project is saved, e.g. `shinytest2::migrate_from_shinytest('C:/R projects/analysts-guide')`. There are two ways to find the file path to your project:
+
+- Use the getwd() function
+- Find the file path in Windows Explorer. If you copy your file path from Windows Explorer, remember to change the `\` to `/` otherwise you'll encounter an error.
+
+---
+
+#### Completing migration
+
+
+The migrate_from_shinytest function will search for your "tests" folder, and then look inside the folder for any scripts containing UI tests. A new `testthat` folder will be automatically created, containing the code that runs your tests, as well as the snapshots generated when your tests are run. Don't panic if your old test script is deleted as part of the migration, this is supposed to happen! It is recommended that someone who was familiar with the original tests completes QA of the new tests to make sure that everything looks as expected. 
+
+---
+
+#### Potential Issues
+
+There are a couple of potential issues that you may run into when completing migration or running your tests:
+
+#### Chromote
+
+Shinytest2 makes use of the Chromote package, which needs to connect to your local instance of Google Chrome. Please make sure you have Google Chrome installed before you attempt to use shinytest2, otherwise it will not work. Sometimes your copy of Chrome might be installed in a different place to where Chromote expects to find it, which means that your tests will not be able to run. There is information on how to resolve this issue [in the Tips for Using R section](../learning-development/r.html#shinytest2---invalid-path-to-chrome-error-message)
+
 ---
 
 ## Unit Tests
+
+---
 
 Unit tests should be used for apps that contain custom functions created from scratch, or that rely on existing functions being combined to interact in a certain way.
 
@@ -546,6 +561,8 @@ For example, our [QA app](https://github.com/dfe-analytical-services/dfe-publish
 ---
 
 ## Tests and deployment
+
+---
 
 Both UI and unit tests need to be added to your app's deployment pipeline. This ensures that the app will not be published if any of the tests fail.
 

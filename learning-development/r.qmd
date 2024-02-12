@@ -441,20 +441,7 @@ sprintf("%.18f", 1.4)
 
 These slight differences in the floating point numbers behind the scenes can result in unusual rounding errors using round(). If you're interested, [there's more information available in these forum posts](https://stat.ethz.ch/pipermail/r-help/2007-August/138014.html). 
  
-To round numbers upwards in a way that is consistent with SQL and other programming languages, you can create a custom function like the one below:
-
-``` {r round_five_up, eval=FALSE}
-roundFiveUp <- function(x, n){ 
-    z = abs(x)*10^n 
-    z = z + 0.5 + sqrt(.Machine$double.eps) 
-    z = trunc(z) 
-    z = z/10^n 
-    positiveNegative = sign(x) 
-    return(z * positiveNegative) 
-}
-```
-
-This function can also be found in the [dfeR R package](https://github.com/dfe-analytical-services/dfeR){target="_blank" rel="noopener noreferrer"}.
+To round numbers upwards in a way that is consistent with SQL and other programming languages, we recommend using the roundFiveUp() function in the [dfeR R package](https://github.com/dfe-analytical-services/dfeR){target="_blank" rel="noopener noreferrer"}.
 
 ---
 
