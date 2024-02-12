@@ -99,7 +99,7 @@ Sys.setenv(no_proxy="*")
 
 
 2. Specifying the renv library as the install location. It's a bit of a fudge, though these lines are helpful to get the packages from the renv lockfile installed and you running the project when needed:
- 
+
 ``` {r renv_install, eval=FALSE}
 myPath <- .libPaths()[1]
 
