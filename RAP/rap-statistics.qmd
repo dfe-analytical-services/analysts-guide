@@ -1025,7 +1025,7 @@ The [Self-assessment tool](https://github.com/dfe-analytical-services/publicatio
 
 If you do not already have git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
 
-For now, take a look at at the [resources for learning git](../learning-development/learning-development.html#git) on the learning resources page.
+For now, take a look at at the [resources for learning git](../learning-development/git.html) in the learning resources section.
 
 ---
 
