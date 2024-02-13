@@ -42,7 +42,7 @@ Download R (language) and RStudio (IDE) from the DfE software center. We also re
 ## Best practice
 
 
-Tips for reaching best practice in R can be found on our [RAP page](../RAP/rap.html#Clean_final_code), with guidance on meeting best practice in RAP for clean final code. This makes it easier to read and pick up if another person is running your code. 
+Tips for reaching best practice in R can be found on our [RAP for Statistics page](../RAP/rap-statistics.html#clean-final-code), with guidance on meeting best practice in RAP for clean final code. This makes it easier to read and pick up if another person is running your code. 
 
 
 ---
