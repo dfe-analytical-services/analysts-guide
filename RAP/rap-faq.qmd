@@ -185,7 +185,7 @@ You don't need to be dual running if your process is automated, it's not the bes
 
 ---
 
-More information on recommended ways of working with Git can be found in [our guidance on repositories](rap.html#Open_source_repositories).
+More information on recommended ways of working with Git can be found in [our guidance on repositories](rap-statistics.html#use-open-source-repositories).
 
 In short, a single repository should be used for all releases of your publication, there's no need to have multiple as all the history is saved within previous commits.
 
@@ -197,7 +197,7 @@ In short, a single repository should be used for all releases of your publicatio
 
 Yes, you should have some plain text documentation, this is a part of the guidance on RAP and a part of the 'documentation' step to 'good' practice.
 
-The README in your repository is the place for traditional 'desk notes' and text explanations of bits of the process and context required, we have [guidance on writing READMEs on the statistics production website](rap-statistics.html#writing-a-README-file).
+The README in your repository is the place for traditional 'desk notes' and text explanations of bits of the process and context required, we have [guidance on writing READMEs on the statistics production website](rap-statistics.html#writing-a-readme-file).
 
 ---
 
