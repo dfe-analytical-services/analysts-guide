@@ -30,7 +30,8 @@ Download R (language) and RStudio (IDE) from the DfE software center. We also re
 
 ## Best places to start
 
-- The DfE Analytics Academy host an [online R training course](https://trello.com/invite/b/QdDx3VmA/96f273b3438db2bb8ee5feae3943c3d4/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"}. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.
+- The DfE Analytics Academy host an [online R training course on trello](https://trello.com/b/QdDx3VmA/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"}. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.\
+**Note** if you have not accessed analytics academy before, you will need to log in or create a free trello account and request access the first time you open the link, and one of the admins will approve your request. 
 
 - There is also the [DfE R training guide](https://dfe-analytical-services.github.io/r-training-course/){target="_blank" rel="noopener noreferrer"}, which is a great starting point and reference to guide you through how to get started using R and RStudio.
 
@@ -41,7 +42,7 @@ Download R (language) and RStudio (IDE) from the DfE software center. We also re
 ## Best practice
 
 
-Tips for reaching best practice in R can be found on our [RAP page](../RAP/rap.html#Clean_final_code), with guidance on meeting best practice in RAP for clean final code. This makes it easier to read and pick up if another person is running your code. 
+Tips for reaching best practice in R can be found on our [RAP for Statistics page](../RAP/rap-statistics.html#clean-final-code), with guidance on meeting best practice in RAP for clean final code. This makes it easier to read and pick up if another person is running your code. 
 
 
 ---
@@ -91,7 +92,7 @@ Sometimes renv::restore() can fail, and when in specific renv-controlled project
 
 1. Configuring the proxy settings by running the below in R - this also helps if you are getting timeout issues when trying to webscrape with R:
 
-```
+``` {r proxy_settings, eval=FALSE}
 Sys.setenv(no_proxy="*") 
 
 ```
@@ -99,7 +100,7 @@ Sys.setenv(no_proxy="*")
 
 2. Specifying the renv library as the install location. It's a bit of a fudge, though these lines are helpful to get the packages from the renv lockfile installed and you running the project when needed:
 
-```
+``` {r renv_install, eval=FALSE}
 myPath <- .libPaths()[1]
 
 forceInstall <- function(pkg, path) {
@@ -121,7 +122,7 @@ invisible(lapply(renvPackages, forceInstall, path = myPath))
 
 More manual equivalent to use for specific packages:
 
-```
+``` {r specific_packages, eval=FALSE}
 .libPaths() # note down output 1, and reuse in the lib argument of install.packages() as below
 
 install.packages("rmarkdown", lib = "C:/Users/swong/OneDrive - Department for Education/Documents/stats-production-guidance/renv/library/R-4.0/x86_64-w64-mingw32")
@@ -429,20 +430,18 @@ This can be done most easily by navigating in RStudio through `Tools > Global op
 
 ---
 
-The base R function of round() rounds 5's downwards. To round them upwards you can create a custom function like the one below:
+The base R function of `round()` can behave unusually due to the way numbers are stored within R itself. `round()` is supposed to use a 'banker's round', in which mid-point values (e.g. 0.5, 1.5, 2.5) are rounded to the closest even number. For example, using `round()`, 1.5 should round to 2, but 2.5 should also round to 2. This is different than the way in which SQL performs rounding, which is always to round numbers at the mid-way point up to the next number (e.g. 2.5 rounds to 3).
 
-```
-roundFiveUp <- function(x, n){ 
-    z = abs(x)*10^n 
-    z = z + 0.5 + sqrt(.Machine$double.eps) 
-    z = trunc(z) 
-    z = z/10^n 
-    positiveNegative = sign(x) 
-    return(z * positiveNegative) 
-}
+However, when investigating numbers in R, you can see that they are not always stored in the way you might think. This is due to floating point numbers. Whilst humans use base 10 (numbers 0-9), computers store numbers in a binary (base 2) system as a combinations of 1s and 0s. When translating between base 2 and base 10, sometimes numbers can be not quite what we expect. For example, asking R to print the number 1.4 to 18 decimal places shows that it is actually stored as:
+
+``` {r round_floating_point, eval=FALSE}
+sprintf("%.18f", 1.4)
+[1] "1.399999999999999911"
 ```
 
-This function can also be found in the [dfeR R package](https://github.com/dfe-analytical-services/dfeR){target="_blank" rel="noopener noreferrer"}.
+These slight differences in the floating point numbers behind the scenes can result in unusual rounding errors using round(). If you're interested, [there's more information available in these forum posts](https://stat.ethz.ch/pipermail/r-help/2007-August/138014.html). 
+ 
+To round numbers upwards in a way that is consistent with SQL and other programming languages, we recommend using the roundFiveUp() function in the [dfeR R package](https://github.com/dfe-analytical-services/dfeR){target="_blank" rel="noopener noreferrer"}.
 
 ---
 
@@ -452,7 +451,7 @@ This function can also be found in the [dfeR R package](https://github.com/dfe-a
 
 This can be worked around by using a combination of `eval()` and `parse()`, as shown in the below function:
 
-```
+``` {r eval_and_parse, eval=FALSE}
 showFilterLevels <- function(data, meta) {
   filters <- meta %>%
     filter(col_type == "Filter") %>%
@@ -491,7 +490,7 @@ Struggling to get files to talk to one another, or get code to find and use anot
 
 There's an easy way to interweave multiple vectors into one single vector using `c(rbind())`. The example below shows two vectors, but you can have even more if you need.
 
-```
+``` {r two_vectors, eval=FALSE}
 #Two vectors, x and y
 x <- 1:3
 y <- 4:6
@@ -512,7 +511,7 @@ c(rbind(x, y))
 
 When pulling ggplot charts into RMarkdown reports, you can consider making them even more user-friendly and interactive with plotly. [Further information on how to make your charts interactive with plotly](https://plotly.com/ggplot2){target="_blank" rel="noopener noreferrer"} can be found online. 
 
-```
+``` {r ggplotly, eval=FALSE}
 #Simple ggplot chart called "p"
 p <- ggplot(dat, aes(x=xvar, y=yvar)) +
     geom_point(shape=1)      # Use hollow circles
@@ -530,7 +529,7 @@ fig <- ggplotly(p)
 
 Have you ever needed to replace every value in your data with another? This can come in handy when you are looking at suppression, e.g. converting all NAs to "z" or all values under a certain threshold to "c".
 
-```
+``` {r suppression, eval=FALSE}
 data %>% mutate_all(~ replace(., . == "Value to replace", "Replacement"))
 
 ```
@@ -543,7 +542,7 @@ data %>% mutate_all(~ replace(., . == "Value to replace", "Replacement"))
 
 The group_by() function in dplyr is really useful, but can be fiddly if you only want to use it for one operation in a chunk of code. The with_groups() function from [dplyr](https://dplyr.tidyverse.org/reference/with_groups.html){target="_blank" rel="noopener noreferrer"} lets you do this, saving you having to group and ungroup data each time.
 
-```
+``` {r groups, eval=FALSE}
 data %>% mutate(annual_average = with_groups(time_period, mean))
 
 ```
@@ -558,7 +557,7 @@ Often we'll take chunks of code and reuse them for new projects. This can lead t
 
 Firstly, load up all the packages the code has `library()` commands for, then run the following:
 
-```
+``` {r nmisc, eval=FALSE}
 list.functions.in.file('your-filename-here.R', alphabetic = TRUE)
 ```
 
@@ -570,7 +569,7 @@ list.functions.in.file('your-filename-here.R', alphabetic = TRUE)
 
 The [depgraph package](https://github.com/crsh/depgraph){target="_blank" rel="noopener noreferrer"} allows you to plot a graph of all the dependencies in your R project, which can be a useful tool to help you cut down on the number of package dependencies. Briefly, in these graphs you can look for “hot spots” in the network (big bright dots), which represent packages that have many upstream dependencies but are potentially easy to remove because they have few downstream dependencies (that is, only your package depends on them).
 
-```
+``` {r depgraph, eval=FALSE}
 plot_dependency_graph(
   pkg = multibridge_pkg
   , suggests = FALSE
@@ -586,7 +585,7 @@ plot_dependency_graph(
 
 The [set.seed()](https://www.rdocumentation.org/packages/simEd/versions/2.0.0/topics/set.seed){target="_blank" rel="noopener noreferrer"} function generates a sequence of random numbers, starting from the value you define in the brackets. This ensures you get the same sequence of random numbers each time you run set.seed() with the same value, which is helpful to test that your results are reproducible.
 
-```
+``` {r random_sample, eval=FALSE}
 # random sampling
 > sample(LETTERS, 5)
 [1] "K" "N" "R" "Z" "G"
@@ -609,7 +608,7 @@ The [set.seed()](https://www.rdocumentation.org/packages/simEd/versions/2.0.0/to
 The [tidylog package](https://cran.r-project.org/web/packages/tidylog/readme/README.html){target="_blank" rel="noopener noreferrer"} is a really useful tool for providing automated feedback on dplyr and tidyr operations.
 
 
-```
+``` {r tidylog, eval=FALSE}
 library(tidylog)
 
 filtered <- filter(mtcars, cyl == 4)
@@ -654,7 +653,16 @@ If when using shinytest2, you get the following error, then you'll need to set a
 
 `Error in initialize(...) : Invalid path to Chrome`
 
-First step to resolve this is to set the path to chrome.exe (the Chrome application file itself where you've installed it) via the console for the current session. Set the `CHROMOTE_CHROME` environment variable to the path to the chrome.exe file on your computer. As an example it should look something like this: 
+First step to resolve this is to set the path to chrome.exe (the Chrome application file itself where you've installed it) via the console for the current session. You can find the file path for your local Chrome installation by following these steps:
+
+- Click the Start button
+- Right click on the Chrome icon and click 'Open File Location'
+- When the folder opens, right click on Google Chrome inside the folder and click 'Properties'
+- Copy the file path inside the Target box (see image below)
+
+![](../images/find-chrome-location.PNG)
+
+Set the `CHROMOTE_CHROME` environment variable to the path to the chrome.exe file on your computer. If you have followed the instructions above to copy the file path then you will need to make sure that you change the `\` to `/` before you run the code otherwise it will not work. As an example it should look something like this: 
 
 `Sys.setenv(CHROMOTE_CHROME = "C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe")`
 

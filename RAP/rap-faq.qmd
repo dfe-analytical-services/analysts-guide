@@ -32,7 +32,7 @@ The tools we recommend for statistics production RAP are SQL, Git and R. Other s
 
 Using R for parts of the process does get you close to a lot of the RAP principles with little effort, which is why we recommend it as one of the tools you should use.
 
-More details and learning resources for the recommended tools can be found in our [appropriate tools guidance](rap.html#appropriate-tools).
+More details and learning resources for the recommended tools can be found in our [appropriate tools guidance](rap-statistics.html#appropriate-tools).
 
 ---
 
@@ -185,7 +185,7 @@ You don't need to be dual running if your process is automated, it's not the bes
 
 ---
 
-More information on recommended ways of working with Git can be found in [our guidance on repositories](rap.html#Open_source_repositories).
+More information on recommended ways of working with Git can be found in [our guidance on repositories](rap-statistics.html#use-open-source-repositories).
 
 In short, a single repository should be used for all releases of your publication, there's no need to have multiple as all the history is saved within previous commits.
 
@@ -197,7 +197,7 @@ In short, a single repository should be used for all releases of your publicatio
 
 Yes, you should have some plain text documentation, this is a part of the guidance on RAP and a part of the 'documentation' step to 'good' practice.
 
-The README in your repository is the place for traditional 'desk notes' and text explanations of bits of the process and context required, we have [guidance on writing READMEs on the statistics production website](rap.html#Writing_a_README_file).
+The README in your repository is the place for traditional 'desk notes' and text explanations of bits of the process and context required, we have [guidance on writing READMEs on the statistics production website](rap-statistics.html#writing-a-readme-file).
 
 ---
 
