@@ -843,9 +843,9 @@ part of the standard **breakdown_topic** / **breakdown** filters, with the relav
 entry under **breakdown_topic** being **Sex** and as above, the entries under
 **breakdown** being **Male**, **Female** and **Unknown**.
 
-**Unknown** is used on data entry when the sex of the subject has not been 
-recorded, is not known, or has not been registered (and is likely to be used 
-rarely).
+**Unknown** as an option is likely to be used rarely - it is appropriate on data 
+entry when the sex of the subject has not been recorded, is not known, or has 
+not been registered.
 
 The above is in line with current DfE data collection guidelines on sex.
 
