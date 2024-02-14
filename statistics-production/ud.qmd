@@ -819,9 +819,9 @@ for dashboards and other secondary statistics services, whilst also helping with
 
 ## Sex and gender
 
-The departments policy on collecting sex and gender data is that statistics 
-should preferentially be presented for sex rather than gender. These terms as 
-used in statistics publications are defined in the following sections and 
+The Department's policy on collecting sex and gender data is that statistics 
+should preferentially be presented for sex rather than gender. These terms, as 
+used in statistics publications, are defined in the following sections and 
 publication teams should be careful not to mislabel sex categories as gender or
 vice-versa.
 
@@ -831,9 +831,11 @@ vice-versa.
 
 ---
 
-Sex as reported by DfE statistics, is the sex as recorded on a birth certificate 
-or on a gender recognition certificate. This is a value which identifies the 
-sex of a person as recognised in law.
+Sex as reported by DfE statistics, is:
+
+> This is a value which identifies the sex of a person as recognised in law, 
+i.e. the sex as recorded on a birth certificate (or on a gender recognition 
+certificate).
 
 When presented in a filter, this should take the column header **sex** and 
 standard entries **Male**, **Female** and **Unknown**. This can also be included as 
@@ -841,7 +843,7 @@ part of the standard **breakdown_topic** / **breakdown** filters, with the relav
 entry under **breakdown_topic** being **Sex** and as above, the entries under
 **breakdown** being **Male**, **Female** and **Unknown**.
 
-`Unknown` is used on data entry when the sex of the subject has not been 
+**Unknown** is used on data entry when the sex of the subject has not been 
 recorded, is not known, or has not been registered (and is likely to be used 
 rarely).
 
@@ -849,11 +851,12 @@ The above is in line with current DfE data collection guidelines on sex.
 
 ---
 
-## Gender
+### Gender
 
 ---
 
-Gender identity is defined by the ONS as follows:
+Gender identity is [defined by the ONS](https://www.ons.gov.uk/methodology/classificationsandstandards/measuringequality/genderidentity) 
+as follows:
 
 > Gender identity is a personal internal perception of oneself and, as such, the 
 gender category with which a person identifies may not match the sex they were 
@@ -865,7 +868,7 @@ category.
 
 ---
 
-## Mis-labelled time-series
+### Mis-labelled time-series
 
 ---
 
