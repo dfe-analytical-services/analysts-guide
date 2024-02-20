@@ -4,7 +4,7 @@
 
 <p class="text-muted">
 
-Guidance for analysts on how to connect Databricks to Github and DevOps
+Guidance for analysts on how to connect Databricks to Github and Azure DevOps
 
 </p>
 
@@ -18,7 +18,7 @@ Guidance for analysts on how to connect Databricks to Github and DevOps
 
 ------------------------------------------------------------------------
 
-When you're working on notebooks in Databricks without a git connection, they tend to be saved in your own personal Workspace. This means that they are only accessible by you, unless you share them. This has the potential to cause issues if you're on leave and someone needs to run any code you have stored in a notebook within Databricks. If the notebooks are stored in a Github or DevOps repo, your team can all access them by cloning the repo in Databricks.
+When you're working on notebooks in Databricks without a git connection, they tend to be saved in your own personal Workspace. This means that they are only accessible by you, unless you share them. This has the potential to cause issues if someone needs to run any code you have stored in a notebook within Databricks e.g. when you leave your current team, take non-working days or annual leave, team members will not be able to access any of your code stored in your notebooks on Databricks. If the notebooks are stored in a Github or Azure DevOps repo, your team can all access them by cloning the repo in Databricks.
 
 \
 
@@ -29,17 +29,16 @@ When you're working on notebooks in Databricks without a git connection, they te
 
 ------------------------------------------------------------------------
 
-Databricks autosaves your notebooks as you're working on them, making version control more difficult. If you use git, you'll be able to see the full version history of your work and easily roll back to older versions if you need to.
+Databricks autosaves your notebooks as you're working on them, making version control more difficult. If you use git, you'll be able to see the full version history of your work and easily roll back to older versions if you need to. It also significantly helps simplify switching between different methodologies as well as facilitating proper code QA and review.
 
 \
 
 ------------------------------------------------------------------------
 
-## Github or DevOps?
+## Github or Azure DevOps?
 
-------------------------------------------------------------------------
 
-Either Github or DevOps repos can be used in connection with Databricks, but we advise you to follow the guidance relating to public and private repos in our [What is git for?](https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html#what-is-git-for) section.
+Either Github or Azure DevOps repos can be used in connection with Databricks, but we advise you to follow the guidance relating to public and private repos in our [What is git for?](https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html#what-is-git-for) section.
 
 \
 
@@ -47,7 +46,6 @@ Either Github or DevOps repos can be used in connection with Databricks, but we 
 
 ## Is it safe?
 
-------------------------------------------------------------------------
 
 The connection between git and Databricks is established using a secure access token from your git account, which means it is safe. You will need to renew your access token after a given period of time - if you do not, then your connection between git and Databricks will no longer work.
 
@@ -57,15 +55,14 @@ Additionally, when you commit and push notebooks through the Databricks interfac
 
 ------------------------------------------------------------------------
 
-# Setting up a connection to DevOps
+# Setting up a connection to Azure DevOps
 
 ------------------------------------------------------------------------
 
 ### Prerequisites
 
-------------------------------------------------------------------------
 
-- A DevOps account and access to the repo you need to connect to
+- An Azure DevOps account and access to the repo you need to connect to
 - A Databricks account and access to your notebooks
 
 \
@@ -74,15 +71,13 @@ Additionally, when you commit and push notebooks through the Databricks interfac
 
 ### Getting set up
 
-------------------------------------------------------------------------
 
 #### Access Tokens
 
-------------------------------------------------------------------------
 
 Access tokens are long strings of numbers and letters that act like a password between two services. They identify the user and their permissions from one service to another. 
 
-In this case, we will generate an access token in DevOps and give it to Databricks. To generate your DevOps access token, go to DevOps and click the user settings icon to the left of your initials in the top right of your screen - it looks like a person with a cog next to them:
+In this case, we will generate an access token in DevOps and give it to Databricks. To generate your Azure DevOps access token, go to DevOps and click the user settings icon to the left of your initials in the top right of your screen - it looks like a person with a cog next to them:
 
 ![](../images/devops-user-settings.PNG)
 
@@ -109,7 +104,6 @@ A "Success!" window will open containing your new access token. **You must copy 
 
 #### Connecting to Databricks
 
-------------------------------------------------------------------------
 
 Now that you have your access token, you should go straight to Databricks. In the top right corner of the Databricks window, click your username and then "User Settings":
 
@@ -123,7 +117,7 @@ You should then select "Linked Accounts" from the User menu on the left. The fol
 - Git provider should be set as "Azure DevOps Services (Personal Access Token)" 
 - Enter your email into the "Git provider username or email" field
 
-You can then click Save at the bottom of the page, and now your connection between DevOps and Databricks is established! 
+You can then click Save at the bottom of the page, and now your connection between Azure DevOps and Databricks is established! 
 
 \
 
@@ -132,7 +126,6 @@ You can then click Save at the bottom of the page, and now your connection betwe
 
 #### Connecting to repos
 
-------------------------------------------------------------------------
 
 
 Just like any other way that you've worked with git before, the first step is going to be to clone your repo inside Databricks. 
@@ -145,7 +138,7 @@ On the Repos screen, click the grey "Add repo" button in the top right corner. T
 
 ![](../images/databricks-add-repo.PNG)
 
-- You will first need to go to DevOps and copy the link to clone the repo as you usually would
+- You will first need to go to Azure DevOps and copy the link to clone the repo as you usually would
 - Paste this link into the "Git repository URL" field
 - Under "Git Provider", select "Azure DevOps Services" 
 - The "Repository name" field should be automatically populated when you enter the URL. 
@@ -165,7 +158,6 @@ You can then click "Create Repo". When the repo is created, you will be able to 
 
 ### Folders in Databricks
 
-------------------------------------------------------------------------
 
 To be able to add your notebooks to a repo, you need to make sure that you save them in the correct place. 
 In Databricks, you have your Workspace. Inside your Workspace is your "local" Users folder, and your repos. In the image below, the User folder is highlighted blue:
@@ -180,11 +172,9 @@ You can think of your User folder as being a bit like "My Documents" on your lap
 
 ### Git pull, commit, and push in Databricks
 
-------------------------------------------------------------------------
 
 #### Git pull 
 
-------------------------------------------------------------------------
 
 You can access the menu to pull, commit and push from several places within Databricks. This interface is the same whether you're working with a DevOps repo or a Github repo. 
 
@@ -208,7 +198,6 @@ From here, you can perform git pull by clicking the pull icon in the top right. 
 
 #### Git commit and push
 
-------------------------------------------------------------------------
 
 When you have made changes to a notebook, it will appear in the Changes section of the git interface. You can also see the actual changes that have been made in the right hand box to make sure that you're committing the correct file: 
 
