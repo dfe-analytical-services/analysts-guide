@@ -839,13 +839,13 @@ certificate).
 
 When presented in a filter, this should take the column header **sex** and 
 standard entries **Male**, **Female** and **Unknown**. This can also be included as 
-part of the standard **breakdown_topic** / **breakdown** filters, with the relavent 
+part of the standard **breakdown_topic** / **breakdown** filters, with the relevant 
 entry under **breakdown_topic** being **Sex** and as above, the entries under
 **breakdown** being **Male**, **Female** and **Unknown**.
 
 **Unknown** as an option is likely to be used rarely - it is appropriate on data 
 entry when the sex of the subject has not been recorded, is not known, or has 
-not been registered.
+not been registered (for example in data relating to unborn children in the Children in Need data).
 
 The above is in line with current DfE data collection guidelines on sex.
 
@@ -862,9 +862,7 @@ as follows:
 gender category with which a person identifies may not match the sex they were 
 registered at birth.
 
-It is expected that, based on current policy on how the DfE collects data, that
-teams should rarely be in a position to publish statistics containing the gender
-category.
+The department is not collecting, and does not plan to collect, data on gender identity. However, the ambiguous use of the word "gender" in previous data collections may have affected the data collected. It is expected that, based on current policy on how the DfE collects data, teams should not be in a position to publish statistics containing the gender category once the new terminology has taken effect in all collections.
 
 ---
 
@@ -872,9 +870,9 @@ category.
 
 ---
 
-As the GSS have updated their guidance on how sex and gender are defined as
-terms in statistical publications, a number of publications within the DfE will
-contain mis-categorised data under that updated guidance.
+The GSS have updated their guidance on how sex and gender are defined as
+terms in statistical publications. A number of publications within the DfE will
+contain unclear data under that updated guidance.
 
 As such, statistics producers should look to re-evaluate their categorisations 
 against the current GSS definitions and update categories in future statistics 
@@ -882,9 +880,11 @@ products accordingly. This should include time-series published in any
 statistics releases going forward.
 
 Where teams perform a re-categorisation of what has previously been labelled as 
-gender to sex (or vice-versa), this should be clearly stated in the publication
-methodology, clearly stating the time period that has undergone 
-re-classification.
+gender to sex, this should be clearly stated in the publication
+methodology, with explicit definitions of any time periods that have undergone 
+re-classification. The recommended text in such cases is as follows:
+
+> Use of the word "gender" in data collections may have meant "gender identity" was reported in some cases as opposed to legal sex. While this is unlikely to have a significant effect on overall figures, it may affect figures in more granular subdivisions. The definitions used in the data collection were revised on [insert date relevant to the collection] and as such, time series spanning [insert date range] may be affected.
 
 ---
 
