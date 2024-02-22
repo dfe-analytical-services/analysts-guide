@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -157,7 +157,7 @@ cookieconsent.run({
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -1145,7 +1145,7 @@ Guidance and tips for using the programming language R
 <li>When the folder opens, right click on Google Chrome inside the folder and click ‘Properties’</li>
 <li>Copy the file path inside the Target box (see image below)</li>
 </ul>
-<p><img src="../images/find-chrome-location.PNG" class="img-fluid"></p>
+<p><img src="../images/find-chrome-location.png" class="img-fluid"></p>
 <p>Set the <code>CHROMOTE_CHROME</code> environment variable to the path to the chrome.exe file on your computer. If you have followed the instructions above to copy the file path then you will need to make sure that you change the <code>\</code> to <code>/</code> before you run the code otherwise it will not work. As an example it should look something like this:</p>
 <p><code>Sys.setenv(CHROMOTE_CHROME = "C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe")</code></p>
 <p>To set the environment variable, you’ll need to edit your .Renviron file. This will fix the error across all R projects. If you don’t know where to find the .Renviron file, you can use the <code>usethis</code> package to open it in R-Studio using <code>usethis::edit_r_environ()</code>. Then set the <code>CHROMOTE_CHROME</code> environment variable to the path to <code>chrome.exe</code> on your computer. As an example it should look something like this:</p>
@@ -1699,7 +1699,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../learning-development/sql.html" class="pagination-link  aria-label=" sql"="">
+      <a href="../learning-development/sql.html" class="pagination-link" aria-label="SQL">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SQL</span>
       </a>          
   </div>
