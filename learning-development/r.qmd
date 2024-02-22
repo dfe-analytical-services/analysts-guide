@@ -660,7 +660,7 @@ First step to resolve this is to set the path to chrome.exe (the Chrome applicat
 - When the folder opens, right click on Google Chrome inside the folder and click 'Properties'
 - Copy the file path inside the Target box (see image below)
 
-![](../images/find-chrome-location.PNG)
+![](../images/find-chrome-location.png)
 
 Set the `CHROMOTE_CHROME` environment variable to the path to the chrome.exe file on your computer. If you have followed the instructions above to copy the file path then you will need to make sure that you change the `\` to `/` before you run the code otherwise it will not work. As an example it should look something like this: 
 
