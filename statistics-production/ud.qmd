@@ -866,7 +866,7 @@ The department is not collecting, and does not plan to collect, data on gender i
 
 ---
 
-### Mis-labelled time-series
+### Time-series containing data collected as "gender"
 
 ---
 
@@ -884,7 +884,7 @@ gender to sex, this should be clearly stated in the publication
 methodology, with explicit definitions of any time periods that have undergone 
 re-classification. The recommended text in such cases is as follows:
 
-> Use of the word "gender" in data collections may have meant "gender identity" was reported in some cases as opposed to legal sex. While this is unlikely to have a significant effect on overall figures, it may affect figures in more granular subdivisions. The definitions used in the data collection were revised on [insert date relevant to the collection] and as such, time series spanning [insert date range] may be affected.
+> Historical use of the word "gender" in data collections may have meant that "gender identity" was reported in some cases, as opposed to legal sex. While this is unlikely to have a significant effect on overall figures, it may affect figures in more granular subdivisions. The definitions used in the data collection were revised on [insert date relevant to the collection] and as such, time series spanning [insert date range] may be affected.
 
 ---
 
