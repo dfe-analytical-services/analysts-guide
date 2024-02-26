@@ -465,6 +465,12 @@ cookieconsent.run({
   </ul></li>
   <li><a href="#common-harmonised-variables" id="toc-common-harmonised-variables" class="nav-link" data-scroll-target="#common-harmonised-variables">Common harmonised variables</a>
   <ul class="collapse">
+  <li><a href="#sex-and-gender" id="toc-sex-and-gender" class="nav-link" data-scroll-target="#sex-and-gender">Sex and gender</a>
+  <ul class="collapse">
+  <li><a href="#sex" id="toc-sex" class="nav-link" data-scroll-target="#sex">Sex</a></li>
+  <li><a href="#gender" id="toc-gender" class="nav-link" data-scroll-target="#gender">Gender</a></li>
+  <li><a href="#time-series-containing-historical-data-collected-as-gender" id="toc-time-series-containing-historical-data-collected-as-gender" class="nav-link" data-scroll-target="#time-series-containing-historical-data-collected-as-gender">Time-series containing historical data collected as “gender”</a></li>
+  </ul></li>
   <li><a href="#ethnicity" id="toc-ethnicity" class="nav-link" data-scroll-target="#ethnicity">Ethnicity</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
@@ -890,8 +896,8 @@ Guidance on how to structure data files
 <thead>
 <tr class="header">
 <th>…</th>
-<th>FSM</th>
-<th>Sex</th>
+<th>fsm_status</th>
+<th>sex</th>
 <th>pupil_count</th>
 </tr>
 </thead>
@@ -984,13 +990,13 @@ Guidance on how to structure data files
 </tr>
 <tr class="even">
 <td>…</td>
-<td>FSM</td>
+<td>FSM status</td>
 <td>FSM</td>
 <td>406</td>
 </tr>
 <tr class="odd">
 <td>…</td>
-<td>FSM</td>
+<td>FSM status</td>
 <td>non-FSM</td>
 <td>803</td>
 </tr>
@@ -2182,6 +2188,113 @@ Remember
 <hr>
 <p>Wherever possible variables should confirm to the DfE harmonisation strategy. Having consistent variables across data files held by the DfE, and in particular across data files in publications, allows users to more quickly navigate and understand our statistics. In the EES context, harmonisation will also facilitate more advanced methods of interacting with our data platform such as automated data retrieval for dashboards and other secondary statistics services, whilst also helping with performance and cost effectiveness of the EES platform.</p>
 <hr>
+<section id="sex-and-gender" class="level2">
+<h2 class="anchored" data-anchor-id="sex-and-gender">Sex and gender</h2>
+<p>The Department’s policy on collecting sex and gender data is that statistics should preferentially be presented for sex rather than gender. These terms, as used in statistics publications, are defined in the following sections and publication teams should be careful not to mislabel sex categories as gender or vice-versa.</p>
+<hr>
+<section id="sex" class="level3">
+<h3 class="anchored" data-anchor-id="sex">Sex</h3>
+<hr>
+<p>Sex, as reported in DfE statistics, is defined as follows:</p>
+<blockquote class="blockquote">
+<p>a value which identifies the sex of a person as recognised in law, i.e.&nbsp;the sex as recorded on a birth certificate (or on a gender recognition certificate).</p>
+</blockquote>
+<p>When presented in a filter, this should take the column header <strong>sex</strong> and standard entries <strong>Male</strong>, <strong>Female</strong> and <strong>Unknown</strong>. This can also be included as part of the standard <strong>breakdown_topic</strong> / <strong>breakdown</strong> filters, with the relevant entry under <strong>breakdown_topic</strong> being <strong>Sex</strong> and as above, the entries under <strong>breakdown</strong> being <strong>Male</strong>, <strong>Female</strong> and <strong>Unknown</strong>.</p>
+<p><strong>Unknown</strong> as an option is likely to be used rarely - it is appropriate on data entry when the sex of the subject has not been recorded, is not known, or has not been registered (for example in data relating to unborn children in the Children in Need data).</p>
+<p>The above is in line with current DfE data collection guidelines on sex.</p>
+<p>In an EES data file, these might look something like:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>…</th>
+<th>sex</th>
+<th>pupil_count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>…</td>
+<td>Total</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>Female</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>Male</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>Unknown</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Or…</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>…</th>
+<th>breakdown_topic</th>
+<th>breakdown</th>
+<th>pupil_count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>…</td>
+<td>Sex</td>
+<td>Total</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>Sex</td>
+<td>Female</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>Sex</td>
+<td>Male</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>Sex</td>
+<td>Unknown</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="gender" class="level3">
+<h3 class="anchored" data-anchor-id="gender">Gender</h3>
+<hr>
+<p>Gender identity is <a href="https://www.ons.gov.uk/methodology/classificationsandstandards/measuringequality/genderidentity" target="_blank">defined by the ONS</a> as follows:</p>
+<blockquote class="blockquote">
+<p>Gender identity is a personal internal perception of oneself and, as such, the gender category with which a person identifies may not match the sex they were registered at birth.</p>
+</blockquote>
+<p>The department is not collecting, and does not plan to collect, data on gender identity. However, the ambiguous use of the word “gender” in previous data collections may have affected the data collected. It is expected that, based on current policy on how the DfE collects data, teams should not be in a position to publish statistics containing the gender category once the new terminology has taken effect in all collections.</p>
+<hr>
+</section>
+<section id="time-series-containing-historical-data-collected-as-gender" class="level3">
+<h3 class="anchored" data-anchor-id="time-series-containing-historical-data-collected-as-gender">Time-series containing historical data collected as “gender”</h3>
+<hr>
+<p>The GSS have updated their guidance on how sex and gender are defined as terms in statistical publications. A number of publications within the DfE will contain unclear data under that updated guidance.</p>
+<p>As such, statistics producers should look to re-evaluate their categorisations against the current GSS definitions and update categories in future statistics products accordingly. This should include time-series published in any statistics releases going forward.</p>
+<p>Where teams perform a re-categorisation of what has previously been labelled as gender to sex, this should be clearly stated in the publication methodology, with explicit definitions of any time periods that have undergone re-classification. The recommended text in such cases is as follows:</p>
+<blockquote class="blockquote">
+<p>Historical use of the word “gender” in data collections may have meant that “gender identity” was reported in some cases, as opposed to legal sex. While this is unlikely to have a significant effect on overall figures, it may affect figures in more granular subdivisions. The definitions used in the data collection relating to this publication were revised on [insert date relevant to the collection] and as such, time series that span [insert date range] and contain sex as a category may be affected.</p>
+</blockquote>
+<hr>
+</section>
+</section>
 <section id="ethnicity" class="level2">
 <h2 class="anchored" data-anchor-id="ethnicity">Ethnicity</h2>
 <section id="overview" class="level3">
