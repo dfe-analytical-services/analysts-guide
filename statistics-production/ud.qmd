@@ -191,29 +191,29 @@ A single filter column should contain all the possible filter values for a singl
 
 In general, analysts should use a separate column for each filter in accordance with tidy data principles. This is especially the case where data are presented for combinations of filters (i.e. cross tabulations). User testing has shown this to be the most effective way to structure data for the best user experience with the table tool.
 
-| ... | FSM       | Sex       | pupil_count   |
-|-----|-----------|-----------|---------------|
-| ... | Total     | Total     | 1209          |
-| ... | Total     | Female    | 567           |
-| ... | Total     | Male      | 642           |
-| ... | FSM       | Total     | 406           |
-| ... | FSM       | Female    | 203           |
-| ... | FSM       | Male      | 203           |
-| ... | non-FSM   | Total     | 803           |
-| ... | non-FSM   | Female    | 364           |
-| ... | non-FSM   | Male      | 439           |
+| ... | fsm_status | sex       | pupil_count   |
+|-----|------------|-----------|---------------|
+| ... | Total      | Total     | 1209          |
+| ... | Total      | Female    | 567           |
+| ... | Total      | Male      | 642           |
+| ... | FSM        | Total     | 406           |
+| ... | FSM        | Female    | 203           |
+| ... | FSM        | Male      | 203           |
+| ... | non-FSM    | Total     | 803           |
+| ... | non-FSM    | Female    | 364           |
+| ... | non-FSM    | Male      | 439           |
 
 Where data is broken down across combinations of different filters, teams should aim to "complete the matrix". This means that, for the given filters, all possible filter combinations should have a corresponding data entry. In this way, teams can prevent users getting the ambiguous "No data" result from EES and can instead provide more explicit codes for any missing data (e.g. not applicable, not available, suppressed, etc)
 
 A possible exception to the above structure is where no filter combinations/cross-tabulations are present in a given data file. For example, this may be the case if a publication requires a highlights level table that shows a result across breakdowns of sex (Male, Female, etc) and Free School Meal status (FSM, non-FSM), but not combinations of the two (Female and FSM, Male and FSM, Female and non-FSM and Male and non-FSM). In this case, analysts may choose to use a overarching collated filter columns named breakdown_topic and breakdown as follows:
 
-| ... | breakdown_topic | breakdown | pupil_count |
+| ... | breakdown_topic | breakdown | pupil_count   |
 |-----|-----------------|-----------|---------------|
 | ... | Total           | Total     | 1209          |
 | ... | Sex             | Female    | 567           |
 | ... | Sex             | Male      | 642           |
-| ... | FSM             | FSM       | 406           |
-| ... | FSM             | non-FSM   | 803           |
+| ... | FSM status      | FSM       | 406           |
+| ... | FSM status      | non-FSM   | 803           |
 
 With the above structure, breakdown_topic should be added as the fitler_grouping_column for breakdown in the associated meta data file (and therefore should not have its own row in the meta data).
 
@@ -831,9 +831,9 @@ vice-versa.
 
 ---
 
-Sex as reported by DfE statistics, is:
+Sex, as reported in DfE statistics, is defined as follows:
 
-> This is a value which identifies the sex of a person as recognised in law, 
+> a value which identifies the sex of a person as recognised in law, 
 i.e. the sex as recorded on a birth certificate (or on a gender recognition 
 certificate).
 
@@ -848,6 +848,25 @@ entry when the sex of the subject has not been recorded, is not known, or has
 not been registered (for example in data relating to unborn children in the Children in Need data).
 
 The above is in line with current DfE data collection guidelines on sex.
+
+In an EES data file, these might look something like:
+
+| ... | sex        | pupil_count |
+|-----|------------|-------------|
+| ... | Total      | 12          |
+| ... | Female     | 7           |
+| ... | Male       | 4           |
+| ... | Unknown    | 1           |
+
+Or...
+
+| ... | breakdown_topic | breakdown  |pupil_count |
+|-----|-----------------|------------|------------|
+| ... | Sex             | Total      | 12         |
+| ... | Sex             | Female     | 7          |
+| ... | Sex             | Male       | 4          |
+| ... | Sex             | Unknown    | 1          |
+
 
 ---
 
