@@ -14,7 +14,7 @@ Guidance for analysts on how to connect Databricks to Github and Azure DevOps
 
 ------------------------------------------------------------------------
 
-#### Easier collaboration
+### Easier collaboration
 
 ------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ When you're working on notebooks in Databricks without a git connection, they te
 
 ------------------------------------------------------------------------
 
-#### Version control
+### Version control
 
 ------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ Additionally, when you commit and push notebooks through the Databricks interfac
 
 ------------------------------------------------------------------------
 
-### Prerequisites
+## Prerequisites
 
 
 - An Azure DevOps account and access to the repo you need to connect to
@@ -69,10 +69,10 @@ Additionally, when you commit and push notebooks through the Databricks interfac
 
 ------------------------------------------------------------------------
 
-### Getting set up
+## Getting set up
 
 
-#### Access Tokens
+### Access Tokens
 
 
 Access tokens are long strings of numbers and letters that act like a password between two services. They identify the user and their permissions from one service to another. 
@@ -102,7 +102,7 @@ A "Success!" window will open containing your new access token. **You must copy 
 
 ------------------------------------------------------------------------
 
-#### Connecting to Databricks
+### Connecting to Databricks 
 
 
 Now that you have your access token, you should go straight to Databricks. In the top right corner of the Databricks window, click your username and then "User Settings":
@@ -124,8 +124,7 @@ You can then click Save at the bottom of the page, and now your connection betwe
 
 ------------------------------------------------------------------------
 
-#### Connecting to repos
-
+### Connecting to repos and cloning
 
 
 Just like any other way that you've worked with git before, the first step is going to be to clone your repo inside Databricks. 
@@ -147,6 +146,19 @@ You can then click "Create Repo". When the repo is created, you will be able to 
 
 ![](../images/databricks-view-repo.PNG)
 
+#### Sparse checkout and Cone Patterns
+
+Databricks cannot clone very large repos. It is best practice not to have a repo of this size, but if you attempt to clone a large repo, you will receive an error message. In this instance, you will need to perform a sparse checkout. This only clones a selection of items in your repo. To do this, select the "Advanced" option when in the "Add repo" menu, and tick the "Sparse checkout mode" option. You can tell Databricks which elements of the repo you would like it to clone, and you can do this by specifying something called Cone Patterns. If you do not specify any Cone Patterns, then the Databricks default is to clone only files in the root folder, but none from any subdirectories. To specify your own Cone Patterns, enter them in the box provided. You can enter multiple patterns but if the folders that they refer to contain more than 800MB of data then your clone will continue to fail.
+
+You might define your Cone Patterns as something like:
+
+`folder_a`
+`folder_b/subfolder_c`
+
+The second example will only clone subfolder_c and not the rest of the contents of folder_b. 
+
+Please note: You cannot currently disable sparse checkout mode once it is enabled, but you can modify Cone Patterns. If you create a new folder, you must add it to your Cone Pattern list before you can commit and push. You can find more information on sparse checkout and Cone Patterns on the [Databricks website](https://docs.databricks.com/en/repos/git-operations-with-repos.html).
+
 \
 
 
@@ -156,7 +168,7 @@ You can then click "Create Repo". When the repo is created, you will be able to 
 
 ------------------------------------------------------------------------
 
-### Folders in Databricks
+## Folders in Databricks
 
 
 To be able to add your notebooks to a repo, you need to make sure that you save them in the correct place. 
@@ -170,10 +182,10 @@ You can think of your User folder as being a bit like "My Documents" on your lap
 
 ------------------------------------------------------------------------
 
-### Git pull, commit, and push in Databricks
+## Git pull, commit, and push in Databricks
 
 
-#### Git pull 
+### Git pull 
 
 
 You can access the menu to pull, commit and push from several places within Databricks. This interface is the same whether you're working with a DevOps repo or a Github repo. 
@@ -196,7 +208,7 @@ From here, you can perform git pull by clicking the pull icon in the top right. 
 
 ------------------------------------------------------------------------
 
-#### Git commit and push
+### Git commit and push
 
 
 When you have made changes to a notebook, it will appear in the Changes section of the git interface. You can also see the actual changes that have been made in the right hand box to make sure that you're committing the correct file: 
@@ -205,6 +217,15 @@ When you have made changes to a notebook, it will appear in the Changes section 
 
 In Databricks, you commit and push as one action, rather than as two separate ones. Enter your commit message into the "Commit message" box (you can ignore the Description box) and click the "Commit & Push" button. 
 
+------------------------------------------------------------------------
 
+### Additional git commands in the Databricks interface
 
+You can access additional git features such as merge, rebase and reset directly within the Databricks interface by clicking the 3 dots in the menu as shown in the image below:
+
+![](../images/reset-local-branch.PNG)
+
+When merging, you are also able to resolve merge conflicts inside Databricks itself. 
+
+There is additional guidance on each of these advanced features in the [Databricks manual](https://docs.databricks.com/en/repos/git-operations-with-repos.html). Please use git reset with caution as you can easily lose recent changes when performing this action. 
 
