@@ -264,7 +264,7 @@ Which you use will depend on how comfortable with SQL and R and also if you alre
 
 ---
 
-This is primarily useful if you already have existing SQl scripts that you want to build into an R controlled pipeline. For using R to execute a SQL script you'll need the SQL script/s to be in your R Project and to make a connection via R to the database.
+This is primarily useful if you already have existing SQL scripts that you want to build into an R controlled pipeline. For using R to execute a SQL script you'll need the SQL script/s to be in your R Project and to make a connection via R to the database.
 
 ``` {r eval=FALSE}
 # Library calls ====
