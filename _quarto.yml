@@ -110,6 +110,7 @@ website:
         contents: 
           - ADA/ada.qmd
           - ADA/databricks_rstudio.qmd
+          - ADA/git_databricks.qmd
 
 format:
   html:
