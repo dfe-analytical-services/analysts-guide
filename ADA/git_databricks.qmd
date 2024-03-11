@@ -12,7 +12,8 @@ Guidance for analysts on how to connect Databricks to Github and Azure DevOps
 
 ## Why should I use git with Databricks?
 
-------------------------------------------------------------------------
+For analytical projects developed on Databricks in the DfE, we recommend using git and Azure DevOps for sharing, collaborating and proper version control of work.
+
 
 ### Easier collaboration
 
@@ -226,6 +227,8 @@ You can access additional git features such as merge, rebase and reset directly 
 ![](../images/reset-local-branch.PNG)
 
 When merging, you are also able to resolve merge conflicts inside Databricks itself. 
+
+**Please be warned** that we would usually advise against using git reset as you can permanently lose changes you've made and this cannot be undone. 
 
 There is additional guidance on each of these advanced features in the [Databricks manual](https://docs.databricks.com/en/repos/git-operations-with-repos.html). Please use git reset with caution as you can easily lose recent changes when performing this action. 
 
