@@ -152,6 +152,27 @@ See below for a diagram of the responsibilities of each role as part of the publ
 
 ---
 
+### Managing permissions
+
+---
+
+If you are a [publication owner](#roles-and-permissions) then you can add other analysts in your team to specific releases to allow them to edit and contribute to the release. 
+
+To do this, select your publication from the admin dashboard:
+
+![](../images/EES-admin-dashboard.PNG)
+
+Then go to the 'Team access' tab:
+
+![](../images/ees_team_access.png)
+
+In here you can see everyone who currently has access, and invite your team to contribute to the release, as well as manage and remove access. The release must already exist, and you'll need to give access for each new release you do in the publication.
+
+To change Publication Owners, or Approvers, contact the [Explore education statistics mailbox](mailto:explore.statistics@education.gov.uk).
+
+
+---
+
 ## Requesting a new publication
 
 
