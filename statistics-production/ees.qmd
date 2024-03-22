@@ -857,11 +857,9 @@ The above code should produce something along the lines of the following plots:
 
 In the content tab you can now start creating your release, embedding the data blocks you’ve created as you go.
 
-<!-- we should gif -->
+You can use the page view toggles, in the blue bar at of the page, to jump between edit and preview mode for the release and to view a preview of the table tool.
 
-You can use the page view toggles, that float in the bottom left of the page, to jump between edit and preview mode for the release and to view a preview of the table tool.
-
-<!-- we should gif -->
+![](../images/ees_page_view_toggle.PNG)
 
 Add any headline and/or key stats and figures for your release in the headline facts and figures section.
 
