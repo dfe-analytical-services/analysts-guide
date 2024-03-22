@@ -166,10 +166,11 @@ Then go to the 'Team access' tab.
 
 ![](../images/ees_team_access.png)
 
-In here you can see everyone who currently has access, and invite your team to contribute to the release, as well as manage and remove access. The release must already exist, and you'll need to give access for each new release you do in the publication.
+In here you can see everyone who currently has access, and invite your team to contribute to the release, as well as manage and remove access. To give access the release must already exist, and you'll need to give individual access for each new release you do in the publication.
+
+If you are inviting someone who hasn't used EES before, make sure to add their DfE email. Jobshare email addresses and mailboxes will not work, each user must be given access with their individual DfE account. The [external user access](#external-user-access) section has more details on how to give access to external contributors.
 
 To change Publication Owners, or Approvers, contact the [Explore education statistics mailbox](mailto:explore.statistics@education.gov.uk).
-
 
 ---
 
