@@ -393,9 +393,9 @@ Utilising a single 'run' script to execute processes written in other scripts br
 
 ---
 
-In order to create a single script to run all processes from, it is likely that you will need to use R to run SQL queries. If you are unsure of how to do this, take a look at the materials from Cathy Atkinson's coffee and coding session on [connecting R to SQL using DBI and odbc](https://educationgovuk.sharepoint.com/sites/sarpi/g/WorkplaceDocuments/Forms/AllItems.aspx?FolderCTID=0x012000C61C1076C17C5547A6D6D8C2A27B5D97&View=%7B2B35083D%2D7626%2D48E2%2D9615%2D451544742692%7D&id=%2Fsites%2Fsarpi%2Fg%2FWorkplaceDocuments%2FInducation%20learning%20and%20career%20development%2FCoffee%20and%20Coding%2F180718%5Fcathy%5FR%5FSQL%2FConnecting%5Fto%5FSQL%5FRevA%2Ehtml&parent=%2Fsites%2Fsarpi%2Fg%2FWorkplaceDocuments%2FInducation%20learning%20and%20career%20development%2FCoffee%20and%20Coding%2F180718%5Fcathy%5FR%5FSQL).
+In order to create a single script to run all processes from, it is likely that you will need to use R to run SQL queries. If you are unsure of how to do this, take a look the guide on the [dfeR connecting to SQL documentation](https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html).
 
-Chris Mason-Thom did another coffee and coding session on this, which you can watch below: 
+If you prefer a video, Chris Mason-Thom did a coffee and coding session on this, which you can watch below: 
 
 <center>
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c9b7fd97-c854-4a1a-9074-cd80d2ea285e?autoplay=false&amp;showinfo=false" allowfullscreen style="border:none;"></iframe>

@@ -264,64 +264,9 @@ Which you use will depend on how comfortable with SQL and R and also if you alre
 
 ---
 
-This is primarily useful if you already have existing SQl scripts that you want to build into an R controlled pipeline. For using R to execute a SQL script you'll need the SQL script/s to be in your R Project and to make a connection via R to the database.
+This is primarily useful if you already have existing SQL scripts that you want to build into an R controlled pipeline. For using R to execute a SQL script you'll need the SQL script/s to be in your R Project and to make a connection via R to the database.
 
-``` {r eval=FALSE}
-# Library calls ====
-
-library(odbc)
-library(DBI)
-
-# DB connection ====
-
-con <- DBI::dbConnect(odbc::odbc(),
-                      Driver = "ODBC Driver 17 for SQL Server",
-                      Server = "server_name",
-                      Database = "database_name",
-                      UID = "",
-                      PWD = "",
-                      Trusted_Connection = "Yes"
-)
-
-# Function to read in sql scripts ====
-
-getSQL <- function(filepath){
-  con = file(filepath, "r")
-  sql.string <- ""
-  
-  while (TRUE){
-    line <- readLines(con, n = 1)
-    
-    if ( length(line) == 0 ){
-      break
-    }
-    
-    line <- gsub("\\t", " ", line)
-    
-    if(grepl("--",line) == TRUE){
-      line <- paste(sub("--","/*",line),"*/")
-    }
-    
-    sql.string <- paste(sql.string, line)
-  }
-  
-  close(con)
-  return(sql.string)
-}
-
-# Execute SQL query and pull into R ====
-
-my_table <- dbGetQuery(con, getSQL("my_query_script.sql"))
-
-```
-
-If you're struggling to get your SQL scripts to execute from R, try adding the following two lines to the top of your SQL script to force the formatting required for it to work:
-
-
-``` {r eval=FALSE}
-SET ANSI_PADDING OFF
-SET NOCOUNT ON;
-```
+Example code and a walkthrough guide is available in the [Connecting to SQL page in the dfeR package documentation](https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html).
 
 ---
 
@@ -331,7 +276,7 @@ SET NOCOUNT ON;
 
 If you're familiar with dplyr then using the dbplyr package to interact with a SQL database is a good way to go. It allows you to use common dplyr functions such as `select()`, `filter()`, `mutate()`, `group_by()`, `summarise()` and `arrange()` with a SQL database.
 
-As with sending a SQL script, you'll need to create the connection to the database as in the previous example and then create piped queries as you would with dplyr:
+As with sending a SQL script, you'll need to create the connection to the database as shown in the [dfeR package](https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html) and then create piped queries as you would with dplyr:
 
 ``` {r eval=FALSE}
 # Library calls ====
