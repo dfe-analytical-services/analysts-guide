@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.552">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -427,7 +427,10 @@ cookieconsent.run({
   <ul class="collapse">
   <li><a href="#getting-access-to-admin" id="toc-getting-access-to-admin" class="nav-link" data-scroll-target="#getting-access-to-admin">Getting access to admin</a></li>
   </ul></li>
-  <li><a href="#roles-and-permissions" id="toc-roles-and-permissions" class="nav-link" data-scroll-target="#roles-and-permissions">Roles and permissions</a></li>
+  <li><a href="#roles-and-permissions" id="toc-roles-and-permissions" class="nav-link" data-scroll-target="#roles-and-permissions">Roles and permissions</a>
+  <ul class="collapse">
+  <li><a href="#managing-permissions" id="toc-managing-permissions" class="nav-link" data-scroll-target="#managing-permissions">Managing permissions</a></li>
+  </ul></li>
   <li><a href="#requesting-a-new-publication" id="toc-requesting-a-new-publication" class="nav-link" data-scroll-target="#requesting-a-new-publication">Requesting a new publication</a>
   <ul class="collapse">
   <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">Themes</a></li>
@@ -645,6 +648,19 @@ Guidance for how to use the features in the Explore Education Statistics (EES) p
 <p>See below for a diagram of the responsibilities of each role as part of the publication process in EES:</p>
 <p><img src="../images/EES_roles.svg" class="img-fluid"></p>
 <hr>
+<section id="managing-permissions" class="level3">
+<h3 class="anchored" data-anchor-id="managing-permissions">Managing permissions</h3>
+<hr>
+<p>If you are a <a href="#roles-and-permissions">publication owner</a> then you can add other analysts in your team to specific releases to allow them to edit and contribute to the release.</p>
+<p>To do this, select your publication from the admin dashboard.</p>
+<p><img src="../images/EES-admin-dashboard.PNG" class="img-fluid"></p>
+<p>Then go to the ‘Team access’ tab.</p>
+<p><img src="../images/ees_team_access.png" class="img-fluid"></p>
+<p>In here you can see everyone who currently has access, and invite your team to contribute to the release, as well as manage and remove access. To give access the release must already exist, and you’ll need to give individual access for each new release you do in the publication.</p>
+<p>If you are inviting someone who hasn’t used EES before, make sure to add their DfE email. Jobshare email addresses and mailboxes will not work, each user must be given access with their individual DfE account. The <a href="#external-user-access">external user access</a> section has more details on how to give access to external contributors.</p>
+<p>To change Publication Owners, or Approvers, contact the <a href="mailto:explore.statistics@education.gov.uk">Explore education statistics mailbox</a>.</p>
+<hr>
+</section>
 </section>
 <section id="requesting-a-new-publication" class="level2">
 <h2 class="anchored" data-anchor-id="requesting-a-new-publication">Requesting a new publication</h2>
@@ -1268,9 +1284,8 @@ ggplot(data, aes(x=time_period, y=indicator1,  fill=Filter )) +
 <section id="content" class="level2">
 <h2 class="anchored" data-anchor-id="content">Content</h2>
 <p>In the content tab you can now start creating your release, embedding the data blocks you’ve created as you go.</p>
-<!-- we should gif -->
-<p>You can use the page view toggles, that float in the bottom left of the page, to jump between edit and preview mode for the release and to view a preview of the table tool.</p>
-<!-- we should gif -->
+<p>You can use the page view toggles, in the blue bar at of the page, to jump between edit and preview mode for the release and to view a preview of the table tool.</p>
+<p><img src="../images/ees_page_view_toggle.PNG" class="img-fluid"></p>
 <p>Add any headline and/or key stats and figures for your release in the headline facts and figures section.</p>
 <p>You can then create accordion sections to start adding your main release commentary. These sections are made up of text blocks and data blocks which can be reordered as needed.</p>
 <section id="headline-facts-and-figures" class="level3">
@@ -1560,8 +1575,10 @@ EES PRA one pager
 <h1>Release amendments</h1>
 <hr>
 <p>If you need to make an amendment to release that has already been published this is possible to do from within the admin dashboard if you are a publication owner. If you need to create an amendment and your publication owner is not available, please contact the <a href="mailto:explore.statistics@education.gov.uk">Explore Statistics mailbox</a> to do this for you.</p>
+<p>First, find your publication in the <a href="#admin-dashboard">admin dashboard</a>.</p>
+<p><img src="../images/EES-admin-dashboard.PNG" class="img-fluid"></p>
+<p>Then, from the releases tab, select to ‘amend’ the release you want to make a change to. This will then create a new version of that release that you can make changes to and then choose to republish. You’ll also have the option to view the existing publication that is currently published incase you want to compare between them, or to cancel the amendment if you want to discard all changes made in an amendment while it is still in draft.</p>
 <p><img src="../images/EES-amend-release.PNG" class="img-fluid"></p>
-<p>Creating an amendment of a release will create a new version for which you can make any changes and then choose to republish, either as soon as possible or on a given date.</p>
 <hr>
 <section id="release-notes" class="level2">
 <h2 class="anchored" data-anchor-id="release-notes">Release notes</h2>
