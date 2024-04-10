@@ -152,6 +152,28 @@ See below for a diagram of the responsibilities of each role as part of the publ
 
 ---
 
+### Managing permissions
+
+---
+
+If you are a [publication owner](#roles-and-permissions) then you can add other analysts in your team to specific releases to allow them to edit and contribute to the release. 
+
+To do this, select your publication from the admin dashboard.
+
+![](../images/EES-admin-dashboard.PNG)
+
+Then go to the 'Team access' tab.
+
+![](../images/ees_team_access.png)
+
+In here you can see everyone who currently has access, and invite your team to contribute to the release, as well as manage and remove access. To give access the release must already exist, and you'll need to give individual access for each new release you do in the publication.
+
+If you are inviting someone who hasn't used EES before, make sure to add their DfE email. Jobshare email addresses and mailboxes will not work, each user must be given access with their individual DfE account. The [external user access](#external-user-access) section has more details on how to give access to external contributors.
+
+To change Publication Owners, or Approvers, contact the [Explore education statistics mailbox](mailto:explore.statistics@education.gov.uk).
+
+---
+
 ## Requesting a new publication
 
 
@@ -836,11 +858,9 @@ The above code should produce something along the lines of the following plots:
 
 In the content tab you can now start creating your release, embedding the data blocks you’ve created as you go.
 
-<!-- we should gif -->
+You can use the page view toggles, in the blue bar at of the page, to jump between edit and preview mode for the release and to view a preview of the table tool.
 
-You can use the page view toggles, that float in the bottom left of the page, to jump between edit and preview mode for the release and to view a preview of the table tool.
-
-<!-- we should gif -->
+![](../images/ees_page_view_toggle.PNG)
 
 Add any headline and/or key stats and figures for your release in the headline facts and figures section.
 
@@ -1202,9 +1222,14 @@ After creating your pre-release access list a text editor will appear where you 
 
 If you need to make an amendment to release that has already been published this is possible to do from within the admin dashboard if you are a publication owner. If you need to create an amendment and your publication owner is not available, please contact the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk) to do this for you.
 
+First, find your publication in the [admin dashboard](#admin-dashboard).
+
+![](../images/EES-admin-dashboard.PNG)
+
+Then, from the releases tab, select to 'amend' the release you want to make a change to. This will then create a new version of that release that you can make changes to and then choose to republish. You'll also have the option to view the existing publication that is currently published incase you want to compare between them, or to cancel the amendment if you want to discard all changes made in an amendment while it is still in draft.
+
 ![](../images/EES-amend-release.PNG)
 
-Creating an amendment of a release will create a new version for which you can make any changes and then choose to republish, either as soon as possible or on a given date.
 
 ---
 
