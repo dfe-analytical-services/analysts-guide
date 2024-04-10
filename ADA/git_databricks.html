@@ -530,11 +530,11 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="access-tokens">Access Tokens</h3>
 <p>Access tokens are long strings of numbers and letters that act like a password between two services. They identify the user and their permissions from one service to another.</p>
 <p>In this case, we will generate an access token in DevOps and give it to Databricks. To generate your Azure DevOps access token, go to DevOps and click the user settings icon to the left of your initials in the top right of your screen - it looks like a person with a cog next to them:</p>
-<p><img src="../images/devops-user-settings.PNG" class="img-fluid"></p>
+<p><img src="../images/devops-user-settings.png" class="img-fluid"></p>
 <p>In the user settings menu, click Personal Access Tokens. On the screen that appears, click the blue “New Token” button in the top right:</p>
-<p><img src="../images/devops-new-token.PNG" class="img-fluid"></p>
+<p><img src="../images/devops-new-token.png" class="img-fluid"></p>
 <p>The following window should appear:</p>
-<p><img src="../images/devops-create-token.PNG" class="img-fluid"></p>
+<p><img src="../images/devops-create-token.png" class="img-fluid"></p>
 <ul>
 <li>Give the token a sensible name so that you can identify it in your list of tokens.</li>
 <li>The organisation field should be pre-populated for you, this can be left alone.</li>
@@ -550,9 +550,9 @@ cookieconsent.run({
 <section id="connecting-to-databricks" class="level3">
 <h3 class="anchored" data-anchor-id="connecting-to-databricks">Connecting to Databricks</h3>
 <p>Now that you have your access token, you should go straight to Databricks. In the top right corner of the Databricks window, click your username and then “User Settings”:</p>
-<p><img src="../images/databricks-user-settings.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-user-settings.png" class="img-fluid"></p>
 <p>You should then select “Linked Accounts” from the User menu on the left. The following page will open:</p>
-<p><img src="../images/databricks-linked-accounts.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-linked-accounts.png" class="img-fluid"></p>
 <ul>
 <li>We recommend immediately pasting your copied access token into the “Token” field at the bottom of the page to avoid losing it.</li>
 <li>Git provider should be set as “Azure DevOps Services (Personal Access Token)”</li>
@@ -567,9 +567,9 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="connecting-to-repos-and-cloning">Connecting to repos and cloning</h3>
 <p>Just like any other way that you’ve worked with git before, the first step is going to be to clone your repo inside Databricks.</p>
 <p>In the blue menu on the left, click Workspace, and then in the Workspace menu that appears, click Repos. The menus should look like this:</p>
-<p><img src="../images/databricks-workspace-menu.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-workspace-menu.png" class="img-fluid"></p>
 <p>On the Repos screen, click the grey “Add repo” button in the top right corner. The “Add Repo” window will appear:</p>
-<p><img src="../images/databricks-add-repo.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-add-repo.png" class="img-fluid"></p>
 <ul>
 <li>You will first need to go to Azure DevOps and copy the link to clone the repo as you usually would</li>
 <li>Paste this link into the “Git repository URL” field</li>
@@ -577,7 +577,7 @@ cookieconsent.run({
 <li>The “Repository name” field should be automatically populated when you enter the URL.</li>
 </ul>
 <p>You can then click “Create Repo”. When the repo is created, you will be able to see it under your name in the Repos menu:</p>
-<p><img src="../images/databricks-view-repo.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-view-repo.png" class="img-fluid"></p>
 <section id="sparse-checkout-and-cone-patterns" class="level4">
 <h4 class="anchored" data-anchor-id="sparse-checkout-and-cone-patterns">Sparse checkout and Cone Patterns</h4>
 <p>Databricks cannot clone very large repos. It is best practice not to have a repo of this size, but if you attempt to clone a large repo, you will receive an error message. In this instance, you will need to perform a sparse checkout. This only clones a selection of items in your repo. To do this, select the “Advanced” option when in the “Add repo” menu, and tick the “Sparse checkout mode” option. You can tell Databricks which elements of the repo you would like it to clone, and you can do this by specifying something called Cone Patterns. If you do not specify any Cone Patterns, then the Databricks default is to clone only files in the root folder, but none from any subdirectories. To specify your own Cone Patterns, enter them in the box provided. You can enter multiple patterns but if the folders that they refer to contain more than 800MB of data then your clone will continue to fail.</p>
@@ -598,7 +598,7 @@ cookieconsent.run({
 <section id="folders-in-databricks" class="level2">
 <h2 class="anchored" data-anchor-id="folders-in-databricks">Folders in Databricks</h2>
 <p>To be able to add your notebooks to a repo, you need to make sure that you save them in the correct place. In Databricks, you have your Workspace. Inside your Workspace is your “local” Users folder, and your repos. In the image below, the User folder is highlighted blue:</p>
-<p><img src="../images/databricks-folders.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-folders.png" class="img-fluid"></p>
 <p>You can think of your User folder as being a bit like “My Documents” on your laptop. When you save things there, only you can see and access them. Git cannot “see” things inside your User folder. However, git <strong>can</strong> see things inside your Repos folder. This means that when you save something in your Repos folder, it can be committed and pushed to git. It is therefore good practice to always save notebooks in your Repos folder instead of in your User folder.</p>
 <p><br>
 </p>
@@ -610,11 +610,11 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="git-pull">Git pull</h3>
 <p>You can access the menu to pull, commit and push from several places within Databricks. This interface is the same whether you’re working with a DevOps repo or a Github repo.</p>
 <p>At the top of any notebook that’s saved in a repo, you’ll see a little grey branch icon with the name of a repo next to it. In the case of this notebook, it’s on the main branch:</p>
-<p><img src="../images/databricks-main-repo-notebook.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-main-repo-notebook.png" class="img-fluid"></p>
 <p>You can also access the git menu by clicking the branch name next to the repo name within the Repos folder:</p>
-<p><img src="../images/databricks-main-repo-menu.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-main-repo-menu.png" class="img-fluid"></p>
 <p>If you click the branch name, it’ll open the git interface within Databricks:</p>
-<p><img src="../images/databricks-git-interface.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-git-interface.png" class="img-fluid"></p>
 <p>From here, you can perform git pull by clicking the pull icon in the top right. There is a dropdown menu in the top left corner that allows you to change the branch or create a new branch if required.</p>
 <p><br>
 </p>
@@ -623,14 +623,14 @@ cookieconsent.run({
 <section id="git-commit-and-push" class="level3">
 <h3 class="anchored" data-anchor-id="git-commit-and-push">Git commit and push</h3>
 <p>When you have made changes to a notebook, it will appear in the Changes section of the git interface. You can also see the actual changes that have been made in the right hand box to make sure that you’re committing the correct file:</p>
-<p><img src="../images/databricks-git-commit.PNG" class="img-fluid"></p>
+<p><img src="../images/databricks-git-commit.png" class="img-fluid"></p>
 <p>In Databricks, you commit and push as one action, rather than as two separate ones. Enter your commit message into the “Commit message” box (you can ignore the Description box) and click the “Commit &amp; Push” button.</p>
 <hr>
 </section>
 <section id="additional-git-commands-in-the-databricks-interface" class="level3">
 <h3 class="anchored" data-anchor-id="additional-git-commands-in-the-databricks-interface">Additional git commands in the Databricks interface</h3>
 <p>You can access additional git features such as merge, rebase and reset directly within the Databricks interface by clicking the 3 dots in the menu as shown in the image below:</p>
-<p><img src="../images/reset-local-branch.PNG" class="img-fluid"></p>
+<p><img src="../images/reset-local-branch.png" class="img-fluid"></p>
 <p>When merging, you are also able to resolve merge conflicts inside Databricks itself.</p>
 <p><strong>Please be warned</strong> that we would usually advise against using git reset as you can permanently lose changes you’ve made and this cannot be undone.</p>
 <p>There is additional guidance on each of these advanced features in the <a href="https://docs.databricks.com/en/repos/git-operations-with-repos.html" target="_blank">Databricks manual</a>. Please use git reset with caution as you can easily lose recent changes when performing this action.</p>
