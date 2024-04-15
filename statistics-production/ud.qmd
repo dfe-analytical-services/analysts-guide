@@ -850,6 +850,7 @@ Individual needs can be provided using **sen_primary_need** and **sen_secondary_
 | Specific learning difficulty |
 | Speech, language and communication needs |
 | Vision impairment |
+| Unknown |
 | No primary need |
 | Total |
 
