@@ -815,6 +815,48 @@ navigate and understand our statistics. In the EES context, harmonisation will a
 methods of interacting with our data platform such as automated data retrieval
 for dashboards and other secondary statistics services, whilst also helping with performance and cost effectiveness of the EES platform.
 
+--- 
+
+## Special Educational Needs
+
+Special educational needs data uploaded to Explore Education Statistics is expected to conform closely to the [School Census data guidance](https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code).
+
+Top level fields are provided by **sen_status** and **sen_provision** as follows:
+
+| sen_status | sen_provision |
+| ---------- | --------------|
+| Any special educational need | Education, health and care plan |
+|                              | SEN support / SEN without an EHC plan |
+| No identified special educational need | No SEN provision |
+| Total      | Total |
+
+If both are provided, then **sen_status** should be listed as the filter_grouping_column of **sen_provision**.
+
+Individual needs can be provided using **sen_primary_need** and **sen_secondary_need**. These are as follows:
+
+| sen_primary_need | 
+| ---------------- |
+| Autistic spectrum disorder |
+| Hearing impairment |
+| Not reported |
+| Moderate learning difficulty |
+| Multi-sensory impairment |
+| Other difficulty or disability |
+| Physical disability |
+| Profound and multiple learning difficulty |
+| SEN support but no specialist assessment of type of need |
+| Severe learning difficulty |
+| Social, emotional and mental health |
+| Specific learning difficulty |
+| Speech, language and communication needs |
+| Vision impairment |
+| No primary need |
+| Total |
+
+The options for **sen_secondary_need** are the same as for **sen_primary_need**, except for **No primary need** is replaced by **No secondary need**.
+
+If using **breakdown_topic** and **breakdown** insead of individual columns, then he appropriate entries for **breakdown_topic** are SEN status, SEN provision, SEN primary need and SEN secondary need.
+
 ---
 
 ## Sex and gender
