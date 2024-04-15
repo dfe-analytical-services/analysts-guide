@@ -1001,6 +1001,13 @@ Where there is a reasonable need to publish or report statistics for a full aggr
 
 ---
 
+## School characteristics
+
+
+
+
+---
+
 # Filters
 
 ---
