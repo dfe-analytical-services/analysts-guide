@@ -1771,6 +1771,17 @@
     ]
   },
   {
+    "objectID": "statistics-production/ud.html#special-educational-needs",
+    "href": "statistics-production/ud.html#special-educational-needs",
+    "title": "Open Data Standards",
+    "section": "Special Educational Needs",
+    "text": "Special Educational Needs\nSpecial educational needs data uploaded to Explore Education Statistics is expected to conform closely to the School Census data guidance.\nTop level fields are provided by sen_status and sen_provision as follows:\n\n\n\nsen_status\nsen_provision\n\n\n\n\nAny special educational need\nEducation, health and care plan\n\n\n\nSEN support / SEN without an EHC plan\n\n\nNo identified special educational need\nNo SEN provision\n\n\nTotal\nTotal\n\n\n\nIf both are provided, then sen_status should be listed as the filter_grouping_column of sen_provision.\nIndividual needs can be provided using sen_primary_need and sen_secondary_need. These are as follows:\n\n\n\nsen_primary_need\n\n\n\n\nAutistic spectrum disorder\n\n\nHearing impairment\n\n\nNot reported\n\n\nModerate learning difficulty\n\n\nMulti-sensory impairment\n\n\nOther difficulty or disability\n\n\nPhysical disability\n\n\nProfound and multiple learning difficulty\n\n\nSEN support but no specialist assessment of type of need\n\n\nSevere learning difficulty\n\n\nSocial, emotional and mental health\n\n\nSpecific learning difficulty\n\n\nSpeech, language and communication needs\n\n\nVision impairment\n\n\nUnknown\n\n\nNo primary need\n\n\nTotal\n\n\n\nThe options for sen_secondary_need are the same as for sen_primary_need, except for No primary need is replaced by No secondary need.\nIf using breakdown_topic and breakdown insead of individual columns, then the appropriate entries for breakdown_topic are SEN status, SEN provision, SEN primary need and SEN secondary need.",
+    "crumbs": [
+      "Statistics production",
+      "Open Data Standards"
+    ]
+  },
+  {
     "objectID": "statistics-production/ud.html#sex-and-gender",
     "href": "statistics-production/ud.html#sex-and-gender",
     "title": "Open Data Standards",

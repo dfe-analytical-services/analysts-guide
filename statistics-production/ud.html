@@ -471,6 +471,7 @@ cookieconsent.run({
   </ul></li>
   <li><a href="#common-harmonised-variables" id="toc-common-harmonised-variables" class="nav-link" data-scroll-target="#common-harmonised-variables">Common harmonised variables</a>
   <ul class="collapse">
+  <li><a href="#special-educational-needs" id="toc-special-educational-needs" class="nav-link" data-scroll-target="#special-educational-needs">Special Educational Needs</a></li>
   <li><a href="#sex-and-gender" id="toc-sex-and-gender" class="nav-link" data-scroll-target="#sex-and-gender">Sex and gender</a>
   <ul class="collapse">
   <li><a href="#sex" id="toc-sex" class="nav-link" data-scroll-target="#sex">Sex</a></li>
@@ -2194,6 +2195,102 @@ Remember
 <hr>
 <p>Wherever possible variables should confirm to the DfE harmonisation strategy. Having consistent variables across data files held by the DfE, and in particular across data files in publications, allows users to more quickly navigate and understand our statistics. In the EES context, harmonisation will also facilitate more advanced methods of interacting with our data platform such as automated data retrieval for dashboards and other secondary statistics services, whilst also helping with performance and cost effectiveness of the EES platform.</p>
 <hr>
+<section id="special-educational-needs" class="level2">
+<h2 class="anchored" data-anchor-id="special-educational-needs">Special Educational Needs</h2>
+<p>Special educational needs data uploaded to Explore Education Statistics is expected to conform closely to the <a href="https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code" target="_blank">School Census data guidance</a>.</p>
+<p>Top level fields are provided by <strong>sen_status</strong> and <strong>sen_provision</strong> as follows:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>sen_status</th>
+<th>sen_provision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Any special educational need</td>
+<td>Education, health and care plan</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>SEN support / SEN without an EHC plan</td>
+</tr>
+<tr class="odd">
+<td>No identified special educational need</td>
+<td>No SEN provision</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td>Total</td>
+</tr>
+</tbody>
+</table>
+<p>If both are provided, then <strong>sen_status</strong> should be listed as the filter_grouping_column of <strong>sen_provision</strong>.</p>
+<p>Individual needs can be provided using <strong>sen_primary_need</strong> and <strong>sen_secondary_need</strong>. These are as follows:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>sen_primary_need</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Autistic spectrum disorder</td>
+</tr>
+<tr class="even">
+<td>Hearing impairment</td>
+</tr>
+<tr class="odd">
+<td>Not reported</td>
+</tr>
+<tr class="even">
+<td>Moderate learning difficulty</td>
+</tr>
+<tr class="odd">
+<td>Multi-sensory impairment</td>
+</tr>
+<tr class="even">
+<td>Other difficulty or disability</td>
+</tr>
+<tr class="odd">
+<td>Physical disability</td>
+</tr>
+<tr class="even">
+<td>Profound and multiple learning difficulty</td>
+</tr>
+<tr class="odd">
+<td>SEN support but no specialist assessment of type of need</td>
+</tr>
+<tr class="even">
+<td>Severe learning difficulty</td>
+</tr>
+<tr class="odd">
+<td>Social, emotional and mental health</td>
+</tr>
+<tr class="even">
+<td>Specific learning difficulty</td>
+</tr>
+<tr class="odd">
+<td>Speech, language and communication needs</td>
+</tr>
+<tr class="even">
+<td>Vision impairment</td>
+</tr>
+<tr class="odd">
+<td>Unknown</td>
+</tr>
+<tr class="even">
+<td>No primary need</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+</tr>
+</tbody>
+</table>
+<p>The options for <strong>sen_secondary_need</strong> are the same as for <strong>sen_primary_need</strong>, except for <strong>No primary need</strong> is replaced by <strong>No secondary need</strong>.</p>
+<p>If using <strong>breakdown_topic</strong> and <strong>breakdown</strong> insead of individual columns, then the appropriate entries for <strong>breakdown_topic</strong> are SEN status, SEN provision, SEN primary need and SEN secondary need.</p>
+<hr>
+</section>
 <section id="sex-and-gender" class="level2">
 <h2 class="anchored" data-anchor-id="sex-and-gender">Sex and gender</h2>
 <p>The Department’s policy on collecting sex and gender data is that statistics should preferentially be presented for sex rather than gender. These terms, as used in statistics publications, are defined in the following sections and publication teams should be careful not to mislabel sex categories as gender or vice-versa.</p>
