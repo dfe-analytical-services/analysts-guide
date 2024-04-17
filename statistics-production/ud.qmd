@@ -1005,7 +1005,7 @@ Where there is a reasonable need to publish or report statistics for a full aggr
 
 A standardised set of establishment type fields has been developed, largely based on the data reported by the School and Pupils Statistics publication. Reference files for the standardised fields are available in the data screener GitHub repository, with the standards summarised below.
 
-### Esablishment type group
+### Establishment type group
 
 | col_name | Breakdown topic entry | Filter item |
 | -------- | --------------------- | ----------- |
