@@ -1067,7 +1067,7 @@ A standardised set of establishment type fields has been developed, largely base
 
 :::
 
-If needed, these items can also be reporting in the standard **breakdown** field, using a **breakdown_topic** of Establishment type group.
+If needed, these items can also be reported in the standard **breakdown** field, using a **breakdown_topic** of Establishment type group.
 
 
 ---
@@ -1094,7 +1094,7 @@ The **establishment_governance** field provides an opportunity to list the gover
 
 :::
 
-If needed, these items can also be reporting in the standard **breakdown** field, using a **breakdown_topic** of Establishment governance.
+If needed, these items can also be reported in the standard **breakdown** field, using a **breakdown_topic** of Establishment governance.
 
 ---
 
@@ -1122,8 +1122,6 @@ Education phase should be listed under he column name **education_phase** where 
 | Secondary | SS |
 | Special | SP |
 | Total | |
-
-If needed, these items can also be reporting in the standard **breakdown** field, using a **breakdown_topic** of Education phase.
 
 :::
 
