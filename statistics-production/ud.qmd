@@ -1001,11 +1001,15 @@ Where there is a reasonable need to publish or report statistics for a full aggr
 
 ---
 
-## Esablishment characteristics
+## Establishment characteristics
 
 A standardised set of establishment type fields has been developed, largely based on the data reported by the School and Pupils Statistics publication. Reference files for the standardised fields are available in the data screener GitHub repository, with the standards summarised below.
 
+---
+
 ### Establishment type group
+
+---
 
 | col_name | Breakdown topic entry | Filter item |
 | -------- | --------------------- | ----------- |
@@ -1013,10 +1017,14 @@ A standardised set of establishment type fields has been developed, largely base
 | establishment_type_group | Establishment type group | Total |
 | establishment_type_group | Establishment type group | All state funded |
 | establishment_type_group | Establishment type group | Independent |
-| establishment_type_group | Establishment type group | LA maintained |
+| establishment_type_group | Establishment type group | Local authority maintained |
 | establishment_type_group | Establishment type group | Non-maintained |
 
+---
+
 ### Establishment governance
+
+---
 
 The **establishment_governance** field provides an opportunity to list the governance of an establishment, e.g. Academy, Non-maintained, Independent etc. It can be assigned the **establishment_type_group** as a filter grouping column.
 
@@ -1031,8 +1039,11 @@ The **establishment_governance** field provides an opportunity to list the gover
 | establishment_governance | Establishment governance | City technology college |
 | establishment_governance | Establishment governance | Academy |
 
+---
 
 ### Education phase
+
+---
 
 Education phase should be listed under he column name **education_phase** where given as a standalone filter or Education phase if included in the **breakdown_topic** / **breakdown** combination. When included as an individual filter, it can be attributed **establishment_type_group** as the filter grouping column where available.
 
