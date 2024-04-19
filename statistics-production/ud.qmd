@@ -1011,14 +1011,21 @@ A standardised set of establishment type fields has been developed, largely base
 
 ---
 
-| col_name | Breakdown topic entry | Filter item |
-| -------- | --------------------- | ----------- |
-| establishment_type_group | Establishment type group | Academy |
-| establishment_type_group | Establishment type group | Total |
-| establishment_type_group | Establishment type group | All state funded |
-| establishment_type_group | Establishment type group | Independent |
-| establishment_type_group | Establishment type group | Local authority maintained |
-| establishment_type_group | Establishment type group | Non-maintained |
+::: {.table-responsive}
+
+| establishment_type_group |
+| ----------- |
+| Academy |
+| All state funded |
+| Independent |
+| Local authority maintained |
+| Non-maintained |
+| Total |
+
+:::
+
+If needed, these items can also be reporting in the standard **breakdown** field, using a **breakdown_topic** of Establishment type group.
+
 
 ---
 
@@ -1028,16 +1035,23 @@ A standardised set of establishment type fields has been developed, largely base
 
 The **establishment_governance** field provides an opportunity to list the governance of an establishment, e.g. Academy, Non-maintained, Independent etc. It can be assigned the **establishment_type_group** as a filter grouping column.
 
-| col_name | Breakdown topic entry | Filter item |
-| -------- | --------------------- | ----------- |
-| establishment_governance | Establishment governance | Community |
-| establishment_governance | Establishment governance | Voluntary aided |
-| establishment_governance | Establishment governance | Voluntary controlled |
-| establishment_governance | Establishment governance | Foundation |
-| establishment_governance | Establishment governance | Independent |
-| establishment_governance | Establishment governance | Non-maintained |
-| establishment_governance | Establishment governance | City technology college |
-| establishment_governance | Establishment governance | Academy |
+::: {.table-responsive}
+
+| establishment_governance |
+| ----------- |
+| Academy |
+| City technology college |
+| Community |
+| Foundation |
+| Independent |
+| Non-maintained |
+| Voluntary aided |
+| Voluntary controlled |
+| Total |
+
+:::
+
+If needed, these items can also be reporting in the standard **breakdown** field, using a **breakdown_topic** of Establishment governance.
 
 ---
 
@@ -1047,22 +1061,28 @@ The **establishment_governance** field provides an opportunity to list the gover
 
 Education phase should be listed under he column name **education_phase** where given as a standalone filter or Education phase if included in the **breakdown_topic** / **breakdown** combination. When included as an individual filter, it can be attributed **establishment_type_group** as the filter grouping column where available.
 
-| col_name | Breakdown topic entry | Filter item | School census code |
-| -------- | --------------------- | ----------- | ------------------ |
-| education_phase | Education phase | All-through | AT |
-| education_phase | Education phase | Alternative provision | PR |
-| education_phase | Education phase | Early years settings | |
-| education_phase | Education phase | Independent school | |
-| education_phase | Education phase | Middle (deemed primary) | MP |
-| education_phase | Education phase | Middle (deemed secondary) | MS |
-| education_phase | Education phase | No establishment | |
-| education_phase | Education phase | Nursery | NS |
-| education_phase | Education phase | Primary | PS |
-| education_phase | Education phase | Secondary | SS |
-| education_phase | Education phase | Special | SP |
-| education_phase | Education phase | Further education | |
-| education_phase | Education phase | Higher education | |
-| education_phase | Education phase | Total | |
+::: {.table-responsive}
+
+| education_phase | School census code |
+| ----------- | ------------------ |
+| All-through | AT |
+| Alternative provision | PR |
+| Early years settings | |
+| Further education | |
+| Higher education | |
+| Independent school | |
+| Middle (deemed primary) | MP |
+| Middle (deemed secondary) | MS |
+| No establishment | |
+| Nursery | NS |
+| Primary | PS |
+| Secondary | SS |
+| Special | SP |
+| Total | |
+
+If needed, these items can also be reporting in the standard **breakdown** field, using a **breakdown_topic** of Education phase.
+
+:::
 
 ---
 
