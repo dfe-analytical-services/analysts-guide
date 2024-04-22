@@ -1102,7 +1102,7 @@ If needed, these items can also be reported in the standard [**breakdown** field
 
 ---
 
-Education phase should be listed under he column name **education_phase** where given as a standalone filter or Education phase if included in the [**breakdown_topic** / **breakdown** combination](#introduction-to-filters). When included as an individual filter, it can be attributed **establishment_type_group** as the filter grouping column where available.
+Education phase should be listed under the column name **education_phase** where given as a standalone filter or Education phase if included in the [**breakdown_topic** / **breakdown** combination](#introduction-to-filters). When included as an individual filter, it can be attributed **establishment_type_group** as the filter grouping column where available.
 
 ::: {.table-responsive}
 
