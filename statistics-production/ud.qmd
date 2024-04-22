@@ -856,7 +856,7 @@ Individual needs can be provided using **sen_primary_need** and **sen_secondary_
 
 The options for **sen_secondary_need** are the same as for **sen_primary_need**, except for **No primary need** is replaced by **No secondary need**.
 
-If using **breakdown_topic** and **breakdown** insead of individual columns, then the appropriate entries for **breakdown_topic** are SEN status, SEN provision, SEN primary need and SEN secondary need.
+If using [**breakdown_topic** and **breakdown**](#introduction-to-filters) instead of individual columns, then the appropriate entries for **breakdown_topic** are SEN status, SEN provision, SEN primary need and SEN secondary need.
 
 ---
 
@@ -882,7 +882,7 @@ certificate).
 
 When presented in a filter, this should take the column header **sex** and 
 standard entries **Male**, **Female** and **Unknown**. This can also be included as 
-part of the standard **breakdown_topic** / **breakdown** filters, with the relevant 
+part of the standard [**breakdown_topic** / **breakdown** filters](#introduction-to-filters), with the relevant 
 entry under **breakdown_topic** being **Sex** and as above, the entries under
 **breakdown** being **Male**, **Female** and **Unknown**.
 
@@ -1041,6 +1041,89 @@ Statistics producers should avoid where possible the practice of reporting aggre
 Where there is a reasonable need to publish or report statistics for a full aggregation of ethnic minorities (such as reporting on existing historical targets), official guidance is as follows:
 
 > Use ‘ethnic minorities’ to refer to all ethnic groups except the white British group. This term includes white minorities, such as Gypsy, Roma and Irish Traveller groups. For comparisons with the white group as a whole, use ‘ethnic minorities (excluding White minorities)’.
+
+---
+
+## Establishment characteristics
+
+A standardised set of establishment type fields has been developed, largely based on the data reported by the School and Pupils Statistics publication. Reference files for the standardised fields are available in the data screener GitHub repository, with the standards summarised below.
+
+---
+
+### Establishment type group
+
+---
+
+::: {.table-responsive}
+
+| establishment_type_group |
+| ----------- |
+| Academy |
+| All state funded |
+| Independent |
+| Local authority maintained |
+| Non-maintained |
+| Total |
+
+:::
+
+If needed, these items can also be reported in the standard [**breakdown** field](#introduction-to-filters), using a **breakdown_topic** of Establishment type group.
+
+
+---
+
+### Establishment governance
+
+---
+
+The **establishment_governance** field provides an opportunity to list the governance of an establishment, e.g. Academy, Non-maintained, Independent etc. It can be assigned the **establishment_type_group** as a filter grouping column.
+
+::: {.table-responsive}
+
+| establishment_governance |
+| ----------- |
+| Academy |
+| City technology college |
+| Community |
+| Foundation |
+| Independent |
+| Non-maintained |
+| Voluntary aided |
+| Voluntary controlled |
+| Total |
+
+:::
+
+If needed, these items can also be reported in the standard [**breakdown** field](#introduction-to-filters), using a **breakdown_topic** of Establishment governance.
+
+---
+
+### Education phase
+
+---
+
+Education phase should be listed under the column name **education_phase** where given as a standalone filter or Education phase if included in the [**breakdown_topic** / **breakdown** combination](#introduction-to-filters). When included as an individual filter, it can be attributed **establishment_type_group** as the filter grouping column where available.
+
+::: {.table-responsive}
+
+| education_phase | School census code |
+| ----------- | ------------------ |
+| All-through | AT |
+| Alternative provision | PR |
+| Early years settings | |
+| Further education | |
+| Higher education | |
+| Independent school | |
+| Middle (deemed primary) | MP |
+| Middle (deemed secondary) | MS |
+| No establishment | |
+| Nursery | NS |
+| Primary | PS |
+| Secondary | SS |
+| Special | SP |
+| Total | |
+
+:::
 
 ---
 
