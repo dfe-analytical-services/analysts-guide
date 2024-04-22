@@ -484,6 +484,12 @@ cookieconsent.run({
   <li><a href="#gss-ethnicity-categories" id="toc-gss-ethnicity-categories" class="nav-link" data-scroll-target="#gss-ethnicity-categories">GSS ethnicity categories</a></li>
   <li><a href="#reporting-on-broad-ethnic-minorities-catageories-e.g.-bame" id="toc-reporting-on-broad-ethnic-minorities-catageories-e.g.-bame" class="nav-link" data-scroll-target="#reporting-on-broad-ethnic-minorities-catageories-e.g.-bame">Reporting on broad ethnic minorities catageories (e.g.&nbsp;BAME)</a></li>
   </ul></li>
+  <li><a href="#establishment-characteristics" id="toc-establishment-characteristics" class="nav-link" data-scroll-target="#establishment-characteristics">Establishment characteristics</a>
+  <ul class="collapse">
+  <li><a href="#establishment-type-group" id="toc-establishment-type-group" class="nav-link" data-scroll-target="#establishment-type-group">Establishment type group</a></li>
+  <li><a href="#establishment-governance" id="toc-establishment-governance" class="nav-link" data-scroll-target="#establishment-governance">Establishment governance</a></li>
+  <li><a href="#education-phase" id="toc-education-phase" class="nav-link" data-scroll-target="#education-phase">Education phase</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#filters" id="toc-filters" class="nav-link" data-scroll-target="#filters">Filters</a>
   <ul class="collapse">
@@ -2288,7 +2294,7 @@ Remember
 </tbody>
 </table>
 <p>The options for <strong>sen_secondary_need</strong> are the same as for <strong>sen_primary_need</strong>, except for <strong>No primary need</strong> is replaced by <strong>No secondary need</strong>.</p>
-<p>If using <strong>breakdown_topic</strong> and <strong>breakdown</strong> insead of individual columns, then the appropriate entries for <strong>breakdown_topic</strong> are SEN status, SEN provision, SEN primary need and SEN secondary need.</p>
+<p>If using <a href="#introduction-to-filters"><strong>breakdown_topic</strong> and <strong>breakdown</strong></a> instead of individual columns, then the appropriate entries for <strong>breakdown_topic</strong> are SEN status, SEN provision, SEN primary need and SEN secondary need.</p>
 <hr>
 </section>
 <section id="sex-and-gender" class="level2">
@@ -2302,7 +2308,7 @@ Remember
 <blockquote class="blockquote">
 <p>a value which identifies the sex of a person as recognised in law, i.e.&nbsp;the sex as recorded on a birth certificate (or on a gender recognition certificate).</p>
 </blockquote>
-<p>When presented in a filter, this should take the column header <strong>sex</strong> and standard entries <strong>Male</strong>, <strong>Female</strong> and <strong>Unknown</strong>. This can also be included as part of the standard <strong>breakdown_topic</strong> / <strong>breakdown</strong> filters, with the relevant entry under <strong>breakdown_topic</strong> being <strong>Sex</strong> and as above, the entries under <strong>breakdown</strong> being <strong>Male</strong>, <strong>Female</strong> and <strong>Unknown</strong>.</p>
+<p>When presented in a filter, this should take the column header <strong>sex</strong> and standard entries <strong>Male</strong>, <strong>Female</strong> and <strong>Unknown</strong>. This can also be included as part of the standard <a href="#introduction-to-filters"><strong>breakdown_topic</strong> / <strong>breakdown</strong> filters</a>, with the relevant entry under <strong>breakdown_topic</strong> being <strong>Sex</strong> and as above, the entries under <strong>breakdown</strong> being <strong>Male</strong>, <strong>Female</strong> and <strong>Unknown</strong>.</p>
 <p><strong>Unknown</strong> as an option is likely to be used rarely - it is appropriate on data entry when the sex of the subject has not been recorded, is not known, or has not been registered (for example in data relating to unborn children in the Children in Need data).</p>
 <p>The above is in line with current DfE data collection guidelines on sex.</p>
 <p>In an EES data file, these might look something like:</p>
@@ -2542,6 +2548,165 @@ Remember
 <blockquote class="blockquote">
 <p>Use ‘ethnic minorities’ to refer to all ethnic groups except the white British group. This term includes white minorities, such as Gypsy, Roma and Irish Traveller groups. For comparisons with the white group as a whole, use ‘ethnic minorities (excluding White minorities)’.</p>
 </blockquote>
+<hr>
+</section>
+</section>
+<section id="establishment-characteristics" class="level2">
+<h2 class="anchored" data-anchor-id="establishment-characteristics">Establishment characteristics</h2>
+<p>A standardised set of establishment type fields has been developed, largely based on the data reported by the School and Pupils Statistics publication. Reference files for the standardised fields are available in the data screener GitHub repository, with the standards summarised below.</p>
+<hr>
+<section id="establishment-type-group" class="level3">
+<h3 class="anchored" data-anchor-id="establishment-type-group">Establishment type group</h3>
+<hr>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr class="header">
+<th>establishment_type_group</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Academy</td>
+</tr>
+<tr class="even">
+<td>All state funded</td>
+</tr>
+<tr class="odd">
+<td>Independent</td>
+</tr>
+<tr class="even">
+<td>Local authority maintained</td>
+</tr>
+<tr class="odd">
+<td>Non-maintained</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If needed, these items can also be reported in the standard <a href="#introduction-to-filters"><strong>breakdown</strong> field</a>, using a <strong>breakdown_topic</strong> of Establishment type group.</p>
+<hr>
+</section>
+<section id="establishment-governance" class="level3">
+<h3 class="anchored" data-anchor-id="establishment-governance">Establishment governance</h3>
+<hr>
+<p>The <strong>establishment_governance</strong> field provides an opportunity to list the governance of an establishment, e.g.&nbsp;Academy, Non-maintained, Independent etc. It can be assigned the <strong>establishment_type_group</strong> as a filter grouping column.</p>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr class="header">
+<th>establishment_governance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Academy</td>
+</tr>
+<tr class="even">
+<td>City technology college</td>
+</tr>
+<tr class="odd">
+<td>Community</td>
+</tr>
+<tr class="even">
+<td>Foundation</td>
+</tr>
+<tr class="odd">
+<td>Independent</td>
+</tr>
+<tr class="even">
+<td>Non-maintained</td>
+</tr>
+<tr class="odd">
+<td>Voluntary aided</td>
+</tr>
+<tr class="even">
+<td>Voluntary controlled</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If needed, these items can also be reported in the standard <a href="#introduction-to-filters"><strong>breakdown</strong> field</a>, using a <strong>breakdown_topic</strong> of Establishment governance.</p>
+<hr>
+</section>
+<section id="education-phase" class="level3">
+<h3 class="anchored" data-anchor-id="education-phase">Education phase</h3>
+<hr>
+<p>Education phase should be listed under the column name <strong>education_phase</strong> where given as a standalone filter or Education phase if included in the <a href="#introduction-to-filters"><strong>breakdown_topic</strong> / <strong>breakdown</strong> combination</a>. When included as an individual filter, it can be attributed <strong>establishment_type_group</strong> as the filter grouping column where available.</p>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr class="header">
+<th>education_phase</th>
+<th>School census code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All-through</td>
+<td>AT</td>
+</tr>
+<tr class="even">
+<td>Alternative provision</td>
+<td>PR</td>
+</tr>
+<tr class="odd">
+<td>Early years settings</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Further education</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Higher education</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Independent school</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Middle (deemed primary)</td>
+<td>MP</td>
+</tr>
+<tr class="even">
+<td>Middle (deemed secondary)</td>
+<td>MS</td>
+</tr>
+<tr class="odd">
+<td>No establishment</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Nursery</td>
+<td>NS</td>
+</tr>
+<tr class="odd">
+<td>Primary</td>
+<td>PS</td>
+</tr>
+<tr class="even">
+<td>Secondary</td>
+<td>SS</td>
+</tr>
+<tr class="odd">
+<td>Special</td>
+<td>SP</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 </section>
 </section>
