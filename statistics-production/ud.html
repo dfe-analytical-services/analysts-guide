@@ -1222,8 +1222,8 @@ Guidance on how to structure data files
 <p><strong>SQL</strong></p>
 <p>For saving results out of SQL as a .csv file there isn’t an option to specify the encoding, therefore the best bet is to either open the file in Excel and specify that as above, or to run your SQL query/read your data into R and follow the guidance below.</p>
 <p><strong>R</strong></p>
-<p>When writing .csv files out of R, you’ll mostly likely be using either <code>write.csv()</code> from base R, or <code>write_csv()</code> from the readr package. For the first one, you can specify encoding using <code>encoding =</code> like the following example:</p>
-<p><code>write.csv(my_data, file = "my_data_file.csv", encoding = "UTF-8")</code></p>
+<p>When writing .csv files out of R, you’ll mostly likely be using either <code>write.csv()</code> from base R, or <code>write_csv()</code> from the readr package. For the first one, you can specify encoding using <code>fileEncoding =</code> like the following example:</p>
+<p><code>write.csv(my_data, file = "my_data_file.csv", fileEncoding = "UTF-8")</code></p>
 <p>For <code>write_csv()</code>, which some of you may be using for increased processing speed, the function automatically encodes as UTF-8 format, meaning that you don’t have to do anything different!</p>
 <hr>
 </section>
