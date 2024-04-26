@@ -375,10 +375,10 @@ For saving results out of SQL as a .csv file there isn't an option to specify th
 
 **R**
 
-When writing .csv files out of R, you'll mostly likely be using either `write.csv()` from base R, or `write_csv()` from the readr package. For the first one, you can specify encoding using `encoding = ` like the following example:
+When writing .csv files out of R, you'll mostly likely be using either `write.csv()` from base R, or `write_csv()` from the readr package. For the first one, you can specify encoding using `fileEncoding = ` like the following example:
 
 
-`write.csv(my_data, file = "my_data_file.csv", encoding = "UTF-8")`
+`write.csv(my_data, file = "my_data_file.csv", fileEncoding = "UTF-8")`
 
 
 For `write_csv()`, which some of you may be using for increased processing speed, the function automatically encodes as UTF-8 format, meaning that you don't have to do anything different!
