@@ -109,7 +109,8 @@ website:
       - section: "ADA and Databricks"
         contents: 
           - ADA/ada.qmd
-          - ADA/databricks_rstudio.qmd
+          - ADA/databricks_rstudio_sql_warehouse.qmd
+          - ADA/databricks_rstudio_personal_cluster.qmd
           - ADA/git_databricks.qmd
 
 format:
