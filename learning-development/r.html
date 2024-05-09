@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -491,9 +491,12 @@ cookieconsent.run({
   <li><a href="#visualise-dependencies" id="toc-visualise-dependencies" class="nav-link" data-scroll-target="#visualise-dependencies">Visualise dependencies</a></li>
   <li><a href="#reproducible-random-numbers" id="toc-reproducible-random-numbers" class="nav-link" data-scroll-target="#reproducible-random-numbers">Reproducible random numbers</a></li>
   <li><a href="#automatic-logging" id="toc-automatic-logging" class="nav-link" data-scroll-target="#automatic-logging">Automatic logging</a></li>
+  </ul></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
+  <ul class="collapse">
   <li><a href="#cant-find-make-error" id="toc-cant-find-make-error" class="nav-link" data-scroll-target="#cant-find-make-error">Can’t find make error</a></li>
   <li><a href="#packages-not-downloading-due-to-wininet-error-renv-0.17" id="toc-packages-not-downloading-due-to-wininet-error-renv-0.17" class="nav-link" data-scroll-target="#packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</a></li>
-  <li><a href="#shinytest2---invalid-path-to-chrome-error-message" id="toc-shinytest2---invalid-path-to-chrome-error-message" class="nav-link" data-scroll-target="#shinytest2---invalid-path-to-chrome-error-message">shinytest2 - Invalid path to Chrome error message</a></li>
+  <li><a href="#shinytest2---invalid-path-to-chrome-chromote-error-message" id="toc-shinytest2---invalid-path-to-chrome-chromote-error-message" class="nav-link" data-scroll-target="#shinytest2---invalid-path-to-chrome-chromote-error-message">shinytest2 - Invalid path to Chrome (chromote) error message</a></li>
   </ul></li>
   <li><a href="#using-r-with-ada-databricks" id="toc-using-r-with-ada-databricks" class="nav-link" data-scroll-target="#using-r-with-ada-databricks">Using R with ADA / Databricks</a></li>
   </ul>
@@ -1071,6 +1074,9 @@ Guidance and tips for using the programming language R
 </div>
 <hr>
 </section>
+</section>
+<section id="troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
 <section id="cant-find-make-error" class="level3">
 <h3 class="anchored" data-anchor-id="cant-find-make-error">Can’t find make error</h3>
 <hr>
@@ -1088,12 +1094,15 @@ Guidance and tips for using the programming language R
 <p>Then restart R-Studio and downloads with renv should now succeed.</p>
 <hr>
 </section>
-<section id="shinytest2---invalid-path-to-chrome-error-message" class="level3">
-<h3 class="anchored" data-anchor-id="shinytest2---invalid-path-to-chrome-error-message">shinytest2 - Invalid path to Chrome error message</h3>
+<section id="shinytest2---invalid-path-to-chrome-chromote-error-message" class="level3">
+<h3 class="anchored" data-anchor-id="shinytest2---invalid-path-to-chrome-chromote-error-message">shinytest2 - Invalid path to Chrome (chromote) error message</h3>
 <hr>
-<p>If when using shinytest2, you get the following error, then you’ll need to set an environment variable to tell R where to find Chrome.</p>
+<p>Sometimes when attempting to run tests using shinytest2, you will get the following error:</p>
 <p><code>Error in initialize(...) : Invalid path to Chrome</code></p>
-<p>First step to resolve this is to set the path to chrome.exe (the Chrome application file itself where you’ve installed it) via the console for the current session. You can find the file path for your local Chrome installation by following these steps:</p>
+<p>Shinytest2 relies on Google Chrome to run, and so it needs to know where it has been installed on your computer. Chrome is not a standard piece of software for DfE laptops, so there are a few steps you can follow to resolve this issue.</p>
+<p><strong>Before you try any of the steps below, please check that you have Google Chrome installed.</strong> You can download Chrome from <a href="https://www.google.com/intl/en_uk/chrome/" target="_blank">the Google Chrome website</a>. You may get an error message saying that you do not have adminstrator permissions when you run the install file. Click “No”, and you should be presented with another window that says “Google Chrome can be installed without administrator privileges. Continue?”. Click “Yes” on this screen and Chrome should install.</p>
+<p>If you have Chrome installed and continue to get the chromote error when using shinytest2, then you’ll need to set an environment variable to tell R where to find Chrome.</p>
+<p>The first step to resolve this is to set the path to chrome.exe (the Chrome application file itself where you’ve installed it) via the console for the current session. You can find the file path for your local Chrome installation by following these steps:</p>
 <ul>
 <li>Click the Start button</li>
 <li>Right click on the Chrome icon and click ‘Open File Location’</li>
@@ -1105,7 +1114,7 @@ Guidance and tips for using the programming language R
 <p><code>Sys.setenv(CHROMOTE_CHROME = "C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe")</code></p>
 <p>To set the environment variable, you’ll need to edit your .Renviron file. This will fix the error across all R projects. If you don’t know where to find the .Renviron file, you can use the <code>usethis</code> package to open it in R-Studio using <code>usethis::edit_r_environ()</code>. Then set the <code>CHROMOTE_CHROME</code> environment variable to the path to <code>chrome.exe</code> on your computer. As an example it should look something like this:</p>
 <p><code>CHROMOTE_CHROME="C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe"</code></p>
-<p>Note: remember to give the path using forward-slashes rather than back-slashes.</p>
+<p><strong>Note: remember to give the path using forward-slashes (/) rather than back-slashes (\).</strong></p>
 <p>Once you’ve added that and saved the .Renviron file, restart your R session and that should then be loaded and shinytest2 will run. You can double check that it’s set the environment variable properly by running the following command:</p>
 <p><code>Sys.getenv("CHROMOTE_CHROME")</code></p>
 <p>That command should return the path that you entered for Chrome.</p>
