@@ -564,6 +564,10 @@ mutated <- mutate(mtcars, new_var = wt ** 2)
 
 ---
 
+## Troubleshooting
+
+---
+
 ### Can't find make error
 
 ---
@@ -590,15 +594,21 @@ Then restart R-Studio and downloads with renv should now succeed.
 
 ---
 
-### shinytest2 - Invalid path to Chrome error message
+### shinytest2 - Invalid path to Chrome (chromote) error message
 
 ---
 
-If when using shinytest2, you get the following error, then you'll need to set an environment variable to tell R where to find Chrome.
+Sometimes when attempting to run tests using shinytest2, you will get the following error:
 
 `Error in initialize(...) : Invalid path to Chrome`
 
-First step to resolve this is to set the path to chrome.exe (the Chrome application file itself where you've installed it) via the console for the current session. You can find the file path for your local Chrome installation by following these steps:
+Shinytest2 relies on Google Chrome to run, and so it needs to know where it has been installed on your computer. Chrome is not a standard piece of software for DfE laptops, so there are a few steps you can follow to resolve this issue. 
+
+**Before you try any of the steps below, please check that you have Google Chrome installed.** You can download Chrome from [the Google Chrome website](https://www.google.com/intl/en_uk/chrome/). You may get an error message saying that you do not have adminstrator permissions when you run the install file. Click "No", and you should be presented with another window that says "Google Chrome can be installed without administrator privileges. Continue?". Click "Yes" on this screen and Chrome should install.
+
+If you have Chrome installed and continue to get the chromote error when using shinytest2, then you'll need to set an environment variable to tell R where to find Chrome.
+
+The first step to resolve this is to set the path to chrome.exe (the Chrome application file itself where you've installed it) via the console for the current session. You can find the file path for your local Chrome installation by following these steps:
 
 - Click the Start button
 - Right click on the Chrome icon and click 'Open File Location'
@@ -615,7 +625,7 @@ To set the environment variable, you'll need to edit your .Renviron file. This w
 
 `CHROMOTE_CHROME="C:/Users/jbloggs/AppData/Local/Google/Chrome/Application/chrome.exe"`
 
-Note: remember to give the path using forward-slashes rather than back-slashes.
+**Note: remember to give the path using forward-slashes (/) rather than back-slashes (\\).**
 
 Once you've added that and saved the .Renviron file, restart your R session and that should then be loaded and shinytest2 will run. You can double check that it's set the environment variable properly by running the following command:
 
