@@ -566,8 +566,6 @@ mutated <- mutate(mtcars, new_var = wt ** 2)
 
 ## Troubleshooting
 
----
-
 ### Can't find make error
 
 ---
