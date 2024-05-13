@@ -4,7 +4,7 @@
 
 <p class="text-muted">
 
-The following instructions set up an ODBC connection between your laptop and your DataBricks cluster, which can then be used in R/RStudio to query data using an ODBC based package.
+The following instructions set up an ODBC connection between your laptop and your DataBricks cluster, which can then be used in R/RStudio to query data using an ODBC based package or `sparklyr`. Personal clusters are able to run SQL, R, python and scala. They can be used within the DataBricks environment, or through R studio and can be set up yourself if you don't have access to a SQL warehouse or shared cluster.
 
 </p>
 
