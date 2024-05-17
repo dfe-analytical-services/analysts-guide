@@ -592,6 +592,23 @@ Then restart R-Studio and downloads with renv should now succeed.
 
 ---
 
+### SSL certificate errors
+
+---
+
+The DfE firewall currently blocks access to external sites from DfE laptops when 
+connecting from common analytical software such as R or Python. This can prevent
+analysts from accessing important external resources such as package 
+repositories and data API endpoints. If you get an error including text along 
+the lines of "self signed SSL certificate not allowed" or anything similar 
+involving SSL certificates (or certs.), then contact the 
+[Statistics Development Team](mailto:statistics.development@education.gov.uk) 
+with a copy of the command that you're running and the error that it's 
+producing. We can then work with the Network Operations team to prevent this 
+being a blocker to your work.
+
+---
+
 ### shinytest2 - Invalid path to Chrome (chromote) error message
 
 ---
