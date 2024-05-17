@@ -496,6 +496,7 @@ cookieconsent.run({
   <ul class="collapse">
   <li><a href="#cant-find-make-error" id="toc-cant-find-make-error" class="nav-link" data-scroll-target="#cant-find-make-error">Can’t find make error</a></li>
   <li><a href="#packages-not-downloading-due-to-wininet-error-renv-0.17" id="toc-packages-not-downloading-due-to-wininet-error-renv-0.17" class="nav-link" data-scroll-target="#packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</a></li>
+  <li><a href="#ssl-certificate-errors" id="toc-ssl-certificate-errors" class="nav-link" data-scroll-target="#ssl-certificate-errors">SSL certificate errors</a></li>
   <li><a href="#shinytest2---invalid-path-to-chrome-chromote-error-message" id="toc-shinytest2---invalid-path-to-chrome-chromote-error-message" class="nav-link" data-scroll-target="#shinytest2---invalid-path-to-chrome-chromote-error-message">shinytest2 - Invalid path to Chrome (chromote) error message</a></li>
   </ul></li>
   <li><a href="#using-r-with-ada-databricks" id="toc-using-r-with-ada-databricks" class="nav-link" data-scroll-target="#using-r-with-ada-databricks">Using R with ADA / Databricks</a></li>
@@ -1092,6 +1093,12 @@ Guidance and tips for using the programming language R
 <p>Packages are generally downloaded from CRAN using one of two methods: wininet or curl. Since renv version 0.17, analysts potentially hit an error associated with renv defaulting to wininet, whilst R defaults to curl, causing package downloads to fail. To fix this issue, analysts should change their default download method with renv to be curl. This can be done across all R-projects on your machine, by setting the default in your global R environment file (.Renviron). If you don’t know where to find your .Renviron file, then you can run the command <code>usethis::edit_r_environ()</code> (you may have to install the <code>usethis</code> package first) to open it in R-Studio. Once you’ve got it open, then add the following line to the .Renviron file:</p>
 <p><code>RENV_DOWNLOAD_METHOD = "curl"</code></p>
 <p>Then restart R-Studio and downloads with renv should now succeed.</p>
+<hr>
+</section>
+<section id="ssl-certificate-errors" class="level3">
+<h3 class="anchored" data-anchor-id="ssl-certificate-errors">SSL certificate errors</h3>
+<hr>
+<p>The DfE firewall currently blocks access to external sites from DfE laptops when connecting from common analytical software such as R or Python. This can prevent analysts from accessing important external resources such as package repositories and data API endpoints. If you get an error including text along the lines of “self signed SSL certificate not allowed” or anything similar involving SSL certificates (or certs.), then contact the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> with a copy of the command that you’re running and the error that it’s producing. We can then work with the Network Operations team to prevent this being a blocker to your work.</p>
 <hr>
 </section>
 <section id="shinytest2---invalid-path-to-chrome-chromote-error-message" class="level3">
