@@ -390,6 +390,34 @@ To round numbers upwards in a way that is consistent with SQL and other programm
 
 ---
 
+### Making maps
+
+---
+
+Most maps we'll want to make will be based on boundaries provided from the [Open Geography Portal](LINK).
+
+Take heed of the homepage and details on the codes for map resolution, usually the ultra generalised BUC boundaries are the best option for us and provide plenty of detail with.
+
+Some examples maps to boundaries:
+- PCon - x
+- Local authority - x
+
+Would recommend downloading the geopackage version of the boundaries and then simplifying with `rmapshaper` to make them faster to load.
+
+Two options, tmap and leaflet (if using R Shiny)
+
+How to join the data
+
+Recommended basemaps?
+
+Recommended settings?
+
+If using in R Shiny it's best to do all the joining and processing before and then saving the data as an RDS file to read into the app later
+
+Also if the map layers on top are reactive, consider using leaflet proxy to change the polygons etc while leaving the base map static
+
+---
+
 ### Passing variables as arguments
 
 ---
