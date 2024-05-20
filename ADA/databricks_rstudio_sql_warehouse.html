@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analysts’ Guide - Tools for statistics</title>
+<title>Analysts’ Guide - Setup Databricks SQL Warehouse with RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,6 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../ADA/databricks_rstudio_personal_cluster.html" rel="next">
+<link href="../ADA/ada.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -108,7 +110,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tools for statistics</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">ADA and Databricks</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_sql_warehouse.html">Setup Databricks SQL Warehouse with RStudio</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -382,13 +384,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">ADA and Databricks</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
@@ -397,7 +399,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Setup Databricks SQL Warehouse with RStudio</span></a>
   </div>
 </li>
@@ -425,19 +427,18 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ees-data-screening-app" id="toc-ees-data-screening-app" class="nav-link active" data-scroll-target="#ees-data-screening-app">EES data screening app</a></li>
-  <li><a href="#ees-analytics" id="toc-ees-analytics" class="nav-link" data-scroll-target="#ees-analytics">EES analytics</a></li>
-  <li><a href="#publication-rap-self-assessment-tool" id="toc-publication-rap-self-assessment-tool" class="nav-link" data-scroll-target="#publication-rap-self-assessment-tool">Publication RAP self-assessment tool</a></li>
-  <li><a href="#template-code" id="toc-template-code" class="nav-link" data-scroll-target="#template-code">Template code</a></li>
+  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
+  <li><a href="#downloading-an-odbc-driver" id="toc-downloading-an-odbc-driver" class="nav-link" data-scroll-target="#downloading-an-odbc-driver">Downloading an ODBC driver</a></li>
+  <li><a href="#pulling-data-into-r-studio-from-databricks" id="toc-pulling-data-into-r-studio-from-databricks" class="nav-link" data-scroll-target="#pulling-data-into-r-studio-from-databricks">Pulling data into R studio from Databricks</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/statistics-production/stats_tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_sql_warehouse.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">ADA and Databricks</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_sql_warehouse.html">Setup Databricks SQL Warehouse with RStudio</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tools for statistics</h1>
+<h1 class="title">Setup Databricks SQL Warehouse with RStudio</h1>
 </div>
 
 
@@ -455,40 +456,90 @@ cookieconsent.run({
 
 
 <p class="text-muted">
-Guidance for how to use the tools available for statistics publishers
+The following instructions set up an ODBC connection between your laptop and your DataBricks SQL warehouse, which can then be used in R/RStudio to query data using an ODBC based package. SQL Warehouses are able to run SQL and can be used within the DataBricks environment, or through RStudio to run SQL code. The <code>sparklyr</code> package can also be used from within RStudio (only) as it converts the request for data to Spark SQL behind the scenes.
 </p>
 <hr>
-<p>We also have a number of tools for statistics production teams to use to help them in their processes, they can be accessed at the links below when using a DfE device.</p>
-<section id="ees-data-screening-app" class="level3">
-<h3 class="anchored" data-anchor-id="ees-data-screening-app">EES data screening app</h3>
-<p>This application allows you to screen your data files against the underlying data standards for Official and National statistical publications. If your file passes the checks it also gives you some basic options for exploring the data in the file.</p>
+<section id="pre-requisites" class="level1">
+<h1>Pre-requisites</h1>
+<hr>
+<p>You must have:</p>
 <ul>
-<li><p><a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">EES data screener</a></p></li>
-<li><p><a href="https://github.com/dfe-analytical-services/dfe-published-data-qa" target="_blank" rel="noopener noreferrer">Data screener code on GitHub</a></p></li>
+<li>Access to Databricks</li>
+<li>Access to a SQL Warehouse on DataBricks</li>
+<li>R and RStudio downloaded</li>
 </ul>
+<hr>
 </section>
-<section id="ees-analytics" class="level3">
-<h3 class="anchored" data-anchor-id="ees-analytics">EES analytics</h3>
-<p>There is an R Shiny dashboard that provides access to the Google Analytics data for the Explore Education Statistics platform.</p>
+<section id="downloading-an-odbc-driver" class="level1">
+<h1>Downloading an ODBC driver</h1>
+<hr>
+<ol type="1">
+<li><p>Install the ‘Simba Spark ODBC’ driver from the software centre.</p>
+<ol type="i">
+<li><p>Open the Software Centre via the start menu.</p></li>
+<li><p>In the ‘Applications’ tab, click ‘Simba Spark ODBC Driver 64-bit’. <img src="../images/databricks-software-centre.png" class="img-fluid"></p></li>
+<li><p>Click install.</p></li>
+</ol></li>
+<li><p>Get connection details for the SQL Warehouse from Databricks. To set up the connection you will need a few details from a SQL Warehouse within DataBricks.</p>
+<ol type="i">
+<li><p>Login to <a href="https://adb-6882499576863257.17.azuredatabricks.net/?o=6882499576863257" target="_blank">Databricks</a></p></li>
+<li><p>Click on the ‘SQL Warehouses’ tab in the sidebar. <img src="../images/databricks-SQL-warehouses.png" class="img-fluid"></p></li>
+<li><p>Click on the name of the warehouse you want to connect to, and click the ‘connection details’ tab.</p></li>
+<li><p>Make a note of the ‘Server hostname’, ‘Port’, and ‘HTTP Path’.</p></li>
+</ol></li>
+<li><p>Get a personal access token from Databricks for authentication.</p>
+<ol type="i">
+<li><p>In Databricks, click on your email address in the top right corner, then click ‘User settings’.</p></li>
+<li><p>Go to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button. <img src="../images/databricks-access-tokens.png" class="img-fluid"></p></li>
+<li><p>Click the ‘Generate new token’ button.</p></li>
+<li><p>Name the token, then click ‘Generate’. <em>Note that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate.</em></p></li>
+<li><p>Make a note of the ‘Databricks access token’ it has given you. <strong>It is important to copy this somewhere as you will not be able to see it through Databricks again.</strong></p></li>
+</ol></li>
+<li><p>Setup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.</p>
+<ol type="i">
+<li><p>In the start menu, search ‘ODBC’ and open ‘ODBC Data Sources (64-bit)’.</p></li>
+<li><p>On the ‘User DSN’ tab click the ‘Add…’ button.</p></li>
+<li><p>In the ‘Create New Data Source’ window, select ‘Simba Spark ODBC Driver’ and click ‘Finish’.</p></li>
+<li><p>In the ‘Simba Spark ODBC Driver DSN Setup’ window,</p>
+<ol type="a">
+<li>Enter a ‘Data Source Name’ and ‘Description’. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio. <em>As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.</em></li>
+<li>Set the remaning options to the settings below.
 <ul>
-<li><p><a href="https://rsconnect/rsc/ees-analytics/" target="_blank" rel="noopener noreferrer">Explore Education Statistics analytics dashboard</a></p></li>
-<li><p>Code is not yet publicly available, it is stored in Azure DevOps, contact us if you are interested in seeing it or contributing.</p></li>
-</ul>
+<li>Enter the ‘Server Hostname’ for your cluster in the ‘Host(s):’ field (you noted this down in step 2).</li>
+<li>In the Port section, remove the default number and use the Port number you noted in step 2.</li>
+<li>Set the Authentication Mechanism to ‘User Name and Password’.</li>
+<li>Enter the word ‘token’ into the ‘User Name:’ field, then enter your ‘Databricks access token’ in the ‘Password:’ field.</li>
+<li>Change the Thrift Transport option to HTTP.</li>
+<li>Click the ‘HTTP Options…’ button and enter the ‘HTTP Path’ of your Databricks cluster, then click ‘Okay’.</li>
+<li>Click the ‘SSL Options…’ button and tick the ‘Enable SSL’ box, then click the ‘OK’ button.</li>
+<li><img src="../images/odbc-driver-settings.png" class="img-fluid"></li>
+</ul></li>
+<li>Click the ‘Test’ button to verify the connection has worked. You should see the following message. <em>If you get an error here, repeat steps 5.e.i – 5.e.ix again and ensure all the values are correct.</em></li>
+</ol>
+<p><img src="../images/databricks-test-connection.png" class="img-fluid"></p>
+<ol start="4" type="a">
+<li>Click the ‘OK’ button to exit the ‘Test Results’ window, then the ‘OK’ button in the ‘Simba Spark ODBC Driver DSN Setup’ window.</li>
+</ol></li>
+</ol></li>
+<li><p>Connect through RStudio. Watch the below video and view the <a href="https://github.com/dfe-analytical-services/ADA_RStudio_connect" target="_blank">ADA_RStudio_connect GitHub repo</a> for methods on connecting to Databricks and querying data from RStudio.</p></li>
+</ol>
+<hr>
 </section>
-<section id="publication-rap-self-assessment-tool" class="level3">
-<h3 class="anchored" data-anchor-id="publication-rap-self-assessment-tool">Publication RAP self-assessment tool</h3>
-<p>A self assessment tool allowing official statistics publications to understand how their production processes match up against RAP expectations.</p>
+<section id="pulling-data-into-r-studio-from-databricks" class="level1">
+<h1>Pulling data into R studio from Databricks</h1>
+<hr>
+<p>Once you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video demonstrating two possible methods of how to do this. The recording is embedded below:</p>
+<div data-align="center">
+<iframe src="https://educationgovuk.sharepoint.com/sites/lvewp00086/_layouts/15/embed.aspx?UniqueId=5fad039e-a763-40c8-8ea0-403aea712f4c&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen="" title="ADA_Rstudio_2.mp4">
+</iframe>
+</div>
+<p>A template of all of the code used in the above video can be found in the <a href="https://github.com/dfe-analytical-services/ADA_RStudio_connect" target="_blank">ADA_RStudio_connect GitHub repo</a>.</p>
+<p>Key takeaways from the video and example code:</p>
 <ul>
-<li><p><a href="https://rsconnect/rsc/publication-self-assessment/" target="_blank" rel="noopener noreferrer">RAP self-assessment tool</a></p></li>
-<li><p><a href="https://github.com/dfe-analytical-services/publication-self-assessment-copy" target="_blank" rel="noopener noreferrer">RAP self-assessment code mirrored on GitHub</a></p></li>
-</ul>
-</section>
-<section id="template-code" class="level3">
-<h3 class="anchored" data-anchor-id="template-code">Template code</h3>
-<ul>
-<li><p><a href="https://github.com/dfe-analytical-services/shiny-template" target="_blank" rel="noopener noreferrer">Template DfE R Shiny dashboard</a></p></li>
-<li><p><a href="https://github.com/dfe-analytical-services/automated-data-qa" target="_blank" rel="noopener noreferrer">Template QA code repository</a></p></li>
-<li><p><a href="https://github.com/dfe-analytical-services/dfeR" target="_blank" rel="noopener noreferrer">dfeR R package</a></p></li>
+<li>The main change here compared to connecting to SQL databases is the connection method. The installation and setup of the ODBC driver are all done pre-code, and the only part of the code that will need updating is your connection (usually your con variable).</li>
+<li>If your existing code was pulling in tables from SQL via the <code>RODBC</code> package or the <code>dbplyr</code> package, then this code should in theory run with minimal edits needed.</li>
+<li>If you were writing tables back into SQL from R, this is where your code may need the most edits.</li>
+<li>If your code is stored in a repo where multiple analysts contribute to and run the code, in order for the code to run for everyone you will all need to individually install the ODBC driver and <strong>give it the same name</strong> so that when the <code>con</code> variable is called, the name used in the code matches everyone’s individual driver and runs for everyone. If this is the case, please <strong>add a note about this to your repo’s readme file</strong> to help your future colleagues.</li>
 </ul>
 
 
@@ -1048,6 +1099,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../ADA/ada.html" class="pagination-link" aria-label="Analytical Data Access (ADA) and databricks">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Analytical Data Access (ADA) and databricks</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../ADA/databricks_rstudio_personal_cluster.html" class="pagination-link" aria-label="Setup Databricks personal compute cluster with RStudio">
+        <span class="nav-page-text">Setup Databricks personal compute cluster with RStudio</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1056,7 +1119,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/statistics-production/stats_tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_sql_warehouse.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>

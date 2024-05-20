@@ -771,14 +771,91 @@
     ]
   },
   {
-    "objectID": "ADA/databricks_rstudio.html",
-    "href": "ADA/databricks_rstudio.html",
-    "title": "Setup Databricks with RStudio",
+    "objectID": "ADA/git_databricks.html",
+    "href": "ADA/git_databricks.html",
+    "title": "Databricks and version control",
     "section": "",
-    "text": "The following instructions set up an ODBC connection between your laptop and your DataBricks cluster, which can then be used in R/RStudio to query data using an ODBC based package.\n\n\n\nPre-requisites\n\nYou must have:\n\nAccess to Databricks\nAccess to a SQL Warehouse on DataBricks\nR and RStudio downloaded\n\n\n\n\nDownloading an ODBC driver\n\n\nInstall the ‘Simba Spark ODBC’ driver from the software centre.\n\nOpen the Software Centre via the start menu.\nIn the ‘Applications’ tab, click ‘Simba Spark ODBC Driver 64-bit’. \nClick install.\n\nGet connection details for the SQL Warehouse from Databricks. To set up the connection you will need a few details from a SQL Warehouse within DataBricks.\n\nLogin to Databricks\nClick on the ‘SQL Warehouses’ tab in the sidebar. \nClick on the name of the warehouse you want to connect to, and click the ‘connection details’ tab.\nMake a note of the ‘Server hostname’, ‘Port’, and ‘HTTP Path’.\n\nGet a personal access token from Databricks for authentication.\n\nIn Databricks, click on your email address in the top right corner, then click ‘User settings’.\nGo to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button. \nClick the ‘Generate new token’ button.\nName the token, then click ‘Generate’. Note that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate.\nMake a note of the ‘Databricks access token’ it has given you. It is important to copy this somewhere as you will not be able to see it through Databricks again.\n\nSetup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.\n\nIn the start menu, search ‘ODBC’ and open ‘ODBC Data Sources (64-bit)’.\nOn the ‘User DSN’ tab click the ‘Add…’ button.\nIn the ‘Create New Data Source’ window, select ‘Simba Spark ODBC Driver’ and click ‘Finish’.\nIn the ‘Simba Spark ODBC Driver DSN Setup’ window,\n\nEnter a ‘Data Source Name’ and ‘Description’. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio. As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.\nSet the remaning options to the settings below.\n\nEnter the ‘Server Hostname’ for your cluster in the ‘Host(s):’ field (you noted this down in step 2).\nIn the Port section, remove the default number and use the Port number you noted in step 2.\nSet the Authentication Mechanism to ‘User Name and Password’.\nEnter the word ‘token’ into the ‘User Name:’ field, then enter your ‘Databricks access token’ in the ‘Password:’ field.\nChange the Thrift Transport option to HTTP.\nClick the ‘HTTP Options…’ button and enter the ‘HTTP Path’ of your Databricks cluster, then click ‘Okay’.\nClick the ‘SSL Options…’ button and tick the ‘Enable SSL’ box, then click the ‘OK’ button.\n\n\nClick the ‘Test’ button to verify the connection has worked. You should see the following message. If you get an error here, repeat steps 5.e.i – 5.e.ix again and ensure all the values are correct.\n\n\n\nClick the ‘OK’ button to exit the ‘Test Results’ window, then the ‘OK’ button in the ‘Simba Spark ODBC Driver DSN Setup’ window.\n\n\nConnect through RStudio. Watch the below video and view the ADA_RStudio_connect GitHub repo for methods on connecting to Databricks and querying data from RStudio.\n\n\n\n\nPulling data into R studio from Databricks\n\nOnce you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video demonstrating two possible methods of how to do this. The recording is embedded below:\n\n\n\n\nA template of all of the code used in the above video can be found in the ADA_RStudio_connect GitHub repo.\nKey takeaways from the video and example code:\n\nThe main change here compared to connecting to SQL databases is the connection method. The installation and setup of the ODBC driver are all done pre-code, and the only part of the code that will need updating is your connection (usually your con variable).\nIf your existing code was pulling in tables from SQL via the RODBC package or the dbplyr package, then this code should in theory run with minimal edits needed.\nIf you were writing tables back into SQL from R, this is where your code may need the most edits.\nIf your code is stored in a repo where multiple analysts contribute to and run the code, in order for the code to run for everyone you will all need to individually install the ODBC driver and give it the same name so that when the con variable is called, the name used in the code matches everyone’s individual driver and runs for everyone. If this is the case, please add a note about this to your repo’s readme file to help your future colleagues.\n\n\n\n\n\n Back to top",
+    "text": "Guidance for analysts on how to connect Databricks to Github and Azure DevOps",
     "crumbs": [
       "ADA and Databricks",
-      "Setup Databricks with RStudio"
+      "Databricks and version control"
+    ]
+  },
+  {
+    "objectID": "ADA/git_databricks.html#why-should-i-use-git-with-databricks",
+    "href": "ADA/git_databricks.html#why-should-i-use-git-with-databricks",
+    "title": "Databricks and version control",
+    "section": "Why should I use git with Databricks?",
+    "text": "Why should I use git with Databricks?\nFor analytical projects developed on Databricks in the DfE, we recommend using git and Azure DevOps for sharing, collaborating and proper version control of work.\n\nEasier collaboration\n\nWhen you’re working on notebooks in Databricks without a git connection, they tend to be saved in your own personal Workspace. This means that they are only accessible by you, unless you share them. This has the potential to cause issues if someone needs to run any code you have stored in a notebook within Databricks e.g. when you leave your current team, take non-working days or annual leave, team members will not be able to access any of your code stored in your notebooks on Databricks. If the notebooks are stored in a Github or Azure DevOps repo, your team can all access them by cloning the repo in Databricks.\n\n\n\n\n\nVersion control\n\nDatabricks autosaves your notebooks as you’re working on them, making version control more difficult. If you use git, you’ll be able to see the full version history of your work and easily roll back to older versions if you need to. It also significantly helps simplify switching between different methodologies as well as facilitating proper code QA and review.",
+    "crumbs": [
+      "ADA and Databricks",
+      "Databricks and version control"
+    ]
+  },
+  {
+    "objectID": "ADA/git_databricks.html#github-or-azure-devops",
+    "href": "ADA/git_databricks.html#github-or-azure-devops",
+    "title": "Databricks and version control",
+    "section": "Github or Azure DevOps?",
+    "text": "Github or Azure DevOps?\nEither Github or Azure DevOps repos can be used in connection with Databricks, but we advise you to follow the guidance relating to public and private repos in our What is git for? section.",
+    "crumbs": [
+      "ADA and Databricks",
+      "Databricks and version control"
+    ]
+  },
+  {
+    "objectID": "ADA/git_databricks.html#is-it-safe",
+    "href": "ADA/git_databricks.html#is-it-safe",
+    "title": "Databricks and version control",
+    "section": "Is it safe?",
+    "text": "Is it safe?\nThe connection between git and Databricks is established using a secure access token from your git account, which means it is safe. You will need to renew your access token after a given period of time - if you do not, then your connection between git and Databricks will no longer work.\nAdditionally, when you commit and push notebooks through the Databricks interface, it will automatically clear any output cells from your notebook, meaning that you cannot accidentally include any unpublished data in there.",
+    "crumbs": [
+      "ADA and Databricks",
+      "Databricks and version control"
+    ]
+  },
+  {
+    "objectID": "ADA/git_databricks.html#prerequisites",
+    "href": "ADA/git_databricks.html#prerequisites",
+    "title": "Databricks and version control",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nAn Azure DevOps account and access to the repo you need to connect to\nA Databricks account and access to your notebooks",
+    "crumbs": [
+      "ADA and Databricks",
+      "Databricks and version control"
+    ]
+  },
+  {
+    "objectID": "ADA/git_databricks.html#getting-set-up",
+    "href": "ADA/git_databricks.html#getting-set-up",
+    "title": "Databricks and version control",
+    "section": "Getting set up",
+    "text": "Getting set up\n\nAccess Tokens\nAccess tokens are long strings of numbers and letters that act like a password between two services. They identify the user and their permissions from one service to another.\nIn this case, we will generate an access token in DevOps and give it to Databricks. To generate your Azure DevOps access token, go to DevOps and click the user settings icon to the left of your initials in the top right of your screen - it looks like a person with a cog next to them:\n\nIn the user settings menu, click Personal Access Tokens. On the screen that appears, click the blue “New Token” button in the top right:\n\nThe following window should appear:\n\n\nGive the token a sensible name so that you can identify it in your list of tokens.\nThe organisation field should be pre-populated for you, this can be left alone.\nYou can modify the expiration date. Every time the token expires, you will have to follow this guidance again to set up a new token and reconnect to git, so choose something sensible.\nYou should make sure that “Full access” is selected under the Scopes heading.\n\nWhen you have entered all of the required information, click “Create” at the bottom of the window.\nA “Success!” window will open containing your new access token. You must copy the token immediately, as you will not be able to access it again once this window is closed. If you fail to copy the token, you will have to regenerate a new one.\n\n\n\n\n\nConnecting to Databricks\nNow that you have your access token, you should go straight to Databricks. In the top right corner of the Databricks window, click your username and then “User Settings”:\n\nYou should then select “Linked Accounts” from the User menu on the left. The following page will open:\n\n\nWe recommend immediately pasting your copied access token into the “Token” field at the bottom of the page to avoid losing it.\nGit provider should be set as “Azure DevOps Services (Personal Access Token)”\nEnter your email into the “Git provider username or email” field\n\nYou can then click Save at the bottom of the page, and now your connection between Azure DevOps and Databricks is established!\n\n\n\n\n\nConnecting to repos and cloning\nJust like any other way that you’ve worked with git before, the first step is going to be to clone your repo inside Databricks.\nIn the blue menu on the left, click Workspace, and then in the Workspace menu that appears, click Repos. The menus should look like this:\n\nOn the Repos screen, click the grey “Add repo” button in the top right corner. The “Add Repo” window will appear:\n\n\nYou will first need to go to Azure DevOps and copy the link to clone the repo as you usually would\nPaste this link into the “Git repository URL” field\nUnder “Git Provider”, select “Azure DevOps Services”\nThe “Repository name” field should be automatically populated when you enter the URL.\n\nYou can then click “Create Repo”. When the repo is created, you will be able to see it under your name in the Repos menu:\n\n\nSparse checkout and Cone Patterns\nDatabricks cannot clone very large repos. It is best practice not to have a repo of this size, but if you attempt to clone a large repo, you will receive an error message. In this instance, you will need to perform a sparse checkout. This only clones a selection of items in your repo. To do this, select the “Advanced” option when in the “Add repo” menu, and tick the “Sparse checkout mode” option. You can tell Databricks which elements of the repo you would like it to clone, and you can do this by specifying something called Cone Patterns. If you do not specify any Cone Patterns, then the Databricks default is to clone only files in the root folder, but none from any subdirectories. To specify your own Cone Patterns, enter them in the box provided. You can enter multiple patterns but if the folders that they refer to contain more than 800MB of data then your clone will continue to fail.\nYou might define your Cone Patterns as something like:\nfolder_a folder_b/subfolder_c\nThe second example will only clone subfolder_c and not the rest of the contents of folder_b.\nPlease note: You cannot currently disable sparse checkout mode once it is enabled, but you can modify Cone Patterns. If you create a new folder, you must add it to your Cone Pattern list before you can commit and push. You can find more information on sparse checkout and Cone Patterns on the Databricks website.",
+    "crumbs": [
+      "ADA and Databricks",
+      "Databricks and version control"
+    ]
+  },
+  {
+    "objectID": "ADA/git_databricks.html#folders-in-databricks",
+    "href": "ADA/git_databricks.html#folders-in-databricks",
+    "title": "Databricks and version control",
+    "section": "Folders in Databricks",
+    "text": "Folders in Databricks\nTo be able to add your notebooks to a repo, you need to make sure that you save them in the correct place. In Databricks, you have your Workspace. Inside your Workspace is your “local” Users folder, and your repos. In the image below, the User folder is highlighted blue:\n\nYou can think of your User folder as being a bit like “My Documents” on your laptop. When you save things there, only you can see and access them. Git cannot “see” things inside your User folder. However, git can see things inside your Repos folder. This means that when you save something in your Repos folder, it can be committed and pushed to git. It is therefore good practice to always save notebooks in your Repos folder instead of in your User folder.",
+    "crumbs": [
+      "ADA and Databricks",
+      "Databricks and version control"
+    ]
+  },
+  {
+    "objectID": "ADA/git_databricks.html#git-pull-commit-and-push-in-databricks",
+    "href": "ADA/git_databricks.html#git-pull-commit-and-push-in-databricks",
+    "title": "Databricks and version control",
+    "section": "Git pull, commit, and push in Databricks",
+    "text": "Git pull, commit, and push in Databricks\n\nGit pull\nYou can access the menu to pull, commit and push from several places within Databricks. This interface is the same whether you’re working with a DevOps repo or a Github repo.\nAt the top of any notebook that’s saved in a repo, you’ll see a little grey branch icon with the name of a repo next to it. In the case of this notebook, it’s on the main branch:\n\nYou can also access the git menu by clicking the branch name next to the repo name within the Repos folder:\n\nIf you click the branch name, it’ll open the git interface within Databricks:\n\nFrom here, you can perform git pull by clicking the pull icon in the top right. There is a dropdown menu in the top left corner that allows you to change the branch or create a new branch if required.\n\n\n\n\n\nGit commit and push\nWhen you have made changes to a notebook, it will appear in the Changes section of the git interface. You can also see the actual changes that have been made in the right hand box to make sure that you’re committing the correct file:\n\nIn Databricks, you commit and push as one action, rather than as two separate ones. Enter your commit message into the “Commit message” box (you can ignore the Description box) and click the “Commit & Push” button.\n\n\n\nAdditional git commands in the Databricks interface\nYou can access additional git features such as merge, rebase and reset directly within the Databricks interface by clicking the 3 dots in the menu as shown in the image below:\n\nWhen merging, you are also able to resolve merge conflicts inside Databricks itself.\nPlease be warned that we would usually advise against using git reset as you can permanently lose changes you’ve made and this cannot be undone.\nThere is additional guidance on each of these advanced features in the Databricks manual. Please use git reset with caution as you can easily lose recent changes when performing this action.",
+    "crumbs": [
+      "ADA and Databricks",
+      "Databricks and version control"
     ]
   },
   {
@@ -837,200 +914,227 @@
     ]
   },
   {
-    "objectID": "CONTRIBUTING.html",
-    "href": "CONTRIBUTING.html",
-    "title": "Contributing to the Analyst’s Guide",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Analysts’ Guide",
     "section": "",
-    "text": "Thank you for investing your time in contributing to the analyst’s guide! All contributions are very welcome - we want this to be a useful resource for the whole analytical community in DfE :sparkles:.\nRead our Code of Conduct to keep our community approachable and respectable.\nThe main branch of the site is protected and can only be updated via pull requests. All pull requests must be approved by a repository admin before merging.\nIn this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.\n\n\nTo get an overview of the project, read the README. Here are some resources to help you get started with open source contributions:\n\nFinding ways to contribute to open source on GitHub\nSet up Git\nGitHub flow\nCollaborating with pull requests\n\n\n\nFor more information specific to how a quarto site works, and for examples of what is possible within a static quarto site, see the main Quarto website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou can modify the highlight-style element in the quarto.yml file to change the display of code blocks using predefined themes. This will change the appearance of all code snippets across the entire Analysts’ guide. The current theme is set to “printing” but there is a list of other available themes on the Quarto website.\nSome things to be aware of before you make changes:\n\nSome of the themes are adaptive, meaning that if you change the site view from dark mode to light mode then the theme will also change accordingly.\nThe appearance of code snippets will only change if the language (e.g. R, Python) is defined at the start of the snippet (e.g. ``` {r connection_example, eval=FALSE}). Including eval=FALSE stops your code snippet from actually running. If no language is defined, the snippet appearance will need to be modified manually and this can cause some issues.\n\n\n\n\n\nYou can create images, flowcharts, and diagrams using draw.io. To add them to the Analysts’ guide, we recommend embedding them, by selecting File &gt; Embed &gt; HTML. The image below shows the options that you should select when embedding a diagram\n\n\n\n\n\n\nIf you spot a problem with the site, search if an issue already exists. If a related issue doesn’t exist, you can open a new issue using a relevant issue form.\n\n\n\nScan through our existing issues to find one that interests you. If you find an issue to work on, you are welcome to open a PR with a fix.\n\n\n\n\nKey things to remember when making or proposing changes:\n\nWhere guidance already exists elsewhere it should be linked to rather than duplicated\nWhen adding images, save them in the /images folder\nWhen adding files for download, save them in the /resources folder - Don’t commit rendered .html files for pages\nIf your changes remove or edit a pre-existing anchor link, consider how that will be redirected for users who may have bookmarked it\n\n\n\nClick Edit this page at the bottom of the right hand table of contents of any page to make small changes such as a typo, sentence fix, or a broken link. This takes you to the .Qmd file where you can make your changes and create a pull request for a review.\n\n\n\n\nClone or fork the repository.\nOpen the repository in your editor of choice, e.g. R Studio.\nCreate a working branch and start with your changes!\nCommit and push the changes to your working branch.\n\n\n\n\n\nAll pull requests should be made against the main branch.\nWhen you’re finished with the changes, create a pull request, also known as a PR.\n\nDon’t forget to link PR to issue if you are solving one.\n\nOnce you submit your PR, a repository admin will review your proposal. We may ask questions or request additional information.\n\nWe may ask for changes to be made before a PR can be merged, either using suggested changes or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes and then commit them to your branch.\nAs you update your PR and apply changes, mark each conversation as resolved.\nIf you run into any merge issues, checkout this Git tutorial to help you resolve merge conflicts and other issues.\n\n\n\n\n\nIf you need any assistance at all, please contact statistics.development@education.gov.uk."
+    "text": "This website is a guide aimed at anyone working in analysis or statistics in the Department for Education (DfE). It includes tips on best practice and learning resources across a number of areas.\nWe hope it can prove a useful community driven resource for everyone from the most experienced analyst right through to those just starting out. If you have any feedback, suggested additions, or wish to challenge any of the guidance, feel free to use the GitHub links to suggest changes directly, or contact us at the email you can find at the bottom of the page.",
+    "crumbs": [
+      "Welcome"
+    ]
   },
   {
-    "objectID": "CONTRIBUTING.html#new-contributor-guide",
-    "href": "CONTRIBUTING.html#new-contributor-guide",
-    "title": "Contributing to the Analyst’s Guide",
+    "objectID": "index.html#learning-and-development",
+    "href": "index.html#learning-and-development",
+    "title": "Analysts’ Guide",
+    "section": "Learning and development",
+    "text": "Learning and development\nLearning support - Useful learning resources, and support to get you started\nSQL - Guidance and tips for accessing data via databases with SQL\nR - Guidance and tips for using R\nGit - Guidance and tips for version control with Git\nPython - Guidance and tips for using Python",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#statistics-production",
+    "href": "index.html#statistics-production",
+    "title": "Analysts’ Guide",
+    "section": "Statistics production",
+    "text": "Statistics production\nRoutes for publishing - Guidance for how to publish different types of statistics\nRAP in statistics - Detailed RAP guidance for statistics publications\nOpen data standards - Guidance on how to structure data files\nExplore Education Statistics (EES) - How to use the features in Explore Education Statistics\nGood examples in EES - Examples of good practice in Explore Education Statistics\nEmbedded visualisations in EES - How to embed R-Shiny charts in EES publications\nPublication scrums - Information on the scrums we run and tips for writing statistical commentary\nUser engagement - Guidance on understanding and engaging with the users of published statistics\nEES analytics - Understanding how users are interacting with your publications",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#writing-and-visualising",
+    "href": "index.html#writing-and-visualising",
+    "title": "Analysts’ Guide",
+    "section": "Writing and visualising",
+    "text": "Writing and visualising\nPublic dashboards - Guidance for publishing public facing statistics dashboards\nPublishing an R-Shiny based dashboard - Guidance for publishing public facing statistics dashboards using R-Shiny\nVisualising data - Resources and best practice to guide you when visualising data\nWriting about data - Resources and best practice for writing about data",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#reproducible-analytical-pipelines-rap",
+    "href": "index.html#reproducible-analytical-pipelines-rap",
+    "title": "Analysts’ Guide",
+    "section": "Reproducible Analytical Pipelines (RAP)",
+    "text": "Reproducible Analytical Pipelines (RAP)\nRAP in statistics - Detailed RAP guidance for statistics publications\nRAP expectations - Guidance for all analysts on expectations of RAP\nRAP support - Details on support available for RAP in DfE\nRAP FAQs - Frequently asked questions about RAP",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#analytical-data-access-ada-and-databricks",
+    "href": "index.html#analytical-data-access-ada-and-databricks",
+    "title": "Analysts’ Guide",
+    "section": "Analytical Data Access (ADA) and Databricks",
+    "text": "Analytical Data Access (ADA) and Databricks\nAnalytical Data Access (ADA) and Databricks - Guidance for analysts on how to interact with and use data stored in ADA using Databricks\nSetup Databricks SQL Warehouse with RStudio - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio.\nSetup Databricks personal cluster Warehouse with RStudio - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#contact-us",
+    "href": "index.html#contact-us",
+    "title": "Analysts’ Guide",
+    "section": "Contact us",
+    "text": "Contact us\nOur mailbox is always monitored and is available for anyone in DfE to ask questions about statistics, whether that is about RAP, building dashboards, coding support, learning and development or statistics publications.\n\nstatistics.development@education.gov.uk\n9am-5pm, Monday-Friday, aim to reply within 1-2 days",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "learning-development/learning-support.html",
+    "href": "learning-development/learning-support.html",
+    "title": "Learning support",
     "section": "",
-    "text": "To get an overview of the project, read the README. Here are some resources to help you get started with open source contributions:\n\nFinding ways to contribute to open source on GitHub\nSet up Git\nGitHub flow\nCollaborating with pull requests\n\n\n\nFor more information specific to how a quarto site works, and for examples of what is possible within a static quarto site, see the main Quarto website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou can modify the highlight-style element in the quarto.yml file to change the display of code blocks using predefined themes. This will change the appearance of all code snippets across the entire Analysts’ guide. The current theme is set to “printing” but there is a list of other available themes on the Quarto website.\nSome things to be aware of before you make changes:\n\nSome of the themes are adaptive, meaning that if you change the site view from dark mode to light mode then the theme will also change accordingly.\nThe appearance of code snippets will only change if the language (e.g. R, Python) is defined at the start of the snippet (e.g. ``` {r connection_example, eval=FALSE}). Including eval=FALSE stops your code snippet from actually running. If no language is defined, the snippet appearance will need to be modified manually and this can cause some issues.\n\n\n\n\n\nYou can create images, flowcharts, and diagrams using draw.io. To add them to the Analysts’ guide, we recommend embedding them, by selecting File &gt; Embed &gt; HTML. The image below shows the options that you should select when embedding a diagram\n\n\n\n\n\n\nIf you spot a problem with the site, search if an issue already exists. If a related issue doesn’t exist, you can open a new issue using a relevant issue form.\n\n\n\nScan through our existing issues to find one that interests you. If you find an issue to work on, you are welcome to open a PR with a fix.\n\n\n\n\nKey things to remember when making or proposing changes:\n\nWhere guidance already exists elsewhere it should be linked to rather than duplicated\nWhen adding images, save them in the /images folder\nWhen adding files for download, save them in the /resources folder - Don’t commit rendered .html files for pages\nIf your changes remove or edit a pre-existing anchor link, consider how that will be redirected for users who may have bookmarked it\n\n\n\nClick Edit this page at the bottom of the right hand table of contents of any page to make small changes such as a typo, sentence fix, or a broken link. This takes you to the .Qmd file where you can make your changes and create a pull request for a review.\n\n\n\n\nClone or fork the repository.\nOpen the repository in your editor of choice, e.g. R Studio.\nCreate a working branch and start with your changes!\nCommit and push the changes to your working branch.\n\n\n\n\n\nAll pull requests should be made against the main branch.\nWhen you’re finished with the changes, create a pull request, also known as a PR.\n\nDon’t forget to link PR to issue if you are solving one.\n\nOnce you submit your PR, a repository admin will review your proposal. We may ask questions or request additional information.\n\nWe may ask for changes to be made before a PR can be merged, either using suggested changes or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes and then commit them to your branch.\nAs you update your PR and apply changes, mark each conversation as resolved.\nIf you run into any merge issues, checkout this Git tutorial to help you resolve merge conflicts and other issues."
+    "text": "A collection of useful learning resources, and information on support and resources to get you started\nAs analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.\nFor best practice when using software and coding in our process, see our guidance on RAP expectations and the DfE Good Code Practice guide.",
+    "crumbs": [
+      "Learning resources",
+      "Learning support"
+    ]
   },
   {
-    "objectID": "CONTRIBUTING.html#support",
-    "href": "CONTRIBUTING.html#support",
-    "title": "Contributing to the Analyst’s Guide",
+    "objectID": "learning-development/learning-support.html#email-support",
+    "href": "learning-development/learning-support.html#email-support",
+    "title": "Learning support",
+    "section": "Email support",
+    "text": "Email support\n\nstatistics.development@education.gov.uk\n\n9-5, aim to reply between 1-2 days.",
+    "crumbs": [
+      "Learning resources",
+      "Learning support"
+    ]
+  },
+  {
+    "objectID": "learning-development/learning-support.html#technical-workshops",
+    "href": "learning-development/learning-support.html#technical-workshops",
+    "title": "Learning support",
+    "section": "Technical workshops",
+    "text": "Technical workshops\nWe currently offer two in person workshops covering specific technical skills in practice. Each workshop is around 3 hours long, and you will work in small groups. We travel to deliver workshops based on demand, so please get in touch and let us know if you’d like to join the waiting list in your area for one or both of the sessions.\nOur current workshops are:\nIntroduction to Git and Azure DevOps\nIn this workshop, we cover:\n\nWhat are git, Azure DevOps and GitHub and what are the differences?\nHow can they help your work?\nHow to start working with git and DevOps in the DfE ecosystem\nManaging projects and tasks with DevOps Boards\nBasic version control with git – add/stage, commit, push and pull\nWorking with branches\nTracking changes and who made them\nMerging, pull requests and merge conflicts\n\nIntroduction to R and RAP\nIn this workshop, we cover:\n\nSetting up an R project\nWriting your own functions\nAggregating & filtering data\nUsing if statements\nJoining data\nUsing R to run SQL\nCreating plots (with ggplot2)\n\nContact statistics.development@education.gov.uk to register interest in workshops happening at your site or to request new topics!",
+    "crumbs": [
+      "Learning resources",
+      "Learning support"
+    ]
+  },
+  {
+    "objectID": "learning-development/learning-support.html#partnership-programme",
+    "href": "learning-development/learning-support.html#partnership-programme",
+    "title": "Learning support",
+    "section": "Partnership programme",
+    "text": "Partnership programme\n\nDedicated resource to support development work, either building skills or working on analytical or statistical outputs.\nA short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.\nContact statistics.development@education.gov.uk if you’re interested in finding out more about the support we can give.",
+    "crumbs": [
+      "Learning resources",
+      "Learning support"
+    ]
+  },
+  {
+    "objectID": "learning-development/learning-support.html#specific-resources",
+    "href": "learning-development/learning-support.html#specific-resources",
+    "title": "Learning support",
+    "section": "Specific resources",
+    "text": "Specific resources\nWe also have specific learning resources and materials for SQL, R, and Git",
+    "crumbs": [
+      "Learning resources",
+      "Learning support"
+    ]
+  },
+  {
+    "objectID": "learning-development/git.html",
+    "href": "learning-development/git.html",
+    "title": "Git",
     "section": "",
-    "text": "If you need any assistance at all, please contact statistics.development@education.gov.uk."
-  },
-  {
-    "objectID": "learning-development/sql.html",
-    "href": "learning-development/sql.html",
-    "title": "SQL",
-    "section": "",
-    "text": "Guidance and tips for accessing data via databases with SQL",
+    "text": "Guidance and tips for version control with Git",
     "crumbs": [
       "Learning resources",
-      "SQL"
+      "Git"
     ]
   },
   {
-    "objectID": "learning-development/sql.html#what-is-sql",
-    "href": "learning-development/sql.html#what-is-sql",
-    "title": "SQL",
-    "section": "What is SQL",
-    "text": "What is SQL\nSQL or Structured Query Language, is a programming language used to talk to relational database management systems.",
+    "objectID": "learning-development/git.html#what-is-git",
+    "href": "learning-development/git.html#what-is-git",
+    "title": "Git",
+    "section": "What is Git",
+    "text": "What is Git\nIt is a version control software. It is by far the best of its kind and is widely used by software developers and data scientists.",
     "crumbs": [
       "Learning resources",
-      "SQL"
+      "Git"
     ]
   },
   {
-    "objectID": "learning-development/sql.html#what-is-sql-for",
-    "href": "learning-development/sql.html#what-is-sql-for",
-    "title": "SQL",
-    "section": "What is SQL for",
-    "text": "What is SQL for\nSQL servers are where most of DfE’s data is held, making it ideal for database management.\nSQL provides us with a language primarily for querying databases to extract data, though it is also capable of some basic data processing and analysis.",
+    "objectID": "learning-development/git.html#what-is-git-for",
+    "href": "learning-development/git.html#what-is-git-for",
+    "title": "Git",
+    "section": "What is Git for",
+    "text": "What is Git for\nGit is a version control software that tracks changes to files within a folder that you assign Git to track. It works best with plain text files such as flat data files, code scripts and markdown documents. These folders are known as repositories and can be held and managed securely in a central online place such as GitHub (best for public), GitLab (can be good for either public or private) and Azure DevOps (best for private). We can easily mirror our Azure DevOps repositories in the DfE Analytical Services area on GitHub.\nIt is widely used across DfE and integrates neatly with our use of Azure DevOps, as well as being the current leading version control software in the world of coding with over 87% of 74,298 stack overflow users using it.",
     "crumbs": [
       "Learning resources",
-      "SQL"
+      "Git"
     ]
   },
   {
-    "objectID": "learning-development/sql.html#how-to-install-sql",
-    "href": "learning-development/sql.html#how-to-install-sql",
-    "title": "SQL",
-    "section": "How to install SQL",
-    "text": "How to install SQL\nDownload SSMS from the DfE software center, talk to your team about getting access to the appropriate SQL servers and databases where the data you need to access is held and start writing SQL queries.\nThere are usually a couple of different versions available for software on the software center, we’d recommend you always go for the latest (newest) version possible.\nIf you can’t find the option in the software centre, then you may need to raise a service desk request to make SQL server management studio visible in your software centre.",
+    "objectID": "learning-development/git.html#how-to-install-git",
+    "href": "learning-development/git.html#how-to-install-git",
+    "title": "Git",
+    "section": "How to install Git",
+    "text": "How to install Git\nDownload it from the Git website.\nGit doesn’t have an IDE, instead it will either integrate with your current IDE such as RStudio or Visual Studio Code, or run in the command line.\nWhen you first try to use Git you may be prompted for a GitHub username and password, if this happens you should generate a Personal Access Token (PAT) and use this as your password.",
     "crumbs": [
       "Learning resources",
-      "SQL"
+      "Git"
     ]
   },
   {
-    "objectID": "learning-development/sql.html#best-place-to-start",
-    "href": "learning-development/sql.html#best-place-to-start",
-    "title": "SQL",
-    "section": "Best place to start",
-    "text": "Best place to start\nAndy Brook’s excellent Introduction to SQL session, giving a visual overview of the basics of querying with SQL:",
-    "crumbs": [
-      "Learning resources",
-      "SQL"
-    ]
-  },
-  {
-    "objectID": "learning-development/sql.html#best-practice",
-    "href": "learning-development/sql.html#best-practice",
-    "title": "SQL",
-    "section": "Best practice",
-    "text": "Best practice\nHere are some tips to follow best practice in your SQL code, making it easier to read and pick up if another person is running your code. Following best practice guidance will help you to achieve RAP best practice with clean final code\n\nAvoid any trailing whitespace\nAlways capitalize SQL keywords (e.g., SELECT or AS)\nVariable names should be in snake case - lower case words separated by underscores (e.g. pupil_age instead of PupilAge)\nComments should go near the top of your query, or at least near the closest SELECT\nTry to only comment on things that aren’t obvious about the query (e.g. why hardcoded filters are used, how to update them)\nWhere possible, use Common Table Expressions (CTEs) early and often, and name them descriptively (e.g. “pupil_age_table” rather than “p”)\n\nGitLab have produced a full SQL style guide, which we recommend following where possible.",
-    "crumbs": [
-      "Learning resources",
-      "SQL"
-    ]
-  },
-  {
-    "objectID": "learning-development/sql.html#how-to-work-with-sql",
-    "href": "learning-development/sql.html#how-to-work-with-sql",
-    "title": "SQL",
-    "section": "How to work with SQL",
-    "text": "How to work with SQL\nSSMS is the best tool to get started with writing SQL queries and saving SQL scripts that produce your desired outputs.\nOnce you have saved SQL scripts or are more familiar with writing SQL queries on the fly, you can look at running your scripts or lines of SQL code directly in R. This will streamline your process, saving copying and pasting SQL outputs into csvs, and ultimately help with reaching RAP best practice by aiding production of a single publication production script",
-    "crumbs": [
-      "Learning resources",
-      "SQL"
-    ]
-  },
-  {
-    "objectID": "learning-development/sql.html#quick-reference-lookup",
-    "href": "learning-development/sql.html#quick-reference-lookup",
-    "title": "SQL",
-    "section": "Quick reference lookup",
-    "text": "Quick reference lookup\n\nw3schools.com offers a useful guide through the most common SQL commands.",
-    "crumbs": [
-      "Learning resources",
-      "SQL"
-    ]
-  },
-  {
-    "objectID": "learning-development/sql.html#other-resources",
-    "href": "learning-development/sql.html#other-resources",
-    "title": "SQL",
-    "section": "Other resources",
-    "text": "Other resources\n\nThis tutorial script by Tom Franklin is a particularly good starting point as it includes the data you are manipulating, so you don’t need to worry about connecting to or getting access to specific databases before you can then run anything. Simply open up Microsoft SQL Server Management Studio and start playing with that query.\nAvision Ho created the this SQL training course.\nThe Khan academy offers a great free introduction to the basics of SQL.\nIt’s also worth taking a look at Jon Holman’s presentation on ‘good to know’ SQL functions.\nMoJ have produced a SQL from square one guide to using CTE’s in SQL as well as running SQL from RStudio\n\nAndy’s follow up intermediate SQL session, covering more advanced features of SQL:",
-    "crumbs": [
-      "Learning resources",
-      "SQL"
-    ]
-  },
-  {
-    "objectID": "learning-development/sql.html#tips-for-using-sql",
-    "href": "learning-development/sql.html#tips-for-using-sql",
-    "title": "SQL",
-    "section": "Tips for using SQL",
-    "text": "Tips for using SQL\n\nSetting up a SQL area\n\nBefore you set up a SQL database, make sure you have the following information to pass on:\n\nThe name of the database you want to set up - Different servers will have different naming conventions, make sure to check this with the server owner before you confirm the name.\nWho the database owners should be - This will most likely be yourself, but you can have multiple (e.g. your team leader). It can be helpful to have more than one owner, so one can grant permissions when the other is unavailable.\nWho should have access, and what their access levels should be - Users can have read or read/write access. Make sure you have a list of users (with their AD names) and their access levels ready.\nThe database structure - Do you need certain schemas setting up? This will help organise your database. Without schemas, all tables will be saved under [dbo].\n\nThere are a few common servers that statistics producers (and analysts in general) make use of at DfE. Use the following contacts below to pass on the above information to get your new database set up:\n\nPDR (T1PRMDRSQL,55842) - contact the PDR team\nPDB16 (3DCPRI-PDB16) - raise a request through the service desk under “non-standard” &gt; “any other request”\nAnalyse & Modelling server (T1PRANMSQL,60125) - raise a request on the service desk under the following options:\n\n\n\n\n\nManaging access\n\nTo gain access to a SQL database, you must have written confirmation from the database owner specifying whether your access is read-only or both read and write.\nIf the area you require access to is in the T1PRMDRSQL,55842 SQL server, contact the PDR team with your permission attached, stating the name of the database you want access to.\nIf the area is in any other server, raise a request through the central IT service portal under “non-standard” &gt; “any other request”. In your request make sure you attach the written confirmation and specify:\n\nThe server name\nThe database name\nWhether it’s read or write access you need\n\n\n\n\n\nMoving data to different areas\n\nInformation on how to do this in R can be found in our RAP for Statistics page",
-    "crumbs": [
-      "Learning resources",
-      "SQL"
-    ]
-  },
-  {
-    "objectID": "learning-development/python.html",
-    "href": "learning-development/python.html",
-    "title": "Python",
-    "section": "",
-    "text": "Guidance and tips for using Python",
-    "crumbs": [
-      "Learning resources",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "learning-development/python.html#what-is-python",
-    "href": "learning-development/python.html#what-is-python",
-    "title": "Python",
-    "section": "What is Python",
-    "text": "What is Python\nPython is a high-level, general-purpose programming language. It has a number of uses, some of which are statistical analysis and data visualisation. Python code has a strong emphasis on readability and formatting. Although the majority of analysts in DfE tend to use R or SQL, Python is also available as an option.",
-    "crumbs": [
-      "Learning resources",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "learning-development/python.html#how-to-install-python",
-    "href": "learning-development/python.html#how-to-install-python",
-    "title": "Python",
-    "section": "How to install Python",
-    "text": "How to install Python\nYou can download Python (language) and PyCharm (IDE) from the DfE software center.",
-    "crumbs": [
-      "Learning resources",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "learning-development/python.html#best-places-to-start",
-    "href": "learning-development/python.html#best-places-to-start",
-    "title": "Python",
+    "objectID": "learning-development/git.html#best-places-to-start",
+    "href": "learning-development/git.html#best-places-to-start",
+    "title": "Git",
     "section": "Best places to start",
-    "text": "Best places to start\nFor getting set up, and help through any initial issues we recommend making use of the DfE Python community on Teams.\nThere is guidance on the Python Wiki for programmers and non-programmers. Each of the guides includes a list of interactive courses that you can work through to improve your skills.\nThe ONS Data Science Campus offers training courses on Reproducible Analytical Pipelines (RAP) in Python, but be aware that there is less Python expertise in the Department which might make QA of code more difficult.",
+    "text": "Best places to start\n\nContact us about attending one of our in-person Git workshops\nIf you’re new to Git and are unsure of what it does, then take a look through these Git for humans slides\nDavid Sands’ guide to getting started with Git is a helpful place to start.\nGooey Git by David Sands, provides a very neat overview of using git with R.",
     "crumbs": [
       "Learning resources",
-      "Python"
+      "Git"
     ]
   },
   {
-    "objectID": "learning-development/python.html#best-practice",
-    "href": "learning-development/python.html#best-practice",
-    "title": "Python",
-    "section": "Best practice",
-    "text": "Best practice\nPython is different to other programming languages in that it has its own style guide, PEP-8. PEP-8 is one of many guidance documents known as Python Enhancement Proposals (PEPs) which govern the style of the language, any future changes or updates, and backwards compatibility features. PEP-20 outlines the guiding principles for Python’s design.\nPython can be a little fussy about the layout of your code, especially whitespace, and your code may fail if it is not indented correctly.",
+    "objectID": "learning-development/git.html#how-to-work-with-git",
+    "href": "learning-development/git.html#how-to-work-with-git",
+    "title": "Git",
+    "section": "How to work with git",
+    "text": "How to work with git\n\nGit Bash\n\nGit Bash allows you to run git commands without opening another IDE. You’d often need to use Git Bash to set your user settings, amend your proxy settings and clone repositories.\n\n\n\nGit with RStudio\n\nGit with R studio is a neat user interface for git. You don’t need to use any git bash commands, and everything is done using point and click. This is useful for day-to-day version control, but does not support the full functionality of git.\nHowever, you can still run the full suite of git commands by simply typing them in the “Terminal” of RStudio.",
     "crumbs": [
       "Learning resources",
-      "Python"
+      "Git"
     ]
   },
   {
-    "objectID": "learning-development/python.html#how-to-work-with-python",
-    "href": "learning-development/python.html#how-to-work-with-python",
-    "title": "Python",
-    "section": "How to work with Python",
-    "text": "How to work with Python\n\nLibraries and packages\nPython packages work slightly differently to R packages. You might hear reference to libraries in Python. A library is a collection of related packages that perform similar functions. One of the most popular libraries is called NumPy and it allows you to work with numerical data more easily.\nTo access the features of a library and use them within your code, you need to install the library. Using NumPy as the example, you can do this using the syntax\n\npip install numpy\n\nPIP is the standard package installer for Python and so must be mentioned at the start of the line of code.\nOnce you have installed your library, you then need to import it so that you can use it within your code. To make your life easier, you can give it a shortened name so that you don’t have to write NumPy every time you want to use one of the features, like this:\n\nimport numpy as np\n\nIf you only install a library and then don’t import it, you won’t be able to use its features. You can either import a library as a whole, or you can just import certain functions from it if you know you won’t need to use them all.\nNumPy contains an array function. If you want to use it, you would do so as follows:\n\narr = np.array( [[ 1, 2, 3],[ 4, 2, 5]] )\n\nNote that you must use np. before array to get it to work, otherwise Python won’t know where to look for the array function. When you imported NumPy, if you gave it a different shortened name, you’d use that name instead.",
+    "objectID": "learning-development/git.html#quick-reference-lookup",
+    "href": "learning-development/git.html#quick-reference-lookup",
+    "title": "Git",
+    "section": "Quick reference lookup",
+    "text": "Quick reference lookup\n\nGitHub have created a cheat sheet for git commands.",
     "crumbs": [
       "Learning resources",
-      "Python"
+      "Git"
+    ]
+  },
+  {
+    "objectID": "learning-development/git.html#other-resources",
+    "href": "learning-development/git.html#other-resources",
+    "title": "Git",
+    "section": "Other resources",
+    "text": "Other resources\n\nAvison Ho and Linda Bennett gave this coffee and coding presentation on version controlling SQL with Git.\nHappy Git is a useful (though detailed) guide to setting up and using git.\nAdam Robinson and Zach Waller have produced guidance for how to use git in Azure DevOps (formally VSTS), which gives a detailed guide on how to use version control software in DfE analysis.\nWhile also mentioned above as a resource for learning R, chapter 6 of ESFA’s guide to R and Git is also worth looking at for Git alone.\nMicrosoft have produced documentation on using Git within AzureDevOps.\nFor those wanting to go deeper into understand the variety of git commands and what they do, there is a great online visual resource.\nWe also have a number of helpful sections on using git in practice at the end of our RAP for Statistics page.",
+    "crumbs": [
+      "Learning resources",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "learning-development/git.html#tips-for-using-git",
+    "href": "learning-development/git.html#tips-for-using-git",
+    "title": "Git",
+    "section": "Tips for using Git",
+    "text": "Tips for using Git\n\nCommits\n\nThe best advice is to just commit regularly, like you would if you were saving a word document.\nEach commit is a saved point in time that you can easily roll back to if needed. If you want to know more about how to do this, see the reverting a commit section below.\n\n\nCommit messages\n\nThe best advice for commit messages is to keep them clear, simple and brief.\nIt is recommended to use the imperative tone e.g. Add fix for joining pupil table rather than Added ... or Adding .... Other general recommendations include:\n\nKeep it short (max 150 characters if possible) - committing regularly can help with this\nExplain what the change is and why the change was needed. You generally don’t need to go into the detail of how the change was made as this should be visible from the code\n\ne.g., Add x to prevent y or Add x so that y can z\n\nDon’t assume the reviewer understands what the original problem was\n\nwould someone else looking at it, or even yourself in a week’s time know what the commit was doing?\n\nCapitalise the first letter and don’t end with punctuation, it is unnecessary\n\nIf you’re struggling to know what to write, remember the reader (including future you) is unlikely to have much context when looking through the version log to find the right point in time, try considering the following:\n\nWhy have I made these changes?\nWhat effect have my changes made?\nWhy was the change needed?\nWhat are the changes in reference to?\n\nNever leave a commit message blank. The information you include could really pay off later when you need to remember what you worked on, or share it with other people.\nThere are specific conventions outlined in conventional commits, that are worth familiarising yourself as you begin to use Git more. Following these conventions will help you write messages that are consistent with over 100 million other Git users around the world.\n\n\n\nIn RStudio\n\nOnce you are happy with changes and want them to be in the latest version of your branch for all of your team to see, you can push “commits” up.\n\nWhen you make a change to a file, this will pop up in the “Git” window of your R console. Select the files you want to commit by ticking the “staged” box next to them.\n\n\n\nThis will bring up a new window. Add a comment describing your additions/changes, and click commit. You will see all the staged files disappear. Then click “Push” to push the committed files up to the online repository for all to use.\n\n\n\nWhen another member of your team makes a commit and you want to pull this into your local area to check and work off the latest version, click on the blue “pull” button.\n\n\n\n\n\n\nBranches\n\nDavid Sands has produced a very helpful video on how to use branches in git, which also covers how to tackle merge conflicts if and when they arise:\n\n\n\n\nWhen you create a git project, it will automatically create a “main” (sometimes “master”) branch for you. This is where code that has been QA’d and you are happy with should sit.\n\nIt is good practice to have at least one other branch, we tend to call it “development”. This is the branch where you will be doing most of your work. To open a new branch, navigate to “branches” and click on the blue box highlighted below\n\n\n\nHaving two separate branches means that if anything goes wrong in the “development” branch, the “main” or “master” branch is still unaffected and runs without issue. This lets you test and QA the code more thoroughly before merging into your main branch.\nWhen working on your project, make sure that you are in the right branch. You can check this by navigating to the “Git” tab in RStudio as demonstrated below.\n\n\n\n\n\nPull requests\n\nWhen you have got to a place with the code and your committed changes where you are happy for it to be QA’d, you can open a pull request. This gives your team a chance to QA your changes before merging the branches together.\n\nNavigate to “Pull Requests” in the “Repos” tab of Azure DevOps and click the blue “New pull request” button.\nThis will take you to a new window. Here, you can add:\n\nTitle, tell your team what has changed\nDescription, tell your reviewer what they should check\nReviewers, add multiple if needed.\n\nAs a reviewer, to approve a pull request, follow the link in your email and click “approve” in the blue box. When all reviewers are happy for this to be the new master branch, click “complete”.\n\nCreating pull requests in GitHub follows a broadly similar process and should be intuitive from the above steps for Azure DevOps.\n\n\n\nMerging a branch into another one\n\nIf you want to merge a branch into another without doing a full pull request, you can do this using a terminal.\nThis may happen if you are working on a feature branch, and want to merge the latest changes to the master branch back into your feature branch before opening a PR to master with your own changes. Often this can let you deal with nasty conflicts up front, or allow you to keep working on your feature but update to have something new that’s on master.\nStart off by checking out your desired target branch - git checkout mybranch. Then merge in the branch you want (e.g. master) - git merge master.\n\n\n\nCherry picking\n\nIf you want to cherry pick specific commits for PR, you can do this by cherry picking the commits you want to use, and creating a new branch that has only those new commits that you want.\nTo start off you’ll need to identify the commits you want. In the terminal, run git log --oneline to get a log of commits for your current branch, use git log --online BRANCHNAME to specific the branch for the log. This gives a list of commit hashes and messages (stackoverflow response defining git hashes and commmit ID’s). You can press enter to get more commits, or q to quit\nThen go to the branch you want the commit to appear on and cherry pick your commits. Often, if this is to hop around something on a development to master pr, you would create a second development branch, cherry pick commits to there, and then PR that to master and delete the branch after merging.\nOn the branch you want to PR (i.e. your copy of a development branch purely for merging only cherry picked commits) run git cherry-pick COMMITHASH to add the specified commit, or git cherry-pick HASH1^..HASH4 for a specified list of commits (inclusive).\nHappy days!\n\n\n\nVisualising your tree\n\nYou can use gitk --all to visualise a tree of all previous commits up to this point.\n\n\n\n\nGetting commit IDs\n\nCommit IDs are the way Git identifies unique commits. They’re really helpful if you ever need to revert back to a previous commit if you’ve made a mistake.\nThere are lots of different ways to find out commit IDs:\n\nVisit the repo in Azure Devops and go to the commit of interest. At the top of the page there is a commit ID you can copy.\nNavigate to the repo in your file explorer, then open up Git Bash and type\n\ngit log --pretty=format:\"%h - %an, %ar : %\nOR\ngit log --pretty=oneline\nThere are a number of customisable versions of this, more information is available on the Git website.\n\n\n\nReverting a commit\n\nMade a mistake and need to revert? No problem! Reverting commits in git creates a new commit reversing your accidental commits, bringing you back to an earlier point in your branch.\nFor rolling back on a branch, you should revert any changes so that you’re not erasing history others might have pulled/cloned. E.g. If you want to revert the last 3 commits on master:\ngit revert --no-commit master~3..master\nThe no commit argument means that it just makes the reverts locally, and you can then commit them all as a single revert commit. If you don’t use --no-commit then it will start doing individual revert commits for you for each commit you’re reverting.\nYou can also revert back to a particular commit ID:\n\nNavigate to the repo in your file explorer, then open up Git Bash and type :\n\ngit revert [PASTE COMMIT ID HERE]\n\nThis opens up a window that asks you to write a commit message. You can skip this step as it automatically writes a revert message for you. Enter :wq which quits the writer window.\nYou can now push these changes to Azure Devops by entering git push into the git window\n\n\n\n\nTagging release versions\n\n\nIt can be useful to tag specific commits or releases at key points in time. For us a common example will be each publication cycle, to tag the version of the code used to process data for a particular release or amendment.\nGuidance on how to tag releases using git can be found on the draft version of the BPI code guidance\n\n\n\nFix: cannot resolve proxy\n\nIf you get this error when trying to pull / push to a repository from a DfE laptop:\nfatal: unable to access 'https://dfe-gov-uk.visualstudio.com/stats-development/_git/ees-analytics-new/': Could not resolve proxy: mwg.proxy.ad.hq.dept\nThen try running the following git command to clear the proxy settings in your git config file:\ngit config --global --unset http.proxy\n\n\n\nCleaning up local branches\n\nEssentially this finds all merged (old) branches, makes sure to not include master or development (can rename or add more if appropriate) and then runs those branches through the delete command. To be safe, run the first two thirds first, to print out the list of what you’ll be deleting:\ngit branch --merged | egrep -v \"(^\\*|master|development)\"\nThen if you’re happy, run the whole line:\ngit branch --merged | egrep -v \"(^\\*|master|development)\" | xargs git branch -d\nThat should be all local branches tidied up. Now to complete the job you can prune the tracking branches you have set up, usually this will just be:\ngit remote prune origin\nThough you can use git remote -v to find other remotes if you have them.\n\n\n\nCreating PATs\n\nPATs or Personal access tokens, are a preferred way to authenticate into repositories through code. Creating a PAT in GitHub is relatively intuitive.\nIn Azure DevOps, you can do this by following Microsoft’s documentation on creating a PAT in Azure DevOps.\n\n\n\nStoring secure variables\n\n\nAzure DevOps\n\nIn Azure DevOps you can securely store variables that are then used by your pipelines by making use of variable groups.\nFirst create a variable group by navigating to Pipelines &gt; Library. Enter any variables you want to store here and make sure to change the variable type to secret if appropriate (i.e. login credentials or PATs).\n\nThen, in the pipeline you want to use the variables in, go to Variables &gt; Variable groups and link the variable group as shown below. You can then call upon the variables as needed in your pipeline.\n\n\n\n\nGitHub\n\nIn GitHub you can store sensitive variables as encrypted secrets.\n\n\n\n\nMirroring a repository\n\nThere may be times when you have a repository in one place, such as Azure DevOps, but want to mirror the code and any changes to it in another place, such as GitHub. This can be for many different reasons, though commonly for us it will be to open up our code across government. Azure DevOps doesn’t provide us with easily publicly visible code repositories, however GitHub does.\nTo mirror a code repository from Azure DevOps, use the mirror git repository extension (already installed on dfe-gov-uk instance), make use of the PAT and secure variables sections above and then add a job to your pipeline and enter your parameters in the fields as per the example below:\n\n\n\n\nFixing the “JSON token 4” error\n\nThis error can appear when you are trying to push changes to Azure DevOps.\nIf it appears and you have not changed your password recently, try locking your laptop and seeing if on re-login it prompts you for a password change.\nIf you have changed changed your password recently, try signing out of Azure and then back in again.",
+    "crumbs": [
+      "Learning resources",
+      "Git"
     ]
   },
   {
@@ -1192,322 +1296,229 @@
     "href": "learning-development/r.html#using-r-with-ada-databricks",
     "title": "R",
     "section": "Using R with ADA / Databricks",
-    "text": "Using R with ADA / Databricks\nSee our guidance on how to connect to Databricks from R Studio\nYou can also view example R code using the Databricks code template notebooks",
+    "text": "Using R with ADA / Databricks\nSee our guidance on how to connect to Databricks SQL Warehouse from R Studio, and how to connect to Databricks personal cluster from R studio\nYou can also view example R code using the Databricks code template notebooks",
     "crumbs": [
       "Learning resources",
       "R"
     ]
   },
   {
-    "objectID": "learning-development/git.html",
-    "href": "learning-development/git.html",
-    "title": "Git",
+    "objectID": "learning-development/python.html",
+    "href": "learning-development/python.html",
+    "title": "Python",
     "section": "",
-    "text": "Guidance and tips for version control with Git",
+    "text": "Guidance and tips for using Python",
     "crumbs": [
       "Learning resources",
-      "Git"
+      "Python"
     ]
   },
   {
-    "objectID": "learning-development/git.html#what-is-git",
-    "href": "learning-development/git.html#what-is-git",
-    "title": "Git",
-    "section": "What is Git",
-    "text": "What is Git\nIt is a version control software. It is by far the best of its kind and is widely used by software developers and data scientists.",
+    "objectID": "learning-development/python.html#what-is-python",
+    "href": "learning-development/python.html#what-is-python",
+    "title": "Python",
+    "section": "What is Python",
+    "text": "What is Python\nPython is a high-level, general-purpose programming language. It has a number of uses, some of which are statistical analysis and data visualisation. Python code has a strong emphasis on readability and formatting. Although the majority of analysts in DfE tend to use R or SQL, Python is also available as an option.",
     "crumbs": [
       "Learning resources",
-      "Git"
+      "Python"
     ]
   },
   {
-    "objectID": "learning-development/git.html#what-is-git-for",
-    "href": "learning-development/git.html#what-is-git-for",
-    "title": "Git",
-    "section": "What is Git for",
-    "text": "What is Git for\nGit is a version control software that tracks changes to files within a folder that you assign Git to track. It works best with plain text files such as flat data files, code scripts and markdown documents. These folders are known as repositories and can be held and managed securely in a central online place such as GitHub (best for public), GitLab (can be good for either public or private) and Azure DevOps (best for private). We can easily mirror our Azure DevOps repositories in the DfE Analytical Services area on GitHub.\nIt is widely used across DfE and integrates neatly with our use of Azure DevOps, as well as being the current leading version control software in the world of coding with over 87% of 74,298 stack overflow users using it.",
+    "objectID": "learning-development/python.html#how-to-install-python",
+    "href": "learning-development/python.html#how-to-install-python",
+    "title": "Python",
+    "section": "How to install Python",
+    "text": "How to install Python\nYou can download Python (language) and PyCharm (IDE) from the DfE software center.",
     "crumbs": [
       "Learning resources",
-      "Git"
+      "Python"
     ]
   },
   {
-    "objectID": "learning-development/git.html#how-to-install-git",
-    "href": "learning-development/git.html#how-to-install-git",
-    "title": "Git",
-    "section": "How to install Git",
-    "text": "How to install Git\nDownload it from the Git website.\nGit doesn’t have an IDE, instead it will either integrate with your current IDE such as RStudio or Visual Studio Code, or run in the command line.\nWhen you first try to use Git you may be prompted for a GitHub username and password, if this happens you should generate a Personal Access Token (PAT) and use this as your password.",
-    "crumbs": [
-      "Learning resources",
-      "Git"
-    ]
-  },
-  {
-    "objectID": "learning-development/git.html#best-places-to-start",
-    "href": "learning-development/git.html#best-places-to-start",
-    "title": "Git",
+    "objectID": "learning-development/python.html#best-places-to-start",
+    "href": "learning-development/python.html#best-places-to-start",
+    "title": "Python",
     "section": "Best places to start",
-    "text": "Best places to start\n\nContact us about attending one of our in-person Git workshops\nIf you’re new to Git and are unsure of what it does, then take a look through these Git for humans slides\nDavid Sands’ guide to getting started with Git is a helpful place to start.\nGooey Git by David Sands, provides a very neat overview of using git with R.",
+    "text": "Best places to start\nFor getting set up, and help through any initial issues we recommend making use of the DfE Python community on Teams.\nThere is guidance on the Python Wiki for programmers and non-programmers. Each of the guides includes a list of interactive courses that you can work through to improve your skills.\nThe ONS Data Science Campus offers training courses on Reproducible Analytical Pipelines (RAP) in Python, but be aware that there is less Python expertise in the Department which might make QA of code more difficult.",
     "crumbs": [
       "Learning resources",
-      "Git"
+      "Python"
     ]
   },
   {
-    "objectID": "learning-development/git.html#how-to-work-with-git",
-    "href": "learning-development/git.html#how-to-work-with-git",
-    "title": "Git",
-    "section": "How to work with git",
-    "text": "How to work with git\n\nGit Bash\n\nGit Bash allows you to run git commands without opening another IDE. You’d often need to use Git Bash to set your user settings, amend your proxy settings and clone repositories.\n\n\n\nGit with RStudio\n\nGit with R studio is a neat user interface for git. You don’t need to use any git bash commands, and everything is done using point and click. This is useful for day-to-day version control, but does not support the full functionality of git.\nHowever, you can still run the full suite of git commands by simply typing them in the “Terminal” of RStudio.",
+    "objectID": "learning-development/python.html#best-practice",
+    "href": "learning-development/python.html#best-practice",
+    "title": "Python",
+    "section": "Best practice",
+    "text": "Best practice\nPython is different to other programming languages in that it has its own style guide, PEP-8. PEP-8 is one of many guidance documents known as Python Enhancement Proposals (PEPs) which govern the style of the language, any future changes or updates, and backwards compatibility features. PEP-20 outlines the guiding principles for Python’s design.\nPython can be a little fussy about the layout of your code, especially whitespace, and your code may fail if it is not indented correctly.",
     "crumbs": [
       "Learning resources",
-      "Git"
+      "Python"
     ]
   },
   {
-    "objectID": "learning-development/git.html#quick-reference-lookup",
-    "href": "learning-development/git.html#quick-reference-lookup",
-    "title": "Git",
+    "objectID": "learning-development/python.html#how-to-work-with-python",
+    "href": "learning-development/python.html#how-to-work-with-python",
+    "title": "Python",
+    "section": "How to work with Python",
+    "text": "How to work with Python\n\nLibraries and packages\nPython packages work slightly differently to R packages. You might hear reference to libraries in Python. A library is a collection of related packages that perform similar functions. One of the most popular libraries is called NumPy and it allows you to work with numerical data more easily.\nTo access the features of a library and use them within your code, you need to install the library. Using NumPy as the example, you can do this using the syntax\n\npip install numpy\n\nPIP is the standard package installer for Python and so must be mentioned at the start of the line of code.\nOnce you have installed your library, you then need to import it so that you can use it within your code. To make your life easier, you can give it a shortened name so that you don’t have to write NumPy every time you want to use one of the features, like this:\n\nimport numpy as np\n\nIf you only install a library and then don’t import it, you won’t be able to use its features. You can either import a library as a whole, or you can just import certain functions from it if you know you won’t need to use them all.\nNumPy contains an array function. If you want to use it, you would do so as follows:\n\narr = np.array( [[ 1, 2, 3],[ 4, 2, 5]] )\n\nNote that you must use np. before array to get it to work, otherwise Python won’t know where to look for the array function. When you imported NumPy, if you gave it a different shortened name, you’d use that name instead.",
+    "crumbs": [
+      "Learning resources",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "learning-development/sql.html",
+    "href": "learning-development/sql.html",
+    "title": "SQL",
+    "section": "",
+    "text": "Guidance and tips for accessing data via databases with SQL",
+    "crumbs": [
+      "Learning resources",
+      "SQL"
+    ]
+  },
+  {
+    "objectID": "learning-development/sql.html#what-is-sql",
+    "href": "learning-development/sql.html#what-is-sql",
+    "title": "SQL",
+    "section": "What is SQL",
+    "text": "What is SQL\nSQL or Structured Query Language, is a programming language used to talk to relational database management systems.",
+    "crumbs": [
+      "Learning resources",
+      "SQL"
+    ]
+  },
+  {
+    "objectID": "learning-development/sql.html#what-is-sql-for",
+    "href": "learning-development/sql.html#what-is-sql-for",
+    "title": "SQL",
+    "section": "What is SQL for",
+    "text": "What is SQL for\nSQL servers are where most of DfE’s data is held, making it ideal for database management.\nSQL provides us with a language primarily for querying databases to extract data, though it is also capable of some basic data processing and analysis.",
+    "crumbs": [
+      "Learning resources",
+      "SQL"
+    ]
+  },
+  {
+    "objectID": "learning-development/sql.html#how-to-install-sql",
+    "href": "learning-development/sql.html#how-to-install-sql",
+    "title": "SQL",
+    "section": "How to install SQL",
+    "text": "How to install SQL\nDownload SSMS from the DfE software center, talk to your team about getting access to the appropriate SQL servers and databases where the data you need to access is held and start writing SQL queries.\nThere are usually a couple of different versions available for software on the software center, we’d recommend you always go for the latest (newest) version possible.\nIf you can’t find the option in the software centre, then you may need to raise a service desk request to make SQL server management studio visible in your software centre.",
+    "crumbs": [
+      "Learning resources",
+      "SQL"
+    ]
+  },
+  {
+    "objectID": "learning-development/sql.html#best-place-to-start",
+    "href": "learning-development/sql.html#best-place-to-start",
+    "title": "SQL",
+    "section": "Best place to start",
+    "text": "Best place to start\nAndy Brook’s excellent Introduction to SQL session, giving a visual overview of the basics of querying with SQL:",
+    "crumbs": [
+      "Learning resources",
+      "SQL"
+    ]
+  },
+  {
+    "objectID": "learning-development/sql.html#best-practice",
+    "href": "learning-development/sql.html#best-practice",
+    "title": "SQL",
+    "section": "Best practice",
+    "text": "Best practice\nHere are some tips to follow best practice in your SQL code, making it easier to read and pick up if another person is running your code. Following best practice guidance will help you to achieve RAP best practice with clean final code\n\nAvoid any trailing whitespace\nAlways capitalize SQL keywords (e.g., SELECT or AS)\nVariable names should be in snake case - lower case words separated by underscores (e.g. pupil_age instead of PupilAge)\nComments should go near the top of your query, or at least near the closest SELECT\nTry to only comment on things that aren’t obvious about the query (e.g. why hardcoded filters are used, how to update them)\nWhere possible, use Common Table Expressions (CTEs) early and often, and name them descriptively (e.g. “pupil_age_table” rather than “p”)\n\nGitLab have produced a full SQL style guide, which we recommend following where possible.",
+    "crumbs": [
+      "Learning resources",
+      "SQL"
+    ]
+  },
+  {
+    "objectID": "learning-development/sql.html#how-to-work-with-sql",
+    "href": "learning-development/sql.html#how-to-work-with-sql",
+    "title": "SQL",
+    "section": "How to work with SQL",
+    "text": "How to work with SQL\nSSMS is the best tool to get started with writing SQL queries and saving SQL scripts that produce your desired outputs.\nOnce you have saved SQL scripts or are more familiar with writing SQL queries on the fly, you can look at running your scripts or lines of SQL code directly in R. This will streamline your process, saving copying and pasting SQL outputs into csvs, and ultimately help with reaching RAP best practice by aiding production of a single publication production script",
+    "crumbs": [
+      "Learning resources",
+      "SQL"
+    ]
+  },
+  {
+    "objectID": "learning-development/sql.html#quick-reference-lookup",
+    "href": "learning-development/sql.html#quick-reference-lookup",
+    "title": "SQL",
     "section": "Quick reference lookup",
-    "text": "Quick reference lookup\n\nGitHub have created a cheat sheet for git commands.",
+    "text": "Quick reference lookup\n\nw3schools.com offers a useful guide through the most common SQL commands.",
     "crumbs": [
       "Learning resources",
-      "Git"
+      "SQL"
     ]
   },
   {
-    "objectID": "learning-development/git.html#other-resources",
-    "href": "learning-development/git.html#other-resources",
-    "title": "Git",
+    "objectID": "learning-development/sql.html#other-resources",
+    "href": "learning-development/sql.html#other-resources",
+    "title": "SQL",
     "section": "Other resources",
-    "text": "Other resources\n\nAvison Ho and Linda Bennett gave this coffee and coding presentation on version controlling SQL with Git.\nHappy Git is a useful (though detailed) guide to setting up and using git.\nAdam Robinson and Zach Waller have produced guidance for how to use git in Azure DevOps (formally VSTS), which gives a detailed guide on how to use version control software in DfE analysis.\nWhile also mentioned above as a resource for learning R, chapter 6 of ESFA’s guide to R and Git is also worth looking at for Git alone.\nMicrosoft have produced documentation on using Git within AzureDevOps.\nFor those wanting to go deeper into understand the variety of git commands and what they do, there is a great online visual resource.\nWe also have a number of helpful sections on using git in practice at the end of our RAP for Statistics page.",
+    "text": "Other resources\n\nThis tutorial script by Tom Franklin is a particularly good starting point as it includes the data you are manipulating, so you don’t need to worry about connecting to or getting access to specific databases before you can then run anything. Simply open up Microsoft SQL Server Management Studio and start playing with that query.\nAvision Ho created the this SQL training course.\nThe Khan academy offers a great free introduction to the basics of SQL.\nIt’s also worth taking a look at Jon Holman’s presentation on ‘good to know’ SQL functions.\nMoJ have produced a SQL from square one guide to using CTE’s in SQL as well as running SQL from RStudio\n\nAndy’s follow up intermediate SQL session, covering more advanced features of SQL:",
     "crumbs": [
       "Learning resources",
-      "Git"
+      "SQL"
     ]
   },
   {
-    "objectID": "learning-development/git.html#tips-for-using-git",
-    "href": "learning-development/git.html#tips-for-using-git",
-    "title": "Git",
-    "section": "Tips for using Git",
-    "text": "Tips for using Git\n\nCommits\n\nThe best advice is to just commit regularly, like you would if you were saving a word document.\nEach commit is a saved point in time that you can easily roll back to if needed. If you want to know more about how to do this, see the reverting a commit section below.\n\n\nCommit messages\n\nThe best advice for commit messages is to keep them clear, simple and brief.\nIt is recommended to use the imperative tone e.g. Add fix for joining pupil table rather than Added ... or Adding .... Other general recommendations include:\n\nKeep it short (max 150 characters if possible) - committing regularly can help with this\nExplain what the change is and why the change was needed. You generally don’t need to go into the detail of how the change was made as this should be visible from the code\n\ne.g., Add x to prevent y or Add x so that y can z\n\nDon’t assume the reviewer understands what the original problem was\n\nwould someone else looking at it, or even yourself in a week’s time know what the commit was doing?\n\nCapitalise the first letter and don’t end with punctuation, it is unnecessary\n\nIf you’re struggling to know what to write, remember the reader (including future you) is unlikely to have much context when looking through the version log to find the right point in time, try considering the following:\n\nWhy have I made these changes?\nWhat effect have my changes made?\nWhy was the change needed?\nWhat are the changes in reference to?\n\nNever leave a commit message blank. The information you include could really pay off later when you need to remember what you worked on, or share it with other people.\nThere are specific conventions outlined in conventional commits, that are worth familiarising yourself as you begin to use Git more. Following these conventions will help you write messages that are consistent with over 100 million other Git users around the world.\n\n\n\nIn RStudio\n\nOnce you are happy with changes and want them to be in the latest version of your branch for all of your team to see, you can push “commits” up.\n\nWhen you make a change to a file, this will pop up in the “Git” window of your R console. Select the files you want to commit by ticking the “staged” box next to them.\n\n\n\nThis will bring up a new window. Add a comment describing your additions/changes, and click commit. You will see all the staged files disappear. Then click “Push” to push the committed files up to the online repository for all to use.\n\n\n\nWhen another member of your team makes a commit and you want to pull this into your local area to check and work off the latest version, click on the blue “pull” button.\n\n\n\n\n\n\nBranches\n\nDavid Sands has produced a very helpful video on how to use branches in git, which also covers how to tackle merge conflicts if and when they arise:\n\n\n\n\nWhen you create a git project, it will automatically create a “main” (sometimes “master”) branch for you. This is where code that has been QA’d and you are happy with should sit.\n\nIt is good practice to have at least one other branch, we tend to call it “development”. This is the branch where you will be doing most of your work. To open a new branch, navigate to “branches” and click on the blue box highlighted below\n\n\n\nHaving two separate branches means that if anything goes wrong in the “development” branch, the “main” or “master” branch is still unaffected and runs without issue. This lets you test and QA the code more thoroughly before merging into your main branch.\nWhen working on your project, make sure that you are in the right branch. You can check this by navigating to the “Git” tab in RStudio as demonstrated below.\n\n\n\n\n\nPull requests\n\nWhen you have got to a place with the code and your committed changes where you are happy for it to be QA’d, you can open a pull request. This gives your team a chance to QA your changes before merging the branches together.\n\nNavigate to “Pull Requests” in the “Repos” tab of Azure DevOps and click the blue “New pull request” button.\nThis will take you to a new window. Here, you can add:\n\nTitle, tell your team what has changed\nDescription, tell your reviewer what they should check\nReviewers, add multiple if needed.\n\nAs a reviewer, to approve a pull request, follow the link in your email and click “approve” in the blue box. When all reviewers are happy for this to be the new master branch, click “complete”.\n\nCreating pull requests in GitHub follows a broadly similar process and should be intuitive from the above steps for Azure DevOps.\n\n\n\nMerging a branch into another one\n\nIf you want to merge a branch into another without doing a full pull request, you can do this using a terminal.\nThis may happen if you are working on a feature branch, and want to merge the latest changes to the master branch back into your feature branch before opening a PR to master with your own changes. Often this can let you deal with nasty conflicts up front, or allow you to keep working on your feature but update to have something new that’s on master.\nStart off by checking out your desired target branch - git checkout mybranch. Then merge in the branch you want (e.g. master) - git merge master.\n\n\n\nCherry picking\n\nIf you want to cherry pick specific commits for PR, you can do this by cherry picking the commits you want to use, and creating a new branch that has only those new commits that you want.\nTo start off you’ll need to identify the commits you want. In the terminal, run git log --oneline to get a log of commits for your current branch, use git log --online BRANCHNAME to specific the branch for the log. This gives a list of commit hashes and messages (stackoverflow response defining git hashes and commmit ID’s). You can press enter to get more commits, or q to quit\nThen go to the branch you want the commit to appear on and cherry pick your commits. Often, if this is to hop around something on a development to master pr, you would create a second development branch, cherry pick commits to there, and then PR that to master and delete the branch after merging.\nOn the branch you want to PR (i.e. your copy of a development branch purely for merging only cherry picked commits) run git cherry-pick COMMITHASH to add the specified commit, or git cherry-pick HASH1^..HASH4 for a specified list of commits (inclusive).\nHappy days!\n\n\n\nVisualising your tree\n\nYou can use gitk --all to visualise a tree of all previous commits up to this point.\n\n\n\n\nGetting commit IDs\n\nCommit IDs are the way Git identifies unique commits. They’re really helpful if you ever need to revert back to a previous commit if you’ve made a mistake.\nThere are lots of different ways to find out commit IDs:\n\nVisit the repo in Azure Devops and go to the commit of interest. At the top of the page there is a commit ID you can copy.\nNavigate to the repo in your file explorer, then open up Git Bash and type\n\ngit log --pretty=format:\"%h - %an, %ar : %\nOR\ngit log --pretty=oneline\nThere are a number of customisable versions of this, more information is available on the Git website.\n\n\n\nReverting a commit\n\nMade a mistake and need to revert? No problem! Reverting commits in git creates a new commit reversing your accidental commits, bringing you back to an earlier point in your branch.\nFor rolling back on a branch, you should revert any changes so that you’re not erasing history others might have pulled/cloned. E.g. If you want to revert the last 3 commits on master:\ngit revert --no-commit master~3..master\nThe no commit argument means that it just makes the reverts locally, and you can then commit them all as a single revert commit. If you don’t use --no-commit then it will start doing individual revert commits for you for each commit you’re reverting.\nYou can also revert back to a particular commit ID:\n\nNavigate to the repo in your file explorer, then open up Git Bash and type :\n\ngit revert [PASTE COMMIT ID HERE]\n\nThis opens up a window that asks you to write a commit message. You can skip this step as it automatically writes a revert message for you. Enter :wq which quits the writer window.\nYou can now push these changes to Azure Devops by entering git push into the git window\n\n\n\n\nTagging release versions\n\n\nIt can be useful to tag specific commits or releases at key points in time. For us a common example will be each publication cycle, to tag the version of the code used to process data for a particular release or amendment.\nGuidance on how to tag releases using git can be found on the draft version of the BPI code guidance\n\n\n\nFix: cannot resolve proxy\n\nIf you get this error when trying to pull / push to a repository from a DfE laptop:\nfatal: unable to access 'https://dfe-gov-uk.visualstudio.com/stats-development/_git/ees-analytics-new/': Could not resolve proxy: mwg.proxy.ad.hq.dept\nThen try running the following git command to clear the proxy settings in your git config file:\ngit config --global --unset http.proxy\n\n\n\nCleaning up local branches\n\nEssentially this finds all merged (old) branches, makes sure to not include master or development (can rename or add more if appropriate) and then runs those branches through the delete command. To be safe, run the first two thirds first, to print out the list of what you’ll be deleting:\ngit branch --merged | egrep -v \"(^\\*|master|development)\"\nThen if you’re happy, run the whole line:\ngit branch --merged | egrep -v \"(^\\*|master|development)\" | xargs git branch -d\nThat should be all local branches tidied up. Now to complete the job you can prune the tracking branches you have set up, usually this will just be:\ngit remote prune origin\nThough you can use git remote -v to find other remotes if you have them.\n\n\n\nCreating PATs\n\nPATs or Personal access tokens, are a preferred way to authenticate into repositories through code. Creating a PAT in GitHub is relatively intuitive.\nIn Azure DevOps, you can do this by following Microsoft’s documentation on creating a PAT in Azure DevOps.\n\n\n\nStoring secure variables\n\n\nAzure DevOps\n\nIn Azure DevOps you can securely store variables that are then used by your pipelines by making use of variable groups.\nFirst create a variable group by navigating to Pipelines &gt; Library. Enter any variables you want to store here and make sure to change the variable type to secret if appropriate (i.e. login credentials or PATs).\n\nThen, in the pipeline you want to use the variables in, go to Variables &gt; Variable groups and link the variable group as shown below. You can then call upon the variables as needed in your pipeline.\n\n\n\n\nGitHub\n\nIn GitHub you can store sensitive variables as encrypted secrets.\n\n\n\n\nMirroring a repository\n\nThere may be times when you have a repository in one place, such as Azure DevOps, but want to mirror the code and any changes to it in another place, such as GitHub. This can be for many different reasons, though commonly for us it will be to open up our code across government. Azure DevOps doesn’t provide us with easily publicly visible code repositories, however GitHub does.\nTo mirror a code repository from Azure DevOps, use the mirror git repository extension (already installed on dfe-gov-uk instance), make use of the PAT and secure variables sections above and then add a job to your pipeline and enter your parameters in the fields as per the example below:\n\n\n\n\nFixing the “JSON token 4” error\n\nThis error can appear when you are trying to push changes to Azure DevOps.\nIf it appears and you have not changed your password recently, try locking your laptop and seeing if on re-login it prompts you for a password change.\nIf you have changed changed your password recently, try signing out of Azure and then back in again.",
+    "objectID": "learning-development/sql.html#tips-for-using-sql",
+    "href": "learning-development/sql.html#tips-for-using-sql",
+    "title": "SQL",
+    "section": "Tips for using SQL",
+    "text": "Tips for using SQL\n\nSetting up a SQL area\n\nBefore you set up a SQL database, make sure you have the following information to pass on:\n\nThe name of the database you want to set up - Different servers will have different naming conventions, make sure to check this with the server owner before you confirm the name.\nWho the database owners should be - This will most likely be yourself, but you can have multiple (e.g. your team leader). It can be helpful to have more than one owner, so one can grant permissions when the other is unavailable.\nWho should have access, and what their access levels should be - Users can have read or read/write access. Make sure you have a list of users (with their AD names) and their access levels ready.\nThe database structure - Do you need certain schemas setting up? This will help organise your database. Without schemas, all tables will be saved under [dbo].\n\nThere are a few common servers that statistics producers (and analysts in general) make use of at DfE. Use the following contacts below to pass on the above information to get your new database set up:\n\nPDR (T1PRMDRSQL,55842) - contact the PDR team\nPDB16 (3DCPRI-PDB16) - raise a request through the service desk under “non-standard” &gt; “any other request”\nAnalyse & Modelling server (T1PRANMSQL,60125) - raise a request on the service desk under the following options:\n\n\n\n\n\nManaging access\n\nTo gain access to a SQL database, you must have written confirmation from the database owner specifying whether your access is read-only or both read and write.\nIf the area you require access to is in the T1PRMDRSQL,55842 SQL server, contact the PDR team with your permission attached, stating the name of the database you want access to.\nIf the area is in any other server, raise a request through the central IT service portal under “non-standard” &gt; “any other request”. In your request make sure you attach the written confirmation and specify:\n\nThe server name\nThe database name\nWhether it’s read or write access you need\n\n\n\n\n\nMoving data to different areas\n\nInformation on how to do this in R can be found in our RAP for Statistics page",
     "crumbs": [
       "Learning resources",
-      "Git"
+      "SQL"
     ]
   },
   {
-    "objectID": "learning-development/learning-support.html",
-    "href": "learning-development/learning-support.html",
-    "title": "Learning support",
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing to the Analyst’s Guide",
     "section": "",
-    "text": "A collection of useful learning resources, and information on support and resources to get you started\nAs analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.\nFor best practice when using software and coding in our process, see our guidance on RAP expectations and the DfE Good Code Practice guide.",
-    "crumbs": [
-      "Learning resources",
-      "Learning support"
-    ]
+    "text": "Thank you for investing your time in contributing to the analyst’s guide! All contributions are very welcome - we want this to be a useful resource for the whole analytical community in DfE :sparkles:.\nRead our Code of Conduct to keep our community approachable and respectable.\nThe main branch of the site is protected and can only be updated via pull requests. All pull requests must be approved by a repository admin before merging.\nIn this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.\n\n\nTo get an overview of the project, read the README. Here are some resources to help you get started with open source contributions:\n\nFinding ways to contribute to open source on GitHub\nSet up Git\nGitHub flow\nCollaborating with pull requests\n\n\n\nFor more information specific to how a quarto site works, and for examples of what is possible within a static quarto site, see the main Quarto website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou can modify the highlight-style element in the quarto.yml file to change the display of code blocks using predefined themes. This will change the appearance of all code snippets across the entire Analysts’ guide. The current theme is set to “printing” but there is a list of other available themes on the Quarto website.\nSome things to be aware of before you make changes:\n\nSome of the themes are adaptive, meaning that if you change the site view from dark mode to light mode then the theme will also change accordingly.\nThe appearance of code snippets will only change if the language (e.g. R, Python) is defined at the start of the snippet (e.g. ``` {r connection_example, eval=FALSE}). Including eval=FALSE stops your code snippet from actually running. If no language is defined, the snippet appearance will need to be modified manually and this can cause some issues.\n\n\n\n\n\nYou can create images, flowcharts, and diagrams using draw.io. To add them to the Analysts’ guide, we recommend embedding them, by selecting File &gt; Embed &gt; HTML. The image below shows the options that you should select when embedding a diagram\n\n\n\n\n\n\nIf you spot a problem with the site, search if an issue already exists. If a related issue doesn’t exist, you can open a new issue using a relevant issue form.\n\n\n\nScan through our existing issues to find one that interests you. If you find an issue to work on, you are welcome to open a PR with a fix.\n\n\n\n\nKey things to remember when making or proposing changes:\n\nWhere guidance already exists elsewhere it should be linked to rather than duplicated\nWhen adding images, save them in the /images folder\nWhen adding files for download, save them in the /resources folder - Don’t commit rendered .html files for pages\nIf your changes remove or edit a pre-existing anchor link, consider how that will be redirected for users who may have bookmarked it\n\n\n\nClick Edit this page at the bottom of the right hand table of contents of any page to make small changes such as a typo, sentence fix, or a broken link. This takes you to the .Qmd file where you can make your changes and create a pull request for a review.\n\n\n\n\nClone or fork the repository.\nOpen the repository in your editor of choice, e.g. R Studio.\nCreate a working branch and start with your changes!\nCommit and push the changes to your working branch.\n\n\n\n\n\nAll pull requests should be made against the main branch.\nWhen you’re finished with the changes, create a pull request, also known as a PR.\n\nDon’t forget to link PR to issue if you are solving one.\n\nOnce you submit your PR, a repository admin will review your proposal. We may ask questions or request additional information.\n\nWe may ask for changes to be made before a PR can be merged, either using suggested changes or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes and then commit them to your branch.\nAs you update your PR and apply changes, mark each conversation as resolved.\nIf you run into any merge issues, checkout this Git tutorial to help you resolve merge conflicts and other issues.\n\n\n\n\n\nIf you need any assistance at all, please contact statistics.development@education.gov.uk."
   },
   {
-    "objectID": "learning-development/learning-support.html#email-support",
-    "href": "learning-development/learning-support.html#email-support",
-    "title": "Learning support",
-    "section": "Email support",
-    "text": "Email support\n\nstatistics.development@education.gov.uk\n\n9-5, aim to reply between 1-2 days.",
-    "crumbs": [
-      "Learning resources",
-      "Learning support"
-    ]
-  },
-  {
-    "objectID": "learning-development/learning-support.html#technical-workshops",
-    "href": "learning-development/learning-support.html#technical-workshops",
-    "title": "Learning support",
-    "section": "Technical workshops",
-    "text": "Technical workshops\nWe currently offer two in person workshops covering specific technical skills in practice. Each workshop is around 3 hours long, and you will work in small groups. We travel to deliver workshops based on demand, so please get in touch and let us know if you’d like to join the waiting list in your area for one or both of the sessions.\nOur current workshops are:\nIntroduction to Git and Azure DevOps\nIn this workshop, we cover:\n\nWhat are git, Azure DevOps and GitHub and what are the differences?\nHow can they help your work?\nHow to start working with git and DevOps in the DfE ecosystem\nManaging projects and tasks with DevOps Boards\nBasic version control with git – add/stage, commit, push and pull\nWorking with branches\nTracking changes and who made them\nMerging, pull requests and merge conflicts\n\nIntroduction to R and RAP\nIn this workshop, we cover:\n\nSetting up an R project\nWriting your own functions\nAggregating & filtering data\nUsing if statements\nJoining data\nUsing R to run SQL\nCreating plots (with ggplot2)\n\nContact statistics.development@education.gov.uk to register interest in workshops happening at your site or to request new topics!",
-    "crumbs": [
-      "Learning resources",
-      "Learning support"
-    ]
-  },
-  {
-    "objectID": "learning-development/learning-support.html#partnership-programme",
-    "href": "learning-development/learning-support.html#partnership-programme",
-    "title": "Learning support",
-    "section": "Partnership programme",
-    "text": "Partnership programme\n\nDedicated resource to support development work, either building skills or working on analytical or statistical outputs.\nA short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.\nContact statistics.development@education.gov.uk if you’re interested in finding out more about the support we can give.",
-    "crumbs": [
-      "Learning resources",
-      "Learning support"
-    ]
-  },
-  {
-    "objectID": "learning-development/learning-support.html#specific-resources",
-    "href": "learning-development/learning-support.html#specific-resources",
-    "title": "Learning support",
-    "section": "Specific resources",
-    "text": "Specific resources\nWe also have specific learning resources and materials for SQL, R, and Git",
-    "crumbs": [
-      "Learning resources",
-      "Learning support"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Analysts’ Guide",
+    "objectID": "CONTRIBUTING.html#new-contributor-guide",
+    "href": "CONTRIBUTING.html#new-contributor-guide",
+    "title": "Contributing to the Analyst’s Guide",
     "section": "",
-    "text": "This website is a guide aimed at anyone working in analysis or statistics in the Department for Education (DfE). It includes tips on best practice and learning resources across a number of areas.\nWe hope it can prove a useful community driven resource for everyone from the most experienced analyst right through to those just starting out. If you have any feedback, suggested additions, or wish to challenge any of the guidance, feel free to use the GitHub links to suggest changes directly, or contact us at the email you can find at the bottom of the page.",
-    "crumbs": [
-      "Welcome"
-    ]
+    "text": "To get an overview of the project, read the README. Here are some resources to help you get started with open source contributions:\n\nFinding ways to contribute to open source on GitHub\nSet up Git\nGitHub flow\nCollaborating with pull requests\n\n\n\nFor more information specific to how a quarto site works, and for examples of what is possible within a static quarto site, see the main Quarto website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou can modify the highlight-style element in the quarto.yml file to change the display of code blocks using predefined themes. This will change the appearance of all code snippets across the entire Analysts’ guide. The current theme is set to “printing” but there is a list of other available themes on the Quarto website.\nSome things to be aware of before you make changes:\n\nSome of the themes are adaptive, meaning that if you change the site view from dark mode to light mode then the theme will also change accordingly.\nThe appearance of code snippets will only change if the language (e.g. R, Python) is defined at the start of the snippet (e.g. ``` {r connection_example, eval=FALSE}). Including eval=FALSE stops your code snippet from actually running. If no language is defined, the snippet appearance will need to be modified manually and this can cause some issues.\n\n\n\n\n\nYou can create images, flowcharts, and diagrams using draw.io. To add them to the Analysts’ guide, we recommend embedding them, by selecting File &gt; Embed &gt; HTML. The image below shows the options that you should select when embedding a diagram\n\n\n\n\n\n\nIf you spot a problem with the site, search if an issue already exists. If a related issue doesn’t exist, you can open a new issue using a relevant issue form.\n\n\n\nScan through our existing issues to find one that interests you. If you find an issue to work on, you are welcome to open a PR with a fix.\n\n\n\n\nKey things to remember when making or proposing changes:\n\nWhere guidance already exists elsewhere it should be linked to rather than duplicated\nWhen adding images, save them in the /images folder\nWhen adding files for download, save them in the /resources folder - Don’t commit rendered .html files for pages\nIf your changes remove or edit a pre-existing anchor link, consider how that will be redirected for users who may have bookmarked it\n\n\n\nClick Edit this page at the bottom of the right hand table of contents of any page to make small changes such as a typo, sentence fix, or a broken link. This takes you to the .Qmd file where you can make your changes and create a pull request for a review.\n\n\n\n\nClone or fork the repository.\nOpen the repository in your editor of choice, e.g. R Studio.\nCreate a working branch and start with your changes!\nCommit and push the changes to your working branch.\n\n\n\n\n\nAll pull requests should be made against the main branch.\nWhen you’re finished with the changes, create a pull request, also known as a PR.\n\nDon’t forget to link PR to issue if you are solving one.\n\nOnce you submit your PR, a repository admin will review your proposal. We may ask questions or request additional information.\n\nWe may ask for changes to be made before a PR can be merged, either using suggested changes or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes and then commit them to your branch.\nAs you update your PR and apply changes, mark each conversation as resolved.\nIf you run into any merge issues, checkout this Git tutorial to help you resolve merge conflicts and other issues."
   },
   {
-    "objectID": "index.html#learning-and-development",
-    "href": "index.html#learning-and-development",
-    "title": "Analysts’ Guide",
-    "section": "Learning and development",
-    "text": "Learning and development\nLearning support - Useful learning resources, and support to get you started\nSQL - Guidance and tips for accessing data via databases with SQL\nR - Guidance and tips for using R\nGit - Guidance and tips for version control with Git\nPython - Guidance and tips for using Python",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "index.html#statistics-production",
-    "href": "index.html#statistics-production",
-    "title": "Analysts’ Guide",
-    "section": "Statistics production",
-    "text": "Statistics production\nRoutes for publishing - Guidance for how to publish different types of statistics\nRAP in statistics - Detailed RAP guidance for statistics publications\nOpen data standards - Guidance on how to structure data files\nExplore Education Statistics (EES) - How to use the features in Explore Education Statistics\nGood examples in EES - Examples of good practice in Explore Education Statistics\nEmbedded visualisations in EES - How to embed R-Shiny charts in EES publications\nPublication scrums - Information on the scrums we run and tips for writing statistical commentary\nUser engagement - Guidance on understanding and engaging with the users of published statistics\nEES analytics - Understanding how users are interacting with your publications",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "index.html#writing-and-visualising",
-    "href": "index.html#writing-and-visualising",
-    "title": "Analysts’ Guide",
-    "section": "Writing and visualising",
-    "text": "Writing and visualising\nPublic dashboards - Guidance for publishing public facing statistics dashboards\nPublishing an R-Shiny based dashboard - Guidance for publishing public facing statistics dashboards using R-Shiny\nVisualising data - Resources and best practice to guide you when visualising data\nWriting about data - Resources and best practice for writing about data",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "index.html#reproducible-analytical-pipelines-rap",
-    "href": "index.html#reproducible-analytical-pipelines-rap",
-    "title": "Analysts’ Guide",
-    "section": "Reproducible Analytical Pipelines (RAP)",
-    "text": "Reproducible Analytical Pipelines (RAP)\nRAP in statistics - Detailed RAP guidance for statistics publications\nRAP expectations - Guidance for all analysts on expectations of RAP\nRAP support - Details on support available for RAP in DfE\nRAP FAQs - Frequently asked questions about RAP",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "index.html#analytical-data-access-ada-and-databricks",
-    "href": "index.html#analytical-data-access-ada-and-databricks",
-    "title": "Analysts’ Guide",
-    "section": "Analytical Data Access (ADA) and Databricks",
-    "text": "Analytical Data Access (ADA) and Databricks\nAnalytical Data Access (ADA) and Databricks - Guidance for analysts on how to interact with and use data stored in ADA using Databricks\nSetup Databricks with RStudio - Guidance for analysts on how to connect to Databricks from RStudio.",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "index.html#contact-us",
-    "href": "index.html#contact-us",
-    "title": "Analysts’ Guide",
-    "section": "Contact us",
-    "text": "Contact us\nOur mailbox is always monitored and is available for anyone in DfE to ask questions about statistics, whether that is about RAP, building dashboards, coding support, learning and development or statistics publications.\n\nstatistics.development@education.gov.uk\n9am-5pm, Monday-Friday, aim to reply within 1-2 days",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "ADA/git_databricks.html",
-    "href": "ADA/git_databricks.html",
-    "title": "Databricks and version control",
+    "objectID": "CONTRIBUTING.html#support",
+    "href": "CONTRIBUTING.html#support",
+    "title": "Contributing to the Analyst’s Guide",
     "section": "",
-    "text": "Guidance for analysts on how to connect Databricks to Github and Azure DevOps",
+    "text": "If you need any assistance at all, please contact statistics.development@education.gov.uk."
+  },
+  {
+    "objectID": "ADA/databricks_rstudio_personal_cluster.html",
+    "href": "ADA/databricks_rstudio_personal_cluster.html",
+    "title": "Setup Databricks personal compute cluster with RStudio",
+    "section": "",
+    "text": "The following instructions set up an ODBC connection between your laptop and your DataBricks cluster, which can then be used in R/RStudio to query data using an ODBC based package or sparklyr. Personal clusters are able to run SQL, R, python and scala. They can be used within the DataBricks environment, or through R studio and can be set up yourself if you don’t have access to a SQL warehouse or shared cluster.\n\n\n\nPre-requisites\n\nYou must have:\n\nAccess to Databricks\nAccess to a personal cluster on DataBricks\nR and RStudio downloaded\n\n\n\n\nDownloading an ODBC driver\n\n\nInstall the ‘Simba Spark ODBC’ driver from the software centre.\n\nOpen the Software Centre via the start menu.\nIn the ‘Applications’ tab, click ‘Simba Spark ODBC Driver 64-bit’. \nClick install.\n\nGet connection details for the cluster from Databricks. To set up the connection you will need a few details from your cluster within DataBricks.\n\nLogin to Databricks\nClick on the ‘Compute’ tab in the sidebar. \nClick on the name of the cluster you want to connect to, and click the ‘Advanced options’ at the bottom of the cluster page.\nClick the ‘JDBC/ODBC’ tab under ‘Advanced options’\nMake a note of the ‘Server hostname’, ‘Port’, and ‘HTTP Path’.\n\nGet a personal access token from Databricks for authentication.\n\nIn Databricks, click on your email address in the top right corner, then click ‘User settings’.\nGo to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button. \nClick the ‘Generate new token’ button.\nName the token, then click ‘Generate’. Note that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate.\nMake a note of the ‘Databricks access token’ it has given you. It is important to copy this somewhere as you will not be able to see it through Databricks again.\n\nSetup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.\n\nIn the start menu, search ‘ODBC’ and open ‘ODBC Data Sources (64-bit)’.\nOn the ‘User DSN’ tab click the ‘Add…’ button.\nIn the ‘Create New Data Source’ window, select ‘Simba Spark ODBC Driver’ and click ‘Finish’.\nIn the ‘Simba Spark ODBC Driver DSN Setup’ window,\n\nEnter a ‘Data Source Name’ and ‘Description’. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio. As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.\nSet the remaning options to the settings below.\n\nEnter the ‘Server Hostname’ for your cluster in the ‘Host(s):’ field (you noted this down in step 2).\nIn the Port section, remove the default number and use the Port number you noted in step 2.\nSet the Authentication Mechanism to ‘User Name and Password’.\nEnter the word ‘token’ into the ‘User Name:’ field, then enter your ‘Databricks access token’ in the ‘Password:’ field.\nChange the Thrift Transport option to HTTP.\nClick the ‘HTTP Options…’ button and enter the ‘HTTP Path’ of your Databricks cluster, then click ‘Okay’.\nClick the ‘SSL Options…’ button and tick the ‘Enable SSL’ box, then click the ‘OK’ button.\n\n\nClick the ‘Test’ button to verify the connection has worked. You should see the following message. If you get an error here, repeat steps 5.e.i – 5.e.ix again and ensure all the values are correct.\n\n\n\nClick the ‘OK’ button to exit the ‘Test Results’ window, then the ‘OK’ button in the ‘Simba Spark ODBC Driver DSN Setup’ window.\n\n\nConnect through RStudio. Watch the below video and view the ADA_RStudio_connect GitHub repo for methods on connecting to Databricks and querying data from RStudio.\n\n\n\n\nPulling data into R studio from Databricks\n\nOnce you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video demonstrating two possible methods of how to do this. The recording is embedded below:\n\n\n\n\nA template of all of the code used in the above video can be found in the ADA_RStudio_connect GitHub repo.\nKey takeaways from the video and example code:\n\nThe main change here compared to connecting to SQL databases is the connection method. The installation and setup of the ODBC driver are all done pre-code, and the only part of the code that will need updating is your connection (usually your con variable).\nIf your existing code was pulling in tables from SQL via the RODBC package or the dbplyr package, then this code should in theory run with minimal edits needed.\nIf you were writing tables back into SQL from R, this is where your code may need the most edits.\nIf your code is stored in a repo where multiple analysts contribute to and run the code, in order for the code to run for everyone you will all need to individually install the ODBC driver and give it the same name so that when the con variable is called, the name used in the code matches everyone’s individual driver and runs for everyone. If this is the case, please add a note about this to your repo’s readme file to help your future colleagues.\n\n\n\n\n\n Back to top",
     "crumbs": [
       "ADA and Databricks",
-      "Databricks and version control"
+      "Setup Databricks personal compute cluster with RStudio"
     ]
   },
   {
-    "objectID": "ADA/git_databricks.html#why-should-i-use-git-with-databricks",
-    "href": "ADA/git_databricks.html#why-should-i-use-git-with-databricks",
-    "title": "Databricks and version control",
-    "section": "Why should I use git with Databricks?",
-    "text": "Why should I use git with Databricks?\nFor analytical projects developed on Databricks in the DfE, we recommend using git and Azure DevOps for sharing, collaborating and proper version control of work.\n\nEasier collaboration\n\nWhen you’re working on notebooks in Databricks without a git connection, they tend to be saved in your own personal Workspace. This means that they are only accessible by you, unless you share them. This has the potential to cause issues if someone needs to run any code you have stored in a notebook within Databricks e.g. when you leave your current team, take non-working days or annual leave, team members will not be able to access any of your code stored in your notebooks on Databricks. If the notebooks are stored in a Github or Azure DevOps repo, your team can all access them by cloning the repo in Databricks.\n\n\n\n\n\nVersion control\n\nDatabricks autosaves your notebooks as you’re working on them, making version control more difficult. If you use git, you’ll be able to see the full version history of your work and easily roll back to older versions if you need to. It also significantly helps simplify switching between different methodologies as well as facilitating proper code QA and review.",
+    "objectID": "ADA/databricks_rstudio_sql_warehouse.html",
+    "href": "ADA/databricks_rstudio_sql_warehouse.html",
+    "title": "Setup Databricks SQL Warehouse with RStudio",
+    "section": "",
+    "text": "The following instructions set up an ODBC connection between your laptop and your DataBricks SQL warehouse, which can then be used in R/RStudio to query data using an ODBC based package. SQL Warehouses are able to run SQL and can be used within the DataBricks environment, or through RStudio to run SQL code. The sparklyr package can also be used from within RStudio (only) as it converts the request for data to Spark SQL behind the scenes.\n\n\n\nPre-requisites\n\nYou must have:\n\nAccess to Databricks\nAccess to a SQL Warehouse on DataBricks\nR and RStudio downloaded\n\n\n\n\nDownloading an ODBC driver\n\n\nInstall the ‘Simba Spark ODBC’ driver from the software centre.\n\nOpen the Software Centre via the start menu.\nIn the ‘Applications’ tab, click ‘Simba Spark ODBC Driver 64-bit’. \nClick install.\n\nGet connection details for the SQL Warehouse from Databricks. To set up the connection you will need a few details from a SQL Warehouse within DataBricks.\n\nLogin to Databricks\nClick on the ‘SQL Warehouses’ tab in the sidebar. \nClick on the name of the warehouse you want to connect to, and click the ‘connection details’ tab.\nMake a note of the ‘Server hostname’, ‘Port’, and ‘HTTP Path’.\n\nGet a personal access token from Databricks for authentication.\n\nIn Databricks, click on your email address in the top right corner, then click ‘User settings’.\nGo to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button. \nClick the ‘Generate new token’ button.\nName the token, then click ‘Generate’. Note that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate.\nMake a note of the ‘Databricks access token’ it has given you. It is important to copy this somewhere as you will not be able to see it through Databricks again.\n\nSetup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.\n\nIn the start menu, search ‘ODBC’ and open ‘ODBC Data Sources (64-bit)’.\nOn the ‘User DSN’ tab click the ‘Add…’ button.\nIn the ‘Create New Data Source’ window, select ‘Simba Spark ODBC Driver’ and click ‘Finish’.\nIn the ‘Simba Spark ODBC Driver DSN Setup’ window,\n\nEnter a ‘Data Source Name’ and ‘Description’. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio. As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.\nSet the remaning options to the settings below.\n\nEnter the ‘Server Hostname’ for your cluster in the ‘Host(s):’ field (you noted this down in step 2).\nIn the Port section, remove the default number and use the Port number you noted in step 2.\nSet the Authentication Mechanism to ‘User Name and Password’.\nEnter the word ‘token’ into the ‘User Name:’ field, then enter your ‘Databricks access token’ in the ‘Password:’ field.\nChange the Thrift Transport option to HTTP.\nClick the ‘HTTP Options…’ button and enter the ‘HTTP Path’ of your Databricks cluster, then click ‘Okay’.\nClick the ‘SSL Options…’ button and tick the ‘Enable SSL’ box, then click the ‘OK’ button.\n\n\nClick the ‘Test’ button to verify the connection has worked. You should see the following message. If you get an error here, repeat steps 5.e.i – 5.e.ix again and ensure all the values are correct.\n\n\n\nClick the ‘OK’ button to exit the ‘Test Results’ window, then the ‘OK’ button in the ‘Simba Spark ODBC Driver DSN Setup’ window.\n\n\nConnect through RStudio. Watch the below video and view the ADA_RStudio_connect GitHub repo for methods on connecting to Databricks and querying data from RStudio.\n\n\n\n\nPulling data into R studio from Databricks\n\nOnce you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video demonstrating two possible methods of how to do this. The recording is embedded below:\n\n\n\n\nA template of all of the code used in the above video can be found in the ADA_RStudio_connect GitHub repo.\nKey takeaways from the video and example code:\n\nThe main change here compared to connecting to SQL databases is the connection method. The installation and setup of the ODBC driver are all done pre-code, and the only part of the code that will need updating is your connection (usually your con variable).\nIf your existing code was pulling in tables from SQL via the RODBC package or the dbplyr package, then this code should in theory run with minimal edits needed.\nIf you were writing tables back into SQL from R, this is where your code may need the most edits.\nIf your code is stored in a repo where multiple analysts contribute to and run the code, in order for the code to run for everyone you will all need to individually install the ODBC driver and give it the same name so that when the con variable is called, the name used in the code matches everyone’s individual driver and runs for everyone. If this is the case, please add a note about this to your repo’s readme file to help your future colleagues.\n\n\n\n\n\n Back to top",
     "crumbs": [
       "ADA and Databricks",
-      "Databricks and version control"
-    ]
-  },
-  {
-    "objectID": "ADA/git_databricks.html#github-or-azure-devops",
-    "href": "ADA/git_databricks.html#github-or-azure-devops",
-    "title": "Databricks and version control",
-    "section": "Github or Azure DevOps?",
-    "text": "Github or Azure DevOps?\nEither Github or Azure DevOps repos can be used in connection with Databricks, but we advise you to follow the guidance relating to public and private repos in our What is git for? section.",
-    "crumbs": [
-      "ADA and Databricks",
-      "Databricks and version control"
-    ]
-  },
-  {
-    "objectID": "ADA/git_databricks.html#is-it-safe",
-    "href": "ADA/git_databricks.html#is-it-safe",
-    "title": "Databricks and version control",
-    "section": "Is it safe?",
-    "text": "Is it safe?\nThe connection between git and Databricks is established using a secure access token from your git account, which means it is safe. You will need to renew your access token after a given period of time - if you do not, then your connection between git and Databricks will no longer work.\nAdditionally, when you commit and push notebooks through the Databricks interface, it will automatically clear any output cells from your notebook, meaning that you cannot accidentally include any unpublished data in there.",
-    "crumbs": [
-      "ADA and Databricks",
-      "Databricks and version control"
-    ]
-  },
-  {
-    "objectID": "ADA/git_databricks.html#prerequisites",
-    "href": "ADA/git_databricks.html#prerequisites",
-    "title": "Databricks and version control",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nAn Azure DevOps account and access to the repo you need to connect to\nA Databricks account and access to your notebooks",
-    "crumbs": [
-      "ADA and Databricks",
-      "Databricks and version control"
-    ]
-  },
-  {
-    "objectID": "ADA/git_databricks.html#getting-set-up",
-    "href": "ADA/git_databricks.html#getting-set-up",
-    "title": "Databricks and version control",
-    "section": "Getting set up",
-    "text": "Getting set up\n\nAccess Tokens\nAccess tokens are long strings of numbers and letters that act like a password between two services. They identify the user and their permissions from one service to another.\nIn this case, we will generate an access token in DevOps and give it to Databricks. To generate your Azure DevOps access token, go to DevOps and click the user settings icon to the left of your initials in the top right of your screen - it looks like a person with a cog next to them:\n\nIn the user settings menu, click Personal Access Tokens. On the screen that appears, click the blue “New Token” button in the top right:\n\nThe following window should appear:\n\n\nGive the token a sensible name so that you can identify it in your list of tokens.\nThe organisation field should be pre-populated for you, this can be left alone.\nYou can modify the expiration date. Every time the token expires, you will have to follow this guidance again to set up a new token and reconnect to git, so choose something sensible.\nYou should make sure that “Full access” is selected under the Scopes heading.\n\nWhen you have entered all of the required information, click “Create” at the bottom of the window.\nA “Success!” window will open containing your new access token. You must copy the token immediately, as you will not be able to access it again once this window is closed. If you fail to copy the token, you will have to regenerate a new one.\n\n\n\n\n\nConnecting to Databricks\nNow that you have your access token, you should go straight to Databricks. In the top right corner of the Databricks window, click your username and then “User Settings”:\n\nYou should then select “Linked Accounts” from the User menu on the left. The following page will open:\n\n\nWe recommend immediately pasting your copied access token into the “Token” field at the bottom of the page to avoid losing it.\nGit provider should be set as “Azure DevOps Services (Personal Access Token)”\nEnter your email into the “Git provider username or email” field\n\nYou can then click Save at the bottom of the page, and now your connection between Azure DevOps and Databricks is established!\n\n\n\n\n\nConnecting to repos and cloning\nJust like any other way that you’ve worked with git before, the first step is going to be to clone your repo inside Databricks.\nIn the blue menu on the left, click Workspace, and then in the Workspace menu that appears, click Repos. The menus should look like this:\n\nOn the Repos screen, click the grey “Add repo” button in the top right corner. The “Add Repo” window will appear:\n\n\nYou will first need to go to Azure DevOps and copy the link to clone the repo as you usually would\nPaste this link into the “Git repository URL” field\nUnder “Git Provider”, select “Azure DevOps Services”\nThe “Repository name” field should be automatically populated when you enter the URL.\n\nYou can then click “Create Repo”. When the repo is created, you will be able to see it under your name in the Repos menu:\n\n\nSparse checkout and Cone Patterns\nDatabricks cannot clone very large repos. It is best practice not to have a repo of this size, but if you attempt to clone a large repo, you will receive an error message. In this instance, you will need to perform a sparse checkout. This only clones a selection of items in your repo. To do this, select the “Advanced” option when in the “Add repo” menu, and tick the “Sparse checkout mode” option. You can tell Databricks which elements of the repo you would like it to clone, and you can do this by specifying something called Cone Patterns. If you do not specify any Cone Patterns, then the Databricks default is to clone only files in the root folder, but none from any subdirectories. To specify your own Cone Patterns, enter them in the box provided. You can enter multiple patterns but if the folders that they refer to contain more than 800MB of data then your clone will continue to fail.\nYou might define your Cone Patterns as something like:\nfolder_a folder_b/subfolder_c\nThe second example will only clone subfolder_c and not the rest of the contents of folder_b.\nPlease note: You cannot currently disable sparse checkout mode once it is enabled, but you can modify Cone Patterns. If you create a new folder, you must add it to your Cone Pattern list before you can commit and push. You can find more information on sparse checkout and Cone Patterns on the Databricks website.",
-    "crumbs": [
-      "ADA and Databricks",
-      "Databricks and version control"
-    ]
-  },
-  {
-    "objectID": "ADA/git_databricks.html#folders-in-databricks",
-    "href": "ADA/git_databricks.html#folders-in-databricks",
-    "title": "Databricks and version control",
-    "section": "Folders in Databricks",
-    "text": "Folders in Databricks\nTo be able to add your notebooks to a repo, you need to make sure that you save them in the correct place. In Databricks, you have your Workspace. Inside your Workspace is your “local” Users folder, and your repos. In the image below, the User folder is highlighted blue:\n\nYou can think of your User folder as being a bit like “My Documents” on your laptop. When you save things there, only you can see and access them. Git cannot “see” things inside your User folder. However, git can see things inside your Repos folder. This means that when you save something in your Repos folder, it can be committed and pushed to git. It is therefore good practice to always save notebooks in your Repos folder instead of in your User folder.",
-    "crumbs": [
-      "ADA and Databricks",
-      "Databricks and version control"
-    ]
-  },
-  {
-    "objectID": "ADA/git_databricks.html#git-pull-commit-and-push-in-databricks",
-    "href": "ADA/git_databricks.html#git-pull-commit-and-push-in-databricks",
-    "title": "Databricks and version control",
-    "section": "Git pull, commit, and push in Databricks",
-    "text": "Git pull, commit, and push in Databricks\n\nGit pull\nYou can access the menu to pull, commit and push from several places within Databricks. This interface is the same whether you’re working with a DevOps repo or a Github repo.\nAt the top of any notebook that’s saved in a repo, you’ll see a little grey branch icon with the name of a repo next to it. In the case of this notebook, it’s on the main branch:\n\nYou can also access the git menu by clicking the branch name next to the repo name within the Repos folder:\n\nIf you click the branch name, it’ll open the git interface within Databricks:\n\nFrom here, you can perform git pull by clicking the pull icon in the top right. There is a dropdown menu in the top left corner that allows you to change the branch or create a new branch if required.\n\n\n\n\n\nGit commit and push\nWhen you have made changes to a notebook, it will appear in the Changes section of the git interface. You can also see the actual changes that have been made in the right hand box to make sure that you’re committing the correct file:\n\nIn Databricks, you commit and push as one action, rather than as two separate ones. Enter your commit message into the “Commit message” box (you can ignore the Description box) and click the “Commit & Push” button.\n\n\n\nAdditional git commands in the Databricks interface\nYou can access additional git features such as merge, rebase and reset directly within the Databricks interface by clicking the 3 dots in the menu as shown in the image below:\n\nWhen merging, you are also able to resolve merge conflicts inside Databricks itself.\nPlease be warned that we would usually advise against using git reset as you can permanently lose changes you’ve made and this cannot be undone.\nThere is additional guidance on each of these advanced features in the Databricks manual. Please use git reset with caution as you can easily lose recent changes when performing this action.",
-    "crumbs": [
-      "ADA and Databricks",
-      "Databricks and version control"
+      "Setup Databricks SQL Warehouse with RStudio"
     ]
   },
   {

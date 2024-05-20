@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analysts’ Guide - Setup Databricks with RStudio</title>
+<title>Analysts’ Guide - Setup Databricks personal compute cluster with RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../ADA/git_databricks.html" rel="next">
-<link href="../ADA/ada.html" rel="prev">
+<link href="../ADA/databricks_rstudio_sql_warehouse.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -110,7 +110,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">ADA and Databricks</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio.html">Setup Databricks with RStudio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">ADA and Databricks</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_personal_cluster.html">Setup Databricks personal compute cluster with RStudio</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -399,8 +399,14 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ADA/databricks_rstudio.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Setup Databricks with RStudio</span></a>
+  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup Databricks SQL Warehouse with RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Setup Databricks personal compute cluster with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -425,14 +431,14 @@ cookieconsent.run({
   <li><a href="#downloading-an-odbc-driver" id="toc-downloading-an-odbc-driver" class="nav-link" data-scroll-target="#downloading-an-odbc-driver">Downloading an ODBC driver</a></li>
   <li><a href="#pulling-data-into-r-studio-from-databricks" id="toc-pulling-data-into-r-studio-from-databricks" class="nav-link" data-scroll-target="#pulling-data-into-r-studio-from-databricks">Pulling data into R studio from Databricks</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_personal_cluster.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">ADA and Databricks</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio.html">Setup Databricks with RStudio</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">ADA and Databricks</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_personal_cluster.html">Setup Databricks personal compute cluster with RStudio</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Setup Databricks with RStudio</h1>
+<h1 class="title">Setup Databricks personal compute cluster with RStudio</h1>
 </div>
 
 
@@ -450,8 +456,8 @@ cookieconsent.run({
 
 
 <p class="text-muted">
-The following instructions set up an ODBC connection between your laptop and your DataBricks cluster, which can then be used in R/RStudio to query data using an ODBC based package.
-</p>
+</p><p>The following instructions set up an ODBC connection between your laptop and your DataBricks cluster, which can then be used in R/RStudio to query data using an ODBC based package or <code>sparklyr</code>. Personal clusters are able to run SQL, R, python and scala. They can be used within the DataBricks environment, or through R studio and can be set up yourself if you don’t have access to a SQL warehouse or shared cluster.</p>
+<p></p>
 <hr>
 <section id="pre-requisites" class="level1">
 <h1>Pre-requisites</h1>
@@ -459,7 +465,7 @@ The following instructions set up an ODBC connection between your laptop and you
 <p>You must have:</p>
 <ul>
 <li>Access to Databricks</li>
-<li>Access to a SQL Warehouse on DataBricks</li>
+<li>Access to a personal cluster on DataBricks</li>
 <li>R and RStudio downloaded</li>
 </ul>
 <hr>
@@ -474,11 +480,12 @@ The following instructions set up an ODBC connection between your laptop and you
 <li><p>In the ‘Applications’ tab, click ‘Simba Spark ODBC Driver 64-bit’. <img src="../images/databricks-software-centre.png" class="img-fluid"></p></li>
 <li><p>Click install.</p></li>
 </ol></li>
-<li><p>Get connection details for the SQL Warehouse from Databricks. To set up the connection you will need a few details from a SQL Warehouse within DataBricks.</p>
+<li><p>Get connection details for the cluster from Databricks. To set up the connection you will need a few details from your cluster within DataBricks.</p>
 <ol type="i">
 <li><p>Login to <a href="https://adb-6882499576863257.17.azuredatabricks.net/?o=6882499576863257" target="_blank">Databricks</a></p></li>
-<li><p>Click on the ‘SQL Warehouses’ tab in the sidebar. <img src="../images/databricks-SQL-warehouses.png" class="img-fluid"></p></li>
-<li><p>Click on the name of the warehouse you want to connect to, and click the ‘connection details’ tab.</p></li>
+<li><p>Click on the ‘Compute’ tab in the sidebar. <img src="../images/databricks-compute.png" class="img-fluid"></p></li>
+<li><p>Click on the name of the cluster you want to connect to, and click the ‘Advanced options’ at the bottom of the cluster page.</p></li>
+<li><p>Click the ‘JDBC/ODBC’ tab under ‘Advanced options’</p></li>
 <li><p>Make a note of the ‘Server hostname’, ‘Port’, and ‘HTTP Path’.</p></li>
 </ol></li>
 <li><p>Get a personal access token from Databricks for authentication.</p>
@@ -1095,8 +1102,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../ADA/ada.html" class="pagination-link" aria-label="Analytical Data Access (ADA) and databricks">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Analytical Data Access (ADA) and databricks</span>
+      <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="pagination-link" aria-label="Setup Databricks SQL Warehouse with RStudio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setup Databricks SQL Warehouse with RStudio</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1113,7 +1120,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_personal_cluster.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>
