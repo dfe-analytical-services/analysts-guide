@@ -44,6 +44,9 @@ The ambition is to enable access to all datasets across DfE and ESFA and retire 
 
 See the [ADA support page on how Databricks works](https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works).
 
+## Differences between IDEs and Notebooks
+
+RStudio is an IDE (Integrated Development Environment) whereas Databricks makes use of Notebooks, where you write your code in blocks contained in individual cells. There are advantages and disadvantages to both methods, and [this NHS-R article](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/notebooks_versus_ide_development/#what-is-this-guide-for) outlines some of the differences you might come across when switching from using IDEs to Notebooks. 
 
 ---
 
