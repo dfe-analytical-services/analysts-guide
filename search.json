@@ -881,6 +881,17 @@
     ]
   },
   {
+    "objectID": "ADA/ada.html#differences-between-ides-and-notebooks",
+    "href": "ADA/ada.html#differences-between-ides-and-notebooks",
+    "title": "Analytical Data Access (ADA) and databricks",
+    "section": "Differences between IDEs and Notebooks",
+    "text": "Differences between IDEs and Notebooks\nRStudio is an IDE (Integrated Development Environment) whereas Databricks makes use of Notebooks, where you write your code in blocks contained in individual cells. There are advantages and disadvantages to both methods, and this NHS-R article outlines some of the differences you might come across when switching from using IDEs to Notebooks.",
+    "crumbs": [
+      "ADA and Databricks",
+      "Analytical Data Access (ADA) and databricks"
+    ]
+  },
+  {
     "objectID": "ADA/ada.html#walkthrough-a-simple-analysis",
     "href": "ADA/ada.html#walkthrough-a-simple-analysis",
     "title": "Analytical Data Access (ADA) and databricks",
