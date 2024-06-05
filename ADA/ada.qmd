@@ -23,7 +23,7 @@ It brings together:
 
 As long as you're connected to the network - it's available to anyone who works for the Department of Education.
 
-See these [Databricks support notebooks](https://adb-6882499576863257.17.azuredatabricks.net/browse/folders/3070168888967918?o=6882499576863257#) for more detailed reference guides into how we have setup the service here at DfE, including more information on workspaces, environments, notebooks, clusters, catalogs etc. 
+See these [Databricks support notebooks](https://adb-2220072380334347.7.azuredatabricks.net/browse/folders/4213691640199507?o=2220072380334347) for more detailed reference guides into how we have setup the service here at DfE, including more information on workspaces, environments, notebooks, clusters, catalogs etc. Please note that you will need a Databricks account to access these. 
 
 
 ---
