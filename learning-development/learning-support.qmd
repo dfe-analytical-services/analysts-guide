@@ -67,7 +67,7 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 **Google and other web-search engines are the single most powerful learning resource out there**, whether it leads you to a Stack Overflow answer to your problem, or to an online training course, it will have your needs covered. We appreciate that it can be daunting and overwhelming at first though, which is why we're pooling together links to particularly relevant resources on this page. Let us know if there's any you'd like to see added!
 
-- [The DfE Analytics Academy online R training course](https://trello.com/invite/b/QdDx3VmA/96f273b3438db2bb8ee5feae3943c3d4/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"} - walks you through how to get set up with R, as well as setting tasks using DfE data to learn fundamental skills in R.
+- [The DfE Analytics Academy online R training course](https://educationgovuk.sharepoint.com/sites/AnalyticsAcademy798){target="_blank" rel="noopener noreferrer"} - walks you through how to get set up with R, as well as setting tasks using DfE data to learn fundamental skills in R.
 
 - [How to QA](https://dfe-analytical-services.github.io/how-to-qa/index.html){target="_blank" rel="noopener noreferrer"} - a general guide to quality assurance best practice in DfE.
 
