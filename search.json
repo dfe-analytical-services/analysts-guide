@@ -1197,7 +1197,7 @@
     "href": "learning-development/r.html#best-places-to-start",
     "title": "R",
     "section": "Best places to start",
-    "text": "Best places to start\n\nThe DfE Analytics Academy host an online R training course on trello. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.\nNote if you have not accessed analytics academy before, you will need to log in or create a free trello account and request access the first time you open the link, and one of the admins will approve your request.\nThere is also the DfE R training guide, which is a great starting point and reference to guide you through how to get started using R and RStudio.\nAs an alternative, with a number of options for beginners to R, RStudio Education provide a variety of materials to suit different learning styles.",
+    "text": "Best places to start\n\nThe DfE Analytics Academy host an online R training course on SharePoint. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.\n\nThere is also the DfE R training guide, which is a great starting point and reference to guide you through how to get started using R and RStudio.\nAs an alternative, with a number of options for beginners to R, RStudio Education provide a variety of materials to suit different learning styles.",
     "crumbs": [
       "Learning resources",
       "R"
