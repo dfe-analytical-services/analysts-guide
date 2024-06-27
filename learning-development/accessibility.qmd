@@ -1,0 +1,36 @@
+---
+title: "Accessibility"
+---
+
+<p class="text-muted">Some quick links and tips for increasing awareness of accessibility in digital content</p>
+
+---
+
+Accessibility tools you can use
+
+If wanting to check anything around colour:
+	- Contrast - webaim / https://jansensan.github.io/color-contrast-matrix/
+	- Colour blindness -
+	- Colour blindness simulation - 
+	- Greyscale - 
+
+Helpful browser addins
+
+These 'bookmarklets' are bookmarks that instead of saving a URL to a page, save a piece of Javascript code that executes on the page you are looking at, usually to highlight specific mark up. Very nifty!
+
+	- Links
+
+Free accessibility tools
+	- Axe devtools, chrome extension / free download, we recommend (and I believe GDS tend to recommend too)
+	- Google Lighthouse, lowest effort, and will catch some basic things, though doesn't cover everything
+
+Worth also noting that no automated tools fully cover accessibility, manual testing is always required, so if you want to do manual testing have a look at:
+
+Screen reader
+	- NVDA (free to download)
+
+Voice activation
+	- Dragon is a paid for licence, though available through the empathy lab
+
+Magnifier
+Built into windows? Check
