@@ -569,11 +569,9 @@ mutated <- mutate(mtcars, new_var = wt ** 2)
 
 ---
 
-This error will appear when trying to restore old package versions using `renv::restore()`. It is usually due to Rtools not being properly installed, and therefore your system is struggling to install the older version of the package that hasn't been provided by CRAN.ware centre. 
+This error will appear when trying to restore old package versions using `renv::restore()`. It is usually due to Rtools not being properly installed, and therefore your system is struggling to install the older version of the package that hasn't been provided by CRAN. 
 
-The solution takes a few minutes, but is relatively straightforward, you can [install Rtools as a direct download from CRAN](https://cran.r-project.org/bin/windows/Rtools/). On there, pick the right version of RTools for your version of R, download the file and install.
-
-Set the install location to your c drive, for example, if installing for R4.2.2, install RTools42 to `C:\rtools42` (this is the default location).
+The solution takes a few minutes, but is relatively straightforward, you can install Rtools as a direct download from the Software Centre. On there, pick the right version of RTools for your version of R and install the application.
 
 Once it's installed close and reopen RStudio and run `renv::restore()` again - it should hopefully now restore and install your packages successfully!
 
