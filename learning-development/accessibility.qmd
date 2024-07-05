@@ -9,9 +9,14 @@ title: "Accessibility"
 
 ## Accessibility in DfE
 
+Everyone has a part to play in ensuring that the content and digital services the DfE provides to it's customers and colleagues are accessible. Everyone should have an understanding of their responsibilities to comply with the [Public Sector Bodies Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/contents/made) and the [Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/). Moreover, everyone should also understand the important and critical difference this makes to the everyday lives of millions of people.
+
 DfE have our own [Digital Accessibility Hub](https://educationgovuk.sharepoint.com/sites/lvewp00043) filled with helpful information on making the digital world more accessible.
 
 There are also the [DfE design manual](https://design.education.gov.uk), which has been created by the digital teams at DfE and includes [DfE's digital accessibility guidance](https://design.education.gov.uk/accessibility).
+
+
+If you want to estimate or try to appreciate just how many people might have specific needs, there is the [How many people? tool](https://design.education.gov.uk/tools/how-many-users), simply enter how many people your audience is, and it will give you best estimates of how many people might have a disability, impairment or other characteristics which might affect how they use your service. 
 
 ---
 
@@ -24,7 +29,7 @@ Contrast:
 
 Colour blindness:
 
-- [Adobe colour accessibility (gives a pass / fail)](https://color.adobe.com/create/color-accessibility)
+- [Adobe colour accessibility (gives a pass / fail)](https://color.adobe.com/create/color-accessibility/)
 - [Coblis (simulates colour blindness for uploaded images)](https://www.color-blindness.com/coblis-color-blindness-simulator/)
 - [ColourBlindCheck (R package for simulating colour blindness for a colour palette)](https://github.com/Nowosad/colorblindcheck)
 
@@ -39,7 +44,7 @@ For more advice about colour in charts and visualisations specifically, includin
 
 ## Free tools for reviewing web pages
 
-- [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?pli=1), free chrome extension and paid versions, we recommend this (and GDS tend to recommend too)
+- [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?pli=1), free Google Chrome extension and paid versions, we recommend this (and GDS tend to recommend too)
 
 - [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview), built into Google Chrome browser, and will catch some basic accessibility things amongst other web related issues
 
@@ -51,9 +56,9 @@ For more advice about colour in charts and visualisations specifically, includin
 
 No automated tools fully cover accessibility, manual testing is always required, so if you want to do manual testing have a look at testing out the assistive software commonly used by users yourself.
 
-Magnifier:
+Magnifiers / advanced zoom:
 
-- Built into Windows ([guidance for how to turn on Magnifier](https://support.microsoft.com/en-gb/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198#:~:text=To%20quickly%20turn%20on%20Magnifier,turn%20on%20the%20Magnifier%20switch.))
+- Windows Magnifier, comes as standard with Windows ([guidance for how to turn on Magnifier](https://support.microsoft.com/en-gb/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198#:~:text=To%20quickly%20turn%20on%20Magnifier,turn%20on%20the%20Magnifier%20switch.))
 - [ZoomText](https://www.freedomscientific.com/products/software/zoomtext/), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
 
 Screen reader:
@@ -64,6 +69,11 @@ Screen reader:
 Voice activation:
 
 - [Dragon](https://www.nuance.com/en-gb/dragon.html), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
+
+
+Cognitive load:
+
+- While there isn't commonly used specific assistive technology for aiding users in reducing cognitive load, you can take many steps to reduce the cognitive load for users on your service, making it simpler to use for all. Have a read of [Cognitive Load as a Guide: 12 Spectrums to Improve Your Data Visualisations](https://nightingaledvs.com/cognitive-load-as-a-guide-12-spectrums-to-improve-your-data-visualizations/) as a starting point if you want to learn more.
 
 Along with devices and the software mentioned above, the [experience lab in the Sheffield DfE office](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx) also has a range of other equipment available, including access to a set of vision emulating glasses that you can wear to emulate different visual impairments.
 
