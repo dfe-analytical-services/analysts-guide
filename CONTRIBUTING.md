@@ -52,7 +52,7 @@ In Markdown, you can add links using the following syntax:
     
 In Quarto, you can also include links within various contexts, such as code blocks or embedded within other content structures, depending on the complexity of your document. However, the basic Markdown link syntax will generally cover most use cases.
  
- ![Example for adding links](images/adding_links_example.png){width=300px}
+ ![Example for adding links](images/adding_links_example.png){width=300}
  
  #### Adding videos / other content
  
@@ -61,9 +61,15 @@ In Quarto, you can also include links within various contexts, such as code bloc
 ##### **Adding Videos**
 You can embed videos in Quarto documents using HTML, Markdown, or specialised Quarto syntax. Here are some methods:
 
-1. Using the {{< video >}} shortcode.
+1. Using a shorcode:
+``` {.markdown shortcodes="false"} 
+{{< video url >}}
+``` 
   - For example, here we embed a YouTube video:
-
+ 
+``` {.markdown shortcodes="false"} 
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}} 
+``` 
 {{< video https://www.youtube.com/embed/wo9vZccmqwc >}} 
 
 2. Embedding videos in other formats:
