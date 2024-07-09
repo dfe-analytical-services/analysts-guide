@@ -52,7 +52,7 @@ In Markdown, you can add links using the following syntax:
     
 In Quarto, you can also include links within various contexts, such as code blocks or embedded within other content structures, depending on the complexity of your document. However, the basic Markdown link syntax will generally cover most use cases.
  
- ![Example for adding links](images/adding_links_example.png){width=50%}
+ ![Example for adding links](images/adding_links_example.png){width=10%}
  
  #### Adding videos / other content
  
