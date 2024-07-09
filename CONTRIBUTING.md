@@ -43,12 +43,12 @@ In Quarto, adding links is straightforward using Markdown.
 In Markdown, you can add links using the following syntax:
 
  1. Inline Links:
-    [Link Text](https://example.com)
+    [Link Text] ``(https://example.com)``
 
  2. Reference Links:
     [Link Text][1]
 
-    [1]: https://example.com
+   `` [1]: https://example.com``
     
 In Quarto, you can also include links within various contexts, such as code blocks or embedded within other content structures, depending on the complexity of your document. However, the basic Markdown link syntax will generally cover most use cases.
  
@@ -71,9 +71,9 @@ You can embed videos in Quarto documents using HTML, Markdown, or specialised Qu
   - For other formats, a simple link to the video will be rendered.
 
 ##### **Adding Other Content**
- - Audio Files
+ - **Audio Files**:
  You can embed audio files using the HTML <audio> tag.
- - Interactive Content with HTML Widgets
+ - **Interactive Content with HTML Widgets**:
  Quarto supports various HTML widgets that can add interactive content to your document. 
 
 ##### Tips 
