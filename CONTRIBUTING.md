@@ -36,18 +36,68 @@ The visual editor has many more features that we haven’t enumerated here that 
 
 Most importantly, while the visual editor displays your content with formatting, under the hood, it saves your content in plain Markdown and you can switch back and forth between the visual and source editors to view and edit your content using either tool.
 
-
-
-
 #### Adding links (within page, within site, external to site)\]
 
-#### Adding videos / other content
+In Quarto, adding links is straightforward using Markdown.
+
+In Markdown, you can add links using the following syntax:
+
+ 1. Inline Links:
+    [Link Text](https://example.com)
+
+ 2. Reference Links:
+    [Link Text][1]
+
+    [1]: https://example.com
+    
+In Quarto, you can also include links within various contexts, such as code blocks or embedded within other content structures, depending on the complexity of your document. However, the basic Markdown link syntax will generally cover most use cases.
+ 
+ ![Example for adding links](adding_links_example/plot.png)
+ 
+ #### Adding videos / other content
+ 
+ In Quarto, you can add various types of content, including videos, to your documents. Here's how you can include videos and other content in a Quarto document when working with R Markdown.
+
+##### **Adding Videos**
+You can embed videos in Quarto documents using HTML, Markdown, or specialised Quarto syntax. Here are some methods:
+
+1. Using the {{< video >}} shortcode.
+  - For example, here we embed a YouTube video:
+
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}} 
+
+2. Embedding videos in other formats:
+  - In HTML formats the video will be embedded within the document.
+  - For other formats, a simple link to the video will be rendered.
+
+##### **Adding Other Content**
+ - Audio Files
+ You can embed audio files using the HTML <audio> tag.
+ - Interactive Content with HTML Widgets
+ Quarto supports various HTML widgets that can add interactive content to your document. 
+
+##### Tips 
+- **Relative Paths**:
+Use relative paths for local files to ensure your document remains portable. 
+
+- **Test Across Browsers**: Ensure multimedia content works across different browsers and devices. 
+
+- **Output Formats**: Verify that multimedia elements render correctly in the intended output formats (HTML, PDF, etc.). 
+
+By following these methods, you can effectively add videos, images, audio, and interactive content to your Quarto documents, enhancing their informativeness and engagement.
+
 
 #### Redirecting pages where changing / removing
 
+
+
 #### Checking for broken links when changing headings
 
+
+
 #### Building locally before raising a pull request
+
+
 
 #### Changing the appearance of code blocks
 
