@@ -34,6 +34,8 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Python](learning-development/python.html)
 - Guidance and tips for using Python
 
+[Accessibility](learning-development/accessibility.html)
+- Tools and resources for digital accessibility
 
 ## Statistics production
 
