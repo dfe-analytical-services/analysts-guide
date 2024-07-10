@@ -54,14 +54,14 @@ In Quarto, you can also include links within various contexts, such as code bloc
  
  ![Example for adding links](images/adding_links_example.png){width=300}
  
- #### Adding videos / other content
+#### Adding videos / other content
  
  In Quarto, you can add various types of content, including videos, to your documents. Here's how you can include videos and other content in a Quarto document when working with R Markdown.
 
 ##### **Adding Videos**
 You can embed videos in Quarto documents using HTML, Markdown, or specialised Quarto syntax. Here are some methods:
 
-1. Using a shorcode:
+1. Using a shortcode:
 ``` {.markdown shortcodes="false"} 
 {{< video url >}}
 ``` 
