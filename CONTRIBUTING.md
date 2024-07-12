@@ -95,14 +95,87 @@ By following these methods, you can effectively add videos, images, audio, and i
 
 #### Redirecting pages where changing / removing
 
+Redirecting pages in a Quarto project for R involves creating ``a _quart.yml`` configuration file where you can define redirects.
 
+1. **``Create/Edit_quarto.yml``** :
+Ensure you have a ``_quarto.yml`` file in your Quarto project.
+
+2. **``Add redirects``**:
+In ``_quarto.yml``, define redirects like this:
+                                    - From: ``old-page.html``
+                                    to:     ``new-page.html``
+                                  
+3. **``Render Project``** :
+Run ``quarto render`` in your project directory to apply changes.
+
+4.**``Verify``**:
+Test old URLs to ensure they redirect correctly.
+
+This sets up URL redirects for pages that have changed or been removed in your Quarto project.
 
 #### Checking for broken links when changing headings
 
+When changing headings in Quarto project, it's crucial to ensure that all links referencing these headings are still correct. Here's a quick guide to check for broken links:
 
+1. **Change Headings**: Update your headings in the relevant ``.qmd files``.
+
+2. **Run Quarto's Built-in Link Checker**: Quarto has a built in feauture to check for broken links. 
+
+Run the following command in your project directory: 
+
+```quarto check ```
+
+This command will scan your project for broken links and report any issues. 
+
+3. **Manually Update Links**: If any broken links are reported, update them to match the new headings. Use the correct anchors, which typically follow the format `#new-heading-text`. 
+
+4. **Re-render Project**: After updating links, re-render your project: ```quarto render ``` 
+
+5. **Double-Check**: Manually verify a few pages to ensure that the links work as expected. 
+
+### Example 
+
+If you changed a heading from `## Old Heading` to `## New Heading`, make sure all links like 
+`[link text](#old-heading)` are updated to `[link text](#new-heading)`. 
+By following these steps, you can efficiently check for and fix broken links when changing headings in your Quarto project.
 
 #### Building locally before raising a pull request
 
+Here's a streamlined guide for building your Quarto project locally before raising a pull request: 
+
+1. **Pull Latest Changes**: Make sure your local branch is up-to-date with the main branch. 
+                        ```git pull origin main ``` 
+
+2. **Make Your Changes**: Edit your `.qmd` files or other relevant files in the project. 
+
+3. **Build the Project Locally**: Render the entire project to catch any errors. 
+                          ```quarto render ``` 
+
+4. **Check for Errors and Warnings**: Review the console output and fix any issues. 
+
+5. **Preview the Project**: Open the generated files in a browser to ensure everything looks correct. 
+                          ```quarto preview ``` 
+
+6. **Check for Broken Links**: Use Quarto’s link checker to find and fix broken links. 
+                           ```quarto check ```
+
+7. **Commit Your Changes**: Add and commit your changes to your local repository. 
+              ```git add . git commit -m "Describe your changes" ``` 
+
+8. **Push Your Changes**: Push your changes to your feature branch. 
+                    ```git push origin your-feature-branch ``` 
+
+9. **Create a Pull Request**: Go to your repository platform (e.g., GitHub) and create a pull request from your feature branch to the main branch. 
+
+### Summary Workflow 
+1. **Update Local Repository**: ``` git pull origin main ``` 
+2. **Make Changes**. 
+3. **Build and Preview**: ```quarto render quarto preview ``` 
+4. **Check for Broken Links**: ```quarto check ``` 
+5. **Commit and Push**: ```git add . git commit -m "Describe your changes" git push origin your-feature-branch ``` 
+6. **Raise Pull Request**. 
+
+Following these steps ensures your changes are correctly implemented and verified locally, minimising potential issues during the review process.
 
 
 #### Changing the appearance of code blocks
