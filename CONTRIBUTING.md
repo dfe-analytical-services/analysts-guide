@@ -21,20 +21,23 @@ To get an overview of the project, read the [README](README.md). Here are some r
 
 For more information specific to how a quarto site works, and for examples of what is possible within a static quarto site, see the main [Quarto website](https://quarto.org/).
 
+Hadley Wickham's book, [R for Data Science](https://r4ds.had.co.nz/introduction.html), gives the following intro to Quarto: 
+
+> `"Quarto is an open-source scientific and technical publishing system. It allows you to create dynamic documents that weave together narrative text, code, and output, such as plots and tables."`
+
 #### Visual Editor
 
-The Visual editor in RStudio provides a WYSIWYM interface for authoring Quarto documents. Under the hood, prose in Quarto documents (.qmd files) is written in Markdown, a lightweight set of conventions for formatting plain text files. In fact, Quarto uses Pandoc markdown (a slightly extended version of Markdown that Quarto understands), including tables, citations, cross-references, footnotes, divs/spans, definition lists, attributes, raw HTML/TeX, and more as well as support for executing code cells and viewing their output inline. While Markdown is designed to be easy to read and write, it still requires learning new syntax.
-Therefore, if you’re new to computational documents like .qmd files but have experience using tools like Google Docs or MS Word, the easiest way to get started with Quarto in RStudio is the visual editor.
+The Visual Editor in RStudio offers a WYSIWYM (What You See Is What You Mean) interface for creating Quarto documents. These documents, saved as .qmd files, are written using Markdown—a lightweight syntax for formatting plain text. Specifically, Quarto employs Pandoc Markdown, an enhanced version of Markdown, which supports a variety of elements such as tables, citations, cross-references, footnotes, divs/spans, definition lists, attributes, raw HTML/TeX, and more. Additionally, Quarto allows for the execution of code cells with inline output display. Although Markdown is designed to be straightforward, it still necessitates learning some new syntax.
 
-In the visual editor you can either use the buttons on the menu bar to insert images, tables, cross-references, etc. or you can use the catch-all ⌘ + / or Ctrl + / shortcut to insert just about anything. If you are at the beginning of a line, you can also enter just / to invoke the shortcut.
+For those who are new to computational documents like .qmd files but have experience with tools like Google Docs or MS Word, the visual editor in RStudio is the most user-friendly way to begin working with Quarto. In the visual editor, you can use the toolbar buttons to insert images, tables, cross-references, and other elements. 
 
 #### Adding images (in the right folder, code to do so)
 
-Inserting images and customizing how they are displayed is also facilitated with the visual editor. You can either paste an image from your clipboard directly into the visual editor (and RStudio will place a copy of that image in the project directory and link to it) or you can use the visual editor’s Insert > Figure / Image menu to browse to the image you want to insert or paste it’s URL. In addition, using the same menu you can resize the image as well as add a caption, alternative text, and a link.
+The visual editor also simplifies inserting images and customizing their display. You can paste an image directly from your clipboard into the visual editor, which will save a copy of the image in your project directory and link to it. Alternatively, you can use the Insert > Figure / Image menu to browse for the image you want to insert or paste its URL. This menu also allows you to resize the image, add captions, alternative text, and links.
 
-The visual editor has many more features that we haven’t enumerated here that you might find useful as you gain experience authoring with it.
+The visual editor offers many additional features that become evident as you gain more experience with it.
 
-Most importantly, while the visual editor displays your content with formatting, under the hood, it saves your content in plain Markdown and you can switch back and forth between the visual and source editors to view and edit your content using either tool.
+Most importantly, while the visual editor displays your content with formatting, it saves everything in plain Markdown. You can easily switch between the visual and source editors to view and edit your content in either format.
 
 #### Adding links (within page, within site, external to site)\]
 
