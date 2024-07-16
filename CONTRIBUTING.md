@@ -41,9 +41,7 @@ Most importantly, while the visual editor displays your content with formatting,
 
 #### Adding links (within page, within site, external to site)\]
 
-In Quarto, adding links is straightforward using Markdown.
-
-In Markdown, you can add links using the following syntax:
+In Quarto, you can add links using the following Markdown syntax:
 
  1. Inline Links:
     [Link Text] ``(https://example.com)``
@@ -58,9 +56,6 @@ In Quarto, you can also include links within various contexts, such as code bloc
  ![Example for adding links](images/adding_links_example.png){width=300}
  
 #### Adding videos / other content
- 
- In Quarto, you can add various types of content, including videos, to your documents. Here's how you can include videos and other content in a Quarto document when working with R Markdown.
-
 ##### **Adding Videos**
 You can embed videos in Quarto documents using HTML, Markdown, or specialised Quarto syntax. Here are some methods:
 
@@ -88,6 +83,8 @@ You can embed videos in Quarto documents using HTML, Markdown, or specialised Qu
 ##### Tips 
 - **Relative Paths**:
 Use relative paths for local files to ensure your document remains portable. 
+
+In R, relative paths refer to file or directory paths specified in relation to the current working directory. Relative paths help manage current working files.
 
 - **Test Across Browsers**: Ensure multimedia content works across different browsers and devices. 
 
