@@ -23,7 +23,7 @@ It brings together:
 
 As long as you're connected to the network - it's available to anyone who works for the Department of Education.
 
-See these [Databricks support notebooks](https://adb-6882499576863257.17.azuredatabricks.net/browse/folders/3070168888967918?o=6882499576863257#) for more detailed reference guides into how we have setup the service here at DfE, including more information on workspaces, environments, notebooks, clusters, catalogs etc. 
+See these [Databricks support notebooks](https://adb-2220072380334347.7.azuredatabricks.net/browse/folders/4213691640199507?o=2220072380334347) for more detailed reference guides into how we have setup the service here at DfE, including more information on workspaces, environments, notebooks, clusters, catalogs etc. Please note that you will need a Databricks account to access these. 
 
 
 ---
@@ -44,6 +44,9 @@ The ambition is to enable access to all datasets across DfE and ESFA and retire 
 
 See the [ADA support page on how Databricks works](https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works).
 
+## Differences between IDEs and Notebooks
+
+RStudio is an IDE (Integrated Development Environment) whereas Databricks makes use of Notebooks, where you write your code in blocks contained in individual cells. There are advantages and disadvantages to both methods, and [this NHS-R article](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/notebooks_versus_ide_development/#what-is-this-guide-for) outlines some of the differences you might come across when switching from using IDEs to Notebooks. 
 
 ---
 

@@ -121,3 +121,6 @@ More detailed advice and guidance on content design best practice is available f
 - [How to get readability scores in Microsoft Word](https://support.office.com/en-gb/article/test-your-document-s-readability-85b4969e-e80a-4777-8dd3-f7fc3c8b3fd2)
 - Similarly, the [Hemingway app](http://www.hemingwayapp.com/) is an online tool to assess readability. Whilst we might not want to use this directly for final drafting, it is useful to highlight areas of particular complexity in our current narrative.
 - As an illustrative example of work in other Departments - [DWP's Fraud & Error statistics before](https://www.gov.uk/government/statistics/fraud-and-error-in-the-benefit-system-201213-estimates) (128 page release), and [DWP's Fraud & Error statistics after](https://www.gov.uk/government/statistics/fraud-and-error-in-the-benefit-system-financial-year-2017-to-2018-estimates) their own modernisation work are worth a look.
+- [Content design: writing for GOV.UK](https://www.gov.uk/guidance/content-design/writing-for-gov-uk)
+- [GOV.UK Technical Content Style Guide A-Z](https://www.gov.uk/guidance/style-guide/technical-content-a-to-z)
+- [GOV.UK Style Guide Terms A-Z](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style)

@@ -30,8 +30,7 @@ Download R (language) and RStudio (IDE) from the DfE software center. We also re
 
 ## Best places to start
 
-- The DfE Analytics Academy host an [online R training course on trello](https://trello.com/b/QdDx3VmA/analytics-academy-an-r-training-course){target="_blank" rel="noopener noreferrer"}. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.\
-**Note** if you have not accessed analytics academy before, you will need to log in or create a free trello account and request access the first time you open the link, and one of the admins will approve your request. 
+- The DfE Analytics Academy host an [online R training course on SharePoint](https://educationgovuk.sharepoint.com/sites/AnalyticsAcademy798){target="_blank" rel="noopener noreferrer"}. This is a great resource full of reproducible examples using DfE data. The course takes you through initially getting R downloaded, all the way through to developing apps in RShiny.\
 
 - There is also the [DfE R training guide](https://dfe-analytical-services.github.io/r-training-course/){target="_blank" rel="noopener noreferrer"}, which is a great starting point and reference to guide you through how to get started using R and RStudio.
 
@@ -713,17 +712,13 @@ mutated <- mutate(mtcars, new_var = wt ** 2)
 
 ## Troubleshooting
 
----
-
 ### Can't find make error
 
 ---
 
-This error will appear when trying to restore old package versions using `renv::restore()`. It is usually due to Rtools not being properly installed, and therefore your system is struggling to install the older version of the package that hasn't been provided by CRAN.ware centre. 
+This error will appear when trying to restore old package versions using `renv::restore()`. It is usually due to Rtools not being properly installed, and therefore your system is struggling to install the older version of the package that hasn't been provided by CRAN. 
 
-The solution takes a few minutes, but is relatively straightforward, you can [install Rtools as a direct download from CRAN](https://cran.r-project.org/bin/windows/Rtools/). On there, pick the right version of RTools for your version of R, download the file and install.
-
-Set the install location to your c drive, for example, if installing for R4.2.2, install RTools42 to `C:\rtools42` (this is the default location).
+The solution takes a few minutes, but is relatively straightforward, you can install Rtools as a direct download from the Software Centre. On there, pick the right version of RTools for your version of R and install the application.
 
 Once it's installed close and reopen RStudio and run `renv::restore()` again - it should hopefully now restore and install your packages successfully!
 
@@ -738,6 +733,23 @@ Packages are generally downloaded from CRAN using one of two methods: wininet or
 `RENV_DOWNLOAD_METHOD = "curl"`
 
 Then restart R-Studio and downloads with renv should now succeed.
+
+---
+
+### SSL certificate errors
+
+---
+
+The DfE firewall currently blocks access to external sites from DfE laptops when 
+connecting from common analytical software such as R or Python. This can prevent
+analysts from accessing important external resources such as package 
+repositories and data API endpoints. If you get an error including text along 
+the lines of "self signed SSL certificate not allowed" or anything similar 
+involving SSL certificates (or certs.), then contact the 
+[Statistics Development Team](mailto:statistics.development@education.gov.uk) 
+with a copy of the command that you're running and the error that it's 
+producing. We can then work with the Network Operations team to prevent this 
+being a blocker to your work.
 
 ---
 
@@ -784,6 +796,6 @@ That command should return the path that you entered for Chrome.
 
 ## Using R with ADA / Databricks
 
-See our [guidance on how to connect to Databricks from R Studio](../ADA/databricks_rstudio.html)
+See our [guidance on how to connect to Databricks SQL Warehouse from R Studio](../ADA/databricks_rstudio_sql_warehouse.html), and [how to connect to Databricks personal cluster from R studio](../ADA/databricks_rstudio_personal_cluster.html)
 
 You can also view example R code using the [Databricks code template notebooks](../ADA/ada.html#databricks-code-templates)

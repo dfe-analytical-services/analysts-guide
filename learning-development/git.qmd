@@ -40,7 +40,7 @@ When you first try to use Git you may be prompted for a GitHub username and pass
 
 - If you're new to Git and are unsure of what it does, then take a look through these [Git for humans slides](https://speakerdeck.com/alicebartlett/git-for-humans){target="_blank" rel="noopener noreferrer"}
 
-- David Sands' guide to [getting started with Git](https://web.microsoftstream.com/video/cc21863d-a6f8-4b53-b66c-1dfd012b8d79?list=studio){target="_blank" rel="noopener noreferrer"} is a helpful place to start.
+- David Sands' guide to [getting started with Git](https://web.microsoftstream.com/video/cc21863d-a6f8-4b53-b66c-1dfd012b8d79?list=studio){target="_blank" rel="noopener noreferrer"} is a helpful place to start. When watching video 03, do NOT run the code to change your proxy settings! Ignore this part of the video.
 
 - [Gooey Git](https://educationgovuk.sharepoint.com/sites/sarpi/g/WorkplaceDocuments/Forms/AllItems.aspx?id=%2Fsites%2Fsarpi%2Fg%2FWorkplaceDocuments%2FInducation%20learning%20and%20career%20development%2FCoffee%20and%20Coding%2F190220%5Fdavid%5Fgoeeygit%2Fgooey%5Fgit%2Ehtml&parent=%2Fsites%2Fsarpi%2Fg%2FWorkplaceDocuments%2FInducation%20learning%20and%20career%20development%2FCoffee%20and%20Coding%2F190220%5Fdavid%5Fgoeeygit){target="_blank" rel="noopener noreferrer"} by David Sands, provides a very neat overview of using git with R.
 

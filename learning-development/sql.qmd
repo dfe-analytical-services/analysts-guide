@@ -42,7 +42,7 @@ Andy Brook's excellent Introduction to SQL session, giving a visual overview of 
 
 ## Best practice
 
-Here are some tips to follow best practice in your SQL code, making it easier to read and pick up if another person is running your code. Following best practice guidance will help you to achieve RAP best practice with [clean final code](../RAP/rap.html#Clean_final_code)
+Here are some tips to follow best practice in your SQL code, making it easier to read and pick up if another person is running your code. Following best practice guidance will help you to achieve RAP best practice with [clean final code](../RAP/rap-statistics.html#clean-final-code).
 
 * Avoid any trailing whitespace
 * Always capitalize SQL keywords (e.g., SELECT or AS)

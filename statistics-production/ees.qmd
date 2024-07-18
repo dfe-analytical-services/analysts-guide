@@ -1268,7 +1268,7 @@ Any approved methodology changes will be published immediately so make sure you 
 ## Methodology amendments
 If you want to revise an existing methodology page you can amend the methodology which will generate a new version for you to edit.
 
-![](../images/EES-amend-methodology.PNG)
+![](../images/amend-methodology-new.PNG)
 
 Once you're happy with your amendment it just needs to be [approved](#sign-off) in the usual way for it to be published.
 
