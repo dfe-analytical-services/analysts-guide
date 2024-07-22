@@ -141,7 +141,7 @@ By following these steps, you can efficiently check for and fix broken links whe
 
 #### Building locally before raising a pull request
 
-Here's a streamlined guide for building your Quarto project locally before raising a pull request: 
+Here's a streamlined guide for building your Quarto project locally before raising a pull request (from the terminal): 
 
 1. **Pull Latest Changes**: Make sure your local branch is up-to-date with the main branch. 
                         ```git pull origin main ``` 
@@ -150,6 +150,8 @@ Here's a streamlined guide for building your Quarto project locally before raisi
 
 3. **Build the Project Locally**: Render the entire project to catch any errors. 
                           ```quarto render ``` 
+                          
+###### Note: While this guide presents a terminal-based workflow, there are equivalent commands available in the R console for those who prefer working within R. For example, you can use ```quarto_preview()``` in the R console to preview your Quarto project.
 
 4. **Check for Errors and Warnings**: Review the console output and fix any issues. 
 
@@ -167,13 +169,6 @@ Here's a streamlined guide for building your Quarto project locally before raisi
 
 9. **Create a Pull Request**: Go to your repository platform (e.g., GitHub) and create a pull request from your feature branch to the main branch. 
 
-### Summary Workflow 
-1. **Update Local Repository**: ``` git pull origin main ``` 
-2. **Make Changes**. 
-3. **Build and Preview**: ```quarto render quarto preview ``` 
-4. **Check for Broken Links**: ```quarto check ``` 
-5. **Commit and Push**: ```git add . git commit -m "Describe your changes" git push origin your-feature-branch ``` 
-6. **Raise Pull Request**. 
 
 Following these steps ensures your changes are correctly implemented and verified locally, minimising potential issues during the review process.
 
