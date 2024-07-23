@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -492,6 +492,7 @@ cookieconsent.run({
   <ul class="collapse">
   <li><a href="#specifying-a-version-of-r-to-use" id="toc-specifying-a-version-of-r-to-use" class="nav-link" data-scroll-target="#specifying-a-version-of-r-to-use">Specifying a version of R to use</a></li>
   <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding">Rounding</a></li>
+  <li><a href="#making-maps" id="toc-making-maps" class="nav-link" data-scroll-target="#making-maps">Making maps</a></li>
   <li><a href="#passing-variables-as-arguments" id="toc-passing-variables-as-arguments" class="nav-link" data-scroll-target="#passing-variables-as-arguments">Passing variables as arguments</a></li>
   <li><a href="#reverse-additive-filters" id="toc-reverse-additive-filters" class="nav-link" data-scroll-target="#reverse-additive-filters">Reverse additive filters</a></li>
   <li><a href="#file-locations" id="toc-file-locations" class="nav-link" data-scroll-target="#file-locations">File locations</a></li>
@@ -949,24 +950,175 @@ Guidance and tips for using the programming language R
 <p>To round numbers upwards in a way that is consistent with SQL and other programming languages, we recommend using the roundFiveUp() function in the <a href="https://github.com/dfe-analytical-services/dfeR" target="_blank" rel="noopener noreferrer">dfeR R package</a>.</p>
 <hr>
 </section>
+<section id="making-maps" class="level3">
+<h3 class="anchored" data-anchor-id="making-maps">Making maps</h3>
+<hr>
+<section id="boundary-files" class="level4">
+<h4 class="anchored" data-anchor-id="boundary-files">Boundary files</h4>
+<hr>
+<p>Most maps we’ll want to make will be based on boundaries provided from the <a href="https://geoportal.statistics.gov.uk/" target="_blank">Open Geography Portal</a>.</p>
+<p>Take heed of the homepage and details on the codes for map resolution, usually the ultra generalised BUC boundaries are the best option for us as they still provide plenty of detail but are far smaller in size than the other formats.</p>
+<p>Some examples of commonly used boundary files from the Open Geography Portal (based on latest available at time of writing, always make sure the year of the boundaries is the most relevant for your own data!):</p>
+<ul>
+<li>Parliamentary Constituency - <a href="https://geoportal.statistics.gov.uk/datasets/ef63f363ac824b79ae9670744fcc4307_0/explore" target="_blank">Westminster Parliamentary Constituencies (July 2024) Boundaries UK BUC</a></li>
+<li>Local authority - <a href="https://geoportal.statistics.gov.uk/datasets/4832bb99c4844971b111739be44f1bc5_0/explore" target="_blank">Counties and Unitary Authorities (December 2023) Boundaries UK BUC</a></li>
+<li>Local authority district - <a href="https://geoportal.statistics.gov.uk/datasets/fb6ab0ce776243339e45e33444f431c8_0/explore" target="_blank">Local Authority Districts (May 2024) Boundaries UK BUC</a></li>
+<li>Local skills improvement areas - <a href="https://geoportal.statistics.gov.uk/datasets/72bd510b46a7483194237ede9db0a267_0/explore" target="_blank">Local Skills Improvement Plan Areas (August 2023) Boundaries EN BUC</a></li>
+</ul>
+<p>When downloading the boundaries you’ll have a choice of file formats, we’d generally recommend the GeoPackage format as that comes as a single file, though both Shapefile (will get 4/5 files needed to read a single boundary layer) or GeoJSON (sometimes larger file size and needs more processing) are possible options too. There are numerous debates online about these that you can delve into if you so desire.</p>
+<p>If you want to edit the boundaries, whether that is to edit the coordinate system, file type or to simplify them at all, have a look at the <a href="https://mapshaper.org/" target="_blank">interactive website for mapshaper</a>, there’s also an accompanying <a href="https://andyteucher.ca/rmapshaper/" target="_blank">rmapshaper R package</a>.</p>
+<hr>
+</section>
+<section id="packages" class="level4">
+<h4 class="anchored" data-anchor-id="packages">Packages</h4>
+<hr>
+<p>Known package options for building maps are (note this is not an exhaustive list):</p>
+<ul>
+<li><a href="https://r.geocompx.org/adv-map" target="_blank">base R’s plot function</a></li>
+<li><a href="https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html" target="_blank">tmap</a></li>
+<li><a href="https://rstudio.github.io/leaflet/index.html" target="_blank">leaflet</a></li>
+<li><a href="https://walker-data.com/mapgl/" target="_blank">mapgl</a></li>
+</ul>
+<p>For interactive maps in dashboard <a href="https://rstudio.github.io/leaflet/index.html" target="_blank">leaflet</a> is most frequently used in DfE currently.</p>
+<p>The <a href="https://r-spatial.github.io/sf/" target="_blank">sf</a> package is usually needed for processing spatial data in R, be aware that the first time you install this it can take a number of minutes.</p>
+<hr>
+</section>
+<section id="example-shiny-app-with-map" class="level4">
+<h4 class="anchored" data-anchor-id="example-shiny-app-with-map">Example shiny app with map</h4>
+<hr>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shiny app ===================================================================</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimal example code for a shiny app with interactive map</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Can copy and paste into a single app.R file and run to test</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pre-processing of data (do this in a separate script to the app) ============</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load dependencies -----------------------------------------------------------</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet) <span class="co"># using leaflet for the interactive map</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># used for data processing</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># used for reading geospatial data</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Pre-process data before app -------------------------------------------------</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an example file using the locations look ups</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>example_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/main/data/lsips.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">example_count =</span> <span class="fu">sample</span>(<span class="dv">38</span>)) <span class="co"># number of rows in data frame</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull in boundary data from the Open Geography Portal</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Download GeoPackage format and save in repo from:</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># https://geoportal.statistics.gov.uk/datasets/72bd510b46a7483194237ede9db0a267_0/explore</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>boundary_data <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"Local_Skills_Improvement_Plan_Areas_August_2023_Boundaries_EN_BUC_3056517900557747412.gpkg"</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the data together and save ready for the app</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>map_data <span class="ot">&lt;-</span> boundary_data <span class="sc">%&gt;%</span> </span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(example_data, <span class="at">by =</span> <span class="fu">join_by</span>(LSIP23CD <span class="sc">==</span> lsip_code)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert coordinates to World Geodetic System </span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(map_data, <span class="st">"map_data.RDS"</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="co"># R Shiny App =================================================================</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Global.R file ---------------------------------------------------------------</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in map data</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>map_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"map_data.RDS"</span>)</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="co"># ui.R file -------------------------------------------------------------------</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Show interactive map</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">leafletOutput</span>(<span class="st">"example_map"</span>)</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="co"># server.R file ---------------------------------------------------------------</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>example_map <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Set the color scheme and scale</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>      pal_fun <span class="ot">&lt;-</span> <span class="fu">colorNumeric</span>(</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Blues"</span>, </span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">domain =</span> <span class="fu">c</span>(</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>          <span class="fu">min</span>(map_data<span class="sc">$</span>example_count), </span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>          <span class="fu">max</span>(map_data<span class="sc">$</span>example_count)</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Set a pop up</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>      map_popup <span class="ot">&lt;-</span> <span class="fu">paste</span>(</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>        map_data<span class="sc">$</span>example_count, </span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>        <span class="st">" example count for "</span>, </span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>        map_data<span class="sc">$</span>lsip_name</span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Create the map </span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>      map <span class="ot">&lt;-</span> <span class="fu">leaflet</span>(</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>        map_data, </span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Take off annoying scrolling, personal preference</span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>        <span class="at">options =</span> <span class="fu">leafletOptions</span>(<span class="at">scrollWheelZoom =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Set the basemap (this is a good neutral one)</span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>        <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.PositronNoLabels) <span class="sc">%&gt;%</span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Add the shaded regions</span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>        <span class="fu">addPolygons</span>(</span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>          <span class="at">weight =</span> <span class="dv">1</span>,</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>          <span class="at">fillColor =</span> <span class="fu">pal_fun</span>(map_data[[<span class="st">"example_count"</span>]]),</span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>          <span class="at">popup =</span> map_popup</span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Add a legend to the map</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>        <span class="fu">addLegend</span>(<span class="st">"topright"</span>,</span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>                  <span class="at">pal =</span> pal_fun,</span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>                  <span class="at">values =</span> <span class="sc">~</span>map_data[[<span class="st">"example_count"</span>]],</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a>                  <span class="at">title =</span> <span class="st">"Example map title"</span></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the application ---------------------------------------------------------</span></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+<section id="r-shiny-peformance" class="level4">
+<h4 class="anchored" data-anchor-id="r-shiny-peformance">R Shiny peformance</h4>
+<hr>
+<p>Maps can be intensive and slow to process, and when placed in R Shiny dashboards this can sometimes make users have to wait longer than we’d like.</p>
+<ol type="1">
+<li>Pre-process as much as you can</li>
+</ol>
+<p>First, it is best to do all the joining and processing you can before the dashboard, and then save the data as an RDS file to read into the app later. This will minimise the processing R has to do in preparing the file.</p>
+<ol start="2" type="1">
+<li>Simplify the map detail</li>
+</ol>
+<p>If you’re using a particularly detailed map, you can sometimes simplify the files used to help reduce the size, this will make the map less precise but have a trade off of speeding up the load times. See the <a href="#boundary-files">boundary files</a> section for more information.</p>
+<ol start="3" type="1">
+<li>Only change the layers you need to</li>
+</ol>
+<p>If the map layers on top are reactive (e.g.&nbsp;shaded polygons that change based on a user interaction like a dropdown), consider using the <a href="https://rstudio.github.io/leaflet/articles/shiny.html#modifying-existing-maps-with-leafletproxy" target="_blank">leafletProxy function from the Leaflet package</a> to change only the layer you need to while leaving the base map static.</p>
+<ol start="4" type="1">
+<li>If all else fails, try the magical hammer of caching</li>
+</ol>
+<p>Caching allows you to save the outputs and then return them without having to run the process again. Caution and thorough testing is advised as this can get complicated and easily lead to bugs, though great rewards lurk beyond the risk. If you’re interested in looking at this route, take a look at the <a href="https://mastering-shiny.org/performance.html#caching" target="_blank">caching section of the mastering shiny guide</a>.</p>
+<hr>
+</section>
+</section>
 <section id="passing-variables-as-arguments" class="level3">
 <h3 class="anchored" data-anchor-id="passing-variables-as-arguments">Passing variables as arguments</h3>
 <hr>
 <p>This can be worked around by using a combination of <code>eval()</code> and <code>parse()</code>, as shown in the below function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>showFilterLevels <span class="ot">&lt;-</span> <span class="cf">function</span>(data, meta) {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  filters <span class="ot">&lt;-</span> meta <span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(col_type <span class="sc">==</span> <span class="st">"Filter"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(col_name)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  levelsTable <span class="ot">&lt;-</span> <span class="cf">function</span>(filter) {</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">eval</span>(<span class="fu">parse</span>(<span class="at">text =</span> <span class="fu">paste0</span>(<span class="st">"data %&gt;% select("</span>, filter, <span class="st">") %&gt;% distinct()"</span>))))</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">lapply</span>(filters, levelsTable)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output)</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>showFilterLevels <span class="ot">&lt;-</span> <span class="cf">function</span>(data, meta) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  filters <span class="ot">&lt;-</span> meta <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(col_type <span class="sc">==</span> <span class="st">"Filter"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(col_name)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  levelsTable <span class="ot">&lt;-</span> <span class="cf">function</span>(filter) {</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">eval</span>(<span class="fu">parse</span>(<span class="at">text =</span> <span class="fu">paste0</span>(<span class="st">"data %&gt;% select("</span>, filter, <span class="st">") %&gt;% distinct()"</span>))))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">lapply</span>(filters, levelsTable)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -987,15 +1139,15 @@ Guidance and tips for using the programming language R
 <hr>
 <p>There’s an easy way to interweave multiple vectors into one single vector using <code>c(rbind())</code>. The example below shows two vectors, but you can have even more if you need.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Two vectors, x and y</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Run code to interweave</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">rbind</span>(x, y))</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Output below</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 1 4 2 5 3 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Two vectors, x and y</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Run code to interweave</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">rbind</span>(x, y))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Output below</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 1 4 2 5 3 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1004,12 +1156,12 @@ Guidance and tips for using the programming language R
 <hr>
 <p>When pulling ggplot charts into RMarkdown reports, you can consider making them even more user-friendly and interactive with plotly. <a href="https://plotly.com/ggplot2" target="_blank" rel="noopener noreferrer">Further information on how to make your charts interactive with plotly</a> can be found online.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Simple ggplot chart called "p"</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>)      <span class="co"># Use hollow circles</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply ggplotly() to it to make it interactive</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplotly</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Simple ggplot chart called "p"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>)      <span class="co"># Use hollow circles</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply ggplotly() to it to make it interactive</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplotly</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1018,7 +1170,7 @@ Guidance and tips for using the programming language R
 <hr>
 <p>Have you ever needed to replace every value in your data with another? This can come in handy when you are looking at suppression, e.g.&nbsp;converting all NAs to “z” or all values under a certain threshold to “c”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(<span class="sc">~</span> <span class="fu">replace</span>(., . <span class="sc">==</span> <span class="st">"Value to replace"</span>, <span class="st">"Replacement"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(<span class="sc">~</span> <span class="fu">replace</span>(., . <span class="sc">==</span> <span class="st">"Value to replace"</span>, <span class="st">"Replacement"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1027,7 +1179,7 @@ Guidance and tips for using the programming language R
 <hr>
 <p>The group_by() function in dplyr is really useful, but can be fiddly if you only want to use it for one operation in a chunk of code. The with_groups() function from <a href="https://dplyr.tidyverse.org/reference/with_groups.html" target="_blank" rel="noopener noreferrer">dplyr</a> lets you do this, saving you having to group and ungroup data each time.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">annual_average =</span> <span class="fu">with_groups</span>(time_period, mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">annual_average =</span> <span class="fu">with_groups</span>(time_period, mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1037,7 +1189,7 @@ Guidance and tips for using the programming language R
 <p>Often we’ll take chunks of code and reuse them for new projects. This can lead to building up a long list of packages to install, not all of which end up being used in your new code. The <strong>NCmisc</strong> package is a really handy way to check which packages and functions are used in your code.</p>
 <p>Firstly, load up all the packages the code has <code>library()</code> commands for, then run the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.functions.in.file</span>(<span class="st">'your-filename-here.R'</span>, <span class="at">alphabetic =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.functions.in.file</span>(<span class="st">'your-filename-here.R'</span>, <span class="at">alphabetic =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1046,11 +1198,11 @@ Guidance and tips for using the programming language R
 <hr>
 <p>The <a href="https://github.com/crsh/depgraph" target="_blank" rel="noopener noreferrer">depgraph package</a> allows you to plot a graph of all the dependencies in your R project, which can be a useful tool to help you cut down on the number of package dependencies. Briefly, in these graphs you can look for “hot spots” in the network (big bright dots), which represent packages that have many upstream dependencies but are potentially easy to remove because they have few downstream dependencies (that is, only your package depends on them).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dependency_graph</span>(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">pkg =</span> multibridge_pkg</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  , <span class="at">suggests =</span> <span class="cn">FALSE</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  , <span class="at">option =</span> <span class="st">"cividis"</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dependency_graph</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">pkg =</span> multibridge_pkg</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  , <span class="at">suggests =</span> <span class="cn">FALSE</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  , <span class="at">option =</span> <span class="st">"cividis"</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1059,17 +1211,17 @@ Guidance and tips for using the programming language R
 <hr>
 <p>The <a href="https://www.rdocumentation.org/packages/simEd/versions/2.0.0/topics/set.seed" target="_blank" rel="noopener noreferrer">set.seed()</a> function generates a sequence of random numbers, starting from the value you define in the brackets. This ensures you get the same sequence of random numbers each time you run set.seed() with the same value, which is helpful to test that your results are reproducible.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># random sampling</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"K"</span> <span class="st">"N"</span> <span class="st">"R"</span> <span class="st">"Z"</span> <span class="st">"G"</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"L"</span> <span class="st">"P"</span> <span class="st">"J"</span> <span class="st">"E"</span> <span class="st">"D"</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># reproducible random sampling</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">42</span>); <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Q"</span> <span class="st">"E"</span> <span class="st">"A"</span> <span class="st">"J"</span> <span class="st">"D"</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">42</span>); <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Q"</span> <span class="st">"E"</span> <span class="st">"A"</span> <span class="st">"J"</span> <span class="st">"D"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># random sampling</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"K"</span> <span class="st">"N"</span> <span class="st">"R"</span> <span class="st">"Z"</span> <span class="st">"G"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"L"</span> <span class="st">"P"</span> <span class="st">"J"</span> <span class="st">"E"</span> <span class="st">"D"</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># reproducible random sampling</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">42</span>); <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Q"</span> <span class="st">"E"</span> <span class="st">"A"</span> <span class="st">"J"</span> <span class="st">"D"</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">42</span>); <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Q"</span> <span class="st">"E"</span> <span class="st">"A"</span> <span class="st">"J"</span> <span class="st">"D"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1078,12 +1230,12 @@ Guidance and tips for using the programming language R
 <hr>
 <p>The <a href="https://cran.r-project.org/web/packages/tidylog/readme/README.html" target="_blank" rel="noopener noreferrer">tidylog package</a> is a really useful tool for providing automated feedback on dplyr and tidyr operations.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidylog)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">4</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; filter: removed 21 rows (66%), 11 rows remaining</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>mutated <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mtcars, <span class="at">new_var =</span> wt <span class="sc">**</span> <span class="dv">2</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mutate: new variable 'new_var' (double) with 29 unique values and 0% NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidylog)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">4</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; filter: removed 21 rows (66%), 11 rows remaining</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>mutated <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mtcars, <span class="at">new_var =</span> wt <span class="sc">**</span> <span class="dv">2</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mutate: new variable 'new_var' (double) with 29 unique values and 0% NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
