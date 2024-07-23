@@ -418,7 +418,7 @@ If you want to edit the boundaries, whether that is to edit the coordinate syste
 
 ---
 
-We always advise searching around the internet for any packages that might now exist when deciding to choose a package, though some known options for building maps are:
+Known package options for building maps are (note this is not an exhaustive list):
 
 * [base R's plot function](https://r.geocompx.org/adv-map)
 * [tmap](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html)
