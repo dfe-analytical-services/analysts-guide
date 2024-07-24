@@ -389,6 +389,170 @@ To round numbers upwards in a way that is consistent with SQL and other programm
 
 ---
 
+### Making maps
+
+---
+
+#### Boundary files
+
+---
+
+Most maps we'll want to make will be based on boundaries provided from the [Open Geography Portal](https://geoportal.statistics.gov.uk/).
+
+Take heed of the homepage and details on the codes for map resolution, usually the ultra generalised BUC boundaries are the best option for us as they still provide plenty of detail but are far smaller in size than the other formats.
+
+Some examples of commonly used boundary files from the Open Geography Portal (based on latest available at time of writing, always make sure the year of the boundaries is the most relevant for your own data!):
+
+* Parliamentary Constituency - [Westminster Parliamentary Constituencies (July 2024) Boundaries UK BUC](https://geoportal.statistics.gov.uk/datasets/ef63f363ac824b79ae9670744fcc4307_0/explore) 
+* Local authority - [Counties and Unitary Authorities (December 2023) Boundaries UK BUC](https://geoportal.statistics.gov.uk/datasets/4832bb99c4844971b111739be44f1bc5_0/explore)
+* Local authority district - [Local Authority Districts (May 2024) Boundaries UK BUC](https://geoportal.statistics.gov.uk/datasets/fb6ab0ce776243339e45e33444f431c8_0/explore)
+* Local skills improvement areas - [Local Skills Improvement Plan Areas (August 2023) Boundaries EN BUC](https://geoportal.statistics.gov.uk/datasets/72bd510b46a7483194237ede9db0a267_0/explore) 
+
+When downloading the boundaries you'll have a choice of file formats, we'd generally recommend the GeoPackage format as that comes as a single file, though both Shapefile (will get 4/5 files needed to read a single boundary layer) or GeoJSON (sometimes larger file size and needs more processing) are possible options too. There are numerous debates online about these that you can delve into if you so desire.
+
+If you want to edit the boundaries, whether that is to edit the coordinate system, file type or to simplify them at all, have a look at the [interactive website for mapshaper](https://mapshaper.org/), there's also an accompanying [rmapshaper R package](https://andyteucher.ca/rmapshaper/).
+
+---
+
+#### Packages
+
+---
+
+Known package options for building maps are (note this is not an exhaustive list):
+
+* [base R's plot function](https://r.geocompx.org/adv-map)
+* [tmap](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html)
+* [leaflet](https://rstudio.github.io/leaflet/index.html)
+* [mapgl](https://walker-data.com/mapgl/)
+
+For interactive maps in dashboard [leaflet](https://rstudio.github.io/leaflet/index.html) is most frequently used in DfE currently.
+
+The [sf](https://r-spatial.github.io/sf/) package is usually needed for processing spatial data in R, be aware that the first time you install this it can take a number of minutes.
+
+---
+
+#### Example shiny app with map
+
+---
+
+``` {r example_r_shiny_map, eval=FALSE}
+# Shiny app ===================================================================
+# Minimal example code for a shiny app with interactive map
+# Can copy and paste into a single app.R file and run to test
+
+# Pre-processing of data (do this in a separate script to the app) ============
+# Load dependencies -----------------------------------------------------------
+library(leaflet) # using leaflet for the interactive map
+library(dplyr) # used for data processing
+library(sf) # used for reading geospatial data
+
+# Pre-process data before app -------------------------------------------------
+# Create an example file using the locations look ups
+example_data <- read.csv("https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/main/data/lsips.csv") %>% 
+  mutate(example_count = sample(38)) # number of rows in data frame
+
+# Pull in boundary data from the Open Geography Portal
+# Download GeoPackage format and save in repo from:
+# https://geoportal.statistics.gov.uk/datasets/72bd510b46a7483194237ede9db0a267_0/explore
+boundary_data <- st_read("Local_Skills_Improvement_Plan_Areas_August_2023_Boundaries_EN_BUC_3056517900557747412.gpkg")
+
+# Join the data together and save ready for the app
+map_data <- boundary_data %>% 
+  right_join(example_data, by = join_by(LSIP23CD == lsip_code)) %>%
+  # Convert coordinates to World Geodetic System 
+  st_transform(crs = 4326)
+
+saveRDS(map_data, "map_data.RDS")
+
+# R Shiny App =================================================================
+# Global.R file ---------------------------------------------------------------
+library(shiny)
+library(leaflet)
+
+# Load in map data
+map_data <- readRDS("map_data.RDS")
+
+# ui.R file -------------------------------------------------------------------
+ui <- fluidPage(
+  # Show interactive map
+  leafletOutput("example_map")
+)
+
+# server.R file ---------------------------------------------------------------
+server <- function(input, output) {
+
+    output$example_map <- renderLeaflet({
+      # Set the color scheme and scale
+      pal_fun <- colorNumeric(
+        "Blues", 
+        domain = c(
+          min(map_data$example_count), 
+          max(map_data$example_count)
+          )
+        )
+      
+      # Set a pop up
+      map_popup <- paste(
+        map_data$example_count, 
+        " example count for ", 
+        map_data$lsip_name
+        )
+      
+      # Create the map 
+      map <- leaflet(
+        map_data, 
+        # Take off annoying scrolling, personal preference
+        options = leafletOptions(scrollWheelZoom = FALSE)
+        ) %>%
+        # Set the basemap (this is a good neutral one)
+        addProviderTiles(providers$CartoDB.PositronNoLabels) %>%
+        # Add the shaded regions
+        addPolygons(
+          color = "black",
+          weight = 1,
+          fillColor = pal_fun(map_data[["example_count"]]),
+          popup = map_popup
+        ) %>%
+        # Add a legend to the map
+        addLegend("topright",
+                  pal = pal_fun,
+                  values = ~map_data[["example_count"]],
+                  title = "Example map title"
+        )
+    })
+}
+
+# Run the application ---------------------------------------------------------
+shinyApp(ui = ui, server = server)
+
+```
+
+---
+
+#### R Shiny peformance
+
+---
+
+Maps can be intensive and slow to process, and when placed in R Shiny dashboards this can sometimes make users have to wait longer than we'd like.
+
+1. Pre-process as much as you can
+
+First, it is best to do all the joining and processing you can before the dashboard, and then save the data as an RDS file to read into the app later. This will minimise the processing R has to do in preparing the file.
+
+2. Simplify the map detail
+
+If you're using a particularly detailed map, you can sometimes simplify the files used to help reduce the size, this will make the map less precise but have a trade off of speeding up the load times. See the [boundary files](#boundary-files) section for more information.
+
+3. Only change the layers you need to
+
+If the map layers on top are reactive (e.g. shaded polygons that change based on a user interaction like a dropdown), consider using the [leafletProxy function from the Leaflet package](https://rstudio.github.io/leaflet/articles/shiny.html#modifying-existing-maps-with-leafletproxy) to change only the layer you need to while leaving the base map static.
+
+4. If all else fails, try the magical hammer of caching
+
+Caching allows you to save the outputs and then return them without having to run the process again. Caution and thorough testing is advised as this can get complicated and easily lead to bugs, though great rewards lurk beyond the risk. If you're interested in looking at this route, take a look at the [caching section of the mastering shiny guide](https://mastering-shiny.org/performance.html#caching). 
+
+---
+
 ### Passing variables as arguments
 
 ---
