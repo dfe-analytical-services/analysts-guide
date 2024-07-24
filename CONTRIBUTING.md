@@ -86,6 +86,8 @@ Use relative paths for local files to ensure your document remains portable.
 
 In R, relative paths refer to file or directory paths specified in relation to the current working directory. Relative paths help manage current working files.
 
+If you're struggling with running your files across different paths in your working directories, then the [here](https://here.r-lib.org/) package can sometimes help you solve those types of issues.
+
 - **Test Across Browsers**: Ensure multimedia content works across different browsers and devices. 
 
 - **Output Formats**: Verify that multimedia elements render correctly in the intended output formats (HTML, PDF, etc.). 
