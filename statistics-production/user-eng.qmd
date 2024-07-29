@@ -43,11 +43,11 @@ More advice and guidance will follow in this space.
 ## Case studies
 
 
-### Explore Education Statistics service
+### Explore education statistics service
 
 ---
 
-Explore Education Statistics (EES) was born from a [discovery project](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721729/HiveIT_-_DfE_dissemination_discovery.pdf), where the emphasis of the discovery was to understand who the users of the Department’s official statistics are, what they need, and where the DfE are currently meeting, exceeding or failing to meet those needs. 
+Explore education statistics (EES) was born from a [discovery project](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721729/HiveIT_-_DfE_dissemination_discovery.pdf), where the emphasis of the discovery was to understand who the users of the Department’s official statistics are, what they need, and where the DfE are currently meeting, exceeding or failing to meet those needs. 
 
 **Initial user research**
 
@@ -170,11 +170,11 @@ The ONS have also published [ten top tips to help improve user engagement](https
 
 ---
 
-DfE are working with ONS and others to consider how to take forward work in this area.  DfE have put together an initial statement (note that this is in draft and should only be used as a guide internally):
+DfE are working with ONS and others to consider how to take forward work in this area. DfE have put together an initial statement (note that this is in draft and should only be used as a guide internally):
 
 >Work to understand and engage our users is vital to ensuring statistics are suitably and best communicated, and help the department in continuously reflecting and improving products and its services.  DfE welcomes the ONS strategy and collective focus on user engagement.
 >
->As part of our efforts to meet wider user needs, the Department has undertaken [extensive user research](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721729/HiveIT_-_DfE_dissemination_discovery.pdf) over the past few years in development of the new Explore Education Statistics platform to disseminate our statistics. We continue to develop this platform in line with user research and feedback. Through the intelligent use of supporting analytics, we are learning more about how our wide range of users find and use statistics, and how best to tailor our outputs to meet their needs.  This will help us embed user need even more strongly into our statistics development.
+>As part of our efforts to meet wider user needs, the Department has undertaken [extensive user research](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721729/HiveIT_-_DfE_dissemination_discovery.pdf) over the past few years in development of the new Explore education statistics platform to disseminate our statistics. We continue to develop this platform in line with user research and feedback. Through the intelligent use of supporting analytics, we are learning more about how our wide range of users find and use statistics, and how best to tailor our outputs to meet their needs.  This will help us embed user need even more strongly into our statistics development.
 >
 >In addition and more broadly, the department is working with ONS Best Practice Team to consider guidance around user engagement and how best to take forward the strategy for the department.  In line with this, as part of these developments we will be reviewing and refreshing our current [public-facing user engagement strategy](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/287444/User_engagement_policy.pdf) which will then be reviewed annually.
 

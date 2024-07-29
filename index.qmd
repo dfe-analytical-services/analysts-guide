@@ -49,11 +49,11 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Open data standards](statistics-production/ud.html)
 - Guidance on how to structure data files
 
-[Explore Education Statistics (EES)](statistics-production/ees.html)
-- How to use the features in Explore Education Statistics
+[Explore education statistics (EES)](statistics-production/ees.html)
+- How to use the features in Explore education statistics
 
 [Good examples in EES](statistics-production/examples.html)
-- Examples of good practice in Explore Education Statistics
+- Examples of good practice in Explore education statistics
 
 [Embedded visualisations in EES](statistics-production/embedded-charts.html)
 - How to embed R-Shiny charts in EES publications

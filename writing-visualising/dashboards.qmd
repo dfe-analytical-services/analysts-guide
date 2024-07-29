@@ -10,7 +10,7 @@ title: "Public dashboards"
 
 ---
 
-The primary route for publishing official statistics is via [Explore Education Statistics](https://explore-education-statistics.service.gov.uk/) (EES). In addition to publishing on EES, there may be times where you want to compliment official statistics with a dashboard. This may be to do a deeper piece of analysis for a specific user group, or to make use of functionality that isn’t available within the platform.
+The primary route for publishing official statistics is via [Explore education etatistics](https://explore-education-statistics.service.gov.uk/) (EES). In addition to publishing on EES, there may be times where you want to compliment official statistics with a dashboard. This may be to do a deeper piece of analysis for a specific user group, or to make use of functionality that isn’t available within the platform.
 
 It is important that all dashboards should have a clear use case and reasoning for why they are required. If you are considering developing and publishing a dashboard, please get in touch with the [Statistics Development Team](mailto:statistics.development@education.gov.uk) who can advise and assist with the process, and make use of the [teams channel](https://teams.microsoft.com/l/channel/19%3a35fa27cbced34928a3609e41510057e5%40thread.skype/R-Shiny%2520Statistics%2520Dashboards?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9) to ask questions and share what you're working on with other teams.
 
@@ -133,7 +133,7 @@ Defining what "good" looks like and identifying appropriate metrics means that y
 
 Collecting the right engagement data means you’ll be alerted to potential problems with your service. And when you make a change to the service, you’ll be able to tell whether it had the effect you expected. In practice this will often mean setting up analytics and feedback surveys for dashboards and monitoring the data you get back.
 
-At a minumum you should be requesting feedback from users via a survey hosted on the dashboard and reviewing this on a regular basis. An example of this kind of feedback survey is the [beta banner survey](https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-XMiKzsnr8xJoWM_DeGwIu9UNDJHOEJDRklTNVA1SDdLOFJITEwyWU1OQS4u) on Explore Education Statistics.
+At a minumum you should be requesting feedback from users via a survey hosted on the dashboard and reviewing this on a regular basis. An example of this kind of feedback survey is the [beta banner survey](https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-XMiKzsnr8xJoWM_DeGwIu9UNDJHOEJDRklTNVA1SDdLOFJITEwyWU1OQS4u) on Explore education statistics.
 
 ![](../images/betaBanner.png)
 

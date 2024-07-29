@@ -6,7 +6,7 @@
 
 ---
 
-We track analytics of users on Explore Education Statistics using Google Analytics as well as other tools. These analytics can be found on our [EES Analytics dashboard](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"}. This tells you a range of things like:
+We track analytics of users on Explore education statistics using Google Analytics as well as other tools. These analytics can be found on our [EES Analytics dashboard](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"}. This tells you a range of things like:
 
 * How many times each accordion has been clicked
 * How long users spend on your page

@@ -21,7 +21,7 @@ metadata_data_example <- read_excel("../data_examples/metadata_data_example.xlsx
 
 With open data standards, our aim is to apply a consistent, logical structure to all data files so that they are easier to use and analyse, minimising the time spent deciphering and cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using our data, as well as opening up further opportunities for linking data.
 
-The guidance and standards here explicitly apply to all data files prepared for and uploaded to the Explore Education Statistics platform, but much of the content below equally applies to any data being prepared and disseminated both within the department and externally. 
+The guidance and standards here explicitly apply to all data files prepared for and uploaded to the Explore education statistics platform, but much of the content below equally applies to any data being prepared and disseminated both within the department and externally. 
 
 Data published via EES is released under the terms of the [Open Government License](http://www.nationalarchives.gov.uk/doc/open-government-licence/){target="_blank" rel="noopener noreferrer"} and by following the data standards provided here, published (or any other) data meets at least 3 stars for [Open Data](https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats){target="_blank" rel="noopener noreferrer"}.
 
@@ -135,7 +135,7 @@ When publishing statistics, you should be following these standards for underlyi
 For publishing on EES specifically, please note the following points:
 
 
-- Data files uploaded to Explore Education Statistics will be downloadable, **everything in your file must be publishable**.
+- Data files uploaded to Explore education statistics will be downloadable, **everything in your file must be publishable**.
 - You must remember to apply all of your usual suppression policies.
 - The data files run the table and chart tools, so all data that you wish to create a table or chart with must be included.
 - We expect that multiple data files may be provided for each release.
@@ -397,7 +397,7 @@ If you are not providing a full timeseries for any reason, you must link to the 
 ## Deciding what should be in a file
 
 
-Explore Education Statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.
+Explore education statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.
 
 The first key consideration is that the table tool will only create tables from a single a data file, and cannot use multiple files as sources. Therefore any data that you want to compare within a single table must in the same data file. The table tool itself is there to allow users to narrow down the amount of data they have to absorb and to be able to efficiently take away key statistics.
 
@@ -453,7 +453,7 @@ If you have any other conventions you've used in previous publications, or a sce
 
 ---
 
-Metadata in a machine readable (.csv) format must accompany datasets uploaded to the Explore Education Statistics platform to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.
+Metadata in a machine readable (.csv) format must accompany datasets uploaded to the Explore education statistics platform to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.
 
 
 This EES metadata is different to any metadata files you may provide alongside your data for your users.
@@ -534,7 +534,7 @@ Across every single dataset of official statistics produced by DfE, the followin
 ## Time columns
 
 
-We use the two columns, time_period and time_identifier, to generalise time across our underlying datasets. All data files must contain these. This is a important for general useability of our data, as well as being critical in driving the charts and tables in the Explore Education Statistics platform and making explicit reference to the time in which our measurements relate to. This is a compulsory element of any official statistics dataset.
+We use the two columns, time_period and time_identifier, to generalise time across our underlying datasets. All data files must contain these. This is a important for general useability of our data, as well as being critical in driving the charts and tables in the Explore education statistics platform and making explicit reference to the time in which our measurements relate to. This is a compulsory element of any official statistics dataset.
 
 If you think that your data can't follow this format, please contact statistics.development@education.gov.uk with details so that we can discuss this.
 
@@ -819,7 +819,7 @@ for dashboards and other secondary statistics services, whilst also helping with
 
 ## Special Educational Needs
 
-Special educational needs data uploaded to Explore Education Statistics is expected to conform closely to the [School Census data guidance](https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code).
+Special educational needs data uploaded to Explore education statistics is expected to conform closely to the [School Census data guidance](https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code).
 
 Top level fields are provided by **sen_status** and **sen_provision** as follows:
 
@@ -1315,7 +1315,7 @@ Many of our publications contain a large number of indicators. To improve the ex
 
 ---
 
-Example of how this would look in Explore Education Statistics:
+Example of how this would look in Explore education statistics:
 
 ---
 

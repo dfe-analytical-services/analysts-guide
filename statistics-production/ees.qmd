@@ -1,12 +1,12 @@
 ---
-title: "Explore Education Statistics (EES)"
+title: "Explore education statistics (EES)"
 ---
 
-<p class="text-muted">Guidance for how to use the features in the Explore Education Statistics (EES) platform</p>
+<p class="text-muted">Guidance for how to use the features in the explore education statistics (EES) platform</p>
 
 ---
 
-Explore Education Statistics (EES) is the Department’s official statistics dissemination platform, designed to make DFE’s published statistics and data easier to find, access, use and understand.
+Explore education statistics (EES) is the Department’s official statistics dissemination platform, designed to make DFE’s published statistics and data easier to find, access, use and understand.
 
 **The EES platform consists of two applications:**
 
@@ -244,7 +244,7 @@ You only have 160 characters – to make sure you are fully utilising these, hav
 
 
 <div class="alert alert-dismissible alert-warning">
-Use Google Chrome or Microsoft Edge to access and use the admin part of Explore Education Statistics.
+Use Google Chrome or Microsoft Edge to access and use the admin part of Explore education statistics.
 </div>
 
 When you enter the [admin website](https://admin.explore-education-statistics.service.gov.uk/) you’ll see the admin dashboard. What you can see here will be dependent on your access permissions i.e. you’ll only see the publications that you have been granted access to.
@@ -1058,7 +1058,7 @@ Once you've got the R-Shiny app set up and hosted, you can embed it using the **
 ## Glossary
 
 
-The [glossary in Explore Education Statistics](https://explore-education-statistics.service.gov.uk/glossary) is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics.
+The [glossary in Explore education statistics](https://explore-education-statistics.service.gov.uk/glossary) is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics.
 
 ---
 
