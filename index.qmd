@@ -50,10 +50,10 @@ We hope it can prove a useful community driven resource for everyone from the mo
 - Guidance on how to structure data files
 
 [Explore education statistics (EES)](statistics-production/ees.html)
-- How to use the features in Explore education statistics
+- Tips on using the explore education statistics service
 
 [Good examples in EES](statistics-production/examples.html)
-- Examples of good practice in Explore education statistics
+- Good practice examples in the explore education statistics service
 
 [Embedded visualisations in EES](statistics-production/embedded-charts.html)
 - How to embed R-Shiny charts in EES publications

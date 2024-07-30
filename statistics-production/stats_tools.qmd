@@ -27,7 +27,7 @@ This application allows you to screen your data files against the underlying dat
 
 
 
-There is an R Shiny dashboard that provides access to the Google Analytics data for the Explore education statistics platform.
+There is an R Shiny dashboard that provides access to the Google Analytics data for the explore education statistics service.
 
  - [Explore education statistics analytics dashboard](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"}
 

@@ -170,7 +170,7 @@ In here you can see everyone who currently has access, and invite your team to c
 
 If you are inviting someone who hasn't used EES before, make sure to add their DfE email. Jobshare email addresses and mailboxes will not work, each user must be given access with their individual DfE account. The [external user access](#external-user-access) section has more details on how to give access to external contributors.
 
-To change Publication Owners, or Approvers, contact the [Explore education statistics mailbox](mailto:explore.statistics@education.gov.uk).
+To change Publication Owners, or Approvers, contact the [explore education statistics mailbox](mailto:explore.statistics@education.gov.uk).
 
 ---
 
@@ -244,12 +244,12 @@ You only have 160 characters – to make sure you are fully utilising these, hav
 
 
 <div class="alert alert-dismissible alert-warning">
-Use Google Chrome or Microsoft Edge to access and use the admin part of Explore education statistics.
+Use Google Chrome or Microsoft Edge to access and use the admin part of the explore education statistics service.
 </div>
 
 When you enter the [admin website](https://admin.explore-education-statistics.service.gov.uk/) you’ll see the admin dashboard. What you can see here will be dependent on your access permissions i.e. you’ll only see the publications that you have been granted access to.
 
-The Statistics Development Team will be responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored via the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk).
+The Statistics Development Team will be responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored via the [explore education statistics mailbox](mailto:explore.statistics@education.gov.uk).
 
 Within the admin dashboard you can view and manage existing publications, including creating and editing their releases. You can use the drop down lists to find releases by theme/topic/publication or use the draft and scheduled releases tabs to see releases that are in progress.
 
@@ -396,9 +396,24 @@ The two columns in `dataset_names.csv` should contain:
 * `file_name` must be the name of a matching CSV data set, e.g. `data.csv`
 * `dataset_name` is where you can provide the human readable version to use in the service, e.g. `My awesome dataset`
 
+
+For example, your file may look like the following table:
+
+::: {.table-responsive}
+
+| file_name                     | dataset_name              |
+|-------------------------------|---------------------------|
+| teacher_pay.csv               | Teacher pay               |
+| teacher_retention.csv         | Teacher retention         |
+| workforce_characteristics.csv | Workforce characteristics |
+
+:::
+
 Once uploaded and processed, each data file will then proceed to import as normal, and you will be able to edit them as if you had imported them separately.
 
 If anything in this ZIP folder doesn't match up with this, you will receive an error message explaining why and what has happened.
+
+
 
 ---
 
@@ -1083,7 +1098,7 @@ Once you've got the R-Shiny app set up and hosted, you can embed it using the **
 ## Glossary
 
 
-The [glossary in Explore education statistics](https://explore-education-statistics.service.gov.uk/glossary) is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics.
+The [glossary in the explore education statistics service](https://explore-education-statistics.service.gov.uk/glossary) is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics.
 
 ---
 

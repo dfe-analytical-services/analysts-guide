@@ -133,7 +133,7 @@ Defining what "good" looks like and identifying appropriate metrics means that y
 
 Collecting the right engagement data means you’ll be alerted to potential problems with your service. And when you make a change to the service, you’ll be able to tell whether it had the effect you expected. In practice this will often mean setting up analytics and feedback surveys for dashboards and monitoring the data you get back.
 
-At a minumum you should be requesting feedback from users via a survey hosted on the dashboard and reviewing this on a regular basis. An example of this kind of feedback survey is the [beta banner survey](https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-XMiKzsnr8xJoWM_DeGwIu9UNDJHOEJDRklTNVA1SDdLOFJITEwyWU1OQS4u) on Explore education statistics.
+At a minumum you should be requesting feedback from users via a survey hosted on the dashboard and reviewing this on a regular basis. An example of this kind of feedback survey is the [beta banner survey](https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-XMiKzsnr8xJoWM_DeGwIu9UNDJHOEJDRklTNVA1SDdLOFJITEwyWU1OQS4u) on the explore education statistics service.
 
 ![](../images/betaBanner.png)
 
