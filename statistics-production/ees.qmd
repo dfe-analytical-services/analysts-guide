@@ -377,6 +377,31 @@ If you are having any issues uploading a file, please contact explore.statistics
 
 ---
 
+#### Bulk uploads
+
+---
+
+You can upload your data files in bulk by using a single compressed ZIP folder.
+
+![](../images/ees-bulk-upload.png)
+
+You must ensure that the ZIP folder contains:
+
+* All of your data files
+* All of your metadata files with a matching name to a data file (e.g. `data.csv` / `data.meta.csv`)
+* A `dataset_names.csv` file with two columns (`file_name`, `dataset_name`)
+
+The two columns in `dataset_names.csv` should contain:
+
+* `file_name` must be the name of a matching CSV data set, e.g. `data.csv`
+* `dataset_name` is where you can provide the human readable version to use in the service, e.g. `My awesome dataset`
+
+Once uploaded and processed, each data file will then proceed to import as normal, and you will be able to edit them as if you had imported them separately.
+
+If anything in this ZIP folder doesn't match up with this, you will receive an error message explaining why and what has happened.
+
+---
+
 ### Ordering filters and indicators
 
 ---
