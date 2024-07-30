@@ -849,12 +849,12 @@ Guidance for how to use the features in the explore education statistics (EES) p
 <p>You must ensure that the ZIP folder contains:</p>
 <ul>
 <li>All of your data files</li>
-<li>All of your metadata files with a matching name to a data file (e.g.&nbsp;<code>data.csv</code> / <code>data.meta.csv</code>)</li>
+<li>All of your metadata files with a matching name to a data file (e.g.&nbsp;<code>dataset_name.csv</code> / <code>dataset_name.meta.csv</code>)</li>
 <li>A <code>dataset_names.csv</code> file with two columns (<code>file_name</code>, <code>dataset_name</code>)</li>
 </ul>
 <p>The two columns in <code>dataset_names.csv</code> should contain:</p>
 <ul>
-<li><code>file_name</code> must be the name of a matching CSV data set, e.g.&nbsp;<code>data.csv</code></li>
+<li><code>file_name</code> must be the name of a matching CSV data set, without the file extension, e.g.&nbsp;<code>dataset_name</code></li>
 <li><code>dataset_name</code> is where you can provide the human readable version to use in the service, e.g.&nbsp;<code>My awesome dataset</code></li>
 </ul>
 <p>For example, your file may look like the following table:</p>
@@ -868,15 +868,15 @@ Guidance for how to use the features in the explore education statistics (EES) p
 </thead>
 <tbody>
 <tr class="odd">
-<td>teacher_pay.csv</td>
+<td>teacher_pay</td>
 <td>Teacher pay</td>
 </tr>
 <tr class="even">
-<td>teacher_retention.csv</td>
+<td>teacher_retention</td>
 <td>Teacher retention</td>
 </tr>
 <tr class="odd">
-<td>workforce_characteristics.csv</td>
+<td>workforce_characteristics</td>
 <td>Workforce characteristics</td>
 </tr>
 </tbody>
