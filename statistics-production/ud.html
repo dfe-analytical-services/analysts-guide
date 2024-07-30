@@ -283,7 +283,7 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Explore Education Statistics (EES)</span></a>
+ <span class="menu-text">Explore education statistics (EES)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -507,7 +507,7 @@ Guidance on how to structure data files
 <h1>Introduction</h1>
 <hr>
 <p>With open data standards, our aim is to apply a consistent, logical structure to all data files so that they are easier to use and analyse, minimising the time spent deciphering and cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using our data, as well as opening up further opportunities for linking data.</p>
-<p>The guidance and standards here explicitly apply to all data files prepared for and uploaded to the Explore Education Statistics platform, but much of the content below equally applies to any data being prepared and disseminated both within the department and externally.</p>
+<p>The guidance and standards here explicitly apply to all data files prepared for and uploaded to the explore education statistics service, but much of the content below equally applies to any data being prepared and disseminated both within the department and externally.</p>
 <p>Data published via EES is released under the terms of the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/" target="_blank" rel="noopener noreferrer">Open Government License</a> and by following the data standards provided here, published (or any other) data meets at least 3 stars for <a href="https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats" target="_blank" rel="noopener noreferrer">Open Data</a>.</p>
 <hr>
 <section id="how-to-check-against-these-standards" class="level2">
@@ -833,7 +833,7 @@ Guidance on how to structure data files
 <p>When publishing statistics, you should be following these standards for underlying data files.</p>
 <p>For publishing on EES specifically, please note the following points:</p>
 <ul>
-<li>Data files uploaded to Explore Education Statistics will be downloadable, <strong>everything in your file must be publishable</strong>.</li>
+<li>Data files uploaded to the explore education statistics will be downloadable, <strong>everything in your file must be publishable</strong>.</li>
 <li>You must remember to apply all of your usual suppression policies.</li>
 <li>The data files run the table and chart tools, so all data that you wish to create a table or chart with must be included.</li>
 <li>We expect that multiple data files may be provided for each release.</li>
@@ -1204,7 +1204,7 @@ Guidance on how to structure data files
 </section>
 <section id="deciding-what-should-be-in-a-file" class="level2">
 <h2 class="anchored" data-anchor-id="deciding-what-should-be-in-a-file">Deciding what should be in a file</h2>
-<p>Explore Education Statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.</p>
+<p>Explore education statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.</p>
 <p>The first key consideration is that the table tool will only create tables from a single a data file, and cannot use multiple files as sources. Therefore any data that you want to compare within a single table must in the same data file. The table tool itself is there to allow users to narrow down the amount of data they have to absorb and to be able to efficiently take away key statistics.</p>
 <p>A useful way to judge how to break up data files is to consider whether all of the data in the file is appropriate to show side-by-side in the same table. If there are data that are conceptually different or may be confusing to compare side by side, then these should be in separate data files. Any data file uploaded to EES is usable by all users in the table tool, and users will be able to download the exact same files as you upload.</p>
 <p>We generally recommend fewer large files over a larger number of smaller files. <strong>If you think you are having issues with file size please tell us</strong> so that we can investigate and work towards a solution with you.</p>
@@ -1283,7 +1283,7 @@ Guidance on how to structure data files
 <section id="ees-metadata" class="level1">
 <h1>EES metadata</h1>
 <hr>
-<p>Metadata in a machine readable (.csv) format must accompany datasets uploaded to the Explore Education Statistics platform to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.</p>
+<p>Metadata in a machine readable (.csv) format must accompany datasets uploaded to the explore education statistics service to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.</p>
 <p>This EES metadata is different to any metadata files you may provide alongside your data for your users.</p>
 <p>We only need to provide EES metadata for filters and indicators, we do not need to provide any EES metadata for the compulsory observational units (time and geography), as this has been standardised and the platform is expecting pre-defined columns and values in those fields.</p>
 <p>We do not need to provide metadata for filters that only have a single level, as this data is not useful for EES, and is there for the benefit of end users downloading the files.</p>
@@ -1559,7 +1559,7 @@ Guidance on how to structure data files
 <hr>
 <section id="time-columns" class="level2">
 <h2 class="anchored" data-anchor-id="time-columns">Time columns</h2>
-<p>We use the two columns, time_period and time_identifier, to generalise time across our underlying datasets. All data files must contain these. This is a important for general useability of our data, as well as being critical in driving the charts and tables in the Explore Education Statistics platform and making explicit reference to the time in which our measurements relate to. This is a compulsory element of any official statistics dataset.</p>
+<p>We use the two columns, time_period and time_identifier, to generalise time across our underlying datasets. All data files must contain these. This is a important for general useability of our data, as well as being critical in driving the charts and tables in the explore education statistics service and making explicit reference to the time in which our measurements relate to. This is a compulsory element of any official statistics dataset.</p>
 <p>If you think that your data can’t follow this format, please contact statistics.development@education.gov.uk with details so that we can discuss this.</p>
 <ul>
 <li>time_period must contain either a four digit year, or a 6 digit year.</li>
@@ -2164,7 +2164,7 @@ Remember
 <hr>
 <section id="special-educational-needs" class="level2">
 <h2 class="anchored" data-anchor-id="special-educational-needs">Special Educational Needs</h2>
-<p>Special educational needs data uploaded to Explore Education Statistics is expected to conform closely to the <a href="https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code" target="_blank">School Census data guidance</a>.</p>
+<p>Special educational needs data uploaded to explore education statistics service is expected to conform closely to the <a href="https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code" target="_blank">School Census data guidance</a>.</p>
 <p>Top level fields are provided by <strong>sen_status</strong> and <strong>sen_provision</strong> as follows:</p>
 <table class="caption-top table">
 <thead>
@@ -3205,7 +3205,7 @@ Remember
 </table>
 </div>
 <hr>
-<p>Example of how this would look in Explore Education Statistics:</p>
+<p>Example of how this would look in the explore education statistics service:</p>
 <hr>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -3932,8 +3932,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../statistics-production/ees.html" class="pagination-link" aria-label="Explore Education Statistics (EES)">
-        <span class="nav-page-text">Explore Education Statistics (EES)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../statistics-production/ees.html" class="pagination-link" aria-label="Explore education statistics (EES)">
+        <span class="nav-page-text">Explore education statistics (EES)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
