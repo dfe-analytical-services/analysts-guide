@@ -388,12 +388,12 @@ You can upload your data files in bulk by using a single compressed ZIP folder.
 You must ensure that the ZIP folder contains:
 
 * All of your data files
-* All of your metadata files with a matching name to a data file (e.g. `data.csv` / `data.meta.csv`)
+* All of your metadata files with a matching name to a data file (e.g. `dataset_name.csv` / `dataset_name.meta.csv`)
 * A `dataset_names.csv` file with two columns (`file_name`, `dataset_name`)
 
 The two columns in `dataset_names.csv` should contain:
 
-* `file_name` must be the name of a matching CSV data set, e.g. `data.csv`
+* `file_name` must be the name of a matching CSV data set, without the file extension, e.g. `dataset_name`
 * `dataset_name` is where you can provide the human readable version to use in the service, e.g. `My awesome dataset`
 
 
@@ -403,9 +403,9 @@ For example, your file may look like the following table:
 
 | file_name                     | dataset_name              |
 |-------------------------------|---------------------------|
-| teacher_pay.csv               | Teacher pay               |
-| teacher_retention.csv         | Teacher retention         |
-| workforce_characteristics.csv | Workforce characteristics |
+| teacher_pay                   | Teacher pay               |
+| teacher_retention             | Teacher retention         |
+| workforce_characteristics     | Workforce characteristics |
 
 :::
 
