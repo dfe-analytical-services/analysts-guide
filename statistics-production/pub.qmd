@@ -13,7 +13,7 @@ title: "Routes for publishing"
 
 ---
 
-[Explore Education Statistics](https://explore-education-statistics.service.gov.uk/){target="_blank" rel="noopener noreferrer"} (EES) is the Department's new dissemination platform, designed to make DFE’s published statistics and data easier to find, access, use and understand. 
+[Explore education statistics](https://explore-education-statistics.service.gov.uk/){target="_blank" rel="noopener noreferrer"} (EES) is the Department's new dissemination platform, designed to make DFE’s published statistics and data easier to find, access, use and understand. 
 
 The platform moved into Public Beta in March 2020 and currently operates in parallel with existing statistics pages on gov.uk as publications are moved to the new platform.
 
@@ -25,7 +25,7 @@ More information on why EES was introduced and the functionality within the plat
 
 The following table outlines the key differences between publishing via EES and the old method via [gov.uk:](https://www.gov.uk/government/organisations/department-for-education/about/statistics){target="_blank" rel="noopener noreferrer"}
 
-| Statistics collections on gov.uk | Explore Education Statistics |
+| Statistics collections on gov.uk | Explore education statistics |
 |:------|:------|
 | Statisticians request pdf and excel files are uploaded to release pages on gov.uk | Statisticians load csv data files on to the service and use them to build release pages  |
 | Release attachments are reviewed and approved via emails | Releases are reviewed and approved within the service |

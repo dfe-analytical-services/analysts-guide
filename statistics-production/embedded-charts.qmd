@@ -120,6 +120,6 @@ Example code for producing an embeddable shiny chart is given in the [template t
 * Text sizes in plots should be no smaller than 12pt
 * Plotly overlays should be turned off
 
-Example code for creating charts using ggplot can be found in the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code)
+Example code for creating charts using ggplot can be found in the [Using explore education statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code)
 
 ---

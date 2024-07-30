@@ -110,7 +110,7 @@ girafeOutput("my_ggiraph_chart")
 my_ggiraph_chart <- renderGirafe(chart_iris)
 ```
 
-For chart colours, teams should use the GSS colour palettes as outlined in the [Anlytical Function data visualisation guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). These are based on the gov.uk design system colours (described in the next section), but are optimised for charts to help with contrast and variations of colour blindness and are the colours used as default in Explore Education Statistics.
+For chart colours, teams should use the GSS colour palettes as outlined in the [Anlytical Function data visualisation guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). These are based on the gov.uk design system colours (described in the next section), but are optimised for charts to help with contrast and variations of colour blindness and are the colours used as default in the explore education statistics service.
 
 Charts using ggplot2 can take custom palettes using the `scale_fill_manual()` function, e.g. below:
 
@@ -142,7 +142,7 @@ ggplot(
 
 ```
 
-Further examples are given on the [Using Explore Education Statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page.
+Further examples are given on the [Using explore education statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page.
 
 ## Use of colour outside of charts
 
