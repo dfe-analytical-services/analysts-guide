@@ -32,7 +32,7 @@ Data published via EES is released under the terms of the [Open Government Licen
 
 An [interactive data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} has been developed in R Shiny to automate checks against the standards as a final stage of automated quality assurance before upload to EES.
 
-This can be run on any data file, though requires an associated [EES metadata file](#ees-metadata) to be able to process the file. The app runs on our Posit Connect (formerly RSConnect) servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on [GitHub](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}, and you can get in touch with us at statistics.development@education.gov.uk.
+This can be run on any data file, though requires an associated [EES metadata file](#ees-metadata) to be able to process the file. The app runs on our Posit Connect (formerly RSConnect) servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on [GitHub](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}, and you can get in touch with us at explore.statistics@education.gov.uk.
 
 <div class="alert alert-dismissible alert-danger">
   All data and EES metadata files must be run through the [screening app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} before uploading to EES.
@@ -423,7 +423,7 @@ A **rough guide** to file size would be:
 - 500mb and over are very large, and sometimes may struggle to compress small enough to upload.
 - 4gb or more in size is larger than any we have seen before and will likely need testing in the platform first.
 
-[Contact us](mailto:mailto:statistics.development@education.gov.uk) if you have any issues, or files that might be over 1gb.
+[Contact us](mailto:mailto:explore.statistics@education.gov.uk) if you have any issues, or files that might be over 1gb.
 
 ---
 
@@ -536,7 +536,7 @@ Across every single dataset of official statistics produced by DfE, the followin
 
 We use the two columns, time_period and time_identifier, to generalise time across our underlying datasets. All data files must contain these. This is a important for general useability of our data, as well as being critical in driving the charts and tables in the explore education statistics service and making explicit reference to the time in which our measurements relate to. This is a compulsory element of any official statistics dataset.
 
-If you think that your data can't follow this format, please contact statistics.development@education.gov.uk with details so that we can discuss this.
+If you think that your data can't follow this format, please contact explore.statistics@education.gov.uk with details so that we can discuss this.
 
 
 - time_period must contain either a four digit year, or a 6 digit year.
@@ -760,7 +760,7 @@ For Planning area and Institution data, any data files that **only** consist of 
 
 
 <div class="alert alert-dismissible alert-warning">
-  If you have a level that isn’t covered above, please contact statistics.development@education.gov.uk with details and example data.
+  If you have a level that isn’t covered above, please contact explore.statistics@education.gov.uk with details and example data.
 </div>
 
 ---

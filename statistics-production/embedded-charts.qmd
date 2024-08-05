@@ -47,7 +47,7 @@ We currently only support custom charts created using R-Shiny. These should be c
 ## Review and authorisation
 
 
-To get a custom chart approved for embedding within a publication, you'll need to get it reviewed by the [Statistics Development team](mailto:statistics.development@education.gov.uk) (in addition to your standard approval chain).
+To get a custom chart approved for embedding within a publication, you'll need to get it reviewed by the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) (in addition to your standard approval chain).
 
 ---
 
@@ -61,7 +61,7 @@ An embedded chart should take the form of a single chart, with necessary input o
 * using navigation elements
 * images and logos
 
-**And definitely don't include unpublished data in any app uploaded to GitHub/ShinyApps prior to publication.**
+**And definitely don't include unpublished data in any app uploaded to GitHub / ShinyApps prior to publication.**
 
 Other elements such as tables may also be possible if there's a clear use case for them that EES alone can't meet. Get in touch with us if you want to check that what you'd like to include is compatible with the intended use of the embed block.
 
@@ -72,7 +72,7 @@ Other elements such as tables may also be possible if there's a clear use case f
 
 Our [template tiny shiny app repository](https://github.com/dfe-analytical-services/dfe-tiny-shiny) should be used a starting point for all embedded shiny charts.
 
-To get an app set-up for use with EES, you'll need the [Statistics Development Team](mailto:statistics.development@education.gov.uk) team to create a repo for the app within the [DfE Analytical Services area on GitHub](https://github.com/dfe-analytical-services/dfe-tiny-shiny).
+To get an app set-up for use with EES, you'll need the [explore education statistics platforms](mailto:explore.statistics@education.gov.uk) team to create a repo for the app within the [DfE Analytical Services area on GitHub](https://github.com/dfe-analytical-services/dfe-tiny-shiny).
 
 ---
 
