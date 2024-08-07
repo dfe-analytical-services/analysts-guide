@@ -160,12 +160,12 @@ As with charts, be careful when choosing colours, and make sure that colours hav
 Analysts should not use their own private GitHub accounts for the development of DfE dashboards.
 </div>
 
-All published dashboards should have their code hosted on the [dfe-analytical-services project on GitHub](https://github.com/dfe-analytical-services/), both for full public transparency and to enable automated approval-based deployments to the DfE publication platform. For the purposes of the internal-only review of dashboards under development, analysts may also benefit from a hosting code on the DfE Azure based DevOps platform. For both of the above, analysts should contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
+All published dashboards should have their code hosted on the [dfe-analytical-services project on GitHub](https://github.com/dfe-analytical-services/), both for full public transparency and to enable automated approval-based deployments to the DfE publication platform. For the purposes of the internal-only review of dashboards under development, analysts may also benefit from a hosting code on the DfE Azure based DevOps platform. For both of the above, analysts should contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 Given the above, all analysts intending to create a dashboard should ensure they have a good working understanding of Git, GitHub and Azure DevOps. We strongly recommend our [Tech Skills workshop on Git and Azure DevOps](../learning-development/learning-support.html#technical-workshops) to either get you started or refresh your memory.
 
 <div class="alert alert-dismissible alert-danger">
-  Be sure to read the guidance carefully, **do not** commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact [Statistics Development Team](mailto:statistics.development@education.gov.uk) immediately with the full details of what has been uploaded to GitHub and when.
+  Be sure to read the guidance carefully, **do not** commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) immediately with the full details of what has been uploaded to GitHub and when.
 </div>
 
 ---
@@ -176,9 +176,9 @@ Given the above, all analysts intending to create a dashboard should ensure they
 
 Public facing DfE Shiny applications are currently published via the DfE Analytical Services [shinyapps.io](https://www.shinyapps.io/) account, with the authorisation and deployment of dashboards performed using GitHub. 
 
-You need to alert the Statistics Development Team of any new dashboard publication as early in development as possible and keep us updated on the expected publication date so that we can review the dashboard against DfE standards and set up and support on the deployment to ShinyApps.io. In addition, please notify us of any planned data updates or significant functional updates (at least 2 weeks before publication but preferably as soon as you know any updates are required).
+You need to alert the explore education statistics platforms team of any new dashboard publication as early in development as possible and keep us updated on the expected publication date so that we can review the dashboard against DfE standards and set up and support on the deployment to ShinyApps.io. In addition, please notify us of any planned data updates or significant functional updates (at least 2 weeks before publication but preferably as soon as you know any updates are required).
 
-All dashboard publications and major updates need authorisation from the relevant G6 or DD and the stats development team (with the former authorisation e-mail being forwarded on to the [Statistics Development Team](mailto:statistics.development@education.gov.uk)).
+All dashboard publications and major updates need authorisation from the relevant G6 or DD and the stats development team (with the former authorisation e-mail being forwarded on to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk)).
 
 The majority of dashboards made to support and augment our Official Statistics will be public facing. For public facing shiny apps you should publish via shinyapps.io. The Statistics Development Team manage a subscription for this and can help you get set up.
 
@@ -189,7 +189,7 @@ You will need:
 * Approval from your DD
 * If the data underlying the dashboard is currently unpublished, you will need to create dummy data to use in GitHub until the data becomes published (see [dummy data guidance](#using-dummy-data) section).
 
-To set up a new app, send the above to [Statistics Development Team](mailto:statistics.development@education.gov.uk). If your code is not yet hosted in the dfe-analytical-services area you can request for the repository to be moved at the same time as sending approvals.
+To set up a new app, send the above to [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk). If your code is not yet hosted in the [dfe-analytical-services GitHub area](https://github.com/dfe-analytical-services) you can request for the repository to be moved at the same time as sending approvals.
 
 
 ---
@@ -201,7 +201,7 @@ This checklist outlines the standard procedure for teams who are wishing to prod
 Getting set up:
 
 * Create an account on [GitHub](https://github.com/)
-* Ask the [Statistics Development Team](mailto:statistics.development@education.gov.uk) to create you a repository in the [DfE analytical services area](https://github.com/dfe-analytical-services), providing the name of the dashboard and the GitHub accounts of anyone who will be contributing to the code. You should aim to have two analysts working on the code development and a line manager for review purposes. Further colleagues with review responsibilities (policy colleagues, G6 and above, etc.) can be given access to a demo-site, rather than the repository (see guidance for this below in 'Setting up a development / demo dashboard area').
+* Ask the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) to create you a repository in the [DfE analytical services area](https://github.com/dfe-analytical-services), providing the name of the dashboard and the GitHub accounts of anyone who will be contributing to the code. You should aim to have two analysts working on the code development and a line manager for review purposes. Further colleagues with review responsibilities (policy colleagues, G6 and above, etc.) can be given access to a demo-site, rather than the repository.
 * Clone the repo to your device so you can develop your code. Open the repo page in GitHub, click the green 'Code' button, and copy the URL it provides. Then, open R Studio on your device, click file > new project > version control > Git, paste the repository URL you copied from GitHub, give your local project area a name, and choose where to save it (i.e. on your computer's C:\ drive, outside of the OneDrive-synced folders).
 
 Once you're set up, there are certain parts of the code you need to update:
@@ -221,10 +221,10 @@ You must contact the Statistics Development Team for the following:
 Setting up a development / demo dashboard area:
 
 * While developing your dashboard, you may want a private, demo-version to share with policy or senior colleagues for review and feedback. This version must use either published data or dummy data and can not use unpublished data, since this cannot be uploaded to GitHub until the day of publication (see our [dummy data guidance](#using-dummy-data) for public dashboards).
-* Ensure that prior to contacting the Statistics Development Team, you have updated all of the URL's and other items listed above.
-* You must contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) to add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io. Once this is done you will have a browser link you can use to access the dashboard. We can make this private such that there is a list of approved viewers who must log in to view the dashboard - please provide the email addresses of any colleagues who you wish to have access to the private version during development.
+* Ensure that prior to contacting the explore education statistics platforms team, you have updated all of the URL's and other items listed above.
+* You must contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) to add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io. Once this is done you will have a browser link you can use to access the dashboard. We can make this private such that there is a list of approved viewers who must log in to view the dashboard - please provide the email addresses of any colleagues who you wish to have access to the private version during development.
 
-You must have done the following before a dashboard can be published (the Statistics Development Team must review and approve that these have been met):
+You must have done the following before a dashboard can be published (the explore education statistics platforms team must review and approve that these have been met):
 
 * Accessibility testing the dashboard and updating the accessibility statement. The [accessibility testing guidance](#accessibility-testing) later in this section outlines how teams can do this.
 * You should test how your dashboard appears and performs on mobile devices. you can do this by opening your dashboard in chrome/edge, right clicking anywhere on the page and selecting 'inspect'. you will then see a new panel on the right hand side of your screen. To see your dashboard how a mobile user would, click the mobile/tablet button (see the image below).
@@ -250,7 +250,7 @@ Note that wherever possible dashboard development updates should be done separat
 
 ---
 
-- Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) providing the following:
+- Contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) providing the following:
   - brief outline of the planned changes
   - a planned publication date and time for the dashboard
   - the contact details of the lead developer
@@ -392,7 +392,7 @@ Adding the file name alone will ensure it is ignored no matter where in the proj
 
 This [.GitIgnore guidance page](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=.gitignore%20is%20a%20plain%20text%20file%20in%20which,a%20single%20backslash%20%28%29%20to%20escape%20the%20character.) has great guidance on how you can utilize wildcards to capture all the files you might want to ignore.
 
-If you have any questions on this process please do contact us at [Statistics Development Team](mailto:statistics.development@education.gov.uk).
+If you have any questions on this process, please contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 ---
 
@@ -425,7 +425,7 @@ If you're running the app from an internal database, you'll need to contact the 
 
 ---
 
-If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
+If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 The template has a google_analytics.html file which is set up to track all basic metrics, plus the inputs from both drop-downs. To set this up with your own app you will need a new tracking tag (the long number in the gtag()) which the Statistics Development Team can provide you with. Please contact us in order to set this up.
 

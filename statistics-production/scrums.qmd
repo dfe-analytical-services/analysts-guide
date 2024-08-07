@@ -21,7 +21,7 @@ All of our publications should be designed around our users first and foremost, 
 
 We regularly run publication scrums where teams can put forward their publication(s) for review by a group of volunteer analysts, providing feedback as ‘unfamiliar new readers’ and to discuss ideas for future improvements. The sessions usually last for 1-2 hours.
 
-If you're interested in being involved in future scrums, please get in [contact us](mailto:statistics.development@education.gov.uk).
+If you're interested in being involved in future scrums, please [contact us](mailto:explore.statistics@education.gov.uk).
 
 ---
 
