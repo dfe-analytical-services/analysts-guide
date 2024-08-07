@@ -417,13 +417,13 @@ Excel has a cell character limit of 32,760 and a row limit of 1,048,576. It is b
 
 A **rough guide** to file size would be:
 
-- Anything under 10mb is relatively small
-- 10mb to 100mb is a fairly common file size that most teams have
-- 100mb to 500mb is a large file and will struggle to upload if not compressed to a zip folder.
-- 500mb and over are very large, and sometimes may struggle to compress small enough to upload.
-- 4gb or more in size is larger than any we have seen before and will likely need testing in the platform first.
+- Anything under 10 MB is relatively small
+- 10 MB to 100 MB is a fairly common file size that most teams have
+- 100 MB to 500 MB is a large file and will struggle to upload if not compressed to a zip folder.
+- 500 MB and over are very large, and sometimes may struggle to compress small enough to upload.
+- 4 GB or more in size is larger than any we have seen before and will likely need testing in the platform first.
 
-[Contact us](mailto:explore.statistics@education.gov.uk) if you have any issues, or files that might be over 1gb.
+[Contact us](mailto:explore.statistics@education.gov.uk) if you have any issues, or files that might be over 1 GB.
 
 ---
 
