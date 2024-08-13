@@ -1,11 +1,8 @@
 ---
-title: "Accessibility"
+title: Accessibility
 ---
 
 <p class="text-muted">Some quick links and tips for increasing awareness of accessibility in digital content</p>
-
-
----
 
 ## Accessibility in DfE
 
@@ -51,21 +48,22 @@ For more advice about colour in charts and visualisations specifically, includin
 'Bookmarklets' are bookmarks that instead of saving a URL to a page, save a piece of Javascript code that executes on the page you are looking at. There's some nice [accessibility focused bookmarklets](https://design.education.gov.uk/accessibility/assurance) that highlight specific types of mark up such as headers and lists so you can easily check if it matches what you'd expect while on any webpage. Very nifty and low effort too!
 
 ---
-##Making spreadsheets accessible
+
+## Making spreadsheets accessible
 
 When creating an accessible spreadsheet, it’s important to consider the needs of all users, including those with disabilities. To support analysts in making spreadsheets more accessible, here are five simple yet effective strategies:
 
-1. Consult the Spreadsheet Accessibility Guidance
+ a. Consult the Spreadsheet Accessibility Guidance
 
-Before diving into the spreadsheet creation process, it’s essential to familiarize yourself with the official [spreadsheet accessibility](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) guidance available on the Analysis Function Guidance Hub. This resource offers comprehensive insights into best practices for ensuring that your spreadsheets are accessible to all users.
+Before diving into the spreadsheet creation process, it's essential to familiarize yourself with the official [spreadsheet accessibility](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) guidance available on the Analysis Function Guidance Hub. This resource offers comprehensive insights into best practices for ensuring that your spreadsheets are accessible to all users.
 
-####Accessability and consequences
+### Accessibility and consequences
 
 Public sector spreadsheets must meet the AA level of the Web Content Accessibility Guidelines (WCAG) 2.2, as required by law under The Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018. This guidance distinguishes between mandatory actions needed to comply with legal accessibility standards and best practices that enhance usability. Non-compliance can lead to legal complaints, making it crucial for content creators to understand and mitigate these risks.
 
 In addition to accessibility, the guidance also addresses usability and machine readability. While these areas often overlap with accessibility, there are instances where they may conflict. Depending on user needs, it might be necessary to produce separate versions of a spreadsheet—one for human use and another optimized for machine readability—to ensure both accessibility and functionality are maintained.
 
-2. Automate Accessibility During the Coding Process
+ b. Automate Accessibility During the Coding Process
 
 Automation is a powerful way to ensure that accessibility is consistently applied throughout the spreadsheet creation process, especially when working with large datasets or producing numerous spreadsheets. By integrating accessibility into the coding process, you can streamline your workflow and reduce the chances of missing critical accessibility features.
 
@@ -90,6 +88,7 @@ Why Automate?
 By incorporating tools like ``gptables`` or ``a11ytables`` into your coding workflow, you can enhance the accessibility of your spreadsheets with minimal extra effort, making your data more inclusive and easier to use for everyone.
 
 ---
+
 ## Assistive technology
 
 No automated tools fully cover accessibility, manual testing is always required, so if you want to do manual testing have a look at testing out the assistive software commonly used by users yourself.
