@@ -55,7 +55,7 @@ For more advice about colour in charts and visualisations specifically, includin
 
 When creating an accessible spreadsheet, it’s important to consider the needs of all users, including those with disabilities. To support analysts in making spreadsheets more accessible, here are five simple yet effective strategies:
 
- a. Consult the Spreadsheet Accessibility Guidance
+### a. Consult the Spreadsheet Accessibility Guidance
 
 Before diving into the spreadsheet creation process, it's essential to familiarize yourself with the official [spreadsheet accessibility](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) guidance available on the Analysis Function Guidance Hub. This resource offers comprehensive insights into best practices for ensuring that your spreadsheets are accessible to all users.
 
@@ -65,7 +65,9 @@ Public sector spreadsheets must meet the AA level of the Web Content Accessibili
 
 In addition to accessibility, the guidance also addresses usability and machine readability. While these areas often overlap with accessibility, there are instances where they may conflict. Depending on user needs, it might be necessary to produce separate versions of a spreadsheet—one for human use and another optimized for machine readability—to ensure both accessibility and functionality are maintained.
 
- b. Automate Accessibility During the Coding Process
+The [guidance](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) is extensive, including sections how to format sheets and cells, accessible titles, using formula & macros and much more!
+
+## b. Automate Accessibility During the Coding Process
 
 Automation is a powerful way to ensure that accessibility is consistently applied throughout the spreadsheet creation process, especially when working with large datasets or producing numerous spreadsheets. By integrating accessibility into the coding process, you can streamline your workflow and reduce the chances of missing critical accessibility features.
 
