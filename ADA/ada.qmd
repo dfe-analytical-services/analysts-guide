@@ -38,6 +38,18 @@ From the [ADA homepage](https://analytical-data-access.education.gov.uk/) you wi
 
 * A repository of Reports and Dashboards where outputs of data and analytical work will be saved. This will allow colleagues across DfE to interrogate and visualise data. In time this catalogue will grow and the ADA team are currently building out a formal strategy for this area.
 
+The ADA team also intends to establish an analyst Community of Practice that:
+
+* Increases the breadth and depth of knowledge about new tools
+
+* Builds confidence in using core functionality
+
+* Shares learning experiences and best practice
+
+* Identifies future opportunities to support the Department's Strategic Data Transformation 
+
+A list of current ADA champions can be found on the [ADA intranet page](https://educationgovuk.sharepoint.com/sites/lvewp00505) - if you wish to become an ADA champion then please contact the [ADA team](mailto:ADAPTTeam@education.gov.uk).
+
 ---
 
 ## What does the ADA project mean for analysts?
