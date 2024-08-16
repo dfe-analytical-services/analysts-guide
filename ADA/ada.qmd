@@ -21,7 +21,7 @@ It brings together:
 
 As long as you're connected to the network - it's available to anyone who works for the Department of Education. 
 
-Databricks is currently in its onboarding phase, which is expected to continue until 2025. At the moment, teams can onboard voluntarily until **???**. Following this date, the remaining teams will have their data migrated for them. 
+The ADA project is currently in its onboarding phase, which is expected to continue until 2025. At the moment, teams can onboard voluntarily until **???**. Following this date, the remaining teams will have their data migrated for them. 
 Data migration will replace three legacy systems: 
 
 * Pupil Data Repository (PDR)
@@ -153,15 +153,10 @@ You can write new SQL code in the Databricks SQL Editor, which is very similar t
 
 ---
 
-#### SQL scripts held in repositories and run in a "run all" R script
+#### SQL scripts in repositories or embedded in R scripts
 
-These scripts do not need to be moved, but the syntax of the scripts will need to be rewritten from T-SQL to Spark SQL. The only thing you will need to change is the connection source to allow the code to run. Rather than pointing to data held in current SQL databases, you will need to point towards the Databricks Delta Lake instead. 
+These scripts do not need to be moved, but the syntax of the scripts or embedded code will need to be rewritten from T-SQL to Spark SQL. The only thing you will need to change is the connection source to allow the code to run. Rather than pointing to data held in current SQL databases, you will need to point towards the Databricks Delta Lake instead. 
 
----
-
-#### SQL code embedded in R scripts
-
-An example of this might be a SQL snippet that pulls data into a dataframe in R from a SQL database. This type of SQL code can also remain in the R script but the syntax will need to be Spark SQL rather than T-SQL. 
 
 ---
 
