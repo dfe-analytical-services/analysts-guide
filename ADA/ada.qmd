@@ -34,7 +34,7 @@ From the [ADA homepage](https://analytical-data-access.education.gov.uk/) you wi
 
 * Navigation to the Data Discovery Platform to find information regarding metadata of the datasets, including how to request access and information about the quality of the data. The catalogue will eventually include all Department data, as well as tagging of datasets available through ADA.
 
-* Extension of the current platform in the coming months to include POSIT workbench, which will allow R Studio to be used in the cloud.
+* An [analysis workbench](https://analytical-data-access.education.gov.uk/workbench) with access to cloud computing and Databricks. This will be extended to include POSIT workbench, which will allow RStudio to be used in the cloud.
 
 * A repository of Reports and Dashboards where outputs of data and analytical work will be saved. This will allow colleagues across DfE to interrogate and visualise data. In time this catalogue will grow and the ADA team are currently building out a formal strategy for this area.
 
@@ -48,7 +48,7 @@ The ADA team also intends to establish an analyst Community of Practice that:
 
 * Identifies future opportunities to support the Department's Strategic Data Transformation 
 
-A list of current ADA champions can be found on the [ADA intranet page](https://educationgovuk.sharepoint.com/sites/lvewp00505) - if you wish to become an ADA champion then please contact the [ADA team](mailto:ADAPTTeam@education.gov.uk).
+A list of current ADA champions can be found on the [ADA intranet page](https://educationgovuk.sharepoint.com/sites/lvewp00505), they are able to provide advice and support if you run into any issues. If you wish to become an ADA champion then please contact the [ADA team](mailto:ADAPTTeam@education.gov.uk).
 
 ---
 
@@ -76,6 +76,10 @@ Migration to Databricks offers a lot of potential benefits to analysts. These in
 
 ---
 
+::: {.callout-note}
+The earlier your data is migrated, the more time you will have to dual run code from your existing methodology against code run on the Databricks platform, and the more time you have to influence the project and its offer for analysts. We encourage all analysts to engage with training and ask the ADA team about any questions or concerns as soon as possible so that you are prepared for any upcoming changes.
+:::
+
 In order to take advantage of the benefits listed above, we recommend that you and your team:
 
 * Arrange data migration and access to Databricks. Onboarding is currently voluntary, so it's a great opportunity to move early and have more time to get familiar with the system and undertake training. Get in touch with [the ADA team](mailto:ADAPTTeam@education.gov.uk) to discuss onboarding with them. 
@@ -84,14 +88,8 @@ In order to take advantage of the benefits listed above, we recommend that you a
 
 * Be proactive in determining whether any changes will be necessary for your existing code and set time aside to make these changes - see the guidance in the [what this means for existing code](/ADA/ada.html#what-this-means-for-existing-code) section below. 
 
-::: {.callout-note}
-The earlier your data is migrated, the more time you will have to dual run code from your existing methodology against code run on the Databricks platform. We encourage all analysts to engage with training and ask the ADA team about any questions or concerns as soon as possible so that you are prepared for any upcoming changes.
-:::
-
-For teams that have invested in RAP principles and already have existing code pipelines, it is possible to take advantage of cloud computing and use of data in the Databricks platform with minimal changes. This is covered in more detail in the [what this means for existing code](/ADA/ada.html#what-this-means-for-existing-code) section below. 
-
 ::: {.callout-important}
-Once your team's data has been migrated, you will **not** immediately lose access to your existing data sources, so you will be able to dual run your code using data from SSMS and data from the Databricks SQL warehouse to ensure that everything is working as it should be. Once you have confirmed that you are happy with the data in Databricks, your access to the legacy platform will be switched off. 
+For teams that have invested in RAP principles and already have existing code pipelines, it is possible to take advantage of cloud computing and use of data in the Databricks platform with minimal changes. This is covered in more detail in the [what this means for existing code](/ADA/ada.html#what-this-means-for-existing-code) section below. 
 :::
 
 ---
@@ -157,9 +155,13 @@ Databricks has inbuilt git functionality, and you can save your notebooks and sc
 
 #### Scripts currently used in SSMS
 
-If you currently use data and scripts stored in SSMS for your statistics publication pipeline, there will be small changes to your production pipelines that vary depending on your current process. 
+::: {.callout-important}
+Once your team's data has been migrated, you will **not** immediately lose access to your existing data sources, so you will be able to dual run your code using data from SSMS and data from the Databricks SQL warehouse to ensure that everything is working as it should be. Once you have confirmed that you are happy with the data in Databricks, your access to the legacy platform will be switched off. 
+:::
 
-Your SQL code will need to be migrated over to Databricks to allow it to read from the Databricks SQL Warehouse and will require some minor changes to syntax as SSMS uses T-SQL and Databricks uses Spark SQL. The ADA team are currently developing a tool to allow you to easily convert T-SQL queries to Spark SQL syntax. 
+If you currently use data and scripts stored in SSMS for your analysis or statistics publication pipeline, there will be small changes to your production pipelines that vary depending on your current process. 
+
+Your SQL code will need to be migrated over to Databricks to allow it to read from the Databricks SQL Warehouse and will require some minor changes to syntax as SSMS uses T-SQL and Databricks uses Spark SQL. The ADA team are currently developing a tool to allow you to easily convert T-SQL queries to Spark SQL syntax, and Microsoft Copilot can also be useful for helping you with code translation. All DfE laptops should provide you with access to Copilot as standard.  
 
 You can write new SQL code in the Databricks SQL Editor, which is very similar to SSMS. 
 
@@ -196,7 +198,11 @@ Your R code can remain in RStudio and all existing R processes can still be run 
 
 ---
 
-If you prefer using R in a notebook format and wish to use notebooks for your analysis, this is fine, but please consider the skill sets and knowledge levels in your team when doing so. For the purposes of RAP, analysis should be reproducible. If the rest of your team are unfamiliar with notebooks and will need to pick up your work at a later date, this could cause issues. The [Statistics Development Team](mailto:statistics.development@education.gov.uk) are happy to advise on this and provide guidance if you have any concerns. 
+Notebooks are easy to use in Databricks, and might be something you've not come across before. Notebooks use multiple cells, which may mean that you have to structure your code in a different way than you're used to. You can find more information on this on the [ADA guidance site](https://analytical-data-access.education.gov.uk/get-support/using-r-python-and-sql-in-databricks).
+
+Notebooks can be helpful for ad hoc, exploratory, or one off pieces of analysis to add additional documentation as you go, but please consider the skill sets and knowledge levels in your team when doing so. For regular analysis pipelines adopting RAP principles we'd usually advise against using notebooks and instead recommend a Git controlled repository of code scripts using the [standard repository template available in dfeR](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html). 
+
+If the rest of your team are unfamiliar with notebooks and will need to pick up your work at a later date, this could cause issues. The [Statistics Development Team](mailto:statistics.development@education.gov.uk) are happy to advise on this and provide guidance if you have any concerns. 
 
 ---
 
