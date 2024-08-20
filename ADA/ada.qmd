@@ -162,7 +162,15 @@ Notebooks can be helpful for ad hoc, exploratory, or one off pieces of analysis 
 If the rest of your team are unfamiliar with notebooks and will need to pick up your work at a later date, use of notebooks without proper handover or documentation could cause issues and result in work no longer being reproducible. The [Statistics Development Team](mailto:statistics.development@education.gov.uk) are happy to advise on this and provide guidance if you have any concerns. 
 :::
 
-For regular analysis pipelines adopting RAP principles we'd usually advise against using notebooks and instead recommend a Git controlled repository of code scripts using the [standard repository template available in dfeR](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html). In addition to potential problems raised due to unfamiliarity with notebooks themselves, version control can also be more difficult in Databricks notebooks, as there is the potential for multiple people to make edits to the same notebook at once. Additionally, with a full script in an IDE, when the code is run without modifications it will provide the same output consistently. However, with notebooks you can run code cells independently of one another. If you don't run all code cells in order then your output could be inconsistent and result in errors, potentially making QA more difficult. This introduces more manual steps and increases the risk of human error. 
+For regular analysis pipelines and models adopting RAP principles we’d usually advise against using notebooks and instead recommend a Git controlled repository of code scripts using the [standard repository template available in dfeR](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html).
+
+We recommend this because in addition to notebooks being different to how many teams write code now, version control, collaboration and reproducibility can all be more difficult in Databricks notebooks.
+
+When using Databricks notebooks, there is the potential for multiple people to make edits to the same notebook at once, making it much harder to version control and have a clear audit trail of what lines have been changed, who by, when they were changed, and why.
+
+If you have multiple people working on a notebook, it is possible for your code run to be accidentally cancelled if another user starts running code in the same notebook.
+
+When you have a full script in an IDE, the script will provide the same output consistently. However, with notebooks you can run code cells independently of one another. If you don’t run all code cells in order then your output could be inconsistent and result in errors, potentially making QA more difficult. This introduces more manual steps and increases the risk of human error.
 
 :::{.callout-warning}
 When using Databricks notebooks with git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the `Clear all cell outputs` option in the Databricks "Run" menu to avoid inadvertently sharing data that only you and your team should have access to. 
