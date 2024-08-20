@@ -109,6 +109,8 @@ You can also access data held within the Databricks platform using other softwar
 
 ### Working with data and code
 
+In the Databricks interface, you have the choice to use notebooks, scripts or the Databricks SQL Editor. You can also connect Databricks to other IDEs, such as RStudio. 
+
 ---
 
 #### Getting access to your data
@@ -123,60 +125,72 @@ To access your data and make use of cloud computing resource, you will need acce
 
 ---
 
+#### Writing and running code: scripts and IDEs
+
+---
+
+Writing scripts in SSMS and using IDEs such as RStudio are the way in which we currently write and run the majority of our code in DfE. You can learn more about how existing code will be affected by the introduction of Databricks in the [what this means for existing code](/ADA/ada.html#what-this-means-for-existing-code) section below. 
+
+Scripts (e.g. R scripts) can be created and saved in your Workspace (the equivalent of your personal folder) and run via the Databricks interface. 
+
+There is detailed guidance on using the Databricks SQL editor, which is similar to SSMS, on the [ADA guidance site](https://analytical-data-access.education.gov.uk/get-support/using-sql-in-databricks-sql-editor).
+
+You can also run code from RStudio or other IDEs locally and execute it against the data held in Databricks. To do this, you will need to set up a connection between RStudio and the Databricks SQL Warehouse. This is explained in the [R scripts in RStudio section](/ADA/ada.html#r-scripts-in-rstudio) below.
+
+---
+
+#### Writing and running code: workflows
+
+---
+
+Workflows are a Databricks feature that allow you to schedule and automatically run your code at specified times and in the order you suggest. 
+
+Workflows allow you to automate the running of single or multiple scripts, so if you have large amounts of data processing to do on a regular basis, you can set up a workflow to complete this overnight. Your laptop does not need to be switched on for this to work. 
+
+
+---
+
 #### Writing and running code: notebooks
 
 ---
 
-In the Databricks interface, you have the choice to use notebooks, scripts or the Databricks SQL Editor. 
+Notebooks might be something you've not come across before. Notebooks are made up of multiple code or markdown cells, which may mean that you have to structure your code in a different way than you're used to. They are different to IDEs (Integrated Development Environments) like RStudio. You can find more information on Databricks notebooks and their structure on the [ADA guidance site](https://analytical-data-access.education.gov.uk/get-support/using-r-python-and-sql-in-databricks).
 
-Notebooks are easy to use in Databricks, and might be something you've not come across before. Notebooks are made up of multiple code or markdown cells, which may mean that you have to structure your code in a different way than you're used to. They are different to IDEs (Integrated Development Environments) like RStudio. You can find more information on Databricks notebooks and their structure on the [ADA guidance site](https://analytical-data-access.education.gov.uk/get-support/using-r-python-and-sql-in-databricks).
+Notebooks can be helpful for ad hoc, exploratory, or one off pieces of analysis to add additional documentation as you go. You can also use notebooks to present findings to others by hiding code cells and only showing Markdown cells containing charts, tables, images or text. They can be exported as HTML files to enable easier sharing outside of the Databricks interface. 
+
+:::{.callout-important}
+If the rest of your team are unfamiliar with notebooks and will need to pick up your work at a later date, use of notebooks without proper handover or documentation could cause issues and result in work no longer being reproducible. The [Statistics Development Team](mailto:statistics.development@education.gov.uk) are happy to advise on this and provide guidance if you have any concerns. 
+:::
+
+Due to reasons highlighted above, for regular analysis pipelines adopting RAP principles we'd usually advise against using notebooks and instead recommend a Git controlled repository of code scripts using the [standard repository template available in dfeR](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html). In addition to potential problems raised due to unfamiliarity with notebooks themselves, version control can also be more difficult in Databricks notebooks, as there is the potential for multiple people to make edits to the same notebook at once. Additionally, with a full script in an IDE, when the code is run without modifications it will provide the same output consistently. However, with notebooks you can run code cells independently of one another. If you don't run all code cells in order then your output could be inconsistent and result in errors, potentially making QA more difficult. This introduces more manual steps and increases the risk of human error. 
+
+:::{.callout-warning}
+When using Databricks notebooks with git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the `Clear all cell outputs` option in the Databricks "Run" menu to avoid inadvertently sharing data that only you and your team should have access to. 
+:::
+
 
 The table below, taken from [NHS-R guidance](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/notebooks_versus_ide_development/), shows a comparison of the features of notebooks and IDEs to help you decide where each would be most appropriately used:
 
 | Feature | Notebooks | IDEs |
 | --------|--------|---------|
-| Interactive outputs (tables, plots, etc) | Yes | No |
+| Interactive outputs (tables, plots, etc) | Yes | No* |
 | Storytelling and sharing results | Yes | No |
 | Benefits out-of-the-box (minimal configuration) | Yes | No |
 | Deterministic outputs (i.e. same result every run) | No | Yes |
 | Supports modular code structure & packages | No | Yes |
 | Supports unit testing frameworks | No | Yes |
 | Nice version control (e.g. readable git diffs) | No | Yes |
-| Autocomplete / auto-formatting & syntax highlighting | Yes* | Yes |
-| Compatible with sharing code externally | Yes** | Yes |
+| Autocomplete / auto-formatting & syntax highlighting | Yes** | Yes |
+| Compatible with sharing code externally | Yes*** | Yes |
   
-*= auto-formatting is available for SQL and Python in Databricks, but not R  
-**= external users must have software that would allow them to open notebooks
-
-Notebooks can be helpful for ad hoc, exploratory, or one off pieces of analysis to add additional documentation as you go, but please consider the skill sets and knowledge levels in your team when doing so. You can also use notebooks to present findings to others by hiding code cells and only showing Markdown cells containing charts, tables, images or text. They can be exported as HTML files to enable easier sharing outside of the Databricks interface. 
-
-For regular analysis pipelines adopting RAP principles we'd usually advise against using notebooks and instead recommend a Git controlled repository of code scripts using the [standard repository template available in dfeR](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html). This is because version control can be more difficult in Databricks notebooks, as there is the potential for multiple people to make edits to the same notebook at once. Additionally, with a full script in an IDE, when the code is run without modifications it will provide the same output consistently. However, with notebooks you can run code cells independently of one another. If you don't run all code cells in order then your output could be inconsistent and result in errors, potentially making QA more difficult. 
-
-
-:::{.callout-warning}
-When using Databricks notebooks with git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the `Clear all cell outputs` option in the Databricks "Run" menu to avoid inadvertently sharing data that only you and your team should have access to. 
-:::
-
-If the rest of your team are unfamiliar with notebooks and will need to pick up your work at a later date, this could cause issues. The [Statistics Development Team](mailto:statistics.development@education.gov.uk) are happy to advise on this and provide guidance if you have any concerns. 
-
+\* whilst you can still make and preview tables and plots in RStudio and other IDEs, they're not interactive in the same way as those in notebooks  
+\*\* auto-formatting is available for SQL and Python in Databricks, but not R  
+\*\*\* external users must have software that would allow them to open notebooks
 
 You can read more about the differences between IDEs and notebooks and where each might be useful [on the NHS-R website](/ADA/ada.html#differences-between-ides-and-notebooks).
 
 ---
 
-#### Writing and running code: scripts and IDEs
-
----
-
-Scripts (e.g. R scripts) can be created and saved in your Workspace and run via the Databricks interface. 
-
-There is detailed guidance on using the Databricks SQL editor, which is similar to SSMS, on the [ADA guidance site](https://analytical-data-access.education.gov.uk/get-support/using-sql-in-databricks-sql-editor).
-
-One benefit of Databricks is the use of workflows to run your code. Workflows allow you to automate the running of single or multiple scripts, so if you have large amounts of data processing to do on a regular basis, you can set up a workflow to complete this overnight. Your laptop does not need to be switched on for this to work. 
-
-You can also run code from RStudio or other IDEs locally and execute it against the data held in Databricks. To do this, you will need to set up a connection between RStudio and the Databricks SQL Warehouse. This is explained in the [R scripts in RStudio section](/ADA/ada.html#r-scripts-in-rstudio) below.
-
----
 
 #### Accessing code from a Git repository
 
