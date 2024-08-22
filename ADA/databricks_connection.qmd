@@ -37,7 +37,9 @@ If you do not have R or RStudio, you can find them both in the Software Centre. 
 
 ### SQL Warehouse
 
-A SQL warehouse is a SQL only compute option which is quick to start and optimised for SQL querying. This option is recommended if you only require SQL functionality in DataBricks. This makes it a suitable option for interacting with DataBricks through RStudio where all of your programming logic is handled by R on your laptop.
+A SQL warehouse is a SQL only compute option which is quick to start and optimised for SQL querying. This option is recommended if you only require SQL functionality in DataBricks. 
+
+This makes SQL warehouses a suitable option for interacting with DataBricks through RStudio where all of your programming logic is handled by R on your laptop.
 
 SQL warehouses do not support R, python or scala code. Currently they also do not support widgets within DataBricks notebooks.
 
@@ -51,7 +53,6 @@ Unlike your personal laptop personal clusters do not 'remember', this means that
 One way around this is to install packages directly on to the cluster from the 'Libraries' tab of the cluster details page. This will result in those packages being available once the cluster starts.
 
 They are the most suitable option if you require support for R, python and scala within the DataBricks platform.
-
 
 ------------------------------------------------------------------------
 
@@ -85,25 +86,6 @@ Each of these steps is described in more detail in the sections below.
 
 -   Click install
 
-------------------------------------------------------------------------
-
-#### Get connection details for the SQL Warehouse from Databricks
-
-------------------------------------------------------------------------
-
-To set up the connection you will need a few details from the SQL Warehouse within Databricks that you wish to connect to.
-
--   Log in to Databricks
-
--   Click on the 'SQL Warehouses' tab in the sidebar
-
-::: {align="center"}
-![](../images/databricks-SQL-warehouses.png)
-:::
-
--   Click on the name of the warehouse you want to connect to, and click the 'Connection Details' tab
-
--   Make a note of the 'Server hostname', 'Port', and 'HTTP Path'
 
 ------------------------------------------------------------------------
 
