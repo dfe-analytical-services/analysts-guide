@@ -11,7 +11,7 @@ You can use data from the SQL warehouse in two different ways:
 
 The `sparklyr` package can also be used from within RStudio as it converts the request for data to Spark SQL behind the scenes.
 
----
+------------------------------------------------------------------------
 
 ## Pre-requisites
 
@@ -29,27 +29,27 @@ If you do not have access to Databricks or a SQL Warehouse within Databricks, yo
 
 If you do not have R or RStudio, you can find them both in the Software Centre. Note that you need both R **and** RStudio installed.
 
----
+------------------------------------------------------------------------
 
 ## Process
 
 There are three steps to complete before your connection can be established. These are:
 
--   Setting up an ODBC driver on your laptop to enable a connection between your laptop and Databricks
+-   Collecting the connection details from the DataBricks platform
 -   Modifying your .Renviron file to establish a connection between RStudio and Databricks
 -   Adding connection code to your existing scripts in RStudio
 
-Each of these steps is described in more detail in the sections below. 
+Each of these steps is described in more detail in the sections below.
 
----
+------------------------------------------------------------------------
 
 ### Setting up the ODBC driver
 
----
+------------------------------------------------------------------------
 
 #### Install the 'Simba Spark ODBC' driver from the Software Centre
 
----
+------------------------------------------------------------------------
 
 -   Open the Software Centre via the start menu
 
@@ -131,32 +131,30 @@ We now have all the information we need to setup a connection between our laptop
 
 -   enter a 'Data Source Name'
 
-::: {.callout-note}
+::: callout-note
 Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio.
 :::
 
-- enter a 'Description'
+-   enter a 'Description'
 
-::: {.callout-note}
+::: callout-note
 As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.
 :::
 
-Set the remaining options to the settings below:  
+Set the remaining options to the settings below:
 
-- enter the 'Server Hostname' for your cluster in the 'Host(s)' field (you noted this down in step 2)  
-- in the Port section, remove the default number and use the Port number you noted in step 2  
-- set the Authentication Mechanism to 'User Name and Password'  
-- enter the word 'token' into the 'User Name:' field, then enter your 'Databricks access token' in the 'Password' field  
-- change the Thrift Transport option to HTTP\
-- click the 'HTTP Options...' button and enter the 'HTTP Path' of your Databricks cluster, then click 'OK'  
-- click the 'SSL Options...' button and tick the 'Enable SSL' box, then click the 'OK' button  
-- click the 'Test' button to verify the connection has worked. You should see the following message:  
-
+-   enter the 'Server Hostname' for your cluster in the 'Host(s)' field (you noted this down in step 2)\
+-   in the Port section, remove the default number and use the Port number you noted in step 2\
+-   set the Authentication Mechanism to 'User Name and Password'\
+-   enter the word 'token' into the 'User Name:' field, then enter your 'Databricks access token' in the 'Password' field\
+-   change the Thrift Transport option to HTTP\
+-   click the 'HTTP Options...' button and enter the 'HTTP Path' of your Databricks cluster, then click 'OK'\
+-   click the 'SSL Options...' button and tick the 'Enable SSL' box, then click the 'OK' button\
+-   click the 'Test' button to verify the connection has worked. You should see the following message:
 
 ![](../images/databricks-test-connection.png){fig-align="center"}
 
-
-::: {.callout-note}
+::: callout-note
 If you get an error here, repeat steps 5.e.i -- 5.e.ix again and ensure all the values are correct.
 :::
 
@@ -175,11 +173,13 @@ To set the environment variables, call `usethis::edit_r_environ()`. You will the
 ```         
 DATABRICKS_HOST=adb-5037484389568426.6.azuredatabricks.net
 DATABRICKS_SQL_WAREHOUSE_ID=<sql-warehouse-id>
+DATABRICKS_SQL_WAREHOUSE_PATH=<sql-warehouse-path>
 DATABRICKS_TOKEN=<personal-access-token> 
 DATABRICKS_CLUSTER_ID=<personal-cluster-id>
+DATABRICKS_CLUSTER_PATH=<personal-cluster-path>
 ```
 
-Once you have entered the details, save and close your .Renviron file.
+Once you have entered the details, save and close your .Renviron file. You will then need to restart your R session so the environmental variables you have just set are available.
 
 ::: callout-note
 Everyone in your team that wishes to connect to the SQL Warehouse in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.
@@ -209,6 +209,19 @@ The Databricks SQL warehouse ID is the warehouse containing data that you would 
 
 ------------------------------------------------------------------------
 
+#### Databricks SQL Warehouse HTTP path
+
+------------------------------------------------------------------------
+
+The Databricks SQL warehouse path is the http path that allows R to connect to the warehouse across the cloud. To find the warehouse path, follow these steps:
+
+-   click 'SQL Warehouses' under the 'SQL' section of the left hand menu on Databricks
+-   click on the warehouse name that you'd like to get the ID for
+-   click on the 'Connection details' tab
+-   the path is available in a box titled 'HTTP path'
+
+------------------------------------------------------------------------
+
 #### Databricks Token
 
 ------------------------------------------------------------------------
@@ -217,7 +230,7 @@ The Databricks token is the personal access token we generated in the [Get a per
 
 ------------------------------------------------------------------------
 
-#### Cluster ID
+#### Personal Cluster ID
 
 ------------------------------------------------------------------------
 
@@ -230,26 +243,52 @@ To obtain this, follow these steps:
 
 ------------------------------------------------------------------------
 
+#### Personal Cluster path
+
+------------------------------------------------------------------------
+
+The Cluster path is the http path that allows R to connect to the cluster across the cloud. To find the cluster path, follow these steps:
+
+-   click 'Compute' in the Databricks menu, then click on your clusters name
+-   expand the 'Advanced options' menu at the bottom of the page
+-   click the 'JDBC/ODBC' tab
+-   the path is available in a box titled 'HTTP path' 
+
+------------------------------------------------------------------------
+
 ### Pulling data into RStudio from Databricks
 
 ------------------------------------------------------------------------
 
-Now that you have established a connection between Databricks and your laptop, and between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you. 
+Now that you have established a connection between Databricks and your laptop, and between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you.
 
-To access the data, we will make use of the `ODBC` package. You can find documentation about this package [on the Posit website](https://solutions.posit.co/connections/db/r-packages/odbc/).
+To access the data, we will make use of the [`ODBC`](https://solutions.posit.co/connections/db/r-packages/odbc/) and [`DBI`](https://solutions.posit.co/connections/db/r-packages/dbi/) packages to establish a connection to the SQL warehouse. 
 
-To pull in your data, include the following code in your R Script:
+To pull in your data from a SQL warehouse, include the following code in your R Script:
 
-
-``` {r databricks_connect, eval=FALSE}
+```{r databricks_connect, eval=FALSE}
 library(odbc)
+library(DBI)
 
 con <- DBI::dbConnect(
     odbc::databricks(),
-    httpPath = Sys.getenv("DATABRICKS_SQL_WAREHOUSE_ID")
+    httpPath = Sys.getenv("DATABRICKS_SQL_WAREHOUSE_PATH")
 )
 
 odbcListObjects(con)
 ```
 
 
+To use a personal cluster instead simply alter the `DATABRICKS_SQL_WAREHOUSE_PATH` to `DATABRICKS_CLUSTER_PATH` as below:
+
+```{r databricks_connect, eval=FALSE}
+library(odbc)
+library(DBI)
+
+con <- DBI::dbConnect(
+    odbc::databricks(),
+    httpPath = Sys.getenv("DATABRICKS_CLUSTER_PATH")
+)
+
+odbcListObjects(con)
+```
