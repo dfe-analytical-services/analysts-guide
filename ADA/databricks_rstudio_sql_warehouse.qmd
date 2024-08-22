@@ -9,8 +9,6 @@ You can use data from the SQL warehouse in two different ways:
 -   In the SQL editor or in notebooks via the Databricks environment
 -   In RStudio, similarly to the way that you might currently use SQL Server
 
-The `sparklyr` package can also be used from within RStudio as it converts the request for data to Spark SQL behind the scenes.
-
 ---
 
 ## Pre-requisites
@@ -80,6 +78,11 @@ DATABRICKS_TOKEN=<personal-access-token>
 DATABRICKS_CLUSTER_ID=<personal-cluster-id>
 ```
 
+::: callout-important
+Each value should be entered inside quotation marks, like this:
+DATABRICKS_SQL_WAREHOUSE_ID="/sql/1.0/warehouses/abcdefgh123"
+:::
+
 Once you have entered the details, save and close your .Renviron file.
 
 ::: callout-note
@@ -106,7 +109,9 @@ The Databricks SQL warehouse ID is the warehouse containing data that you would 
 
 -   click 'SQL Warehouses' under the 'SQL' section of the left hand menu on Databricks
 -   click on the warehouse name that you'd like to get the ID for
--   the warehouse ID is in brackets next to the warehouse name on the 'Overview' tab
+-   the warehouse id is the 'HTTP Path' in the 'Connection details' tab
+-   the ID should start with something similar to "/sql/1.0/warehouses/"
+
 
 ------------------------------------------------------------------------
 
@@ -150,8 +155,10 @@ The Cluster ID is the cluster that you'll be using to run your code.
 
 To obtain this, follow these steps:
 
--   click 'Compute' in the Databricks menu, then click on your cluster's name
--   in the address bar, copy the string of characters between `clusters` and `configuration` in the URL. This is your cluster ID.
+-   click Compute in the left and menu, and click on the name of your cluster
+-   under the configuration tab, click on "Advanced options" at the bottom of the page
+-   click on the JDBC/ODBC tab
+-   in HTTP path, copy everything after the last /. This is your Cluster ID 
 
 ------------------------------------------------------------------------
 
@@ -163,16 +170,6 @@ Now that you have established a connection between Databricks and your laptop, a
 
 To access the data, we will make use of the `ODBC` package. You can find documentation about this package [on the Posit website](https://solutions.posit.co/connections/db/r-packages/odbc/).
 
-You can connect to your data in two ways, both of which are described below.
-
----
-
-#### Connecting via the SQL Warehouse
-
----
-
-This uses the `ODBC` package and can interact with tables in the Delta Lake. 
-
 Include the following code in your R Script:
 
 
@@ -180,47 +177,12 @@ Include the following code in your R Script:
 library(odbc)
 
 con <- DBI::dbConnect(
-    odbc::databricks(),
-    httpPath = Sys.getenv("DATABRICKS_SQL_WAREHOUSE_ID")
+  odbc::databricks(),
+  httpPath = Sys.getenv("DATABRICKS_SQL_WAREHOUSE_ID"),
+  workspace = Sys.getenv("DATABRICKS_HOST")
 )
 
 odbcListObjects(con)
 ```
 
 ---
-
-#### Connecting via a compute cluster
-
----
-
-Compute clusters can interact with Volumes in Databricks, unlike the SQL Warehouse. For compute clusters, you need to use `sparklyr` rather than the `ODBC` package.
-
-Include the following code in your R Script:
-
-``` {r databricks_connect_cluster, eval=FALSE}
-library(tidyverse)
-library(sparklyr)
-library(dbplyr)
-
-sc <- spark_connect(
-  cluster_id = Sys.getenv("DATABRICKS_CLUSTER_ID"),
-  method = "databricks_connect"
-)
-
-tbl(
-  sc,
-  I("catalog_10_gold.information_schema.catalogs")
-) %>%
-  head()
-```
-
-You can read CSV files from a Volume into a dataframe using the following code:
-
-``` {r databricks_connect_sparklyr, eval=FALSE}
-
-df <- spark_read_csv(
-  sc,        
-  "/Volumes/catalog_40_copper/folder/file.csv"
-)
-
-```
