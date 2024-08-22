@@ -1,0 +1,268 @@
+---
+  title: "Connecting to Databricks from RStudio"
+---
+
+The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse or personal cluster, which can then be used in RStudio to query data.
+
+You can use data from DataBricks in two different ways:
+
+-   In the SQL editor or in notebooks via the Databricks environment
+-   In RStudio, similarly to the way that you might currently use SQL Server
+
+The `sparklyr` package can also be used from within RStudio as it converts the request for data to Spark SQL behind the scenes.
+
+------------------------------------------------------------------------
+
+## Pre-requisites
+
+Before you start, you must have:
+
+-   Access to the Databricks platform
+
+-   Access to compute resource (either a SQL Warehouse or personal cluster) on Databricks
+
+-   R and RStudio downloaded and installed
+
+-   The `ODBC` package installed in RStudio
+
+If you do not have access to Databricks or a compute resource within Databricks, you can request this using [a service request form](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=74bc3be81b212d504f999978b04bcb0b).
+
+If you do not have R or RStudio, you can find them both in the Software Centre. Note that you need both R **and** RStudio installed.
+
+------------------------------------------------------------------------
+
+## Compute resources
+
+------------------------------------------------------------------------
+
+### SQL Warehouse
+
+A SQL warehouse is a SQL only compute option which is quick to start and optimised for SQL querying. This option is recommended if you only require SQL functionality in DataBricks. This makes it a suitable option for interacting with DataBricks through RStudio where all of your programming logic is handled by R on your laptop.
+
+SQL warehouses do not support R, python or scala code. Currently they also do not support widgets within DataBricks notebooks.
+
+------------------------------------------------------------------------
+
+### Personal cluster
+
+A personal cluster is a more generalised compute resource which supports the use of R, SQL, python and scala. These can be created from the 'Compute' page using 'Create with DfE Personal Compute' button. When started they will take a few minutes to start up. 
+
+Unlike your personal laptop personal clusters do not 'remember', this means that packages installed on the cluster will need to be re-installed when the cluster is re-started.
+One way around this is to install packages directly on to the cluster from the 'Libraries' tab of the cluster details page. This will result in those packages being available once the cluster starts.
+
+They are the most suitable option if you require support for R, python and scala within the DataBricks platform.
+
+
+------------------------------------------------------------------------
+
+## Process
+
+There are three steps to complete before your connection can be established. These are:
+
+-   Collecting the connection details from the DataBricks platform
+-   Modifying your .Renviron file to establish a connection between RStudio and Databricks
+-   Adding connection code to your existing scripts in RStudio
+
+Each of these steps is described in more detail in the sections below.
+
+------------------------------------------------------------------------
+
+### Setting up the ODBC driver
+
+------------------------------------------------------------------------
+
+#### Install the 'Simba Spark ODBC' driver from the Software Centre
+
+------------------------------------------------------------------------
+
+-   Open the Software Centre via the start menu
+
+-   In the 'Applications' tab, click 'Simba Spark ODBC Driver 64-bit'
+
+::: {align="center"}
+![](../images/databricks-software-centre.png)
+:::
+
+-   Click install
+
+------------------------------------------------------------------------
+
+#### Get connection details for the SQL Warehouse from Databricks
+
+------------------------------------------------------------------------
+
+To set up the connection you will need a few details from the SQL Warehouse within Databricks that you wish to connect to.
+
+-   Log in to Databricks
+
+-   Click on the 'SQL Warehouses' tab in the sidebar
+
+::: {align="center"}
+![](../images/databricks-SQL-warehouses.png)
+:::
+
+-   Click on the name of the warehouse you want to connect to, and click the 'Connection Details' tab
+
+-   Make a note of the 'Server hostname', 'Port', and 'HTTP Path'
+
+------------------------------------------------------------------------
+
+#### Get a personal access token from Databricks for authentication
+
+------------------------------------------------------------------------
+
+A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the SQL warehouse. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.
+
+-   In Databricks, click on your email address in the top right corner, then click 'User settings'
+
+-   Go to the 'Developer' tab in the side bar. Next to 'Access tokens', click the 'Manage' button
+
+::: {align="center"}
+![](../images/databricks-access-tokens.png)
+:::
+
+-   Click the 'Generate new token' button
+
+-   Name the token, then click 'Generate'
+
+::: callout-note
+Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate.
+:::
+
+-   Make a note of the 'Databricks access token' it has given you
+
+::: callout-warning
+It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.
+:::
+
+------------------------------------------------------------------------
+
+### Establishing an RStudio connection using environment variables
+
+------------------------------------------------------------------------
+
+The `ODBC` package in RStudio allows you to connect to Databricks by creating and modifying four environment variables in your .Renviron file.
+
+To set the environment variables, call `usethis::edit_r_environ()`. You will then need to enter the following information:
+
+```         
+DATABRICKS_HOST=adb-5037484389568426.6.azuredatabricks.net
+DATABRICKS_SQL_WAREHOUSE_ID=<sql-warehouse-id>
+DATABRICKS_SQL_WAREHOUSE_PATH=<sql-warehouse-path>
+DATABRICKS_TOKEN=<personal-access-token> 
+DATABRICKS_CLUSTER_ID=<personal-cluster-id>
+DATABRICKS_CLUSTER_PATH=<personal-cluster-path>
+```
+
+Once you have entered the details, save and close your .Renviron file. You will then need to restart your R session so the environmental variables you have just set are available.
+
+::: callout-note
+Everyone in your team that wishes to connect to the SQL Warehouse in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.
+:::
+
+The sections below describe where to find the information needed for each of the four environment variables.
+
+------------------------------------------------------------------------
+
+#### Databricks host
+
+------------------------------------------------------------------------
+
+The Databricks host is the instance of Databricks that you want to connect to. It's the URL that you see in your browser bar when you're on the Databricks site and should end in "azuredatabricks.net".
+
+------------------------------------------------------------------------
+
+#### Databricks SQL Warehouse ID
+
+------------------------------------------------------------------------
+
+The Databricks SQL warehouse ID is the warehouse containing data that you would like to use. To get the warehouse ID, follow these steps:
+
+-   click 'SQL Warehouses' under the 'SQL' section of the left hand menu on Databricks
+-   click on the warehouse name that you'd like to get the ID for
+-   the warehouse ID is in brackets next to the warehouse name on the 'Overview' tab
+
+------------------------------------------------------------------------
+
+#### Databricks SQL Warehouse HTTP path
+
+------------------------------------------------------------------------
+
+The Databricks SQL warehouse path is the http path that allows R to connect to the warehouse across the cloud. To find the warehouse path, follow these steps:
+
+-   click 'SQL Warehouses' under the 'SQL' section of the left hand menu on Databricks
+-   click on the warehouse name that you'd like to get the ID for
+-   click on the 'Connection details' tab
+-   the path is available in a box titled 'HTTP path'
+
+------------------------------------------------------------------------
+
+#### Databricks Token
+
+------------------------------------------------------------------------
+
+The Databricks token is the personal access token we generated in the [Get a personal access token from Databricks for authentication](/ADA/databricks_rstudio_sql_warehouse.html#get-a-personal-access-token-from-databricks-for-authentication) section.
+
+------------------------------------------------------------------------
+
+#### Personal Cluster ID
+
+------------------------------------------------------------------------
+
+The Cluster ID is the cluster that you'll be using to run your code.
+
+To obtain this, follow these steps:
+
+-   click 'Compute' in the Databricks menu, then click on your cluster's name
+-   in the address bar, copy the string of characters between `clusters` and `configuration` in the URL. This is your cluster ID.
+
+------------------------------------------------------------------------
+
+#### Personal Cluster path
+
+------------------------------------------------------------------------
+
+The Cluster path is the http path that allows R to connect to the cluster across the cloud. To find the cluster path, follow these steps:
+
+-   click 'Compute' in the Databricks menu, then click on your clusters name
+-   expand the 'Advanced options' menu at the bottom of the page
+-   click the 'JDBC/ODBC' tab
+-   the path is available in a box titled 'HTTP path'
+
+------------------------------------------------------------------------
+
+### Pulling data into RStudio from Databricks
+
+------------------------------------------------------------------------
+
+Now that you have established a connection between Databricks and your laptop, and between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you.
+
+To access the data, we will make use of the [`ODBC`](https://solutions.posit.co/connections/db/r-packages/odbc/) and [`DBI`](https://solutions.posit.co/connections/db/r-packages/dbi/) packages to establish a connection to the SQL warehouse.
+
+To pull in your data from a SQL warehouse, include the following code in your R Script:
+
+```{r databricks_connect, eval=FALSE}
+library(odbc)
+library(DBI)
+
+con <- DBI::dbConnect(
+    odbc::databricks(),
+    httpPath = Sys.getenv("DATABRICKS_SQL_WAREHOUSE_PATH")
+)
+
+odbcListObjects(con)
+```
+
+To use a personal cluster instead simply alter the `DATABRICKS_SQL_WAREHOUSE_PATH` to `DATABRICKS_CLUSTER_PATH` as below:
+
+```{r databricks_connect, eval=FALSE}
+library(odbc)
+library(DBI)
+
+con <- DBI::dbConnect(
+    odbc::databricks(),
+    httpPath = Sys.getenv("DATABRICKS_CLUSTER_PATH")
+)
+
+odbcListObjects(con)
+```
