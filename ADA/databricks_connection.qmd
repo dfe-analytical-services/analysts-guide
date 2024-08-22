@@ -58,8 +58,9 @@ They are the most suitable option if you require support for R, python and scala
 
 ## Process
 
-There are three steps to complete before your connection can be established. These are:
+There are four steps to complete before your connection can be established. These are:
 
+-   Installing the ODBC driver for Databricks from the Software Centre
 -   Collecting the connection details from the DataBricks platform
 -   Modifying your .Renviron file to establish a connection between RStudio and Databricks
 -   Adding connection code to your existing scripts in RStudio
@@ -68,11 +69,7 @@ Each of these steps is described in more detail in the sections below.
 
 ------------------------------------------------------------------------
 
-### Setting up the ODBC driver
-
-------------------------------------------------------------------------
-
-#### Install the 'Simba Spark ODBC' driver from the Software Centre
+### Install the 'Simba Spark ODBC' driver from the Software Centre
 
 ------------------------------------------------------------------------
 
