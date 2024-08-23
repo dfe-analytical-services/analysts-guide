@@ -2,12 +2,34 @@
   title: "Connecting to Databricks from RStudio"
 ---
 
-The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse, which can then be used in RStudio to query data.
+The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse or personal cluster, which can then be used in RStudio to query data.
 
-You can use data from the SQL warehouse in two different ways:
+You can use data from Databricks in two different ways:
 
 -   In the SQL editor or in notebooks via the Databricks environment
--   In RStudio, similarly to the way that you might currently use SQL Server
+-   In RStudio via an ODBC connection, similarly to the way that you might currently use SQL Server
+
+------------------------------------------------------------------------
+
+## Compute resources
+
+When your data is moved to Databricks, it will be stored in the Unity Catalog and you will need to use a compute resource to access it from other software such as RStudio.
+
+A compute resource allows you to run your code using cloud computing power instead of using your laptop's processing power. This means that using compute resources can allow your code to run faster than it would if you ran it locally, as it is like using the processing resources of multiple computers at once. On this page, we will be referring to the use of SQL Warehouses as the compute resource to run your code. 
+
+------------------------------------------------------------------------
+
+#### SQL Warehouse
+
+---
+
+A SQL Warehouse is a SQL-only compute option which is quick to start and optimised for SQL querying. Although the name "warehouse" suggests storage, a SQL Warehouse in Databricks is actually a virtual computing resource that allows you to interact with Databricks by connecting to your data and running code. 
+
+This option is recommended if you only require SQL functionality in Databricks and is ideal if you already have existing RAP pipelines set up using SQL scripts in a git repo. It works in a similar way to how many people currently use SQL Server Management Studio (SSMS).
+
+SQL Warehouses do not support R, Python or Scala code. Currently they also do not support widgets within Databricks notebooks. If you want to use compute resources to run R or Python code, then you will need to use a personal cluster. There is guidance on the use of personal clusters on the [Using personal clusters with Databricks](ADA/databricks_rstudio_personal_cluster.html) page. 
+
+SQL Warehouses enable you to access tables in the Unity Catalog, but not volumes within the Unity Catalog. Volumes are storage areas for files (e.g. .txt files or .csv files) rather than tables. You can learn more about volumes on [the Databricks documentation site](https://docs.databricks.com/en/volumes/index.html). To access a volume, you will also need to use a personal cluster. 
 
 ---
 
@@ -21,7 +43,7 @@ Before you start, you must have:
 
 -   R and RStudio downloaded and installed
 
--   The `ODBC` package installed in RStudio
+-   The `ODBC` and `DBI` packages installed in RStudio
 
 If you do not have access to Databricks or a SQL Warehouse within Databricks, you can request this using [a service request form](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=74bc3be81b212d504f999978b04bcb0b).
 
@@ -73,7 +95,7 @@ To set the environment variables, call `usethis::edit_r_environ()`. You will the
 
 ```         
 DATABRICKS_HOST=<databricks-host>
-DATABRICKS_SQL_WAREHOUSE_ID=<sql-warehouse-id>
+DATABRICKS_SQL_PATH=<sql-warehouse-path>
 DATABRICKS_TOKEN=<personal-access-token> 
 DATABRICKS_CLUSTER_ID=<personal-cluster-id>
 ```
@@ -83,7 +105,7 @@ Each value should be entered inside quotation marks, like this:
 DATABRICKS_SQL_WAREHOUSE_ID="/sql/1.0/warehouses/abcdefgh123"
 :::
 
-Once you have entered the details, save and close your .Renviron file.
+Once you have entered the details, save and close your .Renviron file and restart R (Session > Restart R).
 
 ::: callout-note
 Everyone in your team that wishes to connect to the SQL Warehouse in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.
@@ -101,11 +123,11 @@ The Databricks host is the instance of Databricks that you want to connect to. I
 
 ------------------------------------------------------------------------
 
-#### Databricks SQL Warehouse ID
+#### Databricks SQL Path
 
 ------------------------------------------------------------------------
 
-The Databricks SQL warehouse ID is the warehouse containing data that you would like to use. To get the warehouse ID, follow these steps:
+The Databricks SQL Path is the location of the warehouse containing data that you would like to use. To get the warehouse ID, follow these steps:
 
 -   click 'SQL Warehouses' under the 'SQL' section of the left hand menu on Databricks
 -   click on the warehouse name that you'd like to get the ID for
@@ -166,20 +188,20 @@ To obtain this, follow these steps:
 
 ------------------------------------------------------------------------
 
-Now that you have established a connection between Databricks and your laptop, and between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you. 
+Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you. 
 
-To access the data, we will make use of the `ODBC` package. You can find documentation about this package [on the Posit website](https://solutions.posit.co/connections/db/r-packages/odbc/).
+To access the data, we will make use of the `ODBC` package. You can find documentation about this package [on the Posit website](https://solutions.posit.co/connections/db/r-packages/odbc/). You will also need to have the `DBI` package installed.  
 
 Include the following code in your R Script:
 
 
 ``` {r databricks_connect_sql, eval=FALSE}
 library(odbc)
+library(DBI)
 
 con <- DBI::dbConnect(
   odbc::databricks(),
-  httpPath = Sys.getenv("DATABRICKS_SQL_WAREHOUSE_ID"),
-  workspace = Sys.getenv("DATABRICKS_HOST")
+  httpPath = Sys.getenv("DATABRICKS_SQL_PATH")
 )
 
 odbcListObjects(con)
