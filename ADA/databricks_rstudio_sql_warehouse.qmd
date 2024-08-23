@@ -102,7 +102,7 @@ DATABRICKS_CLUSTER_ID=<personal-cluster-id>
 
 ::: callout-important
 Each value should be entered inside quotation marks, like this:
-DATABRICKS_SQL_WAREHOUSE_ID="/sql/1.0/warehouses/abcdefgh123"
+DATABRICKS_SQL_PATH="/sql/1.0/warehouses/abcdefgh123"
 :::
 
 Once you have entered the details, save and close your .Renviron file and restart R (Session > Restart R).
