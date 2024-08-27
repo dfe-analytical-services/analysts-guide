@@ -53,6 +53,8 @@ For more advice about colour in charts and visualisations specifically, includin
 
 ## Making spreadsheets accessible
 
+Public sector spreadsheets must meet the AA level of the Web Content Accessibility Guidelines (WCAG) 2.2, as required by law under The Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018. This guidance distinguishes between mandatory actions needed to comply with legal accessibility standards and best practices that enhance usability. Non-compliance can lead to legal complaints, making it crucial for content creators to understand and mitigate these risks.
+
 When creating an accessible spreadsheet, it’s important to consider the needs of all users, including those with disabilities. To support analysts in making spreadsheets more accessible, apply the following strategies when creating spreadsheets:
 
 ### Consult the Spreadsheet Accessibility Guidance
@@ -60,8 +62,6 @@ When creating an accessible spreadsheet, it’s important to consider the needs 
 Before diving into the spreadsheet creation process, it's essential to familiarise yourself with the official [spreadsheet accessibility](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) guidance available on the Analysis Function Guidance Hub. This resource offers comprehensive insights into best practices for ensuring that your spreadsheets are accessible to all users.
 
 ### Accessibility and consequences
-
-Public sector spreadsheets must meet the AA level of the Web Content Accessibility Guidelines (WCAG) 2.2, as required by law under The Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018. This guidance distinguishes between mandatory actions needed to comply with legal accessibility standards and best practices that enhance usability. Non-compliance can lead to legal complaints, making it crucial for content creators to understand and mitigate these risks.
 
 In addition to accessibility, the guidance also addresses usability and machine readability. While these areas often overlap with accessibility, there are instances where they may conflict. Depending on user needs, it might be necessary to produce separate versions of a spreadsheet (one for human use and another optimised for machine readability) to ensure both accessibility and functionality are maintained.
 
