@@ -1,0 +1,214 @@
+---
+title: "DataBricks fundamentals"
+---
+
+------------------------------------------------------------------------
+
+# What is DataBricks?
+
+------------------------------------------------------------------------
+
+DataBricks is a web based platform for large scale data manipulation and analysis using code to create reproducible data pipelines. Primarily it takes the form of a website which you can create data pipelines and perform analysis in. It currently supports the languages R, SQL, python and scala, and integrates well with git based version control systems such as github or Azure DevOps.
+
+Behind the scenes it is distributed cloud computing platform which utilizes the [Apache Spark engine](https://spark.apache.org/) to split up heavy data processing into smaller chunks. It then distributes them to different 'computers' within the cloud to perform the processing of each chunk in parallel. Once each 'computer' is finished processing the results are recombined and passed back to the user or stored.
+
+Due to the parallel processing capabilities this improves the performance of the data processing and allows for the manipulation of very large data sets in a relatively short amount of time.
+
+In addition, it also provides new tools within the platform to construct and automate complex data transformations and processing.
+
+------------------------------------------------------------------------
+
+## Key differences
+
+------------------------------------------------------------------------
+
+Underpinning the technology are some key differences in how computers we're familiar with, and DataBricks (and distributed computing in general) are structured.
+
+### Traditional computing
+
+Currently, we are used to using a PC or laptop to do our data processing. A traditional computer has all of the components it needs to function:
+
+-   A processor and memory to do calculations
+-   A hard drive to store data permanently on
+-   A keyboard and mouse to capture user input
+-   A screen to provide outputs to the user
+
+![](/images/ada-traditional-computer.jpg){width="273"}
+
+Any computer traditional computer is limited by it's hardware meaning there is an upper limit on the size and complexity of data it can process.
+
+In order to increase the amount of data a computer can process you would have to switch out the physical hardware of the machine for something more powerful.
+
+### On DataBricks
+
+In DataBricks you can scale the components of your machine up (CPU cores, RAM) without having to build a physical machine to house them, essentially temporarily 'borrowing' processor power, memory and storage from a super computer.
+
+This means you can perform very heavy analyses that your laptop wouldn't be able to cope with. The DataBricks platform takes the place of the keyboard/mouse and screen, taking input and providing output back to the user.
+
+The storage and computation are separated into different components rather than being within the same 'machine'. Processing (processor and memory) is handled by a 'compute' resource, and storage (hard drive) is centralised in the 'unity catalog'.
+
+![](/images/ada-cloud-computing.jpg){width="515"}
+
+### Benefits of cloud compute
+
+-   **Scalable** - if you need more computing power you can increase your computing power and only pay for what you use rather than having to build an expensive new machine
+-   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled as required.
+-   **Data Governance** - The Department is able to 'see' all of it's data and organisational knowledge. This enables to ensure it is access controlled and align with GDPR and data protection legislation and guidelines.
+-   **Auditing and version control** - The Platform itself generates a lot of metadata which enables it to keep versioned history of it's data, outputs, etc.
+
+------------------------------------------------------------------------
+
+# Key concepts
+
+------------------------------------------------------------------------
+
+## Storage
+
+There are a few different ways of storing files and data on DataBricks.
+
+### Unity catalog
+
+The majority of data and files on DataBricks should be stored in the 'unity catalog'. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.
+
+The unity catalog can be accessed through the 'Compute' option in the DataBricks sidebar.
+
+![](/images/ada-unity-catalog-sidebar.png)
+
+#### Catalogs not databases
+
+The unity catalog contains numerous catalogs, which are similar in concept to a SQL database.
+
+#### Schemas, tables and views
+
+Like a SQL database a catalog has schemas, tables, and views which store data in a structured (usually tabular) format.
+
+This is where you would store your core datasets and pick up data to analyse from.
+
+#### Volumes
+
+Unlike a SQL database the unity catalog also contains volumes, which are file storage similar to a shared drive. They can be used for storing any type of file.
+
+Volumes are stored under a schema within a catalog. Files in here can be accessed and manipulated through code. You can also upload files to a volume through the user interface.
+
+#### Structure of the unity catalog
+
+There is one unity catalog which can contain any number of catalogs.
+
+A catalog can contain any number of schemas.
+
+A schema can contain any number of tables, views and volumes.
+
+### ![](/images/ada-unity-catalog.jpg)
+
+### Workspaces - DataBricks file system (DBFS)
+
+Each user has their own workspace which serves as a personal document and code storage. It contains a user folder which is specific to each person, and any git repositories that you have cloned or created within DataBricks.
+
+![](/images/ada-workspace-repos.png){fig-align="center"}
+
+Everything in your workspace is only accessible to you unless you share it with other users. When you do share a script or file you can specify whether the person you're sharing it with is able to view/edit/run the file your sharing.
+
+::: callout-caution
+## Don't overshare
+
+Sharing code this way can be useful but has it's risks. If you allow other users to edit and run your workbooks it's possible that they can make changes or run it simultaneously resulting in unexpected results.
+
+For collaboration on code it is always preferable to use a github/DevOps repository which each user can clone and work on independently.
+:::
+
+## Compute
+
+```         
+  ○ To actually run code you'll need to use a 'Compute resource'
+      § Essential a computer (or group of computers) in the cloud
+  ○ Types of compute
+      § SQL Warehouses
+          □ Can only run SQL, but are optimised for SQL queries
+      § Personal cluster
+          □ Can run R, python, SQL or scala
+      § Shared Clusters
+          □ Can be shared by multiple users
+          □ Currently doesn't support R, so won't focus on this for now
+              ® Support is planned for the future but not got a specific date yet
+  ○ How do you set them up
+      § SQL Warehouses
+          □ Will be set up centrally by the ADA team
+      § Personal cluster
+          □ You can set up yourself under certain policies
+          □ You can also ask for a larger cluster if your work requires it, but this will be set up by the ADA team
+          □ Compute
+              ® Create with DfE Personal Compute
+                  ◊ Databricks Runtime
+                  ◊ Node Type
+              ® Using compute
+                  ◊ You'll need to start the compute before running code
+                      } Can be done 
+                          – From the compute page
+                          – From a notebook 
+                          – From the SQL editor
+                  ◊ Will take a few minutes to start up
+                  ◊ If unused for 1 hour it will shut down again to preserve cost to the Dept
+```
+
+## Notebooks
+
+```         
+○ Similar to a markdown document
+    § Have formatted chunks of text
+    § Have code blocks
+○ How do you create one?
+    § Workspace > Any folder > Create > Notebook
+○ Default language
+    § Can be changed at notebook level
+    § You can use other languages in the same notebook using a "magic command"
+        □ Although it's debatable how useful this is
+            ® Languages don't share memory so a variable defined in R cannot be access through python
+            ® However, views and tables can be accessed using any language
+○ Why notebooks?
+    § Documentation (native)
+        □ Very easy to write neat documentation of what the code is doing
+        □ Can include pictures to explain complicated process
+        □ Can create bullet point lists, etc.
+    § Flexible
+        □ Can use multiple languages
+        □ Can use any type of compute (although SQL Warehouses will only be able to run SQL only notebooks)
+    § Sessions
+        □ A notebook has its own session so avoids the annoyance with SQL Editor
+    § Easier to navigate
+        □ Has 
+            ® Table of contents
+            ® File explorer
+            ® Data catalog browser
+○ Limitations
+    §  Each notebook is its own session
+        □ So a variable created in one notebook won't be accessible in the next
+        □ Although there are ways around this
+            ® Storing data as a table or file will allow it to be accessed by later notebooks
+            ® If you have parameters that several notebooks use you can set up a workflow/job
+```
+
+## Workflows
+
+```         
+○ What are they?
+    § The terms 'workflow' and 'job' are used interchangeably as far as I can tell
+    § They are a process made up of any number of notebooks/sql queries/scripts/etc.
+        □ These notebooks/queries are called 'tasks'
+        □ They share parameters at a workflow level
+            ® Good for things like 'global variables' (e.g. academic year)
+        □ They are audited automatically
+            ® Each run of a job is recorded, along with its parameters and the success/failure of any tasks
+        □ Can be set to run on schedules
+        □ Can notify people by email of completion/success/failure
+○ How do you create them?
+    § Either
+        □ Through the UI
+            ® Workflows > Create job
+                ◊ Add tasks 
+                ◊ Set parameters
+                ◊ Run job
+        □ Through a script
+            ® Jobs can be specified using code through either
+                ◊ An API
+                ◊ An R Package (which is just an R wrapper around the API)
+```
