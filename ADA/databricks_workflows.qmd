@@ -1,0 +1,35 @@
+---
+title: "Databricks Workflows"
+---
+
+------------------------------------------------------------------------
+
+## Workflows
+
+------------------------------------------------------------------------
+
+Workflows allow you to build complex data pipelines by chaining together multiple scripts, queries, notebooks and logic. Each step in a workflow is referred to as a task and each task has dependencies. They are accessible through the 'Workflows' link on the left hand menu of the DataBricks UI.
+
+![](/images/ada-workflow-menu.png)
+
+Parameters can be set either at a workflow level or a task level, allowing you to reuse tasks/workflows for similar operations.
+
+Each task can have dependencies on other tasks and can be set to only run under certain conditions, for example all of the previous tasks have completed successfully.
+
+Workflows can also be configured to send notifications to users upon success/failure.
+
+You can create a new workflow from the Workflow page by clicking the 'Create job' button in the top right of the screen.
+
+After setting up a flow of tasks you will be presented with a graphical presentation of the workflow as seen below:
+
+![](/images/ada-workflow-task-chart.png)
+
+Each time a workflow is ran DataBricks audits any input parameters, all outputs, the success and failure of each task, along with when it was run and who by.
+
+This makes them a very powerful debugging tool as you can refer back to results from previous runs.
+
+![](/images/ada-workflow-task-output.png)
+
+Another useful aspect of workflows is that they can be defined and ran using code through the [DataBricks Jobs API](https://docs.databricks.com/api/workspace/jobs) by passing tasks as JSON lists. Alternatively they can be created using only the R language using the [DataBricks SDK for R package](https://docs.databricks.com/en/dev-tools/sdk-r.html) using lists instead of JSON.
+
+Workflows also come with robust support for git/DevOps repositories and can be set to run from a specific repo, branch, commit or tag.
