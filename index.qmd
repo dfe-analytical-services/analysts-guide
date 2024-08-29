@@ -100,6 +100,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Analytical Data Access (ADA) and Databricks](ADA/ada.html)
 - Guidance for analysts on how to interact with and use data stored in ADA using Databricks
 
+[Databricks Fundamental Concepts](ADA/databricks_fundamentals.qmd)
+- Fundamental concepts in DataBricks that will help  you navigate and understand the platform
+
 [Setup Databricks SQL Warehouse with RStudio](ADA/databricks_rstudio_sql_warehouse.html)
 - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio.
 
