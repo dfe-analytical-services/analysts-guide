@@ -64,13 +64,15 @@ The storage and computation are separated into different components rather than 
 
 ## Storage
 
-There are a few different ways of storing files and data on DataBricks.
+------------------------------------------------------------------------
+
+There are a few different ways of storing files and data on DataBricks. Your data, and modelling areas will reside in the 'unity catalog', whereas your scripts and code will live on your 'workspace'.
 
 ### Unity catalog
 
 The majority of data and files on DataBricks should be stored in the 'unity catalog'. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.
 
-The unity catalog can be accessed through the 'Compute' option in the DataBricks sidebar.
+The unity catalog can be accessed through the 'Catalog' option in the DataBricks sidebar.
 
 ![](/images/ada-unity-catalog-sidebar.png)
 
@@ -104,6 +106,8 @@ A schema can contain any number of tables, views and volumes.
 
 Each user has their own workspace which serves as a personal document and code storage. It contains a user folder which is specific to each person, and any git repositories that you have cloned or created within DataBricks.
 
+Your workspace can be accessed through the 'Catalog' option in the DataBricks sidebar.
+
 ![](/images/ada-workspace-repos.png){fig-align="center"}
 
 Everything in your workspace is only accessible to you unless you share it with other users. When you do share a script or file you can specify whether the person you're sharing it with is able to view/edit/run the file your sharing.
@@ -116,41 +120,62 @@ Sharing code this way can be useful but has it's risks. If you allow other users
 For collaboration on code it is always preferable to use a github/DevOps repository which each user can clone and work on independently.
 :::
 
+------------------------------------------------------------------------
+
 ## Compute
 
-```         
-  ○ To actually run code you'll need to use a 'Compute resource'
-      § Essential a computer (or group of computers) in the cloud
-  ○ Types of compute
-      § SQL Warehouses
-          □ Can only run SQL, but are optimised for SQL queries
-      § Personal cluster
-          □ Can run R, python, SQL or scala
-      § Shared Clusters
-          □ Can be shared by multiple users
-          □ Currently doesn't support R, so won't focus on this for now
-              ® Support is planned for the future but not got a specific date yet
-  ○ How do you set them up
-      § SQL Warehouses
-          □ Will be set up centrally by the ADA team
-      § Personal cluster
-          □ You can set up yourself under certain policies
-          □ You can also ask for a larger cluster if your work requires it, but this will be set up by the ADA team
-          □ Compute
-              ® Create with DfE Personal Compute
-                  ◊ Databricks Runtime
-                  ◊ Node Type
-              ® Using compute
-                  ◊ You'll need to start the compute before running code
-                      } Can be done 
-                          – From the compute page
-                          – From a notebook 
-                          – From the SQL editor
-                  ◊ Will take a few minutes to start up
-                  ◊ If unused for 1 hour it will shut down again to preserve cost to the Dept
-```
+------------------------------------------------------------------------
+
+In order to access data and run code you need to set up a compute resource. The compute page can be accessed through the 'Compute' option in the DataBricks sidebar.
+
+![](/images/ada-compute.png)
+
+There are several types of compute available and you will need to make the most appropriate choice for the kind of processing you're wanting to do. The types are:
+
+-   SQL Warehouse - multiple users, SQL only
+
+-   Personal cluster - single user, supports R, SQL, python and scala
+
+-   Shared cluster - multiple users, supports SQL, python and scala
+
+You are able to create a personal cluster yourself, whereas shared clusters and SQL warehouses have to be requested through the ADA team.
+
+In most cases a personal cluster will be the most versatile and easily accessible option. However your team may want to request a shared SQL warehouse if you have a lot of processing heavy SQL queries.
+
+All compute options can be used both within the DataBricks platform and be connected to through other applications such as R & RStudio.
+
+### Creating a personal compute resource
+
+1.  To create your own personal compute resource click the 'Create with DfE Personal Compute' button on the compute page.
+
+![](/images/ada-compute-personal.png)
+
+2.  You'll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type.\
+    \
+    **DataBricks runtime version** - This is the version of the DataBricks software that will be present on your node. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is '15.4 LTS'.\
+    \
+    **Node type** - This option determines how powerful your cluster is and there are 2 options available by default:\
+    -   Standard 14GB 4-Core Nodes\
+    -   Large 28GB 8-Core Nodes\
+        \
+        If you require a larger personal cluster this can be requested by the ADA team.\
+        \
+        ![](/images/ada-compute-personal-create.png)
+3.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes.\
+    \
+    ![](/images/ada-compute-personal-create-button.png)
+
+::: callout-important
+As mentioned earlier compute resources have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.
+
+An alternative to this is to specify packages/libraries to be installed on the cluster at start up. To do this click the name of your cluster from the 'Compute' page, then go to the 'Libraries' tab and click the 'Install new' button.
+:::
+
+------------------------------------------------------------------------
 
 ## Notebooks
+
+------------------------------------------------------------------------
 
 ```         
 ○ Similar to a markdown document
@@ -187,7 +212,11 @@ For collaboration on code it is always preferable to use a github/DevOps reposit
             ® If you have parameters that several notebooks use you can set up a workflow/job
 ```
 
+------------------------------------------------------------------------
+
 ## Workflows
+
+------------------------------------------------------------------------
 
 ```         
 ○ What are they?
