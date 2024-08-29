@@ -120,6 +120,30 @@ Sharing code this way can be useful but has it's risks. If you allow other users
 For collaboration on code it is always preferable to use a github/DevOps repository which each user can clone and work on independently.
 :::
 
+### Repositories for version control
+
+Ideally all code should be managed through a versioned repository on github or Azure DevOps.
+
+To connect databricks to a repository:
+
+1.  Create a repository on your chosen platform (github / DevOps) and copy the HTTPS link to the repo.\
+    \
+    ![](/images/ada-workspace-repos-link.png)
+2.  On the 'Workspace' page navigate to your user or repos folder then click the 'Create' button, then select 'Git folder'\
+    \
+    ![](/images/ada-repos-create.png)
+3.  In the resulting window, paste your repo URL, select your git provider (here: DevOps) and given the git folder a name.\
+    \
+    ![](/images/ada-repos-create-details.png)
+4.  This will create your git folder in your user folder which you can then add scripts, queries and notebooks to.\
+    \
+    ![](/images/ada-repos-git-folder.png)
+5.  To commit and push your changes to the repository, or create/swap branches click on the git button to the right of the folder/notebook/script title. This will contain the name of the git branch that is current checked out which at first will be 'Main'.\
+    ![](/images/ada-repos-git-button.png)
+6.  This will bring up a commit window which will show you the differences to your file(s) since the last commit. Here you create or change branches, or can commit and push by writing a commit message and clicking the 'Commit and push' button.\
+    \
+    ![](/images/ada-repos-git-commit.png)
+
 ------------------------------------------------------------------------
 
 ## Compute
@@ -181,7 +205,7 @@ Once you have a compute resource you can begin using DataBricks. You can do this
 
 Notebooks are a special kind of script that DataBricks supports. They consist of code blocks and markdown blocks which can contain formatted text, links and images.
 
-You can create a notebook in your workspace, either in a folder or a repository. \
+You can create a notebook in your workspace, either in a folder or a repository.\
 To do this locate the folder/repository you want to create the notebook in then click the 'Create' button and select Notebook.
 
 ::: callout-tip
@@ -216,33 +240,34 @@ Notebooks cannot share a session with another Notebook so bear this in mind when
 
 Notebooks can be parameterised using '[widgets](https://docs.databricks.com/en/notebooks/widgets.html)', meaning a single notebook can be re-used with different inputs. This means they can be used in a similar way to a function in R/python or a stored procedure in SQL.
 
-
 ------------------------------------------------------------------------
 
 ## Workflows
 
 ------------------------------------------------------------------------
 
-```         
-○ What are they?
-    § The terms 'workflow' and 'job' are used interchangeably as far as I can tell
-    § They are a process made up of any number of notebooks/sql queries/scripts/etc.
-        □ These notebooks/queries are called 'tasks'
-        □ They share parameters at a workflow level
-            ® Good for things like 'global variables' (e.g. academic year)
-        □ They are audited automatically
-            ® Each run of a job is recorded, along with its parameters and the success/failure of any tasks
-        □ Can be set to run on schedules
-        □ Can notify people by email of completion/success/failure
-○ How do you create them?
-    § Either
-        □ Through the UI
-            ® Workflows > Create job
-                ◊ Add tasks 
-                ◊ Set parameters
-                ◊ Run job
-        □ Through a script
-            ® Jobs can be specified using code through either
-                ◊ An API
-                ◊ An R Package (which is just an R wrapper around the API)
-```
+Workflows allow you to build complex data pipelines by chaining together multiple scripts, queries, notebooks and logic. Each step in a workflow is referred to as a task and each task has dependencies. They are accessible through the 'Workflows' link on the left hand menu of the DataBricks UI.
+
+![](/images/ada-workflow-menu.png)
+
+Parameters can be set either at a workflow level or a task level, allowing you to reuse tasks/workflows for similar operations.
+
+Each task can have dependencies on other tasks and can be set to only run under certain conditions, for example all of the previous tasks have completed successfully.
+
+Workflows can also be configured to send notifications to users upon success/failure.
+
+You can create a new workflow from the Workflow page by clicking the 'Create job' button in the top right of the screen.
+
+After setting up a flow of tasks you will be presented with a graphical presentation of the workflow as seen below:
+
+![](/images/ada-workflow-task-chart.png)
+
+Each time a workflow is ran DataBricks audits any input parameters, all outputs, the success and failure of each task, along with when it was run and who by.
+
+This makes them a very powerful debugging tool as you can refer back to results from previous runs.
+
+![](/images/ada-workflow-task-output.png)
+
+Another useful aspect of workflows is that they can be defined and ran using code through the [DataBricks Jobs API](https://docs.databricks.com/api/workspace/jobs) by passing tasks as JSON lists. Alternatively they can be created using only the R language using the [DataBricks SDK for R package](https://docs.databricks.com/en/dev-tools/sdk-r.html) using lists instead of JSON.
+
+Workflows also come with robust support for git/DevOps repositories and can be set to run from a specific repo, branch, commit or tag.
