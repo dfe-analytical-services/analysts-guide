@@ -102,7 +102,7 @@ A schema can contain any number of tables, views and volumes.
 
 ### Workspaces - Databricks file system (DBFS)
 
-Each user has their own workspace which serves as a personal document and code storage. It contains a user folder which is specific to each person, and any Git repositories that you have cloned or created within Databricks.
+Each user has their own workspace which serves as a personal document and code storage area. It contains a user folder which is only accessible to that user by default, along with any Git repositories that you have cloned or created within Databricks.
 
 Your workspace can be accessed through the 'Catalog' option in the Databricks sidebar.
 
