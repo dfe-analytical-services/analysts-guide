@@ -164,11 +164,11 @@ In order to access data and run code you need to set up a compute resource. The 
 
 There are several types of compute available and you will need to make the most appropriate choice for the kind of processing you're wanting to do. The types are:
 
--   SQL Warehouse - multiple users, SQL only
+-   SQL Warehouse - multiple users, SQL only; best to use if you're only querying data from Databricks using SQL
 
--   Personal cluster - single user, supports R, SQL, python and scala
+-   Personal cluster - single user, supports R, SQL, python and scala; best to use if you require languages other than SQL
 
--   Shared cluster - multiple users, supports SQL, python and scala
+-   Shared cluster - multiple users, supports SQL, python and scala; 
 
 You are able to create a personal cluster yourself, whereas shared clusters and SQL warehouses have to be requested through the [ADA team](mailto:adaptteam@education.gov.uk).
 
