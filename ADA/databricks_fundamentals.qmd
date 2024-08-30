@@ -136,7 +136,7 @@ To connect Databricks to a repository:
 4.  This will create your Git folder in your user folder which you can then add scripts, queries and notebooks to.\
     \
     ![](/images/ada-repos-Git-folder.png)
-5.  To commit and push your changes to the repository, or create/swap branches click on the Git button to the right of the folder/notebook/script title. This will contain the name of the Git branch that is current checked out which at first will be 'Main'.\
+5.  To commit and push your changes to the repository, or create/swap branches click on the Git button to the right of the folder / notebook / script title. This will contain the name of the Git branch that is current checked out which at first will be 'Main'.\
     ![](/images/ada-repos-Git-button.png)
 6.  This will bring up a commit window which will show you the differences to your file(s) since the last commit. Here you create or change branches, or can commit and push by writing a commit message and clicking the 'Commit and push' button.\
     \
