@@ -166,8 +166,8 @@ In most cases a personal cluster will be the most versatile and easily accessibl
 
 All compute options can be used both within the Databricks platform and be connected to through other applications. Instructions on how to connect R / RStudio to a SQL Warehouse, or a personal cluster can be found on the following pages:
 
--   [Setup Databricks SQL Warehouse with RStudio](ADA/databricks_rstudio_sql_warehouse.qmd)
--   [Setup Databricks Personal Compute cluster with RStudio](ADA/databricks_rstudio_personal_cluster.qmd)
+-   [Setup Databricks SQL Warehouse with RStudio](databricks_rstudio_sql_warehouse.qmd)
+-   [Setup Databricks Personal Compute cluster with RStudio](databricks_rstudio_personal_cluster.qmd)
 
 ### Creating a personal compute resource
 
