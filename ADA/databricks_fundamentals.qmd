@@ -92,7 +92,8 @@ Volumes are stored under a schema within a catalog. Files in here can be accesse
 
 #### Structure of the unity catalog
 
-There is one unity catalog which can contain any number of catalogs.
+There is one 'unity catalog' for the whole of the Department for Education, this is what enables the Department to keep track of all of it's data in a single place. 
+The 'unity catalog' can contain any number of catalogs (equivalent to databases).
 
 A catalog can contain any number of schemas.
 
