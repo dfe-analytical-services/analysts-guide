@@ -74,6 +74,17 @@ The unity catalog can be accessed through the 'Catalog' option in the Databricks
 
 ![](/images/ada-unity-catalog-sidebar.png)
 
+#### Structure of the unity catalog
+
+There is one 'unity catalog' for the whole of the Department for Education, this is what enables the Department to keep track of all of it's data in a single place. 
+The 'unity catalog' can contain any number of catalogs (equivalent to databases).
+
+A catalog can contain any number of schemas.
+
+A schema can contain any number of tables, views and volumes.
+
+![](/images/ada-unity-catalog.jpg)
+
 #### Catalogs not databases
 
 The unity catalog contains numerous catalogs, which are similar in concept to a SQL database.
@@ -90,16 +101,6 @@ Unlike a SQL database the unity catalog also contains volumes, which are file st
 
 Volumes are stored under a schema within a catalog. Files in here can be accessed and manipulated through code. Such as CSVs, JSON and other formats of data files, or supporting files / images for applications you develop through the platform. You can also upload files to a volume through the user interface.
 
-#### Structure of the unity catalog
-
-There is one 'unity catalog' for the whole of the Department for Education, this is what enables the Department to keep track of all of it's data in a single place. 
-The 'unity catalog' can contain any number of catalogs (equivalent to databases).
-
-A catalog can contain any number of schemas.
-
-A schema can contain any number of tables, views and volumes.
-
-![](/images/ada-unity-catalog.jpg)
 
 ### Workspaces - Databricks file system (DBFS)
 
