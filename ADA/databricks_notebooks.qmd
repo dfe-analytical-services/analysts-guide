@@ -39,9 +39,9 @@ You can run a code chunk either by pressing the play button in the top left corn
 
 ![](/images/ada-notebook-chunk-output.png)
 
-Everything ran in a notebook is in it's own 'session' meaning that later chunks have access to variables, functions, etc. that were defined above.
+Everything ran in a notebook is in it's own 'session' meaning that later chunks have access to variables, functions, etc. that were defined above. Chunks can be ran manually, however doing this runs the risk of running code out of order and may consequently produce unexpected results. To avoid this all chunks can be ran in order from the beginning of the Notebook using the 'Run all' button at the top of the page, alternatively you can 'Run all above' or 'Run all below' from any code chunk.
 
-Notebooks cannot share a session with another Notebook so bear this in mind when constructing your workflows. If you need to pass data between notebooks it can be written out to a table in the unity catalog and accessed through that route.
+Notebooks cannot share a session with another Notebook so bear this in mind when constructing your workflows. If you need to pass data between notebooks it can be written out to a table in the unity catalog using SQL / R / Python / Scala as you would write to a SQL table in SQL Server. This can then be accessed from later notebooks.
 
 Notebooks can be parameterised using '[widgets](https://docs.Databricks.com/en/notebooks/widgets.html)', meaning a single notebook can be re-used with different inputs. This means they can be used in a similar way to a function in R/Python or a stored procedure in SQL.
 
