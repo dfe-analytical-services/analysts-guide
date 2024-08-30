@@ -89,7 +89,7 @@ An ODBC driver is required for the `ODBC` package in R to work - you must instal
 
 ------------------------------------------------------------------------
 
-The `ODBC` package in RStudio allows you to connect to Databricks by creating and modifying four environment variables in your .Renviron file.
+The `ODBC` package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.
 
 To set the environment variables, call `usethis::edit_r_environ()`. You will then need to enter the following information:
 
@@ -97,13 +97,7 @@ To set the environment variables, call `usethis::edit_r_environ()`. You will the
 DATABRICKS_HOST=<databricks-host>
 DATABRICKS_SQL_PATH=<sql-warehouse-path>
 DATABRICKS_TOKEN=<personal-access-token> 
-DATABRICKS_CLUSTER_ID=<personal-cluster-id>
 ```
-
-::: callout-important
-Each value should be entered inside quotation marks, like this:
-DATABRICKS_SQL_PATH="/sql/1.0/warehouses/abcdefgh123"
-:::
 
 Once you have entered the details, save and close your .Renviron file and restart R (Session > Restart R).
 
@@ -123,11 +117,13 @@ The Databricks host is the instance of Databricks that you want to connect to. I
 
 ------------------------------------------------------------------------
 
-#### Databricks SQL Path
+#### Databricks SQL Warehouse Path
 
 ------------------------------------------------------------------------
 
-The Databricks SQL Path is the location of the warehouse containing data that you would like to use. To get the warehouse ID, follow these steps:
+As described in the [SQL Warehouses section](/ADA/ada.html#sql-warehouse), in Databricks, SQL Warehouses are a way to gain access to your data in the Unity Catalog. They run queries and return the results either to the user or to a table. 
+
+To get the Warehouse ID, follow these steps:
 
 -   click 'SQL Warehouses' under the 'SQL' section of the left hand menu on Databricks
 -   click on the warehouse name that you'd like to get the ID for
@@ -166,21 +162,6 @@ Note that access tokens will only last as long as the value for the 'Lifetime (d
 ::: callout-warning
 It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.
 :::
-
-------------------------------------------------------------------------
-
-#### Cluster ID
-
-------------------------------------------------------------------------
-
-The Cluster ID is the cluster that you'll be using to run your code.
-
-To obtain this, follow these steps:
-
--   click Compute in the left and menu, and click on the name of your cluster
--   under the configuration tab, click on "Advanced options" at the bottom of the page
--   click on the JDBC/ODBC tab
--   in HTTP path, copy everything after the last /. This is your Cluster ID 
 
 ------------------------------------------------------------------------
 
