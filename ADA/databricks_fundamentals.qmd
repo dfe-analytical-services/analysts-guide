@@ -1,16 +1,16 @@
 ---
-title: "DataBricks fundamentals"
+title: "Databricks fundamentals"
 ---
 
 ------------------------------------------------------------------------
 
-# What is DataBricks?
+# What is Databricks?
 
 ------------------------------------------------------------------------
 
-DataBricks is a web based platform for large scale data manipulation and analysis using code to create reproducible data pipelines. Primarily it takes the form of a website which you can create data pipelines and perform analysis in. It currently supports the languages R, SQL, python and scala, and integrates well with git based version control systems such as github or Azure DevOps.
+Databricks is a web based platform for large scale data manipulation and analysis using code to create reproducible data pipelines. Primarily it takes the form of a website which you can create data pipelines and perform analysis in. It currently supports the languages R, SQL, python and scala, and integrates well with Git based version control systems such as GitHub or Azure DevOps.
 
-Behind the scenes it is distributed cloud computing platform which utilizes the [Apache Spark engine](https://spark.apache.org/) to split up heavy data processing into smaller chunks. It then distributes them to different 'computers' within the cloud to perform the processing of each chunk in parallel. Once each 'computer' is finished processing the results are recombined and passed back to the user or stored.
+Behind the scenes it is a distributed cloud computing platform which utilizes the [Apache Spark engine](https://spark.apache.org/) to split up heavy data processing into smaller chunks. It then distributes them to different 'computers' within the cloud to perform the processing of each chunk in parallel. Once each 'computer' is finished processing the results are recombined and passed back to the user or stored.
 
 Due to the parallel processing capabilities this improves the performance of the data processing and allows for the manipulation of very large data sets in a relatively short amount of time.
 
@@ -20,9 +20,7 @@ In addition, it also provides new tools within the platform to construct and aut
 
 ## Key differences
 
-------------------------------------------------------------------------
-
-Underpinning the technology are some key differences in how computers we're familiar with, and DataBricks (and distributed computing in general) are structured.
+Underpinning the technology are some key differences in how computers we're familiar with, and Databricks (and distributed computing in general) are structured.
 
 ### Traditional computing
 
@@ -35,15 +33,15 @@ Currently, we are used to using a PC or laptop to do our data processing. A trad
 
 ![](/images/ada-traditional-computer.jpg){width="273"}
 
-Any computer traditional computer is limited by it's hardware meaning there is an upper limit on the size and complexity of data it can process.
+Any traditional computer is limited by it's hardware meaning there is an upper limit on the size and complexity of data it can process.
 
 In order to increase the amount of data a computer can process you would have to switch out the physical hardware of the machine for something more powerful.
 
-### On DataBricks
+### On Databricks
 
-In DataBricks you can scale the components of your machine up (CPU cores, RAM) without having to build a physical machine to house them, essentially temporarily 'borrowing' processor power, memory and storage from a super computer.
+In Databricks you can scale the components of your machine up (CPU cores, RAM) without having to build a physical machine to house them, essentially temporarily 'borrowing' processor power, memory and storage from a super computer.
 
-This means you can perform very heavy analyses that your laptop wouldn't be able to cope with. The DataBricks platform takes the place of the keyboard/mouse and screen, taking input and providing output back to the user.
+This means you can perform very heavy analyses that your laptop wouldn't be able to cope with. The Databricks platform takes the place of the keyboard/mouse and screen, taking input and providing output back to the user.
 
 The storage and computation are separated into different components rather than being within the same 'machine'. Processing (processor and memory) is handled by a 'compute' resource, and storage (hard drive) is centralised in the 'unity catalog'.
 
@@ -52,8 +50,8 @@ The storage and computation are separated into different components rather than 
 ### Benefits of cloud compute
 
 -   **Scalable** - if you need more computing power you can increase your computing power and only pay for what you use rather than having to build an expensive new machine
--   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled as required.
--   **Data Governance** - The Department is able to 'see' all of it's data and organisational knowledge. This enables to ensure it is access controlled and align with GDPR and data protection legislation and guidelines.
+-   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required.
+-   **Data Governance** - The Department is able to 'see' all of it's data and organisational knowledge. This enables it to ensure it is access controlled and align with GDPR and data protection legislation and guidelines.
 -   **Auditing and version control** - The Platform itself generates a lot of metadata which enables it to keep versioned history of it's data, outputs, etc.
 
 ------------------------------------------------------------------------
@@ -66,13 +64,13 @@ The storage and computation are separated into different components rather than 
 
 ------------------------------------------------------------------------
 
-There are a few different ways of storing files and data on DataBricks. Your data, and modelling areas will reside in the 'unity catalog', whereas your scripts and code will live on your 'workspace'.
+There are a few different ways of storing files and data on Databricks. Your data, and modelling areas will reside in the 'unity catalog', whereas your scripts and code will live on your 'workspace'.
 
 ### Unity catalog
 
-The majority of data and files on DataBricks should be stored in the 'unity catalog'. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.
+The majority of data and files on Databricks should be stored in the 'unity catalog'. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.
 
-The unity catalog can be accessed through the 'Catalog' option in the DataBricks sidebar.
+The unity catalog can be accessed through the 'Catalog' option in the Databricks sidebar.
 
 ![](/images/ada-unity-catalog-sidebar.png)
 
@@ -90,7 +88,7 @@ This is where you would store your core datasets and pick up data to analyse fro
 
 Unlike a SQL database the unity catalog also contains volumes, which are file storage similar to a shared drive. They can be used for storing any type of file.
 
-Volumes are stored under a schema within a catalog. Files in here can be accessed and manipulated through code. You can also upload files to a volume through the user interface.
+Volumes are stored under a schema within a catalog. Files in here can be accessed and manipulated through code. Such as CSVs, JSON and other formats of data files, or supporting files / images for applications you develop through the platform. You can also upload files to a volume through the user interface.
 
 #### Structure of the unity catalog
 
@@ -100,49 +98,49 @@ A catalog can contain any number of schemas.
 
 A schema can contain any number of tables, views and volumes.
 
-### ![](/images/ada-unity-catalog.jpg)
+![](/images/ada-unity-catalog.jpg)
 
-### Workspaces - DataBricks file system (DBFS)
+### Workspaces - Databricks file system (DBFS)
 
-Each user has their own workspace which serves as a personal document and code storage. It contains a user folder which is specific to each person, and any git repositories that you have cloned or created within DataBricks.
+Each user has their own workspace which serves as a personal document and code storage. It contains a user folder which is specific to each person, and any Git repositories that you have cloned or created within Databricks.
 
-Your workspace can be accessed through the 'Catalog' option in the DataBricks sidebar.
+Your workspace can be accessed through the 'Catalog' option in the Databricks sidebar.
 
 ![](/images/ada-workspace-repos.png){fig-align="center"}
 
-Everything in your workspace is only accessible to you unless you share it with other users. When you do share a script or file you can specify whether the person you're sharing it with is able to view/edit/run the file your sharing.
+Everything in your workspace is only accessible to you unless you share it with other users. When you do share a script or file you can specify whether the person you're sharing it with is able to view/edit/run the file you're sharing.
 
 ::: callout-caution
 ## Don't overshare
 
 Sharing code this way can be useful but has it's risks. If you allow other users to edit and run your workbooks it's possible that they can make changes or run it simultaneously resulting in unexpected results.
 
-For collaboration on code it is always preferable to use a github/DevOps repository which each user can clone and work on independently.
+For collaboration on code it is always preferable to use a GitHub/DevOps repository which each user can clone and work on independently.
 :::
 
 ### Repositories for version control
 
-Ideally all code should be managed through a versioned repository on github or Azure DevOps.
+Ideally all code should be managed through a versioned repository on GitHub or Azure DevOps.
 
-To connect databricks to a repository:
+To connect Databricks to a repository:
 
-1.  Create a repository on your chosen platform (github / DevOps) and copy the HTTPS link to the repo.\
+1.  Create a repository on your chosen platform (GitHub / DevOps) and copy the HTTPS link to the repo.\
     \
     ![](/images/ada-workspace-repos-link.png)
 2.  On the 'Workspace' page navigate to your user or repos folder then click the 'Create' button, then select 'Git folder'\
     \
     ![](/images/ada-repos-create.png)
-3.  In the resulting window, paste your repo URL, select your git provider (here: DevOps) and given the git folder a name.\
+3.  In the resulting window, paste your repo URL, select your Git provider (here: DevOps) and given the Git folder a name.\
     \
     ![](/images/ada-repos-create-details.png)
-4.  This will create your git folder in your user folder which you can then add scripts, queries and notebooks to.\
+4.  This will create your Git folder in your user folder which you can then add scripts, queries and notebooks to.\
     \
-    ![](/images/ada-repos-git-folder.png)
-5.  To commit and push your changes to the repository, or create/swap branches click on the git button to the right of the folder/notebook/script title. This will contain the name of the git branch that is current checked out which at first will be 'Main'.\
-    ![](/images/ada-repos-git-button.png)
+    ![](/images/ada-repos-Git-folder.png)
+5.  To commit and push your changes to the repository, or create/swap branches click on the Git button to the right of the folder/notebook/script title. This will contain the name of the Git branch that is current checked out which at first will be 'Main'.\
+    ![](/images/ada-repos-Git-button.png)
 6.  This will bring up a commit window which will show you the differences to your file(s) since the last commit. Here you create or change branches, or can commit and push by writing a commit message and clicking the 'Commit and push' button.\
     \
-    ![](/images/ada-repos-git-commit.png)
+    ![](/images/ada-repos-Git-commit.png)
 
 ------------------------------------------------------------------------
 
@@ -150,7 +148,7 @@ To connect databricks to a repository:
 
 ------------------------------------------------------------------------
 
-In order to access data and run code you need to set up a compute resource. The compute page can be accessed through the 'Compute' option in the DataBricks sidebar.
+In order to access data and run code you need to set up a compute resource. The compute page can be accessed through the 'Compute' option in the Databricks sidebar.
 
 ![](/images/ada-compute.png)
 
@@ -162,11 +160,11 @@ There are several types of compute available and you will need to make the most 
 
 -   Shared cluster - multiple users, supports SQL, python and scala
 
-You are able to create a personal cluster yourself, whereas shared clusters and SQL warehouses have to be requested through the ADA team.
+You are able to create a personal cluster yourself, whereas shared clusters and SQL warehouses have to be requested through the [ADA team](mailto:adaptteam@education.gov.uk).
 
 In most cases a personal cluster will be the most versatile and easily accessible option. However your team may want to request a shared SQL warehouse if you have a lot of processing heavy SQL queries.
 
-All compute options can be used both within the DataBricks platform and be connected to through other applications such as R & RStudio.
+All compute options can be used both within the Databricks platform and be connected to through other applications such as R & RStudio.
 
 ### Creating a personal compute resource
 
@@ -176,23 +174,39 @@ All compute options can be used both within the DataBricks platform and be conne
 
 2.  You'll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type.\
     \
-    **DataBricks runtime version** - This is the version of the DataBricks software that will be present on your node. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is '15.4 LTS'.\
+    **Databricks runtime version** - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is '15.4 LTS'.\
     \
     **Node type** - This option determines how powerful your cluster is and there are 2 options available by default:\
+
     -   Standard 14GB 4-Core Nodes\
     -   Large 28GB 8-Core Nodes\
         \
         If you require a larger personal cluster this can be requested by the ADA team.\
         \
         ![](/images/ada-compute-personal-create.png)
+
 3.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes.\
     \
     ![](/images/ada-compute-personal-create-button.png)
 
-::: callout-important
-As mentioned earlier compute resources have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.
+4.  Once the cluster is up and running the icon under the 'State' header on the 'Compute' page will appear as a green tick.\
+    \
+    ![](/images/ada-compute-ready.png)
 
-An alternative to this is to specify packages/libraries to be installed on the cluster at start up. To do this click the name of your cluster from the 'Compute' page, then go to the 'Libraries' tab and click the 'Install new' button.
+::: callout-note
+## Clusters will shut down after being idle for an hour
+
+Use of compute resources are charged by the hour, and so personal cluster have been set to shut down after being unused for an hour in order to prevent unnecessary cost to the Department.
 :::
 
-Once you have a compute resource you can begin using DataBricks. You can do this either through connecting to DataBricks through RStudio, or you can begin coding in the DataBricks platforms using scripts, or [Notebooks](databricks_notebooks.qmd).
+::: callout-important
+## Packages and libraries
+
+As mentioned above compute resources have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.
+
+An alternative to this is to specify packages/libraries to be installed on the cluster at start up. To do this click the name of your cluster from the 'Compute' page, then go to the 'Libraries' tab and click the 'Install new' button.
+
+Certain packages are installed by default on personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the [Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/).
+:::
+
+Once you have a compute resource you can begin using Databricks. You can do this either through connecting to Databricks through RStudio, or you can begin coding in the Databricks platforms using scripts, or [Notebooks](Databricks_notebooks.qmd).

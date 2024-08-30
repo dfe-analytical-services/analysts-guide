@@ -12,17 +12,69 @@ Workflows allow you to build complex data pipelines by chaining together multipl
 
 ![](/images/ada-workflow-menu.png)
 
-Parameters can be set either at a workflow level or a task level, allowing you to reuse tasks/workflows for similar operations.
+Parameters can be set either at a workflow level or a task level and referred to in your scripts / notebooks, allowing you to reuse tasks/workflows for similar operations.
 
-Each task can have dependencies on other tasks and can be set to only run under certain conditions, for example all of the previous tasks have completed successfully.
+Each task can have dependencies on other tasks and can be set to only run under certain conditions, for example all of the previous tasks have completed successfully. These can be configured when tasks are added to the workflow through the user interface.
 
-Workflows can also be configured to send notifications to users upon success/failure.
+Workflows and tasks can also be configured to send notifications to users upon success/failure. These can be configured from the Workflow and Task user interfaces.
 
-You can create a new workflow from the Workflow page by clicking the 'Create job' button in the top right of the screen.
+------------------------------------------------------------------------
 
-After setting up a flow of tasks you will be presented with a graphical presentation of the workflow as seen below:
+### Setting up a workflow
+
+------------------------------------------------------------------------
+
+1.  You can create a new workflow from the Workflow page by clicking the 'Create job' button in the top right of the screen.
+
+![](/images/ada-workflow-create-job.png)
+
+2.  You will then be presented with a page titled 'New Job \<timestamp\>' which you can edit to give the workflow a meaningful name.
+
+![](/images/ada-workflows-new-job.png){fig-align="center"}
+
+3.  The 'Job Details' pane on the right allows you to configure workflow level schedules and triggers, parameters which will be accessible to all tasks in the workflow, email notifications for successful / failed runs, and permissions on who can access and run the workflow. You can also add tags and descriptions to your workflow to help you keep track of them.\
+4.  In the task pane you can configure settings at an individual task level, including a unique name, the type of task (notebook, query, script, etc.) the source (your workspace, or a Git repository), the path to the code for the task and the compute resource the workflow should run on.\
+    \
+    Any libraries or packages that the workflow depends on can be specified which will ensure that these are installed on the cluster when it begins (not applicable to SQL warehouses).\
+    \
+    You are also able to set task level parameters here, as well as setup notifications for the specific task. In addition you can specify the number of times a task should be retried if it fails, and a duration threshold for the task before forcing it to fail.
+
+![](/images/ada-workflow-task.png){fig-align="center"}
+
+::: callout-note
+## Source
+
+The source by default is set to your Workspace, but it is recommended that you use a version controlled Git repository instead. This prevents you changing the code of a notebook during a workflow run as the tasks are sourced from a specific repository version, branch, commit or tag rather than a workbook you may be working on.
+:::
+
+::: callout-note
+## Compute
+
+During active development it is probably easiest to use your personal compute or a SQL warehouse you have access to.
+
+Once development is complete and the workflow becomes business as usual it may be worth requesting a specific job cluster to be created by the [ADA team](adaptteam@education.gov.uk) to be solely responsible for running the workflow.
+:::
+
+5.  Click the 'Create task' button to save the details. After this you will be able to add additional tasks.
+6.  Once you begin creating a second task all tasks will now have 2 additional configurations; 'depends on', and 'run if dependencies'.\
+    \
+    **Depends on** - a list of tasks that must be run before the start of this task\
+    **Run if dependencies** - Instructions for the conditions to run the task based on the dependencies set above. The default option is 'All succeeded' but there are also the following options:\
+    \
+    - At least one succeeded\
+    - None failed\
+    - All done\
+    - At least one failed\
+    - All failed\
+7.  After setting up a flow of tasks you will be presented with a graphical presentation of the workflow as seen below:
 
 ![](/images/ada-workflow-task-chart.png)
+
+------------------------------------------------------------------------
+
+### Auditing
+
+------------------------------------------------------------------------
 
 Each time a workflow is ran DataBricks audits any input parameters, all outputs, the success and failure of each task, along with when it was run and who by.
 
