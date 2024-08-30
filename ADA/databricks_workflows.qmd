@@ -37,7 +37,9 @@ Workflows and tasks can also be configured to send notifications to users upon s
     \
     Any libraries or packages that the workflow depends on can be specified which will ensure that these are installed on the cluster when it begins (not applicable to SQL warehouses).\
     \
-    You are also able to set task level parameters here, as well as setup notifications for the specific task. In addition you can specify the number of times a task should be retried if it fails, and a duration threshold for the task before forcing it to fail.
+    You are also able to set task level parameters here which mean that you are able to reuse the same notebook for different tasks by setting different inputs. This allows you to create notebooks that serve as 'functions' from R or Python, or 'stored procedures' from SQL. \
+    \
+    Here you can also setup notifications for the specific task. In addition you can specify the number of times a task should be retried if it fails, and a duration threshold for the task before forcing it to fail.
 
 ![](/images/ada-workflow-task.png){fig-align="center"}
 

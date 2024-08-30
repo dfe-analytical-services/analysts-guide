@@ -44,3 +44,11 @@ Everything ran in a notebook is in it's own 'session' meaning that later chunks 
 Notebooks cannot share a session with another Notebook so bear this in mind when constructing your workflows. If you need to pass data between notebooks it can be written out to a table in the unity catalog and accessed through that route.
 
 Notebooks can be parameterised using '[widgets](https://docs.Databricks.com/en/notebooks/widgets.html)', meaning a single notebook can be re-used with different inputs. This means they can be used in a similar way to a function in R/Python or a stored procedure in SQL.
+
+::: callout-note
+## Don't repeat yourself (DRY)
+
+A coding best-practice is to build components that can be re-used to perform many similar tasks rather than writing repetitive code.
+
+This applies equally to notebooks or scripts you create within Databricks which can be made re-usable through parameters. To reference a parameter within a notebook you can use the syntax `:parameter_name` from Databricks Runtime 15+. In previous DBR versions the syntax was `${parameter_name}`.
+:::
