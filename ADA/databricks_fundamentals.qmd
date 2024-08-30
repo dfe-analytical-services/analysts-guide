@@ -158,7 +158,7 @@ To connect Databricks to a repository:
 
 ------------------------------------------------------------------------
 
-In order to access data and run code you need to set up a compute resource. The compute page can be accessed through the 'Compute' option in the Databricks sidebar.
+In order to access data and run code you need to set up a compute resource. A compute resource provides processing power and memory to pick up and manipulate the data and files stored in the 'unity catalog'. The compute page can be accessed through the 'Compute' option in the Databricks sidebar.
 
 ![](/images/ada-compute.png)
 
