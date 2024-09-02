@@ -146,7 +146,7 @@ Further examples are given on the [Using explore education statistics guidance](
 
 ## Use of colour outside of charts
 
-In terms of colour choices beyond charts, teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. The [style sheet](https://github.com/dfe-analytical-services/shiny-template/blob/main/www/shiny_gov_style.css) in our [template repository](https://github.com/dfe-analytical-services/shiny-template) makes use of these colours, though this can be extended if needed to suit your needs. 
+In terms of colour choices beyond charts, teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. Colours for the charts are pulled in using the [afcolours package](https://best-practice-and-impact.github.io/afcolours/), which is based on the [GSS colours guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). These colours can be reused elsewhere if you need to match colours with those in the charts.
 
 As with charts, be careful when choosing colours, and make sure that colours have sufficient contrast to be placed next to each other to meet WCAG AA standards using the [colour contrast checker](https://webaim.org/resources/contrastchecker/).
 
