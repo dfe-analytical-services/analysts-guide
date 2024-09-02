@@ -53,6 +53,15 @@ The storage and computation are separated into different components rather than 
 -   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required.
 -   **Data Governance** - The Department is able to 'see' all of it's data and organisational knowledge. This enables it to ensure it is access controlled and align with GDPR and data protection legislation and guidelines.
 -   **Auditing and version control** - The Platform itself generates a lot of metadata which enables it to keep versioned history of it's data, outputs, etc.
+-   **Automation** - Complex data processing pipelines can be set up using Databricks workflows and set to automatically run, either on a timer or a specific trigger allowing for a fully automated production process.
+
+Each of these aspects bring benefits to the wider Department and for analysts within it.
+
+Due to the scalability of compute resources you can request a more powerful processing cluster allowing you to deal with larger datasets more simply, focussing on the analytical logic of it rather than having to build processes around technical limitations such as storage space and processing power.
+
+The centralised nature of the data storage makes navigation of the Department's data estate much simpler with everything existing in a single environment. Combined with stronger data governance this makes discovery of supplementary or related data the Department holds much easier. In addition, it allows for datasets that are commonly used across the Department - such as ONS geography datasets - to be standardised and made available to all teams, ensuring consistency of data and it's formatting across the Departments publications.
+
+The auditing, and automation facilities provide a lot of benefits when building data pipelines. These can be set up to run as required with little manual effort from analysts, and can build automated quality assurance into the pipeline so that analysts can be confident in the outputs. In addition, the auditing keeps a record of all inputs and outputs each time a process is run, allowing you debug issues retrospectively without having to repeatedly step through the process to see where unexpected issues have occurred.
 
 ------------------------------------------------------------------------
 
@@ -76,8 +85,7 @@ The unity catalog can be accessed through the 'Catalog' option in the Databricks
 
 #### Structure of the unity catalog
 
-There is one 'unity catalog' for the whole of the Department for Education, this is what enables the Department to keep track of all of it's data in a single place. 
-The 'unity catalog' can contain any number of catalogs (equivalent to databases).
+There is one 'unity catalog' for the whole of the Department for Education, this is what enables the Department to keep track of all of it's data in a single place. The 'unity catalog' can contain any number of catalogs (equivalent to databases).
 
 A catalog can contain any number of schemas.
 
@@ -95,7 +103,7 @@ Like a SQL database a catalog has schemas, tables, and views which store data in
 
 A schema is a sub-division of a catalog which allows for logical separation of data stored in the catalog. Whoever creates a schema is it's owner, and is able to set fine grained permissions on who can see / edit the data within it. Permissions can also be set for groups of analysts, and can be modified by the ADA team if the original owner is no longer available.
 
-Tables are equivalent to SQL tables, and store data in a tabular format. Tables in Databricks have the ability to turn on version control which audits each change to the data and allows a user to go back in time to see earlier versions of the table. 
+Tables are equivalent to SQL tables, and store data in a tabular format. Tables in Databricks have the ability to turn on version control which audits each change to the data and allows a user to go back in time to see earlier versions of the table.
 
 Views look and act the same as tables, however instead of storing the data as it is presented a view is created from a query which is ran when the view is referenced. This allows you to provide alternative ways to format data from tables without storing duplicated data.
 
@@ -105,10 +113,9 @@ Tables and views sit within a schema and these are where you would store your co
 
 Unlike a SQL database the unity catalog also contains volumes, which are file storage similar to a shared drive. They can be used for storing any type of file.
 
-Volumes are stored under a schema within a catalog. Files in here can be accessed and manipulated through code. 
+Volumes are stored under a schema within a catalog. Files in here can be accessed and manipulated through code.
 
 Examples of files suitable to be stored in a volume include CSVs, JSON and other formats of data files, or supporting files / images for applications you develop through the platform. You can also upload files to a volume through the user interface.
-
 
 ### Workspaces - Databricks file system (DBFS)
 
@@ -168,7 +175,7 @@ There are several types of compute available and you will need to make the most 
 
 -   Personal cluster - single user, supports R, SQL, python and scala; best to use if you require languages other than SQL
 
--   Shared cluster - multiple users, supports SQL, python and scala; 
+-   Shared cluster - multiple users, supports SQL, python and scala;
 
 You are able to create a personal cluster yourself, whereas shared clusters and SQL warehouses have to be requested through the [ADA team](mailto:adaptteam@education.gov.uk).
 
