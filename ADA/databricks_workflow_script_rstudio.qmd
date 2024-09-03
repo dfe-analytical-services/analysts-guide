@@ -220,7 +220,7 @@ We will now use this to create links to the job and the specific run of the job 
     ``` r
     my_jobs <- jobsList(client,
                         name = "test job") %>%
-      filter(creator_user_name == 'nicholas.treece@education.gov.uk')
+      filter(creator_user_name == 'your-email')
 
     View(
       my_jobs %>% 

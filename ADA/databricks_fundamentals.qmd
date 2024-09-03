@@ -24,6 +24,8 @@ Underpinning the technology are some key differences in how computers we're fami
 
 ### Traditional computing
 
+------------------------------------------------------------------------
+
 Currently, we are used to using a PC or laptop to do our data processing. A traditional computer has all of the components it needs to function:
 
 -   A processor and memory to do calculations
@@ -39,15 +41,19 @@ In order to increase the amount of data a computer can process you would have to
 
 ### On Databricks
 
+------------------------------------------------------------------------
+
 In Databricks you can scale the components of your machine up (CPU cores, RAM) without having to build a physical machine to house them, essentially temporarily 'borrowing' processor power, memory and storage from a super computer.
 
-This means you can perform very heavy analyses that your laptop wouldn't be able to cope with. The Databricks platform takes the place of the keyboard/mouse and screen, taking input and providing output back to the user.
+This means you can perform very heavy analyses that your laptop wouldn't be able to cope with. The Databricks platform provides a way for you to interface with the cloud computer in place of the keyboard/mouse and screen, taking your inputs and providing the resulting outputs back to you.
 
 The storage and computation are separated into different components rather than being within the same 'machine'. Processing (processor and memory) is handled by a 'compute' resource, and storage (hard drive) is centralised in the 'unity catalog'.
 
 ![](/images/ada-cloud-computing.jpg){width="515"}
 
 ### Benefits of cloud compute
+
+------------------------------------------------------------------------
 
 -   **Scalable** - if you need more computing power you can increase your computing power and only pay for what you use rather than having to build an expensive new machine
 -   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required.
@@ -71,11 +77,11 @@ The auditing, and automation facilities provide a lot of benefits when building 
 
 ## Storage
 
-------------------------------------------------------------------------
-
 There are a few different ways of storing files and data on Databricks. Your data, and modelling areas will reside in the 'unity catalog', whereas your scripts and code will live on your 'workspace'.
 
 ### Unity catalog
+
+------------------------------------------------------------------------
 
 The majority of data and files on Databricks should be stored in the 'unity catalog'. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.
 
@@ -84,6 +90,8 @@ The unity catalog can be accessed through the 'Catalog' option in the Databricks
 ![](/images/ada-unity-catalog-sidebar.png)
 
 #### Structure of the unity catalog
+
+------------------------------------------------------------------------
 
 There is one 'unity catalog' for the whole of the Department for Education, this is what enables the Department to keep track of all of it's data in a single place. The 'unity catalog' can contain any number of catalogs (equivalent to databases).
 
@@ -95,9 +103,13 @@ A schema can contain any number of tables, views and volumes.
 
 #### Catalogs not databases
 
+------------------------------------------------------------------------
+
 The 'unity catalog' is a single catalog that contains all the other catalogs of data in the Department. Catalogs are very similar in concept to a SQL database in that they they contain schemas, tables of data and views of data.
 
 #### Schemas, tables and views
+
+------------------------------------------------------------------------
 
 Like a SQL database a catalog has schemas, tables, and views which store data in a structured (usually tabular) format.
 
@@ -111,6 +123,8 @@ Tables and views sit within a schema and these are where you would store your co
 
 #### Volumes
 
+------------------------------------------------------------------------
+
 Unlike a SQL database the unity catalog also contains volumes, which are file storage similar to a shared drive. They can be used for storing any type of file.
 
 Volumes are stored under a schema within a catalog. Files in here can be accessed and manipulated through code.
@@ -118,6 +132,8 @@ Volumes are stored under a schema within a catalog. Files in here can be accesse
 Examples of files suitable to be stored in a volume include CSVs, JSON and other formats of data files, or supporting files / images for applications you develop through the platform. You can also upload files to a volume through the user interface.
 
 ### Workspaces - Databricks file system (DBFS)
+
+------------------------------------------------------------------------
 
 Each user has their own workspace which serves as a personal document and code storage area. It contains a user folder which is only accessible to that user by default, along with any Git repositories that you have cloned or created within Databricks.
 
@@ -132,32 +148,16 @@ Everything in your workspace is only accessible to you unless you share it with 
 
 Sharing code this way can be useful but has it's risks. If you allow other users to edit and run your workbooks it's possible that they can make changes or run it simultaneously resulting in unexpected results.
 
-For collaboration on code it is always preferable to use a GitHub/DevOps repository which each user can clone and work on independently.
+For collaboration on code you should use a GitHub/DevOps repository which each user can clone and work on independently.
 :::
 
 ### Repositories for version control
 
-Ideally all code should be managed through a versioned repository on GitHub or Azure DevOps.
+------------------------------------------------------------------------
 
-To connect Databricks to a repository:
+All code should be managed through a versioned repository on GitHub or Azure DevOps. You can commit and push your changes to the central repository from the Databricks platform. Pull requests to merge your changes into the 'main' branch still take place on your Git provider.
 
-1.  Create a repository on your chosen platform (GitHub / DevOps) and copy the HTTPS link to the repo.\
-    \
-    ![](/images/ada-workspace-repos-link.png)
-2.  On the 'Workspace' page navigate to your user or repos folder then click the 'Create' button, then select 'Git folder'\
-    \
-    ![](/images/ada-repos-create.png)
-3.  In the resulting window, paste your repo URL, select your Git provider (here: DevOps) and given the Git folder a name.\
-    \
-    ![](/images/ada-repos-create-details.png)
-4.  This will create your Git folder in your user folder which you can then add scripts, queries and notebooks to.\
-    \
-    ![](/images/ada-repos-Git-folder.png)
-5.  To commit and push your changes to the repository, or create/swap branches click on the Git button to the right of the folder / notebook / script title. This will contain the name of the Git branch that is current checked out which at first will be 'Main'.\
-    ![](/images/ada-repos-Git-button.png)
-6.  This will bring up a commit window which will show you the differences to your file(s) since the last commit. Here you create or change branches, or can commit and push by writing a commit message and clicking the 'Commit and push' button.\
-    \
-    ![](/images/ada-repos-Git-commit.png)
+To connect Databricks to a repository refer to the [Databricks and version control](git_databricks.qmd) article.
 
 ------------------------------------------------------------------------
 
@@ -187,6 +187,8 @@ All compute options can be used both within the Databricks platform and be conne
 -   [Setup Databricks Personal Compute cluster with RStudio](databricks_rstudio_personal_cluster.qmd)
 
 ### Creating a personal compute resource
+
+------------------------------------------------------------------------
 
 1.  To create your own personal compute resource click the 'Create with DfE Personal Compute' button on the compute page.
 
