@@ -1,9 +1,8 @@
 ---
-title: "Accessibility"
+title: Accessibility
 ---
 
 <p class="text-muted">Some quick links and tips for increasing awareness of accessibility in digital content</p>
-
 
 ---
 
@@ -49,6 +48,107 @@ For more advice about colour in charts and visualisations specifically, includin
 - [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview), built into Google Chrome browser, and will catch some basic accessibility things amongst other web related issues
 
 'Bookmarklets' are bookmarks that instead of saving a URL to a page, save a piece of Javascript code that executes on the page you are looking at. There's some nice [accessibility focused bookmarklets](https://design.education.gov.uk/accessibility/assurance) that highlight specific types of mark up such as headers and lists so you can easily check if it matches what you'd expect while on any webpage. Very nifty and low effort too!
+
+---
+
+## Making spreadsheets accessible
+
+Public sector spreadsheets must meet the AA level of the Web Content Accessibility Guidelines (WCAG) 2.2, as required by law under The Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018. This guidance distinguishes between mandatory actions needed to comply with legal accessibility standards and best practices that enhance usability. Non-compliance can lead to legal complaints, making it crucial for content creators to understand and mitigate these risks.
+
+When creating an accessible spreadsheet, it’s important to consider the needs of all users, including those with disabilities. To support analysts in making spreadsheets more accessible, apply the following strategies when creating spreadsheets:
+
+### Consult the Spreadsheet Accessibility Guidance
+
+Before diving into the spreadsheet creation process, it's essential to familiarise yourself with the official [spreadsheet accessibility](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) guidance available on the Analysis Function Guidance Hub. This resource offers comprehensive insights into best practices for ensuring that your spreadsheets are accessible to all users.
+
+### Accessibility and consequences
+
+In addition to accessibility, the guidance also addresses usability and machine readability. While these areas often overlap with accessibility, there are instances where they may conflict. Depending on user needs, it might be necessary to produce separate versions of a spreadsheet (one for human use and another optimised for machine readability) to ensure both accessibility and functionality are maintained.
+
+### Automate Accessibility During the Coding Process
+
+Automation is a powerful way to ensure that accessibility is consistently applied throughout the spreadsheet creation process, especially when working with large datasets or producing numerous spreadsheets. By integrating accessibility into the coding process, you can streamline your workflow and reduce the chances of missing critical accessibility features.
+
+Here’s how you can automate accessibility using specific tools in Python and R:
+
+#### Why Automate?
+
+- Consistency: Automation helps maintain a consistent approach to accessibility across all spreadsheets, reducing the likelihood of human error.
+- Efficiency: Automating the process saves time, especially when dealing with large datasets or generating numerous tables.
+- Compliance: These tools help ensure that your spreadsheets meet legal accessibility requirements without extensive manual adjustments, reducing the risk of non-compliance.
+
+By incorporating tools like ``gptables`` or ``a11ytables`` into your coding workflow, you can enhance the accessibility of your spreadsheets with minimal extra effort, making your data more inclusive and easier to use for everyone.
+
+#### Producing accessible tables in R using [``a11ytables``](https://co-analysis.github.io/a11ytables/#:~:text=%7Ba11ytables%7D%201%20Purpose%20An%20R%20package%20to%20help,3%20Contribute%20...%204%20Install%20...%20More%20items):
+
+- Overview: The ``a11ytables`` package in R serves a similar purpose by helping users create accessible tables within their spreadsheets. The package includes functions that facilitate the creation of tables with correct headers, descriptive text, and appropriate structures, making them accessible to all users, including those relying on assistive technologies.
+- Benefits: Using ``a11ytables`` ensures that your spreadsheets are automatically optimized for accessibility, minimising the need for manual intervention. It’s particularly useful when producing multiple tables, as it maintains consistent formatting and accessibility standards throughout your documents.
+
+#### Producing accessible tables in Python using [``gptables``](https://pypi.org/project/gptables/) package:
+
+- Overview: The ``gptables`` package is designed to help Python users create accessible tables within spreadsheets. This package automates the formatting of tables to meet accessibility standards, ensuring that key elements such as table headers, data descriptions, and structures are correctly implemented.
+- Benefits: By using ``gptables``, you can automatically generate tables that are readable by screen readers, properly formatted for navigation, and compliant with accessibility regulations. This reduces the manual effort required to adjust table formats and enhances consistency across multiple spreadsheets.
+
+- Note on automation packages:
+Neither of these packages are guaranteed to automatically produce perfectly accessible spreadsheets. The aim is to help you automate some of the edits.
+
+## Run an [Accessibility Check](https://analysisfunction.civilservice.gov.uk/policy-store/further-resources-for-releasing-statistics-in-spreadsheets/#section-3) 
+
+Before finalising your spreadsheet, it’s crucial to run it through an accessibility checker to identify potential issues. Here are two options you can use:
+
+- Excel Built-in Accessibility Checker: If you’re using a newer version of Excel, take advantage of the built-in accessibility checker. To use it, go to the ``‘Review’`` ribbon and select ``‘Check Accessibility’``. This tool will flag potential accessibility issues, such as missing alt text for tables. However, it's important to treat this checker like a spelling and grammar tool—it might miss certain issues or flag irrelevant ones. For instance, if your tables are correctly marked up and named, you don’t need to worry about adding alt text. Additionally, if you save your spreadsheet in Open Document Spreadsheet (ODS) format (recommended if your publishing platform supports it), any ``alt`` text may be removed automatically.
+
+- Custom-built XLSX Accessibility Checker: You can also use the custom-built [``XLSX accessibility checker``](https://observablehq.com/@jtrim-ons/xlsx-accessibility-checker), which is specifically designed using the Analysis Function's ‘making spreadsheets accessible’ checklist. This experimental tool helps identify a range of accessibility issues based on the checklist's criteria. While it’s a powerful tool, keep in mind that it's still under development, so some aspects of accessibility will need to be checked manually.
+
+By using one or both of these tools, you can ensure that your spreadsheet is as accessible as possible, though a final manual review is recommended to catch any issues that may have been overlooked.
+
+## Check Your Spreadsheet Against the [Accessible Spreadsheets Checklist](https://analysisfunction.civilservice.gov.uk/policy-store/making-spreadsheets-accessible-a-brief-checklist-of-the-basics/) Before Publication
+
+Before publishing your spreadsheet, ensure that it meets accessibility standards by reviewing it against the following key points:
+
+<small>"If a point in the checklist has ‘(E)’ after it, it means it has been interpreted as essential to passing the accessibility regulations".</small>
+
+### Tables
+
+- Mark Up Tables (E): Ensure all tables are properly marked up to assist screen readers in interpreting the content.
+Meaningful Names: Assign meaningful names to each table.
+- Remove Complexities (E): Eliminate merged, split cells, and nested tables as they hinder accessibility.
+- Simplify Structure (E): Remove any blank rows or columns within tables and ensure that each table has a tagged header row. Avoid filters and freeze panes unless absolutely necessary, providing clear instructions on their use.
+- Text and Cell Management (E): Ensure text within cells is wrapped, and only leave cells empty when absolutely necessary, explaining any blank cells with a note.
+- Avoid Hidden Elements (E): Refrain from hiding rows or columns, or provide guidance if needed.
+Column Width: Adjust column widths to a sensible size to improve readability.
+
+### Footnotes
+
+- Avoid Symbols and Superscripts (E): Instead of symbols or superscript text, use plain text or shorthand within square brackets. Use 'note' with numbers in square brackets for footnotes.
+- Placement: Place footnote markers in titles, column headings, or a notes column on the right. Avoid placing them directly in cells.
+- Notes Worksheet: Include all footnotes in a 'Notes' worksheet rather than below the table.
+
+### Formatting
+
+- Written Content (E): Ensure all written content follows accessibility guidelines.
+- Links (E): Use descriptive text for hyperlinks rather than URLs.
+- Text Formatting: Use a sans-serif font, size 10 or larger, avoid italics and cell borders, and ensure text is horizontal. Avoid highlighting text with a background fill unless contrast is checked.
+- Worksheet Titles (E): Each worksheet should have a descriptive title in Cell A1, formatted appropriately.
+Avoid Symbols: Use symbols sparingly and avoid headers, footers, floating text boxes, or toolbars (E).
+- Colour Use (E): Do not rely on colour alone to convey information, and ensure adequate contrast if colour is used.
+- Avoid Images: If images are necessary, ensure they have alternative text.
+- Remove Macros: Macros should be removed to avoid accessibility and security issues.
+
+### Structure
+
+- Worksheet Names (E): Give each worksheet a unique name or number.
+- Remove Blank Sheets (E): Eliminate any blank worksheets.
+- Column A Usage (E): Place essential information in column A, above tables, including explanations of symbols, filters, or shorthand.
+- Positioning (E): Align tables against the left-hand edge of the sheet and avoid placing content below tables.
+- Multiple Tables: If multiple tables are needed on one sheet, refer to the specific guidance.
+Before Publishing
+- Spelling and Grammar (E): Run a spelling and grammar check to ensure accuracy.
+- Accessibility Check: Use Excel’s accessibility checker, though be aware it might not catch everything. Consider using additional tools to identify issues.
+- Document Information (E): Ensure the document’s title and language information are completed.
+- Final Save (E): Position the cursor in cell A1 of the first worksheet before the final save to ensure it opens correctly.
+
+
 
 ---
 
