@@ -92,21 +92,13 @@ By incorporating tools like ``gptables`` or ``a11ytables`` into your coding work
 - Note on automation packages:
 Neither of these packages are guaranteed to automatically produce perfectly accessible spreadsheets. The aim is to help you automate some of the edits.
 
-#### Why Automate?
-
-- Consistency: Automation helps maintain a consistent approach to accessibility across all spreadsheets, reducing the likelihood of human error.
-- Efficiency: Automating the process saves time, especially when dealing with large datasets or generating numerous tables.
-- Compliance: These tools help ensure that your spreadsheets meet legal accessibility requirements without extensive manual adjustments, reducing the risk of non-compliance.
-
-By incorporating tools like ``gptables`` or ``a11ytables`` into your coding workflow, you can enhance the accessibility of your spreadsheets with minimal extra effort, making your data more inclusive and easier to use for everyone.
-
 ## Run an [Accessibility Check](https://analysisfunction.civilservice.gov.uk/policy-store/further-resources-for-releasing-statistics-in-spreadsheets/#section-3) 
 
 Before finalising your spreadsheet, it’s crucial to run it through an accessibility checker to identify potential issues. Here are two options you can use:
 
 - Excel Built-in Accessibility Checker: If you’re using a newer version of Excel, take advantage of the built-in accessibility checker. To use it, go to the ``‘Review’`` ribbon and select ``‘Check Accessibility’``. This tool will flag potential accessibility issues, such as missing alt text for tables. However, it's important to treat this checker like a spelling and grammar tool—it might miss certain issues or flag irrelevant ones. For instance, if your tables are correctly marked up and named, you don’t need to worry about adding alt text. Additionally, if you save your spreadsheet in Open Document Spreadsheet (ODS) format (recommended if your publishing platform supports it), any ``alt`` text may be removed automatically.
 
-- Custom-built XLSX Accessibility Checker: You can also use the custom-built ``XLSX accessibility checker``, which is specifically designed using the Analysis Function's ‘making spreadsheets accessible’ checklist. This experimental tool helps identify a range of accessibility issues based on the checklist's criteria. While it’s a powerful tool, keep in mind that it's still under development, so some aspects of accessibility will need to be checked manually.
+- Custom-built XLSX Accessibility Checker: You can also use the custom-built ``XLSX accessibility checker``, which is specifically designed using the Analysis Function's ‘making spreadsheets accessible’ checklist ([Click here for the Accessibility Checker](https://observablehq.com/@jtrim-ons/xlsx-accessibility-checker)). This experimental tool helps identify a range of accessibility issues based on the checklist's criteria. While it’s a powerful tool, keep in mind that it's still under development, so some aspects of accessibility will need to be checked manually.
 
 By using one or both of these tools, you can ensure that your spreadsheet is as accessible as possible, though a final manual review is recommended to catch any issues that may have been overlooked.
 
