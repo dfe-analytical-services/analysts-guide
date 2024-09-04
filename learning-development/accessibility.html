@@ -436,6 +436,20 @@ cookieconsent.run({
   <li><a href="#accessibility-in-dfe" id="toc-accessibility-in-dfe" class="nav-link active" data-scroll-target="#accessibility-in-dfe">Accessibility in DfE</a></li>
   <li><a href="#colour-accessibility-tools" id="toc-colour-accessibility-tools" class="nav-link" data-scroll-target="#colour-accessibility-tools">Colour accessibility tools</a></li>
   <li><a href="#free-tools-for-reviewing-web-pages" id="toc-free-tools-for-reviewing-web-pages" class="nav-link" data-scroll-target="#free-tools-for-reviewing-web-pages">Free tools for reviewing web pages</a></li>
+  <li><a href="#making-spreadsheets-accessible" id="toc-making-spreadsheets-accessible" class="nav-link" data-scroll-target="#making-spreadsheets-accessible">Making spreadsheets accessible</a>
+  <ul class="collapse">
+  <li><a href="#consult-the-spreadsheet-accessibility-guidance" id="toc-consult-the-spreadsheet-accessibility-guidance" class="nav-link" data-scroll-target="#consult-the-spreadsheet-accessibility-guidance">Consult the Spreadsheet Accessibility Guidance</a></li>
+  <li><a href="#accessibility-and-consequences" id="toc-accessibility-and-consequences" class="nav-link" data-scroll-target="#accessibility-and-consequences">Accessibility and consequences</a></li>
+  <li><a href="#automate-accessibility-during-the-coding-process" id="toc-automate-accessibility-during-the-coding-process" class="nav-link" data-scroll-target="#automate-accessibility-during-the-coding-process">Automate Accessibility During the Coding Process</a></li>
+  </ul></li>
+  <li><a href="#run-an-accessibility-check" id="toc-run-an-accessibility-check" class="nav-link" data-scroll-target="#run-an-accessibility-check">Run an Accessibility Check</a></li>
+  <li><a href="#check-your-spreadsheet-against-the-accessible-spreadsheets-checklist-before-publication" id="toc-check-your-spreadsheet-against-the-accessible-spreadsheets-checklist-before-publication" class="nav-link" data-scroll-target="#check-your-spreadsheet-against-the-accessible-spreadsheets-checklist-before-publication">Check Your Spreadsheet Against the Accessible Spreadsheets Checklist Before Publication</a>
+  <ul class="collapse">
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes">Footnotes</a></li>
+  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a></li>
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
+  </ul></li>
   <li><a href="#assistive-technology" id="toc-assistive-technology" class="nav-link" data-scroll-target="#assistive-technology">Assistive technology</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/learning-development/accessibility.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -503,6 +517,107 @@ Some quick links and tips for increasing awareness of accessibility in digital c
 </ul>
 <p>‘Bookmarklets’ are bookmarks that instead of saving a URL to a page, save a piece of Javascript code that executes on the page you are looking at. There’s some nice <a href="https://design.education.gov.uk/accessibility/assurance" target="_blank">accessibility focused bookmarklets</a> that highlight specific types of mark up such as headers and lists so you can easily check if it matches what you’d expect while on any webpage. Very nifty and low effort too!</p>
 <hr>
+</section>
+<section id="making-spreadsheets-accessible" class="level2">
+<h2 class="anchored" data-anchor-id="making-spreadsheets-accessible">Making spreadsheets accessible</h2>
+<p>Public sector spreadsheets must meet the AA level of the Web Content Accessibility Guidelines (WCAG) 2.2, as required by law under The Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018. This guidance distinguishes between mandatory actions needed to comply with legal accessibility standards and best practices that enhance usability. Non-compliance can lead to legal complaints, making it crucial for content creators to understand and mitigate these risks.</p>
+<p>When creating an accessible spreadsheet, it’s important to consider the needs of all users, including those with disabilities. To support analysts in making spreadsheets more accessible, apply the following strategies when creating spreadsheets:</p>
+<section id="consult-the-spreadsheet-accessibility-guidance" class="level3">
+<h3 class="anchored" data-anchor-id="consult-the-spreadsheet-accessibility-guidance">Consult the Spreadsheet Accessibility Guidance</h3>
+<p>Before diving into the spreadsheet creation process, it’s essential to familiarise yourself with the official <a href="https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/" target="_blank">spreadsheet accessibility</a> guidance available on the Analysis Function Guidance Hub. This resource offers comprehensive insights into best practices for ensuring that your spreadsheets are accessible to all users.</p>
+</section>
+<section id="accessibility-and-consequences" class="level3">
+<h3 class="anchored" data-anchor-id="accessibility-and-consequences">Accessibility and consequences</h3>
+<p>In addition to accessibility, the guidance also addresses usability and machine readability. While these areas often overlap with accessibility, there are instances where they may conflict. Depending on user needs, it might be necessary to produce separate versions of a spreadsheet (one for human use and another optimised for machine readability) to ensure both accessibility and functionality are maintained.</p>
+</section>
+<section id="automate-accessibility-during-the-coding-process" class="level3">
+<h3 class="anchored" data-anchor-id="automate-accessibility-during-the-coding-process">Automate Accessibility During the Coding Process</h3>
+<p>Automation is a powerful way to ensure that accessibility is consistently applied throughout the spreadsheet creation process, especially when working with large datasets or producing numerous spreadsheets. By integrating accessibility into the coding process, you can streamline your workflow and reduce the chances of missing critical accessibility features.</p>
+<p>Here’s how you can automate accessibility using specific tools in Python and R:</p>
+<section id="why-automate" class="level4">
+<h4 class="anchored" data-anchor-id="why-automate">Why Automate?</h4>
+<ul>
+<li>Consistency: Automation helps maintain a consistent approach to accessibility across all spreadsheets, reducing the likelihood of human error.</li>
+<li>Efficiency: Automating the process saves time, especially when dealing with large datasets or generating numerous tables.</li>
+<li>Compliance: These tools help ensure that your spreadsheets meet legal accessibility requirements without extensive manual adjustments, reducing the risk of non-compliance.</li>
+</ul>
+<p>By incorporating tools like <code>gptables</code> or <code>a11ytables</code> into your coding workflow, you can enhance the accessibility of your spreadsheets with minimal extra effort, making your data more inclusive and easier to use for everyone.</p>
+</section>
+<section id="producing-accessible-tables-in-r-using-a11ytables" class="level4">
+<h4 class="anchored" data-anchor-id="producing-accessible-tables-in-r-using-a11ytables">Producing accessible tables in R using <a href="https://co-analysis.github.io/a11ytables/#:~:text=%7Ba11ytables%7D%201%20Purpose%20An%20R%20package%20to%20help,3%20Contribute%20...%204%20Install%20...%20More%20items" target="_blank"><code>a11ytables</code></a>:</h4>
+<ul>
+<li>Overview: The <code>a11ytables</code> package in R serves a similar purpose by helping users create accessible tables within their spreadsheets. The package includes functions that facilitate the creation of tables with correct headers, descriptive text, and appropriate structures, making them accessible to all users, including those relying on assistive technologies.</li>
+<li>Benefits: Using <code>a11ytables</code> ensures that your spreadsheets are automatically optimized for accessibility, minimising the need for manual intervention. It’s particularly useful when producing multiple tables, as it maintains consistent formatting and accessibility standards throughout your documents.</li>
+</ul>
+</section>
+<section id="producing-accessible-tables-in-python-using-gptables-package" class="level4">
+<h4 class="anchored" data-anchor-id="producing-accessible-tables-in-python-using-gptables-package">Producing accessible tables in Python using <a href="https://pypi.org/project/gptables/" target="_blank"><code>gptables</code></a> package:</h4>
+<ul>
+<li><p>Overview: The <code>gptables</code> package is designed to help Python users create accessible tables within spreadsheets. This package automates the formatting of tables to meet accessibility standards, ensuring that key elements such as table headers, data descriptions, and structures are correctly implemented.</p></li>
+<li><p>Benefits: By using <code>gptables</code>, you can automatically generate tables that are readable by screen readers, properly formatted for navigation, and compliant with accessibility regulations. This reduces the manual effort required to adjust table formats and enhances consistency across multiple spreadsheets.</p></li>
+<li><p>Note on automation packages: Neither of these packages are guaranteed to automatically produce perfectly accessible spreadsheets. The aim is to help you automate some of the edits.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="run-an-accessibility-check" class="level2">
+<h2 class="anchored" data-anchor-id="run-an-accessibility-check">Run an <a href="https://analysisfunction.civilservice.gov.uk/policy-store/further-resources-for-releasing-statistics-in-spreadsheets/#section-3" target="_blank">Accessibility Check</a></h2>
+<p>Before finalising your spreadsheet, it’s crucial to run it through an accessibility checker to identify potential issues. Here are two options you can use:</p>
+<ul>
+<li><p>Excel Built-in Accessibility Checker: If you’re using a newer version of Excel, take advantage of the built-in accessibility checker. To use it, go to the <code>‘Review’</code> ribbon and select <code>‘Check Accessibility’</code>. This tool will flag potential accessibility issues, such as missing alt text for tables. However, it’s important to treat this checker like a spelling and grammar tool—it might miss certain issues or flag irrelevant ones. For instance, if your tables are correctly marked up and named, you don’t need to worry about adding alt text. Additionally, if you save your spreadsheet in Open Document Spreadsheet (ODS) format (recommended if your publishing platform supports it), any <code>alt</code> text may be removed automatically.</p></li>
+<li><p>Custom-built XLSX Accessibility Checker: You can also use the custom-built <a href="https://observablehq.com/@jtrim-ons/xlsx-accessibility-checker" target="_blank"><code>XLSX accessibility checker</code></a>, which is specifically designed using the Analysis Function’s ‘making spreadsheets accessible’ checklist. This experimental tool helps identify a range of accessibility issues based on the checklist’s criteria. While it’s a powerful tool, keep in mind that it’s still under development, so some aspects of accessibility will need to be checked manually.</p></li>
+</ul>
+<p>By using one or both of these tools, you can ensure that your spreadsheet is as accessible as possible, though a final manual review is recommended to catch any issues that may have been overlooked.</p>
+</section>
+<section id="check-your-spreadsheet-against-the-accessible-spreadsheets-checklist-before-publication" class="level2">
+<h2 class="anchored" data-anchor-id="check-your-spreadsheet-against-the-accessible-spreadsheets-checklist-before-publication">Check Your Spreadsheet Against the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/making-spreadsheets-accessible-a-brief-checklist-of-the-basics/" target="_blank">Accessible Spreadsheets Checklist</a> Before Publication</h2>
+<p>Before publishing your spreadsheet, ensure that it meets accessibility standards by reviewing it against the following key points:</p>
+<p><small>“If a point in the checklist has ‘(E)’ after it, it means it has been interpreted as essential to passing the accessibility regulations”.</small></p>
+<section id="tables" class="level3">
+<h3 class="anchored" data-anchor-id="tables">Tables</h3>
+<ul>
+<li>Mark Up Tables (E): Ensure all tables are properly marked up to assist screen readers in interpreting the content. Meaningful Names: Assign meaningful names to each table.</li>
+<li>Remove Complexities (E): Eliminate merged, split cells, and nested tables as they hinder accessibility.</li>
+<li>Simplify Structure (E): Remove any blank rows or columns within tables and ensure that each table has a tagged header row. Avoid filters and freeze panes unless absolutely necessary, providing clear instructions on their use.</li>
+<li>Text and Cell Management (E): Ensure text within cells is wrapped, and only leave cells empty when absolutely necessary, explaining any blank cells with a note.</li>
+<li>Avoid Hidden Elements (E): Refrain from hiding rows or columns, or provide guidance if needed. Column Width: Adjust column widths to a sensible size to improve readability.</li>
+</ul>
+</section>
+<section id="footnotes" class="level3">
+<h3 class="anchored" data-anchor-id="footnotes">Footnotes</h3>
+<ul>
+<li>Avoid Symbols and Superscripts (E): Instead of symbols or superscript text, use plain text or shorthand within square brackets. Use ‘note’ with numbers in square brackets for footnotes.</li>
+<li>Placement: Place footnote markers in titles, column headings, or a notes column on the right. Avoid placing them directly in cells.</li>
+<li>Notes Worksheet: Include all footnotes in a ‘Notes’ worksheet rather than below the table.</li>
+</ul>
+</section>
+<section id="formatting" class="level3">
+<h3 class="anchored" data-anchor-id="formatting">Formatting</h3>
+<ul>
+<li>Written Content (E): Ensure all written content follows accessibility guidelines.</li>
+<li>Links (E): Use descriptive text for hyperlinks rather than URLs.</li>
+<li>Text Formatting: Use a sans-serif font, size 10 or larger, avoid italics and cell borders, and ensure text is horizontal. Avoid highlighting text with a background fill unless contrast is checked.</li>
+<li>Worksheet Titles (E): Each worksheet should have a descriptive title in Cell A1, formatted appropriately. Avoid Symbols: Use symbols sparingly and avoid headers, footers, floating text boxes, or toolbars (E).</li>
+<li>Colour Use (E): Do not rely on colour alone to convey information, and ensure adequate contrast if colour is used.</li>
+<li>Avoid Images: If images are necessary, ensure they have alternative text.</li>
+<li>Remove Macros: Macros should be removed to avoid accessibility and security issues.</li>
+</ul>
+</section>
+<section id="structure" class="level3">
+<h3 class="anchored" data-anchor-id="structure">Structure</h3>
+<ul>
+<li>Worksheet Names (E): Give each worksheet a unique name or number.</li>
+<li>Remove Blank Sheets (E): Eliminate any blank worksheets.</li>
+<li>Column A Usage (E): Place essential information in column A, above tables, including explanations of symbols, filters, or shorthand.</li>
+<li>Positioning (E): Align tables against the left-hand edge of the sheet and avoid placing content below tables.</li>
+<li>Multiple Tables: If multiple tables are needed on one sheet, refer to the specific guidance. Before Publishing</li>
+<li>Spelling and Grammar (E): Run a spelling and grammar check to ensure accuracy.</li>
+<li>Accessibility Check: Use Excel’s accessibility checker, though be aware it might not catch everything. Consider using additional tools to identify issues.</li>
+<li>Document Information (E): Ensure the document’s title and language information are completed.</li>
+<li>Final Save (E): Position the cursor in cell A1 of the first worksheet before the final save to ensure it opens correctly.</li>
+</ul>
+<hr>
+</section>
 </section>
 <section id="assistive-technology" class="level2">
 <h2 class="anchored" data-anchor-id="assistive-technology">Assistive technology</h2>
