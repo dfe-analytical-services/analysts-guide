@@ -39,7 +39,7 @@ Workflows also come with robust support for git/DevOps repositories and can be s
 3.  The 'Job Details' pane on the right allows you to configure workflow level schedules and triggers, parameters which will be accessible to all tasks in the workflow, email notifications for successful / failed runs, and permissions on who can access and run the workflow. You can also add tags and descriptions to your workflow to help you keep track of them.\
 4.  In the task pane you can configure settings at an individual task level, including a unique name, the type of task (notebook, query, script, etc.) the source (your workspace, or a Git repository), the path to the code for the task and the compute resource the workflow should run on.\
     \
-    Any libraries or packages that the workflow depends on can be specified which will ensure that these are installed on the cluster when it begins (not applicable to SQL warehouses).\
+    Any libraries or packages that the workflow depends on can be specified and these will be installed on the cluster by Databricks when it begins (not applicable to SQL warehouses).\
     \
     You are also able to set task level parameters here which mean that you are able to reuse the same notebook for different tasks by setting different inputs. This allows you to create notebooks that serve as 'functions' from R or Python, or 'stored procedures' from SQL.\
     \
@@ -84,7 +84,9 @@ Once development is complete and the workflow becomes business as usual it may b
 
 Each time a workflow is ran DataBricks audits any input parameters, all outputs, the success and failure of each task, along with when it was run and who by.
 
-This makes them a very powerful debugging tool as you can refer back to results from previous runs.
+This makes them a very powerful debugging tool as you can refer back to results from previous runs. This means that if your pipeline fails you can review the notebook(s) that failed and troubleshoot the issue.
+
+Workflows that fail also allow you to repair the workflow once you have found and fixed the issue. This prevents having to re-run the whole pipeline from scratch and allows it to pick up from the point where it failed.
 
 ![](/images/ada-workflow-task-output.png)
 
