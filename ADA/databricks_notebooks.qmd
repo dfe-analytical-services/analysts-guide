@@ -17,7 +17,7 @@ To do this locate the folder/repository you want to create the notebook in then 
 Any notebooks used for core business processes are created in a repository linked to GitHub/DevOps where they can be version controlled.
 :::
 
-Once you've created a notebook it will automatically be opened. Any changes you made are saved in real time. In order to 'save' a snapshot of your work it is recommended to use git commits.
+Once you've created a notebook it will automatically be opened. Any changes you made are saved in real time so the notebook will always keep the latest version of it's contents. In order to 'save' a snapshot of your work it is recommended to use git commits.
 
 You can change the title from 'Untitled Notebook *\<timestamp\>*' (1), and set it's default language in the drop down immediately to the right of the notebook title (2).
 
