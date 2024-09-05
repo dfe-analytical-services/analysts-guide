@@ -2,6 +2,8 @@
 title: "Scripting Workflows in Databricks"
 ---
 
+Workflows can be constructed through the Databricks Workflows user interface (UI), however for large or complex workflows the UI can be a time consuming way to build a workflow. In these scenarios it is quicker and more inline with RAP principles to script your workflow.
+
 For a pipeline to be built there must be scripts, queries or notebooks available to read by Databricks, either located in your workspace, or in a Git repository.
 
 For this example we will create a folder in our workspace, create two test notebooks to comprise the workflow, and a third to script the job and set it off running. We'll also set it up to notify us by email when the workflow successfully completes.
