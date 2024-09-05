@@ -37,6 +37,12 @@ To run code chunks you'll first need to attach your compute resource to it by cl
 
 You can run a code chunk either by pressing the play button in the top left corner of the chunk, or by pressing Ctrl + Return/Enter on the keyboard. Any outputs that result from the code will be displayed underneath the chunk.
 
+::: callout-tip
+## In R
+
+If you try to `View()` a data frame in R you'll notice that the function doesn't work within Databricks. Instead Databricks providers the `display()` function for R users to view their data with.
+:::
+
 ![](/images/ada-notebook-chunk-output.png)
 
 Everything ran in a notebook is in it's own 'session' meaning that later chunks have access to variables, functions, etc. that were defined above. Chunks can be ran manually, however doing this runs the risk of running code out of order and may consequently produce unexpected results. To avoid this all chunks can be ran in order from the beginning of the Notebook using the 'Run all' button at the top of the page, alternatively you can 'Run all above' or 'Run all below' from any code chunk.
