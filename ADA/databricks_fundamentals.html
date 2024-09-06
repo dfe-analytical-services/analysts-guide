@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="statistics.development@education.gov.uk">
-<meta name="dcterms.date" content="2024-09-06">
 
-<title>Analysts’ Guide</title>
+<title>Databricks fundamentals – Analysts’ Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,26 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./learning-development/learning-support.html" rel="next">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +108,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Databricks fundamentals</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,8 +122,8 @@ cookieconsent.run({
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -203,7 +200,7 @@ cookieconsent.run({
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -218,37 +215,37 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Learning support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/sql.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/r.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/git.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessibility</span></a>
   </div>
 </li>
@@ -265,55 +262,55 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/pub.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Routes for publishing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/ud.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open Data Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/ees.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore education statistics (EES)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Good examples in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Embedded visualisations in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Publication scrums</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">User engagement</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EES analytics</span></a>
   </div>
 </li>
@@ -330,25 +327,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Public dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating R Shiny dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualising data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing about data</span></a>
   </div>
 </li>
@@ -365,25 +362,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP expectations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP FAQs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
@@ -400,25 +397,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/ada.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analytical Data Access (ADA) and databricks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup Databricks SQL Warehouse with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup Databricks personal compute cluster with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks and version control</span></a>
   </div>
 </li>
@@ -434,40 +431,44 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-and-development" id="toc-learning-and-development" class="nav-link active" data-scroll-target="#learning-and-development">Learning and development</a></li>
-  <li><a href="#statistics-production" id="toc-statistics-production" class="nav-link" data-scroll-target="#statistics-production">Statistics production</a></li>
-  <li><a href="#writing-and-visualising" id="toc-writing-and-visualising" class="nav-link" data-scroll-target="#writing-and-visualising">Writing and visualising</a></li>
-  <li><a href="#reproducible-analytical-pipelines-rap" id="toc-reproducible-analytical-pipelines-rap" class="nav-link" data-scroll-target="#reproducible-analytical-pipelines-rap">Reproducible Analytical Pipelines (RAP)</a></li>
-  <li><a href="#analytical-data-access-ada-and-databricks" id="toc-analytical-data-access-ada-and-databricks" class="nav-link" data-scroll-target="#analytical-data-access-ada-and-databricks">Analytical Data Access (ADA) and Databricks</a></li>
-  <li><a href="#contact-us" id="toc-contact-us" class="nav-link" data-scroll-target="#contact-us">Contact us</a></li>
+  <li><a href="#what-is-databricks" id="toc-what-is-databricks" class="nav-link active" data-scroll-target="#what-is-databricks">What is Databricks?</a>
+  <ul class="collapse">
+  <li><a href="#key-differences" id="toc-key-differences" class="nav-link" data-scroll-target="#key-differences">Key differences</a>
+  <ul class="collapse">
+  <li><a href="#traditional-computing" id="toc-traditional-computing" class="nav-link" data-scroll-target="#traditional-computing">Traditional computing</a></li>
+  <li><a href="#on-databricks" id="toc-on-databricks" class="nav-link" data-scroll-target="#on-databricks">On Databricks</a></li>
+  <li><a href="#benefits-of-cloud-compute" id="toc-benefits-of-cloud-compute" class="nav-link" data-scroll-target="#benefits-of-cloud-compute">Benefits of cloud compute</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a>
+  <ul class="collapse">
+  <li><a href="#storage" id="toc-storage" class="nav-link" data-scroll-target="#storage">Storage</a>
+  <ul class="collapse">
+  <li><a href="#unity-catalog" id="toc-unity-catalog" class="nav-link" data-scroll-target="#unity-catalog">Unity catalog</a></li>
+  <li><a href="#workspaces---databricks-file-system-dbfs" id="toc-workspaces---databricks-file-system-dbfs" class="nav-link" data-scroll-target="#workspaces---databricks-file-system-dbfs">Workspaces - Databricks file system (DBFS)</a></li>
+  <li><a href="#repositories-for-version-control" id="toc-repositories-for-version-control" class="nav-link" data-scroll-target="#repositories-for-version-control">Repositories for version control</a></li>
+  </ul></li>
+  <li><a href="#compute" id="toc-compute" class="nav-link" data-scroll-target="#compute">Compute</a>
+  <ul class="collapse">
+  <li><a href="#creating-a-personal-compute-resource" id="toc-creating-a-personal-compute-resource" class="nav-link" data-scroll-target="#creating-a-personal-compute-resource">Creating a personal compute resource</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_fundamentals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysts’ Guide</h1>
+<h1 class="title">Databricks fundamentals</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>statistics.development@education.gov.uk </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 6, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -478,61 +479,214 @@ cookieconsent.run({
 
 
 <hr>
-<p>This website is a guide aimed at anyone working in analysis or statistics in the Department for Education (DfE). It includes tips on best practice and learning resources across a number of areas.</p>
-<p>We hope it can prove a useful community driven resource for everyone from the most experienced analyst right through to those just starting out. If you have any feedback, suggested additions, or wish to challenge any of the guidance, feel free to use the GitHub links to suggest changes directly, or contact us at the email you can find at the bottom of the page.</p>
-<section id="learning-and-development" class="level2">
-<h2 class="anchored" data-anchor-id="learning-and-development">Learning and development</h2>
-<p><a href="learning-development/learning-support.html">Learning support</a> - Useful learning resources, and support to get you started</p>
-<p><a href="learning-development/sql.html">SQL</a> - Guidance and tips for accessing data via databases with SQL</p>
-<p><a href="learning-development/r.html">R</a> - Guidance and tips for using R</p>
-<p><a href="learning-development/git.html">Git</a> - Guidance and tips for version control with Git</p>
-<p><a href="learning-development/python.html">Python</a> - Guidance and tips for using Python</p>
-<p><a href="learning-development/accessibility.html">Accessibility</a> - Tools and resources for digital accessibility</p>
-</section>
-<section id="statistics-production" class="level2">
-<h2 class="anchored" data-anchor-id="statistics-production">Statistics production</h2>
-<p><a href="statistics-production/pub.html">Routes for publishing</a> - Guidance for how to publish different types of statistics</p>
-<p><a href="RAP/rap-statistics.html">RAP in statistics</a> - Detailed RAP guidance for statistics publications</p>
-<p><a href="statistics-production/ud.html">Open data standards</a> - Guidance on how to structure data files</p>
-<p><a href="statistics-production/ees.html">Explore education statistics (EES)</a> - Tips on using the explore education statistics service</p>
-<p><a href="statistics-production/examples.html">Good examples in EES</a> - Good practice examples in the explore education statistics service</p>
-<p><a href="statistics-production/embedded-charts.html">Embedded visualisations in EES</a> - How to embed R-Shiny charts in EES publications</p>
-<p><a href="statistics-production/scrums.html">Publication scrums</a> - Information on the scrums we run and tips for writing statistical commentary</p>
-<p><a href="statistics-production/user-eng.html">User engagement</a> - Guidance on understanding and engaging with the users of published statistics</p>
-<p><a href="statistics-production/user_analytics.html">EES analytics</a> - Understanding how users are interacting with your publications</p>
-</section>
-<section id="writing-and-visualising" class="level2">
-<h2 class="anchored" data-anchor-id="writing-and-visualising">Writing and visualising</h2>
-<p><a href="writing-visualising/dashboards.html">Public dashboards</a> - Guidance for publishing public facing statistics dashboards</p>
-<p><a href="writing-visualising/dashboards_rshiny.html">Publishing an R-Shiny based dashboard</a> - Guidance for publishing public facing statistics dashboards using R-Shiny</p>
-<p><a href="writing-visualising/visualising.html">Visualising data</a> - Resources and best practice to guide you when visualising data</p>
-<p><a href="writing-visualising/writing.html">Writing about data</a> - Resources and best practice for writing about data</p>
-</section>
-<section id="reproducible-analytical-pipelines-rap" class="level2">
-<h2 class="anchored" data-anchor-id="reproducible-analytical-pipelines-rap">Reproducible Analytical Pipelines (RAP)</h2>
-<p><a href="RAP/rap-statistics.html">RAP in statistics</a> - Detailed RAP guidance for statistics publications</p>
-<p><a href="RAP/rap-expectations.html">RAP expectations</a> - Guidance for all analysts on expectations of RAP</p>
-<p><a href="RAP/rap-managers.html">RAP support</a> - Details on support available for RAP in DfE</p>
-<p><a href="RAP/rap-faq.html">RAP FAQs</a> - Frequently asked questions about RAP</p>
-</section>
-<section id="analytical-data-access-ada-and-databricks" class="level2">
-<h2 class="anchored" data-anchor-id="analytical-data-access-ada-and-databricks">Analytical Data Access (ADA) and Databricks</h2>
-<p><a href="ADA/ada.html">Analytical Data Access (ADA) and Databricks</a> - Guidance for analysts on how to interact with and use data stored in ADA using Databricks</p>
-<p><a href="./ADA/databricks_fundamentals.html">Databricks Fundamental Concepts</a> - Fundamental concepts in DataBricks that will help you navigate and understand the platform</p>
-<p><a href="./ADA/databricks_notebooks.html">Databricks Notebooks</a> - Guidance on Notebooks in DataBricks</p>
-<p><a href="./ADA/databricks_workflows.html">Databricks Workflows</a> - Guidance on Workflows in DataBricks</p>
-<p><a href="ADA/databricks_rstudio_sql_warehouse.html">Setup Databricks SQL Warehouse with RStudio</a> - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio.</p>
-<p><a href="ADA/databricks_rstudio_personal_cluster.html">Setup Databricks personal cluster Warehouse with RStudio</a> - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.</p>
-</section>
-<section id="contact-us" class="level2">
-<h2 class="anchored" data-anchor-id="contact-us">Contact us</h2>
-<p>Our mailbox is always monitored and is available for anyone in DfE to ask questions about statistics, whether that is about RAP, building dashboards, coding support, learning and development or statistics publications.</p>
+<section id="what-is-databricks" class="level1">
+<h1>What is Databricks?</h1>
+<hr>
+<p>Databricks is a web based platform for large scale data manipulation and analysis using code to create reproducible data pipelines. Primarily it takes the form of a website which you can create data pipelines and perform analysis in. It currently supports the languages R, SQL, python and scala, and integrates well with Git based version control systems such as GitHub or Azure DevOps.</p>
+<p>Behind the scenes it is a distributed cloud computing platform which utilizes the <a href="https://spark.apache.org/" target="_blank">Apache Spark engine</a> to split up heavy data processing into smaller chunks. It then distributes them to different ‘computers’ within the cloud to perform the processing of each chunk in parallel. Once each ‘computer’ is finished processing the results are recombined and passed back to the user or stored.</p>
+<p>Due to the parallel processing capabilities this improves the performance of the data processing and allows for the manipulation of very large data sets in a relatively short amount of time.</p>
+<p>In addition, it also provides new tools within the platform to construct and automate complex data transformations and processing.</p>
+<hr>
+<section id="key-differences" class="level2">
+<h2 class="anchored" data-anchor-id="key-differences">Key differences</h2>
+<p>Underpinning the technology are some key differences in how computers we’re familiar with, and Databricks (and distributed computing in general) are structured.</p>
+<section id="traditional-computing" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-computing">Traditional computing</h3>
+<hr>
+<p>Currently, we are used to using a PC or laptop to do our data processing. A traditional computer has all of the components it needs to function:</p>
 <ul>
-<li><a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a></li>
-<li>9am-5pm, Monday-Friday, aim to reply within 1-2 days</li>
+<li>A processor and memory to do calculations</li>
+<li>A hard drive to store data permanently on</li>
+<li>A keyboard and mouse to capture user input</li>
+<li>A screen to provide outputs to the user</li>
 </ul>
+<p><img src="../images/ada-traditional-computer.jpg" class="img-fluid" width="273"></p>
+<p>Any traditional computer is limited by it’s hardware meaning there is an upper limit on the size and complexity of data it can process.</p>
+<p>In order to increase the amount of data a computer can process you would have to switch out the physical hardware of the machine for something more powerful.</p>
+</section>
+<section id="on-databricks" class="level3">
+<h3 class="anchored" data-anchor-id="on-databricks">On Databricks</h3>
+<hr>
+<p>In Databricks you can scale the components of your machine up (CPU cores, RAM) without having to build a physical machine to house them, essentially temporarily ‘borrowing’ processor power, memory and storage from a super computer.</p>
+<p>This means you can perform very heavy analyses that your laptop wouldn’t be able to cope with. The Databricks platform provides a way for you to interface with the cloud computer in place of the keyboard/mouse and screen, taking your inputs and providing the resulting outputs back to you.</p>
+<p>The storage and computation are separated into different components rather than being within the same ‘machine’. Processing (processor and memory) is handled by a ‘compute’ resource, and storage (hard drive) is centralised in the ‘unity catalog’.</p>
+<p><img src="../images/ada-cloud-computing.jpg" class="img-fluid" width="515"></p>
+</section>
+<section id="benefits-of-cloud-compute" class="level3">
+<h3 class="anchored" data-anchor-id="benefits-of-cloud-compute">Benefits of cloud compute</h3>
+<hr>
+<ul>
+<li><strong>Scalable</strong> - if you need more computing power you can increase your computing power and only pay for what you use rather than having to build an expensive new machine</li>
+<li><strong>Centralised</strong> - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required.</li>
+<li><strong>Data Governance</strong> - The Department is able to ‘see’ all of it’s data and organisational knowledge. This enables it to ensure it is access controlled and align with GDPR and data protection legislation and guidelines.</li>
+<li><strong>Auditing and version control</strong> - The Platform itself generates a lot of metadata which enables it to keep versioned history of it’s data, outputs, etc.</li>
+<li><strong>Automation</strong> - Complex data processing pipelines can be set up using Databricks workflows and set to automatically run, either on a timer or a specific trigger allowing for a fully automated production process.</li>
+</ul>
+<p>Each of these aspects bring benefits to the wider Department and for analysts within it.</p>
+<p>Due to the scalability of compute resources you can request a more powerful processing cluster allowing you to deal with larger datasets more simply, focussing on the analytical logic of it rather than having to build processes around technical limitations such as storage space and processing power.</p>
+<p>The centralised nature of the data storage makes navigation of the Department’s data estate much simpler with everything existing in a single environment. Combined with stronger data governance this makes discovery of supplementary or related data the Department holds much easier. In addition, it allows for datasets that are commonly used across the Department - such as ONS geography datasets - to be standardised and made available to all teams, ensuring consistency of data and it’s formatting across the Departments publications.</p>
+<p>The auditing, and automation facilities provide a lot of benefits when building data pipelines. These can be set up to run as required with little manual effort from analysts, and can build automated quality assurance into the pipeline so that analysts can be confident in the outputs. In addition, the auditing keeps a record of all inputs and outputs each time a process is run. Combining this with robust documentation stored in <a href="../ADA/databricks_notebooks.html">Notebooks</a> allows you debug issues retrospectively without having to repeatedly step through the process to see where unexpected issues have occurred.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="key-concepts" class="level1">
+<h1>Key concepts</h1>
+<hr>
+<section id="storage" class="level2">
+<h2 class="anchored" data-anchor-id="storage">Storage</h2>
+<p>There are a few different ways of storing files and data on Databricks. Your data, and modelling areas will reside in the ‘unity catalog’, whereas your scripts and code will live on your ‘workspace’.</p>
+<section id="unity-catalog" class="level3">
+<h3 class="anchored" data-anchor-id="unity-catalog">Unity catalog</h3>
+<hr>
+<p>The majority of data and files on Databricks should be stored in the ‘unity catalog’. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.</p>
+<p>The unity catalog can be accessed through the ‘Catalog’ option in the Databricks sidebar.</p>
+<p><img src="../images/ada-unity-catalog-sidebar.png" class="img-fluid"></p>
+<section id="structure-of-the-unity-catalog" class="level4">
+<h4 class="anchored" data-anchor-id="structure-of-the-unity-catalog">Structure of the unity catalog</h4>
+<hr>
+<p>There is one ‘unity catalog’ for the whole of the Department for Education, this is what enables the Department to keep track of all of it’s data in a single place. The ‘unity catalog’ can contain any number of catalogs (equivalent to databases).</p>
+<p>A catalog can contain any number of schemas.</p>
+<p>A schema can contain any number of tables, views and volumes.</p>
+<p><img src="../images/ada-unity-catalog.jpg" class="img-fluid"></p>
+</section>
+<section id="catalogs-not-databases" class="level4">
+<h4 class="anchored" data-anchor-id="catalogs-not-databases">Catalogs not databases</h4>
+<hr>
+<p>The ‘unity catalog’ is a single catalog that contains all the other catalogs of data in the Department. Catalogs are very similar in concept to a SQL database in that they they contain schemas, tables of data and views of data.</p>
+</section>
+<section id="schemas-tables-and-views" class="level4">
+<h4 class="anchored" data-anchor-id="schemas-tables-and-views">Schemas, tables and views</h4>
+<hr>
+<p>Like a SQL database a catalog has schemas, tables, and views which store data in a structured (usually tabular) format.</p>
+<p>A schema is a sub-division of a catalog which allows for logical separation of data stored in the catalog. Whoever creates a schema is it’s owner, and is able to set fine grained permissions on who can see / edit the data within it. Permissions can also be set for groups of analysts, and can be modified by the ADA team if the original owner is no longer available.</p>
+<p>Tables are equivalent to SQL tables, and store data in a tabular format. Tables in Databricks have the ability to turn on version control which audits each change to the data and allows a user to go back in time to see earlier versions of the table.</p>
+<p>Views look and act the same as tables, however instead of storing the data as it is presented a view is created from a query which is ran when the view is referenced. This allows you to provide alternative ways to format data from tables without storing duplicated data.</p>
+<p>Tables and views sit within a schema and these are where you would store your core datasets and pick up data to analyse from.</p>
+</section>
+<section id="volumes" class="level4">
+<h4 class="anchored" data-anchor-id="volumes">Volumes</h4>
+<hr>
+<p>Unlike a SQL database the unity catalog also contains volumes, which are file storage similar to a shared drive. They can be used for storing any type of file.</p>
+<p>Volumes are stored under a schema within a catalog. Files in here can be accessed and manipulated through code.</p>
+<p>Examples of files suitable to be stored in a volume include CSVs, JSON and other formats of data files, or supporting files / images for applications you develop through the platform. You can also upload files to a volume through the user interface.</p>
+</section>
+</section>
+<section id="workspaces---databricks-file-system-dbfs" class="level3">
+<h3 class="anchored" data-anchor-id="workspaces---databricks-file-system-dbfs">Workspaces - Databricks file system (DBFS)</h3>
+<hr>
+<p>Each user has their own workspace which serves as a personal document and code storage area. It contains a user folder which is only accessible to that user by default, along with any Git repositories that you have cloned or created within Databricks.</p>
+<p>Your workspace can be accessed through the ‘Catalog’ option in the Databricks sidebar.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/ada-workspace-repos.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Everything in your workspace is only accessible to you unless you share it with other users. When you do share a script or file you can specify whether the person you’re sharing it with is able to view/edit/run the file you’re sharing.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Don’t overshare
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sharing code this way can be useful but has it’s risks. If you allow other users to edit and run your workbooks it’s possible that they can make changes or run it simultaneously resulting in unexpected results.</p>
+<p>For collaboration on code you should use a GitHub/DevOps repository which each user can clone and work on independently.</p>
+</div>
+</div>
+</section>
+<section id="repositories-for-version-control" class="level3">
+<h3 class="anchored" data-anchor-id="repositories-for-version-control">Repositories for version control</h3>
+<hr>
+<p>All code should be managed through a versioned repository on GitHub or Azure DevOps. You can commit and push your changes to the central repository from the Databricks platform. Pull requests to merge your changes into the ‘main’ branch still take place on your Git provider.</p>
+<p>To connect Databricks to a repository refer to the <a href="../ADA/git_databricks.html">Databricks and version control</a> article.</p>
+<hr>
+</section>
+</section>
+<section id="compute" class="level2">
+<h2 class="anchored" data-anchor-id="compute">Compute</h2>
+<hr>
+<p>In order to access data and run code you need to set up a compute resource. A compute resource provides processing power and memory to pick up and manipulate the data and files stored in the ‘unity catalog’. The compute page can be accessed through the ‘Compute’ option in the Databricks sidebar.</p>
+<p><img src="../images/ada-compute.png" class="img-fluid"></p>
+<p>There are several types of compute available and you will need to make the most appropriate choice for the kind of processing you’re wanting to do. The types are:</p>
+<ul>
+<li><p>SQL Warehouse - multiple users, SQL only; best to use if you’re only querying data from Databricks using SQL</p></li>
+<li><p>Personal cluster - single user, supports R, SQL, python and scala; best to use if you require languages other than SQL</p></li>
+<li><p>Shared cluster - multiple users, supports SQL, python and scala;</p></li>
+</ul>
+<p>You are able to create a personal cluster yourself, whereas shared clusters and SQL warehouses have to be requested through the <a href="mailto:adaptteam@education.gov.uk">ADA team</a>.</p>
+<p>In most cases a personal cluster will be the most versatile and easily accessible option. However your team may want to request a shared SQL warehouse if you have a lot of processing heavy SQL queries and do not need to use any other language in the Databricks platform itself.</p>
+<p>All compute options can be used both within the Databricks platform and be connected to through other applications. Instructions on how to connect R / RStudio to a SQL Warehouse, or a personal cluster can be found on the following pages:</p>
+<ul>
+<li><a href="../ADA/databricks_rstudio_sql_warehouse.html">Setup Databricks SQL Warehouse with RStudio</a></li>
+<li><a href="../ADA/databricks_rstudio_personal_cluster.html">Setup Databricks Personal Compute cluster with RStudio</a></li>
+</ul>
+<section id="creating-a-personal-compute-resource" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-personal-compute-resource">Creating a personal compute resource</h3>
+<hr>
+<ol type="1">
+<li>To create your own personal compute resource click the ‘Create with DfE Personal Compute’ button on the compute page.</li>
+</ol>
+<p><img src="../images/ada-compute-personal.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>You’ll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type.<br>
+<br>
+<strong>Databricks runtime version</strong> - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is ‘15.4 LTS’.<br>
+<br>
+<strong>Node type</strong> - This option determines how powerful your cluster is and there are 2 options available by default:<br>
+</p>
+<ul>
+<li>Standard 14GB 4-Core Nodes<br>
+</li>
+<li>Large 28GB 8-Core Nodes<br>
+<br>
+If you require a larger personal cluster this can be requested by the ADA team.<br>
+<br>
+<img src="../images/ada-compute-personal-create.png" class="img-fluid"></li>
+</ul></li>
+<li><p>Click the ‘Create compute’ button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes.<br>
+<br>
+<img src="../images/ada-compute-personal-create-button.png" class="img-fluid"></p></li>
+<li><p>Once the cluster is up and running the icon under the ‘State’ header on the ‘Compute’ page will appear as a green tick.<br>
+<br>
+<img src="../images/ada-compute-ready.png" class="img-fluid"></p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Clusters will shut down after being idle for an hour
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use of compute resources are charged by the hour, and so personal cluster have been set to shut down after being unused for an hour in order to prevent unnecessary cost to the Department.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Packages and libraries
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As mentioned above compute resources have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.</p>
+<p>An alternative to this is to specify packages/libraries to be installed on the cluster at start up. To do this click the name of your cluster from the ‘Compute’ page, then go to the ‘Libraries’ tab and click the ‘Install new’ button.</p>
+<p>Certain packages are installed by default on personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the <a href="https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/" target="_blank">Databricks documentation</a>.</p>
+</div>
+</div>
+<p>Once you have a compute resource you can begin using Databricks. You can do this either through connecting to Databricks through RStudio, or you can begin coding in the Databricks platforms using scripts, or <a href="Databricks_notebooks.qmd">Notebooks</a>.</p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1100,15 +1254,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./learning-development/learning-support.html" class="pagination-link" aria-label="Learning support">
-        <span class="nav-page-text">Learning support</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1117,7 +1262,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_fundamentals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>

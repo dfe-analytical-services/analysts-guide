@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="statistics.development@education.gov.uk">
-<meta name="dcterms.date" content="2024-09-06">
 
-<title>Analysts’ Guide</title>
+<title>Scripting Workflows in Databricks – Analysts’ Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,29 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./learning-development/learning-support.html" rel="next">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +142,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Scripting Workflows in Databricks</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,8 +156,8 @@ cookieconsent.run({
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -203,7 +234,7 @@ cookieconsent.run({
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -218,37 +249,37 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Learning support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/sql.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/r.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/git.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessibility</span></a>
   </div>
 </li>
@@ -265,55 +296,55 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/pub.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Routes for publishing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/ud.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open Data Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/ees.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore education statistics (EES)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Good examples in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Embedded visualisations in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Publication scrums</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">User engagement</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EES analytics</span></a>
   </div>
 </li>
@@ -330,25 +361,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Public dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating R Shiny dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualising data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing about data</span></a>
   </div>
 </li>
@@ -365,25 +396,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP expectations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP FAQs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
@@ -400,25 +431,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/ada.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analytical Data Access (ADA) and databricks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup Databricks SQL Warehouse with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup Databricks personal compute cluster with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks and version control</span></a>
   </div>
 </li>
@@ -429,45 +460,22 @@ cookieconsent.run({
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#learning-and-development" id="toc-learning-and-development" class="nav-link active" data-scroll-target="#learning-and-development">Learning and development</a></li>
-  <li><a href="#statistics-production" id="toc-statistics-production" class="nav-link" data-scroll-target="#statistics-production">Statistics production</a></li>
-  <li><a href="#writing-and-visualising" id="toc-writing-and-visualising" class="nav-link" data-scroll-target="#writing-and-visualising">Writing and visualising</a></li>
-  <li><a href="#reproducible-analytical-pipelines-rap" id="toc-reproducible-analytical-pipelines-rap" class="nav-link" data-scroll-target="#reproducible-analytical-pipelines-rap">Reproducible Analytical Pipelines (RAP)</a></li>
-  <li><a href="#analytical-data-access-ada-and-databricks" id="toc-analytical-data-access-ada-and-databricks" class="nav-link" data-scroll-target="#analytical-data-access-ada-and-databricks">Analytical Data Access (ADA) and Databricks</a></li>
-  <li><a href="#contact-us" id="toc-contact-us" class="nav-link" data-scroll-target="#contact-us">Contact us</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysts’ Guide</h1>
+<h1 class="title">Scripting Workflows in Databricks</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>statistics.development@education.gov.uk </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 6, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -477,63 +485,231 @@ cookieconsent.run({
 </header>
 
 
-<hr>
-<p>This website is a guide aimed at anyone working in analysis or statistics in the Department for Education (DfE). It includes tips on best practice and learning resources across a number of areas.</p>
-<p>We hope it can prove a useful community driven resource for everyone from the most experienced analyst right through to those just starting out. If you have any feedback, suggested additions, or wish to challenge any of the guidance, feel free to use the GitHub links to suggest changes directly, or contact us at the email you can find at the bottom of the page.</p>
-<section id="learning-and-development" class="level2">
-<h2 class="anchored" data-anchor-id="learning-and-development">Learning and development</h2>
-<p><a href="learning-development/learning-support.html">Learning support</a> - Useful learning resources, and support to get you started</p>
-<p><a href="learning-development/sql.html">SQL</a> - Guidance and tips for accessing data via databases with SQL</p>
-<p><a href="learning-development/r.html">R</a> - Guidance and tips for using R</p>
-<p><a href="learning-development/git.html">Git</a> - Guidance and tips for version control with Git</p>
-<p><a href="learning-development/python.html">Python</a> - Guidance and tips for using Python</p>
-<p><a href="learning-development/accessibility.html">Accessibility</a> - Tools and resources for digital accessibility</p>
-</section>
-<section id="statistics-production" class="level2">
-<h2 class="anchored" data-anchor-id="statistics-production">Statistics production</h2>
-<p><a href="statistics-production/pub.html">Routes for publishing</a> - Guidance for how to publish different types of statistics</p>
-<p><a href="RAP/rap-statistics.html">RAP in statistics</a> - Detailed RAP guidance for statistics publications</p>
-<p><a href="statistics-production/ud.html">Open data standards</a> - Guidance on how to structure data files</p>
-<p><a href="statistics-production/ees.html">Explore education statistics (EES)</a> - Tips on using the explore education statistics service</p>
-<p><a href="statistics-production/examples.html">Good examples in EES</a> - Good practice examples in the explore education statistics service</p>
-<p><a href="statistics-production/embedded-charts.html">Embedded visualisations in EES</a> - How to embed R-Shiny charts in EES publications</p>
-<p><a href="statistics-production/scrums.html">Publication scrums</a> - Information on the scrums we run and tips for writing statistical commentary</p>
-<p><a href="statistics-production/user-eng.html">User engagement</a> - Guidance on understanding and engaging with the users of published statistics</p>
-<p><a href="statistics-production/user_analytics.html">EES analytics</a> - Understanding how users are interacting with your publications</p>
-</section>
-<section id="writing-and-visualising" class="level2">
-<h2 class="anchored" data-anchor-id="writing-and-visualising">Writing and visualising</h2>
-<p><a href="writing-visualising/dashboards.html">Public dashboards</a> - Guidance for publishing public facing statistics dashboards</p>
-<p><a href="writing-visualising/dashboards_rshiny.html">Publishing an R-Shiny based dashboard</a> - Guidance for publishing public facing statistics dashboards using R-Shiny</p>
-<p><a href="writing-visualising/visualising.html">Visualising data</a> - Resources and best practice to guide you when visualising data</p>
-<p><a href="writing-visualising/writing.html">Writing about data</a> - Resources and best practice for writing about data</p>
-</section>
-<section id="reproducible-analytical-pipelines-rap" class="level2">
-<h2 class="anchored" data-anchor-id="reproducible-analytical-pipelines-rap">Reproducible Analytical Pipelines (RAP)</h2>
-<p><a href="RAP/rap-statistics.html">RAP in statistics</a> - Detailed RAP guidance for statistics publications</p>
-<p><a href="RAP/rap-expectations.html">RAP expectations</a> - Guidance for all analysts on expectations of RAP</p>
-<p><a href="RAP/rap-managers.html">RAP support</a> - Details on support available for RAP in DfE</p>
-<p><a href="RAP/rap-faq.html">RAP FAQs</a> - Frequently asked questions about RAP</p>
-</section>
-<section id="analytical-data-access-ada-and-databricks" class="level2">
-<h2 class="anchored" data-anchor-id="analytical-data-access-ada-and-databricks">Analytical Data Access (ADA) and Databricks</h2>
-<p><a href="ADA/ada.html">Analytical Data Access (ADA) and Databricks</a> - Guidance for analysts on how to interact with and use data stored in ADA using Databricks</p>
-<p><a href="./ADA/databricks_fundamentals.html">Databricks Fundamental Concepts</a> - Fundamental concepts in DataBricks that will help you navigate and understand the platform</p>
-<p><a href="./ADA/databricks_notebooks.html">Databricks Notebooks</a> - Guidance on Notebooks in DataBricks</p>
-<p><a href="./ADA/databricks_workflows.html">Databricks Workflows</a> - Guidance on Workflows in DataBricks</p>
-<p><a href="ADA/databricks_rstudio_sql_warehouse.html">Setup Databricks SQL Warehouse with RStudio</a> - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio.</p>
-<p><a href="ADA/databricks_rstudio_personal_cluster.html">Setup Databricks personal cluster Warehouse with RStudio</a> - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.</p>
-</section>
-<section id="contact-us" class="level2">
-<h2 class="anchored" data-anchor-id="contact-us">Contact us</h2>
-<p>Our mailbox is always monitored and is available for anyone in DfE to ask questions about statistics, whether that is about RAP, building dashboards, coding support, learning and development or statistics publications.</p>
-<ul>
-<li><a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a></li>
-<li>9am-5pm, Monday-Friday, aim to reply within 1-2 days</li>
-</ul>
+<p>Workflows can be constructed through the Databricks Workflows user interface (UI), however for large or complex workflows the UI can be a time consuming way to build a workflow. In these scenarios it is quicker and more inline with RAP principles to script your workflow.</p>
+<p>For a pipeline to be built there must be scripts, queries or notebooks available to read by Databricks, either located in your workspace, or in a Git repository.</p>
+<p>For this example we will create a folder in our workspace, create two test notebooks to comprise the workflow, and a third to script the job and set it off running. We’ll also set it up to notify us by email when the workflow successfully completes.</p>
+<ol type="1">
+<li><p>Create a folder in your workspace to store your notebooks. First click ‘Workspace’ in the sidebar (1), then navigate to your user folder (2). Then click the blue ‘Create’ button (3) and select ‘Folder’. Give the folder a name (4) such as ‘Test workflow’ and then click the blue ‘Create’ button (5).<br>
+<br>
+<img src="../images/ada-workflow-folder.png" class="img-fluid"></p></li>
+<li><p>Once in your new folder and click the blue ‘Create’ button again, this time choosing ‘Notebook’. Once in your new Notebook retitle it to ‘Test task 1’ (1), and set the default language to R (2). Then in the first code chunk write <code>print("This is a test task")</code> (3).<br>
+<img src="../images/ada-workflow-notebook-test1.png" class="img-fluid"></p></li>
+<li><p>Create a second workbook in the same folder titled ‘Test task 2’, and in the first code chunk write <code>print("This is another test task")</code> .<br>
+<img src="../images/ada-workflow-notebook-test-2.png" class="img-fluid"></p></li>
+<li><p>Create a third notebook and title it ‘Create and run job’. In the first cell load the <code>tidyverse</code>package. Install the <code>devtools</code> package and load it, then use it’s <code>install_github()</code> function to install the <code>databricks</code> package. Load the newly installed <code>databricks</code> package.<br>
+</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(devtools)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install_github</span>(<span class="st">"databrickslabs/databricks-sdk-r"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(databricks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Create a new code chunk and create a <a href="https://docs.databricks.com/en/notebooks/widgets.html" target="_blank">text widget</a> to contain your DataBricks access token. Run this cell to create the widget at the top of the page. Once the widget is there add in your personal access token into the text box.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbutils.widgets.text</span>(<span class="st">"api_token"</span>, <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Databricks access token
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Personal Authentication Token (PAT)s are a unique code that is generated to let Databricks know who is accessing it from the outside. It functions as a password and so <strong>must not be shared with anyone</strong>.</p>
+<p>If you haven’t already generated a Databricks token you can find instructions on how to do so in the <a href="../ADA/databricks_rstudio_personal_cluster.html">Setup Databricks personal compute cluster with RStudio</a> article.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Don’t put your token into the code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The reason we’re using a widget here for your access token is that we don’t want to take any risk of someone else being able to view your PAT token. If we were to hardcode it into the notebook then anyone with access to the code would be able to copy your PAT token and ‘masquerade’ as you.</p>
+</div>
+</div>
+<ol start="6" type="1">
+<li><p>We can now connect to the API through the <code>databricks</code> package using the <code>databricks::DatabricksClient()</code> function. It requires the <code>host</code> which is the URL of the Databricks platform up until (and including) the first <code>/</code>, and your token. We’ll store the result in a variable called <code>client</code> as we need to pass this to the other functions in the <code>databricks</code> library.<br>
+We can then use the <code>databricks::clustersList()</code> function to fetch a list of the clusters, which we can view using <code>display()</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>host <span class="ot">&lt;-</span> <span class="st">"https://adb-5037484389568426.6.azuredatabricks.net/"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>api_token <span class="ot">&lt;-</span> <span class="fu">dbutils.widgets.get</span>(<span class="st">"api_token"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> databricks<span class="sc">::</span><span class="fu">DatabricksClient</span>(<span class="at">host =</span> host, <span class="at">token =</span> api_token)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>clusters <span class="ot">&lt;-</span> databricks<span class="sc">::</span><span class="fu">clustersList</span>(client)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(clusters <span class="sc">%&gt;%</span> <span class="fu">select</span>(cluster_id, creator_user_name, cluster_name, spark_version, cluster_cores, cluster_memory_mb))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="../images/ada-workflows-databricks-api-cluster.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Clusters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>databricks::clustersList()</code> function will return any clusters that you have permission to see.</p>
+<p>The data returned by the function is hierarchical, and a single ‘column’ may contain several other columns. As the <code>display()</code> function renders a table, you’ll have to select only columns that <code>display()</code> knows how to show. Generally, the columns that are at the left-most position when you run <code>str(databricks::clustersList(client))</code> (shows the structure).</p>
+</div>
+</div></li>
+<li><p>Make a note of your cluster ID and save it in a variable called <code>cluster_id</code>. You could automate this step by filtering the <code>clusters</code> data frame as long as you ensure that it only results a single <code>cluster_id</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  cluster_id <span class="ot">&lt;-</span> <span class="st">"&lt;your cluster id&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Create a new code block and we’ll start by setting some parameters for the job. Firstly we’ll need a <code>job_name</code>, and the paths to the Notebooks we’re wanting to include in the workflow. We’ll also need to create a unique <code>task_key</code> for each of the Notebook tasks we’re going to set up.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>job_name <span class="ot">&lt;-</span> <span class="st">"test job"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>first_notebook_path <span class="ot">&lt;-</span> <span class="st">"/Users/nicholas.treece@education.gov.uk/R SDK/Test Notebook"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>second_notebook_path <span class="ot">&lt;-</span> <span class="st">"/Users/nicholas.treece@education.gov.uk/R SDK/Test Notebook 2"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>task_key_1 <span class="ot">&lt;-</span> <span class="st">"test_key"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>task_key_2 <span class="ot">&lt;-</span> <span class="st">"test_key_2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>We can then define the tasks as lists. There are many options available available for setting when creating a task, a full list of which can be found in the <a href="https://docs.databricks.com/api/workspace/jobs/create#tasks" target="_blank">tasks section of the job API documentation</a>. When reading this documentation any parameter that is marked as an <em>object</em> needs to be passed as a <em>list</em> (<code>list()</code>) in R, and anything marked as an <em>array</em> should be passed as a <em>vector</em> (<code>c()</code>).</p>
+<p>For the first task we’ll give it the first <code>task_key</code> we created above, and tell it to run on our existing cluster by passing the ID of our cluster to <code>existing_cluster_id</code>, we’ll then specify that it is a <code>notebook_task</code> and pass that a list with the <code>notebook_path</code> and the <code>source</code> which we will set to <code>WORKSPACE</code> (as opposed to a Git repository) for the purposes of this tutorial.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> first_job_task <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">task_key =</span> task_key_1,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">existing_cluster_id =</span> cluster_id,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">notebook_task =</span> <span class="fu">list</span>(</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">notebook_path =</span> first_notebook_path,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">source =</span> <span class="st">"WORKSPACE"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                  )</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For the second task we will do the same, but using the second <code>task_key</code> and <code>notebook_path</code> we defined. In addition, we’ll also add a <code>depends_on</code> clause with the previous <code>task_key</code> (passed in a list), and specify it is only to <code>run_if</code> <code>ALL_SUCCESS</code>. This means that the second task won’t begin processing unless all of the tasks it <code>depends_on</code> have completed successfully.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>second_job_task <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">task_key =</span> task_key_2,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">existing_cluster_id =</span> cluster_id,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">notebook_task =</span> <span class="fu">list</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">notebook_path =</span> second_notebook_path,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">source =</span> <span class="st">"WORKSPACE"</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                  ),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">depends_on =</span> <span class="fu">list</span>(<span class="at">task_key =</span> task_key_1),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">run_if =</span> <span class="st">"ALL_SUCCESS"</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="9" type="1">
+<li><p>Now we have both of our tasks defined we can create the job using the <code>databricks::jobCreate()</code> function. We pass it the <code>client</code> as the first argument, then the job <code>name</code> we defined. The <code>tasks</code> are passed as a list which contains each of the task lists we built above.<br>
+We’ll also tell it to send us <code>email_notifications</code> by passing a list with an <code>on_success</code> value of email addresses.<br>
+<br>
+The function returns the ID of the job we just created, so we will want to store the response in a variable called <code>workflow</code> so we can refer to it later.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>workflow <span class="ot">&lt;-</span> <span class="fu">jobsCreate</span>(client,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name =</span> job_name,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">tasks =</span> <span class="fu">list</span>(first_job_task, <span class="co">#list</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                                   second_job_task), <span class="co">#list</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">email_notifications =</span> <span class="fu">list</span>(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">on_success =</span> <span class="fu">c</span>(<span class="st">"your-email"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                                            ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lists of lists
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <code>list()</code> in R is used to contain any number and type of data, including other <code>list()</code>s. This makes it excellent for storing hierarchical data in one place, however it can get quite confusing quite quickly.</p>
+<p><strong>Sometimes it’s easier to break these <code>lists()</code> up into pieces</strong> by defining them seperately, as we did above by defining the task lists separately then passing them to the <code>tasks</code> argument in the <code>jobsCreate()</code> function.</p>
+<p>This often makes it easier to think about and construct, but certainly makes it easier to read. Consider the code below which does exactly the same thing as the code above, but is just written all at once.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>workflow <span class="ot">&lt;-</span> <span class="fu">jobsCreate</span>(client,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name =</span> job_name,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">tasks =</span> <span class="fu">list</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">list</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">task_key =</span> task_key_1,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">existing_cluster_id =</span> cluster_id,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">notebook_task =</span> <span class="fu">list</span>(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                                                    <span class="at">notebook_path =</span> first_notebook_path,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                                                    <span class="at">source =</span> <span class="st">"WORKSPACE"</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                                                  )</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                                ),</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">list</span>(</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">task_key =</span> task_key_2,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">existing_cluster_id =</span> cluster_id,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">notebook_task =</span> <span class="fu">list</span>(</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                                                    <span class="at">notebook_path =</span> second_notebook_path,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>                                                    <span class="at">source =</span> <span class="st">"WORKSPACE"</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>                                                  ),</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">depends_on =</span> <span class="fu">list</span>(<span class="at">task_key =</span> task_key_1),</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">run_if =</span> <span class="st">"ALL_SUCCESS"</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>                                )</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>                              ),</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>                      <span class="at">email_notifications =</span> <span class="fu">list</span>(</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">on_success =</span> <span class="fu">c</span>(<span class="st">"your-email"</span>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>                                            )</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>                      )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can see here that the code is getting very long, and is also more difficult to see which options relate to which list. If it weren’t for being diligent with indentation here we’d have to resort to counting brackets to see what belonged where. This is especially problematic if you accidentally delete a bracket and need to work out where it was meant to go.</p>
+</div>
+</div></li>
+<li><p>We can now get the ID of the job that was created and tell the API to run the job. In a new code chunk we’ll store the <code>job_id</code> from the <code>workflow</code> variable above. We’ll then use the <code>databricks::jobsRunNow()</code> function to tell it to run the workflow we just created by passing it the <code>job_id</code> we just stored. We’ll also store the <code>job_run_id</code> returned by the <code>databricks::jobsRunNow()</code> function.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>job_id <span class="ot">&lt;-</span> workflow<span class="sc">$</span>job_id</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>job_run <span class="ot">&lt;-</span> <span class="fu">jobsRunNow</span>(client, </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">job_id =</span> job_id)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>job_run_id <span class="ot">&lt;-</span> job_run<span class="sc">$</span>run_id</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We will now use this to create links to the job and the specific run of the job we just set off.</p></li>
+<li><p>In a new code cell, define a <code>job_link</code> by <code>paste0()</code>ing the <code>host</code> variable we passed to the <code>databricks::DatabricksClient()</code> function earlier, followed by <code>"job/"</code> followed by the <code>job_id</code> defined above.<br>
+We can then create a <code>job_run_link</code> by <code>paste0()</code>ing together the <code>job_link</code> followed by <code>"/runs/"</code> then the <code>job_run_id</code> from the previous step.<br>
+We can then output the <code>job_link</code> as text at the bottom of the cell.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>job_link <span class="ot">&lt;-</span> <span class="fu">paste0</span>(host,<span class="st">"jobs/"</span>,job_id)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>job_run_link <span class="ot">&lt;-</span> <span class="fu">paste0</span>(job_link,<span class="st">"/runs/"</span>, job_run_id)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>job_link</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>In a new cell, output the <code>job_run_link</code>.</p>
+<p><img src="../images/ada-workflow-output-link.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Output limits on code chunks
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Each chunk will display an output (assuming there are any) underneath the chunk once it has been run. Each chunk is limited to a single output though, which defaults to the last output generated.</p>
+<p>So if we had written a cell to output both links at the same time, we would still only see the <code>job_run_link</code>.</p>
+<p><img src="../images/ada-workflows-output-limitations.png" class="img-fluid"></p>
+</div>
+</div></li>
+<li><p>Now click on the links and check they work.</p></li>
+<li><p>You’ve now created a workflow with code, and each time you re-run this notebook another workflow with the same name will be created. As this is a tutorial which most analysts may have to follow at some point, the logical conclusion is that we will end up with hundreds of ‘test jobs’ cluttering up the workflow page.<br>
+<br>
+To avoid that let’s use the <code>databricks::jobsDelete()</code> function to clean up after ourselves. All that we need to do is pass the function the <code>client</code>, and <code>job_id</code> variables from above.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobsDelete</span>(client, job_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have been running and re-running bits of this code iteratively, there’s a good chance you already have several instances of ‘test job’ listed under your name.</p>
+<p><img src="../images/ada-workflows-multiple-jobs.png" class="img-fluid"></p>
+<p>If this is the case we’ll want to clean up each of these, ideally without having to manually click through the UI process for each one.</p>
+<p>To do this, firstly call the <code>databricks::jobsList()</code> function, passing it the <code>client</code> variable, and specifying the <code>name</code> of the jobs you want to list. Then filter the list to just the jobs with a <code>creator_user_name</code> of your email address. To see the resulting jobs use the <code>display()</code> function as below at the bottom of a code chunk.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_jobs <span class="ot">&lt;-</span> <span class="fu">jobsList</span>(client, </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">"test job"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">filter</span>(creator_user_name <span class="sc">==</span> <span class="st">'nicholas.treece@education.gov.uk'</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(my_jobs <span class="sc">%&gt;%</span> <span class="fu">select</span>(job_id, creator_user_name, run_as_user_name, created_time))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can now loop through the individual <code>job_id</code>s contained in <code>my_jobs</code> and use the <code>databricks::jobsDelete()</code> function to remove them all at once, programmatically.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(job_id <span class="cf">in</span> my_jobs<span class="sc">$</span>job_id){</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">jobsDelete</span>(client, job_id)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></li>
+</ol>
 
 
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1100,15 +1276,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./learning-development/learning-support.html" class="pagination-link" aria-label="Learning support">
-        <span class="nav-page-text">Learning support</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1117,7 +1284,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_workflow_script_databricks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>

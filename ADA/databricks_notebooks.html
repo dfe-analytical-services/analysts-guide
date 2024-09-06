@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="statistics.development@education.gov.uk">
-<meta name="dcterms.date" content="2024-09-06">
 
-<title>Analysts’ Guide</title>
+<title>Databricks Notebooks – Analysts’ Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,26 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./learning-development/learning-support.html" rel="next">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +108,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Databricks Notebooks</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,8 +122,8 @@ cookieconsent.run({
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -203,7 +200,7 @@ cookieconsent.run({
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -218,37 +215,37 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Learning support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/sql.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/r.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/git.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessibility</span></a>
   </div>
 </li>
@@ -265,55 +262,55 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/pub.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Routes for publishing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/ud.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open Data Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/ees.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore education statistics (EES)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Good examples in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Embedded visualisations in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Publication scrums</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">User engagement</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EES analytics</span></a>
   </div>
 </li>
@@ -330,25 +327,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Public dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating R Shiny dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualising data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing about data</span></a>
   </div>
 </li>
@@ -365,25 +362,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP expectations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP FAQs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
@@ -400,25 +397,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/ada.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analytical Data Access (ADA) and databricks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup Databricks SQL Warehouse with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup Databricks personal compute cluster with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks and version control</span></a>
   </div>
 </li>
@@ -434,40 +431,23 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-and-development" id="toc-learning-and-development" class="nav-link active" data-scroll-target="#learning-and-development">Learning and development</a></li>
-  <li><a href="#statistics-production" id="toc-statistics-production" class="nav-link" data-scroll-target="#statistics-production">Statistics production</a></li>
-  <li><a href="#writing-and-visualising" id="toc-writing-and-visualising" class="nav-link" data-scroll-target="#writing-and-visualising">Writing and visualising</a></li>
-  <li><a href="#reproducible-analytical-pipelines-rap" id="toc-reproducible-analytical-pipelines-rap" class="nav-link" data-scroll-target="#reproducible-analytical-pipelines-rap">Reproducible Analytical Pipelines (RAP)</a></li>
-  <li><a href="#analytical-data-access-ada-and-databricks" id="toc-analytical-data-access-ada-and-databricks" class="nav-link" data-scroll-target="#analytical-data-access-ada-and-databricks">Analytical Data Access (ADA) and Databricks</a></li>
-  <li><a href="#contact-us" id="toc-contact-us" class="nav-link" data-scroll-target="#contact-us">Contact us</a></li>
+  <li><a href="#notebooks" id="toc-notebooks" class="nav-link active" data-scroll-target="#notebooks">Notebooks</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysts’ Guide</h1>
+<h1 class="title">Databricks Notebooks</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>statistics.development@education.gov.uk </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 6, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -478,59 +458,66 @@ cookieconsent.run({
 
 
 <hr>
-<p>This website is a guide aimed at anyone working in analysis or statistics in the Department for Education (DfE). It includes tips on best practice and learning resources across a number of areas.</p>
-<p>We hope it can prove a useful community driven resource for everyone from the most experienced analyst right through to those just starting out. If you have any feedback, suggested additions, or wish to challenge any of the guidance, feel free to use the GitHub links to suggest changes directly, or contact us at the email you can find at the bottom of the page.</p>
-<section id="learning-and-development" class="level2">
-<h2 class="anchored" data-anchor-id="learning-and-development">Learning and development</h2>
-<p><a href="learning-development/learning-support.html">Learning support</a> - Useful learning resources, and support to get you started</p>
-<p><a href="learning-development/sql.html">SQL</a> - Guidance and tips for accessing data via databases with SQL</p>
-<p><a href="learning-development/r.html">R</a> - Guidance and tips for using R</p>
-<p><a href="learning-development/git.html">Git</a> - Guidance and tips for version control with Git</p>
-<p><a href="learning-development/python.html">Python</a> - Guidance and tips for using Python</p>
-<p><a href="learning-development/accessibility.html">Accessibility</a> - Tools and resources for digital accessibility</p>
-</section>
-<section id="statistics-production" class="level2">
-<h2 class="anchored" data-anchor-id="statistics-production">Statistics production</h2>
-<p><a href="statistics-production/pub.html">Routes for publishing</a> - Guidance for how to publish different types of statistics</p>
-<p><a href="RAP/rap-statistics.html">RAP in statistics</a> - Detailed RAP guidance for statistics publications</p>
-<p><a href="statistics-production/ud.html">Open data standards</a> - Guidance on how to structure data files</p>
-<p><a href="statistics-production/ees.html">Explore education statistics (EES)</a> - Tips on using the explore education statistics service</p>
-<p><a href="statistics-production/examples.html">Good examples in EES</a> - Good practice examples in the explore education statistics service</p>
-<p><a href="statistics-production/embedded-charts.html">Embedded visualisations in EES</a> - How to embed R-Shiny charts in EES publications</p>
-<p><a href="statistics-production/scrums.html">Publication scrums</a> - Information on the scrums we run and tips for writing statistical commentary</p>
-<p><a href="statistics-production/user-eng.html">User engagement</a> - Guidance on understanding and engaging with the users of published statistics</p>
-<p><a href="statistics-production/user_analytics.html">EES analytics</a> - Understanding how users are interacting with your publications</p>
-</section>
-<section id="writing-and-visualising" class="level2">
-<h2 class="anchored" data-anchor-id="writing-and-visualising">Writing and visualising</h2>
-<p><a href="writing-visualising/dashboards.html">Public dashboards</a> - Guidance for publishing public facing statistics dashboards</p>
-<p><a href="writing-visualising/dashboards_rshiny.html">Publishing an R-Shiny based dashboard</a> - Guidance for publishing public facing statistics dashboards using R-Shiny</p>
-<p><a href="writing-visualising/visualising.html">Visualising data</a> - Resources and best practice to guide you when visualising data</p>
-<p><a href="writing-visualising/writing.html">Writing about data</a> - Resources and best practice for writing about data</p>
-</section>
-<section id="reproducible-analytical-pipelines-rap" class="level2">
-<h2 class="anchored" data-anchor-id="reproducible-analytical-pipelines-rap">Reproducible Analytical Pipelines (RAP)</h2>
-<p><a href="RAP/rap-statistics.html">RAP in statistics</a> - Detailed RAP guidance for statistics publications</p>
-<p><a href="RAP/rap-expectations.html">RAP expectations</a> - Guidance for all analysts on expectations of RAP</p>
-<p><a href="RAP/rap-managers.html">RAP support</a> - Details on support available for RAP in DfE</p>
-<p><a href="RAP/rap-faq.html">RAP FAQs</a> - Frequently asked questions about RAP</p>
-</section>
-<section id="analytical-data-access-ada-and-databricks" class="level2">
-<h2 class="anchored" data-anchor-id="analytical-data-access-ada-and-databricks">Analytical Data Access (ADA) and Databricks</h2>
-<p><a href="ADA/ada.html">Analytical Data Access (ADA) and Databricks</a> - Guidance for analysts on how to interact with and use data stored in ADA using Databricks</p>
-<p><a href="./ADA/databricks_fundamentals.html">Databricks Fundamental Concepts</a> - Fundamental concepts in DataBricks that will help you navigate and understand the platform</p>
-<p><a href="./ADA/databricks_notebooks.html">Databricks Notebooks</a> - Guidance on Notebooks in DataBricks</p>
-<p><a href="./ADA/databricks_workflows.html">Databricks Workflows</a> - Guidance on Workflows in DataBricks</p>
-<p><a href="ADA/databricks_rstudio_sql_warehouse.html">Setup Databricks SQL Warehouse with RStudio</a> - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio.</p>
-<p><a href="ADA/databricks_rstudio_personal_cluster.html">Setup Databricks personal cluster Warehouse with RStudio</a> - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.</p>
-</section>
-<section id="contact-us" class="level2">
-<h2 class="anchored" data-anchor-id="contact-us">Contact us</h2>
-<p>Our mailbox is always monitored and is available for anyone in DfE to ask questions about statistics, whether that is about RAP, building dashboards, coding support, learning and development or statistics publications.</p>
-<ul>
-<li><a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a></li>
-<li>9am-5pm, Monday-Friday, aim to reply within 1-2 days</li>
-</ul>
+<section id="notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="notebooks">Notebooks</h2>
+<hr>
+<p>Notebooks are a special kind of script that Databricks supports. They consist of code blocks and markdown blocks which can contain formatted text, links and images. Due to the ability to combine markdown with code they are very well suited to creating and documenting data pipelines, such as creating a core dataset that underpins your other products. They are particularly powerful when parameterised and used in conjuction with <a href="ADA/Databricks_workflows.qmd">Workflows</a>.</p>
+<p>You can create a notebook in your workspace, either in a folder or a repository.<br>
+To do this locate the folder/repository you want to create the notebook in then click the ‘Create’ button and select Notebook.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Any notebooks used for core business processes are created in a repository linked to GitHub/DevOps where they can be version controlled.</p>
+</div>
+</div>
+<p>Once you’ve created a notebook it will automatically be opened. Any changes you made are saved in real time so the notebook will always keep the latest version of it’s contents. In order to ‘save’ a snapshot of your work it is recommended to use git commits.</p>
+<p>You can change the title from ‘Untitled Notebook <em>&lt;timestamp&gt;</em>’ (1), and set it’s default language in the drop down immediately to the right of the notebook title (2).</p>
+<p><img src="../images/ada-notebook.png" class="img-fluid"></p>
+<p>The default language is the language the notebook will assume all code chunks are written in. In the screenshot above the default language is ‘R’, so all chunks will be assumed to be written in R unless otherwise specified.</p>
+<p>You can also add markdown cells to add text, links and graphics to your notebook in order to document the processing done within it.</p>
+<p>To add a new code of markdown chunk move the mouse above or below another chunk and the buttons ‘+Code’ and ‘+Text’ will appear.</p>
+<p><img src="../images/ada-notebook-add-chunk.png" class="img-fluid"></p>
+<p>To run code chunks you’ll first need to attach your compute resource to it by clicking the ‘Connect’ button in the top right hand side of the page.</p>
+<p><img src="../images/ada-notebook-attach.png" class="img-fluid"></p>
+<p>You can run a code chunk either by pressing the play button in the top left corner of the chunk, or by pressing Ctrl + Return/Enter on the keyboard. Any outputs that result from the code will be displayed underneath the chunk.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In R
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you try to <code>View()</code> a data frame in R you’ll notice that the function doesn’t work within Databricks. Instead Databricks providers the <code>display()</code> function for R users to view their data with.</p>
+</div>
+</div>
+<p><img src="../images/ada-notebook-chunk-output.png" class="img-fluid"></p>
+<p>Everything ran in a notebook is in it’s own ‘session’ meaning that later chunks have access to variables, functions, etc. that were defined above. Chunks can be ran manually, however doing this runs the risk of running code out of order and may consequently produce unexpected results. To avoid this all chunks can be ran in order from the beginning of the Notebook using the ‘Run all’ button at the top of the page, alternatively you can ‘Run all above’ or ‘Run all below’ from any code chunk.</p>
+<p>Notebooks cannot share a session with another Notebook so bear this in mind when constructing your workflows. If you need to pass data between notebooks it can be written out to a table in the unity catalog using SQL / R / Python / Scala as you would write to a SQL table in SQL Server. This can then be accessed from later notebooks.</p>
+<p>Notebooks can be parameterised using ‘<a href="https://docs.Databricks.com/en/notebooks/widgets.html" target="_blank">widgets</a>’, meaning a single notebook can be re-used with different inputs. This means they can be used in a similar way to a function in R/Python or a stored procedure in SQL.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Don’t repeat yourself (DRY)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A coding best-practice is to build components that can be re-used to perform many similar tasks rather than writing repetitive code.</p>
+<p>This applies equally to notebooks or scripts you create within Databricks which can be made re-usable through parameters. To reference a parameter within a notebook you can use the syntax <code>:parameter_name</code> from Databricks Runtime 15+. In previous DBR versions the syntax was <code>${parameter_name}</code>.</p>
+</div>
+</div>
 
 
 </section>
@@ -1100,15 +1087,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./learning-development/learning-support.html" class="pagination-link" aria-label="Learning support">
-        <span class="nav-page-text">Learning support</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1117,7 +1095,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>
