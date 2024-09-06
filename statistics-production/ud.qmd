@@ -501,7 +501,7 @@ With some files there may be more than one way to specify the metadata that will
 | % | Adds a percentage symbol after the value |
 | pp | Adds pp after the value |
 | £m | Adds a pound symbol before the data and m after the data to represent millions of pounds, e.g. £12m | 
-| numberstring | This allows for numeric ids or codes to be presented as a string, e.g. for a code of 19950808 it will show exactly as that, instead of 19,950,808 |
+| numberstring | This allows for numeric IDs or codes to be presented as a string, e.g. for a code of 19950808 it will show exactly as that, instead of 19,950,808 |
 
 Note that if you are using percentage points (pp) you must include a clear explanation in your release and methodology, so that users can understand what you are referring to.
 
