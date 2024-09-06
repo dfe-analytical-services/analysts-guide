@@ -488,8 +488,24 @@ With some files there may be more than one way to specify the metadata that will
 | filter_hint            | This column gives you the option to add in a hint such as 'Filter by school type' for the filter to make the service easier for the users to navigate. If you leave the column blank, no hint will appear. Do not duplicate the column name here, as it will just appear twice |
 | filter_grouping_column | This column should be blank unless you are wanting to group your filters. When you are wanting to group your filters this column should contain the exact name of the column/variable that you wish to group by. It is good practice to use the same variable name as that you are grouping, with _group appended at the end, i.e. 'filter' and 'filter_group' |
 
+---
+
+### Acceptable indicator_unit values
+
+---
+
+| indicator_unit | formatting notes |
+| ---------------| -----------------|
+|   | When left blank we automatically comma separate numeric values, character strings are left as is and will not show in charts |
+| £ | Adds a pound symbol before the value |
+| % | Adds a percentage symbol after the value |
+| pp | Adds pp after the value |
+| £m | Adds a pound symbol before the data and m after the data to represent millions of pounds, e.g. £12m | 
+| numberstring | This allows for numeric IDs or codes to be presented as a string, e.g. for a code of 19950808 it will show exactly as that, instead of 19,950,808 |
 
 Note that if you are using percentage points (pp) you must include a clear explanation in your release and methodology, so that users can understand what you are referring to.
+
+Please contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) if you have any questions about the formatting or would like more options adding.
 
 ---
 
