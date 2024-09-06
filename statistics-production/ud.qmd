@@ -670,11 +670,7 @@ You can only mix time_identifiers if they appear within the same table below. If
 
 ---
 
-<div class="jumbotron">
-
-  <h3>Remember</h3>
-
-  <hr class="my-4">
+**Remember**
 
 - You must include time_period and time_identifier columns in your data files.
 - Your data must match the allowable values above.
@@ -683,12 +679,9 @@ You can only mix time_identifiers if they appear within the same table below. If
 - Use filters to add more detail if you have multiple time breakdowns in the same file (quarter/full year).
 - Where a measure spans multiple years, you should name the starting year, and set the time_period as the year published.
 
-</div>
-
 ---
 
 ## Geography columns
-
 
 We publish at a number of different geography breakdowns and these vary from publication to publication. Every publication in the new platform must include the three compulsory geography columns - geographic_level, country_code and country_name in its data files. These are compulsory as the data we are producing must lie within a country boundary.
 
