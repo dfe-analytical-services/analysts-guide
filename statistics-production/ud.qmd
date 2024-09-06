@@ -15,9 +15,7 @@ metadata_data_example <- read_excel("../data_examples/metadata_data_example.xlsx
 
 ---
 
-# Introduction
-
----
+## Introduction
 
 With open data standards, our aim is to apply a consistent, logical structure to all data files so that they are easier to use and analyse, minimising the time spent deciphering and cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using our data, as well as opening up further opportunities for linking data.
 
@@ -27,8 +25,9 @@ Data published via EES is released under the terms of the [Open Government Licen
 
 ---
 
-## How to check against these standards
+### How to check against these standards
 
+---
 
 An [interactive data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} has been developed in R Shiny to automate checks against the standards as a final stage of automated quality assurance before upload to EES.
 
@@ -41,13 +40,13 @@ This can be run on any data file, though requires an associated [EES metadata fi
 
 ---
 
-
 > “Tidy datasets are all alike but every messy dataset is messy in its own way.” – Hadley Wickham
 
 ---
 
-## Overview of EES data files
+### Overview of EES data files
 
+---
 
 For data to be used with the table tool and charts in EES, it needs to meet the following overall specifications:
 
@@ -125,9 +124,7 @@ Once you have prepared a draft data file, you should always run the file through
 
 ---
 
-# General requirements
-
----
+## General requirements
 
 When publishing statistics, you should be following these standards for underlying data files.
 
@@ -149,8 +146,9 @@ For publishing on EES specifically, please note the following points:
 
 ---
 
-## Tidy data structure
+### Tidy data structure
 
+---
 
 The DfE is committed to working with and publishing standardised 'tidy' data to give users, both internal and external, consistent machine readable data that can be easily transformed and analysed in modern programming languages used for data processing. Our standards draw upon the ideas of tidy data - this means applying a logical structure to datasets so they are easier to use and analyse, minimising the time spent cleaning the data before use.
 
@@ -173,7 +171,7 @@ The variables (columns) in each of the uploaded data files will fall in to the f
 
 ---
 
-### Introduction to indicators
+#### Introduction to indicators
 
 ---
 
@@ -183,7 +181,7 @@ More details on indicators in the EES context are provided in the **[Indicators 
 
 ---
 
-### Introduction to filters
+#### Introduction to filters
 
 ---
 
@@ -227,7 +225,7 @@ Additional filters are the release specific characteristics that we filter our d
 
 ---
 
-### Optimising filter-indicator combinations
+#### Optimising filter-indicator combinations
 
 ---
 
@@ -272,8 +270,9 @@ If your current processes produce wide data that you need to switch to a tidy st
 
 ---
 
-## Data format
+### Data format
 
+---
 
 These standards give you the power to format the data in a way that best meets the needs of the users. There are only a handful of formatting standards to follow to ensure best practice and consistency across all of our data.
 
@@ -321,7 +320,11 @@ Variable names should ideally be kept below 25-35 characters as long names are o
 
 Titles should use abbreviations only when necessary to reduce the length of the title if required.
 
+---
+
 #### Indicator names
+
+---
 
 Most indicators should be reducible to a simple context / title (e.g. schools, pupils, students, teachers, starts, apprenticeships, expenditure, income, etc) and a data type (e.g. count, sum, percent, score, average, median, fte, etc). Assuming this ideal (tidy data structure) case, the preferred layout is:
 
@@ -345,7 +348,6 @@ The table below summarises these guidelines.
 |------|-----------------|------------------------|-------------|
 | Title | title / name e.g. population, pupils, starters | population_count, pupil_count, starter_count | title of the field, avoid abbreviations where possible |
 | Data type | count / percent | pupil_count, pupil_percent | Number or Percentage where applicable |
-| | | | |
 | Levels | l + (level number) | population_count_l1 | l1, l2, l3 etc |
 | Above or Below | plus / minus | population_count_plus | Using ‘plus’ or ‘minus’ to denote above or below |
 | Exclusivity	 | exc / inc | population_count_exc_adult | excludes or includes features |
@@ -357,7 +359,7 @@ Through the above guidance, we aim to develop the DfE data catalogue into a cons
 
 ---
 
-### How to export data with UTF-8 encoding
+#### How to export data with UTF-8 encoding
 
 ---
 
@@ -385,8 +387,9 @@ For `write_csv()`, which some of you may be using for increased processing speed
 
 ---
 
-## How much data to publish
+### How much data to publish
 
+---
 
 You should publish as many years of data that you have and is practicable.
 
@@ -394,8 +397,9 @@ If you are not providing a full timeseries for any reason, you must link to the 
 
 ---
 
-## Deciding what should be in a file
+### Deciding what should be in a file
 
+---
 
 Explore education statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.
 
@@ -407,9 +411,9 @@ We generally recommend fewer large files over a larger number of smaller files. 
 
 ---
 
+### File size
 
-## File size
-
+---
 
 There are no character or size limits in a csv file and there is no size limit for EES, though the larger a file is, the longer it will take to upload and process. Also remember that the files you upload are the files that users will download, consider the software they may access to (e.g. Excel) and whether the size of your files are compatible with this.
 
@@ -429,7 +433,6 @@ A **rough guide** to file size would be:
 
 ## Data symbols
 
-
 In line with the [GSS guidance on symbols](https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/){target="_blank" rel="noopener noreferrer"}, special values should be replaced with symbols in the following situations:
 
 
@@ -447,11 +450,7 @@ If you have any other conventions you've used in previous publications, or a sce
 
 ---
 
-
-# EES metadata
-
-
----
+## EES metadata
 
 Metadata in a machine readable (.csv) format must accompany datasets uploaded to the explore education statistics service to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.
 
@@ -474,8 +473,9 @@ With some files there may be more than one way to specify the metadata that will
 
 ---
 
-## Mandatory EES metadata columns
+### Mandatory EES metadata columns
 
+---
 
 | column                 | details                                                        |
 |------------------------|----------------------------------------------------------------|
@@ -509,8 +509,9 @@ Please contact the [explore education statistics platforms team](mailto:explore.
 
 ---
 
-## Example EES metadata
+### Example EES metadata
 
+---
 
 Each row represents a column in the data file.
 
@@ -532,9 +533,7 @@ Each row represents a column in the data file.
 
 ---
 
-# Time and geography
-
----
+## Time and geography
 
 Every observation, or row, in all of the provided data files will have a set of observational units based on the time period and geographic level that the data relates to. The number of these columns will differ across files depending on the number of geographic levels included in the publication.
 
@@ -547,8 +546,9 @@ Across every single dataset of official statistics produced by DfE, the followin
 
 ---
 
-## Time columns
+### Time columns
 
+---
 
 We use the two columns, time_period and time_identifier, to generalise time across our underlying datasets. All data files must contain these. This is a important for general useability of our data, as well as being critical in driving the charts and tables in the explore education statistics service and making explicit reference to the time in which our measurements relate to. This is a compulsory element of any official statistics dataset.
 
@@ -681,7 +681,9 @@ You can only mix time_identifiers if they appear within the same table below. If
 
 ---
 
-## Geography columns
+### Geography columns
+
+---
 
 We publish at a number of different geography breakdowns and these vary from publication to publication. Every publication in the new platform must include the three compulsory geography columns - geographic_level, country_code and country_name in its data files. These are compulsory as the data we are producing must lie within a country boundary.
 
@@ -701,7 +703,7 @@ Where you have data for a legacy LA that does not have a 9-digit new code, leave
 
 ---
 
-### Different measures of geography
+#### Different measures of geography
 
 ---
 
@@ -774,7 +776,7 @@ For Planning area and Institution data, any data files that **only** consist of 
 
 ---
 
-### Using School or Provider as a filter
+#### Using School or Provider as a filter
 
 ---
 
@@ -784,7 +786,7 @@ This approach will work for basic filtering of providers and schools but it may 
 
 ---
 
-### Unknown geographic codes
+#### Unknown geographic codes
 
 ---
 
@@ -814,9 +816,7 @@ This approach will work for basic filtering of providers and schools but it may 
 
 ---
 
-# Common harmonised variables
-
----
+## Common harmonised variables
 
 Wherever possible variables should confirm to the DfE harmonisation strategy.
 Having consistent variables across data files held by the DfE, and in particular across data files in publications, allows users to more quickly
@@ -826,7 +826,9 @@ for dashboards and other secondary statistics services, whilst also helping with
 
 --- 
 
-## Special Educational Needs
+### Special Educational Needs
+
+---
 
 Special educational needs data uploaded to explore education statistics service is expected to conform closely to the [School Census data guidance](https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code).
 
@@ -869,7 +871,9 @@ If using [**breakdown_topic** and **breakdown**](#introduction-to-filters) inste
 
 ---
 
-## Sex and gender
+### Sex and gender
+
+---
 
 The Department's policy on collecting sex and gender data is that statistics 
 should preferentially be presented for sex rather than gender. These terms, as 
@@ -879,7 +883,7 @@ vice-versa.
 
 ---
 
-### Sex
+#### Sex
 
 ---
 
@@ -922,7 +926,7 @@ Or...
 
 ---
 
-### Gender
+#### Gender
 
 ---
 
@@ -937,7 +941,7 @@ The department is not collecting, and does not plan to collect, data on gender i
 
 ---
 
-### Time-series containing historical data collected as "gender"
+#### Time-series containing historical data collected as "gender"
 
 ---
 
@@ -959,10 +963,7 @@ re-classification. The recommended text in such cases is as follows:
 
 ---
 
-## Ethnicity
-
-
-### Overview
+### Ethnicity
 
 ---
 
@@ -977,7 +978,7 @@ This guidance has been written by collating the most up to date advice and guida
 
 ---
 
-### GSS ethnicity categories
+#### GSS ethnicity categories
 
 ---
 
@@ -1017,7 +1018,7 @@ We recommend two alternative methods of ordering the above ethnic groups when re
 
 ---
 
-### Reporting on broad ethnic minorities catageories (e.g. BAME)
+#### Reporting on broad ethnic minorities catageories (e.g. BAME)
 
 ---
 
@@ -1053,13 +1054,13 @@ Where there is a reasonable need to publish or report statistics for a full aggr
 
 ---
 
-## Establishment characteristics
+### Establishment characteristics
 
 A standardised set of establishment type fields has been developed, largely based on the data reported by the School and Pupils Statistics publication. Reference files for the standardised fields are available in the data screener GitHub repository, with the standards summarised below.
 
 ---
 
-### Establishment type group
+#### Establishment type group
 
 ---
 
@@ -1081,7 +1082,7 @@ If needed, these items can also be reported in the standard [**breakdown** field
 
 ---
 
-### Establishment governance
+#### Establishment governance
 
 ---
 
@@ -1107,7 +1108,7 @@ If needed, these items can also be reported in the standard [**breakdown** field
 
 ---
 
-### Education phase
+#### Education phase
 
 ---
 
@@ -1136,9 +1137,7 @@ Education phase should be listed under the column name **education_phase** where
 
 ---
 
-# Filters
-
----
+## Filters
 
 A filter is a variable that we break our data down by, such as school type, pupil characteristics, or NQT status. There are no required standards for these, you can include any filters that you feel benefit the users of your data.
 
@@ -1246,11 +1245,7 @@ knitr::include_graphics("../images/change_date_format.PNG")
 
 ---
 
-<div class="jumbotron">
-
-  <h3>Remember</h3>
-
-  <hr class="my-4">
+**Remember**
 
 - All filters should have a ‘Total’ aggregation where possible.
 - If a filter has one level, you should not include it in the EES metadata.
@@ -1258,13 +1253,9 @@ knitr::include_graphics("../images/change_date_format.PNG")
 - Grouping filters is an option, but only group filters where you decide it is better for your users.
 - If a filter is used to group another, then it should not appear as a separate row in the EES metadata.
 
-</div>
-
 ---
 
-# Indicators
-
----
+## Indicators
 
 The indicators are the variables showing the measurements/statistics themselves, such as the number of pupils. These can be of different formats (e.g. text, numeric), although are numeric by default. The number of indicators will vary across publications and data files.
 
@@ -1335,13 +1326,15 @@ knitr::include_graphics("../images/indicator_group.png")
 
 ---
 
-# Reviewing indicator and filter field naming
-
-## Introduction
+## How to name columns (fields)
 
 In order to create and maintain a consistent data catalogue, we suggest that teams perform a regular review of their data files against the guidance on this page.
 
-## Field Names
+---
+
+### Field names
+
+---
 
 Each publication team should regularly review the indicator and filter field naming in their publications to maintain:
 
@@ -1379,7 +1372,11 @@ Any completely new fields with no previous direct precursor should contain blank
 Your team should then keep a copy as a log of any changes and also send a copy to explore.statistics@education.gov.uk so we can look to update our standardized list of field names where appropriate.
 </div>
 
-## Field entries
+---
+
+### Field entries
+
+---
 
 A further step teams can take to maintain standardization is to review the filter options or entries within their filters. For example, any ethnicity fields should conform to our published harmonized (GSS) ethnicity guidance.
 
