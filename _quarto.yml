@@ -107,12 +107,19 @@ website:
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
           - RAP/rap-statistics.qmd
-      - section: "ADA and Databricks"
+      - section: "Understanding ADA and Databricks"
         contents: 
           - ADA/ada.qmd
+          - ADA/databricks_fundamentals.qmd
+          - ADA/databricks_notebooks.qmd
+          - ADA/databricks_workflows.qmd
+      - section: "Databricks: How to"
+        contents: 
           - ADA/databricks_rstudio_sql_warehouse.qmd
           - ADA/databricks_rstudio_personal_cluster.qmd
           - ADA/git_databricks.qmd
+          - ADA/databricks_workflow_script_databricks.qmd
+          - ADA/databricks_workflow_script_rstudio.qmd
 
 format:
   html:
