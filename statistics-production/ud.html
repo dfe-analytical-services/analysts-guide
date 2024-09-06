@@ -463,7 +463,10 @@ cookieconsent.run({
   </ul></li>
   <li><a href="#ees-metadata" id="toc-ees-metadata" class="nav-link" data-scroll-target="#ees-metadata">EES metadata</a>
   <ul class="collapse">
-  <li><a href="#mandatory-ees-metadata-columns" id="toc-mandatory-ees-metadata-columns" class="nav-link" data-scroll-target="#mandatory-ees-metadata-columns">Mandatory EES metadata columns</a></li>
+  <li><a href="#mandatory-ees-metadata-columns" id="toc-mandatory-ees-metadata-columns" class="nav-link" data-scroll-target="#mandatory-ees-metadata-columns">Mandatory EES metadata columns</a>
+  <ul class="collapse">
+  <li><a href="#acceptable-indicator_unit-values" id="toc-acceptable-indicator_unit-values" class="nav-link" data-scroll-target="#acceptable-indicator_unit-values">Acceptable indicator_unit values</a></li>
+  </ul></li>
   <li><a href="#example-ees-metadata" id="toc-example-ees-metadata" class="nav-link" data-scroll-target="#example-ees-metadata">Example EES metadata</a></li>
   </ul></li>
   <li><a href="#time-and-geography" id="toc-time-and-geography" class="nav-link" data-scroll-target="#time-and-geography">Time and geography</a>
@@ -1340,8 +1343,52 @@ Guidance on how to structure data files
 </tr>
 </tbody>
 </table>
-<p>Note that if you are using percentage points (pp) you must include a clear explanation in your release and methodology, so that users can understand what you are referring to.</p>
 <hr>
+<section id="acceptable-indicator_unit-values" class="level3">
+<h3 class="anchored" data-anchor-id="acceptable-indicator_unit-values">Acceptable indicator_unit values</h3>
+<hr>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 46%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>indicator_unit</th>
+<th>formatting notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>When left blank we automatically comma separate numeric values, character strings are left as is and will not show in charts</td>
+</tr>
+<tr class="even">
+<td>£</td>
+<td>Adds a pound symbol before the value</td>
+</tr>
+<tr class="odd">
+<td>%</td>
+<td>Adds a percentage symbol after the value</td>
+</tr>
+<tr class="even">
+<td>pp</td>
+<td>Adds pp after the value</td>
+</tr>
+<tr class="odd">
+<td>£m</td>
+<td>Adds a pound symbol before the data and m after the data to represent millions of pounds, e.g.&nbsp;£12m</td>
+</tr>
+<tr class="even">
+<td>numberstring</td>
+<td>This allows for numeric IDs or codes to be presented as a string, e.g.&nbsp;for a code of 19950808 it will show exactly as that, instead of 19,950,808</td>
+</tr>
+</tbody>
+</table>
+<p>Note that if you are using percentage points (pp) you must include a clear explanation in your release and methodology, so that users can understand what you are referring to.</p>
+<p>Please contact the <a href="mailto:explore.statistics@education.gov.uk">explore education statistics platforms team</a> if you have any questions about the formatting or would like more options adding.</p>
+<hr>
+</section>
 </section>
 <section id="example-ees-metadata" class="level2">
 <h2 class="anchored" data-anchor-id="example-ees-metadata">Example EES metadata</h2>
