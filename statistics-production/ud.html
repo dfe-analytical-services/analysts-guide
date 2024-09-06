@@ -476,6 +476,13 @@ cookieconsent.run({
   <li><a href="#specific-time-standards" id="toc-specific-time-standards" class="nav-link" data-scroll-target="#specific-time-standards">Specific time standards</a></li>
   <li><a href="#list-of-allowable-time-values" id="toc-list-of-allowable-time-values" class="nav-link" data-scroll-target="#list-of-allowable-time-values">List of allowable time values</a></li>
   </ul></li>
+  <li><a href="#geography-columns" id="toc-geography-columns" class="nav-link" data-scroll-target="#geography-columns">Geography columns</a>
+  <ul class="collapse">
+  <li><a href="#different-measures-of-geography" id="toc-different-measures-of-geography" class="nav-link" data-scroll-target="#different-measures-of-geography">Different measures of geography</a></li>
+  <li><a href="#allowable-geographic-levels" id="toc-allowable-geographic-levels" class="nav-link" data-scroll-target="#allowable-geographic-levels">Allowable geographic levels</a></li>
+  <li><a href="#using-school-or-provider-as-a-filter" id="toc-using-school-or-provider-as-a-filter" class="nav-link" data-scroll-target="#using-school-or-provider-as-a-filter">Using School or Provider as a filter</a></li>
+  <li><a href="#unknown-geographic-codes" id="toc-unknown-geographic-codes" class="nav-link" data-scroll-target="#unknown-geographic-codes">Unknown geographic codes</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/statistics-production/ud.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -1693,7 +1700,7 @@ Guidance on how to structure data files
 <hr>
 </section>
 <section id="list-of-allowable-time-values" class="level3">
-<h3 class="anchored">List of allowable time values</h3>
+<h3 class="anchored" data-anchor-id="list-of-allowable-time-values">List of allowable time values</h3>
 <hr>
 <p>All time_period values should be numeric only, below the number of digits (either 4 or 6) is defined per time_identifier below. Do not include dashes or slashes in six digit years.</p>
 <p>You can only mix time_identifiers if they appear within the same table below. If they are in separate tables then they should not be mixed.</p>
@@ -1928,11 +1935,7 @@ Guidance on how to structure data files
 </tbody>
 </table>
 <hr>
-<div class="jumbotron">
-<h3 class="anchored">
-Remember
-</h3>
-<hr class="my-4">
+<p><strong>Remember</strong></p>
 <ul>
 <li>You must include time_period and time_identifier columns in your data files.</li>
 <li>Your data must match the allowable values above.</li>
@@ -1941,8 +1944,9 @@ Remember
 <li>Use filters to add more detail if you have multiple time breakdowns in the same file (quarter/full year).</li>
 <li>Where a measure spans multiple years, you should name the starting year, and set the time_period as the year published.</li>
 </ul>
-</div>
 <hr>
+</section>
+</section>
 <section id="geography-columns" class="level2">
 <h2 class="anchored" data-anchor-id="geography-columns">Geography columns</h2>
 <p>We publish at a number of different geography breakdowns and these vary from publication to publication. Every publication in the new platform must include the three compulsory geography columns - geographic_level, country_code and country_name in its data files. These are compulsory as the data we are producing must lie within a country boundary.</p>
@@ -3396,10 +3400,7 @@ Remember
 
 </section>
 </section>
-</section></section></section></section></section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
-
-
-
+</section></section></section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
 
 
 
