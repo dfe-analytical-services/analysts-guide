@@ -345,7 +345,6 @@ The table below summarises these guidelines.
 |------|-----------------|------------------------|-------------|
 | Title | title / name e.g. population, pupils, starters | population_count, pupil_count, starter_count | title of the field, avoid abbreviations where possible |
 | Data type | count / percent | pupil_count, pupil_percent | Number or Percentage where applicable |
-| | | | |
 | Levels | l + (level number) | population_count_l1 | l1, l2, l3 etc |
 | Above or Below | plus / minus | population_count_plus | Using ‘plus’ or ‘minus’ to denote above or below |
 | Exclusivity	 | exc / inc | population_count_exc_adult | excludes or includes features |
@@ -814,7 +813,7 @@ This approach will work for basic filtering of providers and schools but it may 
 
 ---
 
-# Common harmonised variables
+## Common harmonised variables
 
 ---
 
@@ -826,7 +825,7 @@ for dashboards and other secondary statistics services, whilst also helping with
 
 --- 
 
-## Special Educational Needs
+### Special Educational Needs
 
 Special educational needs data uploaded to explore education statistics service is expected to conform closely to the [School Census data guidance](https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code).
 
@@ -869,7 +868,7 @@ If using [**breakdown_topic** and **breakdown**](#introduction-to-filters) inste
 
 ---
 
-## Sex and gender
+### Sex and gender
 
 The Department's policy on collecting sex and gender data is that statistics 
 should preferentially be presented for sex rather than gender. These terms, as 
@@ -879,7 +878,7 @@ vice-versa.
 
 ---
 
-### Sex
+#### Sex
 
 ---
 
@@ -922,7 +921,7 @@ Or...
 
 ---
 
-### Gender
+#### Gender
 
 ---
 
@@ -1136,9 +1135,7 @@ Education phase should be listed under the column name **education_phase** where
 
 ---
 
-# Filters
-
----
+## Filters
 
 A filter is a variable that we break our data down by, such as school type, pupil characteristics, or NQT status. There are no required standards for these, you can include any filters that you feel benefit the users of your data.
 
@@ -1246,11 +1243,7 @@ knitr::include_graphics("../images/change_date_format.PNG")
 
 ---
 
-<div class="jumbotron">
-
-  <h3>Remember</h3>
-
-  <hr class="my-4">
+**Remember**
 
 - All filters should have a ‘Total’ aggregation where possible.
 - If a filter has one level, you should not include it in the EES metadata.
@@ -1258,13 +1251,9 @@ knitr::include_graphics("../images/change_date_format.PNG")
 - Grouping filters is an option, but only group filters where you decide it is better for your users.
 - If a filter is used to group another, then it should not appear as a separate row in the EES metadata.
 
-</div>
-
 ---
 
-# Indicators
-
----
+## Indicators
 
 The indicators are the variables showing the measurements/statistics themselves, such as the number of pupils. These can be of different formats (e.g. text, numeric), although are numeric by default. The number of indicators will vary across publications and data files.
 
@@ -1335,13 +1324,19 @@ knitr::include_graphics("../images/indicator_group.png")
 
 ---
 
-# Reviewing indicator and filter field naming
+## Reviewing indicator and filter field naming
 
-## Introduction
+### Introduction
+
+---
 
 In order to create and maintain a consistent data catalogue, we suggest that teams perform a regular review of their data files against the guidance on this page.
 
-## Field Names
+---
+
+### Field Names
+
+---
 
 Each publication team should regularly review the indicator and filter field naming in their publications to maintain:
 
@@ -1379,7 +1374,11 @@ Any completely new fields with no previous direct precursor should contain blank
 Your team should then keep a copy as a log of any changes and also send a copy to explore.statistics@education.gov.uk so we can look to update our standardized list of field names where appropriate.
 </div>
 
-## Field entries
+---
+
+### Field entries
+
+---
 
 A further step teams can take to maintain standardization is to review the filter options or entries within their filters. For example, any ethnicity fields should conform to our published harmonized (GSS) ethnicity guidance.
 
