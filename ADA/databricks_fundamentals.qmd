@@ -1,12 +1,10 @@
 ---
-title: "Databricks Fundamentals"
+title: "Databricks fundamentals"
 ---
 
 ------------------------------------------------------------------------
 
 ## What is Databricks?
-
-------------------------------------------------------------------------
 
 Databricks is a web based platform for large scale data manipulation and analysis using code to create reproducible data pipelines. Primarily it takes the form of a website which you can create data pipelines and perform analysis in. It currently supports the languages R, SQL, Python and Scala, and integrates well with Git based version control systems such as GitHub or Azure DevOps.
 
@@ -60,10 +58,10 @@ The storage and computation are separated into different components rather than 
 ------------------------------------------------------------------------
 
 -   **Scalable** - if you need more computing power, you can increase your computing power and only pay for what you use rather than having to build an expensive new machine
--   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required.
--   **Data Governance** - The Department is able to 'see' all of its data and organisational knowledge. This enables it to ensure it is access controlled and align with GDPR and data protection legislation and guidelines.
--   **Auditing and version control** - The Platform itself generates a lot of metadata which enables it to keep versioned history of its data, outputs, etc.
--   **Automation** - Complex data processing pipelines can be set up using Databricks workflows and set to automatically run, either on a timer or a specific trigger allowing for a fully automated production process.
+-   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required
+-   **Data Governance** - The Department is able to 'see' all of its data and organisational knowledge. This enables it to ensure it is access controlled and align with GDPR and data protection legislation and guidelines
+-   **Auditing and version control** - The Platform itself generates a lot of metadata which enables it to keep versioned history of its data, outputs, etc
+-   **Automation** - Complex data processing pipelines can be set up using Databricks workflows and set to automatically run, either on a timer or a specific trigger allowing for a fully automated production process
 
 Each of these aspects bring benefits to the wider Department and for analysts within it.
 
@@ -75,11 +73,11 @@ The auditing, and automation facilities provide a lot of benefits when building 
 
 ------------------------------------------------------------------------
 
-# Key concepts
+## Key concepts
 
-------------------------------------------------------------------------
 
-## Storage
+
+### Storage
 
 There are a few different ways of storing files and data on Databricks. Your data, and modelling areas will reside in the 'unity catalog', whereas your scripts and code will live on your 'workspace'.
 
@@ -181,8 +179,6 @@ To connect Databricks to a repository refer to the [Databricks and version contr
 
 ## Compute
 
-------------------------------------------------------------------------
-
 In order to access data and run code you need to set up a compute resource. A compute resource provides processing power and memory to pick up and manipulate the data and files stored in the 'unity catalog'. The compute page can be accessed through the 'Compute' option in the Databricks sidebar.
 
 ![](/images/ada-compute.png)
@@ -210,13 +206,13 @@ All compute options can be used both within the Databricks platform and be conne
 
 ------------------------------------------------------------------------
 
-1.  To create your own personal compute resource click the 'Create with DfE Personal Compute' button on the compute page.
+1.  To create your own personal compute resource click the 'Create with DfE Personal Compute' button on the compute page\
 
 ![](/images/ada-compute-personal.png)
 
-2.  You'll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type.\
+2.  You'll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type\
     \
-    **Databricks runtime version** - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is '15.4 LTS'.\
+    **Databricks runtime version** - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is '15.4 LTS'\
     \
     **Node type** - This option determines how powerful your cluster is and there are 2 options available by default:\
 
@@ -227,11 +223,11 @@ All compute options can be used both within the Databricks platform and be conne
         \
         ![](/images/ada-compute-personal-create.png)
 
-3.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes.\
+3.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes\
     \
     ![](/images/ada-compute-personal-create-button.png)
 
-4.  Once the cluster is up and running the icon under the 'State' header on the 'Compute' page will appear as a green tick.\
+4.  Once the cluster is up and running the icon under the 'State' header on the 'Compute' page will appear as a green tick\
     \
     ![](/images/ada-compute-ready.png)
 

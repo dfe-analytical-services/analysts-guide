@@ -1,12 +1,11 @@
 ---
-title: "Databricks Workflows"
+title: "Databricks workflows"
 ---
 
 ------------------------------------------------------------------------
 
 ## Workflows user interface
 
-------------------------------------------------------------------------
 
 Workflows allow you to build complex data pipelines by chaining together multiple scripts, queries, notebooks and logic. They can be used to build Reproducible Analytical Pipelines (RAP) that can be re-run with different parameters and have all inputs and outputs audited automatically. Other recommended uses of workflows are any data modelling tasks such as cleaning your source data and collating it into a more analytically friendly format in your modelling area.
 
@@ -18,9 +17,9 @@ Parameters can be set either at a workflow level or a task level and referred to
 
 Each task can have dependencies on other tasks and can be set to only run under certain conditions, for example all of the previous tasks have completed successfully. These can be configured when tasks are added to the workflow through the user interface.
 
-Workflows and tasks can also be configured to send notifications to users upon success / failure. These can be configured from the Workflow and Task user interfaces.
+Workflows and tasks can also be configured to send notifications to users upon success or failure. These can be configured from the Workflow and Task user interfaces.
 
-Workflows also come with robust support for Git / Azure DevOps repositories and can be set to run from a specific repo, branch, commit or tag.
+Workflows also come with robust support for GitHub and Azure DevOps repositories and can be set to run from a specific repo, branch, commit or tag.
 
 ------------------------------------------------------------------------
 
@@ -99,7 +98,6 @@ Workflows that fail also allow you to repair the workflow once you have found an
 
 ## Coded workflows
 
-------------------------------------------------------------------------
 
 Another useful aspect of workflows is that they can be defined and ran using code through the [DataBricks Jobs API](https://docs.databricks.com/api/workspace/jobs).
 
