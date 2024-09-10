@@ -107,14 +107,18 @@ website:
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
           - RAP/rap-statistics.qmd
-      - section: "Understanding ADA and Databricks"
-        contents: 
+      - section: "ADA and Databricks"
+        contents:
+          - text: "---"
+          - text: "Understanding Databricks"
+          - text: "---"
           - ADA/ada.qmd
           - ADA/databricks_fundamentals.qmd
           - ADA/databricks_notebooks.qmd
           - ADA/databricks_workflows.qmd
-      - section: "Databricks: How to"
-        contents: 
+          - text: "---"
+          - text: "How to..."
+          - text: "---"
           - ADA/databricks_rstudio_sql_warehouse.qmd
           - ADA/databricks_rstudio_personal_cluster.qmd
           - ADA/git_databricks.qmd
@@ -124,7 +128,7 @@ website:
 format:
   html:
     theme:
-      light: cyborg
+      light: [cyborg, theme-dark.scss]
       dark: united
     code-copy: true
     highlight-style: printing
@@ -135,3 +139,4 @@ filters:
   - include-files.lua
   - newpagelink.lua
   - quarto
+
