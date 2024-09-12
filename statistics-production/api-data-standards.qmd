@@ -134,7 +134,7 @@ Areas which are currently under development are:
 
 We encourage contributions to and feedback on all of the above and any other filter topic.
 
-### Examples of common non-standard col_names
+### Examples of common non-standard filter col_names
 
 ::: {.table-responsive}
 
@@ -152,3 +152,40 @@ We encourage contributions to and feedback on all of the above and any other fil
 
 :::
 
+## Standardised indicator col_names
+
+Indicators should be named in line with the [indicator naming conventions set out in the open data standards](../statistics-production/ud.html#indicator-names).
+
+### Examples of common non-standard indicator col_names
+
+::: {.table-responsive}
+
+| Non-standard                           | Potential standard equivalents           |
+|----------------------------------------|------------------------------------------|
+| number_of_pupils                       | pupil_count                              |
+| NumberOfLearners, NumLearners          | pupil_count, learner_count               |
+| total_male, total_female               | pupil_count (plus sex filter)            |
+| pt_SEN_support                         | pupil_percent (plus SEN status filter)   |
+| num_provider, num_providers            | establishment_count                      |
+| no_schools, num_schools, total_schools | establishment_count                      |
+| num_inst, total_institutions, number_institutions, inst_count | establishment_count |
+
+: Example non-standard indicator col_names and their potential equivalents in the standardised framework.
+
+:::
+
+## Character limits for col_names and filter items
+
+Character limits for fields in data uploaded to the API are:
+
+::: {.table-responsive}
+
+| Element                         | Character limit |
+|---------------------------------|-----------------|
+|Filter / indicator column names  | 50 characters   |
+|Filter / indicator column labels | 80 characters   |
+|Filter items / location names    | 120 characters  |
+
+: Character limits on column names, column labels and filter items.
+
+:::
