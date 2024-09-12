@@ -30,7 +30,9 @@ Examples of these that do and don't meet the API data standards are provided in 
 
 ## Tidy data structure
 
-The key thing on tidy data structure is to avoid filter items being included within indicator col_names. Where you have collections of related terms appearing in indicator names (e.g. male, female, total), then these should be translated into a filter column, with the data being pivoted.
+The key thing on tidy data structure is to avoid filter items being included within indicator col_names. Where 
+you have collections of related terms appearing in indicator names (e.g. male, female, total), then these 
+should be translated into a filter column, with the data being pivoted.
 
 ### Example 1 - Attainment rates and scores
 
@@ -131,4 +133,20 @@ Areas which are currently under development are:
 - free school meal status
 
 We encourage contributions to and feedback on all of the above and any other filter topic.
+
+### Examples of common non-standard col_names
+
+::: {.table-responsive}
+
+| Non-standard                | Potential standard equivalents   |
+|-----------------------------|----------------------------------|
+| ethnicity                   | ethnicity_major, ethnicity_minor |
+| sex_pupils                  | sex                              |
+| school_type                 | establishment_type, establishment_type_group or education_phase |
+| pupil_sen_status            | sen_status                       |
+| characteristic_primary_need | sen_primary_need                 |
+
+: Example non-standard col_names and their potential equivalents in the standardised framework.
+
+:::
 
