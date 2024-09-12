@@ -89,6 +89,7 @@ website:
           - statistics-production/pub.qmd
           - RAP/rap-statistics.qmd
           - statistics-production/ud.qmd
+          - statistics-production/api-data-standards.qmd
           - statistics-production/ees.qmd
           - statistics-production/examples.qmd
           - statistics-production/embedded-charts.qmd

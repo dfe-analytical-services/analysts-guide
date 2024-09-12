@@ -32,11 +32,11 @@ Examples of these that do and don't meet the API data standards are provided in 
 
 The key thing on tidy data structure is to avoid filter items being included within indicator col_names. Where you have collections of related terms appearing in indicator names (e.g. male, female, total), then these should be translated into a filter column, with the data being pivoted.
 
-### Examples of bad practice
+### Example 1 - Attainment rates and scores
+
+#### Example of bad practice
 
 The following would not be accepted for publication via the API.
-
-#### Example 1 - Attainment rates and scores
 
 ::: {.table-responsive}
 
@@ -44,23 +44,13 @@ The following would not be accepted for publication via the API.
 |------------------------|------------------------|------------------------|--------------------------|--------------------------|-------------------------|----------------------|------------------------|-----------------|----------------------|------------------------|-----------------|
 | 30                     | 40                     | 50                     | 60                       | 80                       | 100                      | 0.2                  | 0.21                   | 0.21            |0.09                  | 0.08                   | 0.10            |
 
-:::
-
-#### Example 2 - Pupil counts, percents and characteristics
-
-::: {.table-responsive}
-
-| count_schools | count_pupils_male | count_pupils_female | count_pupils_total | percent_pupils_male | percent_pupils_female | percent_pupils_total |
-|---------------|-------------------|---------------------|--------------------|---------------------|-----------------------|----------------------|
-| 2             | 120               | 130                 | 250               | 48                  | 52                    | 100                  |
+: Attainment grade rates and scores in non-tidy format
 
 :::
 
-### Examples of good practice
+#### Example of good practice
 
-The following would be accepted for publication via the API. Note that in some cases, as in Example 1, splitting the data into separate data files can help with producing tidy data structures.
-
-#### Example 1a - Attainment rates
+The following would be accepted for publication via the API. In this case, splitting the data into separate data files is required in order to create tidy data structures.
 
 ::: {.table-responsive}
 
@@ -70,9 +60,11 @@ The following would be accepted for publication via the API. Note that in some c
 | Grades 9-4         | 40           | 80             |         
 | Grades 9-1         | 50           | 100            |                  
 
+: Attainment grade rates in tidy format
+
 :::
 
-#### Example 1b - Attainment scores
+::: {.table-responsive}
 
 | sex    | attainment_metric | score_average  |
 |--------|-------------------|----------------|
@@ -83,7 +75,25 @@ The following would be accepted for publication via the API. Note that in some c
 | Male   | Attainment 8      | 0.09           |         
 | Total  | Attainment 8      | 0.08           |                  
 
-#### Example 2 - Pupil counts, percents and characteristics
+: Attainment scores in tidy format
+
+:::
+
+### Example 2 - Pupil counts, percents and characteristics
+
+#### Example of bad practice
+
+::: {.table-responsive}
+
+| count_schools | count_pupils_male | count_pupils_female | count_pupils_total | percent_pupils_male | percent_pupils_female | percent_pupils_total |
+|---------------|-------------------|---------------------|--------------------|---------------------|-----------------------|----------------------|
+| 2             | 120               | 130                 | 250               | 48                  | 52                    | 100                  |
+
+: Pupil counts and percentages in non-tidy format
+
+:::
+
+#### Example of good practice
 
 ::: {.table-responsive}
 
@@ -92,6 +102,8 @@ The following would be accepted for publication via the API. Note that in some c
 | Male               | 2             | 30           | 60             |          
 | Female             | 2             | 40           | 80             |         
 | Total              | 2             | 50           | 100            |                  
+
+: Pupil counts and percentages in tidy format
 
 :::
 
