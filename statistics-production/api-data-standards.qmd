@@ -1,0 +1,101 @@
+---
+title: "API Data Standards"
+---
+
+```{r include=FALSE}
+```
+
+<p class="text-muted">Guidance on how to structure data files specifically for the EES API</p>
+
+---
+
+## Introduction
+
+The API offers analysts, both internal to the DfE and external consumers and communicators of education statistics,
+a way to programmatically access data on EES. However, in order to ensure a fit for purpose service, not all EES 
+data will be accessible via the API, and any that is will need to pass a higher bar for quality. In effect API data
+**must** meet all the criteria laid out in our [Open data standards guidance](../statistics-production/ud.qmd).
+
+Whilst the EES data screener tests for a significant base level of data quality and consistency, there are some 
+additional criteria that are either too awkward to test for rigorously using the screener or are tested for but
+returned as warnings. Data intended for the EES API must pass all the base level screener tests, plus a number
+that only return warnings, plus manual inspection by the platform gatekeepers. These are primarily:
+
+- Strict tidy data structures - i.e. appropriate use of filters and indicators.
+- Standardised filter col_names and items consistent with the harmonised standards.
+- Standardised indicator col_names meeting the naming standards.
+- Character limits for col_names and filter items.
+
+Examples of these that do and don't meet the API data standards are provided in the following sections.
+
+## Tidy data structure
+
+The key thing on tidy data structure is to avoid filter items being included within indicator col_names. Where you have collections of related terms appearing in indicator names (e.g. male, female, total), then these should be translated into a filter column, with the data being pivoted.
+
+### Examples of bad practice
+
+The following would not be accepted for publication via the API.
+
+#### Example 1 - Attainment rates and scores
+
+::: {.table-responsive}
+
+| count_pupils_grade9to5 | count_pupils_grade9to4 | count_pupils_grade9to1 | percent_pupils_grade9to5 | percent_pupils_grade9to4 | percent_pupils_grade9to1 | progress8_score_male | progress8_score_female | progress8_score |attainment8_score_male | attainment8_score_female | attainment8_score |
+|------------------------|------------------------|------------------------|--------------------------|--------------------------|-------------------------|----------------------|------------------------|-----------------|----------------------|------------------------|-----------------|
+| 30                     | 40                     | 50                     | 60                       | 80                       | 100                      | 0.2                  | 0.21                   | 0.21            |0.09                  | 0.08                   | 0.10            |
+
+:::
+
+#### Example 2 - Pupil counts, percents and characteristics
+
+::: {.table-responsive}
+
+| count_schools | count_pupils_male | count_pupils_female | count_pupils_total | percent_pupils_male | percent_pupils_female | percent_pupils_total |
+|---------------|-------------------|---------------------|--------------------|---------------------|-----------------------|----------------------|
+| 2             | 120               | 130                 | 250               | 48                  | 52                    | 100                  |
+
+:::
+
+### Examples of good practice
+
+The following would be accepted for publication via the API. Note that in some cases, as in Example 1, splitting the data into separate data files can help with producing tidy data structures.
+
+#### Example 1a - Attainment rates
+
+::: {.table-responsive}
+
+|attainment_metric   | count_pupils | percent_pupils |
+|--------------------|--------------|----------------|
+| Grades 9-5         | 30           | 60             |          
+| Grades 9-4         | 40           | 80             |         
+| Grades 9-1         | 50           | 100            |                  
+
+:::
+
+#### Example 1b - Attainment scores
+
+| sex    | attainment_metric | score_average  |
+|--------|-------------------|----------------|
+| Female | Progress 8        | 0.21           |          
+| Male   | Progress 8        | 0.20           |         
+| Total  | Progress 8        | 0.21           |                  
+| Female | Attainment 8      | 0.08           |          
+| Male   | Attainment 8      | 0.09           |         
+| Total  | Attainment 8      | 0.08           |                  
+
+#### Example 2 - Pupil counts, percents and characteristics
+
+::: {.table-responsive}
+
+| sex                | count_schools | count_pupils | percent_pupils |
+|--------------------|---------------|--------------|----------------|
+| Male               | 2             | 30           | 60             |          
+| Female             | 2             | 40           | 80             |         
+| Total              | 2             | 50           | 100            |                  
+
+:::
+
+###
+
+All data uploaded to EES should be in a tidy data structure form, but this is more strictly regulated for data intended for use with the API. More information on building tidy data structures can be found in the [tidy data structure section](../satistics-production/ud.html#tidy-data-structure).
+
