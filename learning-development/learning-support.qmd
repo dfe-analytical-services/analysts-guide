@@ -10,10 +10,15 @@ As analysts and statistics producers, we require a variety of tools to efficient
 
 For best practice when using software and coding in our process, see our [guidance on RAP expectations](../RAP/rap-expectations.html) and the [DfE Good Code Practice guide](https://dfe-analytical-services.github.io/good-code-practice/index.html).
 
+---
+
 ## Email support
 
- * [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)  
- * 9-5, aim to reply between 1-2 days.
+ * For any technical questions about R, Git, SQL, RAP or statistics production, contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)  
+ * The mailbox is monitored between 9-5 and we aim to reply within 2 days
+ * No question is too small! We are always happy to help
+ 
+ ---
 
 ## Technical workshops
 
@@ -48,22 +53,75 @@ In this workshop, we cover:
 
 Contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) to register interest in workshops happening at your site or to request new topics!
 
-## Partnership programme
+---
 
- *	Dedicated resource to support development work, either building skills or working on analytical or statistical outputs.
- *	A short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.
- * Contact statistics.development@education.gov.uk if you're interested in finding out more about the support we can give.
+## Partnership programmes
 
-## Specific resources
+The Statistics Development Team offers bespoke partnership programmes for analyst teams across the department, designed as dedicated resource to support development work, either building skills or filling resource gaps to allow improvements in analytical or statistical outputs.
+
+Partnerships are designed as short-term projects, agreed in conjunction with the team and their Grade 6. The maximum length for the majority of partnership programmes will be three months, and the project must be clearly defined at the outset.
+
+The aim of partnership programmes is always to upskill the team throughout the project. For this reason, we require any teams taking part to commit time to upskilling during the partnership and being willing to independently continue the work after the partnership is complete, if appropriate. 
+
+---
+
+### What could a partnership programme involve?
+
+---
+
+- Flexible skilled resource for your team to support with R, Git, SQL or Databricks
+- Help with dedicated upskilling 
+- Knowledge sharing, including around best practice and accessibility, and peer review
+- Support with RAP implementation to allow your team to meet the RAP baseline or best practice criteria
+
+For example, this might be:
+
+- Automating processes such as data manipulation or QA
+- Creation of R Shiny dashboards
+- Reviewing existing analytical code
+- Support with moving to Azure DevOps or GitHub
+
+---
+
+### What types of partnership are there?
+
+---
+
+We have four levels of support available:
+
+- One-off bespoke support via a team meeting or a workshop, or one-off peer review 
+- **Tier 1**: occasional check-in meetings to provide best practice guidance 
+- **Tier 2**: hands on support for teams with skills or resource gaps 
+- **Tier 3**: designated resource working within your team to write code / complete a project for you, designed for complex projects
+
+Teams participating in tiers 1-3 will be assigned a named person from the Statistics Development Team who will support you in completing the project. 
+
+---
+
+### What is the process to get started with a partnership?
+
+---
+
+Once you have a clear, defined piece of work that you think would be appropriate for a partnership programme, contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk). You will be sent a form to complete so that you can outline your project and requirements from us. Once we have received your completed form, we'll have an introductory meeting with your team to discuss the project and agree an appropriate tier and timescales. We will then assess your needs, determine who will be best placed to complete the work, and prioritise it according to our existing workload. Your team will be kept updated throughout the process.
+
+::: {.callout-important}
+Please note: all new tier 3 partnerships will require sign off at Grade 6 level 
+:::
+
+
+
+If you are interested in a one off / bespoke workshop or team meeting, please contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) and we will work with your team to meet your development needs. 
+
+---
+
+## R, SQL and Git resources
 
 We also have specific learning resources and materials for [SQL](../learning-development/sql.html), [R](../learning-development/r.html), and [Git](../learning-development/git.html)
 
 
 ---
 
-# General resources
-
----
+## General resources
 
 **Google and other web-search engines are the single most powerful learning resource out there**, whether it leads you to a Stack Overflow answer to your problem, or to an online training course, it will have your needs covered. We appreciate that it can be daunting and overwhelming at first though, which is why we're pooling together links to particularly relevant resources on this page. Let us know if there's any you'd like to see added!
 
@@ -89,9 +147,8 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 ---
 
-# Further information
+## Further information
 
----
 
 For more information on how to use these tools in analysis and statistics publications, please see the [processes and RAP](../RAP/rap-statistics.html){target="_blank" rel="noopener noreferrer"} page.
 
