@@ -138,13 +138,15 @@ We encourage contributions to and feedback on all of the above and any other fil
 
 ::: {.table-responsive}
 
-| Non-standard                | Potential standard equivalents   |
-|-----------------------------|----------------------------------|
-| ethnicity                   | ethnicity_major, ethnicity_minor |
-| sex_pupils                  | sex                              |
+| Non-standard                | Potential standard equivalents     |
+|-----------------------------|------------------------------------|
+| ethnicity                   | ethnicity_major, ethnicity_minor   |
+| characteristic_sex          | sex                                |
 | school_type                 | establishment_type, establishment_type_group or education_phase |
-| pupil_sen_status            | sen_status                       |
-| characteristic_primary_need | sen_primary_need                 |
+| pupil_sen_status            | sen_status                         |
+| characteristic_primary_need | sen_primary_need                   |
+| characteristic_topic        | breakdown_topic, breakdown_topic_establishment |
+| characteristic              | breakdown, breakdown_establishment |
 
 : Example non-standard col_names and their potential equivalents in the standardised framework.
 
