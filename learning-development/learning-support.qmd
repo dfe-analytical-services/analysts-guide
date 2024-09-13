@@ -12,6 +12,8 @@ For best practice when using software and coding in our process, see our [guidan
 
 For questions about publishing statistics, the statistics Code of Practice or how your statistics publication should be badged, please contact the [HoP Office](mailto:hop.statistics@education.gov.uk).
 
+For support in data harmonisation and data structuring standards, or support with analytical digital services including the explore education statistics service, and deploying and maintaining R Shiny applications contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
+
 ---
 
 ## Email support
@@ -63,7 +65,7 @@ The Statistics Services Unit offers bespoke partnership programmes for analyst t
 
 Partnerships are designed as short-term projects, agreed in conjunction with the team and their Grade 6. The maximum length for the majority of partnership programmes will be three months, and the project must be clearly defined at the outset.
 
-The aim of partnership programmes is always to upskill the team throughout the project. For this reason, we require any teams taking part to commit time to upskilling during the partnership and being willing to independently continue the work after the partnership is complete, if appropriate. Any agreed projects must be able to be handed back to the team that owns the work, and they must have the skills to maintain it independently by the time the partnership finishes. To enable this, we can offer a variety of support including team workshops, peer review, pair programming sessions, and signposting to resources.    
+The aim of partnership programmes is always to upskill the team throughout the project. For this reason, we require any teams taking part to commit time to upskilling during the partnership and being willing to independently continue the work after the partnership is complete, if appropriate. Any agreed projects must be able to be handed back to the team that owns the work, and they must have the skills to maintain it independently by the time the partnership finishes. To enable this, we can offer a variety of support including signposting to resources, recommending relevant L+D, running team workshops and knowledge share sessions, or peer review and pair programming sessions to work side by side to build up skills during the partnership.   
 
 ---
 
@@ -101,7 +103,7 @@ Teams participating in tiers 1-3 will be assigned a named person from the Statis
 
 ---
 
-### How to get started with a partnership programme
+### How to get started 
 
 ---
 
