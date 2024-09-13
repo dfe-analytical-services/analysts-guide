@@ -1323,45 +1323,45 @@
   {
     "objectID": "ADA/databricks_rstudio_sql_warehouse.html",
     "href": "ADA/databricks_rstudio_sql_warehouse.html",
-    "title": "Analysts' Guide",
+    "title": "Set up Databricks SQL Warehouse with RStudio",
     "section": "",
-    "text": "title: “Set up Databricks SQL Warehouse with RStudio”\nThe following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse which can then be used in RStudio to query data.\nYou can use data from Databricks in two different ways:",
+    "text": "The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse which can then be used in RStudio to query data.\nYou can use data from Databricks in two different ways:",
     "crumbs": [
       "ADA and Databricks",
-      "Compute resources"
+      "Set up Databricks SQL Warehouse with RStudio"
     ]
   },
   {
     "objectID": "ADA/databricks_rstudio_sql_warehouse.html#compute-resources",
     "href": "ADA/databricks_rstudio_sql_warehouse.html#compute-resources",
-    "title": "Analysts' Guide",
+    "title": "Set up Databricks SQL Warehouse with RStudio",
     "section": "Compute resources",
     "text": "Compute resources\nWhen your data is moved to Databricks, it will be stored in the Unity Catalog and you will need to use a compute resource to access it from other software such as RStudio.\nA compute resource allows you to run your code using cloud computing power instead of using your laptop’s processing power. This means that using compute resources can allow your code to run faster than it would if you ran it locally, as it is like using the processing resources of multiple computers at once. On this page, we will be referring to the use of SQL Warehouses as the compute resource to run your code.\n\n\nSQL Warehouse\n\nA SQL Warehouse is a SQL-only compute option which is quick to start and optimised for SQL querying. Although the name “warehouse” suggests storage, a SQL Warehouse in Databricks is actually a virtual computing resource that allows you to interact with Databricks by connecting to your data and running code.\nThis option is recommended if you only require SQL functionality in Databricks and is ideal if you already have existing RAP pipelines set up using SQL scripts in a Git repo.\nSQL Warehouses do not support R, Python or Scala code. Currently they also do not support widgets within Databricks notebooks. If you want to use compute resources to run widgets or R or Python code, then you will need to use a personal cluster. There is guidance on the use of personal clusters on the Using personal clusters with Databricks page.\nSQL Warehouses enable you to access tables in the Unity Catalog, but not volumes within the Unity Catalog. Volumes are storage areas for files (e.g. .txt files or .csv files) rather than tables. You can learn more about volumes on the Databricks documentation site or on our Databricks fundamentals page. To access a volume, you will also need to use a personal cluster.",
     "crumbs": [
       "ADA and Databricks",
-      "Compute resources"
+      "Set up Databricks SQL Warehouse with RStudio"
     ]
   },
   {
     "objectID": "ADA/databricks_rstudio_sql_warehouse.html#pre-requisites",
     "href": "ADA/databricks_rstudio_sql_warehouse.html#pre-requisites",
-    "title": "Analysts' Guide",
+    "title": "Set up Databricks SQL Warehouse with RStudio",
     "section": "Pre-requisites",
     "text": "Pre-requisites\nBefore you start, you must have:\n\nAccess to the Databricks platform\nAccess to data in a SQL Warehouse on Databricks\nR and RStudio downloaded and installed\nThe ODBC and DBI packages installed in RStudio\n\nIf you do not have access to Databricks or a SQL Warehouse within Databricks, you can request this using a service request form.\nIf you do not have R or RStudio, you can find them both in the Software Centre. Note that you need both R and RStudio installed.",
     "crumbs": [
       "ADA and Databricks",
-      "Compute resources"
+      "Set up Databricks SQL Warehouse with RStudio"
     ]
   },
   {
     "objectID": "ADA/databricks_rstudio_sql_warehouse.html#process",
     "href": "ADA/databricks_rstudio_sql_warehouse.html#process",
-    "title": "Analysts' Guide",
+    "title": "Set up Databricks SQL Warehouse with RStudio",
     "section": "Process",
     "text": "Process\nThere are three steps to complete before your connection can be established. These are:\n\nInstalling an ODBC driver on your laptop to enable a connection between your laptop and Databricks\nModifying your .Renviron file to establish a connection between RStudio and Databricks\nAdding connection code to your existing scripts in RStudio\n\nEach of these steps is described in more detail in the sections below.\n\n\nSetting up the ODBC driver\nAn ODBC driver is required for the ODBC package in R to work - you must install it before attempting to use the package to connect to your data.\n\n\nInstall the Simba Spark ODBC driver from the Software Centre\n\n\nOpen the Software Centre via the start menu\nIn the ‘Applications’ tab, click Simba Spark ODBC Driver 64-bit\n\n\n\n\n\nClick install\n\n\n\n\n\nEstablishing an RStudio connection using environment variables\n\nThe ODBC package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.\nTo set the environment variables, call usethis::edit_r_environ(). You will then need to enter the following information:\nDATABRICKS_HOST=&lt;databricks-host&gt;\nDATABRICKS_SQL_PATH=&lt;sql-warehouse-path&gt;\nDATABRICKS_TOKEN=&lt;personal-access-token&gt; \nOnce you have entered the details, save and close your .Renviron file and restart R (Session &gt; Restart R).\n\n\n\n\n\n\nNote\n\n\n\nEveryone in your team that wishes to connect to the SQL Warehouse in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.\n\n\nThe sections below describe where to find the information needed for each of the four environment variables.\n\n\nDatabricks host\n\nThe Databricks host is the instance of Databricks that you want to connect to. It’s the URL that you see in your browser bar when you’re on the Databricks site and should end in “azuredatabricks.net” (ignore anything after this section of the URL).\n\n\n\nDatabricks SQL Warehouse Path\n\nAs described in the SQL Warehouses section, in Databricks, SQL Warehouses are a way to gain access to your data in the Unity Catalog. They run queries and return the results either to the user or to a table.\nTo get the Warehouse ID, follow these steps:\n\nclick ‘SQL Warehouses’ under the ‘SQL’ section of the left hand menu on Databricks\nclick on the warehouse name that you’d like to get the ID for\nthe warehouse id is the ‘HTTP Path’ in the ‘Connection details’ tab\nthe ID should start with something similar to “/sql/1.0/warehouses/”\n\n\n\n\nDatabricks token\n\nThe Databricks token is a personal access token.\nA personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the SQL warehouse. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.\n\nIn Databricks, click on your email address in the top right corner, then click ‘User settings’\nGo to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button\n\n\n\n\n\nClick the ‘Generate new token’ button\nName the token, then click ‘Generate’\n\n\n\n\n\n\n\nNote\n\n\n\nNote that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less.\n\n\n\nMake a note of the ‘Databricks access token’ it has given you\n\n\n\n\n\n\n\nWarning\n\n\n\nIt is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.\n\n\n\n\n\n\nPulling data into RStudio from Databricks\n\nNow that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you.\nTo access the data, we will make use of the ODBC package. You can find documentation about this package on the Posit website. You will also need to have the DBI package installed.\nInclude the following code in your R Script:\n\nlibrary(odbc)\nlibrary(DBI)\n\ncon &lt;- DBI::dbConnect(\n  odbc::databricks(),\n  httpPath = Sys.getenv(\"DATABRICKS_SQL_PATH\")\n)\n\nodbcListObjects(con)",
     "crumbs": [
       "ADA and Databricks",
-      "Compute resources"
+      "Set up Databricks SQL Warehouse with RStudio"
     ]
   },
   {
