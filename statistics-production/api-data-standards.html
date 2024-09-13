@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RAP FAQs – Analysts’ Guide</title>
+<title>Statistics API Data Standards – Analysts’ Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,7 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../RAP/rap-support.html" rel="prev">
+<link href="../statistics-production/ees.html" rel="next">
+<link href="../statistics-production/ud.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -109,7 +110,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../RAP/rap-expectations.html">Reproducible Analytical Pipelines (RAP)</a></li><li class="breadcrumb-item"><a href="../RAP/rap-faq.html">RAP FAQs</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../statistics-production/pub.html">Statistics production</a></li><li class="breadcrumb-item"><a href="../statistics-production/api-data-standards.html">Statistics API Data Standards</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -254,13 +255,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Statistics production</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
@@ -281,7 +282,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../statistics-production/api-data-standards.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/api-data-standards.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Statistics API Data Standards</span></a>
   </div>
 </li>
@@ -360,13 +361,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
@@ -381,7 +382,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link active">
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP FAQs</span></a>
   </div>
 </li>
@@ -478,50 +479,31 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#frequently-asked-questions" id="toc-frequently-asked-questions" class="nav-link active" data-scroll-target="#frequently-asked-questions">Frequently asked questions</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#character-limits-for-col_names-and-filter-items" id="toc-character-limits-for-col_names-and-filter-items" class="nav-link" data-scroll-target="#character-limits-for-col_names-and-filter-items">Character limits for col_names and filter items</a></li>
+  <li><a href="#tidy-data-structure" id="toc-tidy-data-structure" class="nav-link" data-scroll-target="#tidy-data-structure">Tidy data structure</a>
   <ul class="collapse">
-  <li><a href="#what-is-rap" id="toc-what-is-rap" class="nav-link" data-scroll-target="#what-is-rap">What is RAP</a>
-  <ul class="collapse">
-  <li><a href="#what-is-rap-is-it-just-using-r" id="toc-what-is-rap-is-it-just-using-r" class="nav-link" data-scroll-target="#what-is-rap-is-it-just-using-r">What is RAP, is it just using R?</a></li>
-  <li><a href="#is-this-specific-to-dfe" id="toc-is-this-specific-to-dfe" class="nav-link" data-scroll-target="#is-this-specific-to-dfe">Is this specific to DfE?</a></li>
-  <li><a href="#im-overwhelmed-by-all-the-steps-is-rap-really-necessary" id="toc-im-overwhelmed-by-all-the-steps-is-rap-really-necessary" class="nav-link" data-scroll-target="#im-overwhelmed-by-all-the-steps-is-rap-really-necessary">I’m overwhelmed by all the steps, is RAP really necessary?</a></li>
-  <li><a href="#will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes" id="toc-will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes" class="nav-link" data-scroll-target="#will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes">Will implementing RAP lead to a disconnect with the data and ‘black box’ processes?</a></li>
-  <li><a href="#teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps" id="toc-teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps" class="nav-link" data-scroll-target="#teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps">Teams vary, and what my team does is different to others, if I’m happy with my approach, can I ignore some of the RAP steps?</a></li>
+  <li><a href="#example-1---three-metrics-with-a-single-filter" id="toc-example-1---three-metrics-with-a-single-filter" class="nav-link" data-scroll-target="#example-1---three-metrics-with-a-single-filter">Example 1 - Three metrics with a single filter</a></li>
+  <li><a href="#example-2---metrics-with-hierarchical-filters" id="toc-example-2---metrics-with-hierarchical-filters" class="nav-link" data-scroll-target="#example-2---metrics-with-hierarchical-filters">Example 2 - Metrics with hierarchical filters</a></li>
+  <li><a href="#example-3---metrics-with-non-compatible-filters" id="toc-example-3---metrics-with-non-compatible-filters" class="nav-link" data-scroll-target="#example-3---metrics-with-non-compatible-filters">Example 3 - Metrics with non-compatible filters</a></li>
   </ul></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
+  <li><a href="#standardised-filter-col_names-and-items" id="toc-standardised-filter-col_names-and-items" class="nav-link" data-scroll-target="#standardised-filter-col_names-and-items">Standardised filter col_names and items</a>
   <ul class="collapse">
-  <li><a href="#can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere" id="toc-can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere" class="nav-link" data-scroll-target="#can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere">Can I leave the R stuff to others in my team whilst I focus elsewhere?</a></li>
-  <li><a href="#implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it" id="toc-implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it" class="nav-link" data-scroll-target="#implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it">Implementing RAP takes time to setup initially, how can we prioritise it?</a></li>
+  <li><a href="#examples-of-common-non-standard-filter-col_names" id="toc-examples-of-common-non-standard-filter-col_names" class="nav-link" data-scroll-target="#examples-of-common-non-standard-filter-col_names">Examples of common non-standard filter col_names</a></li>
   </ul></li>
-  <li><a href="#tools-for-rap" id="toc-tools-for-rap" class="nav-link" data-scroll-target="#tools-for-rap">Tools for RAP</a>
+  <li><a href="#standardised-indicator-col_names" id="toc-standardised-indicator-col_names" class="nav-link" data-scroll-target="#standardised-indicator-col_names">Standardised indicator col_names</a>
   <ul class="collapse">
-  <li><a href="#do-i-need-to-rewrite-existing-sql-code-into-r" id="toc-do-i-need-to-rewrite-existing-sql-code-into-r" class="nav-link" data-scroll-target="#do-i-need-to-rewrite-existing-sql-code-into-r">Do I need to rewrite existing SQL code into R?</a></li>
-  <li><a href="#im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this" id="toc-im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this" class="nav-link" data-scroll-target="#im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this">I’m sometimes limited by the access and tools I have (ESFA servers, EDAP, Databricks), is there anything that can be done about this?</a></li>
-  <li><a href="#what-happens-if-we-cant-reproduce-our-current-processes-using-r" id="toc-what-happens-if-we-cant-reproduce-our-current-processes-using-r" class="nav-link" data-scroll-target="#what-happens-if-we-cant-reproduce-our-current-processes-using-r">What happens if we can’t reproduce our current processes using R?</a></li>
-  <li><a href="#r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead" id="toc-r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead" class="nav-link" data-scroll-target="#r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead">R isn’t always the quickest tool for processing data, can we use SQL instead?</a></li>
-  </ul></li>
-  <li><a href="#implementing-rap" id="toc-implementing-rap" class="nav-link" data-scroll-target="#implementing-rap">Implementing RAP</a>
-  <ul class="collapse">
-  <li><a href="#having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this" id="toc-having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this" class="nav-link" data-scroll-target="#having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this">Having a single script for code doesn’t seem the best way to do it, why are you suggesting this?</a></li>
-  <li><a href="#how-do-i-dual-run-for-qa-if-our-process-is-in-code" id="toc-how-do-i-dual-run-for-qa-if-our-process-is-in-code" class="nav-link" data-scroll-target="#how-do-i-dual-run-for-qa-if-our-process-is-in-code">How do I dual run for QA if our process is in code?</a></li>
-  <li><a href="#should-i-have-separate-repositories-or-branches-in-git-for-each-release" id="toc-should-i-have-separate-repositories-or-branches-in-git-for-each-release" class="nav-link" data-scroll-target="#should-i-have-separate-repositories-or-branches-in-git-for-each-release">Should I have separate repositories or branches in Git for each release?</a></li>
-  <li><a href="#we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough" id="toc-we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough" class="nav-link" data-scroll-target="#we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough">We should have plain text documentation to accompany the process, code and comments don’t feel like enough?</a></li>
-  </ul></li>
-  <li><a href="#learning-about-rap" id="toc-learning-about-rap" class="nav-link" data-scroll-target="#learning-about-rap">Learning about RAP</a>
-  <ul class="collapse">
-  <li><a href="#can-i-look-at-what-other-people-are-doing" id="toc-can-i-look-at-what-other-people-are-doing" class="nav-link" data-scroll-target="#can-i-look-at-what-other-people-are-doing">Can I look at what other people are doing?</a></li>
-  <li><a href="#i-dont-have-the-skills-to-implement-rap-how-do-i-get-them" id="toc-i-dont-have-the-skills-to-implement-rap-how-do-i-get-them" class="nav-link" data-scroll-target="#i-dont-have-the-skills-to-implement-rap-how-do-i-get-them">I don’t have the skills to implement RAP, how do I get them?</a></li>
-  </ul></li>
+  <li><a href="#examples-of-common-non-standard-indicator-col_names" id="toc-examples-of-common-non-standard-indicator-col_names" class="nav-link" data-scroll-target="#examples-of-common-non-standard-indicator-col_names">Examples of common non-standard indicator col_names</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/rap-faq.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/statistics-production/api-data-standards.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../RAP/rap-expectations.html">Reproducible Analytical Pipelines (RAP)</a></li><li class="breadcrumb-item"><a href="../RAP/rap-faq.html">RAP FAQs</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../statistics-production/pub.html">Statistics production</a></li><li class="breadcrumb-item"><a href="../statistics-production/api-data-standards.html">Statistics API Data Standards</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">RAP FAQs</h1>
+<h1 class="title">Statistics API Data Standards</h1>
 </div>
 
 
@@ -539,171 +521,589 @@ cookieconsent.run({
 
 
 <p class="text-muted">
-This guidance is to help answer questions about RAP and act as a tool for anyone managing those implementing RAP.
+Guidance on how to structure data files specifically for the EES API
 </p>
 <hr>
-<section id="frequently-asked-questions" class="level1">
-<h1>Frequently asked questions</h1>
-<hr>
-<p>If you have any questions you’d like answering or adding, let us know by emailing <a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a>.</p>
-<hr>
-<section id="what-is-rap" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-rap">What is RAP</h2>
-<p>General questions about Reproducible Analytical Pipelines and why analysts need to care about it.</p>
-<hr>
-<section id="what-is-rap-is-it-just-using-r" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-rap-is-it-just-using-r">What is RAP, is it just using R?</h3>
-<hr>
-<p>No.&nbsp;Reproducible Analytical Pipelines (RAPs) are automated statistical and analytical processes. They incorporate elements of software engineering best practice to ensure that the pipelines are reproducible, auditable, efficient, and high quality.</p>
-<p>Doing RAP is doing analysis using the best methods available to us, which is an expectation of the statistics code of practice.</p>
-<p>The tools we recommend for statistics production RAP are SQL, Git and R. Other suitable alternatives that allow you to meet the core principles can also be used, but you should check this with the Statistics Development Team first. Ideally any tools used would be open source. Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.</p>
-<p>Using R for parts of the process does get you close to a lot of the RAP principles with little effort, which is why we recommend it as one of the tools you should use.</p>
-<p>More details and learning resources for the recommended tools can be found in our <a href="rap-statistics.html#appropriate-tools">appropriate tools guidance</a>.</p>
-<hr>
-</section>
-<section id="is-this-specific-to-dfe" class="level3">
-<h3 class="anchored" data-anchor-id="is-this-specific-to-dfe">Is this specific to DfE?</h3>
-<hr>
-<p>No – RAP is a cross government strategy, and all departments are expected to use this way of working. See the <a href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/" target="_blank">analytical function page on RAP</a> to see other examples of departments utilising RAP and seeing the benefits.</p>
-<p>Here is a great <a href="https://digital.nhs.uk/blog/data-points-blog/2023/why-were-getting-our-data-teams-to-rap" target="_blank">blog post from NHS digital on ‘Why we’re getting our data teams to RAP’</a>.</p>
-<p>RAP is also a strategic objective of <a href="https://analysisfunction.civilservice.gov.uk/about-us/analysis-function-strategy/#strategic-objective-2-promoting-impactful-and-efficient-analysis-through-innovative-tools-and-cutting-edge-techniques" target="_blank">Analysis Function strategy for 22-25</a>:</p>
-<blockquote class="blockquote">
-<p>delivering the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/" target="_blank">Reproducible Analytical Pipelines (RAP) Strategy</a> and action plan to embed RAP across government, ensuring our processes are automated, efficient, and high quality which frees up resource to add value and insight in our analysis.</p>
-</blockquote>
-<hr>
-</section>
-<section id="im-overwhelmed-by-all-the-steps-is-rap-really-necessary" class="level3">
-<h3 class="anchored" data-anchor-id="im-overwhelmed-by-all-the-steps-is-rap-really-necessary">I’m overwhelmed by all the steps, is RAP really necessary?</h3>
-<hr>
-<p>The levels within RAP good practice are in line with what a lot of teams are doing already, take time to understand what the different steps mean and don’t panic about the quantity of them as they’ve intentionally been broken down into the smallest level that was sensible. Ideally your work should meet as many of the RAP criteria as possible, but even the use of some RAP principles when you’re just starting out are better than none.</p>
-<p>Statistics publications are some of the most important pieces of statistics work that the department does. It’s important we get that data right; RAP can help us automate the production and QA of outputs in a way that gives us the most confidence in the statistics and causes the least burden for you.</p>
-<hr>
-</section>
-<section id="will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes" class="level3">
-<h3 class="anchored" data-anchor-id="will-implementing-rap-lead-to-a-disconnect-with-the-data-and-black-box-processes">Will implementing RAP lead to a disconnect with the data and ‘black box’ processes?</h3>
-<hr>
-<p>Not at all. When fully implemented and accompanied with the relevant skills, RAP has the opposite effect as each stage of the process is clearly written as code.</p>
-<p>We recognise there is a sizeable skill gap, and that until this is addressed there can be a risk of feeling like code is a black box. This isn’t a reason to avoid RAP though, instead it’s a big reason why we need to push ahead with prioritising upskilling ourselves to implement it. An element of RAP is having documentation for your analytical processes. Having good documentation will help to support your team as they are learning new skills, particularly when you have new starters who are taking on pieces of work for the first time.</p>
-<hr>
-</section>
-<section id="teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps" class="level3">
-<h3 class="anchored" data-anchor-id="teams-vary-and-what-my-team-does-is-different-to-others-if-im-happy-with-my-approach-can-i-ignore-some-of-the-rap-steps">Teams vary, and what my team does is different to others, if I’m happy with my approach, can I ignore some of the RAP steps?</h3>
-<hr>
-<p>No, you should not ignore any of the steps. If you think any of the steps aren’t applicable to you, talk to the Statistics Development Team so we can understand more about the processes in your area. It may well be that you’re meeting it without realising, there’s a misunderstanding, or there’s something more we can add to the guidance.</p>
-<p>If you have unique or nuanced processes, RAP helps you document these and make your area more resilient to turnover of people. RAP is all about automating the process and documenting it in a standardised way to make it easily reproducible.</p>
-<hr>
-</section>
-</section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>Questions about how to get started with RAP.</p>
-<hr>
-<section id="can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere" class="level3">
-<h3 class="anchored" data-anchor-id="can-i-leave-the-r-stuff-to-others-in-my-team-whilst-i-focus-elsewhere">Can I leave the R stuff to others in my team whilst I focus elsewhere?</h3>
-<hr>
-<p>No.&nbsp;Anyone undertaking any analytical processes should now be using RAP processes, and coding is a critical analytical skill. RAP is a cross-government strategy and there is an expectation in all departments for all analysts to move to this way of working.</p>
-<p>We all must ensure that analysis is reproducible, transparent, and robust using coding and code management best practices (Analysis Function competency framework).</p>
-<hr>
-</section>
-<section id="implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it" class="level3">
-<h3 class="anchored" data-anchor-id="implementing-rap-takes-time-to-setup-initially-how-can-we-prioritise-it">Implementing RAP takes time to setup initially, how can we prioritise it?</h3>
-<hr>
-<p>There is a clear expectation that this is the direction for analysis in government, ultimately, it’s a part of the new digital skills required for the role of analysts. If we’re not prioritising improving our analysis in line with RAP principles, we’re not approaching our work correctly.</p>
-<p>We have support from senior leadership, and this is a department priority, so you should be building in time for it. If you are having difficulties prioritising RAP after talking with your line management chain, please get in touch with the Statistics Development Team.</p>
-<p>In the long term, implementing RAP will significantly reduce the time it takes to run your pipeline, and so while it requires time upfront, it creates more time in the future to prioritise other things. It also improves the quality and reproducibility of our work, giving numerous business benefits.</p>
-<hr>
-</section>
-</section>
-<section id="tools-for-rap" class="level2">
-<h2 class="anchored" data-anchor-id="tools-for-rap">Tools for RAP</h2>
-<p>Questions about what tools and software to use when applying RAP principles.</p>
-<hr>
-<section id="do-i-need-to-rewrite-existing-sql-code-into-r" class="level3">
-<h3 class="anchored" data-anchor-id="do-i-need-to-rewrite-existing-sql-code-into-r">Do I need to rewrite existing SQL code into R?</h3>
-<hr>
-<p>No.&nbsp;In fact, we recommend you don’t necessarily do this!</p>
-<p>SQL is a useful tool in its own right and some processes are better using SQL code executed on the databases.</p>
-<p>What we recommend, is that all of your code is within a single R project, and the SQL scripts are executed via R, this helps with documenting the process, but keeps the SQL code and benefits of doing heavy processes on the database side. See the final question in this ‘Tools for RAP’ section for more information.</p>
-<hr>
-</section>
-<section id="im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this" class="level3">
-<h3 class="anchored" data-anchor-id="im-sometimes-limited-by-the-access-and-tools-i-have-esfa-servers-edap-databricks-is-there-anything-that-can-be-done-about-this">I’m sometimes limited by the access and tools I have (ESFA servers, EDAP, Databricks), is there anything that can be done about this?</h3>
-<hr>
-<p>The first step is to let us (the Statistics Development Team) know so we can understand the wider landscape and escalate. There isn’t really a quick fix, but the first step is raising awareness.</p>
-<hr>
-</section>
-<section id="what-happens-if-we-cant-reproduce-our-current-processes-using-r" class="level3">
-<h3 class="anchored" data-anchor-id="what-happens-if-we-cant-reproduce-our-current-processes-using-r">What happens if we can’t reproduce our current processes using R?</h3>
-<hr>
-<p>This is highly unlikely and is more likely to be from a lack of knowledge of what is possible in R – if you’re struggling to reproduce processes, please contact the Statistics Development Team so they’re aware of your processes and can help you implement RAP principles.</p>
-<hr>
-</section>
-<section id="r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead" class="level3">
-<h3 class="anchored" data-anchor-id="r-isnt-always-the-quickest-tool-for-processing-data-can-we-use-sql-instead">R isn’t always the quickest tool for processing data, can we use SQL instead?</h3>
-<hr>
-<p>Yes. We recommend different tools for different purposes, SQL should be used for querying source data and large data processes, R should be used for more complicated data manipulation, QA, and analysis. There’s a grey area in the middle where you can do some things in either tool, sometimes you’ll need to test for yourself which way is faster (e.g., linking datasets or transforming tables).</p>
-<p>SQL scripts should be run in an automated way using R, instead of manually running them and copying the outputs. The difference we’re talking about here is whether you process data on the database server or on the machine where you’re running R. A simplistic rule of thumb is do large scale processing on the database side (e.g., filtering and aggregating), and then only bring the data you need for manipulation / complicated processing into R.</p>
-<hr>
-</section>
-</section>
-<section id="implementing-rap" class="level2">
-<h2 class="anchored" data-anchor-id="implementing-rap">Implementing RAP</h2>
-<p>Questions on how to implement RAP.</p>
-<hr>
-<section id="having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this" class="level3">
-<h3 class="anchored" data-anchor-id="having-a-single-script-for-code-doesnt-seem-the-best-way-to-do-it-why-are-you-suggesting-this">Having a single script for code doesn’t seem the best way to do it, why are you suggesting this?</h3>
-<hr>
-<p>This is a misconception of our guidance that we will be clarifying and improving the phrasing of. The two steps this refers to are:</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The API offers analysts, both internal to the DfE and external consumers and communicators of education statistics, a way to programmatically access data on EES. However, in order to ensure a fit for purpose service, not all EES data will be accessible via the API, and any that is will need to pass a higher bar for quality. In effect API data <strong>must</strong> meet all the criteria laid out in our <a href="../statistics-production/ud.html">Open data standards guidance</a>.</p>
+<p>Whilst the EES data screener tests for a significant base level of data quality and consistency, there are some additional criteria that are either too awkward to test for rigorously using the screener or are tested for but returned as warnings. Data intended for the EES API must pass all the base level screener tests, plus a number that only return warnings, plus manual inspection by the platform gatekeepers. These are primarily:</p>
 <ul>
-<li>Can the publication be reproduced using a single code script?</li>
-<li>Are data files produced via single code script(s) with integrated QA?</li>
+<li>Strict tidy data structures - i.e.&nbsp;appropriate use of filters and indicators.</li>
+<li>Standardised filter col_names and items consistent with the harmonised standards.</li>
+<li>Standardised indicator col_names meeting the naming standards.</li>
+<li>Character limits for col_names and filter items.</li>
 </ul>
-<p>We’re not suggesting all code lives in a single script. These steps in the RAP guidance are to encourage the repository being structured so that one click of a button can run the entire process from the source data through to the final output in order.</p>
-<p>This means that you should have one ‘centralized’ script that details all of the different scripts in your repository. This single run script then provides a single reference point for where all of your code and scripts live, and in what order they’re executed, which is a fantastic piece of documentation to have!</p>
-<hr>
+<p>Examples of these that do and don’t meet the API data standards are provided in the following sections.</p>
 </section>
-<section id="how-do-i-dual-run-for-qa-if-our-process-is-in-code" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-i-dual-run-for-qa-if-our-process-is-in-code">How do I dual run for QA if our process is in code?</h3>
-<hr>
-<p>You don’t need to be dual running if your process is automated, it’s not the best way to QA. See our guidance on QA for more details on how you can approach it or talk to us if you’re unsure.</p>
-<hr>
+<section id="character-limits-for-col_names-and-filter-items" class="level2">
+<h2 class="anchored" data-anchor-id="character-limits-for-col_names-and-filter-items">Character limits for col_names and filter items</h2>
+<p>Character limits for fields in data uploaded to the API are:</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Character limits on column names, column labels and filter items.</caption>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Character limit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Location codes</td>
+<td>30 characters</td>
+</tr>
+<tr class="even">
+<td>Filter / indicator column names</td>
+<td>50 characters</td>
+</tr>
+<tr class="odd">
+<td>Filter / indicator column labels</td>
+<td>80 characters</td>
+</tr>
+<tr class="even">
+<td>Filter items / location names</td>
+<td>120 characters</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="should-i-have-separate-repositories-or-branches-in-git-for-each-release" class="level3">
-<h3 class="anchored" data-anchor-id="should-i-have-separate-repositories-or-branches-in-git-for-each-release">Should I have separate repositories or branches in Git for each release?</h3>
-<hr>
-<p>More information on recommended ways of working with Git can be found in <a href="rap-statistics.html#use-open-source-repositories">our guidance on repositories</a>.</p>
-<p>In short, a single repository should be used for all releases of your publication, there’s no need to have multiple as all the history is saved within previous commits.</p>
-<hr>
+<section id="tidy-data-structure" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-structure">Tidy data structure</h2>
+<p>The key thing on tidy data structure is to avoid filter items being included within indicator col_names. Where you have collections of related terms appearing in indicator names (e.g.&nbsp;male, female, total), then these should be translated into a filter column, with the data being pivoted.</p>
+<p>All data uploaded to EES should be in a tidy data structure form, but this is more strictly regulated for data intended for use with the API. More information on building tidy data structures can be found in the <a href="../statistics-production/ud.html#tidy-data-structure">tidy data structure section</a>.</p>
+<p>The following give examples of how different examples of data structures could be adapted.</p>
+<section id="example-1---three-metrics-with-a-single-filter" class="level3">
+<h3 class="anchored" data-anchor-id="example-1---three-metrics-with-a-single-filter">Example 1 - Three metrics with a single filter</h3>
+<section id="example-of-bad-practice" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-bad-practice">Example of bad practice</h4>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Pupil counts and percentages in non-tidy format</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>school_count</th>
+<th>pupil_count_male</th>
+<th>pupil_count_female</th>
+<th>pupil_count_total</th>
+<th>pupil_percent_male</th>
+<th>pupil_percent_female</th>
+<th>pupil_percent_total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>120</td>
+<td>130</td>
+<td>250</td>
+<td>48</td>
+<td>52</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough" class="level3">
-<h3 class="anchored" data-anchor-id="we-should-have-plain-text-documentation-to-accompany-the-process-code-and-comments-dont-feel-like-enough">We should have plain text documentation to accompany the process, code and comments don’t feel like enough?</h3>
-<hr>
-<p>Yes, you should have some plain text documentation, this is a part of the guidance on RAP and a part of the ‘documentation’ step to ‘good’ practice.</p>
-<p>The README in your repository is the place for traditional ‘desk notes’ and text explanations of bits of the process and context required, we have <a href="rap-statistics.html#writing-a-readme-file">guidance on writing READMEs on the statistics production website</a>.</p>
-<hr>
+<section id="example-of-good-practice" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-good-practice">Example of good practice</h4>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Pupil counts and percentages in tidy format</caption>
+<thead>
+<tr class="header">
+<th>sex</th>
+<th>school_count</th>
+<th>pupil_count</th>
+<th>pupil_percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Male</td>
+<td>2</td>
+<td>30</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>Female</td>
+<td>2</td>
+<td>40</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>2</td>
+<td>50</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
-<section id="learning-about-rap" class="level2">
-<h2 class="anchored" data-anchor-id="learning-about-rap">Learning about RAP</h2>
-<p>Questions learning more about RAP and developing skills.</p>
-<hr>
-<section id="can-i-look-at-what-other-people-are-doing" class="level3">
-<h3 class="anchored" data-anchor-id="can-i-look-at-what-other-people-are-doing">Can I look at what other people are doing?</h3>
-<hr>
-<p>Absolutely. Currently the best way to do this is to ask other teams to share code directly with you. If we can all make more progress with using Git, then this will make it much easier to share repositories and have code open by default for interested analysts to browse.</p>
-<p>We run a regular RAP Knowledge Share series in which we share good practice and examples of work. We record each session so that you can refer back to them at a later date if you want to. Previous recordings can be found in our <a href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series" target="_blank">RAP knowledge share Sharepoint folder</a>. Upcoming sessions are advertised on the DfE analysts network mailing list.</p>
-<p>We’d also encourage analysts to make more use of the RAP Community channel in the DfE Analyst Network Teams group to post questions and ask about other people doing similar types of analysis, no question is too big or too small!</p>
-<hr>
+<section id="example-2---metrics-with-hierarchical-filters" class="level3">
+<h3 class="anchored" data-anchor-id="example-2---metrics-with-hierarchical-filters">Example 2 - Metrics with hierarchical filters</h3>
+<section id="example-of-bad-practice-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-bad-practice-1">Example of bad practice</h4>
+<p>The following would not be accepted for publication via the API.</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Attendance statistics in non-tidy format</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 11%">
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 8%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>attendance</th>
+<th>overall_absence</th>
+<th>authorised_absence</th>
+<th>unauthorised_absence</th>
+<th>attendance_percent</th>
+<th>overall_absence_percent</th>
+<th>authorised_absence_percent</th>
+<th>unauthorised_absence_percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>180</td>
+<td>20</td>
+<td>12</td>
+<td>8</td>
+<td>90</td>
+<td>10</td>
+<td>6</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="i-dont-have-the-skills-to-implement-rap-how-do-i-get-them" class="level3">
-<h3 class="anchored" data-anchor-id="i-dont-have-the-skills-to-implement-rap-how-do-i-get-them">I don’t have the skills to implement RAP, how do I get them?</h3>
-<hr>
-<p>See the top section on the <a href="#support-on-offer">support on offer</a>!</p>
-<p>Plus, if you’re ever unsure at all, you can always contact <a href="mailto:statisics.development@education.gov.uk">statisics.development@education.gov.uk</a> who will be able to help you find resources that work for you or do bespoke training for your team’s needs.</p>
-<hr>
+<section id="example-of-good-practice-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-good-practice-1">Example of good practice</h4>
+<p>The following would be accepted for publication via the API. In this case, creating a hierarchical filter combination allows a clear representation of the data.</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Attendance statistics in tidy format with hierarchical filters</caption>
+<colgroup>
+<col style="width: 26%">
+<col style="width: 29%">
+<col style="width: 21%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>attendance_status</th>
+<th>attendance_type</th>
+<th>session_count</th>
+<th>session_percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Attendance</td>
+<td>Total</td>
+<td>180</td>
+<td>90</td>
+</tr>
+<tr class="even">
+<td>Absence</td>
+<td>Total</td>
+<td>20</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Absence</td>
+<td>Authorised absence</td>
+<td>12</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>Absence</td>
+<td>Unauthorised absence</td>
+<td>8</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="example-3---metrics-with-non-compatible-filters" class="level3">
+<h3 class="anchored" data-anchor-id="example-3---metrics-with-non-compatible-filters">Example 3 - Metrics with non-compatible filters</h3>
+<section id="example-of-bad-practice-2" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-bad-practice-2">Example of bad practice</h4>
+<p>In the example below, the different metrics contain different types of values that are split by very different filters. Specifically pupil counts and pupil percents are split into grade thresholds, whereas the score based metrics are not.</p>
+<p>The following would not be accepted for publication via the API.</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Attainment grade rates and scores in non-tidy format</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>pupil_count_grade9to5</th>
+<th>pupil_count_grade9to4</th>
+<th>pupil_count_grade9to1</th>
+<th>pupil_percent_grade9to5</th>
+<th>pupil_percent_grade9to4</th>
+<th>pupil_percent_grade9to1</th>
+<th>progress8_score_male</th>
+<th>progress8_score_female</th>
+<th>progress8_score</th>
+<th>attainment8_score_male</th>
+<th>attainment8_score_female</th>
+<th>attainment8_score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>30</td>
+<td>40</td>
+<td>50</td>
+<td>60</td>
+<td>80</td>
+<td>100</td>
+<td>0.2</td>
+<td>0.21</td>
+<td>0.21</td>
+<td>0.09</td>
+<td>0.08</td>
+<td>0.10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="example-of-pivoting-leading-to-excessive-duplications-and-not-applicable-characters" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-pivoting-leading-to-excessive-duplications-and-not-applicable-characters">Example of pivoting leading to excessive duplications and not applicable characters</h4>
+<p>If we were to try and pivot the above data as one file, it would lead to an unreasonably large number of cells with no valid entries (i.e.&nbsp;large numbers of z’s). For example, pivoting might create something like the following table, which suffers from both a large number of not applicable columns and duplication of data unnecessarily.</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Example of pivoted data showing excessive duplicated and not applicable fields.</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>sex</th>
+<th>grade_range</th>
+<th>accountability_measure</th>
+<th>pupil_count</th>
+<th>pupil_percent</th>
+<th>score_average</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td>Grades 9-5</td>
+<td>z</td>
+<td>30</td>
+<td>60</td>
+<td>z</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td>Grades 9-4</td>
+<td>z</td>
+<td>40</td>
+<td>80</td>
+<td>z</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>Grades 9-1</td>
+<td>z</td>
+<td>50</td>
+<td>100</td>
+<td>z</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td>z</td>
+<td>Attainment 8</td>
+<td>50</td>
+<td>100</td>
+<td>0.21</td>
+</tr>
+<tr class="odd">
+<td>Female</td>
+<td>z</td>
+<td>Attainment 8</td>
+<td>50</td>
+<td>100</td>
+<td>0.21</td>
+</tr>
+<tr class="even">
+<td>Male</td>
+<td>z</td>
+<td>Attainment 8</td>
+<td>50</td>
+<td>100</td>
+<td>0.20</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>z</td>
+<td>Progress 8</td>
+<td>50</td>
+<td>100</td>
+<td>0.08</td>
+</tr>
+<tr class="even">
+<td>Female</td>
+<td>z</td>
+<td>Progress 8</td>
+<td>50</td>
+<td>100</td>
+<td>0.08</td>
+</tr>
+<tr class="odd">
+<td>Male</td>
+<td>z</td>
+<td>Progress 8</td>
+<td>50</td>
+<td>100</td>
+<td>0.09</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="example-of-good-practice-2" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-good-practice-2">Example of good practice</h4>
+<p>The following would be accepted for publication via the API. In this case, splitting the data into separate data files is required in order to create tidy data structures.</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Attainment grade rates in tidy format</caption>
+<thead>
+<tr class="header">
+<th>grade_range</th>
+<th>pupil_count</th>
+<th>pupil_percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Grades 9-5</td>
+<td>30</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>Grades 9-4</td>
+<td>40</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>Grades 9-1</td>
+<td>50</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Attainment scores in tidy format</caption>
+<thead>
+<tr class="header">
+<th>sex</th>
+<th>accountability_measure</th>
+<th>score_average</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Female</td>
+<td>Progress 8</td>
+<td>0.21</td>
+</tr>
+<tr class="even">
+<td>Male</td>
+<td>Progress 8</td>
+<td>0.20</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>Progress 8</td>
+<td>0.21</td>
+</tr>
+<tr class="even">
+<td>Female</td>
+<td>Attainment 8</td>
+<td>0.08</td>
+</tr>
+<tr class="odd">
+<td>Male</td>
+<td>Attainment 8</td>
+<td>0.09</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td>Attainment 8</td>
+<td>0.08</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+<section id="standardised-filter-col_names-and-items" class="level2">
+<h2 class="anchored" data-anchor-id="standardised-filter-col_names-and-items">Standardised filter col_names and items</h2>
+<p>The explore education and statistics platforms team alongside the data harmonisation champions group and publication teams are developing a series of <a href="../statistics-production/ud.html#common-harmonised-variables">standardised filters</a> that teams are required to use when creating data for the API. These are being built iteratively as more data is put forward for the API, so if the current standards don’t cater to your data set, you can contribute to building the harmonised standards for others to follow.</p>
+<p>The standards can be used to create individual filter columns or combined filters (i.e.&nbsp;breakdown_topic / breakdown_topic).</p>
+<p>Areas for which harmonised standards are currently available are:</p>
+<ul>
+<li><a href="../statistics-production/ud.html#establishment-characteristics">establishment / school / provider characteristics</a></li>
+<li><a href="../statistics-production/ud.html#ethnicity">ethnicity</a></li>
+<li><a href="../statistics-production/ud.html#sex-and-gender">sex and gender</a></li>
+<li><a href="../statistics-production/ud.html#special-educational-needs">special educational needs</a></li>
+</ul>
+<p>Areas which are currently under development are:</p>
+<ul>
+<li>attainment metrics</li>
+<li>disadvantaged status</li>
+<li>free school meal status</li>
+</ul>
+<p>We encourage contributions to and feedback on all of the above and any other filter topic.</p>
+<section id="examples-of-common-non-standard-filter-col_names" class="level3">
+<h3 class="anchored" data-anchor-id="examples-of-common-non-standard-filter-col_names">Examples of common non-standard filter col_names</h3>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Example non-standard col_names and their potential equivalents in the standardised framework.</caption>
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Non-standard</th>
+<th>Potential standard equivalents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ethnicity</td>
+<td>ethnicity_major, ethnicity_minor</td>
+</tr>
+<tr class="even">
+<td>characteristic_sex</td>
+<td>sex</td>
+</tr>
+<tr class="odd">
+<td>school_type</td>
+<td>establishment_type, establishment_type_group or education_phase</td>
+</tr>
+<tr class="even">
+<td>pupil_sen_status</td>
+<td>sen_status</td>
+</tr>
+<tr class="odd">
+<td>characteristic_primary_need</td>
+<td>sen_primary_need</td>
+</tr>
+<tr class="even">
+<td>characteristic_topic</td>
+<td>breakdown_topic, breakdown_topic_establishment</td>
+</tr>
+<tr class="odd">
+<td>characteristic</td>
+<td>breakdown, breakdown_establishment</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="standardised-indicator-col_names" class="level2">
+<h2 class="anchored" data-anchor-id="standardised-indicator-col_names">Standardised indicator col_names</h2>
+<p>Indicators should be named in line with the <a href="../statistics-production/ud.html#indicator-names">indicator naming conventions set out in the open data standards</a>.</p>
+<section id="examples-of-common-non-standard-indicator-col_names" class="level3">
+<h3 class="anchored" data-anchor-id="examples-of-common-non-standard-indicator-col_names">Examples of common non-standard indicator col_names</h3>
+<div class="table-responsive">
+<table class="caption-top table">
+<caption>Example non-standard indicator col_names and their potential equivalents in the standardised framework.</caption>
+<colgroup>
+<col style="width: 48%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Non-standard</th>
+<th>Potential standard equivalents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>number_of_pupils</td>
+<td>pupil_count</td>
+</tr>
+<tr class="even">
+<td>NumberOfLearners, NumLearners</td>
+<td>pupil_count, learner_count</td>
+</tr>
+<tr class="odd">
+<td>total_male, total_female</td>
+<td>pupil_count (plus sex filter)</td>
+</tr>
+<tr class="even">
+<td>pt_SEN_support</td>
+<td>pupil_percent (plus SEN status filter)</td>
+</tr>
+<tr class="odd">
+<td>num_provider, num_providers</td>
+<td>establishment_count</td>
+</tr>
+<tr class="even">
+<td>no_schools, num_schools, total_schools</td>
+<td>establishment_count</td>
+</tr>
+<tr class="odd">
+<td>num_inst, total_institutions, number_institutions, inst_count</td>
+<td>establishment_count</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
-</section>
 </section>
 </section>
 
@@ -1274,11 +1674,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../RAP/rap-support.html" class="pagination-link" aria-label="RAP support">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">RAP support</span>
+      <a href="../statistics-production/ud.html" class="pagination-link" aria-label="Open Data Standards">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Open Data Standards</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../statistics-production/ees.html" class="pagination-link" aria-label="Explore education statistics (EES)">
+        <span class="nav-page-text">Explore education statistics (EES)</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1289,7 +1692,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/rap-faq.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/statistics-production/api-data-standards.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>
