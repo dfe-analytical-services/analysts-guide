@@ -1,5 +1,5 @@
 ---
-  title: "Setup Databricks personal compute cluster with RStudio"
+  title: "Set up Databricks personal compute cluster with RStudio"
 ---
 
 <p class="text-muted">
