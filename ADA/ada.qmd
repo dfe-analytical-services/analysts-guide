@@ -155,11 +155,11 @@ In the Databricks interface, you have the choice to use notebooks, scripts or th
 
 ---
 
-Data in Databricks is held in catalogs in the Delta Lake, which is centrally governed by the ADA team. Catalogs provide different levels of access control and security. In Databricks, databases are referred to as "schemas", with tables sitting below them. You can find out more information about this on the [ADA guidance site](https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works). 
+Data in Databricks is held in catalogs in the Delta Lake, which is centrally governed by the ADA team. Catalogs provide different levels of access control and security. In Databricks, databases are referred to as "schemas", with tables sitting below them. You can find out more information about this on the [ADA guidance site](https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works) and on our [Databricks fundamentals](/ADA/databricks_fundamentals.html) page.  
 
 You will need to be given access to Databricks and the data you require by the ADA team by completing an "Analytical Data Access Request" service request form in the IT Help Centre. At the moment, not all of the data currently available in SSMS has been migrated to the Delta Lake for use in Databricks. You can [check the status of various datasets](https://app.powerbi.com/groups/me/reports/966389db-2e4e-42b6-8416-36aee2fb9503/ReportSection?ctid=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9&experience=power-bi) in the data catalogue dashboard. 
 
-To access your data and make use of cloud computing resource, you will need access to a cluster, which is a group of virtual machines that complete your processing for you. Your cluster setup will depend on which programming language you wish to use. You will be given access to a shared cluster when your data access is granted. Please see the [how clusters work](https://analytical-data-access.education.gov.uk/get-support/how-clusters-work) page on the ADA guidance site for more detail. 
+To access your data and make use of cloud computing resource, you will need access to a cluster, which is a group of virtual machines that complete your processing for you. Your cluster setup will depend on which programming language you wish to use. You will be given access to a shared cluster when your data access is granted. Please see the [how clusters work](https://analytical-data-access.education.gov.uk/get-support/how-clusters-work) page on the ADA guidance site and our [Databricks fundamentals](/ADA/databricks_fundamentals.html) page for more detail. 
 
 ---
 
@@ -183,7 +183,7 @@ You can also run code from RStudio or other IDEs locally and execute it against 
 
 Workflows are a Databricks feature that allow you to schedule and automatically run your code at specified times and in the order you suggest. 
 
-Workflows allow you to automate the running of single or multiple scripts, so if you have large amounts of data processing to do on a regular basis, you can set up a workflow to complete this overnight. Your laptop does not need to be switched on for this to work. 
+Workflows allow you to automate the running of single or multiple scripts, so if you have large amounts of data processing to do on a regular basis, you can set up a workflow to complete this overnight. Your laptop does not need to be switched on for this to work. You can read more about workflows on our [Databricks workflows](/ADA/databricks_workflows.html) guidance page. 
 
 
 ---
@@ -192,7 +192,7 @@ Workflows allow you to automate the running of single or multiple scripts, so if
 
 ---
 
-Notebooks might be something you've not come across before. Notebooks are made up of multiple code or markdown cells, allowing you to interactively run code and see the results in the same page. The way you write and use code is different to how you would work with IDEs (Integrated Development Environments) like RStudio. You can find more information on Databricks notebooks and their structure on the [ADA guidance site](https://analytical-data-access.education.gov.uk/get-support/using-r-python-and-sql-in-databricks).
+Notebooks might be something you've not come across before. Notebooks are made up of multiple code or markdown cells, allowing you to interactively run code and see the results in the same page. The way you write and use code is different to how you would work with IDEs (Integrated Development Environments) like RStudio. You can find more information on Databricks notebooks and their structure on the [ADA guidance site](https://analytical-data-access.education.gov.uk/get-support/using-r-python-and-sql-in-databricks) and on our [Databricks notebooks](/ADA/databricks_notebooks.html) guidance page.
 
 Notebooks can be helpful for ad hoc, exploratory, or one off pieces of analysis to add additional documentation as you go. You can also use notebooks to present findings to others by hiding code cells and only showing Markdown cells containing charts, tables, images or text. They can be exported as HTML files to enable easier sharing outside of the Databricks interface. 
 
@@ -202,13 +202,9 @@ If the rest of your team are unfamiliar with notebooks and will need to pick up 
 
 For regular analysis pipelines and models adopting RAP principles we’d usually advise against using notebooks and instead recommend a Git controlled repository of code scripts using the [standard repository template available in dfeR](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html).
 
-We recommend this because in addition to notebooks being different to how many teams write code now, version control, collaboration and reproducibility can all be more difficult in Databricks notebooks.
+We recommend this because in addition to notebooks being different to how many teams write code now, version control, collaboration and reproducibility can all be more difficult in Databricks notebooks. If you would like to use notebooks for analysis, they must be used in conjunction with an Azure DevOps or GitHub repository. If you share a notebook with edit permissions, it is possible for your code run to be accidentally cancelled if another user starts running code in the same notebook. Your code can also be overwritten by other users, and it can be difficult to recover previous versions. 
 
-When using Databricks notebooks, there is the potential for multiple people to make edits to the same notebook at once, making it much harder to version control and have a clear audit trail of what lines have been changed, who by, when they were changed, and why.
-
-If you have multiple people working on a notebook, it is possible for your code run to be accidentally cancelled if another user starts running code in the same notebook.
-
-When you have a full script in an IDE, the script will provide the same output consistently. However, with notebooks you can run code cells independently of one another. If you don’t run all code cells in order then your output could be inconsistent and result in errors, potentially making QA more difficult. This introduces more manual steps and increases the risk of human error.
+When you have a full script in an IDE, the script will provide the same output consistently. However, with notebooks you can run code cells independently of one another. You must ensure that you run all code cells in the correct sequential order. If you do not run all code cells in order then your output could be inconsistent and result in errors, potentially making QA more difficult. This introduces more manual steps and increases the risk of human error.
 
 :::{.callout-warning}
 When using Databricks notebooks with git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the `Clear all cell outputs` option in the Databricks "Run" menu to avoid inadvertently sharing data that only you and your team should have access to. 
@@ -257,14 +253,14 @@ Databricks has inbuilt Git functionality, and you can save your notebooks and sc
 ---
 
 ::: {.callout-important}
-Once your team's data has been migrated, you will **not** immediately lose access to your existing data sources, so you will be able to dual run your code using data from SSMS and data from the Databricks SQL warehouse to ensure that everything is working as it should be. Once you have confirmed that you are happy with the data in Databricks, your access to the legacy platform will be switched off. 
+Once your team's data has been migrated, you will **not** immediately lose access to your existing data sources, so you will be able to dual run your code using data from SSMS and data from the Databricks unity catalog  to ensure that everything is working as it should be. Once you have confirmed that you are happy with the data in Databricks, your access to the legacy platform will be switched off. 
 :::
 
 If you currently use data and scripts stored in SSMS for your analysis, there will be small changes you need to make that vary depending on your current process.
 
 Your SQL code will need to be migrated over to Databricks to allow it to read from the Databricks SQL Warehouse and will require some minor changes to syntax as SSMS uses T-SQL and Databricks uses Spark SQL. The ADA team are currently developing a tool to allow you to easily convert T-SQL queries to Spark SQL syntax, and Microsoft Copilot can also be useful for helping you with code translation. All DfE laptops should provide you with access to Copilot as standard.  
 
-You can write new SQL code in the Databricks SQL Editor, which is very similar to SSMS. 
+You can write new SQL code in the Databricks SQL Editor, which is very similar to SSMS. We recommend using the SQL Editor for short, ad-hoc SQL queries, such as those required to answer PQs. For longer or more complex SQL analysis we recommend using standalone scripts run from an RStudio project, or Databricks notebooks. 
 
 ---
 
@@ -283,7 +279,9 @@ You will also need to change the connection source to allow the code to run. Rat
 
 ---
 
-If you'd like to make use of automated workflows to run scheduled code, then your SQL code will need to be moved into Databricks notebooks, using Spark SQL syntax. 
+If you'd like to make use of automated workflows to run scheduled code, then your SQL code will need to be moved into Databricks, using Spark SQL syntax. Workflows can make use of code from notebooks or R or SQL scripts stored in either a Databricks workspace or a Git repository. You can read more about workflows on our [Databricks workflows](/ADA/databricks_workflows.html) page. 
+
+In addition to setting up workflows using the point and click interface in Databricks, you can also script them yourself. To learn more about this, see our [script workflows in Databricks](/ADA/databricks_workflow_script_databricks.html) and [script workflows in RStudio](/ADA/databricks_workflow_script_rstudio.html) user guides.
 
 ---
 
@@ -295,7 +293,7 @@ If you'd like to make use of automated workflows to run scheduled code, then you
 If you have an existing RAP process and pipeline set up using RStudio and SSMS, there is no current expectation for you to migrate your existing R code or scripts from RStudio to Databricks notebooks. 
 :::
 
-Your R code can remain in RStudio and all existing R processes can still be run there. Code that points towards SQL scripts will need to be redirected to Databricks rather than SSMS. In order to use RStudio with a Databricks SQL warehouse, you will need to manually set up a connection. You can find more information about that on our [setup guidance page](/ADA/databricks_rstudio_sql_warehouse.html). 
+Your R code can remain in RStudio and all existing R processes can still be run there. Code that points towards SQL scripts will need to be redirected to Databricks rather than SSMS. In order to use RStudio with a Databricks SQL warehouse, you will need to manually set up a connection. You can find more information about that on our [set up Databricks SQL Warehouse with RStudio](/ADA/databricks_rstudio_sql_warehouse.html). 
 
 
 ---
