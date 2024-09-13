@@ -148,7 +148,7 @@ In this case, the different metrics contain different types of values that are s
 | Female | z                  | Progress 8            | 50           | 100            | 0.08          |
 | Male   | z                  | Progress 8            | 50           | 100            | 0.09          |
 
-: Attainment grade rates in tidy format
+: Example of pivoted data showing excessive duplicated and not applicable fields.
 
 :::
 
