@@ -34,11 +34,12 @@ Character limits for fields in data uploaded to the API are:
 
 ::: {.table-responsive}
 
-| Element                         | Character limit |
-|---------------------------------|-----------------|
-|Filter / indicator column names  | 50 characters   |
-|Filter / indicator column labels | 80 characters   |
-|Filter items / location names    | 120 characters  |
+| Element                          | Character limit |
+|----------------------------------|-----------------|
+| Location codes                   | 30 characters   |
+| Filter / indicator column names  | 50 characters   |
+| Filter / indicator column labels | 80 characters   |
+| Filter items / location names    | 120 characters  |
 
 : Character limits on column names, column labels and filter items.
 
@@ -132,7 +133,8 @@ The following would not be accepted for publication via the API.
 
 :::
 
-In this case, the different metrics contain different types of values that are split by very different filters. Specifically pupil counts and pupil percents are split into grade thresholds, whereas the score based metrics are not. If we were to try and pivot this data as one file, it would lead to an unreasonably large number of cells with no valid entries (i.e. large numbers of z's). For example, pivoting might create something like the following table, which suffers from both a large number of not applicable columns and duplication of data unecessarily.
+
+In this case, the different metrics contain different types of values that are split by very different filters. Specifically pupil counts and pupil percents are split into grade thresholds, whereas the score based metrics are not. If we were to try and pivot this data as one file, it would lead to an unreasonably large number of cells with no valid entries (i.e. large numbers of z's). For example, pivoting might create something like the following table, which suffers from both a large number of not applicable columns and duplication of data unnecessarily.
 
 ::: {.table-responsive}
 
@@ -151,22 +153,6 @@ In this case, the different metrics contain different types of values that are s
 : Example of pivoted data showing excessive duplicated and not applicable fields.
 
 :::
-
-::: {.table-responsive}
-
-| sex    | accountability_measure | score_average  |
-|--------|------------------------|----------------|
-| Female | Progress 8             | 0.21           |          
-| Male   | Progress 8             | 0.20           |         
-| Total  | Progress 8             | 0.21           |                  
-| Female | Attainment 8           | 0.08           |          
-| Male   | Attainment 8           | 0.09           |         
-| Total  | Attainment 8           | 0.08           |                  
-
-: Attainment scores in tidy format
-
-:::
-
 
 #### Example of good practice
 
