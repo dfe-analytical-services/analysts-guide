@@ -50,6 +50,11 @@ The key thing on tidy data structure is to avoid filter items being included wit
 you have collections of related terms appearing in indicator names (e.g. male, female, total), then these 
 should be translated into a filter column, with the data being pivoted.
 
+All data uploaded to EES should be in a tidy data structure form, but this is more strictly regulated for data intended for use with the API. More information on building tidy data structures can be found in the [tidy data structure section](../statistics-production/ud.html#tidy-data-structure).
+
+The following give examples of how different examples of data structures could be adapted.
+
+
 ### Example 1 - Three metrics with a single filter
 
 #### Example of bad practice
@@ -127,6 +132,42 @@ The following would not be accepted for publication via the API.
 
 :::
 
+In this case, the different metrics contain different types of values that are split by very different filters. Specifically pupil counts and pupil percents are split into grade thresholds, whereas the score based metrics are not. If we were to try and pivot this data as one file, it would lead to an unreasonably large number of cells with no valid entries (i.e. large numbers of z's). For example, pivoting might create something like the following table, which suffers from both a large number of not applicable columns and duplication of data unecessarily.
+
+::: {.table-responsive}
+
+| sex    | grade_range        |accountability_measure | pupil_count  | pupil_percent  | score_average |
+|--------|--------------------|-----------------------|--------------|----------------|---------------|
+| Total  | Grades 9-5         | z                     | 30           | 60             | z             |
+| Total  | Grades 9-4         | z                     | 40           | 80             | z             |
+| Total  | Grades 9-1         | z                     | 50           | 100            | z             |
+| Total  | z                  | Attainment 8          | 50           | 100            | 0.21          |
+| Female | z                  | Attainment 8          | 50           | 100            | 0.21          |
+| Male   | z                  | Attainment 8          | 50           | 100            | 0.20          |
+| Total  | z                  | Progress 8            | 50           | 100            | 0.08          |
+| Female | z                  | Progress 8            | 50           | 100            | 0.08          |
+| Male   | z                  | Progress 8            | 50           | 100            | 0.09          |
+
+: Attainment grade rates in tidy format
+
+:::
+
+::: {.table-responsive}
+
+| sex    | accountability_measure | score_average  |
+|--------|------------------------|----------------|
+| Female | Progress 8             | 0.21           |          
+| Male   | Progress 8             | 0.20           |         
+| Total  | Progress 8             | 0.21           |                  
+| Female | Attainment 8           | 0.08           |          
+| Male   | Attainment 8           | 0.09           |         
+| Total  | Attainment 8           | 0.08           |                  
+
+: Attainment scores in tidy format
+
+:::
+
+
 #### Example of good practice
 
 The following would be accepted for publication via the API. In this case, splitting the data into separate data files is required in order to create tidy data structures.
@@ -157,10 +198,6 @@ The following would be accepted for publication via the API. In this case, split
 : Attainment scores in tidy format
 
 :::
-
-### Summary
-
-All data uploaded to EES should be in a tidy data structure form, but this is more strictly regulated for data intended for use with the API. More information on building tidy data structures can be found in the [tidy data structure section](../statistics-production/ud.html#tidy-data-structure).
 
 ## Standardised filter col_names and items
 
