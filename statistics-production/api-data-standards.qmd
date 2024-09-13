@@ -58,7 +58,7 @@ The following would not be accepted for publication via the API.
 
 ::: {.table-responsive}
 
-| count_pupils_grade9to5 | count_pupils_grade9to4 | count_pupils_grade9to1 | percent_pupils_grade9to5 | percent_pupils_grade9to4 | percent_pupils_grade9to1 | progress8_score_male | progress8_score_female | progress8_score |attainment8_score_male | attainment8_score_female | attainment8_score |
+| pupil_count_grade9to5 | pupil_count_grade9to4 | pupil_count_grade9to1 | pupil_percent_grade9to5 | pupil_percent_grade9to4 | pupil_percent_grade9to1 | progress8_score_male | progress8_score_female | progress8_score |attainment8_score_male | attainment8_score_female | attainment8_score |
 |------------------------|------------------------|------------------------|--------------------------|--------------------------|-------------------------|----------------------|------------------------|-----------------|----------------------|------------------------|-----------------|
 | 30                     | 40                     | 50                     | 60                       | 80                       | 100                      | 0.2                  | 0.21                   | 0.21            |0.09                  | 0.08                   | 0.10            |
 
@@ -72,7 +72,7 @@ The following would be accepted for publication via the API. In this case, split
 
 ::: {.table-responsive}
 
-|attainment_metric   | count_pupils | percent_pupils |
+| grade_range        | pupil_count  | pupil_percent  |
 |--------------------|--------------|----------------|
 | Grades 9-5         | 30           | 60             |          
 | Grades 9-4         | 40           | 80             |         
@@ -84,14 +84,14 @@ The following would be accepted for publication via the API. In this case, split
 
 ::: {.table-responsive}
 
-| sex    | attainment_metric | score_average  |
-|--------|-------------------|----------------|
-| Female | Progress 8        | 0.21           |          
-| Male   | Progress 8        | 0.20           |         
-| Total  | Progress 8        | 0.21           |                  
-| Female | Attainment 8      | 0.08           |          
-| Male   | Attainment 8      | 0.09           |         
-| Total  | Attainment 8      | 0.08           |                  
+| sex    | accountability_measure | score_average  |
+|--------|------------------------|----------------|
+| Female | Progress 8             | 0.21           |          
+| Male   | Progress 8             | 0.20           |         
+| Total  | Progress 8             | 0.21           |                  
+| Female | Attainment 8           | 0.08           |          
+| Male   | Attainment 8           | 0.09           |         
+| Total  | Attainment 8           | 0.08           |                  
 
 : Attainment scores in tidy format
 
@@ -103,7 +103,7 @@ The following would be accepted for publication via the API. In this case, split
 
 ::: {.table-responsive}
 
-| count_schools | count_pupils_male | count_pupils_female | count_pupils_total | percent_pupils_male | percent_pupils_female | percent_pupils_total |
+| school_count  | pupil_count_male | pupil_count_female | pupil_count_total | pupil_percent_male | pupil_percent_female | pupil_percent_total |
 |---------------|-------------------|---------------------|--------------------|---------------------|-----------------------|----------------------|
 | 2             | 120               | 130                 | 250               | 48                  | 52                    | 100                  |
 
@@ -115,7 +115,7 @@ The following would be accepted for publication via the API. In this case, split
 
 ::: {.table-responsive}
 
-| sex                | count_schools | count_pupils | percent_pupils |
+| sex                | school_count  | pupil_count  | pupil_percent  |
 |--------------------|---------------|--------------|----------------|
 | Male               | 2             | 30           | 60             |          
 | Female             | 2             | 40           | 80             |         
