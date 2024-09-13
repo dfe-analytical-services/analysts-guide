@@ -111,21 +111,6 @@ The following would be accepted for publication via the API. In this case, creat
 
 :::
 
-::: {.table-responsive}
-
-| sex    | accountability_measure | score_average  |
-|--------|------------------------|----------------|
-| Female | Progress 8             | 0.21           |          
-| Male   | Progress 8             | 0.20           |         
-| Total  | Progress 8             | 0.21           |                  
-| Female | Attainment 8           | 0.08           |          
-| Male   | Attainment 8           | 0.09           |         
-| Total  | Attainment 8           | 0.08           |                  
-
-: Attainment scores in tidy format
-
-:::
-
 ### Example 3 - Metrics with non-compatible filters
 
 #### Example of bad practice
