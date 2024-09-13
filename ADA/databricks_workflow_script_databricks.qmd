@@ -1,5 +1,5 @@
 ---
-title: "Scripting Workflows in Databricks"
+title: "Script workflows in Databricks"
 ---
 
 Workflows can be constructed through the Databricks Workflows user interface (UI), however for large or complex workflows the UI can be a time consuming way to build a workflow. In these scenarios it is quicker and more inline with RAP principles to script your workflow.
