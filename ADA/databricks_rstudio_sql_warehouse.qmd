@@ -2,7 +2,7 @@
   title: "Using a SQL Warehouse to access Databricks data from RStudio"
 ---
 
-The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse or personal cluster, which can then be used in RStudio to query data.
+The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse which can then be used in RStudio to query data.
 
 You can use data from Databricks in two different ways:
 
