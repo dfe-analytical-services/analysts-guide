@@ -1,5 +1,5 @@
 ---
-  title: "Databricks and version control"
+  title: "Use Databricks with Git"
 ---
 
 <p class="text-muted">

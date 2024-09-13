@@ -1,5 +1,5 @@
 ---
-  title: "Setup Databricks SQL Warehouse with RStudio"
+  title: "Set up Databricks SQL Warehouse with RStudio"
 ---
 
 <p class="text-muted">The following instructions set up an ODBC connection between your laptop and your DataBricks SQL warehouse, which can then be used in R/RStudio to query data using an ODBC based package.
