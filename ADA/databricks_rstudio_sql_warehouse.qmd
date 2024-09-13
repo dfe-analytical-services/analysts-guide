@@ -4,10 +4,14 @@
 
 The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse which can then be used in RStudio to query data.
 
+::: callout-note
+Please note: This guidance should be followed if you wish to run SQL scripts from RStudio against data held in tables in Databricks. If you wish to run R scripts or access data held in a volume instead, you will need a personal compute cluster. The guidance for setting up a personal cluster that works with RStudio can be found on our [set up Databricks personal compute cluster with RStudio](/ADA/databricks_rstudio_personal_cluster.html) page. You can learn more about compute resources on our [Databricks fundamentals](/ADA/databricks_fundamentals.html) page.
+:::
+
 You can use data from Databricks in two different ways:
 
 -   In the SQL editor or in notebooks via the Databricks environment
--   In RStudio via an ODBC connection, similarly to the way that you might currently use SQL Server
+-   In RStudio via an ODBC connection, similarly to the way that you might currently use data stored in a SQL Server
 
 ------------------------------------------------------------------------
 
@@ -25,11 +29,11 @@ A compute resource allows you to run your code using cloud computing power inste
 
 A SQL Warehouse is a SQL-only compute option which is quick to start and optimised for SQL querying. Although the name "warehouse" suggests storage, a SQL Warehouse in Databricks is actually a virtual computing resource that allows you to interact with Databricks by connecting to your data and running code. 
 
-This option is recommended if you only require SQL functionality in Databricks and is ideal if you already have existing RAP pipelines set up using SQL scripts in a git repo. It works in a similar way to how many people currently use SQL Server Management Studio (SSMS).
+This option is recommended if you only require SQL functionality in Databricks and is ideal if you already have existing RAP pipelines set up using SQL scripts in a git repo. 
 
-SQL Warehouses do not support R, Python or Scala code. Currently they also do not support widgets within Databricks notebooks. If you want to use compute resources to run R or Python code, then you will need to use a personal cluster. There is guidance on the use of personal clusters on the [Using personal clusters with Databricks](ADA/databricks_rstudio_personal_cluster.html) page. 
+SQL Warehouses do not support R, Python or Scala code. Currently they also do not support widgets within Databricks notebooks. If you want to use compute resources to run widgets or R or Python code, then you will need to use a personal cluster. There is guidance on the use of personal clusters on the [Using personal clusters with Databricks](ADA/databricks_rstudio_personal_cluster.html) page. 
 
-SQL Warehouses enable you to access tables in the Unity Catalog, but not volumes within the Unity Catalog. Volumes are storage areas for files (e.g. .txt files or .csv files) rather than tables. You can learn more about volumes on [the Databricks documentation site](https://docs.databricks.com/en/volumes/index.html). To access a volume, you will also need to use a personal cluster. 
+SQL Warehouses enable you to access tables in the Unity Catalog, but not volumes within the Unity Catalog. Volumes are storage areas for files (e.g. .txt files or .csv files) rather than tables. You can learn more about volumes on [the Databricks documentation site](https://docs.databricks.com/en/volumes/index.html) or on our [Databricks fundamentals](ADA/databricks_fundamentals.html) page. To access a volume, you will also need to use a personal cluster. 
 
 ---
 
@@ -154,7 +158,7 @@ A personal access token is is a security measure that acts as an identifier to l
 -   Name the token, then click 'Generate'
 
 ::: callout-note
-Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate.
+Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less. 
 :::
 
 -   Make a note of the 'Databricks access token' it has given you
