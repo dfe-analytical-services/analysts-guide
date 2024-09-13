@@ -50,7 +50,35 @@ The key thing on tidy data structure is to avoid filter items being included wit
 you have collections of related terms appearing in indicator names (e.g. male, female, total), then these 
 should be translated into a filter column, with the data being pivoted.
 
-### Example 1 - Metrics with hierarchical filters
+### Example 1 - Three metrics with a single filter
+
+#### Example of bad practice
+
+::: {.table-responsive}
+
+| school_count  | pupil_count_male | pupil_count_female | pupil_count_total | pupil_percent_male | pupil_percent_female | pupil_percent_total |
+|---------------|-------------------|---------------------|--------------------|---------------------|-----------------------|----------------------|
+| 2             | 120               | 130                 | 250               | 48                  | 52                    | 100                  |
+
+: Pupil counts and percentages in non-tidy format
+
+:::
+
+#### Example of good practice
+
+::: {.table-responsive}
+
+| sex                | school_count  | pupil_count  | pupil_percent  |
+|--------------------|---------------|--------------|----------------|
+| Male               | 2             | 30           | 60             |          
+| Female             | 2             | 40           | 80             |         
+| Total              | 2             | 50           | 100            |                  
+
+: Pupil counts and percentages in tidy format
+
+:::
+
+### Example 2 - Metrics with hierarchical filters
 
 #### Example of bad practice
 
@@ -98,7 +126,7 @@ The following would be accepted for publication via the API. In this case, creat
 
 :::
 
-### Example 2 - Metrics with non-compatible filters
+### Example 3 - Metrics with non-compatible filters
 
 #### Example of bad practice
 
@@ -142,34 +170,6 @@ The following would be accepted for publication via the API. In this case, split
 | Total  | Attainment 8           | 0.08           |                  
 
 : Attainment scores in tidy format
-
-:::
-
-### Example 3 - Pupil counts, percents and characteristics
-
-#### Example of bad practice
-
-::: {.table-responsive}
-
-| school_count  | pupil_count_male | pupil_count_female | pupil_count_total | pupil_percent_male | pupil_percent_female | pupil_percent_total |
-|---------------|-------------------|---------------------|--------------------|---------------------|-----------------------|----------------------|
-| 2             | 120               | 130                 | 250               | 48                  | 52                    | 100                  |
-
-: Pupil counts and percentages in non-tidy format
-
-:::
-
-#### Example of good practice
-
-::: {.table-responsive}
-
-| sex                | school_count  | pupil_count  | pupil_percent  |
-|--------------------|---------------|--------------|----------------|
-| Male               | 2             | 30           | 60             |          
-| Female             | 2             | 40           | 80             |         
-| Total              | 2             | 50           | 100            |                  
-
-: Pupil counts and percentages in tidy format
 
 :::
 
