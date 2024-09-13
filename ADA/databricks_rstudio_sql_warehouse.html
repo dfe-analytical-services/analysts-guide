@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Set up Databricks SQL Warehouse with RStudio – Analysts’ Guide</title>
+<title>databricks_rstudio_sql_warehouse – Analysts' Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -109,7 +143,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ADA and Databricks</li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_sql_warehouse.html">Set up Databricks SQL Warehouse with RStudio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ADA and Databricks</li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_sql_warehouse.html">Compute resources</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -433,7 +467,7 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Set up Databricks SQL Warehouse with RStudio</span></a>
+ <span class="menu-text">Compute resources</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -472,122 +506,216 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
-  <li><a href="#downloading-an-odbc-driver" id="toc-downloading-an-odbc-driver" class="nav-link" data-scroll-target="#downloading-an-odbc-driver">Downloading an ODBC driver</a></li>
-  <li><a href="#pulling-data-into-r-studio-from-databricks" id="toc-pulling-data-into-r-studio-from-databricks" class="nav-link" data-scroll-target="#pulling-data-into-r-studio-from-databricks">Pulling data into R studio from Databricks</a></li>
+  <li><a href="#compute-resources" id="toc-compute-resources" class="nav-link active" data-scroll-target="#compute-resources">Compute resources</a></li>
+  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
+  <li><a href="#process" id="toc-process" class="nav-link" data-scroll-target="#process">Process</a>
+  <ul class="collapse">
+  <li><a href="#setting-up-the-odbc-driver" id="toc-setting-up-the-odbc-driver" class="nav-link" data-scroll-target="#setting-up-the-odbc-driver">Setting up the ODBC driver</a></li>
+  <li><a href="#establishing-an-rstudio-connection-using-environment-variables" id="toc-establishing-an-rstudio-connection-using-environment-variables" class="nav-link" data-scroll-target="#establishing-an-rstudio-connection-using-environment-variables">Establishing an RStudio connection using environment variables</a></li>
+  <li><a href="#pulling-data-into-rstudio-from-databricks" id="toc-pulling-data-into-rstudio-from-databricks" class="nav-link" data-scroll-target="#pulling-data-into-rstudio-from-databricks">Pulling data into RStudio from Databricks</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_sql_warehouse.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ADA and Databricks</li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_sql_warehouse.html">Set up Databricks SQL Warehouse with RStudio</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Set up Databricks SQL Warehouse with RStudio</h1>
+
+
+
+<hr>
+<p>title: “Set up Databricks SQL Warehouse with RStudio”</p>
+<hr>
+<p>The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse which can then be used in RStudio to query data.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p class="text-muted">
-The following instructions set up an ODBC connection between your laptop and your DataBricks SQL warehouse, which can then be used in R/RStudio to query data using an ODBC based package. SQL Warehouses are able to run SQL and can be used within the DataBricks environment, or through RStudio to run SQL code. The <code>sparklyr</code> package can also be used from within RStudio (only) as it converts the request for data to Spark SQL behind the scenes.
-</p>
-<hr>
-<section id="pre-requisites" class="level1">
-<h1>Pre-requisites</h1>
-<hr>
-<p>You must have:</p>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please note: This guidance should be followed if you wish to run SQL scripts from RStudio against data held in tables in Databricks. If you wish to run R scripts or access data held in a volume instead, you will need a personal compute cluster. The guidance for setting up a personal cluster that works with RStudio can be found on our <a href="../ADA/databricks_rstudio_personal_cluster.html">set up Databricks personal compute cluster with RStudio</a> page. You can learn more about compute resources on our <a href="../ADA/databricks_fundamentals.html">Databricks fundamentals</a> page.</p>
+</div>
+</div>
+<p>You can use data from Databricks in two different ways:</p>
 <ul>
-<li>Access to Databricks</li>
-<li>Access to a SQL Warehouse on DataBricks</li>
-<li>R and RStudio downloaded</li>
+<li>In the SQL editor or in notebooks via the Databricks environment</li>
+<li>In RStudio via an ODBC connection, similarly to the way that you might currently use data stored in a SQL Server</li>
 </ul>
 <hr>
-</section>
-<section id="downloading-an-odbc-driver" class="level1">
-<h1>Downloading an ODBC driver</h1>
+<section id="compute-resources" class="level2">
+<h2 class="anchored" data-anchor-id="compute-resources">Compute resources</h2>
+<p>When your data is moved to Databricks, it will be stored in the Unity Catalog and you will need to use a compute resource to access it from other software such as RStudio.</p>
+<p>A compute resource allows you to run your code using cloud computing power instead of using your laptop’s processing power. This means that using compute resources can allow your code to run faster than it would if you ran it locally, as it is like using the processing resources of multiple computers at once. On this page, we will be referring to the use of SQL Warehouses as the compute resource to run your code.</p>
 <hr>
-<ol type="1">
-<li><p>Install the ‘Simba Spark ODBC’ driver from the software centre.</p>
-<ol type="i">
-<li><p>Open the Software Centre via the start menu.</p></li>
-<li><p>In the ‘Applications’ tab, click ‘Simba Spark ODBC Driver 64-bit’. <img src="../images/databricks-software-centre.png" class="img-fluid"></p></li>
-<li><p>Click install.</p></li>
-</ol></li>
-<li><p>Get connection details for the SQL Warehouse from Databricks. To set up the connection you will need a few details from a SQL Warehouse within DataBricks.</p>
-<ol type="i">
-<li><p>Login to <a href="https://adb-6882499576863257.17.azuredatabricks.net/?o=6882499576863257" target="_blank">Databricks</a></p></li>
-<li><p>Click on the ‘SQL Warehouses’ tab in the sidebar. <img src="../images/databricks-SQL-warehouses.png" class="img-fluid"></p></li>
-<li><p>Click on the name of the warehouse you want to connect to, and click the ‘connection details’ tab.</p></li>
-<li><p>Make a note of the ‘Server hostname’, ‘Port’, and ‘HTTP Path’.</p></li>
-</ol></li>
-<li><p>Get a personal access token from Databricks for authentication.</p>
-<ol type="i">
-<li><p>In Databricks, click on your email address in the top right corner, then click ‘User settings’.</p></li>
-<li><p>Go to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button. <img src="../images/databricks-access-tokens.png" class="img-fluid"></p></li>
-<li><p>Click the ‘Generate new token’ button.</p></li>
-<li><p>Name the token, then click ‘Generate’. <em>Note that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate.</em></p></li>
-<li><p>Make a note of the ‘Databricks access token’ it has given you. <strong>It is important to copy this somewhere as you will not be able to see it through Databricks again.</strong></p></li>
-</ol></li>
-<li><p>Setup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.</p>
-<ol type="i">
-<li><p>In the start menu, search ‘ODBC’ and open ‘ODBC Data Sources (64-bit)’.</p></li>
-<li><p>On the ‘User DSN’ tab click the ‘Add…’ button.</p></li>
-<li><p>In the ‘Create New Data Source’ window, select ‘Simba Spark ODBC Driver’ and click ‘Finish’.</p></li>
-<li><p>In the ‘Simba Spark ODBC Driver DSN Setup’ window,</p>
-<ol type="a">
-<li>Enter a ‘Data Source Name’ and ‘Description’. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio. <em>As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.</em></li>
-<li>Set the remaning options to the settings below.
+<section id="sql-warehouse" class="level4">
+<h4 class="anchored" data-anchor-id="sql-warehouse">SQL Warehouse</h4>
+<hr>
+<p>A SQL Warehouse is a SQL-only compute option which is quick to start and optimised for SQL querying. Although the name “warehouse” suggests storage, a SQL Warehouse in Databricks is actually a virtual computing resource that allows you to interact with Databricks by connecting to your data and running code.</p>
+<p>This option is recommended if you only require SQL functionality in Databricks and is ideal if you already have existing RAP pipelines set up using SQL scripts in a Git repo.</p>
+<p>SQL Warehouses do not support R, Python or Scala code. Currently they also do not support widgets within Databricks notebooks. If you want to use compute resources to run widgets or R or Python code, then you will need to use a personal cluster. There is guidance on the use of personal clusters on the <a href="ADA/databricks_rstudio_personal_cluster.html">Using personal clusters with Databricks</a> page.</p>
+<p>SQL Warehouses enable you to access tables in the Unity Catalog, but not volumes within the Unity Catalog. Volumes are storage areas for files (e.g.&nbsp;.txt files or .csv files) rather than tables. You can learn more about volumes on <a href="https://docs.databricks.com/en/volumes/index.html" target="_blank">the Databricks documentation site</a> or on our <a href="ADA/databricks_fundamentals.html">Databricks fundamentals</a> page. To access a volume, you will also need to use a personal cluster.</p>
+<hr>
+</section>
+</section>
+<section id="pre-requisites" class="level2">
+<h2 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h2>
+<p>Before you start, you must have:</p>
 <ul>
-<li>Enter the ‘Server Hostname’ for your cluster in the ‘Host(s):’ field (you noted this down in step 2).</li>
-<li>In the Port section, remove the default number and use the Port number you noted in step 2.</li>
-<li>Set the Authentication Mechanism to ‘User Name and Password’.</li>
-<li>Enter the word ‘token’ into the ‘User Name:’ field, then enter your ‘Databricks access token’ in the ‘Password:’ field.</li>
-<li>Change the Thrift Transport option to HTTP.</li>
-<li>Click the ‘HTTP Options…’ button and enter the ‘HTTP Path’ of your Databricks cluster, then click ‘Okay’.</li>
-<li>Click the ‘SSL Options…’ button and tick the ‘Enable SSL’ box, then click the ‘OK’ button.</li>
-<li><img src="../images/odbc-driver-settings.png" class="img-fluid"></li>
-</ul></li>
-<li>Click the ‘Test’ button to verify the connection has worked. You should see the following message. <em>If you get an error here, repeat steps 5.e.i – 5.e.ix again and ensure all the values are correct.</em></li>
-</ol>
-<p><img src="../images/databricks-test-connection.png" class="img-fluid"></p>
-<ol start="4" type="a">
-<li>Click the ‘OK’ button to exit the ‘Test Results’ window, then the ‘OK’ button in the ‘Simba Spark ODBC Driver DSN Setup’ window.</li>
-</ol></li>
-</ol></li>
-<li><p>Connect through RStudio. Watch the below video and view the <a href="https://github.com/dfe-analytical-services/ADA_RStudio_connect" target="_blank">ADA_RStudio_connect GitHub repo</a> for methods on connecting to Databricks and querying data from RStudio.</p></li>
-</ol>
+<li><p>Access to the Databricks platform</p></li>
+<li><p>Access to data in a SQL Warehouse on Databricks</p></li>
+<li><p>R and RStudio downloaded and installed</p></li>
+<li><p>The <code>ODBC</code> and <code>DBI</code> packages installed in RStudio</p></li>
+</ul>
+<p>If you do not have access to Databricks or a SQL Warehouse within Databricks, you can request this using <a href="https://dfe.service-now.com/serviceportal?id=sc_cat_item&amp;sys_id=74bc3be81b212d504f999978b04bcb0b" target="_blank">a service request form</a>.</p>
+<p>If you do not have R or RStudio, you can find them both in the Software Centre. Note that you need both R <strong>and</strong> RStudio installed.</p>
 <hr>
 </section>
-<section id="pulling-data-into-r-studio-from-databricks" class="level1">
-<h1>Pulling data into R studio from Databricks</h1>
+<section id="process" class="level2">
+<h2 class="anchored" data-anchor-id="process">Process</h2>
+<p>There are three steps to complete before your connection can be established. These are:</p>
+<ul>
+<li>Installing an ODBC driver on your laptop to enable a connection between your laptop and Databricks</li>
+<li>Modifying your .Renviron file to establish a connection between RStudio and Databricks</li>
+<li>Adding connection code to your existing scripts in RStudio</li>
+</ul>
+<p>Each of these steps is described in more detail in the sections below.</p>
 <hr>
-<p>Once you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video demonstrating two possible methods of how to do this. The recording is embedded below:</p>
+<section id="setting-up-the-odbc-driver" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-the-odbc-driver">Setting up the ODBC driver</h3>
+<p>An ODBC driver is required for the <code>ODBC</code> package in R to work - you must install it before attempting to use the package to connect to your data.</p>
+<hr>
+<section id="install-the-simba-spark-odbc-driver-from-the-software-centre" class="level4">
+<h4 class="anchored" data-anchor-id="install-the-simba-spark-odbc-driver-from-the-software-centre">Install the Simba Spark ODBC driver from the Software Centre</h4>
+<hr>
+<ul>
+<li><p>Open the Software Centre via the start menu</p></li>
+<li><p>In the ‘Applications’ tab, click <code>Simba Spark ODBC Driver 64-bit</code></p></li>
+</ul>
 <div data-align="center">
-<iframe src="https://educationgovuk.sharepoint.com/sites/lvewp00086/_layouts/15/embed.aspx?UniqueId=5fad039e-a763-40c8-8ea0-403aea712f4c&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen="" title="ADA_Rstudio_2.mp4">
-</iframe>
+<p><img src="../images/databricks-software-centre.png" class="img-fluid"></p>
 </div>
-<p>A template of all of the code used in the above video can be found in the <a href="https://github.com/dfe-analytical-services/ADA_RStudio_connect" target="_blank">ADA_RStudio_connect GitHub repo</a>.</p>
-<p>Key takeaways from the video and example code:</p>
 <ul>
-<li>The main change here compared to connecting to SQL databases is the connection method. The installation and setup of the ODBC driver are all done pre-code, and the only part of the code that will need updating is your connection (usually your con variable).</li>
-<li>If your existing code was pulling in tables from SQL via the <code>RODBC</code> package or the <code>dbplyr</code> package, then this code should in theory run with minimal edits needed.</li>
-<li>If you were writing tables back into SQL from R, this is where your code may need the most edits.</li>
-<li>If your code is stored in a repo where multiple analysts contribute to and run the code, in order for the code to run for everyone you will all need to individually install the ODBC driver and <strong>give it the same name</strong> so that when the <code>con</code> variable is called, the name used in the code matches everyone’s individual driver and runs for everyone. If this is the case, please <strong>add a note about this to your repo’s readme file</strong> to help your future colleagues.</li>
+<li>Click install</li>
 </ul>
+<hr>
+</section>
+</section>
+<section id="establishing-an-rstudio-connection-using-environment-variables" class="level3">
+<h3 class="anchored" data-anchor-id="establishing-an-rstudio-connection-using-environment-variables">Establishing an RStudio connection using environment variables</h3>
+<hr>
+<p>The <code>ODBC</code> package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.</p>
+<p>To set the environment variables, call <code>usethis::edit_r_environ()</code>. You will then need to enter the following information:</p>
+<pre><code>DATABRICKS_HOST=&lt;databricks-host&gt;
+DATABRICKS_SQL_PATH=&lt;sql-warehouse-path&gt;
+DATABRICKS_TOKEN=&lt;personal-access-token&gt; </code></pre>
+<p>Once you have entered the details, save and close your .Renviron file and restart R (Session &gt; Restart R).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Everyone in your team that wishes to connect to the SQL Warehouse in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.</p>
+</div>
+</div>
+<p>The sections below describe where to find the information needed for each of the four environment variables.</p>
+<hr>
+<section id="databricks-host" class="level4">
+<h4 class="anchored" data-anchor-id="databricks-host">Databricks host</h4>
+<hr>
+<p>The Databricks host is the instance of Databricks that you want to connect to. It’s the URL that you see in your browser bar when you’re on the Databricks site and should end in “azuredatabricks.net” (ignore anything after this section of the URL).</p>
+<hr>
+</section>
+<section id="databricks-sql-warehouse-path" class="level4">
+<h4 class="anchored" data-anchor-id="databricks-sql-warehouse-path">Databricks SQL Warehouse Path</h4>
+<hr>
+<p>As described in the <a href="../ADA/ada.html#sql-warehouse">SQL Warehouses section</a>, in Databricks, SQL Warehouses are a way to gain access to your data in the Unity Catalog. They run queries and return the results either to the user or to a table.</p>
+<p>To get the Warehouse ID, follow these steps:</p>
+<ul>
+<li>click ‘SQL Warehouses’ under the ‘SQL’ section of the left hand menu on Databricks</li>
+<li>click on the warehouse name that you’d like to get the ID for</li>
+<li>the warehouse id is the ‘HTTP Path’ in the ‘Connection details’ tab</li>
+<li>the ID should start with something similar to “/sql/1.0/warehouses/”</li>
+</ul>
+<hr>
+</section>
+<section id="databricks-token" class="level4">
+<h4 class="anchored" data-anchor-id="databricks-token">Databricks token</h4>
+<hr>
+<p>The Databricks token is a personal access token.</p>
+<p>A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the SQL warehouse. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.</p>
+<ul>
+<li><p>In Databricks, click on your email address in the top right corner, then click ‘User settings’</p></li>
+<li><p>Go to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button</p></li>
+</ul>
+<div data-align="center">
+<p><img src="../images/databricks-access-tokens.png" class="img-fluid"></p>
+</div>
+<ul>
+<li><p>Click the ‘Generate new token’ button</p></li>
+<li><p>Name the token, then click ‘Generate’</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less.</p>
+</div>
+</div>
+<ul>
+<li>Make a note of the ‘Databricks access token’ it has given you</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="pulling-data-into-rstudio-from-databricks" class="level3">
+<h3 class="anchored" data-anchor-id="pulling-data-into-rstudio-from-databricks">Pulling data into RStudio from Databricks</h3>
+<hr>
+<p>Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you.</p>
+<p>To access the data, we will make use of the <code>ODBC</code> package. You can find documentation about this package <a href="https://solutions.posit.co/connections/db/r-packages/odbc/" target="_blank">on the Posit website</a>. You will also need to have the <code>DBI</code> package installed.</p>
+<p>Include the following code in your R Script:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  odbc<span class="sc">::</span><span class="fu">databricks</span>(),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">httpPath =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_SQL_PATH"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">odbcListObjects</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
