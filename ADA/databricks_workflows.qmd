@@ -1,26 +1,25 @@
 ---
-title: "Databricks Workflows"
+title: "Databricks workflows"
 ---
 
 ------------------------------------------------------------------------
 
 ## Workflows user interface
 
-------------------------------------------------------------------------
 
-Workflows allow you to build complex data pipelines by chaining together multiple scripts, queries, notebooks and logic. They can be used to build Reproducible analytical pipelines (RAP) that can be re-run with different parameters and have all inputs and outputs audited automatically. Other recommended uses of workflows are any data modelling tasks such as cleaning your source data and collating it into a more analytically friendly format in your modelling area.
+Workflows allow you to build complex data pipelines by chaining together multiple scripts, queries, notebooks and logic. They can be used to build Reproducible Analytical Pipelines (RAP) that can be re-run with different parameters and have all inputs and outputs audited automatically. Other recommended uses of workflows are any data modelling tasks such as cleaning your source data and collating it into a more analytically friendly format in your modelling area.
 
 Each step in a workflow is referred to as a task and each task has dependencies. They are accessible through the 'Workflows' link on the left hand menu of the DataBricks UI.
 
 ![](/images/ada-workflow-menu.png)
 
-Parameters can be set either at a workflow level or a task level and referred to in your scripts / notebooks, allowing you to reuse tasks/workflows for similar operations.
+Parameters can be set either at a workflow level or a task level and referred to in your scripts / notebooks, allowing you to reuse tasks / workflows for similar operations.
 
 Each task can have dependencies on other tasks and can be set to only run under certain conditions, for example all of the previous tasks have completed successfully. These can be configured when tasks are added to the workflow through the user interface.
 
-Workflows and tasks can also be configured to send notifications to users upon success/failure. These can be configured from the Workflow and Task user interfaces.
+Workflows and tasks can also be configured to send notifications to users upon success or failure. These can be configured from the Workflow and Task user interfaces.
 
-Workflows also come with robust support for git/DevOps repositories and can be set to run from a specific repo, branch, commit or tag.
+Workflows also come with robust support for GitHub and Azure DevOps repositories and can be set to run from a specific repo, branch, commit or tag.
 
 ------------------------------------------------------------------------
 
@@ -50,7 +49,7 @@ Workflows also come with robust support for git/DevOps repositories and can be s
 ::: callout-note
 ## Source
 
-The source by default is set to your Workspace, but it is recommended that you use a version controlled Git repository instead. This prevents you changing the code of a notebook during a workflow run as the tasks are sourced from a specific repository version, branch, commit or tag rather than a workbook you may be working on.
+The source by default is set to your workspace, but it is recommended that you use a version controlled Git repository instead. This prevents you changing the code of a notebook during a workflow run as the tasks are sourced from a specific repository version, branch, commit or tag rather than a workbook you may be working on.
 :::
 
 ::: callout-note
@@ -66,12 +65,13 @@ Once development is complete and the workflow becomes business as usual it may b
     \
     **Depends on** - a list of tasks that must be run before the start of this task\
     **Run if dependencies** - Instructions for the conditions to run the task based on the dependencies set above. The default option is 'All succeeded' but there are also the following options:\
-    \
     -   At least one succeeded\
     -   None failed\
     -   All done\
     -   At least one failed\
-    -   All failed\
+    -   All failed
+    \
+    \
 7.  After setting up a flow of tasks you will be presented with a graphical presentation of the workflow as seen below:
 
 ![](/images/ada-workflow-task-chart.png)
@@ -82,9 +82,13 @@ Once development is complete and the workflow becomes business as usual it may b
 
 ------------------------------------------------------------------------
 
-Each time a workflow is ran DataBricks audits any input parameters, all outputs, the success and failure of each task, along with when it was run and who by.
+Each time a workflow is run, Databricks audits:\
+- any input parameters\
+- all outputs\
+- the success and failure of each task\
+- when it was run and who by\
 
-This makes them a very powerful debugging tool as you can refer back to results from previous runs. This means that if your pipeline fails you can review the notebook(s) that failed and troubleshoot the issue.
+This makes workflows a very powerful debugging tool as you can refer back to results from previous runs. This means that if your pipeline fails you can review the notebook(s) that failed and troubleshoot the issue.
 
 Workflows that fail also allow you to repair the workflow once you have found and fixed the issue. This prevents having to re-run the whole pipeline from scratch and allows it to pick up from the point where it failed.
 
@@ -94,7 +98,6 @@ Workflows that fail also allow you to repair the workflow once you have found an
 
 ## Coded workflows
 
-------------------------------------------------------------------------
 
 Another useful aspect of workflows is that they can be defined and ran using code through the [DataBricks Jobs API](https://docs.databricks.com/api/workspace/jobs).
 

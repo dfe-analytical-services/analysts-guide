@@ -4,11 +4,9 @@ title: "Databricks fundamentals"
 
 ------------------------------------------------------------------------
 
-# What is Databricks?
+## What is Databricks?
 
-------------------------------------------------------------------------
-
-Databricks is a web based platform for large scale data manipulation and analysis using code to create reproducible data pipelines. Primarily it takes the form of a website which you can create data pipelines and perform analysis in. It currently supports the languages R, SQL, python and scala, and integrates well with Git based version control systems such as GitHub or Azure DevOps.
+Databricks is a web based platform for large scale data manipulation and analysis using code to create reproducible data pipelines. Primarily it takes the form of a website which you can create data pipelines and perform analysis in. It currently supports the languages R, SQL, Python and Scala, and integrates well with Git based version control systems such as GitHub or Azure DevOps.
 
 Behind the scenes it is a distributed cloud computing platform which utilizes the [Apache Spark engine](https://spark.apache.org/) to split up heavy data processing into smaller chunks. It then distributes them to different 'computers' within the cloud to perform the processing of each chunk in parallel. Once each 'computer' is finished processing the results are recombined and passed back to the user or stored.
 
@@ -21,6 +19,8 @@ In addition, it also provides new tools within the platform to construct and aut
 ## Key differences
 
 Underpinning the technology are some key differences in how computers we're familiar with, and Databricks (and distributed computing in general) are structured.
+
+---
 
 ### Traditional computing
 
@@ -35,9 +35,11 @@ Currently, we are used to using a PC or laptop to do our data processing. A trad
 
 ![](/images/ada-traditional-computer.jpg){width="273"}
 
-Any traditional computer is limited by it's hardware meaning there is an upper limit on the size and complexity of data it can process.
+Any traditional computer is limited by its hardware meaning there is an upper limit on the size and complexity of data it can process.
 
-In order to increase the amount of data a computer can process you would have to switch out the physical hardware of the machine for something more powerful.
+In order to increase the amount of data a computer can process, you would have to switch out the physical hardware of the machine for something more powerful.
+
+---
 
 ### On Databricks
 
@@ -55,11 +57,11 @@ The storage and computation are separated into different components rather than 
 
 ------------------------------------------------------------------------
 
--   **Scalable** - if you need more computing power you can increase your computing power and only pay for what you use rather than having to build an expensive new machine
--   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required.
--   **Data Governance** - The Department is able to 'see' all of it's data and organisational knowledge. This enables it to ensure it is access controlled and align with GDPR and data protection legislation and guidelines.
--   **Auditing and version control** - The Platform itself generates a lot of metadata which enables it to keep versioned history of it's data, outputs, etc.
--   **Automation** - Complex data processing pipelines can be set up using Databricks workflows and set to automatically run, either on a timer or a specific trigger allowing for a fully automated production process.
+-   **Scalable** - if you need more computing power, you can increase your computing power and only pay for what you use rather than having to build an expensive new machine
+-   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required
+-   **Data Governance** - The Department is able to 'see' all of its data and organisational knowledge. This enables it to ensure it is access controlled and align with GDPR and data protection legislation and guidelines
+-   **Auditing and version control** - The Platform itself generates a lot of metadata which enables it to keep versioned history of its data, outputs, etc
+-   **Automation** - Complex data processing pipelines can be set up using Databricks workflows and set to automatically run, either on a timer or a specific trigger allowing for a fully automated production process
 
 Each of these aspects bring benefits to the wider Department and for analysts within it.
 
@@ -71,13 +73,15 @@ The auditing, and automation facilities provide a lot of benefits when building 
 
 ------------------------------------------------------------------------
 
-# Key concepts
+## Key concepts
 
-------------------------------------------------------------------------
 
-## Storage
+
+### Storage
 
 There are a few different ways of storing files and data on Databricks. Your data, and modelling areas will reside in the 'unity catalog', whereas your scripts and code will live on your 'workspace'.
+
+---
 
 ### Unity catalog
 
@@ -88,6 +92,8 @@ The majority of data and files on Databricks should be stored in the 'unity cata
 The unity catalog can be accessed through the 'Catalog' option in the Databricks sidebar.
 
 ![](/images/ada-unity-catalog-sidebar.png)
+
+---
 
 #### Structure of the unity catalog
 
@@ -101,11 +107,15 @@ A schema can contain any number of tables, views and volumes.
 
 ![](/images/ada-unity-catalog.jpg)
 
+---
+
 #### Catalogs not databases
 
 ------------------------------------------------------------------------
 
 The 'unity catalog' is a single catalog that contains all the other catalogs of data in the Department. Catalogs are very similar in concept to a SQL database in that they they contain schemas, tables of data and views of data.
+
+---
 
 #### Schemas, tables and views
 
@@ -113,13 +123,15 @@ The 'unity catalog' is a single catalog that contains all the other catalogs of 
 
 Like a SQL database a catalog has schemas, tables, and views which store data in a structured (usually tabular) format.
 
-A schema is a sub-division of a catalog which allows for logical separation of data stored in the catalog. Whoever creates a schema is it's owner, and is able to set fine grained permissions on who can see / edit the data within it. Permissions can also be set for groups of analysts, and can be modified by the ADA team if the original owner is no longer available.
+A schema is a sub-division of a catalog which allows for logical separation of data stored in the catalog. Whoever creates a schema is its owner, and is able to set fine grained permissions on who can see / edit the data within it. Permissions can also be set for groups of analysts, and can be modified by the ADA team if the original owner is no longer available.
 
 Tables are equivalent to SQL tables, and store data in a tabular format. Tables in Databricks have the ability to turn on version control which audits each change to the data and allows a user to go back in time to see earlier versions of the table.
 
 Views look and act the same as tables, however instead of storing the data as it is presented a view is created from a query which is ran when the view is referenced. This allows you to provide alternative ways to format data from tables without storing duplicated data.
 
 Tables and views sit within a schema and these are where you would store your core datasets and pick up data to analyse from.
+
+---
 
 #### Volumes
 
@@ -130,6 +142,8 @@ Unlike a SQL database the unity catalog also contains volumes, which are file st
 Volumes are stored under a schema within a catalog. Files in here can be accessed and manipulated through code.
 
 Examples of files suitable to be stored in a volume include CSVs, JSON and other formats of data files, or supporting files / images for applications you develop through the platform. You can also upload files to a volume through the user interface.
+
+---
 
 ### Workspaces - Databricks file system (DBFS)
 
@@ -151,6 +165,8 @@ Sharing code this way can be useful but has it's risks. If you allow other users
 For collaboration on code you should use a GitHub/DevOps repository which each user can clone and work on independently.
 :::
 
+---
+
 ### Repositories for version control
 
 ------------------------------------------------------------------------
@@ -162,8 +178,6 @@ To connect Databricks to a repository refer to the [Databricks and version contr
 ------------------------------------------------------------------------
 
 ## Compute
-
-------------------------------------------------------------------------
 
 In order to access data and run code you need to set up a compute resource. A compute resource provides processing power and memory to pick up and manipulate the data and files stored in the 'unity catalog'. The compute page can be accessed through the 'Compute' option in the Databricks sidebar.
 
@@ -186,17 +200,19 @@ All compute options can be used both within the Databricks platform and be conne
 -   [Setup Databricks SQL Warehouse with RStudio](databricks_rstudio_sql_warehouse.qmd)
 -   [Setup Databricks Personal Compute cluster with RStudio](databricks_rstudio_personal_cluster.qmd)
 
+---
+
 ### Creating a personal compute resource
 
 ------------------------------------------------------------------------
 
-1.  To create your own personal compute resource click the 'Create with DfE Personal Compute' button on the compute page.
+1.  To create your own personal compute resource click the 'Create with DfE Personal Compute' button on the compute page\
 
 ![](/images/ada-compute-personal.png)
 
-2.  You'll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type.\
+2.  You'll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type\
     \
-    **Databricks runtime version** - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is '15.4 LTS'.\
+    **Databricks runtime version** - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is '15.4 LTS'\
     \
     **Node type** - This option determines how powerful your cluster is and there are 2 options available by default:\
 
@@ -207,18 +223,18 @@ All compute options can be used both within the Databricks platform and be conne
         \
         ![](/images/ada-compute-personal-create.png)
 
-3.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes.\
+3.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes\
     \
     ![](/images/ada-compute-personal-create-button.png)
 
-4.  Once the cluster is up and running the icon under the 'State' header on the 'Compute' page will appear as a green tick.\
+4.  Once the cluster is up and running the icon under the 'State' header on the 'Compute' page will appear as a green tick\
     \
     ![](/images/ada-compute-ready.png)
 
 ::: callout-note
 ## Clusters will shut down after being idle for an hour
 
-Use of compute resources are charged by the hour, and so personal cluster have been set to shut down after being unused for an hour in order to prevent unnecessary cost to the Department.
+Use of compute resources are charged by the hour, and so personal clusters have been set to shut down after being unused for an hour in order to prevent unnecessary cost to the Department.
 :::
 
 ::: callout-important
