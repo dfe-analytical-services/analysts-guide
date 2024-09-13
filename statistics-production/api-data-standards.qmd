@@ -121,7 +121,7 @@ The following would be accepted for publication via the API. In this case, creat
 
 #### Example of bad practice
 
-In this case, the different metrics contain different types of values that are split 
+In the example below, the different metrics contain different types of values that are split 
 by very different filters. Specifically pupil counts and pupil percents are split into 
 grade thresholds, whereas the score based metrics are not. If we were to try and pivot 
 this data as one file, it would lead to an unreasonably large number of cells with no 
