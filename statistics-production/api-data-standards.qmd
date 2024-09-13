@@ -179,7 +179,7 @@ All data uploaded to EES should be in a tidy data structure form, but this is mo
 
 ## Standardised filter col_names and items
 
-The explore education and statistics platforms team alongside the data harmonisation champions group and publication teams are developing a series of [standardised filter specifications](../statistics-production/ud.html#common-harmonised-variables) that teams are required to adhere to when creating data for the API. These are being built iteratively as more data is put forward for the API, so if the current standards don't cater to your data set, you can contribute to building the harmonised standards for others to follow.
+The explore education and statistics platforms team alongside the data harmonisation champions group and publication teams are developing a series of [standardised filters](../statistics-production/ud.html#common-harmonised-variables) that teams are required to use when creating data for the API. These are being built iteratively as more data is put forward for the API, so if the current standards don't cater to your data set, you can contribute to building the harmonised standards for others to follow.
 
 The standards can be used to create individual filter columns or combined filters (i.e. breakdown_topic / breakdown_topic).
 
