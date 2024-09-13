@@ -50,7 +50,55 @@ The key thing on tidy data structure is to avoid filter items being included wit
 you have collections of related terms appearing in indicator names (e.g. male, female, total), then these 
 should be translated into a filter column, with the data being pivoted.
 
-### Example 1 - Attainment rates and scores
+### Example 1 - Metrics with hierarchical filters
+
+#### Example of bad practice
+
+The following would not be accepted for publication via the API.
+
+::: {.table-responsive}
+
+| attendance |overall_absence | authorised_absence | unauthorised_absence | attendance_percent |overall_absence_percent | authorised_absence_percent | unauthorised_absence_percent |
+|------------|----------------|--------------------|----------------------|------------|----------------|-------------------|----------------------|
+| 180        | 20             | 12                 | 8                    | 90         | 10             | 6                 | 4                    | 
+
+: Attendance statistics in non-tidy format
+
+:::
+
+#### Example of good practice
+
+The following would be accepted for publication via the API. In this case, creating a hierarchical filter combination allows a clear representation of the data.
+
+::: {.table-responsive}
+
+| attendance_status  | attendance_type      | session_count  | session_percent |
+|--------------------|----------------------|----------------|-----------------|
+| Attendance         | Total                | 180            | 90              |
+| Absence            | Total                | 20             | 10              |
+| Absence            | Authorised absence   | 12             | 6               |
+| Absence            | Unauthorised absence | 8              | 4               |         
+
+: Attendance statistics in tidy format with hierarchical filters
+
+:::
+
+::: {.table-responsive}
+
+| sex    | accountability_measure | score_average  |
+|--------|------------------------|----------------|
+| Female | Progress 8             | 0.21           |          
+| Male   | Progress 8             | 0.20           |         
+| Total  | Progress 8             | 0.21           |                  
+| Female | Attainment 8           | 0.08           |          
+| Male   | Attainment 8           | 0.09           |         
+| Total  | Attainment 8           | 0.08           |                  
+
+: Attainment scores in tidy format
+
+:::
+
+### Example 2 - Metrics with non-compatible filters
 
 #### Example of bad practice
 
@@ -97,7 +145,7 @@ The following would be accepted for publication via the API. In this case, split
 
 :::
 
-### Example 2 - Pupil counts, percents and characteristics
+### Example 3 - Pupil counts, percents and characteristics
 
 #### Example of bad practice
 
