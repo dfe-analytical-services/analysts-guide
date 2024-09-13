@@ -21,12 +21,15 @@ It brings together:
 
 As long as you're connected to the network - it's available to anyone who works for the Department of Education. 
 
-The ADA project is currently in its onboarding phase, which is expected to continue until 2025. At the moment, teams can onboard voluntarily until **???**. Following this date, the remaining teams will have their data migrated for them. 
+The ADA project is currently in its onboarding phase.  The ADA team will work with analyst teams to plan migrations. We encourage teams to engage early so that you have time to migrate your work and receive support from the project team. 
+
 Data migration will replace three legacy systems: 
 
 * Pupil Data Repository (PDR)
 * Analysis and Modelling (A&M)
 * Enterprise Data and Analysis Platform (EDAP1)
+
+Decommissioning of legacy servers will be completed in 2026. 
 
 See these [Databricks support notebooks](https://adb-2220072380334347.7.azuredatabricks.net/browse/folders/4213691640199507?o=2220072380334347) for more detailed reference guides into how the service has been set up at DfE, including more information on workspaces, environments, notebooks, clusters, catalogs etc. Please note that you will need a Databricks account to access these. 
 
@@ -38,7 +41,13 @@ From the [ADA homepage](https://analytical-data-access.education.gov.uk/) you wi
 
 * A repository of Reports and Dashboards where outputs of data and analytical work will be saved. This will allow colleagues across DfE to interrogate and visualise data. In time this catalogue will grow and the ADA team are currently building out a formal strategy for this area.
 
-The ADA team also intends to establish an analyst Community of Practice that:
+---
+
+### ADA support
+
+---
+
+The ADA team has established an analyst Community of Practice that:
 
 * Increases the breadth and depth of knowledge about new tools
 
@@ -48,7 +57,13 @@ The ADA team also intends to establish an analyst Community of Practice that:
 
 * Identifies future opportunities to support the Department's Strategic Data Transformation 
 
-A list of current ADA champions can be found on the [ADA intranet page](https://educationgovuk.sharepoint.com/sites/lvewp00505), they are able to provide advice and support if you run into any issues. If you wish to become an ADA champion then please contact the [ADA team](mailto:ADAPTTeam@education.gov.uk).
+You can access support in the following places:
+
+- The [ADA user group](https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9) on Microsoft Teams 
+
+- The [ADA website](https://analytical-data-access.education.gov.uk/get-support/join-a-community) has a list of support resources
+
+- You can find a list of current ADA champions can be found on the [ADA intranet page](https://educationgovuk.sharepoint.com/sites/lvewp00505), and they are able to provide advice and support if you run into any issues. If you're passionate about helping others with the migration and using innovative data tools, why not become an ADA champion? To get involved, please contact the [ADA team](mailto:ADAPTTeam@education.gov.uk).
 
 ---
 
@@ -104,6 +119,29 @@ For teams that have invested in RAP principles and already have existing code pi
 Databricks is the software that underpins ADA's analytical workbench, allowing analysts to explore and analyse data via a browser, taking advantage of cloud computing. Unlike RStudio or SQL Server Management Studio (SSMS), you don't have to download any software to be able to use it. Databricks offers a few different ways to work with data, including scripts and notebooks. Databricks notebooks support multiple programming languages, including R, Python, and SQL.
 
 You can also access data held within the Databricks platform using other software, such as RStudio. 
+
+---
+
+### Databricks FAQs
+
+---
+
+**Is Databricks different to RAP?**
+
+Yes - Databricks is a tool that you can use to create code and pipelines for reproducible analysis, similarly to how you'd currently use RStudio or SQL Server Management Studio. 
+
+**How much time will it take me to learn the basics?**
+
+We recommend that you and your team engage with the platform as soon as possible so that you can learn at your own pace before you fully migrate. There are plenty of training resources available, including monthly training workshops run by the ADA team. These are advertised on the [ADA user group Teams channel](https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9).
+
+**Can I still use SQL?**
+
+Eventually all teams will migrate away from using SQL Server Management Studio. However, you can still write SQL code inside Databricks, and you can still run SQL scripts from RStudio against data held in the Databricks unity catalog.
+
+**Do I have to move all my existing code over to Databricks?**
+
+No - this is discussed in more depth in the [what this means for existing code](/ADA/ada.html#what-this-means-for-existing-code) section below. 
+
 
 ---
 
