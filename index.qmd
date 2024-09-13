@@ -49,6 +49,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Open data standards](statistics-production/ud.html)
 - Guidance on how to structure data files
 
+[Statistics API data standards](statistics-production/api-data-standards.html)
+- Guidance on the standards to meet for API data sets
+
 [Explore education statistics (EES)](statistics-production/ees.html)
 - Tips on using the explore education statistics service
 

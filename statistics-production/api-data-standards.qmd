@@ -1,0 +1,257 @@
+---
+title: "Statistics API Data Standards"
+---
+
+```{r include=FALSE}
+```
+
+<p class="text-muted">Guidance on how to structure data files specifically for the EES API</p>
+
+---
+
+## Introduction
+
+The API offers analysts, both internal to the DfE and external consumers and communicators of education statistics,
+a way to programmatically access data on EES. However, in order to ensure a fit for purpose service, not all EES 
+data will be accessible via the API, and any that is will need to pass a higher bar for quality. In effect API data
+**must** meet all the criteria laid out in our [Open data standards guidance](../statistics-production/ud.qmd).
+
+Whilst the EES data screener tests for a significant base level of data quality and consistency, there are some 
+additional criteria that are either too awkward to test for rigorously using the screener or are tested for but
+returned as warnings. Data intended for the EES API must pass all the base level screener tests, plus a number
+that only return warnings, plus manual inspection by the platform gatekeepers. These are primarily:
+
+- Strict tidy data structures - i.e. appropriate use of filters and indicators.
+- Standardised filter col_names and items consistent with the harmonised standards.
+- Standardised indicator col_names meeting the naming standards.
+- Character limits for col_names and filter items.
+
+Examples of these that do and don't meet the API data standards are provided in the following sections.
+
+## Character limits for col_names and filter items
+
+Character limits for fields in data uploaded to the API are:
+
+::: {.table-responsive}
+
+| Element                          | Character limit |
+|----------------------------------|-----------------|
+| Location codes                   | 30 characters   |
+| Filter / indicator column names  | 50 characters   |
+| Filter / indicator column labels | 80 characters   |
+| Filter items / location names    | 120 characters  |
+
+: Character limits on column names, column labels and filter items.
+
+:::
+
+## Tidy data structure
+
+The key thing on tidy data structure is to avoid filter items being included within indicator col_names. Where 
+you have collections of related terms appearing in indicator names (e.g. male, female, total), then these 
+should be translated into a filter column, with the data being pivoted.
+
+All data uploaded to EES should be in a tidy data structure form, but this is more strictly regulated for data intended for use with the API. More information on building tidy data structures can be found in the [tidy data structure section](../statistics-production/ud.html#tidy-data-structure).
+
+The following give examples of how different examples of data structures could be adapted.
+
+
+### Example 1 - Three metrics with a single filter
+
+#### Example of bad practice
+
+::: {.table-responsive}
+
+| school_count  | pupil_count_male | pupil_count_female | pupil_count_total | pupil_percent_male | pupil_percent_female | pupil_percent_total |
+|---------------|-------------------|---------------------|--------------------|---------------------|-----------------------|----------------------|
+| 2             | 120               | 130                 | 250               | 48                  | 52                    | 100                  |
+
+: Pupil counts and percentages in non-tidy format
+
+:::
+
+#### Example of good practice
+
+::: {.table-responsive}
+
+| sex                | school_count  | pupil_count  | pupil_percent  |
+|--------------------|---------------|--------------|----------------|
+| Male               | 2             | 30           | 60             |          
+| Female             | 2             | 40           | 80             |         
+| Total              | 2             | 50           | 100            |                  
+
+: Pupil counts and percentages in tidy format
+
+:::
+
+### Example 2 - Metrics with hierarchical filters
+
+#### Example of bad practice
+
+The following would not be accepted for publication via the API.
+
+::: {.table-responsive}
+
+| attendance |overall_absence | authorised_absence | unauthorised_absence | attendance_percent |overall_absence_percent | authorised_absence_percent | unauthorised_absence_percent |
+|------------|----------------|--------------------|----------------------|------------|----------------|-------------------|----------------------|
+| 180        | 20             | 12                 | 8                    | 90         | 10             | 6                 | 4                    | 
+
+: Attendance statistics in non-tidy format
+
+:::
+
+#### Example of good practice
+
+The following would be accepted for publication via the API. In this case, creating a hierarchical filter combination allows a clear representation of the data.
+
+::: {.table-responsive}
+
+| attendance_status  | attendance_type      | session_count  | session_percent |
+|--------------------|----------------------|----------------|-----------------|
+| Attendance         | Total                | 180            | 90              |
+| Absence            | Total                | 20             | 10              |
+| Absence            | Authorised absence   | 12             | 6               |
+| Absence            | Unauthorised absence | 8              | 4               |         
+
+: Attendance statistics in tidy format with hierarchical filters
+
+:::
+
+### Example 3 - Metrics with non-compatible filters
+
+#### Example of bad practice
+
+In the example below, the different metrics contain different types of values that are split 
+by very different filters. Specifically pupil counts and pupil percents are split into 
+grade thresholds, whereas the score based metrics are not. 
+
+The following would not be accepted for publication via the API.
+
+::: {.table-responsive}
+
+| pupil_count_grade9to5 | pupil_count_grade9to4 | pupil_count_grade9to1 | pupil_percent_grade9to5 | pupil_percent_grade9to4 | pupil_percent_grade9to1 | progress8_score_male | progress8_score_female | progress8_score |attainment8_score_male | attainment8_score_female | attainment8_score |
+|------------------------|------------------------|------------------------|--------------------------|--------------------------|-------------------------|----------------------|------------------------|-----------------|----------------------|------------------------|-----------------|
+| 30                     | 40                     | 50                     | 60                       | 80                       | 100                      | 0.2                  | 0.21                   | 0.21            |0.09                  | 0.08                   | 0.10            |
+
+: Attainment grade rates and scores in non-tidy format
+
+:::
+
+#### Example of pivoting leading to excessive duplications and not applicable characters
+
+If we were to try and pivot 
+the above data as one file, it would lead to an unreasonably large number of cells with no 
+valid entries (i.e. large numbers of z's). For example, pivoting might create something 
+like the following table, which suffers from both a large number of not applicable 
+columns and duplication of data unnecessarily.
+
+::: {.table-responsive}
+
+| sex    | grade_range        |accountability_measure | pupil_count  | pupil_percent  | score_average |
+|--------|--------------------|-----------------------|--------------|----------------|---------------|
+| Total  | Grades 9-5         | z                     | 30           | 60             | z             |
+| Total  | Grades 9-4         | z                     | 40           | 80             | z             |
+| Total  | Grades 9-1         | z                     | 50           | 100            | z             |
+| Total  | z                  | Attainment 8          | 50           | 100            | 0.21          |
+| Female | z                  | Attainment 8          | 50           | 100            | 0.21          |
+| Male   | z                  | Attainment 8          | 50           | 100            | 0.20          |
+| Total  | z                  | Progress 8            | 50           | 100            | 0.08          |
+| Female | z                  | Progress 8            | 50           | 100            | 0.08          |
+| Male   | z                  | Progress 8            | 50           | 100            | 0.09          |
+
+: Example of pivoted data showing excessive duplicated and not applicable fields.
+
+:::
+
+#### Example of good practice
+
+The following would be accepted for publication via the API. In this case, splitting the data into separate data files is required in order to create tidy data structures.
+
+::: {.table-responsive}
+
+| grade_range        | pupil_count  | pupil_percent  |
+|--------------------|--------------|----------------|
+| Grades 9-5         | 30           | 60             |          
+| Grades 9-4         | 40           | 80             |         
+| Grades 9-1         | 50           | 100            |                  
+
+: Attainment grade rates in tidy format
+
+:::
+
+::: {.table-responsive}
+
+| sex    | accountability_measure | score_average  |
+|--------|------------------------|----------------|
+| Female | Progress 8             | 0.21           |          
+| Male   | Progress 8             | 0.20           |         
+| Total  | Progress 8             | 0.21           |                  
+| Female | Attainment 8           | 0.08           |          
+| Male   | Attainment 8           | 0.09           |         
+| Total  | Attainment 8           | 0.08           |                  
+
+: Attainment scores in tidy format
+
+:::
+
+## Standardised filter col_names and items
+
+The explore education and statistics platforms team alongside the data harmonisation champions group and publication teams are developing a series of [standardised filters](../statistics-production/ud.html#common-harmonised-variables) that teams are required to use when creating data for the API. These are being built iteratively as more data is put forward for the API, so if the current standards don't cater to your data set, you can contribute to building the harmonised standards for others to follow.
+
+The standards can be used to create individual filter columns or combined filters (i.e. breakdown_topic / breakdown_topic).
+
+Areas for which harmonised standards are currently available are:
+
+- [establishment / school / provider characteristics](../statistics-production/ud.html#establishment-characteristics)
+- [ethnicity](../statistics-production/ud.html#ethnicity)
+- [sex and gender](../statistics-production/ud.html#sex-and-gender)
+- [special educational needs](../statistics-production/ud.html#special-educational-needs)
+
+Areas which are currently under development are:
+
+- attainment metrics
+- disadvantaged status
+- free school meal status
+
+We encourage contributions to and feedback on all of the above and any other filter topic.
+
+### Examples of common non-standard filter col_names
+
+::: {.table-responsive}
+
+| Non-standard                | Potential standard equivalents     |
+|-----------------------------|------------------------------------|
+| ethnicity                   | ethnicity_major, ethnicity_minor   |
+| characteristic_sex          | sex                                |
+| school_type                 | establishment_type, establishment_type_group or education_phase |
+| pupil_sen_status            | sen_status                         |
+| characteristic_primary_need | sen_primary_need                   |
+| characteristic_topic        | breakdown_topic, breakdown_topic_establishment |
+| characteristic              | breakdown, breakdown_establishment |
+
+: Example non-standard col_names and their potential equivalents in the standardised framework.
+
+:::
+
+## Standardised indicator col_names
+
+Indicators should be named in line with the [indicator naming conventions set out in the open data standards](../statistics-production/ud.html#indicator-names).
+
+### Examples of common non-standard indicator col_names
+
+::: {.table-responsive}
+
+| Non-standard                           | Potential standard equivalents           |
+|----------------------------------------|------------------------------------------|
+| number_of_pupils                       | pupil_count                              |
+| NumberOfLearners, NumLearners          | pupil_count, learner_count               |
+| total_male, total_female               | pupil_count (plus sex filter)            |
+| pt_SEN_support                         | pupil_percent (plus SEN status filter)   |
+| num_provider, num_providers            | establishment_count                      |
+| no_schools, num_schools, total_schools | establishment_count                      |
+| num_inst, total_institutions, number_institutions, inst_count | establishment_count |
+
+: Example non-standard indicator col_names and their potential equivalents in the standardised framework.
+
+:::
+
