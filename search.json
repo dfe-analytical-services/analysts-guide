@@ -470,7 +470,7 @@
     "href": "learning-development/learning-support.html",
     "title": "Learning support",
     "section": "",
-    "text": "A collection of useful learning resources, and information on support and resources to get you started\nAs analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.\nFor best practice when using software and coding in our process, see our guidance on RAP expectations and the DfE Good Code Practice guide.",
+    "text": "A collection of useful learning resources, and information on support and resources to get you started\nAs analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.\nFor best practice when using software and coding in our process, see our guidance on RAP expectations and the DfE Good Code Practice guide.\nFor questions about publishing statistics, the statistics Code of Practice or how your statistics publication should be badged, please contact the HoP Office.\nFor support in data harmonisation and data structuring standards, or support with analytical digital services including the explore education statistics service, and deploying and maintaining R Shiny applications contact the explore education statistics platforms team.\nYou can also access support on a variety of topics on the cross-government Digital Slack instance. Some useful channels to join are #accessibility, #ai, #data-science and #datavis.\nThere is also a cross-government data science Slack instance. Some useful channels to join are #chat-r, #chat-python, #info-events and #community-rap.\nIn DfE, you can also seek advice via Teams. Some useful groups are Statistics production and publishing, DfE R community, DfE Python community and DfE Analyst Network.",
     "crumbs": [
       "Learning resources",
       "Learning support"
@@ -481,7 +481,7 @@
     "href": "learning-development/learning-support.html#email-support",
     "title": "Learning support",
     "section": "Email support",
-    "text": "Email support\n\nstatistics.development@education.gov.uk\n\n9-5, aim to reply between 1-2 days.",
+    "text": "Email support\n\nFor any technical questions about R, Git, SQL, RAP or statistics production, contact statistics.development@education.gov.uk\n\nThe mailbox is monitored between 9-5 and we aim to reply within 2 days\nNo question is too small! We are always happy to help",
     "crumbs": [
       "Learning resources",
       "Learning support"
@@ -499,22 +499,44 @@
     ]
   },
   {
-    "objectID": "learning-development/learning-support.html#partnership-programme",
-    "href": "learning-development/learning-support.html#partnership-programme",
+    "objectID": "learning-development/learning-support.html#partnership-programmes",
+    "href": "learning-development/learning-support.html#partnership-programmes",
     "title": "Learning support",
-    "section": "Partnership programme",
-    "text": "Partnership programme\n\nDedicated resource to support development work, either building skills or working on analytical or statistical outputs.\nA short-term project with an agreed set of goals and timescale decided as part of an initiation meeting.\nContact statistics.development@education.gov.uk if you’re interested in finding out more about the support we can give.",
+    "section": "Partnership programmes",
+    "text": "Partnership programmes\nThe Statistics Services Unit offers bespoke partnership programmes for analyst teams across the department, designed as dedicated resource to support development work, either building skills or filling resource gaps to allow improvements in analytical or statistical outputs.\nPartnerships are designed as short-term projects, agreed in conjunction with the team and their Grade 6. The maximum length for the majority of partnership programmes will be three months, and the project must be clearly defined at the outset.\nThe aim of partnership programmes is always to upskill the team throughout the project. For this reason, we require any teams taking part to commit time to upskilling during the partnership and being willing to independently continue the work after the partnership is complete, if appropriate. Any agreed projects must be able to be handed back to the team that owns the work, and they must have the skills to maintain it independently by the time the partnership finishes. To enable this, we can offer a variety of support including signposting to resources, recommending relevant L+D, running team workshops and knowledge share sessions, or peer review and pair programming sessions to work side by side to build up skills during the partnership.\n\n\nWhat could a partnership programme involve?\n\n\nFlexible skilled resource for your team to support with R, Git, SQL or Databricks\nHelp with dedicated upskilling of individuals within your team to enable handover of code at the end of the programme\nKnowledge sharing, including support to make decisions on best practice and accessibility, and peer review\nSupport with RAP implementation to allow your team to meet the RAP baseline or best practice criteria\n\nFor example, this might be:\n\nAutomating processes such as data manipulation or QA\nCreation of or improvements to R Shiny dashboards\nReviewing existing analytical code\nSupport with moving to Azure DevOps or GitHub\nCreation of interactive QA reports\n\n\n\n\nPartnership programme tiers\n\nWe have four levels of support available:\n\nOne-off bespoke support via a team meeting or a workshop, or one-off peer review\nTier 1: occasional check-in meetings to provide best practice guidance\nTier 2: hands on support for teams with skills or resource gaps\nTier 3: designated resource working within your team to write code / complete a project for you, designed for complex projects and with the aim of handing the project back to the team at the end of the partnership for continued iteration and maintenance as appropriate\n\nTeams participating in tiers 1-3 will be assigned a named person from the Statistics Services Unit who will support you in completing the project. During the partnership, there will be regular update meetings and progress reports to help keep the work to the agreed timescale.\n\n\n\nHow to get started\n\nOnce you have a clear, defined piece of work that you think would be appropriate for a partnership programme, contact statistics.development@education.gov.uk.\nYou will be sent a form to complete so that you can outline your project and requirements from us. Once we have received your completed form, we’ll have an introductory meeting with your team to discuss the project and agree an appropriate tier and timescales. We will then assess your needs, determine who will be best placed to complete the work, and prioritise it according to our existing workload. Your team will be kept updated throughout the process.\n\n\n\n\n\n\nImportant\n\n\n\nPlease note: all new tier 3 partnerships will require sign off at Grade 6 level to ensure that time for skills development within your team can be prioritised in parallel with the work, and to ensure a clear handover plan at the end of the project.\n\n\nIf you are interested in a one off / bespoke workshop or team meeting, please contact statistics.development@education.gov.uk and we will work with your team to meet your development needs.",
     "crumbs": [
       "Learning resources",
       "Learning support"
     ]
   },
   {
-    "objectID": "learning-development/learning-support.html#specific-resources",
-    "href": "learning-development/learning-support.html#specific-resources",
+    "objectID": "learning-development/learning-support.html#r-sql-and-git-resources",
+    "href": "learning-development/learning-support.html#r-sql-and-git-resources",
     "title": "Learning support",
-    "section": "Specific resources",
-    "text": "Specific resources\nWe also have specific learning resources and materials for SQL, R, and Git",
+    "section": "R, SQL and Git resources",
+    "text": "R, SQL and Git resources\nWe also have specific learning resources and materials for SQL, R, and Git",
+    "crumbs": [
+      "Learning resources",
+      "Learning support"
+    ]
+  },
+  {
+    "objectID": "learning-development/learning-support.html#general-resources",
+    "href": "learning-development/learning-support.html#general-resources",
+    "title": "Learning support",
+    "section": "General resources",
+    "text": "General resources\nGoogle and other web-search engines are the single most powerful learning resource out there, whether it leads you to a Stack Overflow answer to your problem, or to an online training course, it will have your needs covered. We appreciate that it can be daunting and overwhelming at first though, which is why we’re pooling together links to particularly relevant resources on this page. Let us know if there’s any you’d like to see added!\n\nThe DfE Analytics Academy online R training course - walks you through how to get set up with R, as well as setting tasks using DfE data to learn fundamental skills in R.\nHow to QA - a general guide to quality assurance best practice in DfE.\nDfE Data Science resource tool - a bank of learning materials, from coffee and coding talks to online guidebooks.\nESFA guide to using R and Git - take you from the beginning, teaches you how to use RStudio and later on even includes some information on Shiny apps and more complex topics. For more information on RShiny apps, join the R Shiny Developers teams group.\nConnor Quinn’s resources for Data Engineering - for more advanced SQL and database resources this is a fantastic place to go.\nGeneral data science resources - includes plenty of open-source resources for R and SQL, with Python, Git, and shell included in there too.\nAwesome lists and awesome R - another great bank of learning resources.\nData Science week streams - a variety of talks across Data Science within the department.\nDfE Quality Assurance wiki - much of this is aimed at areas that use modelling, plenty of it is applicable to how we QA our data too.\nDavid Sands’ Boons of R and Git - a helpful guide on why R and Git are worth your time.",
+    "crumbs": [
+      "Learning resources",
+      "Learning support"
+    ]
+  },
+  {
+    "objectID": "learning-development/learning-support.html#further-information",
+    "href": "learning-development/learning-support.html#further-information",
+    "title": "Learning support",
+    "section": "Further information",
+    "text": "Further information\nFor more information on how to use these tools in analysis and statistics publications, please see the processes and RAP page.\nThis is by no means a finite list of resources, we want this to be added to and for it to develop over time - if you have any resources that you think could be added then we’d love to hear from you, so please email us at statistics.development@education.gov.uk.\nIf you are stuck at all, have any questions, want to find a resource, or even just want a second pair of eyes to double check something, contact us using the envelope in the top left corner and we’ll be more than happy to help.",
     "crumbs": [
       "Learning resources",
       "Learning support"
