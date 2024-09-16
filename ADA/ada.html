@@ -478,17 +478,36 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-the-ada-project" id="toc-about-the-ada-project" class="nav-link active" data-scroll-target="#about-the-ada-project">About the ADA project</a></li>
-  <li><a href="#plans-for-the-future" id="toc-plans-for-the-future" class="nav-link" data-scroll-target="#plans-for-the-future">Plans for the future</a></li>
+  <li><a href="#what-is-the-ada-project" id="toc-what-is-the-ada-project" class="nav-link active" data-scroll-target="#what-is-the-ada-project">What is the ADA project?</a>
+  <ul class="collapse">
+  <li><a href="#ada-support" id="toc-ada-support" class="nav-link" data-scroll-target="#ada-support">ADA support</a></li>
+  </ul></li>
+  <li><a href="#what-does-the-ada-project-mean-for-analysts" id="toc-what-does-the-ada-project-mean-for-analysts" class="nav-link" data-scroll-target="#what-does-the-ada-project-mean-for-analysts">What does the ADA project mean for analysts?</a>
+  <ul class="collapse">
+  <li><a href="#benefits-of-the-ada-project-and-databricks" id="toc-benefits-of-the-ada-project-and-databricks" class="nav-link" data-scroll-target="#benefits-of-the-ada-project-and-databricks">Benefits of the ADA project and Databricks</a></li>
+  <li><a href="#making-the-most-of-databricks" id="toc-making-the-most-of-databricks" class="nav-link" data-scroll-target="#making-the-most-of-databricks">Making the most of Databricks</a></li>
+  </ul></li>
+  <li><a href="#what-is-databricks" id="toc-what-is-databricks" class="nav-link" data-scroll-target="#what-is-databricks">What is Databricks?</a>
+  <ul class="collapse">
+  <li><a href="#the-databricks-platform" id="toc-the-databricks-platform" class="nav-link" data-scroll-target="#the-databricks-platform">The Databricks platform</a></li>
+  <li><a href="#databricks-faqs" id="toc-databricks-faqs" class="nav-link" data-scroll-target="#databricks-faqs">Databricks FAQs</a></li>
+  <li><a href="#working-with-data-and-code" id="toc-working-with-data-and-code" class="nav-link" data-scroll-target="#working-with-data-and-code">Working with data and code</a></li>
+  </ul></li>
+  <li><a href="#what-this-means-for-existing-code" id="toc-what-this-means-for-existing-code" class="nav-link" data-scroll-target="#what-this-means-for-existing-code">What this means for existing code</a>
+  <ul class="collapse">
+  <li><a href="#sql-scripts" id="toc-sql-scripts" class="nav-link" data-scroll-target="#sql-scripts">SQL scripts</a></li>
+  <li><a href="#r-scripts-in-rstudio" id="toc-r-scripts-in-rstudio" class="nav-link" data-scroll-target="#r-scripts-in-rstudio">R scripts in RStudio</a></li>
+  <li><a href="#visualising-differences-in-your-existing-pipelines" id="toc-visualising-differences-in-your-existing-pipelines" class="nav-link" data-scroll-target="#visualising-differences-in-your-existing-pipelines">Visualising differences in your existing pipelines</a></li>
+  </ul></li>
   <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a>
   <ul class="collapse">
-  <li><a href="#how-databricks-works" id="toc-how-databricks-works" class="nav-link" data-scroll-target="#how-databricks-works">How Databricks works</a></li>
+  <li><a href="#ada-support-page" id="toc-ada-support-page" class="nav-link" data-scroll-target="#ada-support-page">ADA support page</a></li>
+  <li><a href="#databricks-jargon-buster" id="toc-databricks-jargon-buster" class="nav-link" data-scroll-target="#databricks-jargon-buster">Databricks jargon buster</a></li>
   <li><a href="#differences-between-ides-and-notebooks" id="toc-differences-between-ides-and-notebooks" class="nav-link" data-scroll-target="#differences-between-ides-and-notebooks">Differences between IDEs and Notebooks</a></li>
   <li><a href="#walkthrough-a-simple-analysis" id="toc-walkthrough-a-simple-analysis" class="nav-link" data-scroll-target="#walkthrough-a-simple-analysis">Walkthrough a simple analysis</a></li>
   <li><a href="#helpful-getting-started-videos" id="toc-helpful-getting-started-videos" class="nav-link" data-scroll-target="#helpful-getting-started-videos">Helpful getting started videos</a></li>
   <li><a href="#databricks-code-templates" id="toc-databricks-code-templates" class="nav-link" data-scroll-target="#databricks-code-templates">Databricks code templates</a></li>
   </ul></li>
-  <li><a href="#what-ada-means-for-statistics-publications" id="toc-what-ada-means-for-statistics-publications" class="nav-link" data-scroll-target="#what-ada-means-for-statistics-publications">What ADA means for statistics publications</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/ada.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -515,12 +534,11 @@ cookieconsent.run({
 
 
 <p class="text-muted">
-Guidance for analysts on how to interact with and use data stored in ADA using databricks
+Guidance for analysts on how to interact with and use data stored in ADA using Databricks
 </p>
 <hr>
-<section id="about-the-ada-project" class="level1">
-<h1>About the ADA project</h1>
-<hr>
+<section id="what-is-the-ada-project" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-ada-project">What is the ADA project?</h2>
 <p>The <a href="https://analytical-data-access.azurewebsites.net/" target="_blank">Analytical Data Access (ADA) service</a> has been created to support analysts, engineers and policy team members.</p>
 <p>It brings together:</p>
 <ul>
@@ -529,48 +547,315 @@ Guidance for analysts on how to interact with and use data stored in ADA using d
 <li>a form for requesting access to data</li>
 <li>a support section - with walkthrough instructions</li>
 <li>a collection of data reports and dashboards</li>
-<li>a news and updates area.</li>
+<li>a news and updates area</li>
 </ul>
 <p>As long as you’re connected to the network - it’s available to anyone who works for the Department of Education.</p>
-<p>See these <a href="https://adb-2220072380334347.7.azuredatabricks.net/browse/folders/4213691640199507?o=2220072380334347" target="_blank">Databricks support notebooks</a> for more detailed reference guides into how we have setup the service here at DfE, including more information on workspaces, environments, notebooks, clusters, catalogs etc. Please note that you will need a Databricks account to access these.</p>
+<p>The ADA project is currently in its onboarding phase. The ADA team will work with analyst teams to plan migrations. We encourage teams to engage early so that you have time to migrate your work and receive support from the project team.</p>
+<p>Data migration will replace three legacy systems:</p>
+<ul>
+<li>Pupil Data Repository (PDR)</li>
+<li>Analysis and Modelling (A&amp;M)</li>
+<li>Enterprise Data and Analysis Platform (EDAP1)</li>
+</ul>
+<p>Decommissioning of legacy servers will be completed in 2026.</p>
+<p>See these <a href="https://adb-2220072380334347.7.azuredatabricks.net/browse/folders/4213691640199507?o=2220072380334347" target="_blank">Databricks support notebooks</a> for more detailed reference guides into how the service has been set up at DfE, including more information on workspaces, environments, notebooks, clusters, catalogs etc. Please note that you will need a Databricks account to access these.</p>
+<p>From the <a href="https://analytical-data-access.education.gov.uk/" target="_blank">ADA homepage</a> you will be able to find data and access cloud analytical tools. This includes:</p>
+<ul>
+<li><p>Navigation to the Data Discovery Platform to find information regarding metadata of the datasets, including how to request access and information about the quality of the data. The catalogue will eventually include all Department data, as well as tagging of datasets available through ADA.</p></li>
+<li><p>An <a href="https://analytical-data-access.education.gov.uk/workbench" target="_blank">analysis workbench</a> with access to cloud computing and Databricks. This will be extended to include POSIT workbench, which will allow RStudio to be used in the cloud.</p></li>
+<li><p>A repository of Reports and Dashboards where outputs of data and analytical work will be saved. This will allow colleagues across DfE to interrogate and visualise data. In time this catalogue will grow and the ADA team are currently building out a formal strategy for this area.</p></li>
+</ul>
+<hr>
+<section id="ada-support" class="level3">
+<h3 class="anchored" data-anchor-id="ada-support">ADA support</h3>
+<hr>
+<p>The ADA team has established an analyst Community of Practice that:</p>
+<ul>
+<li><p>Increases the breadth and depth of knowledge about new tools</p></li>
+<li><p>Builds confidence in using core functionality</p></li>
+<li><p>Shares learning experiences and best practice</p></li>
+<li><p>Identifies future opportunities to support the Department’s Strategic Data Transformation</p></li>
+</ul>
+<p>You can access support in the following places:</p>
+<ul>
+<li><p>The <a href="https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">ADA user group</a> on Microsoft Teams</p></li>
+<li><p>The <a href="https://analytical-data-access.education.gov.uk/get-support/join-a-community" target="_blank">ADA website</a> has a list of support resources</p></li>
+<li><p>You can find a list of current ADA champions can be found on the <a href="https://educationgovuk.sharepoint.com/sites/lvewp00505" target="_blank">ADA intranet page</a>, and they are able to provide advice and support if you run into any issues. If you’re passionate about helping others with the migration and using innovative data tools, why not become an ADA champion? To get involved, please contact the <a href="mailto:ADAPTTeam@education.gov.uk">ADA team</a></p></li>
+</ul>
 <hr>
 </section>
-<section id="plans-for-the-future" class="level1">
-<h1>Plans for the future</h1>
-<hr>
-<p>The ambition is to enable access to all datasets across DfE and ESFA and retire the legacy applications. This will create common ways of working.</p>
-<hr>
 </section>
-<section id="useful-links" class="level1">
-<h1>Useful links</h1>
+<section id="what-does-the-ada-project-mean-for-analysts" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-the-ada-project-mean-for-analysts">What does the ADA project mean for analysts?</h2>
+<section id="benefits-of-the-ada-project-and-databricks" class="level3">
+<h3 class="anchored" data-anchor-id="benefits-of-the-ada-project-and-databricks">Benefits of the ADA project and Databricks</h3>
 <hr>
-<section id="how-databricks-works" class="level2">
-<h2 class="anchored" data-anchor-id="how-databricks-works">How Databricks works</h2>
-<p>See the <a href="https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works" target="_blank">ADA support page on how Databricks works</a>.</p>
-</section>
-<section id="differences-between-ides-and-notebooks" class="level2">
-<h2 class="anchored" data-anchor-id="differences-between-ides-and-notebooks">Differences between IDEs and Notebooks</h2>
-<p>RStudio is an IDE (Integrated Development Environment) whereas Databricks makes use of Notebooks, where you write your code in blocks contained in individual cells. There are advantages and disadvantages to both methods, and <a href="https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/notebooks_versus_ide_development/#what-is-this-guide-for" target="_blank">this NHS-R article</a> outlines some of the differences you might come across when switching from using IDEs to Notebooks.</p>
+<p>Migration to Databricks offers a lot of potential benefits to analysts. These include:</p>
+<ul>
+<li><p>Having all data together in one place and being able to access it via one interface, rather than split across separate areas requiring separate access permissions and pieces of software</p></li>
+<li><p>If your scripts usually take a long time to run, cloud computing can speed up processing and reduce code running time. This is ideal for big data, scripts that require a lot of data transformation (e.g.&nbsp;complicated or large joins), and machine learning projects</p></li>
+<li><p>If you regularly have to run the same code, access to workflows and code scheduling mean that you can set code to run at certain days or times to improve efficiency. Scheduled workflows will run even if your laptop is switched off</p></li>
+<li><p>Better transparency of work being undertaken in the department by making use of the ADA shared reports area.</p></li>
+</ul>
 <hr>
 </section>
-<section id="walkthrough-a-simple-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="walkthrough-a-simple-analysis">Walkthrough a simple analysis</h2>
-<p>See the <a href="https://analytical-data-access.azurewebsites.net/get-support/using-r-python-and-sql-in-databricks" target="_blank">ADA support page on using R, python and SQL in Databricks</a></p>
+<section id="making-the-most-of-databricks" class="level3">
+<h3 class="anchored" data-anchor-id="making-the-most-of-databricks">Making the most of Databricks</h3>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The earlier your data is migrated, the more time you will have to dual run code from your existing methodology against code run on the Databricks platform, and the more time you have to influence the project and its offer for analysts. We encourage all analysts to engage with training and ask the ADA team about any questions or concerns as soon as possible so that you are prepared for any upcoming changes.</p>
+</div>
+</div>
+<p>In order to take advantage of the benefits listed above, we recommend that you and your team:</p>
+<ul>
+<li><p>Arrange data migration and access to Databricks. Onboarding is currently voluntary, so it’s a great opportunity to move early and have more time to get familiar with the system and undertake training. Get in touch with <a href="mailto:ADAPTTeam@education.gov.uk">the ADA team</a> to discuss onboarding with them.</p></li>
+<li><p>Take part in Databricks training for R and / or SQL. R training is currently offered by the ADA team on a monthly basis and SQL training is in the process of being developed. Upcoming training is advertised on the <a href="https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">ADA user group Teams channel</a>.</p></li>
+<li><p>Be proactive in determining whether any changes will be necessary for your existing code and set time aside to make these changes - see the guidance in the <a href="../ADA/ada.html#what-this-means-for-existing-code">what this means for existing code</a> section below.</p></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For teams that have invested in RAP principles and already have existing code pipelines, it is possible to take advantage of cloud computing and use of data in the Databricks platform with minimal changes. This is covered in more detail in the <a href="../ADA/ada.html#what-this-means-for-existing-code">what this means for existing code</a> section below.</p>
+</div>
+</div>
 <hr>
 </section>
-<section id="helpful-getting-started-videos" class="level2">
-<h2 class="anchored" data-anchor-id="helpful-getting-started-videos">Helpful getting started videos</h2>
-<p>See the collection of <a href="https://educationgovuk.sharepoint.com/:f:/r/sites/ADA-SuperUserForum/Shared%20Documents/General/Getting%20started%20videos?csf=1&amp;web=1&amp;e=RCFSib" target="_blank">getting started videos</a> covering the basics of Databricks and using notebooks.</p>
+</section>
+<section id="what-is-databricks" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-databricks">What is Databricks?</h2>
+<section id="the-databricks-platform" class="level3">
+<h3 class="anchored" data-anchor-id="the-databricks-platform">The Databricks platform</h3>
+<hr>
+<p>Databricks is the software that underpins ADA’s analytical workbench, allowing analysts to explore and analyse data via a browser, taking advantage of cloud computing. Unlike RStudio or SQL Server Management Studio (SSMS), you don’t have to download any software to be able to use it. Databricks offers a few different ways to work with data, including scripts and notebooks. Databricks notebooks support multiple programming languages, including R, Python, and SQL.</p>
+<p>You can also access data held within the Databricks platform using other software, such as RStudio.</p>
 <hr>
 </section>
-<section id="databricks-code-templates" class="level2">
-<h2 class="anchored" data-anchor-id="databricks-code-templates">Databricks code templates</h2>
-<p>See examples and code snippets in R, SQL and Python in these <a href="https://adb-6882499576863257.17.azuredatabricks.net/browse/folders/3070168888967919?o=6882499576863257#" target="_blank">Databricks code template notebooks</a></p>
+<section id="databricks-faqs" class="level3">
+<h3 class="anchored" data-anchor-id="databricks-faqs">Databricks FAQs</h3>
+<hr>
+<p><strong>Is Databricks different to RAP?</strong></p>
+<p>Yes - Databricks is a tool that you can use to create code and pipelines for reproducible analysis, similarly to how you’d currently use RStudio or SQL Server Management Studio.</p>
+<p><strong>How much time will it take me to learn the basics?</strong></p>
+<p>We recommend that you and your team engage with the platform as soon as possible so that you can learn at your own pace before you fully migrate. There are plenty of training resources available, including monthly training workshops run by the ADA team. These are advertised on the <a href="https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">ADA user group Teams channel</a>.</p>
+<p><strong>Can I still use SQL?</strong></p>
+<p>Eventually all teams will migrate away from using SQL Server Management Studio. However, you can still write SQL code inside Databricks, and you can still run SQL scripts from RStudio against data held in the Databricks unity catalog.</p>
+<p><strong>Do I have to move all my existing code over to Databricks?</strong></p>
+<p>No - this is discussed in more depth in the <a href="../ADA/ada.html#what-this-means-for-existing-code">what this means for existing code</a> section below.</p>
+<hr>
+</section>
+<section id="working-with-data-and-code" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-data-and-code">Working with data and code</h3>
+<p>In the Databricks interface, you have the choice to use notebooks, scripts or the Databricks SQL Editor. You can also connect Databricks to other IDEs, such as RStudio.</p>
+<hr>
+<section id="getting-access-to-your-data" class="level4">
+<h4 class="anchored" data-anchor-id="getting-access-to-your-data">Getting access to your data</h4>
+<hr>
+<p>Data in Databricks is held in catalogs in the Delta Lake, which is centrally governed by the ADA team. Catalogs provide different levels of access control and security. In Databricks, databases are referred to as “schemas”, with tables sitting below them. You can find out more information about this on the <a href="https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works" target="_blank">ADA guidance site</a> and on our <a href="../ADA/databricks_fundamentals.html">Databricks fundamentals</a> page.</p>
+<p>You will need to be given access to Databricks and the data you require by the ADA team by completing an “Analytical Data Access Request” service request form in the IT Help Centre. At the moment, not all of the data currently available in SSMS has been migrated to the Delta Lake for use in Databricks. You can <a href="https://app.powerbi.com/groups/me/reports/966389db-2e4e-42b6-8416-36aee2fb9503/ReportSection?ctid=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9&amp;experience=power-bi" target="_blank">check the status of various datasets</a> in the data catalogue dashboard.</p>
+<p>To access your data and make use of cloud computing resource, you will need access to a cluster, which is a group of virtual machines that complete your processing for you. Your cluster setup will depend on which programming language you wish to use. You will be given access to a shared cluster when your data access is granted. Please see the <a href="https://analytical-data-access.education.gov.uk/get-support/how-clusters-work" target="_blank">how clusters work</a> page on the ADA guidance site and our <a href="../ADA/databricks_fundamentals.html">Databricks fundamentals</a> page for more detail.</p>
+<hr>
+</section>
+<section id="writing-and-running-code-scripts-and-ides" class="level4">
+<h4 class="anchored" data-anchor-id="writing-and-running-code-scripts-and-ides">Writing and running code: scripts and IDEs</h4>
+<hr>
+<p>Writing scripts in SSMS and using IDEs such as RStudio are the way in which we currently write and run the majority of our code in DfE. You can learn more about how existing code will be affected by the introduction of Databricks in the <a href="../ADA/ada.html#what-this-means-for-existing-code">what this means for existing code</a> section below.</p>
+<p>Scripts (e.g.&nbsp;R scripts) can be created and saved in your Workspace (the equivalent of your personal folder) and run via the Databricks interface.</p>
+<p>There is detailed guidance on using the Databricks SQL editor, which is similar to SSMS, on the <a href="https://analytical-data-access.education.gov.uk/get-support/using-sql-in-databricks-sql-editor" target="_blank">ADA guidance site</a>.</p>
+<p>You can also run code from RStudio or other IDEs locally and execute it against the data held in Databricks. To do this, you will need to set up a connection between RStudio and the Databricks SQL Warehouse. This is explained in the <a href="../ADA/ada.html#r-scripts-in-rstudio">R scripts in RStudio section</a> below.</p>
+<hr>
+</section>
+<section id="writing-and-running-code-workflows" class="level4">
+<h4 class="anchored" data-anchor-id="writing-and-running-code-workflows">Writing and running code: workflows</h4>
+<hr>
+<p>Workflows are a Databricks feature that allow you to schedule and automatically run your code at specified times and in the order you suggest.</p>
+<p>Workflows allow you to automate the running of single or multiple scripts, so if you have large amounts of data processing to do on a regular basis, you can set up a workflow to complete this overnight. Your laptop does not need to be switched on for this to work. You can read more about workflows on our <a href="../ADA/databricks_workflows.html">Databricks workflows</a> guidance page.</p>
+<hr>
+</section>
+<section id="writing-and-running-code-notebooks" class="level4">
+<h4 class="anchored" data-anchor-id="writing-and-running-code-notebooks">Writing and running code: notebooks</h4>
+<hr>
+<p>Notebooks might be something you’ve not come across before. Notebooks are made up of multiple code or markdown cells, allowing you to interactively run code and see the results in the same page. The way you write and use code is different to how you would work with IDEs (Integrated Development Environments) like RStudio. You can find more information on Databricks notebooks and their structure on the <a href="https://analytical-data-access.education.gov.uk/get-support/using-r-python-and-sql-in-databricks" target="_blank">ADA guidance site</a> and on our <a href="../ADA/databricks_notebooks.html">Databricks notebooks</a> guidance page.</p>
+<p>Notebooks can be helpful for ad hoc, exploratory, or one off pieces of analysis to add additional documentation as you go. You can also use notebooks to present findings to others by hiding code cells and only showing Markdown cells containing charts, tables, images or text. They can be exported as HTML files to enable easier sharing outside of the Databricks interface.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the rest of your team are unfamiliar with notebooks and will need to pick up your work at a later date, use of notebooks without proper handover or documentation could cause issues and result in work no longer being reproducible. The <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> are happy to advise on this and provide guidance if you have any concerns.</p>
+</div>
+</div>
+<p>For regular analysis pipelines and models adopting RAP principles we’d usually advise against using notebooks and instead recommend a Git controlled repository of code scripts using the <a href="https://dfe-analytical-services.github.io/dfeR/reference/create_project.html" target="_blank">standard repository template available in dfeR</a>.</p>
+<p>We recommend this because in addition to notebooks being different to how many teams write code now, version control, collaboration and reproducibility can all be more difficult in Databricks notebooks. If you would like to use notebooks for analysis, they must be used in conjunction with an Azure DevOps or GitHub repository. If you share a notebook with edit permissions, it is possible for your code run to be accidentally cancelled if another user starts running code in the same notebook. Your code can also be overwritten by other users, and it can be difficult to recover previous versions.</p>
+<p>When you have a full script in an IDE, the script will provide the same output consistently. However, with notebooks you can run code cells independently of one another. You must ensure that you run all code cells in the correct sequential order. If you do not run all code cells in order then your output could be inconsistent and result in errors, potentially making QA more difficult. This introduces more manual steps and increases the risk of human error.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When using Databricks notebooks with git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the <code>Clear all cell outputs</code> option in the Databricks “Run” menu to avoid inadvertently sharing data that only you and your team should have access to.</p>
+</div>
+</div>
+<p>The table below, taken from <a href="https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/notebooks_versus_ide_development/" target="_blank">NHS-R guidance</a>, shows a comparison of the features of notebooks and IDEs to help you decide where each would be most appropriately used:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Notebooks</th>
+<th>IDEs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Interactive outputs (tables, plots, etc)</td>
+<td>Yes</td>
+<td>No*</td>
+</tr>
+<tr class="even">
+<td>Storytelling and sharing results</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Benefits out-of-the-box (minimal configuration)</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Deterministic outputs (i.e.&nbsp;same result every run)</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Supports modular code structure &amp; packages</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Supports unit testing frameworks</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Nice version control (e.g.&nbsp;readable git diffs)</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Autocomplete / auto-formatting &amp; syntax highlighting</td>
+<td>Yes**</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Compatible with sharing code externally</td>
+<td>Yes***</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>* whilst you can still make and preview tables and plots in RStudio and other IDEs, they’re not interactive in the same way as those in notebooks<br>
+** auto-formatting is available for SQL and Python in Databricks, but not R<br>
+*** external users must have software that would allow them to open notebooks</p>
+<p>You can read more about the differences between IDEs and notebooks and where each might be useful <a href="../ADA/ada.html#differences-between-ides-and-notebooks">on the NHS-R website</a>.</p>
+<hr>
+</section>
+<section id="accessing-code-from-a-git-repository" class="level4">
+<h4 class="anchored" data-anchor-id="accessing-code-from-a-git-repository">Accessing code from a Git repository</h4>
+<hr>
+<p>Databricks has inbuilt Git functionality, and you can save your notebooks and scripts inside Git repositories as with any other file formats. There is guidance on using Databricks with Azure DevOps on our <a href="ADA/git_databricks.html">Databricks and version control page</a>.</p>
+<hr>
 </section>
 </section>
-<section id="what-ada-means-for-statistics-publications" class="level1">
-<h1>What ADA means for statistics publications</h1>
-<p>In theory, if you currently use data stored in SQL for your statistics publication, there will be small changes to your production pipelines that vary depending on your current process. It is important to note that writing SQL code in SSMS will have slightly different syntax to writing SQL code in Databricks. We have tried to outline the differences of pipelines before vs after ADA below (changes are highlighted in red):</p>
+</section>
+<section id="what-this-means-for-existing-code" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-means-for-existing-code">What this means for existing code</h2>
+<section id="sql-scripts" class="level3">
+<h3 class="anchored" data-anchor-id="sql-scripts">SQL scripts</h3>
+<hr>
+<section id="scripts-currently-used-in-ssms" class="level4">
+<h4 class="anchored" data-anchor-id="scripts-currently-used-in-ssms">Scripts currently used in SSMS</h4>
+<hr>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once your team’s data has been migrated, you will <strong>not</strong> immediately lose access to your existing data sources, so you will be able to dual run your code using data from SSMS and data from the Databricks unity catalog to ensure that everything is working as it should be. Once you have confirmed that you are happy with the data in Databricks, your access to the legacy platform will be switched off.</p>
+</div>
+</div>
+<p>If you currently use data and scripts stored in SSMS for your analysis, there will be small changes you need to make that vary depending on your current process.</p>
+<p>Your SQL code will need to be migrated over to Databricks to allow it to read from the Databricks SQL Warehouse and will require some minor changes to syntax as SSMS uses T-SQL and Databricks uses Spark SQL. The ADA team are currently developing a tool to allow you to easily convert T-SQL queries to Spark SQL syntax, and Microsoft Copilot can also be useful for helping you with code translation. All DfE laptops should provide you with access to Copilot as standard.</p>
+<p>You can write new SQL code in the Databricks SQL Editor, which is very similar to SSMS. We recommend using the SQL Editor for short, ad-hoc SQL queries, such as those required to answer PQs. For longer or more complex SQL analysis we recommend using standalone scripts run from an RStudio project, or Databricks notebooks.</p>
+<hr>
+</section>
+<section id="sql-scripts-in-repositories-or-embedded-in-r-scripts" class="level4">
+<h4 class="anchored" data-anchor-id="sql-scripts-in-repositories-or-embedded-in-r-scripts">SQL scripts in repositories or embedded in R scripts</h4>
+<hr>
+<p>These scripts do not need to be moved, but the syntax of the scripts or embedded code will need to be rewritten from T-SQL to Spark SQL.</p>
+<p>You will also need to change the connection source to allow the code to run. Rather than pointing to data held in current SQL databases, you will need to point towards the Databricks unity catalog instead. To do this, please see our page on <a href="../ADA/databricks_rstudio_sql_warehouse.html">setting up a connection between Databricks and RStudio using a SQL warehouse</a>.</p>
+<hr>
+</section>
+<section id="workflows" class="level4">
+<h4 class="anchored" data-anchor-id="workflows">Workflows</h4>
+<hr>
+<p>If you’d like to make use of automated workflows to run scheduled code, then your SQL code will need to be moved into Databricks, using Spark SQL syntax. Workflows can make use of code from notebooks or R or SQL scripts stored in either a Databricks workspace or a Git repository. You can read more about workflows on our <a href="../ADA/databricks_workflows.html">Databricks workflows</a> page.</p>
+<p>In addition to setting up workflows using the point and click interface in Databricks, you can also script them yourself. To learn more about this, see our <a href="../ADA/databricks_workflow_script_databricks.html">script workflows in Databricks</a> and <a href="../ADA/databricks_workflow_script_rstudio.html">script workflows in RStudio</a> user guides.</p>
+<hr>
+</section>
+</section>
+<section id="r-scripts-in-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="r-scripts-in-rstudio">R scripts in RStudio</h3>
+<hr>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have an existing RAP process and pipeline set up using RStudio and SSMS, there is no current expectation for you to migrate your existing R code or scripts from RStudio to Databricks notebooks.</p>
+</div>
+</div>
+<p>Your R code can remain in RStudio and all existing R processes can still be run there. Code that points towards SQL scripts will need to be redirected to Databricks rather than SSMS. In order to use RStudio with a Databricks SQL warehouse, you will need to manually set up a connection. You can find more information about that on our <a href="../ADA/databricks_rstudio_sql_warehouse.html">set up Databricks SQL Warehouse with RStudio</a>.</p>
+<hr>
+</section>
+<section id="visualising-differences-in-your-existing-pipelines" class="level3">
+<h3 class="anchored" data-anchor-id="visualising-differences-in-your-existing-pipelines">Visualising differences in your existing pipelines</h3>
+<hr>
+<p>In the diagram below, we have outlined the potential differences in pipelines before vs after migration to Databricks (changes are highlighted in red):</p>
 
 
 <title>
@@ -585,8 +870,48 @@ ADA-diagram
 <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
 
 
+<hr>
+</section>
+</section>
+<section id="useful-links" class="level2">
+<h2 class="anchored" data-anchor-id="useful-links">Useful links</h2>
+<section id="ada-support-page" class="level3">
+<h3 class="anchored" data-anchor-id="ada-support-page">ADA support page</h3>
+<hr>
+<p>See the <a href="https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works" target="_blank">ADA support page on how Databricks works</a>.</p>
+<hr>
+</section>
+<section id="databricks-jargon-buster" class="level3">
+<h3 class="anchored" data-anchor-id="databricks-jargon-buster">Databricks jargon buster</h3>
+<p>The core concepts of Databricks and any related acronyms are explained in the <a href="https://analytical-data-access.education.gov.uk/get-support/jargon" target="_blank">jargon buster</a></p>
+<hr>
+</section>
+<section id="differences-between-ides-and-notebooks" class="level3">
+<h3 class="anchored" data-anchor-id="differences-between-ides-and-notebooks">Differences between IDEs and Notebooks</h3>
+<hr>
+<p>RStudio is an IDE (Integrated Development Environment) whereas Databricks makes use of Notebooks, where you write your code in blocks contained in individual cells. There are advantages and disadvantages to both methods, and <a href="https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/notebooks_versus_ide_development/#what-is-this-guide-for" target="_blank">this NHS-R article</a> outlines some of the differences you might come across when switching from using IDEs to Notebooks.</p>
+<hr>
+</section>
+<section id="walkthrough-a-simple-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="walkthrough-a-simple-analysis">Walkthrough a simple analysis</h3>
+<hr>
+<p>See the <a href="https://analytical-data-access.azurewebsites.net/get-support/using-r-python-and-sql-in-databricks" target="_blank">ADA support page on using R, python and SQL in Databricks</a>.</p>
+<hr>
+</section>
+<section id="helpful-getting-started-videos" class="level3">
+<h3 class="anchored" data-anchor-id="helpful-getting-started-videos">Helpful getting started videos</h3>
+<hr>
+<p>See the collection of <a href="https://educationgovuk.sharepoint.com/:f:/r/sites/ADA-SuperUserForum/Shared%20Documents/General/Getting%20started%20videos?csf=1&amp;web=1&amp;e=RCFSib" target="_blank">getting started videos</a> covering the basics of Databricks and using notebooks.</p>
+<hr>
+</section>
+<section id="databricks-code-templates" class="level3">
+<h3 class="anchored" data-anchor-id="databricks-code-templates">Databricks code templates</h3>
+<hr>
+<p>See examples and code snippets in R, SQL and Python in these <a href="https://adb-6882499576863257.17.azuredatabricks.net/browse/folders/3070168888967919?o=6882499576863257#" target="_blank">Databricks code template notebooks</a>.</p>
+<hr>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
