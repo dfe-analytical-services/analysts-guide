@@ -63,7 +63,7 @@ You can access support in the following places:
 
 - The [ADA website](https://analytical-data-access.education.gov.uk/get-support/join-a-community) has a list of support resources
 
-- You can find a list of current ADA champions can be found on the [ADA intranet page](https://educationgovuk.sharepoint.com/sites/lvewp00505), and they are able to provide advice and support if you run into any issues. If you're passionate about helping others with the migration and using innovative data tools, why not become an ADA champion? To get involved, please contact the [ADA team](mailto:ADAPTTeam@education.gov.uk).
+- You can find a list of current ADA champions can be found on the [ADA intranet page](https://educationgovuk.sharepoint.com/sites/lvewp00505), and they are able to provide advice and support if you run into any issues. If you're passionate about helping others with the migration and using innovative data tools, why not become an ADA champion? To get involved, please contact the [ADA team](mailto:ADAPTTeam@education.gov.uk)
 
 ---
 
@@ -80,8 +80,6 @@ Migration to Databricks offers a lot of potential benefits to analysts. These in
 * If your scripts usually take a long time to run, cloud computing can speed up processing and reduce code running time. This is ideal for big data, scripts that require a lot of data transformation (e.g. complicated or large joins), and machine learning projects 
 
 * If you regularly have to run the same code, access to workflows and code scheduling mean that you can set code to run at certain days or times to improve efficiency. Scheduled workflows will run even if your laptop is switched off
-
-* Easier collaboration within workspaces
 
 * Better transparency of work being undertaken in the department by making use of the ADA shared reports area.
 
@@ -270,7 +268,7 @@ You can write new SQL code in the Databricks SQL Editor, which is very similar t
 
 These scripts do not need to be moved, but the syntax of the scripts or embedded code will need to be rewritten from T-SQL to Spark SQL.
 
-You will also need to change the connection source to allow the code to run. Rather than pointing to data held in current SQL databases, you will need to point towards the Databricks Delta Lake instead.
+You will also need to change the connection source to allow the code to run. Rather than pointing to data held in current SQL databases, you will need to point towards the Databricks unity catalog instead. To do this, please see our page on [setting up a connection between Databricks and RStudio using a SQL warehouse](/ADA/databricks_rstudio_sql_warehouse.html). 
 
 
 ---
