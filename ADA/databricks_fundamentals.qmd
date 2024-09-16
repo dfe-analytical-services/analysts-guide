@@ -247,4 +247,4 @@ An alternative to this is to specify packages/libraries to be installed on the c
 Certain packages are installed by default on personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the [Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/).
 :::
 
-Once you have a compute resource you can begin using Databricks. You can do this either through connecting to Databricks through RStudio, or you can begin coding in the Databricks platforms using scripts, or [Notebooks](Databricks_notebooks.qmd).
+Once you have a compute resource you can begin using Databricks. You can do this either through connecting to Databricks through RStudio, or you can begin coding in the Databricks platforms using scripts, or [Notebooks](databricks_notebooks.qmd).

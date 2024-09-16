@@ -1260,7 +1260,7 @@ knitr::include_graphics("../images/change_date_format.PNG")
 The indicators are the variables showing the measurements/statistics themselves, such as the number of pupils. These can be of different formats (e.g. text, numeric), although are numeric by default. The number of indicators will vary across publications and data files.
 
 <div class="alert alert-dismissible alert-danger">
-  <p> **Every variable in your dataset should have its own column, and each column should be a single data type**. E.g. do not create an indicator column called "pupils" that has both the number and percentage of pupils in it. Instead, create two separate columns for each measure.</p>
+  <p> **Every variable in your data set should have its own column, and each column should be a single data type**. E.g. do not create an indicator column called "pupils" that has both the number and percentage of pupils in it. Instead, create two separate columns for each measure.</p>
 </div>
 
 As an example, the number and percentage of pupil enrolments are the indicators in this dataset:

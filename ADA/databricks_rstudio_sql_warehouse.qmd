@@ -2,104 +2,194 @@
   title: "Set up Databricks SQL Warehouse with RStudio"
 ---
 
-<p class="text-muted">The following instructions set up an ODBC connection between your laptop and your DataBricks SQL warehouse, which can then be used in R/RStudio to query data using an ODBC based package.
-SQL Warehouses are able to run SQL and can be used within the DataBricks environment, or through RStudio to run SQL code. The `sparklyr` package can also be used from within RStudio (only) as it converts the request for data to Spark SQL behind the scenes.</p>
+The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse which can then be used in RStudio to query data.
+
+::: callout-note
+Please note: This guidance should be followed if you wish to run SQL scripts from RStudio against data held in tables in Databricks. If you wish to run R scripts or access data held in a volume instead, you will need a personal compute cluster. The guidance for setting up a personal cluster that works with RStudio can be found on our [set up Databricks personal compute cluster with RStudio](/ADA/databricks_rstudio_personal_cluster.html) page. You can learn more about compute resources on our [Databricks fundamentals](/ADA/databricks_fundamentals.html) page.
+:::
+
+You can use data from Databricks in two different ways:
+
+-   In the SQL editor or in notebooks via the Databricks environment
+-   In RStudio via an ODBC connection, similarly to the way that you might currently use data stored in a SQL Server
 
 ------------------------------------------------------------------------
 
-# Pre-requisites
+## Compute resources
+
+When your data is moved to Databricks, it will be stored in the Unity Catalog and you will need to use a compute resource to access it from other software such as RStudio.
+
+A compute resource allows you to run your code using cloud computing power instead of using your laptop's processing power. This means that using compute resources can allow your code to run faster than it would if you ran it locally, as it is like using the processing resources of multiple computers at once. On this page, we will be referring to the use of SQL Warehouses as the compute resource to run your code. 
 
 ------------------------------------------------------------------------
 
-You must have:
+#### SQL Warehouse
 
--   Access to Databricks
--   Access to a SQL Warehouse on DataBricks
--   R and RStudio downloaded
+---
 
-------------------------------------------------------------------------
+A SQL Warehouse is a SQL-only compute option which is quick to start and optimised for SQL querying. Although the name "warehouse" suggests storage, a SQL Warehouse in Databricks is actually a virtual computing resource that allows you to interact with Databricks by connecting to your data and running code. 
 
-# Downloading an ODBC driver
+This option is recommended if you only require SQL functionality in Databricks and is ideal if you already have existing RAP pipelines set up using SQL scripts in a Git repo. 
 
-------------------------------------------------------------------------
+SQL Warehouses do not support R, Python or Scala code. Currently they also do not support widgets within Databricks notebooks. If you want to use compute resources to run widgets or R or Python code, then you will need to use a personal cluster. There is guidance on the use of personal clusters on the [Using personal clusters with Databricks](ADA/databricks_rstudio_personal_cluster.html) page. 
 
-1.  Install the 'Simba Spark ODBC' driver from the software centre.
+SQL Warehouses enable you to access tables in the Unity Catalog, but not volumes within the Unity Catalog. Volumes are storage areas for files (e.g. .txt files or .csv files) rather than tables. You can learn more about volumes on [the Databricks documentation site](https://docs.databricks.com/en/volumes/index.html) or on our [Databricks fundamentals](ADA/databricks_fundamentals.html) page. To access a volume, you will also need to use a personal cluster. 
 
-    i)  Open the Software Centre via the start menu.
+---
 
-    ii) In the 'Applications' tab, click 'Simba Spark ODBC Driver 64-bit'. ![](../images/databricks-software-centre.png)
+## Pre-requisites
 
-    iii) Click install.
+Before you start, you must have:
 
-2.  Get connection details for the SQL Warehouse from Databricks. To set up the connection you will need a few details from a SQL Warehouse within DataBricks.
+-   Access to the Databricks platform
 
-    i)  Login to [Databricks](https://adb-6882499576863257.17.azuredatabricks.net/?o=6882499576863257)
+-   Access to data in a SQL Warehouse on Databricks
 
-    ii) Click on the 'SQL Warehouses' tab in the sidebar. ![](../images/databricks-SQL-warehouses.png)
+-   R and RStudio downloaded and installed
 
-    iii) Click on the name of the warehouse you want to connect to, and click the 'connection details' tab.
+-   The `ODBC` and `DBI` packages installed in RStudio
 
-    iv) Make a note of the 'Server hostname', 'Port', and 'HTTP Path'.
+If you do not have access to Databricks or a SQL Warehouse within Databricks, you can request this using [a service request form](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=74bc3be81b212d504f999978b04bcb0b).
 
-3.  Get a personal access token from Databricks for authentication.
+If you do not have R or RStudio, you can find them both in the Software Centre. Note that you need both R **and** RStudio installed.
 
-    i)  In Databricks, click on your email address in the top right corner, then click 'User settings'.
+---
 
-    ii) Go to the 'Developer' tab in the side bar. Next to 'Access tokens', click the 'Manage' button. ![](../images/databricks-access-tokens.png)
+## Process
 
-    iii) Click the 'Generate new token' button.
+There are three steps to complete before your connection can be established. These are:
 
-    iv) Name the token, then click 'Generate'. *Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate.*
+-   Installing an ODBC driver on your laptop to enable a connection between your laptop and Databricks
+-   Modifying your .Renviron file to establish a connection between RStudio and Databricks
+-   Adding connection code to your existing scripts in RStudio
 
-    v)  Make a note of the 'Databricks access token' it has given you. **It is important to copy this somewhere as you will not be able to see it through Databricks again.**
+Each of these steps is described in more detail in the sections below. 
 
-4.  Setup ODBC connection from your laptop. We now have all the information we need to setup a connection between our laptop and DataBricks.
+---
 
-    i)  In the start menu, search 'ODBC' and open 'ODBC Data Sources (64-bit)'.
+### Setting up the ODBC driver
 
-    ii) On the 'User DSN' tab click the 'Add...' button.
+An ODBC driver is required for the `ODBC` package in R to work - you must install it before attempting to use the package to connect to your data. 
 
-    iii) In the 'Create New Data Source' window, select 'Simba Spark ODBC Driver' and click 'Finish'.
+---
 
-    iv) In the 'Simba Spark ODBC Driver DSN Setup' window,
+#### Install the Simba Spark ODBC driver from the Software Centre
 
-        a.  Enter a 'Data Source Name' and 'Description'. Choose a short and sensible data source name and note it down as this is what you will use to connect to Databricks through RStudio. *As you can set up more than one cluster on Databricks, use the description to make clear which cluster this connection is for. The description shown below describes that this connection is using an 8 core cluster on Databricks Runtime Environment 13.*
-        b.  Set the remaning options to the settings below.
-            -   Enter the 'Server Hostname' for your cluster in the 'Host(s):' field (you noted this down in step 2).
-            -   In the Port section, remove the default number and use the Port number you noted in step 2. 
-            -   Set the Authentication Mechanism to 'User Name and Password'.
-            -   Enter the word 'token' into the 'User Name:' field, then enter your 'Databricks access token' in the 'Password:' field.
-            -   Change the Thrift Transport option to HTTP.
-            -   Click the 'HTTP Options...' button and enter the 'HTTP Path' of your Databricks cluster, then click 'Okay'.
-            -   Click the 'SSL Options...' button and tick the 'Enable SSL' box, then click the 'OK' button.
-            -   ![](../images/odbc-driver-settings.png)
-        c.  Click the 'Test' button to verify the connection has worked. You should see the following message. *If you get an error here, repeat steps 5.e.i -- 5.e.ix again and ensure all the values are correct.*
+---
 
-        ![](../images/databricks-test-connection.png)
+-   Open the Software Centre via the start menu
 
-        d.  Click the 'OK' button to exit the 'Test Results' window, then the 'OK' button in the 'Simba Spark ODBC Driver DSN Setup' window.
+-   In the 'Applications' tab, click `Simba Spark ODBC Driver 64-bit`
 
-5.  Connect through RStudio. Watch the below video and view the [ADA_RStudio_connect GitHub repo](https://github.com/dfe-analytical-services/ADA_RStudio_connect) for methods on connecting to Databricks and querying data from RStudio. 
+::: {align="center"}
+![](../images/databricks-software-centre.png)
+:::
 
+-   Click install
 
 ------------------------------------------------------------------------
 
-# Pulling data into R studio from Databricks
+### Establishing an RStudio connection using environment variables
 
 ------------------------------------------------------------------------
 
-Once you have set up an ODBC connection as detailed above, you can then use that connection to pull data directly from Databricks into R Studio. Charlotte recorded a video demonstrating two possible methods of how to do this. The recording is embedded below: 
+The `ODBC` package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.
 
-<div align="center">
-<iframe src="https://educationgovuk.sharepoint.com/sites/lvewp00086/_layouts/15/embed.aspx?UniqueId=5fad039e-a763-40c8-8ea0-403aea712f4c&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="ADA_Rstudio_2.mp4"></iframe>
-</div>
+To set the environment variables, call `usethis::edit_r_environ()`. You will then need to enter the following information:
 
-A template of all of the code used in the above video can be found in the [ADA_RStudio_connect GitHub repo](https://github.com/dfe-analytical-services/ADA_RStudio_connect).
+```         
+DATABRICKS_HOST=<databricks-host>
+DATABRICKS_SQL_PATH=<sql-warehouse-path>
+DATABRICKS_TOKEN=<personal-access-token> 
+```
 
-Key takeaways from the video and example code: 
+Once you have entered the details, save and close your .Renviron file and restart R (Session > Restart R).
 
-* The main change here compared to connecting to SQL databases is the connection method. The installation and setup of the ODBC driver are all done pre-code, and the only part of the code that will need updating is your connection (usually your con variable). 
-* If your existing code was pulling in tables from SQL via the `RODBC` package or the `dbplyr` package, then this code should in theory run with minimal edits needed. 
-* If you were writing tables back into SQL from R, this is where your code may need the most edits. 
-* If your code is stored in a repo where multiple analysts contribute to and run the code, in order for the code to run for everyone you will all need to individually install the ODBC driver and **give it the same name** so that when the `con` variable is called, the name used in the code matches everyone's individual driver and runs for everyone. If this is the case, please **add a note about this to your repo's readme file** to help your future colleagues.
+::: callout-note
+Everyone in your team that wishes to connect to the SQL Warehouse in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.
+:::
 
+The sections below describe where to find the information needed for each of the four environment variables.
+
+------------------------------------------------------------------------
+
+#### Databricks host
+
+------------------------------------------------------------------------
+
+The Databricks host is the instance of Databricks that you want to connect to. It's the URL that you see in your browser bar when you're on the Databricks site and should end in "azuredatabricks.net" (ignore anything after this section of the URL).
+
+------------------------------------------------------------------------
+
+#### Databricks SQL Warehouse Path
+
+------------------------------------------------------------------------
+
+As described in the [SQL Warehouses section](/ADA/ada.html#sql-warehouse), in Databricks, SQL Warehouses are a way to gain access to your data in the Unity Catalog. They run queries and return the results either to the user or to a table. 
+
+To get the Warehouse ID, follow these steps:
+
+-   click 'SQL Warehouses' under the 'SQL' section of the left hand menu on Databricks
+-   click on the warehouse name that you'd like to get the ID for
+-   the warehouse id is the 'HTTP Path' in the 'Connection details' tab
+-   the ID should start with something similar to "/sql/1.0/warehouses/"
+
+
+------------------------------------------------------------------------
+
+#### Databricks token
+
+------------------------------------------------------------------------
+
+The Databricks token is a personal access token. 
+
+A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the SQL warehouse. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.
+
+-   In Databricks, click on your email address in the top right corner, then click 'User settings'
+
+-   Go to the 'Developer' tab in the side bar. Next to 'Access tokens', click the 'Manage' button
+
+::: {align="center"}
+![](../images/databricks-access-tokens.png)
+:::
+
+-   Click the 'Generate new token' button
+
+-   Name the token, then click 'Generate'
+
+::: callout-note
+Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less. 
+:::
+
+-   Make a note of the 'Databricks access token' it has given you
+
+::: callout-warning
+It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.
+:::
+
+------------------------------------------------------------------------
+
+### Pulling data into RStudio from Databricks
+
+------------------------------------------------------------------------
+
+Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you. 
+
+To access the data, we will make use of the `ODBC` package. You can find documentation about this package [on the Posit website](https://solutions.posit.co/connections/db/r-packages/odbc/). You will also need to have the `DBI` package installed.  
+
+Include the following code in your R Script:
+
+
+``` {r databricks_connect_sql, eval=FALSE}
+library(odbc)
+library(DBI)
+
+con <- DBI::dbConnect(
+  odbc::databricks(),
+  httpPath = Sys.getenv("DATABRICKS_SQL_PATH")
+)
+
+odbcListObjects(con)
+```
+
+---
