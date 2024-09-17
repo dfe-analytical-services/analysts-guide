@@ -69,7 +69,7 @@ Due to the scalability of compute resources you can request a more powerful proc
 
 The centralised nature of the data storage makes navigation of the Department's data estate much simpler with everything existing in a single environment. Combined with stronger data governance this makes discovery of supplementary or related data the Department holds much easier. In addition, it allows for datasets that are commonly used across the Department - such as ONS geography datasets - to be standardised and made available to all teams, ensuring consistency of data and it's formatting across the Departments publications.
 
-The auditing, and automation facilities provide a lot of benefits when building data pipelines. These can be set up to run as required with little manual effort from analysts, and can build automated quality assurance into the pipeline so that analysts can be confident in the outputs. In addition, the auditing keeps a record of all inputs and outputs each time a process is run. Combining this with robust documentation stored in [Notebooks](databricks_notebooks.qmd) allows you debug issues retrospectively without having to repeatedly step through the process to see where unexpected issues have occurred.
+The auditing, and automation facilities provide a lot of benefits when building data pipelines. These can be set up to run as required with little manual effort from analysts, and can build automated quality assurance into the pipeline so that analysts can be confident in the outputs. In addition, the auditing keeps a record of all inputs and outputs each time a process is run. Combining this with robust documentation stored in [Notebooks](/ADA/databricks_notebooks.html) allows you debug issues retrospectively without having to repeatedly step through the process to see where unexpected issues have occurred.
 
 ------------------------------------------------------------------------
 
@@ -173,7 +173,7 @@ For collaboration on code you should use a GitHub/DevOps repository which each u
 
 All code should be managed through a versioned repository on GitHub or Azure DevOps. You can commit and push your changes to the central repository from the Databricks platform. Pull requests to merge your changes into the 'main' branch still take place on your Git provider.
 
-To connect Databricks to a repository refer to the [Databricks and version control](git_databricks.qmd) article.
+To connect Databricks to a repository refer to the [Databricks and version control](/ADA/git_databricks.html) article.
 
 ------------------------------------------------------------------------
 
@@ -197,8 +197,8 @@ In most cases a personal cluster will be the most versatile and easily accessibl
 
 All compute options can be used both within the Databricks platform and be connected to through other applications. Instructions on how to connect R / RStudio to a SQL Warehouse, or a personal cluster can be found on the following pages:
 
--   [Setup Databricks SQL Warehouse with RStudio](databricks_rstudio_sql_warehouse.qmd)
--   [Setup Databricks Personal Compute cluster with RStudio](databricks_rstudio_personal_cluster.qmd)
+-   [Setup Databricks SQL Warehouse with RStudio](/ADA/databricks_rstudio_sql_warehouse.html)
+-   [Setup Databricks Personal Compute cluster with RStudio](/ADA/databricks_rstudio_personal_cluster.html)
 
 ---
 
@@ -247,4 +247,4 @@ An alternative to this is to specify packages/libraries to be installed on the c
 Certain packages are installed by default on personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the [Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/).
 :::
 
-Once you have a compute resource you can begin using Databricks. You can do this either through connecting to Databricks through RStudio, or you can begin coding in the Databricks platforms using scripts, or [Notebooks](databricks_notebooks.qmd).
+Once you have a compute resource you can begin using Databricks. You can do this either through connecting to Databricks through RStudio, or you can begin coding in the Databricks platforms using scripts, or [Notebooks](/ADA/databricks_notebooks.html).
