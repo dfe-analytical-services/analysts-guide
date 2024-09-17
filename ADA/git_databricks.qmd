@@ -4,7 +4,7 @@
 
 <p class="text-muted">
 
-Guidance for analysts on how to connect Databricks to Github and Azure DevOps
+Guidance for analysts on how to connect Databricks to GitHub and Azure DevOps
 
 </p>
 
@@ -20,7 +20,7 @@ For analytical projects developed on Databricks in the DfE, we recommend using G
 
 ------------------------------------------------------------------------
 
-When you're working on notebooks in Databricks without a git connection, they tend to be saved in your own personal Workspace. This means that they are only accessible by you, unless you share them. This has the potential to cause issues if someone needs to run any code you have stored in a notebook within Databricks e.g. when you leave your current team, take non-working days or annual leave, team members will not be able to access any of your code stored in your notebooks on Databricks. If the notebooks are stored in a Github or Azure DevOps repo, your team can all access them by cloning the repo in Databricks.
+When you're working on notebooks in Databricks without a Git connection, they tend to be saved in your own personal Workspace. This means that they are only accessible by you, unless you share them. This has the potential to cause issues if someone needs to run any code you have stored in a notebook within Databricks e.g. when you leave your current team, take non-working days or annual leave, team members will not be able to access any of your code stored in your notebooks on Databricks. If the notebooks are stored in a Github or Azure DevOps repo, your team can all access them by cloning the repo in Databricks.
 
 ------------------------------------------------------------------------
 
@@ -28,21 +28,21 @@ When you're working on notebooks in Databricks without a git connection, they te
 
 ------------------------------------------------------------------------
 
-Databricks autosaves your notebooks as you're working on them, making version control more difficult. If you use git, you'll be able to see the full version history of your work and easily roll back to older versions if you need to. It also significantly helps simplify switching between different methodologies as well as facilitating proper code QA and review.
+Databricks autosaves your notebooks as you're working on them, making version control more difficult. If you use Git, you'll be able to see the full version history of your work and easily roll back to older versions if you need to. It also significantly helps simplify switching between different methodologies as well as facilitating proper code QA and review.
 
 ------------------------------------------------------------------------
 
-## Github or Azure DevOps?
+## GitHub or Azure DevOps?
 
 
-Either Github or Azure DevOps repos can be used in connection with Databricks, but we advise you to follow the guidance relating to public and private repos in our [What is git for?](https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html#what-is-git-for) section.
+Either GitHub or Azure DevOps repos can be used in connection with Databricks, but we advise you to follow the guidance relating to public and private repos in our [What is Git for?](https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html#what-is-git-for) section.
 
 ------------------------------------------------------------------------
 
 ## Is it safe?
 
 
-The connection between git and Databricks is established using a secure access token from your git account, which means it is safe. You will need to renew your access token after a given period of time - if you do not, then your connection between git and Databricks will no longer work.
+The connection between Git and Databricks is established using a secure access token from your Git account, which means it is safe. You will need to renew your access token after a given period of time - if you do not, then your connection between Git and Databricks will no longer work.
 
 Additionally, when you commit and push notebooks through the Databricks interface, it will automatically clear any output cells from your notebook, meaning that you cannot accidentally include any unpublished data in there.
 
@@ -83,14 +83,12 @@ The following window should appear:
 
 - Give the token a sensible name so that you can identify it in your list of tokens.
 - The organisation field should be pre-populated for you, this can be left alone. 
-- You can modify the expiration date. Every time the token expires, you will have to follow this guidance again to set up a new token and reconnect to git, so choose something sensible. 
+- You can modify the expiration date. Every time the token expires, you will have to follow this guidance again to set up a new token and reconnect to Git, so choose something sensible. 
 - You should make sure that "Full access" is selected under the Scopes heading. 
 
 When you have entered all of the required information, click "Create" at the bottom of the window. 
 
 A "Success!" window will open containing your new access token. **You must copy the token immediately, as you will not be able to access it again once this window is closed.** If you fail to copy the token, you will have to regenerate a new one. 
-
-\
 
 ------------------------------------------------------------------------
 
@@ -113,16 +111,13 @@ You should then select "Linked Accounts" from the User menu on the left. The fol
 
 You can then click Save at the bottom of the page, and now your connection between Azure DevOps and Databricks is established! 
 
-\
-
-
 ------------------------------------------------------------------------
 
 ### Connecting to repos and cloning
 
 ---
 
-Just like any other way that you've worked with git before, the first step is going to be to clone your repo inside Databricks. Git folders (previously called Repos in Databricks) can now be created in your Home folder. 
+Just like any other way that you've worked with Git before, the first step is going to be to clone your repo inside Databricks. Git folders (previously called Repos in Databricks) can now be created in your Home folder. 
 
 In the blue menu on the left, click Workspace, and click the Home folder. The menu should look like this:
 
@@ -179,7 +174,6 @@ In the screenshot above, you can see the analysts-guide repository with all of i
 
 Git can see things inside the Git folders that you create in your Home area. This means that when you save something in a Git folder, it can be committed and pushed to Git. It is therefore good practice to always save notebooks in a Git folder.
 
-\
 
 ------------------------------------------------------------------------
 
@@ -208,7 +202,6 @@ If you click the branch name, it'll open the Git interface within Databricks:
 
 From here, you can perform Git pull by clicking the pull icon in the top right. There is a dropdown menu in the top left corner that allows you to change the branch or create a new branch if required. 
 
-\
 
 ------------------------------------------------------------------------
 
