@@ -128,7 +128,7 @@ Click the blue "Create" button in the top right corner, and then click "Git fold
 ![](../images/add-git-folder.png)
 
 
-![](../images/databricks-add-repo-new.png)
+![](../images/databricks-add-repo.png)
 
 - You will first need to go to Azure DevOps and copy the link to clone the repo as you usually would
 - Paste this link into the "Git repository URL" field
@@ -194,7 +194,7 @@ At the top of any notebook that's saved in a repo, you'll see a little grey bran
 
 You can also access the Git menu by clicking the branch name next to the repo name within your personal folder, which you can access by selecting Workspace > Users > your email address in the left hand menu:
 
-![](../images/databricks-main-repo-menu-new.png)
+![](../images/databricks-main-repo-menu.png)
 
 If you click the branch name, it'll open the Git interface within Databricks:
 
