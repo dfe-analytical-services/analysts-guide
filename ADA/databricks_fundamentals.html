@@ -493,10 +493,7 @@ cookieconsent.run({
   <li><a href="#workspaces---databricks-file-system-dbfs" id="toc-workspaces---databricks-file-system-dbfs" class="nav-link" data-scroll-target="#workspaces---databricks-file-system-dbfs">Workspaces - Databricks file system (DBFS)</a></li>
   <li><a href="#repositories-for-version-control" id="toc-repositories-for-version-control" class="nav-link" data-scroll-target="#repositories-for-version-control">Repositories for version control</a></li>
   </ul></li>
-  <li><a href="#compute" id="toc-compute" class="nav-link" data-scroll-target="#compute">Compute</a>
-  <ul class="collapse">
-  <li><a href="#creating-a-personal-compute-resource" id="toc-creating-a-personal-compute-resource" class="nav-link" data-scroll-target="#creating-a-personal-compute-resource">Creating a personal compute resource</a></li>
-  </ul></li>
+  <li><a href="#compute" id="toc-compute" class="nav-link" data-scroll-target="#compute">Compute</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_fundamentals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -675,70 +672,9 @@ Don’t overshare
 <li><a href="../ADA/databricks_rstudio_sql_warehouse.html">Setup Databricks SQL Warehouse with RStudio</a></li>
 <li><a href="../ADA/databricks_rstudio_personal_cluster.html">Setup Databricks Personal Compute cluster with RStudio</a></li>
 </ul>
-<hr>
-<section id="creating-a-personal-compute-resource" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-personal-compute-resource">Creating a personal compute resource</h3>
-<hr>
-<ol type="1">
-<li>To create your own personal compute resource click the ‘Create with DfE Personal Compute’ button on the compute page<br>
-</li>
-</ol>
-<p><img src="../images/ada-compute-personal.png" class="img-fluid"></p>
-<ol start="2" type="1">
-<li><p>You’ll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type<br>
-<br>
-<strong>Databricks runtime version</strong> - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is ‘15.4 LTS’<br>
-<br>
-<strong>Node type</strong> - This option determines how powerful your cluster is and there are 2 options available by default:<br>
-</p>
-<ul>
-<li>Standard 14GB 4-Core Nodes<br>
-</li>
-<li>Large 28GB 8-Core Nodes<br>
-<br>
-If you require a larger personal cluster this can be requested by the ADA team.<br>
-<br>
-<img src="../images/ada-compute-personal-create.png" class="img-fluid"></li>
-</ul></li>
-<li><p>Click the ‘Create compute’ button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes<br>
-<br>
-<img src="../images/ada-compute-personal-create-button.png" class="img-fluid"></p></li>
-<li><p>Once the cluster is up and running the icon under the ‘State’ header on the ‘Compute’ page will appear as a green tick<br>
-<br>
-<img src="../images/ada-compute-ready.png" class="img-fluid"></p></li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Clusters will shut down after being idle for an hour
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Use of compute resources are charged by the hour, and so personal clusters have been set to shut down after being unused for an hour in order to prevent unnecessary cost to the Department.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Packages and libraries
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As mentioned above compute resources have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.</p>
-<p>An alternative to this is to specify packages/libraries to be installed on the cluster at start up. To do this click the name of your cluster from the ‘Compute’ page, then go to the ‘Libraries’ tab and click the ‘Install new’ button.</p>
-<p>Certain packages are installed by default on personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the <a href="https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/" target="_blank">Databricks documentation</a>.</p>
-</div>
-</div>
 <p>Once you have a compute resource you can begin using Databricks. You can do this either through connecting to Databricks through RStudio, or you can begin coding in the Databricks platforms using scripts, or <a href="../ADA/databricks_notebooks.html">Notebooks</a>.</p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
