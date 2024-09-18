@@ -4,25 +4,23 @@
 
 <p class="text-muted">
 
-Guidance for analysts on how to connect Databricks to Github and Azure DevOps
+Guidance for analysts on how to connect Databricks to GitHub and Azure DevOps
 
 </p>
 
 ------------------------------------------------------------------------
 
-## Why should I use git with Databricks?
+## Why should I use Git with Databricks?
 
-For analytical projects developed on Databricks in the DfE, we recommend using git and Azure DevOps for sharing, collaborating and proper version control of work.
+For analytical projects developed on Databricks in the DfE, we recommend using GitHub or Azure DevOps for sharing, collaborating and proper version control of work.
 
+---
 
 ### Easier collaboration
 
 ------------------------------------------------------------------------
 
-When you're working on notebooks in Databricks without a git connection, they tend to be saved in your own personal Workspace. This means that they are only accessible by you, unless you share them. This has the potential to cause issues if someone needs to run any code you have stored in a notebook within Databricks e.g. when you leave your current team, take non-working days or annual leave, team members will not be able to access any of your code stored in your notebooks on Databricks. If the notebooks are stored in a Github or Azure DevOps repo, your team can all access them by cloning the repo in Databricks.
-
-\
-
+When you're working on notebooks in Databricks without a Git connection, they tend to be saved in your own personal Workspace. This means that they are only accessible by you, unless you share them. This has the potential to cause issues if someone needs to run any code you have stored in a notebook within Databricks e.g. when you leave your current team, take non-working days or annual leave, team members will not be able to access any of your code stored in your notebooks on Databricks. If the notebooks are stored in a Github or Azure DevOps repo, your team can all access them by cloning the repo in Databricks.
 
 ------------------------------------------------------------------------
 
@@ -30,51 +28,44 @@ When you're working on notebooks in Databricks without a git connection, they te
 
 ------------------------------------------------------------------------
 
-Databricks autosaves your notebooks as you're working on them, making version control more difficult. If you use git, you'll be able to see the full version history of your work and easily roll back to older versions if you need to. It also significantly helps simplify switching between different methodologies as well as facilitating proper code QA and review.
-
-\
+Databricks autosaves your notebooks as you're working on them, making version control more difficult. If you use Git, you'll be able to see the full version history of your work and easily roll back to older versions if you need to. It also significantly helps simplify switching between different methodologies as well as facilitating proper code QA and review.
 
 ------------------------------------------------------------------------
 
-## Github or Azure DevOps?
+## GitHub or Azure DevOps?
 
 
-Either Github or Azure DevOps repos can be used in connection with Databricks, but we advise you to follow the guidance relating to public and private repos in our [What is git for?](https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html#what-is-git-for) section.
-
-\
+Either GitHub or Azure DevOps repos can be used in connection with Databricks, but we advise you to follow the guidance relating to public and private repos in our [What is Git for?](https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html#what-is-git-for) section.
 
 ------------------------------------------------------------------------
 
 ## Is it safe?
 
 
-The connection between git and Databricks is established using a secure access token from your git account, which means it is safe. You will need to renew your access token after a given period of time - if you do not, then your connection between git and Databricks will no longer work.
+The connection between Git and Databricks is established using a secure access token from your Git account, which means it is safe. You will need to renew your access token after a given period of time - if you do not, then your connection between Git and Databricks will no longer work.
 
 Additionally, when you commit and push notebooks through the Databricks interface, it will automatically clear any output cells from your notebook, meaning that you cannot accidentally include any unpublished data in there.
 
-\
-
 ------------------------------------------------------------------------
 
-# Setting up a connection to Azure DevOps
+## Setting up a connection to Azure DevOps
 
-------------------------------------------------------------------------
+### Prerequisites
 
-## Prerequisites
-
+---
 
 - An Azure DevOps account and access to the repo you need to connect to
 - A Databricks account and access to your notebooks
 
-\
-
 ------------------------------------------------------------------------
 
-## Getting set up
+### Getting set up
 
+---
 
-### Access Tokens
+#### Access Tokens
 
+---
 
 Access tokens are long strings of numbers and letters that act like a password between two services. They identify the user and their permissions from one service to another. 
 
@@ -92,18 +83,18 @@ The following window should appear:
 
 - Give the token a sensible name so that you can identify it in your list of tokens.
 - The organisation field should be pre-populated for you, this can be left alone. 
-- You can modify the expiration date. Every time the token expires, you will have to follow this guidance again to set up a new token and reconnect to git, so choose something sensible. 
+- You can modify the expiration date. Every time the token expires, you will have to follow this guidance again to set up a new token and reconnect to Git, so choose something sensible. 
 - You should make sure that "Full access" is selected under the Scopes heading. 
 
 When you have entered all of the required information, click "Create" at the bottom of the window. 
 
 A "Success!" window will open containing your new access token. **You must copy the token immediately, as you will not be able to access it again once this window is closed.** If you fail to copy the token, you will have to regenerate a new one. 
 
-\
-
 ------------------------------------------------------------------------
 
 ### Connecting to Databricks 
+
+---
 
 
 Now that you have your access token, you should go straight to Databricks. In the top right corner of the Databricks window, click your username and then "User Settings":
@@ -120,21 +111,22 @@ You should then select "Linked Accounts" from the User menu on the left. The fol
 
 You can then click Save at the bottom of the page, and now your connection between Azure DevOps and Databricks is established! 
 
-\
-
-
 ------------------------------------------------------------------------
 
 ### Connecting to repos and cloning
 
+---
 
-Just like any other way that you've worked with git before, the first step is going to be to clone your repo inside Databricks. 
+Just like any other way that you've worked with Git before, the first step is going to be to clone your repo inside Databricks. Git folders (previously called Repos in Databricks) can now be created in your Home folder. 
 
-In the blue menu on the left, click Workspace, and then in the Workspace menu that appears, click Repos. The menus should look like this:
+In the blue menu on the left, click Workspace, and click the Home folder. The menu should look like this:
 
-![](../images/databricks-workspace-menu.png)
+![](../images/databricks-new-workspace.png)
 
-On the Repos screen, click the grey "Add repo" button in the top right corner. The "Add Repo" window will appear:
+Click the blue "Create" button in the top right corner, and then click "Git folder":
+
+![](../images/add-git-folder.png)
+
 
 ![](../images/databricks-add-repo.png)
 
@@ -143,11 +135,13 @@ On the Repos screen, click the grey "Add repo" button in the top right corner. T
 - Under "Git Provider", select "Azure DevOps Services" 
 - The "Repository name" field should be automatically populated when you enter the URL. 
 
-You can then click "Create Repo". When the repo is created, you will be able to see it under your name in the Repos menu:
+You can then click "Create Git folder". When the folder is created, you will be able to see it under your name in the Home folder. 
 
-![](../images/databricks-view-repo.png)
+---
 
 #### Sparse checkout and Cone Patterns
+
+---
 
 Databricks cannot clone very large repos. It is best practice not to have a repo of this size, but if you attempt to clone a large repo, you will receive an error message. In this instance, you will need to perform a sparse checkout. This only clones a selection of items in your repo. To do this, select the "Advanced" option when in the "Add repo" menu, and tick the "Sparse checkout mode" option. You can tell Databricks which elements of the repo you would like it to clone, and you can do this by specifying something called Cone Patterns. If you do not specify any Cone Patterns, then the Databricks default is to clone only files in the root folder, but none from any subdirectories. To specify your own Cone Patterns, enter them in the box provided. You can enter multiple patterns but if the folders that they refer to contain more than 800MB of data then your clone will continue to fail.
 
@@ -165,28 +159,31 @@ Please note: You cannot currently disable sparse checkout mode once it is enable
 
 ------------------------------------------------------------------------
 
-# Working in repos in Databricks
+## Working in repos in Databricks
+
+
+### Folders in Databricks
+
+---
+
+To be able to add your notebooks to a repo, you need to make sure that you save them in the correct place. You will need to find the Git folder that you cloned previously, and work from there. You can see your Git folders underneath the Home section, like this:
+
+![](../images/databricks-repo-menu.png)
+
+In the screenshot above, you can see the analysts-guide repository with all of its subfolders. 
+
+Git can see things inside the Git folders that you create in your Home area. This means that when you save something in a Git folder, it can be committed and pushed to Git. It is therefore good practice to always save notebooks in a Git folder.
+
 
 ------------------------------------------------------------------------
 
-## Folders in Databricks
+### Git pull, commit, and push in Databricks
 
+---
 
-To be able to add your notebooks to a repo, you need to make sure that you save them in the correct place. 
-In Databricks, you have your Workspace. Inside your Workspace is your "local" Users folder, and your repos. In the image below, the User folder is highlighted blue:
+#### Git pull 
 
-![](../images/databricks-folders.png)
-
-You can think of your User folder as being a bit like "My Documents" on your laptop. When you save things there, only you can see and access them. Git cannot "see" things inside your User folder. However, git **can** see things inside your Repos folder. This means that when you save something in your Repos folder, it can be committed and pushed to git. It is therefore good practice to always save notebooks in your Repos folder instead of in your User folder. 
-
-\
-
-------------------------------------------------------------------------
-
-## Git pull, commit, and push in Databricks
-
-
-### Git pull 
+---
 
 
 You can access the menu to pull, commit and push from several places within Databricks. This interface is the same whether you're working with a DevOps repo or a Github repo. 
@@ -195,24 +192,24 @@ At the top of any notebook that's saved in a repo, you'll see a little grey bran
 
 ![](../images/databricks-main-repo-notebook.png)
 
-You can also access the git menu by clicking the branch name next to the repo name within the Repos folder:
+You can also access the Git menu by clicking the branch name next to the repo name within your personal folder, which you can access by selecting Workspace > Users > your email address in the left hand menu:
 
 ![](../images/databricks-main-repo-menu.png)
 
-If you click the branch name, it'll open the git interface within Databricks:
+If you click the branch name, it'll open the Git interface within Databricks:
 
 ![](../images/databricks-git-interface.png)
 
-From here, you can perform git pull by clicking the pull icon in the top right. There is a dropdown menu in the top left corner that allows you to change the branch or create a new branch if required. 
+From here, you can perform Git pull by clicking the pull icon in the top right. There is a dropdown menu in the top left corner that allows you to change the branch or create a new branch if required. 
 
-\
 
 ------------------------------------------------------------------------
 
-### Git commit and push
+#### Git commit and push
 
+---
 
-When you have made changes to a notebook, it will appear in the Changes section of the git interface. You can also see the actual changes that have been made in the right hand box to make sure that you're committing the correct file: 
+When you have made changes to a notebook, it will appear in the Changes section of the Git interface. You can also see the actual changes that have been made in the right hand box to make sure that you're committing the correct file: 
 
 ![](../images/databricks-git-commit.png)
 
@@ -220,15 +217,19 @@ In Databricks, you commit and push as one action, rather than as two separate on
 
 ------------------------------------------------------------------------
 
-### Additional git commands in the Databricks interface
+#### Additional Git commands in the Databricks interface
 
-You can access additional git features such as merge, rebase and reset directly within the Databricks interface by clicking the 3 dots in the menu as shown in the image below:
+---
+
+You can access additional Git features such as merge, rebase and reset directly within the Databricks interface by clicking the 3 dots in the menu as shown in the image below:
 
 ![](../images/reset-local-branch.png)
 
 When merging, you are also able to resolve merge conflicts inside Databricks itself. 
 
-**Please be warned** that we would usually advise against using git reset as you can permanently lose changes you've made and this cannot be undone. 
+::: callout-warning
+**Please be warned** that we would usually advise against using Git reset as you can permanently lose changes you've made and this cannot be undone. 
 
-There is additional guidance on each of these advanced features in the [Databricks manual](https://docs.databricks.com/en/repos/git-operations-with-repos.html). Please use git reset with caution as you can easily lose recent changes when performing this action. 
+There is additional guidance on each of these advanced features in the [Databricks manual](https://docs.databricks.com/en/repos/git-operations-with-repos.html). Please use Git reset with caution as you can easily lose recent changes when performing this action. 
+:::
 
