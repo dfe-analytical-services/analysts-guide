@@ -79,9 +79,9 @@ The pre-production environment is not suitable for unpublished data. Unpublished
 
 ---
 
-Access to both the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the Statistics Development Team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using gov.uk Notify.
+Access to both the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the explore education statistics platforms team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using gov.uk Notify.
 
-To be invited to the service for full access teams need to email the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk), stating who needs access, what permissions they require (analyst or approver), and for which publications these apply. This email should be sent by the Team Leader, or accompanied with the relevant Team Leader’s approval. Once access has been granted you will receive an email inviting you to use the platform.
+To be invited to the service for full access teams need to email the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk), stating who needs access, what permissions they require (analyst or approver), and for which publications these apply. This email should be sent by the Team Leader, or accompanied with the relevant Team Leader’s approval. Once access has been granted you will receive an email inviting you to use the platform.
 
 <div class="alert alert-dismissible alert-info">
 Jobshare emails can not be used to access EES. Specific personal emails should be used instead, in the same way as you sign in to windows on your machine.
@@ -94,7 +94,7 @@ Jobshare emails can not be used to access EES. Specific personal emails should b
 
 ---
 
-The Statistics Development Team are responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored via the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk).
+The Statistics Development Team are responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored by the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 The following roles exist within EES admin and are assigned to a specific release:
 
@@ -196,7 +196,7 @@ If you want to request a new publication, please be prepared to provide us with 
 * Badging (whether they are National statistics, an ad-hoc publication, or official statistics)
 * Who needs access to the publication (list of email addresses of analysts who need access to the release and at what [permission levels](#roles-and-permissions))
 
-Publication details can be [managed by publication owners](#managing-publications) or via requests to the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk).
+Publication details can be [managed by publication owners](#managing-publications) or via requests to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 The hierarchy of content within EES is as follows:
 
@@ -270,7 +270,7 @@ Within the admin dashboard you can view and manage existing publications, includ
 
 ---
 
-It is possible to request that external users from other government organisations have access, and they can then be added as collaborating analysts on a release or as pre-release viewers. Each external user must complete a declaration form. When you email the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk) to request external user access, you should attach copies of the declaration forms for each external user. Temporary external accounts are usually set up to expire after three months, with an option to extend this if required.
+It is possible to request that external users from other government organisations have access, and they can then be added as collaborating analysts on a release or as pre-release viewers. Each external user must complete a declaration form. When you email the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) to request external user access, you should attach copies of the declaration forms for each external user. Temporary external accounts are usually set up to expire after three months, with an option to extend this if required.
 
 ---
 
@@ -300,7 +300,7 @@ The process for adding external users as collaborating analysts is similar to ad
 
 ---
 
-If you have external users you'd like to request access for, please send the following details to the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk), **at least two weeks** in advance of requiring access, but ideally as early as possible. Due to the dependency on DfE's digital security, we cannot guarantee access or how long it may take.
+If you have external users you'd like to request access for, please send the following details to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk), **at least two weeks** in advance of requiring access, but ideally as early as possible. Due to the dependency on DfE's digital security, we cannot guarantee access or how long it may take.
 
 * Email addresses of users to be added
 * Reason for access
@@ -335,7 +335,7 @@ Once you have created your release you will see the dashboard to edit your relea
 
 ![](../images/EES-create-release-dashboard.PNG)
 
-If you are experiencing issues or need help with creating a new release, you can get in touch with the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk).
+If you are experiencing issues or need help with creating a new release, you can get in touch with the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 ---
 
@@ -390,7 +390,7 @@ For data files greater than 80mb we recommend uploading as a ZIP file.
 
 Once you click to upload the file a ‘Status’ will be visible that shows the progress of the import process. This may take a little while depending on the size of your file and if there are numerous files queued for import. You cannot view the dataset or use it to create tables/charts until this status is ‘COMPLETE’.
 
-If you are having any issues uploading a file, please contact explore.statistics@education.gov.uk.
+If you are having any issues uploading a file, please contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 ---
 
@@ -472,7 +472,7 @@ The first step is to upload the new file.
 
 ![](../images/replace-data-step1.PNG)
 
-One you've chosen and uploaded your replacement file it will need to go through the usual import process before it can check if retaining existing data blocks and footnotes will be possible.
+Once you've chosen and uploaded your replacement file it will need to go through the usual import process before it can check if retaining existing data blocks and footnotes will be possible.
 
 ![](../images/replace-data-step2.PNG)
 
@@ -496,7 +496,7 @@ Remember to double check any data blocks or footnotes that were recreated by the
 
 Supporting files should not be used as the default. Wherever possible you should upload your data as data files that can then be used in the table tool.
 
-Any files you want to make available for users to download but aren't intended for the table tool should be added as a supporting file upload. These files will need to meet all requirements of the new [accesibility regulations](https://www.gov.uk/guidance/publishing-accessible-documents) before they can be published.
+Any files you want to make available for users to download but aren't intended for the table tool should be added as a supporting file upload. These files will need to meet all requirements of the new [accessibility regulations](https://www.gov.uk/guidance/publishing-accessible-documents) before they can be published.
 
 Examples of supporting files may be:
 
@@ -598,7 +598,7 @@ You will be taken through 4 steps to create the data block:
 3. Time period: select which time periods you want to include
 4. Indicators / Filters: select the indicators and filters to be included
 
-![](../images/ees-create-data-block.PNG)
+![](../images/ees-create-data-block.png)
 
 Once you have configured the data source for the data block, you can then preview the table displaying the chosen variables.
 
@@ -849,7 +849,7 @@ Accessibility matters for infographics too, consider the following if you do nee
 You can use R to create infographics and the following code gives an example of how to create a basic line chart or stacked bar chart using the appropriate GSS sequential colour palette.
 
 
-```
+``` {r example_ees_r_plot, eval=FALSE}
 # Load the necessary libraries
 library(ggplot2)
 library(dplyr)
@@ -969,13 +969,13 @@ After embedding a key stat tile you can then edit it to add trend information an
 
 ---
 
-You should split your release into sections that each focus on one or two key messages, with a recommended maximum of 10 sections in the release. **The whole release should take no more than 10 minutes to read.** Our [analytics app](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"} contains insights on how long it takes the average user to read your release.
+You should split your release into sections that each focus on one or two key messages, with a recommended maximum of 10 sections in the release. The whole release should take **no more than 10 minutes to read.** Our [analytics app](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"} contains insights on how long it takes the average user to read your release.
 
 To keep the release short only include information if there is something interesting to say - the commentary is there to tell a story, people looking for specific figures will use the table tool, or download the underlying data instead. **Do not try to summarise every number in the commentary.**
 
-Avoid having large blocks of text as they are hard to read and users scan them and miss the detail. Graphs and tables break up the content but only include these where they add value; **you do not need a graph or chart in every section.**
+Avoid having large blocks of text as they are hard to read and users scan them and miss the detail. Graphs and tables break up the content but only include these where they add value; you do not need a graph or chart in every section.
 
-Use plain English and shorter sentences, aim for an average of 15-20 words per sentence. Do not overload sentences with numbers and avoid 'elevator commentary' that describes small movements in the whole series without giving any insight (use a summary table instead if it is interesting, or leave it out entirely). **Be impartial and objective; avoid using sensationalist terms or terms that reflect a judgement such as "very few" "only" or "strong".**
+Use plain English and shorter sentences, aim for an average of 15-20 words per sentence. Do not overload sentences with numbers and avoid 'elevator commentary' that describes small movements in the whole series without giving any insight (use a summary table instead if it is interesting, or leave it out entirely). Be impartial and objective; avoid using sensationalist terms or terms that reflect a judgement such as "very few" "only" or "strong".
 
 Explain complex concepts in plain English within the text. Remember that for many of our users, confidence intervals and significant differences are complex concepts that need explaining.
 
@@ -1020,7 +1020,7 @@ Any data tables should be included as data blocks, however, there might be some 
 
 Navigate to the 'Content' tab. In the text editor, you can add in a table using the table icon.
 
-![](../images/ees-table-in-content.PNG)
+![](../images/ees-table-in-content.png)
 
 <!-- gif adding in a html table -->
 <div class="alert alert-dismissible alert-warning">
@@ -1124,7 +1124,7 @@ The [glossary in the explore education statistics service](https://explore-educa
 
 ---
 
-Contact us at explore.statistics@education.gov.uk, with the title and definition and we can add this for you. It's worth having a check on the glossary for similar or related terms, and whether you should be looking to harmonise with other teams.
+[Contact the explore education statistics platforms team](mailto:explore.statistics@education.gov.uk), with the title and definition and we can add this for you. It's worth having a check on the glossary for similar or related terms, and whether you should be looking to harmonise with other teams.
 
 ---
 
@@ -1171,7 +1171,7 @@ That's it, the system will automatically recognise that the link is for the glos
 
 ---
 
-Once you’re happy with your release you need to go to the sign off page and change it’s status in order to move it through the release pipeline.
+Once you’re happy with your release you need to go to the sign off page and change its status in order to move it through the release pipeline.
 
 There are three statuses:
 
@@ -1341,7 +1341,7 @@ Any approved methodology changes will be published immediately so make sure you 
 
 If you want to revise an existing methodology page you can amend the methodology which will generate a new version for you to edit.
 
-![](../images/amend-methodology-new.PNG)
+![](../images/amend-methodology-new.png)
 
 Once you're happy with your amendment it just needs to be [approved](#sign-off) in the usual way for it to be published.
 
@@ -1420,13 +1420,13 @@ After finding the publication you want to create a release for, just press the b
 
 Currently the following types of release can be created in EES:
 
-* National Statistics (includes OSR tick mark logo at the top of the release page)
-* Official Statistics
-* Adhoc Statistics
-* Management Information
-* Experimental Statistics
+* Accredited official statistics (includes OSR tick mark logo at the top of the release page)
+* Official statistics
+* Ad hoc statistics
+* Management information
+* Official statistics in development
 
-When creating a release you will be asked to fill in some release summary fields.
+When creating a release you will be asked to fill in some release summary fields. If you are unsure of what type of release you are publishing, please contact the [statistics HoP office](mailto:hop.statistics@education.gov.uk) for advice immediately.
 
 <div class="alert alert-dismissible alert-info">
 The time period for the release should reflect the time period of the data that this latest release adds to the time series.

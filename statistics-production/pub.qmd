@@ -66,7 +66,7 @@ All national, official and ad-hoc statistics should be published on EES. This se
 ## Publication checklist
 
 
-Before releasing statistics for the first time you may want to discuss the new process with key stakeholders and/or pre-release users to make them aware of the new service. You should also inform the [Explore Statistics Mailbox](mailto:explore.statistics@education.gov.uk) and [HoP Office](mailto:Hop.STATISTICS@education.gov.uk) teams.
+Before releasing statistics for the first time you may want to discuss the new process with key stakeholders and/or pre-release users to make them aware of the new service. You should also inform the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) and [Statistics HoP Office](mailto:Hop.STATISTICS@education.gov.uk).
 
 Before you start creating a release in the platform you should have: 
 
