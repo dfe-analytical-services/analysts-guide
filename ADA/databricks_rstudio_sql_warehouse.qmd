@@ -77,6 +77,10 @@ An ODBC driver is required for the `ODBC` package in R to work - you must instal
 
 ---
 
+::: callout-important
+If you have previously set up an ODBC connection, or followed the [set up Databricks personal compute cluster with RStudio](/ADA/databricks_rstudio_personal_cluster.html) guidance, then you can skip this step. 
+:::
+
 -   Open the Software Centre via the start menu
 
 -   In the 'Applications' tab, click `Simba Spark ODBC Driver 64-bit`
