@@ -50,11 +50,11 @@ This can be run on any data file, though requires an associated [EES metadata fi
 
 For data to be used with the table tool and charts in EES, it needs to meet the following overall specifications:
 
-* The data should be contained in a [text file with comma separated values](#data-format) and with the extension .csv.
+* The data should be formatted as a [comma separated values (CSV) file](#data-format).
 * The first row of the data file should contain [machine readable column names](#variable-names) in [snake case](https://en.wikipedia.org/wiki/Snake_case){target="_blank" rel="noopener noreferrer"}.
 * The data should be layed out in line with [tidy data principles](#tidy-data-structure), consisting of filters (category fields) and indicators (value fields).
 * The file should contain the [necessary mandatory columns](#time-and-geography) (i.e. time_period, time_identifier, geographical_level, country_code and country_name);
-* The data file should have an accompanying [metadata csv file](#ees-metadata), which contains information on the nature of the columns in the data file:
+* The data file should have an accompanying [metadata CSV file](#ees-metadata), which contains information on the nature of the columns in the data file:
   * whether a given column is a filter or indicator;
   * human readable name for use in tables and charts on EES;
   * filter grouping information;
@@ -138,11 +138,7 @@ For publishing on EES specifically, please note the following points:
 - We expect that multiple data files may be provided for each release.
 - Keep in mind that a data block can only have a single data source. However, many blocks can share one source.
 - You should include all years of the data you available in your data file to facilitate time series analysis.
-- Each data file must be accompanied by a corresponding .csv metadata file as outlined under [EES Metadata](#ees-metadata).
-
-<div class="alert alert-dismissible alert-danger">
-  In light of recent accessibility legislation, you should aim to include at least 3 years of data in EES where it exists.
-</div>
+- Each data file must be accompanied by a corresponding CSV metadata file as outlined under [EES metadata](#ees-metadata).
 
 ---
 
@@ -277,10 +273,14 @@ If your current processes produce wide data that you need to switch to a tidy st
 These standards give you the power to format the data in a way that best meets the needs of the users. There are only a handful of formatting standards to follow to ensure best practice and consistency across all of our data.
 
 <div class="alert alert-dismissible alert-danger">
-Data files must in comma separated values (.csv) format, and use UTF-8 encoding. You can specify this when saving the file in Excel, or exporting from elsewhere.
+Data files must in comma separated values (CSV) format, and use UTF-8 encoding. You can specify this when saving the file in Excel, or exporting from elsewhere.
 </div>
 
-If you need to use commas within a cell, then you must add a text delimiter such as quotes to your file to define each cell - this is often done automatically for you, though if you're unsure then you can open up your csv file in a text editor such as notepad to check.
+If you need to use commas within a cell, then you must add a text delimiter such as quotes to your file to define each cell - this is often done automatically for you, though if you're unsure then you can open up your CSV file in a text editor such as notepad to check.
+
+Comma separated values simply means that if look at the raw file, each column is separated by a comma, other forms of delimination like this also exist, such as TSV files that are 'tab' separated. Next time you have a minute, try opening up your CSV data files in notepad, to see how they look behind the scenes!
+
+Saving files in CSV format should be a standard from any analytical tool, though sometimes you need to watch out for how they are encoding special characters, for more information see the section on [how to export data with UTF8 encoding](#how-to-export-data-with-utf-8-encoding).
 
 You should also ensure that your data follows the [GSS Standards on symbols](https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/){target="_blank" rel="noopener noreferrer"}, though be aware to ignore the ask that symbols are included in separate cells from the data, which is unpractical and unrealistic.
 
@@ -363,21 +363,21 @@ Through the above guidance, we aim to develop the DfE data catalogue into a cons
 
 ---
 
-Most of the time our data is exported as a .csv file it will have UTF-8 encoding by default. However, there are times when this isn't the case, and therefore we'll quickly run through how to check this below in each of Excel, SQL, and R.
+Most of the time our data is exported as a CSV file it will have UTF-8 encoding by default. However, there are times when this isn't the case, and therefore we'll quickly run through how to check this below in each of Excel, SQL, and R.
 
 **Excel**
 
-Excel tends to save all .csv files as UTF-8, however this is not always the case, particularly if there are symbols in the file (such as £). To ensure that it saves with UTF-8 encoding you can select the following when saving a file:
+Excel tends to save all CSV files as UTF-8, however this is not always the case, particularly if there are symbols in the file (such as £). To ensure that it saves with UTF-8 encoding you can select the following when saving a file:
 
 `File > Save As > CSV UTF-8 (Comma delimited) (*.csv)`
 
 **SQL**
 
-For saving results out of SQL as a .csv file there isn't an option to specify the encoding, therefore the best bet is to either open the file in Excel and specify that as above, or to run your SQL query/read your data into R and follow the guidance below.
+For saving results out of SQL as a CSV file there isn't an option to specify the encoding, therefore the best bet is to either open the file in Excel and specify that as above, or to run your SQL query/read your data into R and follow the guidance below.
 
 **R**
 
-When writing .csv files out of R, you'll mostly likely be using either `write.csv()` from base R, or `write_csv()` from the readr package. For the first one, you can specify encoding using `fileEncoding = ` like the following example:
+When writing CSV files out of R, you'll mostly likely be using either `write.csv()` from base R, or `write_csv()` from the readr package. For the first one, you can specify encoding using `fileEncoding = ` like the following example:
 
 
 `write.csv(my_data, file = "my_data_file.csv", fileEncoding = "UTF-8")`
@@ -415,7 +415,7 @@ We generally recommend fewer large files over a larger number of smaller files. 
 
 ---
 
-There are no character or size limits in a csv file and there is no size limit for EES, though the larger a file is, the longer it will take to upload and process. Also remember that the files you upload are the files that users will download, consider the software they may access to (e.g. Excel) and whether the size of your files are compatible with this.
+There are no character or size limits in a CSV file and there is no size limit for EES, though the larger a file is, the longer it will take to upload and process. Also remember that the files you upload are the files that users will download, consider the software they may access to (e.g. Excel) and whether the size of your files are compatible with this.
 
 Excel has a cell character limit of 32,760 and a row limit of 1,048,576. It is best to avoid exceeding these as some end users may struggle to open the file. One good way to cut the file down is to split after a certain number of years, or to separate out different geographic levels into separate files, providing school level data as a separate file for example. With the data all being in a tidy format these are then easy enough for secondary analysts to stitch back together if needed.
 
@@ -452,7 +452,7 @@ If you have any other conventions you've used in previous publications, or a sce
 
 ## EES metadata
 
-Metadata in a machine readable (.csv) format must accompany datasets uploaded to the explore education statistics service to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.
+Metadata in a machine readable (CSV) format must accompany datasets uploaded to the explore education statistics service to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.
 
 
 This EES metadata is different to any metadata files you may provide alongside your data for your users.
@@ -1279,7 +1279,7 @@ Like filters, indicator names must not include spaces, and ideally be formatted 
 
 In EES, the platform itself will format large numeric values to include commas, so you do not need to have commas for separating large numbers in your data file.
 
-If you are including percentages and want to show 79% in EES, you would have the value 79 in your data file and specify % as the unit for that column in the EES metadata. As best practice we recommend that you include as much detail as possible in your underlying files when it comes to decimal places. As a default EES will round decimals to 2 d.p. in the platform, though if you would prefer to display your data to a different number of d.p. in the platform please use the [indicator_dp](#ees-metadata) column to specify this in the .csv metadata. Likewise with financial data, for don't include £ in the values in the data file, leave those cells as numeric only, include it as an indicator unit instead.
+If you are including percentages and want to show 79% in EES, you would have the value 79 in your data file and specify % as the unit for that column in the EES metadata. As best practice we recommend that you include as much detail as possible in your underlying files when it comes to decimal places. As a default EES will round decimals to 2 d.p. in the platform, though if you would prefer to display your data to a different number of d.p. in the platform please use the [indicator_dp](#ees-metadata) column to specify this in the CSV metadata. Likewise with financial data, for don't include £ in the values in the data file, leave those cells as numeric only, include it as an indicator unit instead.
 
 In line with GSS best practice for communicating uncertainty, when using confidence intervals you should report the upper and lower bounds as separate columns rather than as one confidence interval column:
 
@@ -1344,13 +1344,13 @@ Each publication team should regularly review the indicator and filter field nam
 
 The recommended process for this is to follow these steps:
 
-* collate all col_name, col_type, label, indicator_grouping and filter_grouping_column fields from meta data files into one single csv file;
+* collate all col_name, col_type, label, indicator_grouping and filter_grouping_column fields from meta data files into one single CSV file;
 * check for indicators that contain information better suited to filter entries (in line with tidy data principles);
 * check indicator and filter col_name entries against published current standard names and assign new col_name entries as appropriate;
 * check indicator and filter col_name entries against standard naming conventions and assign new col_name entries as appropriate and
 * check indicator and filter col_name entries for internal consistency and assign new col_name entries as appropriate.
 
-Please collate the above into a csv file similar to your publication meta csv files. This should have the following columns:
+Please collate the above into a CSV file similar to your publication meta CSV files. This should have the following columns:
 
 * col_name
 * col_type
@@ -1380,7 +1380,7 @@ Your team should then keep a copy as a log of any changes and also send a copy t
 
 A further step teams can take to maintain standardization is to review the filter options or entries within their filters. For example, any ethnicity fields should conform to our published harmonized (GSS) ethnicity guidance.
 
-As with field names we recommend collating these into a master csv file covering your entire publication. Expected entries are:
+As with field names we recommend collating these into a master CSV file covering your entire publication. Expected entries are:
 
 * col_name
 * filter_grouping_column
