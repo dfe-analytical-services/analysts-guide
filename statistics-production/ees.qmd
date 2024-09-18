@@ -79,7 +79,7 @@ The pre-production environment is not suitable for unpublished data. Unpublished
 
 ---
 
-Access to both the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the explore education statistics platforms team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using gov.uk Notify.
+Access to both the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the explore education statistics platforms team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using GOV.UK Notify.
 
 To be invited to the service for full access teams need to email the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk), stating who needs access, what permissions they require (analyst or approver), and for which publications these apply. This email should be sent by the Team Leader, or accompanied with the relevant Team Leader’s approval. Once access has been granted you will receive an email inviting you to use the platform.
 
@@ -924,9 +924,9 @@ The above code should produce something along the lines of the following plots:
 
 If you need to include a type of chart that isn't possible using the standard EES chart options, for example an interactive chart with filters, you can embed a block to display a custom R Shiny produced chart.
 
-To embed a shiny chart, you'll first need to create an R Shiny application containing the chart using the DfE tiny-shiny template and get it hosted on our DfE GitHub and ShinyApps accounts. More details on both of these are available in the tiny-shiny section of this guidance.
+To embed an R Shiny chart, you'll first need to create an R Shiny application containing the chart using the DfE tiny-shiny template and get it hosted on our DfE GitHub and ShinyApps accounts. More details on both of these are available in the tiny-shiny section of this guidance.
 
-Once you've got the R Shiny app set up and hosted, you can embed it using the **Add embed block** button in the content area. This will give you the option to enter a URL, where you can enter the URL of the shiny app. Valid URLs to use in the embed block dialogue box are limited to only those on the DfE ShinyApps server (and the internal rsconnect when needed for draft publications).
+Once you've got the R Shiny app set up and hosted, you can embed it using the **Add embed block** button in the content area. This will give you the option to enter a URL, where you can enter the URL of the shiny app. Valid URLs to use in the embed block dialogue box are limited to only those on the DfE ShinyApps server (and the internal POSIT Connect servers when needed for draft publications).
 
 ![The EES interface for embedding a Shiny chart](../images/tinyshiny-ees-block.PNG)
 
@@ -1248,7 +1248,7 @@ This preview is only accessible for the 24 hours before the publication date, al
 ---
 
 <div class="alert alert-dismissible alert-info">
-Jobshare emails and shared mailboxes should not be sent invites for pre-release. The personal emails for the specific individuals should be used instead, as jobshare emails/shared mailboxes do not have active accounts with DfE to access EES.
+Jobshare emails and shared mailboxes should not be sent invites for pre-release. The personal emails for the specific individuals should be used instead, as jobshare emails / shared mailboxes do not have active accounts with DfE to access EES.
 </div>
 
 <html>

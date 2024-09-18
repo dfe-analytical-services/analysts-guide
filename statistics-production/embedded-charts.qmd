@@ -10,7 +10,7 @@ title: "Embedded visualisations in EES"
 
 ---
 
-EES now offers the option to add an embedded block, which allows analysts to present custom R created charts within their publications. This necessitates analysts creating an R Shiny based app on GitHub containing the required chart that can then be hosted on a shiny server (currently using the DfE's account on shinyapps.io).
+EES now offers the option to add an embedded block, which allows analysts to present custom R created charts within their publications. This necessitates analysts creating an R Shiny based app on GitHub containing the required chart that can then be hosted on a Shiny server (currently using the DfE's account on shinyapps.io).
 
 **Note that this current combination of GitHub and ShinyApps for publishing Shiny Apps does not offer the appropriate security required for unpublished DfE data. Unpublished uderlying app data should therefore never be uploaded to GitHub / ShinyApps.io until such time as it has been published (i.e. via EES).** 
 
