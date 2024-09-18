@@ -21,9 +21,7 @@ You can use data from Databricks with R code in two different ways:
 
 ------------------------------------------------------------------------
 
-# Pre-requisites
-
-------------------------------------------------------------------------
+## Pre-requisites
 
 You must have:
 
@@ -51,7 +49,7 @@ When you set up your personal cluster, you will be asked to select a runtime for
 
 Compute resources, including personal clusters, have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.
 
-An alternative to this is to specify packages/libraries to be installed on the cluster at start up. To do this click the name of your cluster from the 'Compute' page, then go to the 'Libraries' tab and click the 'Install new' button.
+An alternative to this is to specify packages / libraries to be installed on the cluster at start up. To do this click the name of your cluster from the 'Compute' page, then go to the 'Libraries' tab and click the 'Install new' button.
 
 ::: callout-note
 ## Clusters will shut down after being idle for an hour
@@ -105,8 +103,6 @@ There are four steps to complete before your connection can be established. Thes
 ------------------------------------------------------------------------
 
 ## Setting up the ODBC driver
-
-------------------------------------------------------------------------
 
 ::: callout-important
 If you have previously set up an ODBC connection, or followed the [set up Databricks SQL Warehouse with RStudio](/ADA/databricks_rstudio_sql_warehouse.html) guidance, then you can skip this step. 
@@ -168,6 +164,7 @@ The Databricks host is the instance of Databricks that you want to connect to. I
 
 In Databricks, go to Compute in the left hand menu, and click on the name of your personal cluster:
 
+::: {align="center"}
 ![](../images/databricks-cluster-id.png)
 :::
 
