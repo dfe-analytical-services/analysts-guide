@@ -14,15 +14,16 @@ Explore education statistics (EES) is the Department’s official statistics dis
 
 2. The [admin](https://admin.explore-education-statistics.service.gov.uk/) website, where production teams create their stats
 
-Maintenance and use of the platform is supported by the [Statistics Development Team](mailto:explore.statistics@education.gov.uk).
+Maintenance and use of the platform is supported by the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 ---
 
-# Accessing EES
+## Accessing EES
+
+
+### Environments
 
 ---
-
-## Environments
 
 <div class="alert alert-dismissible alert-warning">
 If you are bookmarking links, please be careful to bookmark the links below exactly as they are shown. Often when signing in you will be redirected via other URL's as a part of the authentication process, and bookmarking those may lead to errors.
@@ -74,11 +75,13 @@ The pre-production environment is not suitable for unpublished data. Unpublished
 
 ---
 
-### Getting access to admin
+#### Getting access to admin
 
-Access to both the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the Statistics Development Team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using gov.uk Notify.
+---
 
-To be invited to the service for full access teams need to email the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk), stating who needs access, what permissions they require (analyst or approver), and for which publications these apply. This email should be sent by the Team Leader, or accompanied with the relevant Team Leader’s approval. Once access has been granted you will receive an email inviting you to use the platform.
+Access to both the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the explore education statistics platforms team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using GOV.UK Notify.
+
+To be invited to the service for full access teams need to email the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk), stating who needs access, what permissions they require (analyst or approver), and for which publications these apply. This email should be sent by the Team Leader, or accompanied with the relevant Team Leader’s approval. Once access has been granted you will receive an email inviting you to use the platform.
 
 <div class="alert alert-dismissible alert-info">
 Jobshare emails can not be used to access EES. Specific personal emails should be used instead, in the same way as you sign in to windows on your machine.
@@ -87,10 +90,11 @@ Jobshare emails can not be used to access EES. Specific personal emails should b
 
 ---
 
-## Roles and permissions
+### Roles and permissions
 
+---
 
-The Statistics Development Team are responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored via the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk).
+The Statistics Development Team are responsible for setting up and maintaining user permissions during the beta phase. Change requests will be monitored by the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 The following roles exist within EES admin and are assigned to a specific release:
 
@@ -174,8 +178,9 @@ To change Publication Owners, or Approvers, contact the [explore education stati
 
 ---
 
-## Requesting a new publication
+### Requesting a new publication
 
+---
 
 If you have not published on EES before, or if you're creating a brand new publication, you will need to contact us to create the publication for you before you can get started. 
 
@@ -191,7 +196,7 @@ If you want to request a new publication, please be prepared to provide us with 
 * Badging (whether they are National statistics, an ad-hoc publication, or official statistics)
 * Who needs access to the publication (list of email addresses of analysts who need access to the release and at what [permission levels](#roles-and-permissions))
 
-Publication details can be [managed by publication owners](#managing-publications) or via requests to the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk).
+Publication details can be [managed by publication owners](#managing-publications) or via requests to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 The hierarchy of content within EES is as follows:
 
@@ -199,8 +204,11 @@ The hierarchy of content within EES is as follows:
 
 Methodology documentation is attached at a publication level within EES - meaning one standalone piece should be written to cover all releases for the given publication within the service.
 
+---
 
-### Themes
+#### Themes
+
+---
 
 Publications are organised into themes (as shown on the EES [Find Statistics page](https://explore-education-statistics.service.gov.uk/find-statistics)), and then within each publication there are releases - where the latest release includes the latest statistics for that publication. 
 
@@ -214,7 +222,7 @@ For example:
 
 ---
 
-### Publication summaries
+#### Publication summaries
 
 ---
 
@@ -240,8 +248,9 @@ You only have 160 characters – to make sure you are fully utilising these, hav
 
 ---
 
-## Admin dashboard
+### Admin dashboard
 
+---
 
 <div class="alert alert-dismissible alert-warning">
 Use Google Chrome or Microsoft Edge to access and use the admin part of the explore education statistics service.
@@ -257,14 +266,18 @@ Within the admin dashboard you can view and manage existing publications, includ
 
 ---
 
-## External user access
-
-
-It is possible to request that external users from other government organisations have access, and they can then be added as collaborating analysts on a release or as pre-release viewers. Each external user must complete a declaration form. When you email the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk) to request external user access, you should attach copies of the declaration forms for each external user. Temporary external accounts are usually set up to expire after three months, with an option to extend this if required.
+### External user access
 
 ---
 
-### Adding external users as pre-release viewers
+It is possible to request that external users from other government organisations have access, and they can then be added as collaborating analysts on a release or as pre-release viewers. Each external user must complete a declaration form. When you email the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) to request external user access, you should attach copies of the declaration forms for each external user. Temporary external accounts are usually set up to expire after three months, with an option to extend this if required.
+
+---
+
+#### Adding external users as pre-release viewers
+
+---
+
 This process has two distinct steps: getting a temporary account set up per user in the DfE Azure Active Directory, and then adding lists of users requiring pre-release access (PRA) onto EES itself. The diagram below shows the responsibilities of the publication team, the Statistics Development Team, and the Identity Access Management Team in this process:
 
 <div class="mxgraph" style="" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2023-10-27T08:49:55.657Z\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36\&quot; etag=\&quot;25DkiyrPOf3cJP4cyv-T\&quot; version=\&quot;22.0.8\&quot; type=\&quot;device\&quot;&gt;\n  &lt;diagram id=\&quot;C5RBs43oDa-KdzZeNtuy\&quot; name=\&quot;Page-1\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;782\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;WIyWlLk6GJQsqaUBKTNV-0\&quot; /&gt;\n        &lt;mxCell id=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-0\&quot; /&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-10\&quot; value=\&quot;\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF2F4;strokeColor=#b85450;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;40\&quot; y=\&quot;330\&quot; width=\&quot;720\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-4\&quot; value=\&quot;\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#e8eef8;strokeColor=#6c8ebf;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;40\&quot; y=\&quot;210\&quot; width=\&quot;720\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-0\&quot; value=\&quot;\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#fbeee0;strokeColor=#d79b00;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;40\&quot; y=\&quot;90\&quot; width=\&quot;720\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;WIyWlLk6GJQsqaUBKTNV-2\&quot; value=\&quot;\&quot; style=\&quot;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=classic;endFill=1;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;WIyWlLk6GJQsqaUBKTNV-3\&quot; target=\&quot;WIyWlLk6GJQsqaUBKTNV-7\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;220\&quot; y=\&quot;170\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;WIyWlLk6GJQsqaUBKTNV-3\&quot; value=\&quot;External users need PRA on EES\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=2;shadow=0;fillColor=#ffe6cc;strokeColor=#d79b00;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;50\&quot; y=\&quot;130\&quot; width=\&quot;120\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;WIyWlLk6GJQsqaUBKTNV-7\&quot; value=\&quot;Make sure you have declaration forms for each user\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#ffe6cc;strokeColor=#d79b00;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;230\&quot; y=\&quot;120\&quot; width=\&quot;120\&quot; height=\&quot;60\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-1\&quot; value=\&quot;Contact explore.statistics mailbox with list of email addresses &amp;lt;b&amp;gt;at least two weeks before publication&amp;lt;/b&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#ffe6cc;strokeColor=#d79b00;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;414\&quot; y=\&quot;100\&quot; width=\&quot;120\&quot; height=\&quot;100\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-2\&quot; value=\&quot;\&quot; style=\&quot;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=classic;endFill=1;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; target=\&quot;Wrs3lxRDHoZ0nHGpzCag-1\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;350\&quot; y=\&quot;150\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;190\&quot; y=\&quot;220\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-3\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;Wrs3lxRDHoZ0nHGpzCag-0\&quot; target=\&quot;Wrs3lxRDHoZ0nHGpzCag-0\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-5\&quot; value=\&quot;Review declaration forms and raise service request\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#dae8fc;strokeColor=#000099;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;414\&quot; y=\&quot;240\&quot; width=\&quot;120\&quot; height=\&quot;60\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-8\&quot; value=\&quot;\&quot; style=\&quot;endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;Wrs3lxRDHoZ0nHGpzCag-1\&quot; target=\&quot;Wrs3lxRDHoZ0nHGpzCag-5\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;470\&quot; y=\&quot;180\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;520\&quot; y=\&quot;130\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-9\&quot; value=\&quot;Confirmation of new accounts received\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#dae8fc;strokeColor=#000099;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;580\&quot; y=\&quot;240\&quot; width=\&quot;120\&quot; height=\&quot;60\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-11\&quot; value=\&quot;New temporary business to business (B2B) accounts created in DfE Azure Active Directory (AAD) for external users\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#FFC4D6;strokeColor=#CC0066;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;490\&quot; y=\&quot;340\&quot; width=\&quot;140\&quot; height=\&quot;100\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-13\&quot; value=\&quot;\&quot; style=\&quot;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;Wrs3lxRDHoZ0nHGpzCag-5\&quot; target=\&quot;Wrs3lxRDHoZ0nHGpzCag-11\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;390\&quot; y=\&quot;430\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;440\&quot; y=\&quot;380\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;474\&quot; y=\&quot;390\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-14\&quot; value=\&quot;\&quot; style=\&quot;endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; target=\&quot;Wrs3lxRDHoZ0nHGpzCag-9\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;630\&quot; y=\&quot;390\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;670\&quot; y=\&quot;340\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;640\&quot; y=\&quot;390\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-15\&quot; value=\&quot;Add external users to PRA list\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=2;shadow=0;fillColor=#ffe6cc;strokeColor=#D79B00;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;580\&quot; y=\&quot;120\&quot; width=\&quot;120\&quot; height=\&quot;60\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-16\&quot; value=\&quot;\&quot; style=\&quot;endArrow=classic;html=1;rounded=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;640\&quot; y=\&quot;240\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;640\&quot; y=\&quot;180\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-17\&quot; value=\&quot;&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;Publication Team&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;40\&quot; y=\&quot;90\&quot; width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-18\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;Statistics Development Team&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;40\&quot; y=\&quot;210\&quot; width=\&quot;230\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;Wrs3lxRDHoZ0nHGpzCag-19\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;Identity Access Management Team&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;40\&quot; y=\&quot;330\&quot; width=\&quot;270\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
@@ -272,7 +285,9 @@ This process has two distinct steps: getting a temporary account set up per user
 
 ---
 
-### Adding external users as collaborating analysts
+#### Adding external users as collaborating analysts
+
+---
 
 The process for adding external users as collaborating analysts is similar to adding external users for PRA, except for the final step, in which the Statistics Development Team add the external users via the EES admin interface. The process can be seen in the diagram below: 
 
@@ -281,20 +296,27 @@ The process for adding external users as collaborating analysts is similar to ad
 
 ---
 
-### What to include in an external access request
+#### What to include in an external access request
 
-If you have external users you'd like to request access for, please send the following details to the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk), **at least two weeks** in advance of requiring access, but ideally as early as possible. Due to the dependency on DfE's digital security, we cannot guarantee access or how long it may take.
+---
+
+If you have external users you'd like to request access for, please send the following details to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk)
 
 * Email addresses of users to be added
 * Reason for access
 * Length of time access is needed (the standard time period is three months)
 * Copies of declaration forms for each user
 
+:::{.callout-important}
+
+You need to contact us **at least two weeks** in advance of requiring access, but ideally as early as possible. Due to the dependency on DfE's digital security, we cannot guarantee access or how long it may take.
+
+:::
+
 ---
 
-# Creating releases
+## Creating releases
 
----
 
 New releases can be [created by publication owners](#create-new-release). To create a new release in a publication series, navigate to the relevant publication and click 'Create new release', you will then need to enter the following information:
 
@@ -319,12 +341,13 @@ Once you have created your release you will see the dashboard to edit your relea
 
 ![](../images/EES-create-release-dashboard.PNG)
 
-If you are experiencing issues or need help with creating a new release, you can get in touch with the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk).
+If you are experiencing issues or need help with creating a new release, you can get in touch with the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 ---
 
-## Data and files
+### Data and files
 
+---
 
 You need to make sure that the data files and accompanying [metadata](../statistics-production/ud.html#ees-metadata) have passed through our [data screener checks](https://rsconnect/rsc/dfe-published-data-qa/) before trying to upload it.
 
@@ -336,7 +359,7 @@ Releases cannot be published without a completed metadata document. If not fille
 
 ---
 
-### Subject titles
+#### Subject titles
 
 ---
 
@@ -373,7 +396,7 @@ For data files greater than 80mb we recommend uploading as a ZIP file.
 
 Once you click to upload the file a ‘Status’ will be visible that shows the progress of the import process. This may take a little while depending on the size of your file and if there are numerous files queued for import. You cannot view the dataset or use it to create tables/charts until this status is ‘COMPLETE’.
 
-If you are having any issues uploading a file, please contact explore.statistics@education.gov.uk.
+If you are having any issues uploading a file, please contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 ---
 
@@ -417,7 +440,7 @@ If anything in this ZIP folder doesn't match up with this, you will receive an e
 
 ---
 
-### Ordering filters and indicators
+#### Ordering filters and indicators
 
 ---
 
@@ -432,46 +455,6 @@ To reorder your filters and indicators:
 This then becomes the default order for this filter or indicator and will apply in all charts and tables automatically (including the order that the options will be shown to users in the table tool on the public website).
 
 ![](../images/order-filters-indicators.png)
-
-
----
-
-### Supporting file uploads
-
----
-
-Supporting files should not be used as the default. Wherever possible you should upload your data as data files that can then be used in the table tool.
-
-Any files you want to make available for users to download but aren't intended for the table tool should be added as a supporting file upload. These files will need to meet all requirements of the new [accesibility regulations](https://www.gov.uk/guidance/publishing-accessible-documents) before they can be published.
-
-Examples of supporting files may be:
-
-* Infographic pages
-* Supplementary data that isn't intended for the table tool
-
-To ensure that spreadsheets are accessible, see the guidance from [gov.wales](https://gov.wales/how-create-accessible-excel-spreadsheets), and this [Analysis Function guidance](https://analysisfunction.civilservice.gov.uk/policy-store/making-analytical-publications-accessible/).
-
-If you are unsure of whether you should be using supporting files, contact the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk) for advice.
-
----
-
-### Public data guidance
-
----
-
-Within the 'Data and files' page, you can also create your public data guidance. This replaces the information that would have previously been uploaded as a pdf on GOV.UK and is designed to help users understand and use the data they download from your release. See the [Permanent and fixed period exclusions data guidance](https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england/meta-guidance) for an example.
-
-The 'Data files' section of the document will automatically update as you add new data files to your release, however you will need to add an overview of all the data included in the release and short summaries for each data file before the release can be published.
-
-![](../images/admin-public-meta-start.PNG)
-
-A list of variables in each file with an associated label (taken from metadata uploads) and associated footnotes will also be displayed for each file.
-
-![](../images/admin-public-meta-detail.PNG)
-
-<div class="alert alert-dismissible alert-danger">
-Releases cannot be published without a completed data guidance. If not filled in an error will be flagged during sign off.
-</div>
 
 ---
 
@@ -495,7 +478,7 @@ The first step is to upload the new file.
 
 ![](../images/replace-data-step1.PNG)
 
-One you've chosen and uploaded your replacement file it will need to go through the usual import process before it can check if retaining existing data blocks and footnotes will be possible.
+Once you've chosen and uploaded your replacement file it will need to go through the usual import process before it can check if retaining existing data blocks and footnotes will be possible.
 
 ![](../images/replace-data-step2.PNG)
 
@@ -513,7 +496,48 @@ Remember to double check any data blocks or footnotes that were recreated by the
 
 ---
 
-## Footnotes
+### Supporting file uploads
+
+---
+
+Supporting files should not be used as the default. Wherever possible you should upload your data as data files that can then be used in the table tool.
+
+Any files you want to make available for users to download but aren't intended for the table tool should be added as a supporting file upload. These files will need to meet all requirements of the new [accessibility regulations](https://www.gov.uk/guidance/publishing-accessible-documents) before they can be published.
+
+Examples of supporting files may be:
+
+* Infographic pages
+* Supplementary data that isn't intended for the table tool
+
+To ensure that spreadsheets are accessible, see the guidance from [gov.wales](https://gov.wales/how-create-accessible-excel-spreadsheets), and this [Analysis Function guidance](https://analysisfunction.civilservice.gov.uk/policy-store/making-analytical-publications-accessible/).
+
+If you are unsure of whether you should be using supporting files, contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) for advice.
+
+---
+
+### Public data guidance
+
+---
+
+Within the 'Data and files' page, you can also create your public data guidance. This replaces the information that would have previously been uploaded as a PDF on GOV.UK and is designed to help users understand and use the data they download from your release. See the [Permanent and fixed period exclusions data guidance](https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england/meta-guidance) for an example.
+
+The 'Data files' section of the document will automatically update as you add new data files to your release, however you will need to add an overview of all the data included in the release and short summaries for each data file before the release can be published.
+
+![](../images/admin-public-meta-start.PNG)
+
+A list of variables in each file with an associated label (taken from metadata uploads) and associated footnotes will also be displayed for each file.
+
+![](../images/admin-public-meta-detail.PNG)
+
+<div class="alert alert-dismissible alert-danger">
+Releases cannot be published without a completed data guidance page. If not filled in an error will be flagged during sign off.
+</div>
+
+---
+
+### Footnotes
+
+---
 
 We generally advise against using footnotes, unless they're absolutely necessary (think about how many people will actually be reading them!). However, if you do want to add footnotes to your data, this should be done using the EES footnote function and **not** added in-text. 
 
@@ -535,8 +559,9 @@ We recommend that you only add footnotes once you are certain the data file is f
 
 ---
 
-## Data blocks (tables and charts)
+### Data blocks (tables and charts)
 
+---
 
 A data block is a smaller cut of data from your original file that you can embed into your publication as a presentation table, build charts from, and link users directly to.
 
@@ -546,11 +571,11 @@ The 'Data blocks' tab will list all the data blocks you have created, highlighti
 
 ---
 
-### Using data blocks effectively
+#### Using data blocks effectively
 
 ---
 
-**Aim for fewer tables, and keep them small. As a guide, we suggest no more than one table per accordion section.**
+**Aim for fewer tables, and keep them small. As a guide, we suggest no more than a couple of tables per accordion section.**
 
 Presentation tables are the tables you include within the accordion sections of your release to quickly visualise numbers. Unlike the underlying data files, the presentation tables focus on specific parts of the story you are telling. They are distinct from, and should never be a copy of an underlying data file.
 
@@ -579,7 +604,7 @@ You will be taken through 4 steps to create the data block:
 3. Time period: select which time periods you want to include
 4. Indicators / Filters: select the indicators and filters to be included
 
-![](../images/ees-create-data-block.PNG)
+![](../images/ees-create-data-block.png)
 
 Once you have configured the data source for the data block, you can then preview the table displaying the chosen variables.
 
@@ -812,7 +837,7 @@ When selected, you will then see that this data appears in the chart as if the i
 
 ---
 
-You should only use complex charts where there is a clear user need, as simple charts are the easiest for users to understand. If you have a an infographic or a chart that is too complex to build within our chart builder you can use the 'Choose an infographic as alternative' option to upload an image to your data block or use the **Add embed block** feature to embed an R-Shiny based plot (see the section on [embedded blocks](embedded-charts.html) for further information).
+You should only use complex charts where there is a clear user need, as simple charts are the easiest for users to understand. If you have a an infographic or a chart that is too complex to build within our chart builder you can use the 'Choose an infographic as alternative' option to upload an image to your data block or use the **Add embed block** feature to embed an R Shiny based plot (see the section on [embedded blocks](embedded-charts.html) for further information).
 
 Infographic alternatives should be .svg format and you can use the sizing options within the data block editor to size your image appropriately.
 
@@ -830,7 +855,7 @@ Accessibility matters for infographics too, consider the following if you do nee
 You can use R to create infographics and the following code gives an example of how to create a basic line chart or stacked bar chart using the appropriate GSS sequential colour palette.
 
 
-```
+``` {r example_ees_r_plot, eval=FALSE}
 # Load the necessary libraries
 library(ggplot2)
 library(dplyr)
@@ -893,8 +918,23 @@ The above code should produce something along the lines of the following plots:
 
 ---
 
-## Content
+#### Embedding R Shiny blocks
 
+---
+
+If you need to include a type of chart that isn't possible using the standard EES chart options, for example an interactive chart with filters, you can embed a block to display a custom R Shiny produced chart.
+
+To embed an R Shiny chart, you'll first need to create an R Shiny application containing the chart using the DfE tiny-shiny template and get it hosted on our DfE GitHub and ShinyApps accounts. More details on both of these are available in the tiny-shiny section of this guidance.
+
+Once you've got the R Shiny app set up and hosted, you can embed it using the **Add embed block** button in the content area. This will give you the option to enter a URL, where you can enter the URL of the shiny app. Valid URLs to use in the embed block dialogue box are limited to only those on the DfE ShinyApps server (and the internal POSIT Connect servers when needed for draft publications).
+
+![The EES interface for embedding a Shiny chart](../images/tinyshiny-ees-block.PNG)
+
+---
+
+### Content
+
+---
 
 In the content tab you can now start creating your release, embedding the data blocks you’ve created as you go.
 
@@ -906,7 +946,11 @@ Add any headline and/or key stats and figures for your release in the headline f
 
 You can then create accordion sections to start adding your main release commentary. These sections are made up of text blocks and data blocks which can be reordered as needed.
 
-### Headline facts and figures
+---
+
+#### Headline facts and figures
+
+---
 
 Use the ‘Add secondary stats’ button to add a data block to your headline stats section.
 
@@ -927,17 +971,17 @@ After embedding a key stat tile you can then edit it to add trend information an
 
 ---
 
-### Accordion section content
+#### Accordion section content
 
 ---
 
-You should split your release into sections that each focus on one or two key messages, with a recommended maximum of 10 sections in the release. **The whole release should take no more than 10 minutes to read.** Our [analytics app](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"} contains insights on how long it takes the average user to read your release.
+You should split your release into sections that each focus on one or two key messages, with a recommended maximum of 10 sections in the release. The whole release should take **no more than 10 minutes to read.** Our [analytics app](https://rsconnect/rsc/ees-analytics/){target="_blank" rel="noopener noreferrer"} contains insights on how long it takes the average user to read your release.
 
 To keep the release short only include information if there is something interesting to say - the commentary is there to tell a story, people looking for specific figures will use the table tool, or download the underlying data instead. **Do not try to summarise every number in the commentary.**
 
-Avoid having large blocks of text as they are hard to read and users scan them and miss the detail. Graphs and tables break up the content but only include these where they add value; **you do not need a graph or chart in every section.**
+Avoid having large blocks of text as they are hard to read and users scan them and miss the detail. Graphs and tables break up the content but only include these where they add value; you do not need a graph or chart in every section.
 
-Use plain English and shorter sentences, aim for an average of 15-20 words per sentence. Do not overload sentences with numbers and avoid 'elevator commentary' that describes small movements in the whole series without giving any insight (use a summary table instead if it is interesting, or leave it out entirely). **Be impartial and objective; avoid using sensationalist terms or terms that reflect a judgement such as "very few" "only" or "strong".**
+Use plain English and shorter sentences, aim for an average of 15-20 words per sentence. Do not overload sentences with numbers and avoid 'elevator commentary' that describes small movements in the whole series without giving any insight (use a summary table instead if it is interesting, or leave it out entirely). Be impartial and objective; avoid using sensationalist terms or terms that reflect a judgement such as "very few" "only" or "strong".
 
 Explain complex concepts in plain English within the text. Remember that for many of our users, confidence intervals and significant differences are complex concepts that need explaining.
 
@@ -982,7 +1026,7 @@ Any data tables should be included as data blocks, however, there might be some 
 
 Navigate to the 'Content' tab. In the text editor, you can add in a table using the table icon.
 
-![](../images/ees-table-in-content.PNG)
+![](../images/ees-table-in-content.png)
 
 <!-- gif adding in a html table -->
 <div class="alert alert-dismissible alert-warning">
@@ -991,7 +1035,7 @@ Remember that *all of the data* included or referred to in your content should b
 
 ---
 
-### Writing about characteristics
+#### Writing about characteristics
 
 ---
 
@@ -1006,7 +1050,7 @@ You can also get in touch with the DfE Data Harmonisation Champions Group via [e
 
 ---
 
-### Writing about ethnicity
+#### Writing about ethnicity
 
 ---
 
@@ -1023,20 +1067,13 @@ We recommend ordering ethnic groups either alphabetically, or in expected order 
 
 ---
 
-### Footnotes
+#### Footnotes
 
 ---
 
 <div class="alert alert-dismissible alert-danger">
 Do not use footnotes in the text of your content. They’re designed for reference in print, not web pages. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.
 </div>
-
-
----
-
-#### Footnotes for tables in content
-
----
 
 If you are including a table in text that needs footnotes, it's generally advised to include this in the commentary surrounding the table. However, if you think a footnote is still necessary, then we advise writing out the word ‘note’, with the number of the note you need to refer to, and put it in square brackets, for example: ‘Number of people in employment [note 1]’. For more guidance on footnotes outside of EES, see the [Analysis Function guidance on symbols, footnotes and codes](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-6).
 
@@ -1058,8 +1095,9 @@ When someone is editing a text box, it will now be instantly frozen for all othe
 
 ---
 
-## Getting found online
+### Getting found online
 
+---
 
 Search engine optimisation (SEO) makes it easier for users to find your data through search engines like Google. Some top tips include:
 
@@ -1077,40 +1115,26 @@ We should make a concerted effort to ensure that we are answering the questions 
 
 ![](../images/google-peopleAlsoAsk.png)
 
-
 ---
 
-## Embedding R-Shiny blocks
-
-
-If you need to include a type of chart that isn't possible using the standard EES chart options, for example an interactive chart with filters, you can embed a block to display a custom R-Shiny produced chart.
-
-To embed a shiny chart, you'll first need to create an R-Shiny application containing the chart using the DfE tiny-shiny template and get it hosted on our DfE GitHub and ShinyApps accounts. More details on both of these are available in the tiny-shiny section of this guidance.
-
-Once you've got the R-Shiny app set up and hosted, you can embed it using the **Add embed block** button in the content area. This will give you the option to enter a URL, where you can enter the URL of the shiny app. Valid URLs to use in the embed block dialogue box are limited to only those on the DfE ShinyApps server (and the internal rsconnect when needed for draft publications).
-
-![The EES interface for embedding a Shiny chart](../images/tinyshiny-ees-block.PNG)
-
-
+### Glossary
 
 ---
-
-## Glossary
 
 
 The [glossary in the explore education statistics service](https://explore-education-statistics.service.gov.uk/glossary) is a growing page that helps us to standardise how refer to key terms and phrases across all of Official statistics.
 
 ---
 
-### Adding new definitions
+#### Adding new definitions
 
 ---
 
-Contact us at explore.statistics@education.gov.uk, with the title and definition and we can add this for you. It's worth having a check on the glossary for similar or related terms, and whether you should be looking to harmonise with other teams.
+[Contact the explore education statistics platforms team](mailto:explore.statistics@education.gov.uk), with the title and definition and we can add this for you. It's worth having a check on the glossary for similar or related terms, and whether you should be looking to harmonise with other teams.
 
 ---
 
-### Linking to definitions
+#### Linking to definitions
 
 ---
 
@@ -1124,7 +1148,7 @@ You can test this works by typing the url into your browser, it should take you 
 
 ---
 
-### Linking from your release
+#### Linking from your release
 
 ---
 
@@ -1149,10 +1173,11 @@ That's it, the system will automatically recognise that the link is for the glos
 
 ---
 
-## Sign off
+### Sign off
 
+---
 
-Once you’re happy with your release you need to go to the sign off page and change it’s status in order to move it through the release pipeline.
+Once you’re happy with your release you need to go to the sign off page and change its status in order to move it through the release pipeline.
 
 There are three statuses:
 
@@ -1167,7 +1192,7 @@ Only users with [approver](#roles-and-permissions) permissions (usually G6 or ab
 
 ---
 
-### Errors and warnings
+#### Errors and warnings
 
 ---
 
@@ -1181,7 +1206,7 @@ Remember to check over it before you submit your release for approval as a relea
 
 ---
 
-### How to approve a release
+#### How to approve a release
 
 ---
 
@@ -1198,7 +1223,7 @@ This page also gives you the expected release url which may be useful to know fo
 
 ---
 
-### Next release expected
+#### Next release expected
 
 ---
 
@@ -1216,9 +1241,14 @@ Prior to each release going live the production team are also able to grant pre-
 
 This preview is only accessible for the 24 hours before the publication date, although the emails may go out to users before then. We expect teams will continue to send an email at 09:30 on pre-release day, including any additional briefing and the link to the pre-release area.
 
+---
+
 ### Granting pre-release access
+
+---
+
 <div class="alert alert-dismissible alert-info">
-Jobshare emails and shared mailboxes should not be sent invites for pre-release. The personal emails for the specific individuals should be used instead, as jobshare emails/shared mailboxes do not have active accounts with DfE to access EES.
+Jobshare emails and shared mailboxes should not be sent invites for pre-release. The personal emails for the specific individuals should be used instead, as jobshare emails / shared mailboxes do not have active accounts with DfE to access EES.
 </div>
 
 <html>
@@ -1240,7 +1270,12 @@ Once the release has been marked as approved, go to the  ‘Pre-release access�
 
 ![](../images/EES-invite-pra.PNG)
 
+---
+
 ### Public pre-release access lists
+
+---
+
 You should also create the public facing pre-release access page by clicking the ‘Public access list’ tab.
 
 <div class="alert alert-dismissible alert-warning">
@@ -1256,11 +1291,10 @@ After creating your pre-release access list a text editor will appear where you 
 
 ---
 
-# Release amendments
+## Making amendments
 
----
 
-If you need to make an amendment to release that has already been published this is possible to do from within the admin dashboard if you are a publication owner. If you need to create an amendment and your publication owner is not available, please contact the [Explore Statistics mailbox](mailto:explore.statistics@education.gov.uk) to do this for you.
+If you need to make an amendment to release that has already been published this is possible to do from within the admin dashboard if you are a publication owner. If you need to create an amendment and your publication owner is not available, please contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) to do this for you.
 
 First, find your publication in the [admin dashboard](#admin-dashboard).
 
@@ -1273,8 +1307,9 @@ Then, from the releases tab, select to 'amend' the release you want to make a ch
 
 ---
 
-## Release notes
+### Release notes
 
+---
 
 When publishing a new amendment you should add a 'release note' to your release so users can be informed of what has changed. Try to keep this brief while remaining informative - it's important to include detail of what has changed, so that a user can see if there is any data they are interested in has changed.
 
@@ -1287,9 +1322,8 @@ See our guidance on Good examples in EES for a [best practice example of a publi
 
 ---
 
-# Methodology
+## Methodology
 
----
 
 Appropriate methodological information must be made available for all published Official Statistics releases. Methodologies can follow our recommended [methodology template](../resources/Methodology template EES.docx), to ensure all the essential details are covered.
 
@@ -1305,17 +1339,23 @@ Once the drafting has finished, a methodology should be set as 'approved for pub
 Any approved methodology changes will be published immediately so make sure you are ready for the changes to go live before approving.
 </div>
 
-## Methodology amendments
+---
+
+### Methodology amendments
+
+---
+
 If you want to revise an existing methodology page you can amend the methodology which will generate a new version for you to edit.
 
-![](../images/amend-methodology-new.PNG)
+![](../images/amend-methodology-new.png)
 
 Once you're happy with your amendment it just needs to be [approved](#sign-off) in the usual way for it to be published.
 
 ---
 
-## Methodology subheadings
+### Methodology subheadings
 
+---
 
 Subheadings make it easier for your users to navigate through your methodology. When editing text blocks in your methodology, you can do this by highlighting your subheading and selecting "Heading 3" in place of "Paragraph":
 
@@ -1325,8 +1365,9 @@ You can add further subheadings underneath this but try to limit the number of s
 
 ---
 
-## Methodology images
+### Methodology images
 
+---
 
 You can add images to methodology pages via the content editor.
 
@@ -1351,9 +1392,8 @@ Accessibility matters for uploaded images too, consider the following if you do 
 
 ---
 
-# Managing publications
+## Managing publications
 
----
 
 We have a type of role within EES admin called ‘Publication Owner’. This permissions level gives publication owners control over their publications.
 
@@ -1362,8 +1402,9 @@ See [roles and permissions](#roles-and-permissions) to see what options are avai
 
 ---
 
-## Publication management
+### Publication management
 
+---
 
 Use this page to change the details for your publication, such as the contact information or to add links to legacy releases on gov.uk.
 
@@ -1377,20 +1418,21 @@ It is possible to change the publication title via this page, however this shoul
 
 ---
 
-## Create new release
+### Create new release
 
+---
 
 After finding the publication you want to create a release for, just press the button to create a new release.
 
 Currently the following types of release can be created in EES:
 
-* National Statistics (includes OSR tick mark logo at the top of the release page)
-* Official Statistics
-* Adhoc Statistics
-* Management Information
-* Experimental Statistics
+* Accredited official statistics (includes OSR tick mark logo at the top of the release page)
+* Official statistics
+* Ad hoc statistics
+* Management information
+* Official statistics in development
 
-When creating a release you will be asked to fill in some release summary fields.
+When creating a release you will be asked to fill in some release summary fields. If you are unsure of what type of release you are publishing, please contact the [statistics HoP office](mailto:hop.statistics@education.gov.uk) for advice immediately.
 
 <div class="alert alert-dismissible alert-info">
 The time period for the release should reflect the time period of the data that this latest release adds to the time series.
@@ -1398,13 +1440,12 @@ The time period for the release should reflect the time period of the data that 
 
 ---
 
-## Managing legacy releases
+### Managing legacy releases
 
+---
 
 Past publications on other services can be added to the previous releases links that appear on the top right of a release page by using the 'Manage legacy releases' section. In here you can add links to previous releases and choose the order in which they appear.
 
 This section can be found by publication owners in the publication management section.
-
-
 
 ---

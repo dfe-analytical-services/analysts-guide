@@ -59,7 +59,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 - Good practice examples in the explore education statistics service
 
 [Embedded visualisations in EES](statistics-production/embedded-charts.html)
-- How to embed R-Shiny charts in EES publications
+- How to embed R Shiny charts in EES publications
 
 [Publication scrums](statistics-production/scrums.html)
 - Information on the scrums we run and tips for writing statistical commentary
@@ -75,8 +75,8 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Public dashboards](writing-visualising/dashboards.html)
 - Guidance for publishing public facing statistics dashboards
 
-[Publishing an R-Shiny based dashboard](writing-visualising/dashboards_rshiny.html)
-- Guidance for publishing public facing statistics dashboards using R-Shiny
+[Publishing an R Shiny based dashboard](writing-visualising/dashboards_rshiny.html)
+- Guidance for publishing public facing statistics dashboards using R Shiny
 
 [Visualising data](writing-visualising/visualising.html)
 - Resources and best practice to guide you when visualising data
