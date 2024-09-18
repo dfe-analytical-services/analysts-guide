@@ -798,11 +798,9 @@ This approach will work for basic filtering of providers and schools but it may 
 
 ---
 
-<div class="jumbotron">
+#### Geography summary
 
-  <h3>Remember</h3>
-
-  <hr class="my-4">
+---
 
 - You must have the minimum expected geography columns, country_code and country_name.
 - You must also have the additional columns required for all geographies included in your file.
@@ -811,8 +809,6 @@ This approach will work for basic filtering of providers and schools but it may 
 - You should regularly check that you are using the most up to date geography names and codes.
 - Aside from blanks, no two geographic locations should have the same code.
 - You can mix geographies in the same file, and should avoid separating files by geography unless size is an issue.
-
-</div>
 
 ---
 
