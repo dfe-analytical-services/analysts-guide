@@ -2,7 +2,7 @@
 title: "Embedded visualisations in EES"
 ---
 
-<p class="text-muted">Guidance for creating and embedding R-Shiny visualisations in EES publications</p>
+<p class="text-muted">Guidance for creating and embedding R Shiny visualisations in EES publications</p>
 
 ---
 
@@ -10,7 +10,7 @@ title: "Embedded visualisations in EES"
 
 ---
 
-EES now offers the option to add an embedded block, which allows analysts to present custom R created charts within their publications. This necessitates analysts creating an R-Shiny based app on GitHub containing the required chart that can then be hosted on a shiny server (currently using the DfE's account on shinyapps.io).
+EES now offers the option to add an embedded block, which allows analysts to present custom R created charts within their publications. This necessitates analysts creating an R Shiny based app on GitHub containing the required chart that can then be hosted on a shiny server (currently using the DfE's account on shinyapps.io).
 
 **Note that this current combination of GitHub and ShinyApps for publishing Shiny Apps does not offer the appropriate security required for unpublished DfE data. Unpublished uderlying app data should therefore never be uploaded to GitHub / ShinyApps.io until such time as it has been published (i.e. via EES).** 
 
@@ -40,7 +40,7 @@ However, there are some instances where you might want to publish something that
 ## Tools
 
 
-We currently only support custom charts created using R-Shiny. These should be created with ggplot and plotly. We provide a template example of a demo R-Shiny/ggplot chart on the DfE Analytical Services GitHub site, which is described [below](#the-dfe-tiny-shiny-template).
+We currently only support custom charts created using R Shiny. These should be created with ggplot and plotly. We provide a template example of a demo R Shiny / ggplot chart on the DfE Analytical Services GitHub site, which is described [below](#the-dfe-tiny-shiny-template).
 
 ---
 
@@ -51,7 +51,7 @@ To get a custom chart approved for embedding within a publication, you'll need t
 
 ---
 
-# Creating an embeddable R-Shiny App
+# Creating an embeddable R Shiny App
 
 ---
 
@@ -93,7 +93,7 @@ As with the full dashboards, the embedded charts currently require the underlyin
 
 As described earlier, where you need to use unpublished data in your chart prior to publication, you can either a) run the chart locally in R-Studio (without pushing the unpublished data to GitHub) or b) create a DevOps/rsconnect deploy of your app, which can be temporarily used as the embed block URL. Note, this will need updating to a URL to the public dashboard on ShinyApps ready for publication.
 
-We are currently developing a route to allow charts via R-Shiny apps to be hosted on DfE servers, such that draft publications will be able to incorporate embedded charts with the unpublished data. The data itself will then be accessed either from a SQL database on DfE servers.
+We are currently developing a route to allow charts via R Shiny apps to be hosted on DfE servers, such that draft publications will be able to incorporate embedded charts with the unpublished data. The data itself will then be accessed either from a SQL database on DfE servers.
 
 ---
 
@@ -101,7 +101,7 @@ We are currently developing a route to allow charts via R-Shiny apps to be hoste
 
 ---
 
-Many of the same principles that apply to creating a full R-Shiny dashboard apply to creating a custom embeddable charts. These are:
+Many of the same principles that apply to creating a full R Shiny dashboard apply to creating a custom embeddable charts. These are:
 
    * [Accessibility](dashboards.html#accessibility-testing);
    * [Reliability](dashboards.html#testing-r-shiny);

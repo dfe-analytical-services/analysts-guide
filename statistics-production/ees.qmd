@@ -300,12 +300,18 @@ The process for adding external users as collaborating analysts is similar to ad
 
 ---
 
-If you have external users you'd like to request access for, please send the following details to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk), **at least two weeks** in advance of requiring access, but ideally as early as possible. Due to the dependency on DfE's digital security, we cannot guarantee access or how long it may take.
+If you have external users you'd like to request access for, please send the following details to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk)
 
 * Email addresses of users to be added
 * Reason for access
 * Length of time access is needed (the standard time period is three months)
 * Copies of declaration forms for each user
+
+:::{.callout-important}
+
+You need to contact us **at least two weeks** in advance of requiring access, but ideally as early as possible. Due to the dependency on DfE's digital security, we cannot guarantee access or how long it may take.
+
+:::
 
 ---
 
@@ -513,7 +519,7 @@ If you are unsure of whether you should be using supporting files, contact the [
 
 ---
 
-Within the 'Data and files' page, you can also create your public data guidance. This replaces the information that would have previously been uploaded as a pdf on GOV.UK and is designed to help users understand and use the data they download from your release. See the [Permanent and fixed period exclusions data guidance](https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england/meta-guidance) for an example.
+Within the 'Data and files' page, you can also create your public data guidance. This replaces the information that would have previously been uploaded as a PDF on GOV.UK and is designed to help users understand and use the data they download from your release. See the [Permanent and fixed period exclusions data guidance](https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england/meta-guidance) for an example.
 
 The 'Data files' section of the document will automatically update as you add new data files to your release, however you will need to add an overview of all the data included in the release and short summaries for each data file before the release can be published.
 
@@ -524,7 +530,7 @@ A list of variables in each file with an associated label (taken from metadata u
 ![](../images/admin-public-meta-detail.PNG)
 
 <div class="alert alert-dismissible alert-danger">
-Releases cannot be published without a completed data guidance. If not filled in an error will be flagged during sign off.
+Releases cannot be published without a completed data guidance page. If not filled in an error will be flagged during sign off.
 </div>
 
 ---
@@ -831,7 +837,7 @@ When selected, you will then see that this data appears in the chart as if the i
 
 ---
 
-You should only use complex charts where there is a clear user need, as simple charts are the easiest for users to understand. If you have a an infographic or a chart that is too complex to build within our chart builder you can use the 'Choose an infographic as alternative' option to upload an image to your data block or use the **Add embed block** feature to embed an R-Shiny based plot (see the section on [embedded blocks](embedded-charts.html) for further information).
+You should only use complex charts where there is a clear user need, as simple charts are the easiest for users to understand. If you have a an infographic or a chart that is too complex to build within our chart builder you can use the 'Choose an infographic as alternative' option to upload an image to your data block or use the **Add embed block** feature to embed an R Shiny based plot (see the section on [embedded blocks](embedded-charts.html) for further information).
 
 Infographic alternatives should be .svg format and you can use the sizing options within the data block editor to size your image appropriately.
 
@@ -912,15 +918,15 @@ The above code should produce something along the lines of the following plots:
 
 ---
 
-#### Embedding R-Shiny blocks
+#### Embedding R Shiny blocks
 
 ---
 
-If you need to include a type of chart that isn't possible using the standard EES chart options, for example an interactive chart with filters, you can embed a block to display a custom R-Shiny produced chart.
+If you need to include a type of chart that isn't possible using the standard EES chart options, for example an interactive chart with filters, you can embed a block to display a custom R Shiny produced chart.
 
-To embed a shiny chart, you'll first need to create an R-Shiny application containing the chart using the DfE tiny-shiny template and get it hosted on our DfE GitHub and ShinyApps accounts. More details on both of these are available in the tiny-shiny section of this guidance.
+To embed a shiny chart, you'll first need to create an R Shiny application containing the chart using the DfE tiny-shiny template and get it hosted on our DfE GitHub and ShinyApps accounts. More details on both of these are available in the tiny-shiny section of this guidance.
 
-Once you've got the R-Shiny app set up and hosted, you can embed it using the **Add embed block** button in the content area. This will give you the option to enter a URL, where you can enter the URL of the shiny app. Valid URLs to use in the embed block dialogue box are limited to only those on the DfE ShinyApps server (and the internal rsconnect when needed for draft publications).
+Once you've got the R Shiny app set up and hosted, you can embed it using the **Add embed block** button in the content area. This will give you the option to enter a URL, where you can enter the URL of the shiny app. Valid URLs to use in the embed block dialogue box are limited to only those on the DfE ShinyApps server (and the internal rsconnect when needed for draft publications).
 
 ![The EES interface for embedding a Shiny chart](../images/tinyshiny-ees-block.PNG)
 

@@ -276,11 +276,11 @@ These standards give you the power to format the data in a way that best meets t
 Data files must in comma separated values (CSV) format, and use UTF-8 encoding. You can specify this when saving the file in Excel, or exporting from elsewhere.
 </div>
 
-If you need to use commas within a cell, then you must add a text delimiter such as quotes to your file to define each cell - this is often done automatically for you, though if you're unsure then you can open up your CSV file in a text editor such as notepad to check.
+If you need to use commas within a cell, then you must add a text delimiter such as quotes to your file to define each cell - this is often done automatically for you, though if you're unsure then you can open up your CSV file in a text editor such as Notepad to check.
 
-Comma separated values simply means that if look at the raw file, each column is separated by a comma, other forms of delimination like this also exist, such as TSV files that are 'tab' separated. Next time you have a minute, try opening up your CSV data files in notepad, to see how they look behind the scenes!
+Comma separated values simply means that if look at the raw file, each column is separated by a comma, other forms of delimination like this also exist, such as TSV files that are 'tab' separated. Next time you have a minute, try opening up your CSV data files in Notepad, to see how they look behind the scenes!
 
-Saving files in CSV format should be a standard from any analytical tool, though sometimes you need to watch out for how they are encoding special characters, for more information see the section on [how to export data with UTF8 encoding](#how-to-export-data-with-utf-8-encoding).
+Saving files in CSV format should be a standard option from any analytical tool, though sometimes you need to watch out for how they are encoding special characters, for more information see the section on [how to export data with UTF8 encoding](#how-to-export-data-with-utf-8-encoding).
 
 You should also ensure that your data follows the [GSS Standards on symbols](https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/){target="_blank" rel="noopener noreferrer"}, though be aware to ignore the ask that symbols are included in separate cells from the data, which is unpractical and unrealistic.
 
