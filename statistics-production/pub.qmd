@@ -73,8 +73,8 @@ Before you start creating a release in the platform you should have:
 * Announced the upcoming release via GOV.UK
 * Sent metadata form to HoP
 * Contacted the BAU team so we can support you with your first release
-* Produced your tidy csv data files with appropriate disclosure control
-* Produced metadata files for each csv data file
+* Produced your tidy CSV data files with appropriate disclosure control
+* Produced metadata files for each CSV data file
 * Ran your data and metadata through our [screener checks](https://rsconnect/rsc/dfe-published-data-qa/) 
 
 Before you publish a release you have created in the platform you should have: 
