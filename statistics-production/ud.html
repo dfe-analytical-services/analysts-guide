@@ -511,6 +511,27 @@ cookieconsent.run({
   <li><a href="#geography-columns" id="toc-geography-columns" class="nav-link" data-scroll-target="#geography-columns">Geography columns</a></li>
   <li><a href="#allowable-geographic-levels" id="toc-allowable-geographic-levels" class="nav-link" data-scroll-target="#allowable-geographic-levels">Allowable geographic levels</a></li>
   </ul></li>
+  <li><a href="#common-harmonised-variables" id="toc-common-harmonised-variables" class="nav-link" data-scroll-target="#common-harmonised-variables">Common harmonised variables</a>
+  <ul class="collapse">
+  <li><a href="#special-educational-needs" id="toc-special-educational-needs" class="nav-link" data-scroll-target="#special-educational-needs">Special Educational Needs</a></li>
+  <li><a href="#sex-and-gender" id="toc-sex-and-gender" class="nav-link" data-scroll-target="#sex-and-gender">Sex and gender</a></li>
+  <li><a href="#ethnicity" id="toc-ethnicity" class="nav-link" data-scroll-target="#ethnicity">Ethnicity</a></li>
+  <li><a href="#establishment-characteristics" id="toc-establishment-characteristics" class="nav-link" data-scroll-target="#establishment-characteristics">Establishment characteristics</a></li>
+  </ul></li>
+  <li><a href="#filters" id="toc-filters" class="nav-link" data-scroll-target="#filters">Filters</a>
+  <ul class="collapse">
+  <li><a href="#grouping-filters" id="toc-grouping-filters" class="nav-link" data-scroll-target="#grouping-filters">Grouping filters</a></li>
+  <li><a href="#dates-as-filters" id="toc-dates-as-filters" class="nav-link" data-scroll-target="#dates-as-filters">Dates as filters</a></li>
+  </ul></li>
+  <li><a href="#indicators" id="toc-indicators" class="nav-link" data-scroll-target="#indicators">Indicators</a>
+  <ul class="collapse">
+  <li><a href="#indicator-grouping" id="toc-indicator-grouping" class="nav-link" data-scroll-target="#indicator-grouping">Indicator grouping</a></li>
+  </ul></li>
+  <li><a href="#how-to-name-columns-fields" id="toc-how-to-name-columns-fields" class="nav-link" data-scroll-target="#how-to-name-columns-fields">How to name columns (fields)</a>
+  <ul class="collapse">
+  <li><a href="#field-names" id="toc-field-names" class="nav-link" data-scroll-target="#field-names">Field names</a></li>
+  <li><a href="#field-entries" id="toc-field-entries" class="nav-link" data-scroll-target="#field-entries">Field entries</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/statistics-production/ud.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -565,11 +586,11 @@ Guidance on how to structure data files
 <hr>
 <p>For data to be used with the table tool and charts in EES, it needs to meet the following overall specifications:</p>
 <ul>
-<li>The data should be contained in a <a href="#data-format">text file with comma separated values</a> and with the extension .csv.</li>
+<li>The data should be formatted as a <a href="#data-format">comma separated values (CSV) file</a>.</li>
 <li>The first row of the data file should contain <a href="#variable-names">machine readable column names</a> in <a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake case</a>.</li>
 <li>The data should be layed out in line with <a href="#tidy-data-structure">tidy data principles</a>, consisting of filters (category fields) and indicators (value fields).</li>
 <li>The file should contain the <a href="#time-and-geography">necessary mandatory columns</a> (i.e.&nbsp;time_period, time_identifier, geographical_level, country_code and country_name);</li>
-<li>The data file should have an accompanying <a href="#ees-metadata">metadata csv file</a>, which contains information on the nature of the columns in the data file:
+<li>The data file should have an accompanying <a href="#ees-metadata">metadata CSV file</a>, which contains information on the nature of the columns in the data file:
 <ul>
 <li>whether a given column is a filter or indicator;</li>
 <li>human readable name for use in tables and charts on EES;</li>
@@ -876,11 +897,8 @@ Guidance on how to structure data files
 <li>We expect that multiple data files may be provided for each release.</li>
 <li>Keep in mind that a data block can only have a single data source. However, many blocks can share one source.</li>
 <li>You should include all years of the data you available in your data file to facilitate time series analysis.</li>
-<li>Each data file must be accompanied by a corresponding .csv metadata file as outlined under <a href="#ees-metadata">EES Metadata</a>.</li>
+<li>Each data file must be accompanied by a corresponding CSV metadata file as outlined under <a href="#ees-metadata">EES metadata</a>.</li>
 </ul>
-<div class="alert alert-dismissible alert-danger">
-<p>In light of recent accessibility legislation, you should aim to include at least 3 years of data in EES where it exists.</p>
-</div>
 <hr>
 <section id="tidy-data-structure" class="level3">
 <h3 class="anchored" data-anchor-id="tidy-data-structure">Tidy data structure</h3>
@@ -1117,9 +1135,11 @@ Guidance on how to structure data files
 <hr>
 <p>These standards give you the power to format the data in a way that best meets the needs of the users. There are only a handful of formatting standards to follow to ensure best practice and consistency across all of our data.</p>
 <div class="alert alert-dismissible alert-danger">
-<p>Data files must in comma separated values (.csv) format, and use UTF-8 encoding. You can specify this when saving the file in Excel, or exporting from elsewhere.</p>
+<p>Data files must in comma separated values (CSV) format, and use UTF-8 encoding. You can specify this when saving the file in Excel, or exporting from elsewhere.</p>
 </div>
-<p>If you need to use commas within a cell, then you must add a text delimiter such as quotes to your file to define each cell - this is often done automatically for you, though if you’re unsure then you can open up your csv file in a text editor such as notepad to check.</p>
+<p>If you need to use commas within a cell, then you must add a text delimiter such as quotes to your file to define each cell - this is often done automatically for you, though if you’re unsure then you can open up your CSV file in a text editor such as Notepad to check.</p>
+<p>Comma separated values simply means that if look at the raw file, each column is separated by a comma, other forms of delimination like this also exist, such as TSV files that are ‘tab’ separated. Next time you have a minute, try opening up your CSV data files in Notepad, to see how they look behind the scenes!</p>
+<p>Saving files in CSV format should be a standard option from any analytical tool, though sometimes you need to watch out for how they are encoding special characters, for more information see the section on <a href="#how-to-export-data-with-utf-8-encoding">how to export data with UTF8 encoding</a>.</p>
 <p>You should also ensure that your data follows the <a href="https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/" target="_blank" rel="noopener noreferrer">GSS Standards on symbols</a>, though be aware to ignore the ask that symbols are included in separate cells from the data, which is unpractical and unrealistic.</p>
 <hr>
 </section>
@@ -1218,14 +1238,14 @@ Guidance on how to structure data files
 <section id="how-to-export-data-with-utf-8-encoding" class="level4">
 <h4 class="anchored" data-anchor-id="how-to-export-data-with-utf-8-encoding">How to export data with UTF-8 encoding</h4>
 <hr>
-<p>Most of the time our data is exported as a .csv file it will have UTF-8 encoding by default. However, there are times when this isn’t the case, and therefore we’ll quickly run through how to check this below in each of Excel, SQL, and R.</p>
+<p>Most of the time our data is exported as a CSV file it will have UTF-8 encoding by default. However, there are times when this isn’t the case, and therefore we’ll quickly run through how to check this below in each of Excel, SQL, and R.</p>
 <p><strong>Excel</strong></p>
-<p>Excel tends to save all .csv files as UTF-8, however this is not always the case, particularly if there are symbols in the file (such as £). To ensure that it saves with UTF-8 encoding you can select the following when saving a file:</p>
+<p>Excel tends to save all CSV files as UTF-8, however this is not always the case, particularly if there are symbols in the file (such as £). To ensure that it saves with UTF-8 encoding you can select the following when saving a file:</p>
 <p><code>File &gt; Save As &gt; CSV UTF-8 (Comma delimited) (*.csv)</code></p>
 <p><strong>SQL</strong></p>
-<p>For saving results out of SQL as a .csv file there isn’t an option to specify the encoding, therefore the best bet is to either open the file in Excel and specify that as above, or to run your SQL query/read your data into R and follow the guidance below.</p>
+<p>For saving results out of SQL as a CSV file there isn’t an option to specify the encoding, therefore the best bet is to either open the file in Excel and specify that as above, or to run your SQL query/read your data into R and follow the guidance below.</p>
 <p><strong>R</strong></p>
-<p>When writing .csv files out of R, you’ll mostly likely be using either <code>write.csv()</code> from base R, or <code>write_csv()</code> from the readr package. For the first one, you can specify encoding using <code>fileEncoding =</code> like the following example:</p>
+<p>When writing CSV files out of R, you’ll mostly likely be using either <code>write.csv()</code> from base R, or <code>write_csv()</code> from the readr package. For the first one, you can specify encoding using <code>fileEncoding =</code> like the following example:</p>
 <p><code>write.csv(my_data, file = "my_data_file.csv", fileEncoding = "UTF-8")</code></p>
 <p>For <code>write_csv()</code>, which some of you may be using for increased processing speed, the function automatically encodes as UTF-8 format, meaning that you don’t have to do anything different!</p>
 <hr>
@@ -1250,7 +1270,7 @@ Guidance on how to structure data files
 <section id="file-size" class="level3">
 <h3 class="anchored" data-anchor-id="file-size">File size</h3>
 <hr>
-<p>There are no character or size limits in a csv file and there is no size limit for EES, though the larger a file is, the longer it will take to upload and process. Also remember that the files you upload are the files that users will download, consider the software they may access to (e.g.&nbsp;Excel) and whether the size of your files are compatible with this.</p>
+<p>There are no character or size limits in a CSV file and there is no size limit for EES, though the larger a file is, the longer it will take to upload and process. Also remember that the files you upload are the files that users will download, consider the software they may access to (e.g.&nbsp;Excel) and whether the size of your files are compatible with this.</p>
 <p>Excel has a cell character limit of 32,760 and a row limit of 1,048,576. It is best to avoid exceeding these as some end users may struggle to open the file. One good way to cut the file down is to split after a certain number of years, or to separate out different geographic levels into separate files, providing school level data as a separate file for example. With the data all being in a tidy format these are then easy enough for secondary analysts to stitch back together if needed.</p>
 <p>A <strong>rough guide</strong> to file size would be:</p>
 <ul>
@@ -1320,7 +1340,7 @@ Guidance on how to structure data files
 </section>
 <section id="ees-metadata" class="level2">
 <h2 class="anchored" data-anchor-id="ees-metadata">EES metadata</h2>
-<p>Metadata in a machine readable (.csv) format must accompany datasets uploaded to the explore education statistics service to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.</p>
+<p>Metadata in a machine readable (CSV) format must accompany datasets uploaded to the explore education statistics service to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.</p>
 <p>This EES metadata is different to any metadata files you may provide alongside your data for your users.</p>
 <p>We only need to provide EES metadata for filters and indicators, we do not need to provide any EES metadata for the compulsory observational units (time and geography), as this has been standardised and the platform is expecting pre-defined columns and values in those fields.</p>
 <p>We do not need to provide metadata for filters that only have a single level, as this data is not useful for EES, and is there for the benefit of end users downloading the files.</p>
@@ -2037,7 +2057,7 @@ Guidance on how to structure data files
 </section>
 </section>
 <section id="allowable-geographic-levels" class="level3">
-<h3 class="anchored">Allowable geographic levels</h3>
+<h3 class="anchored" data-anchor-id="allowable-geographic-levels">Allowable geographic levels</h3>
 <hr>
 <p>All rows must have country_code and country_name completed, regardless of geographic level. The additional required columns by level are shown below. You do not have to publish at every level, this is a guide that covers every level that can be published in the platform.</p>
 <p>Where you have multiple geographic levels in a file, leave any not applicable columns blank for other rows. For example, region_name and region_code should be blank for national rows. Some levels do fit into a hierarchy, for example local authorities all have a region, in these cases you should include the higher level information too. So for a local authority row, the region and country columns would all be completed as well as the la columns.</p>
@@ -2193,7 +2213,7 @@ Guidance on how to structure data files
 <hr>
 </section>
 <section id="unknown-geographic-codes" class="level4">
-<h4 class="anchored">Unknown geographic codes</h4>
+<h4 class="anchored" data-anchor-id="unknown-geographic-codes">Unknown geographic codes</h4>
 <hr>
 <table class="caption-top table">
 <colgroup>
@@ -2222,11 +2242,10 @@ Guidance on how to structure data files
 </tbody>
 </table>
 <hr>
-<div class="jumbotron">
-<h3 class="anchored">
-Remember
-</h3>
-<hr class="my-4">
+</section>
+<section id="geography-summary" class="level4">
+<h4 class="anchored" data-anchor-id="geography-summary">Geography summary</h4>
+<hr>
 <ul>
 <li>You must have the minimum expected geography columns, country_code and country_name.</li>
 <li>You must also have the additional columns required for all geographies included in your file.</li>
@@ -2236,8 +2255,10 @@ Remember
 <li>Aside from blanks, no two geographic locations should have the same code.</li>
 <li>You can mix geographies in the same file, and should avoid separating files by geography unless size is an issue.</li>
 </ul>
-</div>
 <hr>
+</section>
+</section>
+</section>
 <section id="common-harmonised-variables" class="level2">
 <h2 class="anchored" data-anchor-id="common-harmonised-variables">Common harmonised variables</h2>
 <p>Wherever possible variables should confirm to the DfE harmonisation strategy. Having consistent variables across data files held by the DfE, and in particular across data files in publications, allows users to more quickly navigate and understand our statistics. In the EES context, harmonisation will also facilitate more advanced methods of interacting with our data platform such as automated data retrieval for dashboards and other secondary statistics services, whilst also helping with performance and cost effectiveness of the EES platform.</p>
@@ -3147,7 +3168,7 @@ You must not include grouping filters as separate rows in the EES metadata, they
 </div>
 <p>Like filters, indicator names must not include spaces, and ideally be formatted in <a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake_case</a> for ease of use. You can use abbreviations to keep the names short and usable, your users will be able to see what each variable name means in the data guidance. <strong>Avoid starting variable names with a numeric character.</strong></p>
 <p>In EES, the platform itself will format large numeric values to include commas, so you do not need to have commas for separating large numbers in your data file.</p>
-<p>If you are including percentages and want to show 79% in EES, you would have the value 79 in your data file and specify % as the unit for that column in the EES metadata. As best practice we recommend that you include as much detail as possible in your underlying files when it comes to decimal places. As a default EES will round decimals to 2 d.p. in the platform, though if you would prefer to display your data to a different number of d.p. in the platform please use the <a href="#ees-metadata">indicator_dp</a> column to specify this in the .csv metadata. Likewise with financial data, for don’t include £ in the values in the data file, leave those cells as numeric only, include it as an indicator unit instead.</p>
+<p>If you are including percentages and want to show 79% in EES, you would have the value 79 in your data file and specify % as the unit for that column in the EES metadata. As best practice we recommend that you include as much detail as possible in your underlying files when it comes to decimal places. As a default EES will round decimals to 2 d.p. in the platform, though if you would prefer to display your data to a different number of d.p. in the platform please use the <a href="#ees-metadata">indicator_dp</a> column to specify this in the CSV metadata. Likewise with financial data, for don’t include £ in the values in the data file, leave those cells as numeric only, include it as an indicator unit instead.</p>
 <p>In line with GSS best practice for communicating uncertainty, when using confidence intervals you should report the upper and lower bounds as separate columns rather than as one confidence interval column:</p>
 <div class="table-responsive">
 <table class="caption-top table">
@@ -3308,13 +3329,13 @@ You must not include grouping filters as separate rows in the EES metadata, they
 </ul>
 <p>The recommended process for this is to follow these steps:</p>
 <ul>
-<li>collate all col_name, col_type, label, indicator_grouping and filter_grouping_column fields from meta data files into one single csv file;</li>
+<li>collate all col_name, col_type, label, indicator_grouping and filter_grouping_column fields from meta data files into one single CSV file;</li>
 <li>check for indicators that contain information better suited to filter entries (in line with tidy data principles);</li>
 <li>check indicator and filter col_name entries against published current standard names and assign new col_name entries as appropriate;</li>
 <li>check indicator and filter col_name entries against standard naming conventions and assign new col_name entries as appropriate and</li>
 <li>check indicator and filter col_name entries for internal consistency and assign new col_name entries as appropriate.</li>
 </ul>
-<p>Please collate the above into a csv file similar to your publication meta csv files. This should have the following columns:</p>
+<p>Please collate the above into a CSV file similar to your publication meta CSV files. This should have the following columns:</p>
 <ul>
 <li>col_name</li>
 <li>col_type</li>
@@ -3338,7 +3359,7 @@ You must not include grouping filters as separate rows in the EES metadata, they
 <h3 class="anchored" data-anchor-id="field-entries">Field entries</h3>
 <hr>
 <p>A further step teams can take to maintain standardization is to review the filter options or entries within their filters. For example, any ethnicity fields should conform to our published harmonized (GSS) ethnicity guidance.</p>
-<p>As with field names we recommend collating these into a master csv file covering your entire publication. Expected entries are:</p>
+<p>As with field names we recommend collating these into a master CSV file covering your entire publication. Expected entries are:</p>
 <ul>
 <li>col_name</li>
 <li>filter_grouping_column</li>
@@ -3424,12 +3445,8 @@ You must not include grouping filters as separate rows in the EES metadata, they
 
 </section>
 </section>
-</section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
 
-
-
-
- <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -4006,7 +4023,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav>
- <!-- /content -->
+</div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
