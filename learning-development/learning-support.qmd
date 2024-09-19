@@ -40,11 +40,11 @@ Our current workshops are:
 
 In this workshop, we cover:
 
-*	What are git, Azure DevOps and GitHub and what are the differences?
+*	What are Git, Azure DevOps and GitHub and what are the differences?
 *	How can they help your work?
-*	How to start working with git and DevOps in the DfE ecosystem
+*	How to start working with Git and DevOps in the DfE ecosystem
 *	Managing projects and tasks with DevOps Boards
-*	Basic version control with git – add/stage, commit, push and pull
+*	Basic version control with Git – add/stage, commit, push and pull
 *	Working with branches
 *	Tracking changes and who made them
 *	Merging, pull requests and merge conflicts
