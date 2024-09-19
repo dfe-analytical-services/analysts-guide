@@ -5,6 +5,10 @@ title: "Git"
 <p class="text-muted">Guidance and tips for version control with Git</p>
 
 ---
+::: {.callout-tip}
+## Git DevOps Manual
+[Link Here] (https://dfe-analytical-services.github.io/azure-devops-for-analysis/index.html)
+:::
 
 ## What is Git
 
