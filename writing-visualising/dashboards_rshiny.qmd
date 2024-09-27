@@ -406,18 +406,18 @@ See our [Git](../learning-development/git.html#storing-secure-variables) page fo
 
 ---
 
-It's possible to publish dashboards that are only accessible to those on DfE kit, to do this you will need to publish via the departments RSConnect servers.
+It's possible to publish dashboards that are only accessible to users within the DfE network. To do this you will need to publish via the department's internal Posit Connect servers.
 
 You will need:
 
 * A finished app, in line with the guidance on this page
 * The code to be in a Git repository in the dfe-gov-uk Azure DevOps space
 
-To publish the app, you'll need to set up a pipeline in Azure DevOps, guidance for how to do this can be found in the [R community teams area](https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9).
+To publish the app, you'll need to set up a pipeline in Azure DevOps, guidance for how to do this can be found in the [Posit Connect Guidance (internal DfE access only)](https://rsconnect/rsc/posit-connect-guidance/_book/).
 
-Access to applications on RSConnect are locked down by default, once the pipeline is set up and you've deployed the app you'll need to request for its access to be opened up by using an RSConnect request on [ServiceNow](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=1e3c3cb9db80ab003b929334ca9619df&sysparm_category=09e18be6db2f8340865049ee3b96190f).
+Access to applications on the Posit Connect servers is locked down by default, so once the pipeline is set up and you've deployed the app you'll need to request for its access to be opened up by using an Posit Connect request on [ServiceNow](https://dfe.service-now.com/ithelpcentre?id=sc_cat_item&table=sc_cat_item&sys_id=c4304bf31b2b4690b192ec69b04bcb3e&searchTerm=posit%20connect).
 
-If you're running the app from an internal database, you'll need to contact the database owner to set up a local login, and then store those as variables against your specific app in rsconnect. You can raise a request to do this via [ServiceNow](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=1e3c3cb9db80ab003b929334ca9619df&sysparm_category=09e18be6db2f8340865049ee3b96190f) and selecting 'Change app variables'.
+If you're running the app from an internal database, you'll need to contact the database owner to set up a local login, and then store those as variables against your specific app in rsconnect. You can raise a request to do this via [ServiceNow](https://dfe.service-now.com/ithelpcentre?id=sc_cat_item&table=sc_cat_item&sys_id=c4304bf31b2b4690b192ec69b04bcb3e&searchTerm=posit%20connect) and selecting 'Change app variables'.
 
 ---
 
