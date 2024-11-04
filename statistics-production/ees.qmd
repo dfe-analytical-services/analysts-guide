@@ -57,6 +57,7 @@ There is no overlap between the environments and content created on one cannot b
   When accessing the pre-production environment you may be asked for a username and password, these are as follows: dfe, dataresearch.
 
 ::: {.callout-warning}
+## Warning - unpublished data
 The pre-production environment is not suitable for unpublished data. Unpublished data should only be uploaded to the production environment.
 :::
 
@@ -661,7 +662,7 @@ Here are a few examples of good fast-track titles in EES:
 
 
 ::: {.callout-note}
-**What is the difference between a fast-track link and a permalink?**
+## What is the difference between a fast-track link and a permalink?
 
 EES also offers 'permalinks' for any table created in the table tool which allows a user to save a link to a permanent, static, version of a table they have created. Analysts can make use of these permalinks when answering queries or in PQ and FOI responses.
 
