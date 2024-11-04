@@ -91,11 +91,11 @@ The diagram below highlights what RAP means for us, and the varying levels in wh
 
 ---
 
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-important}
 It is expected that **all teams' processes meet all elements of good and great practice** as a baseline.
 
 Teams are expected to review their own processes using the [publication self-assessment tool](https://rsconnect/rsc/publication-self-assessment){target="_blank" rel="noopener noreferrer"} and use the guidance on this site to start making improvements towards meeting the four core principles if they aren't already. If you would like additional help to review your processes, please contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
-</div>
+:::
 
 Teams will start from different places and implement changes at different rates, and in different ways. We do not expect that every team will follow the same path, or even end at the same point. Don't worry if this seems overwhelming at first, use the guidance here to identify areas for improvement and then tackle them with confidence.
 

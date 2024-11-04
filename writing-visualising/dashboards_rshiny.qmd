@@ -156,17 +156,17 @@ As with charts, be careful when choosing colours, and make sure that colours hav
 
 ---
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
 Analysts should not use their own private GitHub accounts for the development of DfE dashboards.
-</div>
+:::
 
 All published dashboards should have their code hosted on the [dfe-analytical-services project on GitHub](https://github.com/dfe-analytical-services/), both for full public transparency and to enable automated approval-based deployments to the DfE publication platform. For the purposes of the internal-only review of dashboards under development, analysts may also benefit from a hosting code on the DfE Azure based DevOps platform. For both of the above, analysts should contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 Given the above, all analysts intending to create a dashboard should ensure they have a good working understanding of Git, GitHub and Azure DevOps. We strongly recommend our [Tech Skills workshop on Git and Azure DevOps](../learning-development/learning-support.html#technical-workshops) to either get you started or refresh your memory.
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
   Be sure to read the guidance carefully, **do not** commit or push unpublished data to a GitHub repo before the day of the publication of the data. If you think you may have done this by accident, contact [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) immediately with the full details of what has been uploaded to GitHub and when.
-</div>
+:::
 
 ---
 
