@@ -719,7 +719,7 @@ You can edit the chart legend, and styling of your series via the Legend tab.
 
 ![](../images/EES-charts-legend.PNG)
 
-::: {.callout-tip
+::: {.callout-tip}
 To select specify custom colours outside of the defaults, you can double click on the colour codes at the bottom of the colour picked until you get to the type of code you're wanting to input (e.g. hex code) and then enter the code manually.
 :::
 
