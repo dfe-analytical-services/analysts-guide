@@ -75,6 +75,8 @@ An example pair of data and metadata files are illustrated in the files and tabl
 The mandatory columns time_identifier, geographic_level and country_code are abridged in the table below to help with displaying in a web page, but are shown in the example file at the link above.
 :::
 
+::: {.table-responsive}
+
 | time_period | ... | country_name | region_code | region_name | gender | school_phase | children_count  | children_percent |
 |-------------|-----|--------------|-------------|-------------|--------|--------------|-----------------|------------------|
 | 202021      | ... | England      |             |             | Total  | Total        | 1000            | 100.000          |
