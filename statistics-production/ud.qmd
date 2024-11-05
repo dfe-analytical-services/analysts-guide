@@ -519,7 +519,7 @@ Each row represents a column in the data file.
 
 | col_name | col_type | label | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|---|
-| gender | Filter | sex | | | | Filter by pupil gender | |
+| sex | Filter | Sex | | | | Filter by pupil sex | |
 | school_phase | Filter | School phase | | | | Filter by the phase of the school | |
 | children_count | Indicator | Number of children | | | | | |
 | children_percent | Indicator | Percentage of children | | % | 1 | | |
