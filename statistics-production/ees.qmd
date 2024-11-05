@@ -236,7 +236,7 @@ You only have 160 characters – to make sure you are fully utilising these, hav
 
 * Is it clear how frequently the releases are published?
 
-* Is it clear what breakdowns you cover? E.g. Ethnicity, Gender, SEN?
+* Is it clear what breakdowns you cover? E.g. Ethnicity, sex, SEN?
 
 * Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g. Free School Meals (FSM)
 

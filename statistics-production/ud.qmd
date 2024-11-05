@@ -77,7 +77,7 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 
 ::: {.table-responsive}
 
-| time_period | ... | country_name | region_code | region_name | gender | school_phase | children_count  | children_percent |
+| time_period | ... | country_name | region_code | region_name | sex | school_phase | children_count  | children_percent |
 |-------------|-----|--------------|-------------|-------------|--------|--------------|-----------------|------------------|
 | 202021      | ... | England      |             |             | Total  | Total        | 1000            | 100.000          |
 | 202021      | ... | England      |             |             | Male   | Total        | 490             | 49.000           |
@@ -107,7 +107,7 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 
 | col_name         | col_type  | label        | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
 |------------------|-----------|--------------|--------------------|----------------|--------------|-------------|------------------------|
-| gender           | Filter    | Gender       |                    |                |              | Filter by pupil gender |             |
+| sex          | Filter    | Gender       |                    |                |              | Filter by pupil sex |             |
 | school_phase     | Filter    | School phase |                    |                |              | Filter by the phase of the school |  |
 | children_count  | Indicator | Number of children |              |                |              |             |                        |
 | children_percent | Indicator | Percentage of children |          | %              | 1            |             |                        |
@@ -438,7 +438,7 @@ In line with the [GSS guidance on symbols](https://gss.civilservice.gov.uk/polic
 
 | Symbol      | Usage                                         | Example                                                   | Obsolete equivalents |
 |-------------|-----------------------------------------------|-----------------------------------------------------------| -------------------- |
-| z           | When an observation is **not applicable**     | No data for at gender level for boys at an all-girls school | |
+| z           | When an observation is **not applicable**     | No data for at sex level for boys at an all-girls school | |
 | x           | When data is **unavailable** for other reasons| Data for an indicator is not collected in a certain region  | : |
 | c           | **Confidential** data | Data has been suppressed | |
 | low        | Rounds to 0, but is not 0 | Rounding to the nearest thousand, 499 would otherwise show as 0. Only use 0 for true 0's | ~ |
@@ -519,7 +519,7 @@ Each row represents a column in the data file.
 
 | col_name | col_type | label | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|---|
-| gender | Filter | Gender | | | | Filter by pupil gender | |
+| gender | Filter | sex | | | | Filter by pupil gender | |
 | school_phase | Filter | School phase | | | | Filter by the phase of the school | |
 | children_count | Indicator | Number of children | | | | | |
 | children_percent | Indicator | Percentage of children | | % | 1 | | |
