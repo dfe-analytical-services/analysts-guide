@@ -438,7 +438,7 @@ In line with the [GSS guidance on symbols](https://gss.civilservice.gov.uk/polic
 
 | Symbol      | Usage                                         | Example                                                   | Obsolete equivalents |
 |-------------|-----------------------------------------------|-----------------------------------------------------------| -------------------- |
-| z           | When an observation is **not applicable**     | No data for at sex level for boys at an all-girls school | |
+| z           | When an observation is **not applicable**     | No data for boys at an all-girls school | |
 | x           | When data is **unavailable** for other reasons| Data for an indicator is not collected in a certain region  | : |
 | c           | **Confidential** data | Data has been suppressed | |
 | low        | Rounds to 0, but is not 0 | Rounding to the nearest thousand, 499 would otherwise show as 0. Only use 0 for true 0's | ~ |
