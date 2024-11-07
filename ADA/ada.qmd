@@ -21,6 +21,10 @@ It brings together:
 
 As long as you're connected to the network - it's available to anyone who works for the Department of Education. 
 
+::: {.callout-tip}
+There is an Analytical Data Access [jargon buster](https://analytical-data-access.azurewebsites.net/) to help you understand different ADA and databricks terms. 
+:::
+
 The ADA project is currently in its onboarding phase.  The ADA team will work with analyst teams to plan migrations. We encourage teams to engage early so that you have time to migrate your work and receive support from the project team. 
 
 Data migration will replace three legacy systems: 
