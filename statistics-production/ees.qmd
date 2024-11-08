@@ -986,10 +986,6 @@ Use plain English and shorter sentences, aim for an average of 15-20 words per s
 
 Explain complex concepts in plain English within the text. Remember that for many of our users, confidence intervals and significant differences are complex concepts that need explaining.
 
-::: {.callout-warning}
-Do not use footnotes in the text of your content. They’re designed for reference in print, not web pages. Always consider the user need first. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.
-:::
-
 ---
 
 #### About these statistics
