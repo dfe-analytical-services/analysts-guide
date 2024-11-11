@@ -8,7 +8,7 @@
 
 ## What is the ADA project?
 
-The [Analytical Data Access (ADA) service](https://analytical-data-access.azurewebsites.net/get-support/jargon) has been created to support analysts, engineers and policy team members.
+The [Analytical Data Access (ADA) service](https://analytical-data-access.azurewebsites.net) has been created to support analysts, engineers and policy team members.
 
 It brings together:
 
@@ -22,7 +22,7 @@ It brings together:
 As long as you're connected to the network - it's available to anyone who works for the Department of Education. 
 
 ::: {.callout-tip}
-There is an Analytical Data Access [jargon buster](https://analytical-data-access.azurewebsites.net/) to help you understand different ADA and Databricks terms. 
+There is an Analytical Data Access [jargon buster](https://analytical-data-access.azurewebsites.net/get-support/jargon) to help you understand different ADA and Databricks terms. 
 :::
 
 The ADA project is currently in its onboarding phase.  The ADA team will work with analyst teams to plan migrations. We encourage teams to engage early so that you have time to migrate your work and receive support from the project team. 
