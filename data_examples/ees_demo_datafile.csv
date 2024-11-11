@@ -1,4 +1,4 @@
-time_period,time_identifier,geographical_level,country_code,country_name,region_code,region_name,gender,school_phase,number_children,percent_children
+time_period,time_identifier,geographical_level,country_code,country_name,region_code,region_name,sex,school_phase,number_children,percent_children
 202021,Academic year,National,E92000001,England,,,Total,Total,1000,100.000
 202021,Academic year,National,E92000001,England,,,Male,Total,490,49.000
 202021,Academic year,National,E92000001,England,,,Female,Total,510,51.000
