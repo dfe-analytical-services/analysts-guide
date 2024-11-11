@@ -8,7 +8,7 @@
 
 ## What is the ADA project?
 
-The [Analytical Data Access (ADA) service](https://analytical-data-access.azurewebsites.net/get-support/jargon) has been created to support analysts, engineers and policy team members.
+The [Analytical Data Access (ADA) service](https://analytical-data-access.azurewebsites.net/) has been created to support analysts, engineers and policy team members.
 
 It brings together:
 
