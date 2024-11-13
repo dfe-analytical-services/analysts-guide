@@ -6,8 +6,8 @@ title: "Open Data Standards"
 require(knitr)
 require(readxl)
 
-apprenticeship <- read_excel("../data_examples/apprenticeship_example.xlsx")
-metadata_data_example <- read_excel("../data_examples/metadata_data_example.xlsx")
+apprenticeship <- readxl::read_excel("../data_examples/apprenticeship_example.xlsx")
+metadata_data_example <- readxl::read_excel("../data_examples/metadata_data_example.xlsx")
 
 ```
 
