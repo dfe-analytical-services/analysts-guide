@@ -572,8 +572,18 @@ Guidance on how to structure data files
 <hr>
 <p>An <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">interactive data screener</a> has been developed in R Shiny to automate checks against the standards as a final stage of automated quality assurance before upload to EES.</p>
 <p>This can be run on any data file, though requires an associated <a href="#ees-metadata">EES metadata file</a> to be able to process the file. The app runs on our Posit Connect (formerly RSConnect) servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa" target="_blank" rel="noopener noreferrer">GitHub</a>, and you can get in touch with us at explore.statistics@education.gov.uk.</p>
-<div class="alert alert-dismissible alert-danger">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>All data and EES metadata files must be run through the <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">screening app</a> before uploading to EES.</p>
+</div>
 </div>
 <hr>
 <blockquote class="blockquote">
@@ -607,8 +617,18 @@ Guidance on how to structure data files
 <section id="example-data-file-ees_demo_datafile.csv" class="level3">
 <h3 class="anchored" data-anchor-id="example-data-file-ees_demo_datafile.csv">Example data file (<a href="../data_examples/ees_demo_datafile.csv">ees_demo_datafile.csv</a>)</h3>
 <hr>
-<div class="alert alert-dismissible alert-info">
-<p>Note that the mandatory columns time_identifier, geographic_level and country_code are abridged in the table below to help with displaying in a web page, but are shown in the example file at the link above.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The mandatory columns time_identifier, geographic_level and country_code are abridged in the table below to help with displaying in a web page, but are shown in the example file at the link above.</p>
+</div>
 </div>
 <div class="table-responsive">
 <table class="caption-top table">
@@ -630,7 +650,7 @@ Guidance on how to structure data files
 <th>country_name</th>
 <th>region_code</th>
 <th>region_name</th>
-<th>gender</th>
+<th>sex</th>
 <th>school_phase</th>
 <th>children_count</th>
 <th>children_percent</th>
@@ -836,13 +856,13 @@ Guidance on how to structure data files
 </thead>
 <tbody>
 <tr class="odd">
-<td>gender</td>
+<td>sex</td>
 <td>Filter</td>
-<td>Gender</td>
+<td>Sex</td>
 <td></td>
 <td></td>
 <td></td>
-<td>Filter by pupil gender</td>
+<td>Filter by pupil sex</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -878,8 +898,18 @@ Guidance on how to structure data files
 </tbody>
 </table>
 </div>
-<div class="alert alert-dismissible alert-info">
-<p>Note that for the children_percent column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users’ needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the children_percent column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users’ needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.</p>
+</div>
 </div>
 <p>Further information on all of the requirements for appropriately prepared data files follow in the sections below.</p>
 <p>Once you have prepared a draft data file, you should always run the file through our <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank">EES data file screener</a>. This will check for common issues that may prevent the file from being used appropriately by EES. Note that some issues may not prevent your file from uploading to EES, but would still cause undesired behaviour once on the platform, so it is imperative to screen data files before uploading.</p>
@@ -1134,8 +1164,18 @@ Guidance on how to structure data files
 <h3 class="anchored" data-anchor-id="data-format">Data format</h3>
 <hr>
 <p>These standards give you the power to format the data in a way that best meets the needs of the users. There are only a handful of formatting standards to follow to ensure best practice and consistency across all of our data.</p>
-<div class="alert alert-dismissible alert-danger">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Data files must in comma separated values (CSV) format, and use UTF-8 encoding. You can specify this when saving the file in Excel, or exporting from elsewhere.</p>
+</div>
 </div>
 <p>If you need to use commas within a cell, then you must add a text delimiter such as quotes to your file to define each cell - this is often done automatically for you, though if you’re unsure then you can open up your CSV file in a text editor such as Notepad to check.</p>
 <p>Comma separated values simply means that if look at the raw file, each column is separated by a comma, other forms of delimination like this also exist, such as TSV files that are ‘tab’ separated. Next time you have a minute, try opening up your CSV data files in Notepad, to see how they look behind the scenes!</p>
@@ -1151,8 +1191,18 @@ Guidance on how to structure data files
 <p>The metadata file should have exactly the same name as the data file, with a suffix of ‘.meta’. E.g. <code>mydatafile.csv</code> and <code>mydatafile.meta.csv</code>.</p>
 <p>You should avoid references to time periods in the file name as this information is shown elsewhere and this can make it harder for users to make use of the newer versions of files in future years. File names should be recyclable year on year.</p>
 <p>In general you should avoid including the geographic level in the file name, unless it is a file that is specifically different (e.g.&nbsp;a file for school level data only).</p>
-<div class="alert alert-dismissible alert-danger">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>For use with EES all file names should be in lower case and avoid special characters or spaces. Any upper case characters in file names will be forced to lower case by EES, and will appear as lower case to the users.</p>
+</div>
 </div>
 <hr>
 </section>
@@ -1306,7 +1356,7 @@ Guidance on how to structure data files
 <tr class="odd">
 <td>z</td>
 <td>When an observation is <strong>not applicable</strong></td>
-<td>No data for at gender level for boys at an all-girls school</td>
+<td>No data for boys at an all-girls school</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -1344,8 +1394,18 @@ Guidance on how to structure data files
 <p>This EES metadata is different to any metadata files you may provide alongside your data for your users.</p>
 <p>We only need to provide EES metadata for filters and indicators, we do not need to provide any EES metadata for the compulsory observational units (time and geography), as this has been standardised and the platform is expecting pre-defined columns and values in those fields.</p>
 <p>We do not need to provide metadata for filters that only have a single level, as this data is not useful for EES, and is there for the benefit of end users downloading the files.</p>
-<div class="alert alert-dismissible alert-info">
-<p>Note that any extra geography columns not specified in the <a href="#allowable-geographic-levels">allowable values</a> above, or any time columns extra to time_period and time_identifier, are <a href="#filters">filters</a>, and should be included in EES metadata if they have two or more levels.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Any extra geography columns not specified in the <a href="#allowable-geographic-levels">allowable values</a> above, or any time columns extra to time_period and time_identifier, are <a href="#filters">filters</a>, and should be included in EES metadata if they have two or more levels.</p>
+</div>
 </div>
 <p>With some files there may be more than one way to specify the metadata that will work in EES and give an accurate representation of the data itself. In these cases we recommend that publication teams test out different approaches and decide their approach based on what will best meet the needs of the users of their data.</p>
 <hr>
@@ -1475,13 +1535,13 @@ Guidance on how to structure data files
 </thead>
 <tbody>
 <tr class="odd">
-<td>gender</td>
+<td>sex</td>
 <td>Filter</td>
-<td>Gender</td>
+<td>Sex</td>
 <td></td>
 <td></td>
 <td></td>
-<td>Filter by pupil gender</td>
+<td>Filter by pupil sex</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -2005,8 +2065,18 @@ Guidance on how to structure data files
 <p>Teams can also use the lookup tables available via the <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa/tree/master/data" target="_blank" rel="noopener noreferrer">data screener GitHub repository data folder</a>. Guidance on how to link directly to the latest data in your code can be seen in the <a href="../RAP/rap-statistics.html#standardised-reference-data">standardised reference data section</a></p>
 <p>If you have data from an unknown location, the standard is to use ‘Not available’ as name, and ‘x’ as the code/s, this clearly marks that the geographical data for that row is unavailable, and does so in a consistent way with the wider GSS. If you have a unique variation of a certain location, e.g.&nbsp;‘Outside of England and unknown’, we may be able to add these in as exceptions. Locations like this would have a code of ‘z’ as no widely used code is applicable, please get in touch with us to discuss it further if you think this might apply to you.</p>
 <p>We expect that all geography codes will be based on the Open Geography Portal and run checks against this for various levels in the <a href="#How-to-check-against-these-standards">data screener</a>, please contact us if you have data that doesn’t match this.</p>
-<div class="alert alert-dismissible alert-info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Where you have data for a legacy LA that does not have a 9-digit new code, leave those cells as blank instead.</p>
+</div>
 </div>
 <hr>
 <section id="different-measures-of-geography" class="level4">
@@ -2142,8 +2212,18 @@ Guidance on how to structure data files
 </tr>
 </tbody>
 </table>
-<div class="alert alert-dismissible alert-info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+English devolved area
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><a href="https://explore-education-statistics.service.gov.uk/glossary#english-devolved-area" target="_blank" rel="noopener noreferrer">English devolved area</a> is used to refer to combined authorities, mayoral combined authorities and the Greater London Authority.</p>
+</div>
 </div>
 <p>Planning area, School, Provider, and Institution level data will upload as normal to EES, though will not be read into the table tool or data blocks if they are mixed in with other levels. All data, including these levels are accessible in the downloadable files for users to explore in the same format as they are uploaded.</p>
 <p>For Provider, any data files that <strong>only</strong> consist of this level are able to be uploaded and will be usable in the table tool. This solution is still not ideal, though it will allow you to include additional filters at provider level. Wherever there are multiple values per provider this should be marked as a filter, and where there is a single value per provider this should be marked as an indicator.</p>
@@ -2201,8 +2281,18 @@ Guidance on how to structure data files
 </tr>
 </tbody>
 </table>
-<div class="alert alert-dismissible alert-warning">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If you have a level that isn’t covered above, please contact the <a href="mailto:explore.statistics@education.gov.uk">explore education statistics platforms team</a> with details and example data.</p>
+</div>
 </div>
 <hr>
 <section id="using-school-or-provider-as-a-filter" class="level4">
@@ -3022,10 +3112,20 @@ Guidance on how to structure data files
 </table>
 </div>
 <hr>
-<div class="alert alert-dismissible alert-danger">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>
 You must not include grouping filters as separate rows in the EES metadata, they should only be referenced in the filter_grouping_column.
 </p>
+</div>
 </div>
 <hr>
 </section>
@@ -3112,10 +3212,20 @@ You must not include grouping filters as separate rows in the EES metadata, they
 <section id="indicators" class="level2">
 <h2 class="anchored" data-anchor-id="indicators">Indicators</h2>
 <p>The indicators are the variables showing the measurements/statistics themselves, such as the number of pupils. These can be of different formats (e.g.&nbsp;text, numeric), although are numeric by default. The number of indicators will vary across publications and data files.</p>
-<div class="alert alert-dismissible alert-danger">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>
 <strong>Every variable in your data set should have its own column, and each column should be a single data type</strong>. E.g. do not create an indicator column called “pupils” that has both the number and percentage of pupils in it. Instead, create two separate columns for each measure.
 </p>
+</div>
 </div>
 <p>As an example, the number and percentage of pupil enrolments are the indicators in this dataset:</p>
 <div class="table-responsive">
@@ -3350,8 +3460,18 @@ You must not include grouping filters as separate rows in the EES metadata, they
 <li>discontinued</li>
 </ul>
 <p>Any “_new” entry where no update is to be made should be left blank, whilst any changes should be listed in the relevant column. Any discontinued col_names (i.e.&nbsp;with no single direct replacement) should have ‘y’ entered in the discontinued field. Any completely new fields with no previous direct precursor should contain blanks in the first 5 columns.</p>
-<div class="alert alert-dismissible alert-info">
-<p>Your team should then keep a copy as a log of any changes and also send a copy to explore.statistics@education.gov.uk so we can look to update our standardized list of field names where appropriate.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your team should then keep a copy as a log of any changes and also send a copy to explore.statistics@education.gov.uk so we can look to update our standardised list of field names where appropriate.</p>
+</div>
 </div>
 <hr>
 </section>
