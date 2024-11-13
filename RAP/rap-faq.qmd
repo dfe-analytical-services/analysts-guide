@@ -207,8 +207,6 @@ The README in your repository is the place for traditional 'desk notes' and text
 
 ### Learning about RAP
 
----
-
 Questions learning more about RAP and developing skills.
 
 ---
