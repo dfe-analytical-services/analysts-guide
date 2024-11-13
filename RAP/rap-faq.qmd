@@ -6,21 +6,21 @@ title: "RAP FAQs"
 
 ---
 
-# Frequently asked questions
-
----
+## Frequently asked questions
 
 If you have any questions you'd like answering or adding, let us know by emailing [statistics.development\@education.gov.uk](mailto:statistics.development@education.gov.uk).
 
 ---
 
-## What is RAP
+### What is RAP
+
+---
 
 General questions about Reproducible Analytical Pipelines and why analysts need to care about it.
 
 ---
 
-### What is RAP, is it just using R?
+#### What is RAP, is it just using R?
 
 ---
 
@@ -36,7 +36,7 @@ More details and learning resources for the recommended tools can be found in ou
 
 ---
 
-### Is this specific to DfE?
+#### Is this specific to DfE?
 
 ---
 
@@ -50,7 +50,7 @@ RAP is also a strategic objective of [Analysis Function strategy for 22-25](http
 
 ---
 
-### I'm overwhelmed by all the steps, is RAP really necessary?
+#### I'm overwhelmed by all the steps, is RAP really necessary?
 
 ---
 
@@ -60,7 +60,7 @@ Statistics publications are some of the most important pieces of statistics work
 
 ---
 
-### Will implementing RAP lead to a disconnect with the data and 'black box' processes?
+#### Will implementing RAP lead to a disconnect with the data and 'black box' processes?
 
 ---
 
@@ -70,7 +70,7 @@ We recognise there is a sizeable skill gap, and that until this is addressed the
 
 ---
 
-### Teams vary, and what my team does is different to others, if I'm happy with my approach, can I ignore some of the RAP steps?
+#### Teams vary, and what my team does is different to others, if I'm happy with my approach, can I ignore some of the RAP steps?
 
 ---
 
@@ -80,13 +80,15 @@ If you have unique or nuanced processes, RAP helps you document these and make y
 
 ---
 
-## Getting started
+### Getting started
+
+---
 
 Questions about how to get started with RAP.
 
 ---
 
-### Can I leave the R stuff to others in my team whilst I focus elsewhere?
+#### Can I leave the R stuff to others in my team whilst I focus elsewhere?
 
 ---
 
@@ -96,7 +98,7 @@ We all must ensure that analysis is reproducible, transparent, and robust using 
 
 ---
 
-### Implementing RAP takes time to setup initially, how can we prioritise it?
+#### Implementing RAP takes time to setup initially, how can we prioritise it?
 
 ---
 
@@ -108,13 +110,13 @@ In the long term, implementing RAP will significantly reduce the time it takes t
 
 ---
 
-## Tools for RAP
+### Tools for RAP
 
 Questions about what tools and software to use when applying RAP principles.
 
 ---
 
-### Do I need to rewrite existing SQL code into R?
+#### Do I need to rewrite existing SQL code into R?
 
 ---
 
@@ -126,7 +128,7 @@ What we recommend, is that all of your code is within a single R project, and th
 
 ---
 
-### I'm sometimes limited by the access and tools I have (ESFA servers, EDAP, Databricks), is there anything that can be done about this?
+#### I'm sometimes limited by the access and tools I have (ESFA servers, EDAP, Databricks), is there anything that can be done about this?
 
 ---
 
@@ -134,7 +136,7 @@ The first step is to let us (the Statistics Development Team) know so we can und
 
 ---
 
-### What happens if we can't reproduce our current processes using R?
+#### What happens if we can't reproduce our current processes using R?
 
 ---
 
@@ -142,7 +144,7 @@ This is highly unlikely and is more likely to be from a lack of knowledge of wha
 
 ---
 
-### R isn't always the quickest tool for processing data, can we use SQL instead?
+#### R isn't always the quickest tool for processing data, can we use SQL instead?
 
 ---
 
@@ -152,13 +154,15 @@ SQL scripts should be run in an automated way using R, instead of manually runni
 
 ---
 
-## Implementing RAP
+### Implementing RAP
+
+---
 
 Questions on how to implement RAP.
 
 ---
 
-### Having a single script for code doesn't seem the best way to do it, why are you suggesting this?
+#### Having a single script for code doesn't seem the best way to do it, why are you suggesting this?
 
 ---
 
@@ -173,7 +177,7 @@ This means that you should have one 'centralized' script that details all of the
 
 ---
 
-### How do I dual run for QA if our process is in code?
+#### How do I dual run for QA if our process is in code?
 
 ---
 
@@ -181,7 +185,7 @@ You don't need to be dual running if your process is automated, it's not the bes
 
 ---
 
-### Should I have separate repositories or branches in Git for each release?
+#### Should I have separate repositories or branches in Git for each release?
 
 ---
 
@@ -191,7 +195,7 @@ In short, a single repository should be used for all releases of your publicatio
 
 ---
 
-### We should have plain text documentation to accompany the process, code and comments don't feel like enough?
+#### We should have plain text documentation to accompany the process, code and comments don't feel like enough?
 
 ---
 
@@ -201,13 +205,15 @@ The README in your repository is the place for traditional 'desk notes' and text
 
 ---
 
-## Learning about RAP
+### Learning about RAP
+
+---
 
 Questions learning more about RAP and developing skills.
 
 ---
 
-### Can I look at what other people are doing?
+#### Can I look at what other people are doing?
 
 ---
 
@@ -219,7 +225,7 @@ We'd also encourage analysts to make more use of the RAP Community channel in th
 
 ---
 
-### I don't have the skills to implement RAP, how do I get them?
+#### I don't have the skills to implement RAP, how do I get them?
 
 ---
 
