@@ -31,9 +31,9 @@ The following table outlines the key differences between publishing via EES and 
 
 
 
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-note}
 If you are unsure which route to use for publication please contact the [HoP Office](mailto:Hop.STATISTICS@education.gov.uk).
-</div>
+:::
 
 ---
 
@@ -89,9 +89,9 @@ Before you publish a release you have created in the platform you should have:
 * Invited your PRA list to preview 24 hours before it goes live
 * Raised a web ticket for the associated gov.uk page 
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 Word templates for the data guidance, pra-list, and content can be found on [sharepoint](https://educationgovuk.sharepoint.com/:f:/r/sites/DfEStatisticsCoherence/Shared%20Documents/Templates%20-%20Explore%20Education%20Statistics?csf=1&e=7iJoUy){target="_blank" rel="noopener noreferrer"}.
-</div>
+:::
 
 ---
 
@@ -124,9 +124,9 @@ Here are examples of how the page will look like:
 - [Higher Education Student Statistics 2018 to 2019](https://www.gov.uk/government/statistics/higher-education-student-statistics-2018-to-2019){target="_blank" rel="noopener noreferrer"}
 
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-tip}
 You can find what the link to your EES release will be by looking at the 'Sign off' page within the release dashboard on EES.
-</div>
+:::
 
 ![](../images/EES-public-url.PNG)
 

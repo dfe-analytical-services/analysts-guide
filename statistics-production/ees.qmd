@@ -25,9 +25,9 @@ Maintenance and use of the platform is supported by the [explore education stati
 
 ---
 
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-warning}
 If you are bookmarking links, please be careful to bookmark the links below exactly as they are shown. Often when signing in you will be redirected via other URL's as a part of the authentication process, and bookmarking those may lead to errors.
-</div>
+:::
 
 EES consists of two parts. We also have four versions (environments) of EES, the banner for the admin part of each environment will inform you which environment you are on, this is also colour coded.
 
@@ -56,9 +56,10 @@ There is no overlap between the environments and content created on one cannot b
 
   When accessing the pre-production environment you may be asked for a username and password, these are as follows: dfe, dataresearch.
 
-  <div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
+## Warning - unpublished data
 The pre-production environment is not suitable for unpublished data. Unpublished data should only be uploaded to the production environment.
-</div>
+:::
 
 * **Production** - Red
     
@@ -83,9 +84,9 @@ Access to both the production and pre-production admin services is limited to Df
 
 To be invited to the service for full access teams need to email the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk), stating who needs access, what permissions they require (analyst or approver), and for which publications these apply. This email should be sent by the Team Leader, or accompanied with the relevant Team Leader’s approval. Once access has been granted you will receive an email inviting you to use the platform.
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 Jobshare emails can not be used to access EES. Specific personal emails should be used instead, in the same way as you sign in to windows on your machine.
-</div>
+:::
 
 
 ---
@@ -252,9 +253,9 @@ You only have 160 characters – to make sure you are fully utilising these, hav
 
 ---
 
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-important}
 Use Google Chrome or Microsoft Edge to access and use the admin part of the explore education statistics service.
-</div>
+:::
 
 When you enter the [admin website](https://admin.explore-education-statistics.service.gov.uk/) you’ll see the admin dashboard. What you can see here will be dependent on your access permissions i.e. you’ll only see the publications that you have been granted access to.
 
@@ -353,9 +354,9 @@ You need to make sure that the data files and accompanying [metadata](../statist
 
 All data files uploaded will be available to download for users to explore (this will be in the same format as they are uploaded).
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
 Releases cannot be published without a completed metadata document. If not filled in an error will be flagged during sign off.
-</div>
+:::
 
 ---
 
@@ -390,9 +391,9 @@ You can make changes to the Subject title for your data file after it has been u
 
 When uploading files you have a choice between uploading as separate CSV files or as a combined ZIP file.
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-tip}
 For data files greater than 80mb we recommend uploading as a ZIP file.
-</div>
+:::
 
 Once you click to upload the file a ‘Status’ will be visible that shows the progress of the import process. This may take a little while depending on the size of your file and if there are numerous files queued for import. You cannot view the dataset or use it to create tables/charts until this status is ‘COMPLETE’.
 
@@ -466,9 +467,9 @@ If you just need to change the [Subject titles](#subject-titles) for your data f
 
 However, if you notice a mistake in your data file you can replace it with another. When replacing a data file the platform will attempt to recreate any data blocks and footnotes that were built using the previous file.
 
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-warning}
 The replacement file must contain the exact same column names and types as the original. For example, a character column named "date" must also be replaced with a character column named "date". A numeric column named "date" will not work in the replacement.
-</div>
+:::
 
 Navigate to the file you wish to replace, and you should see a 'Replace data' option in the 'Actions' row.
 
@@ -490,9 +491,9 @@ If it's not possible for a data block or footnote to be recreated using the repl
 
 ![](../images/replace-data-fail.PNG)
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
 Remember to double check any data blocks or footnotes that were recreated by the platform before publishing your release.
-</div>
+:::
 
 ---
 
@@ -529,9 +530,9 @@ A list of variables in each file with an associated label (taken from metadata u
 
 ![](../images/admin-public-meta-detail.PNG)
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
 Releases cannot be published without a completed data guidance page. If not filled in an error will be flagged during sign off.
-</div>
+:::
 
 ---
 
@@ -553,9 +554,9 @@ If you would rather, you can assign a footnote to the whole data file by ticking
 
 You can assign the same footnote across multiple data files.
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-tip}
 We recommend that you only add footnotes once you are certain the data file is final. If you have to delete the data file, all the assigned footnotes will be deleted alongside it.
-</div>
+:::
 
 ---
 
@@ -583,9 +584,9 @@ Presentation tables are the tables you include within the accordion sections of 
 
 **Don't** include them as a straight copy of the ready-made Excel tables previously published on gov.uk
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-note}
 You do not need to recreate all of the old excel tables, users can find the numbers they are interested in using the table tool, or analyse the underlying data if they want the data behind the release.
-</div>
+:::
 
 
 ---
@@ -660,13 +661,13 @@ Here are a few examples of good fast-track titles in EES:
 * Free School Meals, by Region, 2015/16 to 2020/21
 
 
-<div class="alert alert-dismissible alert-info">
-**What is the difference between a fast-track link and a permalink?**
+::: {.callout-note}
+## What is the difference between a fast-track link and a permalink?
 
 EES also offers 'permalinks' for any table created in the table tool which allows a user to save a link to a permanent, static, version of a table they have created. Analysts can make use of these permalinks when answering queries or in PQ and FOI responses.
 
 Fast-track links are similar to permalinks however instead of linking to a static version of a table they link to an 'active' version of the table within the table tool - meaning users can interact and change what's shown in the table from within the table tool if they choose to.
-</div>
+:::
 
 
 ---
@@ -689,9 +690,9 @@ After choosing your chart type you then need to work through the following stage
 
 Within the ‘chart configuration’ tab you can add a title, alt text, move the legend and change chart dimensions.
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 Make sure to review your chart dimensions before you publish. Users should be able to read the labels on the axes and see the legend without having to scroll.
-</div>
+:::
 
 ![](../images/EES-charts-create.PNG)
 
@@ -718,9 +719,9 @@ You can edit the chart legend, and styling of your series via the Legend tab.
 
 ![](../images/EES-charts-legend.PNG)
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-tip}
 To select specify custom colours outside of the defaults, you can double click on the colour codes at the bottom of the colour picked until you get to the type of code you're wanting to input (e.g. hex code) and then enter the code manually.
-</div>
+:::
 
 ---
 
@@ -776,9 +777,9 @@ If you create your chart and then change your mind as to what chart type would b
 ![](../images/EES-charts-change-type.PNG)
 
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 Remember to save your chart when you’re done.
-</div>
+:::
 
 ---
 
@@ -813,9 +814,9 @@ We recommend including any missing data from breaks in a time series in your dat
 | Number of pupil enrollments | 3,627,985 | 3,713,774 | 3,796,146 | x | 3,885,774 |
 | Number of schools | 16,705 | 16,723 | 16,736 | x | 16,739 |
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 There may be times when including missing data increases the file size too much, or becomes unwieldy, if you're unsure and would like advice on your data contact [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk).
-</div>
+:::
 
 By including the missing data in your open data files you can then create charts in EES that represent this. Start off by creating a data block with the data you want to build the chart from.
 
@@ -841,7 +842,7 @@ You should only use complex charts where there is a clear user need, as simple c
 
 Infographic alternatives should be .svg format and you can use the sizing options within the data block editor to size your image appropriately.
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 Accessibility matters for infographics too, consider the following if you do need to upload an image -
 
 * Keep them simple
@@ -850,7 +851,7 @@ Accessibility matters for infographics too, consider the following if you do nee
 * Read the [GSS guidance on the use of colour in visualisations](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) and follow the steps provided to check your visualisations
 * Try to avoid adding text to your images other than axis labels and limited annotations. Titles and headings can be added in the "chart configuration" tab instead
 
-</div>
+:::
 
 You can use R to create infographics and the following code gives an example of how to create a basic line chart or stacked bar chart using the appropriate GSS sequential colour palette.
 
@@ -985,10 +986,6 @@ Use plain English and shorter sentences, aim for an average of 15-20 words per s
 
 Explain complex concepts in plain English within the text. Remember that for many of our users, confidence intervals and significant differences are complex concepts that need explaining.
 
-<div class="alert alert-dismissible alert-danger">
-Do not use footnotes in the text of your content. They’re designed for reference in print, not web pages. Always consider the user need first. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.
-</div>
-
 ---
 
 #### About these statistics
@@ -1029,9 +1026,9 @@ Navigate to the 'Content' tab. In the text editor, you can add in a table using 
 ![](../images/ees-table-in-content.png)
 
 <!-- gif adding in a html table -->
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-warning}
 Remember that *all of the data* included or referred to in your content should be available (or able to be created) from the downloadable open data files.
-</div>
+:::
 
 ---
 
@@ -1071,9 +1068,9 @@ We recommend ordering ethnic groups either alphabetically, or in expected order 
 
 ---
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
 Do not use footnotes in the text of your content. They’re designed for reference in print, not web pages. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.
-</div>
+:::
 
 If you are including a table in text that needs footnotes, it's generally advised to include this in the commentary surrounding the table. However, if you think a footnote is still necessary, then we advise writing out the word ‘note’, with the number of the note you need to refer to, and put it in square brackets, for example: ‘Number of people in employment [note 1]’. For more guidance on footnotes outside of EES, see the [Analysis Function guidance on symbols, footnotes and codes](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-6).
 
@@ -1186,9 +1183,9 @@ There are three statuses:
 3.	**Approved for publication** (after approval has been given, releases in this status will be published on their scheduled date)
 
 
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-note}
 Only users with [approver](#roles-and-permissions) permissions (usually G6 or above) can sign off the release for publication.
-</div>
+:::
 
 ---
 
@@ -1216,9 +1213,9 @@ The approver has the ability to approve the release to be published on a specifi
 
 ![](../images/ees-approving-release.PNG)
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 This page also gives you the expected release url which may be useful to know for other things, for example, sending to the web team to add to your gov.uk announcement page.
-</div>
+:::
 
 
 ---
@@ -1247,9 +1244,9 @@ This preview is only accessible for the 24 hours before the publication date, al
 
 ---
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 Jobshare emails and shared mailboxes should not be sent invites for pre-release. The personal emails for the specific individuals should be used instead, as jobshare emails / shared mailboxes do not have active accounts with DfE to access EES.
-</div>
+:::
 
 <html>
 <centre>
@@ -1278,9 +1275,9 @@ Once the release has been marked as approved, go to the  ‘Pre-release access�
 
 You should also create the public facing pre-release access page by clicking the ‘Public access list’ tab.
 
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-important}
 All official statistics (that is, official statistics, national statistics and ad-hoc statistics) are required to publish a public facing pre-release access page.
-</div>
+:::
 
 ![](../images/EES-public-pra-list.PNG)
 
@@ -1335,9 +1332,9 @@ Once created you can then edit the methodology content in a similar way to how y
 
 Once the drafting has finished, a methodology should be set as 'approved for publication'. 
 
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-warning}
 Any approved methodology changes will be published immediately so make sure you are ready for the changes to go live before approving.
-</div>
+:::
 
 ---
 
@@ -1377,7 +1374,7 @@ When uploading an image you will need to add alt text via by clicking the eye sy
 
 ![](../images/ees-wysiwyg-alt-text.PNG)
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 Accessibility matters for uploaded images too, consider the following if you do need to upload an image -
 
 * Keep them simple
@@ -1387,7 +1384,7 @@ Accessibility matters for uploaded images too, consider the following if you do 
 * Try to avoid adding text to your images other than axis labels and limited annotations.
 
 
-</div>
+:::
 
 
 ---
@@ -1410,9 +1407,9 @@ Use this page to change the details for your publication, such as the contact in
 
 Any updates here will affect all releases in the series and will be published immediately.
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-note}
 It is possible to change the publication title via this page, however this should be used rarely and will not affect the publications url if one or more published releases exist.
-</div>
+:::
 
 ![](../images/manage-publication.png)
 
@@ -1434,9 +1431,9 @@ Currently the following types of release can be created in EES:
 
 When creating a release you will be asked to fill in some release summary fields. If you are unsure of what type of release you are publishing, please contact the [statistics HoP office](mailto:hop.statistics@education.gov.uk) for advice immediately.
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 The time period for the release should reflect the time period of the data that this latest release adds to the time series.
-</div>
+:::
 
 ---
 

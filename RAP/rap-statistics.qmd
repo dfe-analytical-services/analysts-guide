@@ -96,7 +96,6 @@ The expectation is that all statistics publications will meet the department's b
 ---
 
 ## What is expected
-
 ::: callout-warning
 It is expected that all teams' processes meet all elements of good and great practice as a baseline.
 
