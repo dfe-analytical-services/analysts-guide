@@ -59,7 +59,7 @@ Currently only internal dashboards can have connectivity to databases. Check out
 
 #### When to load data
 
-On Posit Connect (so internal dashboards only), a process is started up when a user opens your application. The process loads everything in your global environment (pre-server). These environment variables can then be shared between users with up to 20 users sharing a process by default. This can massively save on computation time.
+On Posit Connect (internal dashboards only), a process is started up when a user opens your application. The process loads everything in your global environment (pre-server). These environment variables are shared between users with up to 20 users sharing a process by default. This can massively save on computation time.
 
 However, it might be more efficient for some of your data loading to be moved onto the server side. For example, let's say we have a dashboard showing school-level information. Collecting into memory data for every school is inefficient if a user is only looking for one. In this instance, we might set up a lazy connection to a database and only load the data when the user requests it on the server side. 
 
@@ -77,6 +77,9 @@ if(FALSE){
   
   # create a lazy connection to a database
   lazy_school_table <- dplyr::tbl(connection, DBI::Id(...))
+  
+  # tell shiny to close the connection when the app stops
+  shiny::onStop(function() poolClose(connection))
   
   # an example ui to select a school
   ui <- shiny::fluidPage(
@@ -118,15 +121,19 @@ This is just the tip of the iceberg.
 
 There is a plethora of [awesome shiny extensions](https://github.com/nanxstats/awesome-shiny-extensions) to explore. Keep it accessible, use packages from CRAN/ones you trust and the world is your oyster.
 
-For more custom user interface: 
+For more **custom user interface**: 
 
-- have a read of [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/welcome.html) for how the web stuff wortks with shiny 
+- have a read of [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/welcome.html) for how the web stuff works with shiny 
 - for easy theme customisation [Bootstrap Live Customiser](https://www.bootstrap-live-customizer.com/) 
-- For more context of the web bits, [HTML](https://www.w3schools.com/html/default.asp), [CSS](https://www.w3schools.com/css/default.asp) and [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_ver.asp) for a better understanding of what's under the hood. **This is a slippery slope into web development, remember that if you're working with Shiny then good analysis comes first!**
+- For more context of the web bits, [HTML](https://www.w3schools.com/html/default.asp), [CSS](https://www.w3schools.com/css/default.asp) and [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_ver.asp) give a better understanding of what's under the hood. 
 
-For making interactive maps, check out [this section](../learning-development/r.html#example-shiny-app-with-map).
+:::{.callout-caution}
+HTML, CSS and Bootstrap are a slippery slope into web development. Remember that if you're working with Shiny then good analysis comes first!
+:::
 
-For improving your tables, check out [this section](../learning-development/r.html#rendering-tables).
+For **interactive maps**, check out [this section](../learning-development/r.html#example-shiny-app-with-map).
+
+For improving your **tables**, check out [this section](../learning-development/r.html#rendering-tables).
 
 For more advanced shiny knowledge it's worth taking a look at the guide to [engineering production-grade shiny apps](https://engineering-shiny.org/). It's worth reading and considering how much to adopt, remember that just because it sounds clever doesn't make it easy for other analysts to pick up. Read the [Don't sacrifice readability](https://engineering-shiny.org/need-for-optimization.html#dont-sacrifice-readability) section and then work from there.
 
