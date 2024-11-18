@@ -15,15 +15,17 @@ The guidance on this page assumes you have prior knowledge of R, if you are new 
 
 For some initial inspiration, check out the [Shiny gallery](https://shiny.posit.co/r/gallery/).
 
-## Getting started with Shiny
+### Getting started with Shiny
 
 There are a lot of resources already available to support you when working with R Shiny, if you're new, then this [blog post](https://www.r-bloggers.com/2021/03/a-gentle-introduction-to-r-shiny/) provides a gentle introduction.
 
-If you like learning by reading/doing then the [Posit Shiny-specific site](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html) has lots of resources that you can  work through. Likewise [Introduction section of Mastering Shiny](https://mastering-shiny.org/basic-intro.html) is also a helpful resource
+If you like learning by reading/doing then the [Posit Shiny-specific site](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html) has lots of resources that you can  work through. Likewise [Introduction section of Mastering Shiny](https://mastering-shiny.org/basic-intro.html) is also a helpful resources.
 
 If you like learning by watching then the [Posit Youtube channel](https://www.youtube.com/@PositPBC/videos) is also full of good resources. 
 
-## Creating a user interface
+---
+
+### Creating a user interface
 
 Our [template shiny app repository](https://github.com/dfe-analytical-services/shiny-template) is a useful starting point for all public facing dashboards in the department. Please see the [dashboard template section](#dfe-dashboard-template) for guidance on what the dashboard template includes and how to use it.
 
@@ -33,11 +35,29 @@ Our [template shiny app repository](https://github.com/dfe-analytical-services/s
 Previously a lot of dashboards used `shinydashboard` - if starting afresh we **recommend `bslib` instead**. `shinydashboard` is uses an old version of bootstrap and has not been updated in many years. It shouldn't immediately break but a risk nonetheless.
 :::
 
-## Databases with Shiny
+---
+
+### R Shiny Best Practice
+
+Some key things you should include when building an app:
+
+- Your code should follow the [DfE Quality Assurance Framework](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx) 
+- You need to [**Accessibility Test**](#accessibility-testing-in-r-shiny) regardless of internal or external deployment
+- Your code should be [tested](#code-testing)
+- Your file structure should be [well-organised](https://mastering-shiny.org/best-practices.html#code-organization)
+- You should use [dependency management](https://mastering-shiny.org/best-practices.html#dependency-management)
+- If using [databases](#databases-with-shiny), you should ensure you are careful of SQL Injection
+- [Functions with Shiny](https://mastering-shiny.org/scaling-functions.html) make your life much easier
+
+---
+
+### Databases with Shiny
 
 Currently only internal dashboards can have connectivity to databases. Check out [this data article from Posit](https://solutions.posit.co/connections/db/best-practices/) on best practice - in particular you should look to use the [`pool`](https://rstudio.github.io/pool/) package for database connections and be careful of [SQL Injection](https://solutions.posit.co/connections/db/best-practices/run-queries-safely/).
 
-### When to load data
+---
+
+#### When to load data
 
 On Posit Connect (so internal dashboards only), a process is started up when a user opens your application. The process loads everything in your global environment (pre-server). These environment variables can then be shared between users with up to 20 users sharing a process by default. This can massively save on computation time.
 
@@ -88,7 +108,9 @@ if(FALSE){
 }
 ```
 
-## Leveling up your shiny
+---
+
+### Leveling up your shiny
 
 This is just the tip of the iceberg. 
 
@@ -108,7 +130,9 @@ For improving your tables, check out [this section](../learning-development/r.ht
 
 For more advanced shiny knowledge it's worth taking a look at the guide to [engineering production-grade shiny apps](https://engineering-shiny.org/). It's worth reading and considering how much to adopt, remember that just because it sounds clever doesn't make it easy for other analysts to pick up. Read the [Don't sacrifice readability](https://engineering-shiny.org/need-for-optimization.html#dont-sacrifice-readability) section and then work from there.
 
-## Support within the department
+---
+
+### Support within the department
 
 You should seek to make use of the community that is already out there, see what others are doing, ask them questions and for advice on any decisions or problems that you're facing, and share what it is that you're doing.
 
@@ -124,7 +148,7 @@ Our [template shiny app repository](https://github.com/dfe-analytical-services/s
 
 ---
 
-## What's in the template
+### What's in the template
 
 The template provides code for a basic interactive dashboard, with an example line chart using drop-downs for education level and geographic levels. It also includes an example accessibility statement (this is a requirement for all public dashboards and must be filled in, see the [Accessibility](#accessibility) and [Accessibility testing](#accessibility-testing) sections earlier in this guidance), and a 'Support and feedback' page with suggested contact information and links.
 
@@ -137,8 +161,6 @@ All dashboards should have a link to the source code, and information about who 
 ---
 
 ### Consistency in R chart styling and colours
-
----
 
 We recommend producing interactive charts using the `ggplot2` package to create the basic plots, in combination with the `ggiraph` package to add any required interactivity. Any ggplot2 chart type can be converted to being interactive using ggiraph by adding `_interactive` on to the plot type function call as illustrated with `geom_point()` below:
 
@@ -341,8 +363,11 @@ You must have done the following before a dashboard can be published (the explor
 ---
 
 ### Procedure for updating your R Shiny dashboard with new data, new functionality or both
+<<<<<<< HEAD
 
 ---
+=======
+>>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 As mentioned in the [public dashboards section](#public-dashboards), a public dashboard should not be updated with unpublished data until the data is published. However, it is possible to clone the repo and run it locally with unpublished data for testing purposes (see our [guidance on testing with unpublished data](#testing-with-unpublished-data)). This guidance applies to both adding real data to a dashboard that previously used dummy data, and to adding updated data to an existing dashboard.
 
@@ -403,6 +428,7 @@ Note that wherever possible dashboard development updates should be done separat
 --- 
 
 ### Detailed walkthrough of a data update
+<<<<<<< HEAD
 
 --- 
 
@@ -413,6 +439,12 @@ The following provides a more detailed description of how you would do the above
 #### (At least 1 day) Prior to publication
 
 ---
+=======
+
+The following provides a more detailed description of how you would do the above steps technically in R-Studio and GitHub if you need a refresher.
+
+#### (At least 1 day) Prior to publication
+>>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 1. Create a local branch which you will use to update the data. To do this open your local version of the repo, navigate to the Git window, ensure the current branch is main (see 1) as this is the code producing the current live version of the app. If you're happy the current branch is main, then do a pull to ensure it is up-to-date (see 2). Then click the new branch button (see 3).
 
@@ -497,8 +529,11 @@ Your dummy data should:
 ---
 
 ### Testing with unpublished data
+<<<<<<< HEAD
 
 ---
+=======
+>>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 While you must use [dummy data](#using-dummy-data) in your GitHub repo, it is understandable that we should test the dashboard works with the real data before it goes live.
 
@@ -515,8 +550,11 @@ If you have any questions on this process, please contact the [explore education
 ---
 
 ### Secure variables
+<<<<<<< HEAD
 
 ---
+=======
+>>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 See our [Git](../learning-development/git.html#storing-secure-variables) page for guidance on storing secure variables in repositories.
 
@@ -701,6 +739,11 @@ GitHub actions are already well documented and [their own guidance](https://docs
 ---
 
 ## Dashboard performance
+<<<<<<< HEAD
+=======
+
+---
+>>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 Performance profiling represents a chance to breakdown how different elements within your dashboard perform relative to each other. This consists of running through a set of actions on a local run of your dashboard and timing each one. A useful tool for performing these tests is **profvis**, which carries out all the timings and visualisation of the results for you, whilst all you have to do is run the app and step through the actions that you want to profile.
 
