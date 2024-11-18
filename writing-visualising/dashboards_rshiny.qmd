@@ -46,7 +46,7 @@ Some key things you should include when building an app:
 - Your code should be [tested](#code-testing)
 - Your file structure should be [well-organised](https://mastering-shiny.org/best-practices.html#code-organization)
 - You should use [dependency management](https://mastering-shiny.org/best-practices.html#dependency-management)
-- If using [databases](#databases-with-shiny), you should ensure you are careful of SQL Injection
+- If using [databases](#databases-with-shiny), you should use the pool package and ensure you are careful of SQL Injection
 - [Functions with Shiny](https://mastering-shiny.org/scaling-functions.html) make your life much easier
 
 ---
@@ -110,6 +110,7 @@ if(FALSE){
   }
 }
 ```
+
 
 ---
 
@@ -370,11 +371,8 @@ You must have done the following before a dashboard can be published (the explor
 ---
 
 ### Procedure for updating your R Shiny dashboard with new data, new functionality or both
-<<<<<<< HEAD
 
 ---
-=======
->>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 As mentioned in the [public dashboards section](#public-dashboards), a public dashboard should not be updated with unpublished data until the data is published. However, it is possible to clone the repo and run it locally with unpublished data for testing purposes (see our [guidance on testing with unpublished data](#testing-with-unpublished-data)). This guidance applies to both adding real data to a dashboard that previously used dummy data, and to adding updated data to an existing dashboard.
 
@@ -435,7 +433,6 @@ Note that wherever possible dashboard development updates should be done separat
 --- 
 
 ### Detailed walkthrough of a data update
-<<<<<<< HEAD
 
 --- 
 
@@ -446,12 +443,6 @@ The following provides a more detailed description of how you would do the above
 #### (At least 1 day) Prior to publication
 
 ---
-=======
-
-The following provides a more detailed description of how you would do the above steps technically in R-Studio and GitHub if you need a refresher.
-
-#### (At least 1 day) Prior to publication
->>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 1. Create a local branch which you will use to update the data. To do this open your local version of the repo, navigate to the Git window, ensure the current branch is main (see 1) as this is the code producing the current live version of the app. If you're happy the current branch is main, then do a pull to ensure it is up-to-date (see 2). Then click the new branch button (see 3).
 
@@ -536,11 +527,8 @@ Your dummy data should:
 ---
 
 ### Testing with unpublished data
-<<<<<<< HEAD
 
 ---
-=======
->>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 While you must use [dummy data](#using-dummy-data) in your GitHub repo, it is understandable that we should test the dashboard works with the real data before it goes live.
 
@@ -557,11 +545,8 @@ If you have any questions on this process, please contact the [explore education
 ---
 
 ### Secure variables
-<<<<<<< HEAD
 
 ---
-=======
->>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 See our [Git](../learning-development/git.html#storing-secure-variables) page for guidance on storing secure variables in repositories.
 
@@ -746,11 +731,6 @@ GitHub actions are already well documented and [their own guidance](https://docs
 ---
 
 ## Dashboard performance
-<<<<<<< HEAD
-=======
-
----
->>>>>>> db8ab75 (update: header levels and best practice checklist)
 
 Performance profiling represents a chance to breakdown how different elements within your dashboard perform relative to each other. This consists of running through a set of actions on a local run of your dashboard and timing each one. A useful tool for performing these tests is **profvis**, which carries out all the timings and visualisation of the results for you, whilst all you have to do is run the app and step through the actions that you want to profile.
 
