@@ -44,7 +44,7 @@ Some key things you should include when building an app:
 - Your code should be [tested](#code-testing)
 - Your file structure should be [well-organised](https://mastering-shiny.org/best-practices.html#code-organization)
 - You should use [dependency management](https://mastering-shiny.org/best-practices.html#dependency-management)
-- If using [databases](#databases-with-shiny), you should ensure you are careful of SQL Injection
+- If using [databases](#databases-with-shiny), you should use the pool package and ensure you are careful of SQL Injection
 - [Functions with Shiny](https://mastering-shiny.org/scaling-functions.html) make your life much easier
 
 
@@ -106,7 +106,7 @@ if(FALSE){
 }
 ```
 
-### Leveling up your shiny
+### Levelling up your shiny
 
 This is just the tip of the iceberg. 
 
