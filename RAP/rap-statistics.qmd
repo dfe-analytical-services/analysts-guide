@@ -1040,7 +1040,7 @@ You might be thinking that it would be nice if there was software that could hel
 
 **What does this mean?**
 
-A README is a text file (.txt) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it.
+A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure Devops, meaning that users can see them on the main page of the repository
 
 **Why do it?**
 
@@ -1050,11 +1050,27 @@ It's an easy way to answer questions that your audience will likely have regardi
 
 As a starting point, you should aim to have as many of the following sections as are applicable to your project:
 
-- Introduction
-- Requirements (access, software, skills/knowledge)
-- How to use
-- How to contribute
-- Contact details
+Introduction
+- Purpose: briefly explain the purpose of the repository 
+- Overview: Provide a high-level summary of the contents and structure of the repository 
+
+Requirements
+- Access: Detail any permissions or access needed to use the repository, e.g. access to specific SQL databases
+- Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R, or SQL.
+- Version control/Renv: Explain how users should manage version control. State whether the project is using Renv. 
+
+How to use
+- Setup instructions: Provide step-by-step instructions on how to set up the environment, including installing dependencies. 
+- Running the code: Explain how to execute the code. 
+- Data input/output: Describe the expected input data and where the user should find it, as well as what output should be expected from the code. 
+
+How to contribute
+- Contribution guidelines: Outline the process for contributing to the repository, including branching, guidelines for making changes and submitting pull requests. 
+- Issue reporting: Explain how to report issues or suggest improvements. This could be through issues if using GitHub, boards in Azure DevOps or by emailing the team.  
+
+Contact details
+- Main contacts: List the names and contact information of people who maintain the repository. 
+- Support channels: Provide any information on how to get support, such as email addresses or teams channels. 
 
 The [Self-assessment tool](https://github.com/dfe-analytical-services/publication-self-assessment-copy){target="_blank" rel="noopener noreferrer"} and the [QA app](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"} give two examples of readme files structured like this.
 
