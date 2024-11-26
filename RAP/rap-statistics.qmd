@@ -1048,7 +1048,9 @@ It's an easy way to answer questions that your audience will likely have regardi
 
 **How to get started**
 
-As a starting point, you should aim to have as many of the following sections as are applicable to your project:
+For new projects, you can use the create_project function in DfER. Set create_publication_proj to TRUE to create a pre-populated project with a customer folder structure, including a README template.  You can find more information on this in the [DfE R reference](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html). 
+
+If you are creating your own README for existing projects, you should aim to have as many of the following sections as are applicable to your project:
 
 **Introduction**
 
