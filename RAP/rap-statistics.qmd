@@ -1040,7 +1040,7 @@ You might be thinking that it would be nice if there was software that could hel
 
 **What does this mean?**
 
-A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure Devops, meaning that users can see them on the main page of the repository
+A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure Devops, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the [Markdown Guide](https://www.markdownguide.org/basic-syntax/){target="_blank" rel="noopener noreferrer"}. 
 
 **Why do it?**
 
