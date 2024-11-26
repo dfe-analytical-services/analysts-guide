@@ -1052,24 +1052,24 @@ As a starting point, you should aim to have as many of the following sections as
 
 **Introduction**
 
-- Purpose: briefly explain the purpose of the repository 
-- Overview: Provide a high-level summary of the contents and structure of the repository 
+- Purpose: briefly explain the purpose of the repository.
+- Overview: Provide a high-level summary of the contents and structure of the repository. 
 
 **Requirements**
 
-- Access: Detail any permissions or access needed to use the repository, e.g. access to specific SQL databases
+- Access: Detail any permissions or access needed to use the repository at the top of this section, e.g. access to specific SQL databases. This is crucial for enabling new users to use the repository.
 - Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R, or SQL.
-- Version control/Renv: Explain how users should manage version control. State whether the project is using Renv. 
+- Version control/Renv: State how version control is managed and whether Renv is being used. 
 
-**How to use**
+**Getting started**
 
 - Setup instructions: Provide step-by-step instructions on how to set up the environment, including installing dependencies. 
-- Running the code: Explain how to execute the code. 
-- Data input/output: Describe the expected input data and where the user should find it, as well as what output should be expected from the code. 
+- Data input/output: Describe the expected input data and where it can be found, as well as what output should be expected from the code. 
 
-**How to contribute**
+**How to run and update**
 
-- Contribution guidelines: Outline the process for contributing to the repository, including branching, guidelines for making changes and submitting pull requests. 
+- Running the code: Explain how users can best run the code, for example by running a run all script. 
+- Updating guidelines: Outline the process for updating and contributing to the repository, including specific scripts and lines where updates are frequently needed. Describe how to get changes reviewed. 
 - Issue reporting: Explain how to report issues or suggest improvements. This could be through issues if using GitHub, boards in Azure DevOps or by emailing the team.  
 
 **Contact details**
