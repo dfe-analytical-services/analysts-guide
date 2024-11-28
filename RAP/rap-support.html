@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,12 +38,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ff9192afc05e137288b20e4a6f267c29.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-ff9192afc05e137288b20e4a6f267c29.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1f380eefaf014a52643289e24f88c233.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark-a1028ff20c2804d89c2e9207d2a2e032.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -514,13 +514,13 @@ cookieconsent.run({
 This page outlines the support available for RAP in DfE
 </p>
 <hr>
-<section id="support-on-offer" class="level1">
-<h1>Support on offer</h1>
-<hr>
+<section id="support-on-offer" class="level2">
+<h2 class="anchored" data-anchor-id="support-on-offer">Support on offer</h2>
 <p>Learning resources and materials for <a href="../learning-development/sql.html">SQL</a>, <a href="../learning-development/r.html">R</a>, and <a href="../learning-development/git.html">Git</a></p>
 <hr>
-<section id="email-support" class="level2">
-<h2 class="anchored" data-anchor-id="email-support">Email support</h2>
+<section id="email-support" class="level3">
+<h3 class="anchored" data-anchor-id="email-support">Email support</h3>
+<hr>
 <ul>
 <li><a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a><br>
 </li>
@@ -528,8 +528,9 @@ This page outlines the support available for RAP in DfE
 </ul>
 <hr>
 </section>
-<section id="technical-workshops" class="level2">
-<h2 class="anchored" data-anchor-id="technical-workshops">Technical workshops</h2>
+<section id="technical-workshops" class="level3">
+<h3 class="anchored" data-anchor-id="technical-workshops">Technical workshops</h3>
+<hr>
 <ul>
 <li>In person workshops covering specific technical skills in practice</li>
 <li>3 hours long, with people working in small groups</li>
@@ -546,9 +547,8 @@ This page outlines the support available for RAP in DfE
 <hr>
 </section>
 </section>
-<section id="partnership-programme" class="level1">
-<h1>Partnership programme</h1>
-<hr>
+<section id="partnership-programme" class="level2">
+<h2 class="anchored" data-anchor-id="partnership-programme">Partnership programme</h2>
 <p>The Statistics Development Team invites teams to take part in our partnership programme. The programme can help individuals with:</p>
 <ul>
 <li>Using a relevant project to develop new coding skills and improving current confidence</li>
@@ -795,8 +795,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -907,7 +905,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
