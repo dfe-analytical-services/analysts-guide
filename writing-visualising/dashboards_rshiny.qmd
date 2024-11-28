@@ -7,9 +7,7 @@ title: "Creating R Shiny dashboards"
 
 ---
 
-# Learning R Shiny
-
----
+## Learning R Shiny
 
 Shiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage, embed them in [R Markdown documents](http://rmarkdown.rstudio.com/) or build [dashboards](http://rstudio.github.io/shinydashboard/). You can also extend your Shiny apps with [CSS themes](http://rstudio.github.io/shinythemes/), [htmlwidgets](http://www.htmlwidgets.org/), and [JavaScript actions](https://github.com/daattali/shinyjs/blob/master/README.md).
 
@@ -28,9 +26,7 @@ Finally, you should seek to make use of the community that is already out there,
 
 ---
 
-# DfE styling and the DfE R Shiny template
-
----
+## DfE styling and the DfE R Shiny template
 
 Our [template shiny app repository](https://github.com/dfe-analytical-services/shiny-template) should be used a starting point for all public facing dashboards as it gives a consistent set up for publishing and provides template code for common parts. You can start your own repository using the 'Use this template' green button on the template repository. You will need a GitHub account to do this. If you are unsure or need help, contact the Statistics Development team who will be able to walk you through this.
 
@@ -48,7 +44,9 @@ All dashboards should have a link to the source code, and information about who 
 
 ---
 
-## Consistency in R chart styling and colours
+### Consistency in R chart styling and colours
+
+---
 
 We recommend producing interactive charts using the `ggplot2` package to create the basic plots, in combination with the `ggiraph` package to add any required interactivity. Any ggplot2 chart type can be converted to being interactive using ggiraph by adding `_interactive` on to the plot type function call as illustrated with `geom_point()` below:
 
@@ -144,6 +142,8 @@ ggplot(
 
 Further examples are given on the [Using explore education statistics guidance](../publishing-statistics/ees.html#example-ggplot-chart-code) page.
 
+---
+
 ## Use of colour outside of charts
 
 In terms of colour choices beyond charts, teams should pick from the [gov.uk design system colours](https://design-system.service.gov.uk/styles/colour/) when creating dashboards. Colours for the charts are pulled in using the [afcolours package](https://best-practice-and-impact.github.io/afcolours/), which is based on the [GSS colours guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). These colours can be reused elsewhere if you need to match colours with those in the charts.
@@ -152,9 +152,7 @@ As with charts, be careful when choosing colours, and make sure that colours hav
 
 ---
 
-# Hosting dashboard code on GitHub
-
----
+## Hosting dashboard code on GitHub
 
 ::: {.callout-warning}
 Analysts should not use their own private GitHub accounts for the development of DfE dashboards.
@@ -170,9 +168,7 @@ Given the above, all analysts intending to create a dashboard should ensure they
 
 ---
 
-# Publishing your dashboard
-
----
+## Publishing your dashboard
 
 Public facing DfE Shiny applications are currently published via the DfE Analytical Services [shinyapps.io](https://www.shinyapps.io/) account, with the authorisation and deployment of dashboards performed using GitHub. 
 
@@ -194,7 +190,9 @@ To set up a new app, send the above to [explore education statistics platforms t
 
 ---
 
-## Dashboard procedure checklist
+### Dashboard procedure checklist
+
+---
 
 This checklist outlines the standard procedure for teams who are wishing to produce a public R shiny dashboard.
 
@@ -238,7 +236,9 @@ You must have done the following before a dashboard can be published (the explor
 
 ---
 
-## Procedure for updating your R Shiny dashboard with new data, new functionality or both
+### Procedure for updating your R Shiny dashboard with new data, new functionality or both
+
+---
 
 As mentioned in the [public dashboards section](#public-dashboards), a public dashboard should not be updated with unpublished data until the data is published. However, it is possible to clone the repo and run it locally with unpublished data for testing purposes (see our [guidance on testing with unpublished data](#testing-with-unpublished-data)). This guidance applies to both adding real data to a dashboard that previously used dummy data, and to adding updated data to an existing dashboard.
 
@@ -246,7 +246,7 @@ Note that wherever possible dashboard development updates should be done separat
 
 ---
 
-### 3-4 weeks before publication / start of update work
+#### 3-4 weeks before publication / start of update work
 
 ---
 
@@ -262,7 +262,7 @@ Note that wherever possible dashboard development updates should be done separat
 
 ---
 
-### Adding functionality / styling code updates
+#### Adding functionality / styling code updates
 
 ---
 
@@ -272,7 +272,7 @@ Note that wherever possible dashboard development updates should be done separat
 
 ---
 
-### Adding new data - at least 1 day prior to publication day
+#### Adding new data - at least 1 day prior to publication day
 
 ---
 
@@ -284,7 +284,7 @@ Note that wherever possible dashboard development updates should be done separat
 
 ---
 
-### On the day of publication:
+#### On the day of publication:
 
 ---
 
@@ -298,11 +298,17 @@ Note that wherever possible dashboard development updates should be done separat
 
 --- 
 
-## Detailed walkthrough of a data update
+### Detailed walkthrough of a data update
+
+--- 
 
 The following provides a more detailed description of how you would do the above steps technically in R-Studio and GitHub if you need a refresher.
 
-### (At least 1 day) Prior to publication
+---
+
+#### (At least 1 day) Prior to publication
+
+---
 
 1. Create a local branch which you will use to update the data. To do this open your local version of the repo, navigate to the Git window, ensure the current branch is main (see 1) as this is the code producing the current live version of the app. If you're happy the current branch is main, then do a pull to ensure it is up-to-date (see 2). Then click the new branch button (see 3).
 
@@ -314,7 +320,11 @@ The following provides a more detailed description of how you would do the above
 5. run tidy_code() and run_tests_locally() (see [guidance on UI tests](#ui-tests)). If changes are found when running the tests locally, make sure you look through these differences and understand them. If you are happy with the changes found in the tests (i.e. they are expected due to your updates), update the .json files. These are tested via GitHub actions every time you do a pull request, so you should always run them in advance of any pull request.
 6. You can run your app to test that it is working, but **do not** commit or push this branch yet.
 
-### Day of publication
+---
+
+#### Day of publication
+
+---
 
 7. At 9:30 on publication day, commit and push the changes in your new branch to GitHub. This makes the data files publicly available via GitHub and so should not be done until 9:30 on the day of publication, however this step does not update the dashboard.
 8. On the GitHub repo, you should now see a prompt to open a pull request. You should do this, following the template, ticking the boxes to show you have completed tests locally as required and provide details of the changes (i.e. that you've updated to include the most recent data, including dates).
@@ -322,9 +332,7 @@ The following provides a more detailed description of how you would do the above
 
 ---
 
-# Dashboards and data
-
----
+## Dashboards and data
 
 We don't yet have a database server set up that can be accessed by public facing dashboards, though we are working to put this in place. In the meantime, there are a few alternative options for storing data that the dashboard can run off.
 
@@ -338,7 +346,9 @@ If you are running an internal-only app then you can connect to our internal SQL
 
 ---
 
-## Storing data in the dashboard repository
+### Storing data in the dashboard repository
+
+---
 
 Whilst not ideal, storing data in the dashboard repository is the current standard route to accessing data in DfE dashboards. As our systems mature, we will move away from this model and develop a more secure and optimal data storage and access process for dashboards.
 
@@ -346,7 +356,7 @@ Note that the maximum allowable file size for GitHub repositories is 50 MB. Ther
 
 ---
 
-### Preventing early release of unpublished data
+#### Preventing early release of unpublished data
 
 ---
 
@@ -368,7 +378,9 @@ If you would like to save an unpublished data file locally to test the dashboard
 
 ---
 
-## Using dummy data
+### Using dummy data
+
+---
 
 When creating a public dashboard, all code and data will be hosted in the dfe-analytical-services GitHub repo. This is a public repo, meaning anything stored in here is publicly available. Therefore if you are creating a dashboard with previously unpublished data, you should provide dummy data for the GitHub repo, and only add the real data on your publication date.
 
@@ -380,7 +392,9 @@ Your dummy data should:
 
 ---
 
-## Testing with unpublished data
+### Testing with unpublished data
+
+---
 
 While you must use [dummy data](#using-dummy-data) in your GitHub repo, it is understandable that we should test the dashboard works with the real data before it goes live.
 
@@ -396,15 +410,15 @@ If you have any questions on this process, please contact the [explore education
 
 ---
 
-## Secure variables
+### Secure variables
+
+---
 
 See our [Git](../learning-development/git.html#storing-secure-variables) page for guidance on storing secure variables in repositories.
 
 ---
 
-# Internal only dashboards
-
----
+## Internal only dashboards
 
 It's possible to publish dashboards that are only accessible to users within the DfE network. To do this you will need to publish via the department's internal Posit Connect servers.
 
@@ -421,9 +435,7 @@ If you're running the app from an internal database, you'll need to contact the 
 
 ---
 
-# Using Google Analytics with R Shiny
-
----
+## Using Google Analytics with R Shiny
 
 If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
@@ -433,9 +445,7 @@ If you are hosting your dashboard at multiple URLs (i.e. to cope with expected h
 
 ---
 
-# Accessibility testing in R Shiny
-
----
+## Accessibility testing in R Shiny
 
 To complement the general accessibility guidance provided on the dashboards page, we recommend also using the [shinya11y](https://github.com/ewenme/shinya11y) package to look at accessibility across your dashboard. Simply install and load the package, then include `use_tota11y()` at the top of your UI script. This brings up an interface that helps you examine different accessibility aspects in your app, like colour contrast, alt-text and what screen readers will detect:
 
@@ -452,9 +462,7 @@ One example of a dashboard for Official statistics that meets these regulations 
 
 ---
 
-# Code testing
-
----
+## Code testing
 
 For dashboards created in R Shiny, we strongly recommend a mix of unit tests and UI tests (integration), run using GitHub Actions for continuous integration (CI). All applications should have an appropriate level of test coverage before being published. More information and details on how to get started with this can be found in the [testing R Shiny](#testing-r-shiny) section below.
 
@@ -465,7 +473,9 @@ Further guidance on setting up testing can be found in the [DfE good code practi
 
 ---
 
-## UI Tests
+### UI Tests
+
+---
 
 User interface (UI) tests should be used for all apps. These tests should check that:
 
@@ -475,7 +485,7 @@ User interface (UI) tests should be used for all apps. These tests should check 
 
 ---
 
-### Using shinytest2 for UI tests
+#### Using shinytest2 for UI tests
 
 ---
 
@@ -499,12 +509,13 @@ An example of a basic shiny test to check that your app loads up correctly can b
 
 ---
 
-### Migrating from shinytest to shinytest2
+#### Migrating from shinytest to shinytest2
 
 ---
 
-#### Preparing for migration
+##### Preparing for migration
 
+---
 
 As previously mentioned, the shinytest package has been superseded by the [shinytest2 package](https://rstudio.github.io/shinytest2/). If you already have shinytest UI tests in place for your dashboard, there is a function available to migrate these tests for you so that you do not have to rewrite them all yourself. 
 
@@ -531,24 +542,30 @@ There is [guidance on migrating to shinytest2](https://rstudio.github.io/shinyte
 
 ---
 
-#### Completing migration
+##### Completing migration
 
+---
 
 The migrate_from_shinytest function will search for your "tests" folder, and then look inside the folder for any scripts containing UI tests. A new `testthat` folder will be automatically created, containing the code that runs your tests, as well as the snapshots generated when your tests are run. Don't panic if your old test script is deleted as part of the migration, this is supposed to happen! It is recommended that someone who was familiar with the original tests completes QA of the new tests to make sure that everything looks as expected. 
 
 ---
 
-#### Potential Issues
+##### Potential Issues
 
+---
 There are a couple of potential issues that you may run into when completing migration or running your tests:
 
-#### Chromote
+---
+
+##### Chromote
+
+---
 
 Shinytest2 makes use of the Chromote package, which needs to connect to your local instance of Google Chrome. Please make sure you have Google Chrome installed before you attempt to use shinytest2, otherwise it will not work. Sometimes your copy of Chrome might be installed in a different place to where Chromote expects to find it, which means that your tests will not be able to run. There is information on how to resolve this issue [in the Tips for Using R section](../learning-development/r.html#shinytest2---invalid-path-to-chrome-error-message)
 
 ---
 
-## Unit Tests
+### Unit Tests
 
 ---
 
@@ -560,7 +577,7 @@ For example, our [QA app](https://github.com/dfe-analytical-services/dfe-publish
 
 ---
 
-## Tests and deployment
+### Tests and deployment
 
 ---
 
@@ -576,9 +593,7 @@ GitHub actions are already well documented and [their own guidance](https://docs
 
 ---
 
-# Dashboard performance
-
----
+## Dashboard performance
 
 Performance profiling represents a chance to breakdown how different elements within your dashboard perform relative to each other. This consists of running through a set of actions on a local run of your dashboard and timing each one. A useful tool for performing these tests is **profvis**, which carries out all the timings and visualisation of the results for you, whilst all you have to do is run the app and step through the actions that you want to profile.
 

@@ -6,13 +6,11 @@
 
 ---
 
-# Introduction
-
---- 
+## Introduction
     
 User engagement is about building sustainable relationships and feedback loops between statistics producers, users (and potential users) of statistics and other relevant stakeholders.
 
-Being user centred is a key departmental priority. It's critical that we actively engage with the users of our statistics. There are thousands of users out there and teams should be actively be getting feedback on their publications from a variety of users - policy colleagues, local authorities, schools, media, and the general public to name but a few.
+Being user centered is a key departmental priority. It's critical that we actively engage with the users of our statistics. There are thousands of users out there and teams should be actively be getting feedback on their publications from a variety of users - policy colleagues, local authorities, schools, media, and the general public to name but a few.
 
 The [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/) states that:
 
@@ -22,15 +20,17 @@ Producers of statistics will only know whether this element of quality continues
 
 ---
 
-## USER hub
+### USER hub
 
+---
 
 The User Support and Engagement Resource (USER) hub is now available on the [GSS website](https://gss.civilservice.gov.uk/user-support-and-engagement-resource-hub/). This is a central resource to help producers of statistics develop the knowledge, skills and techniques needed to engage effectively with their audiences.
 
 ---
 
-## Improving your own engagmenent
+### Improving your own engagmenent
 
+---
 
 Download this [top tips document](../resources/2021_05_14_Top_Tips.docx){target="_blank" rel="noopener noreferrer"} as a starting point for understanding how you can improve your user engagement.
 
@@ -40,10 +40,11 @@ More advice and guidance will follow in this space.
 
 ---
 
-## Case studies
+### Case studies
 
+---
 
-### Explore education statistics service
+#### Explore education statistics service
 
 ---
 
@@ -91,7 +92,7 @@ For more information, get in touch with the team at [explore.statistics@educatio
 
 ---
 
-### School places local authority scorecard
+#### School places local authority scorecard
 
 ---
 
@@ -107,7 +108,7 @@ For any further information contact the [Pupil Place Planning Data team](mailto:
 
 ---
 
-### CIN-CLA outcomes statistical release
+#### CIN-CLA outcomes statistical release
 
 ---
 
@@ -123,9 +124,7 @@ Reaching out to users and actively engaging with them produced a great result - 
 
 ---
 
-# ONS strategy
-
----
+## ONS strategy
 
 The ONS published a [user engagement strategy](https://gss.civilservice.gov.uk/policy-store/user-engagement-strategy-for-statistics-ensuring-official-statistics-meet-societys-need/){target="_blank" rel="noopener noreferrer"} in February 2021.  
 
@@ -145,8 +144,9 @@ The launch of the strategy, as well as two further videos on the value of user e
 
 ---
 
-## What is user engagement?
+### What is user engagement?
 
+---
 
 <div align="center">
 <iframe width="640" height="360" src="https://www.youtube.com/embed/H91A_9EnQ3U?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -157,8 +157,9 @@ The ONS have also published [ten top tips to help improve user engagement](https
 
 ---
 
-## User engagement successes
+### User engagement successes
 
+---
 
 <div align="center">
 <iframe width="640" height="360" src="https://www.youtube.com/embed/-8JohrNH2Ak?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -166,9 +167,7 @@ The ONS have also published [ten top tips to help improve user engagement](https
 
 ---
 
-# DfE user engagement strategy
-
----
+## DfE user engagement strategy
 
 DfE are working with ONS and others to consider how to take forward work in this area. DfE have put together an initial statement (note that this is in draft and should only be used as a guide internally):
 
@@ -186,8 +185,9 @@ In addition, teams should also think about the ways they can glean feedback on t
 
 ---
 
-## Consultations
+### Consultations
 
+---
 
 If you are considering changes to your publication and are contemplating a formal consultation do get in touch with [Statistics HoP office](mailto:Hop.statistics@education.gov.uk) early on to discuss.
 
@@ -208,8 +208,9 @@ Examples of previous consultations:
 
 ---
 
-## Surveys
+### Surveys
 
+---
 
 We routinely publish statistical releases, but who is using these and why?  It’s important to understand your user types and need, so we (public and department) can get best value from what we do.  Using user insights can help us to continually improve our products and services. 
 
@@ -221,7 +222,7 @@ It would be great to include your examples too, as well as capture your lessons 
 
 ---
 
-### Examples of surveys
+#### Examples of surveys
 
 ---
 

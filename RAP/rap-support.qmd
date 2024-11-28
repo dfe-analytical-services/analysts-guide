@@ -6,22 +6,24 @@ title: "RAP support"
 
 ---
 
-# Support on offer
-
----
+## Support on offer
 
 Learning resources and materials for [SQL](../learning-development/sql.html), [R](../learning-development/r.html), and [Git](../learning-development/git.html)
 
 ---
 
-## Email support
+### Email support
+
+---
 
  * [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)  
  * 9-5, aim to reply between 1-2 days.
 
 ---
 
-## Technical workshops
+### Technical workshops
+
+---
 
  *	In person workshops covering specific technical skills in practice
  *	3 hours long, with people working in small groups
@@ -38,9 +40,7 @@ Keep an eye out on Teams for this programme being advertised and contact [statis
 
 ---
 
-# Partnership programme
-
----
+## Partnership programme
 
 The Statistics Development Team invites teams to take part in our partnership programme. The programme can help individuals with:
 

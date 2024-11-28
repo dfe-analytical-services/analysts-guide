@@ -7,9 +7,7 @@ title: "Writing about data"
 
 ---
 
-# Introduction
-
----
+## Introduction
 
 Commentary should do much more than just describe the statistics in words. It should help the user to understand the meaning of patterns, trends and limitations, and build on any factual and public information already known about the subject matter.
 
@@ -21,9 +19,8 @@ Clear, insightful and professionally sound commentary supports informed decision
 
 ---
 
-# Key messages
+## Key messages
 
----
 
 Start by introducing the topic of your work and the questions you seek to answer with the numbers that follow. To help set the scene for your statistics, begin with a topic sentence that introduces the variables and the W’s (when, where and what).
 
@@ -48,8 +45,9 @@ Below is a session by Robert Cuffe from the BBC talking to DfE statisticians abo
 
 ---
 
-## Headline sections
+### Headline sections
 
+---
 
 It is common to use bullet points to draw out key headline messages, either for policy lines or for general interest. Here are some top tips for writing headlines:
 
@@ -66,7 +64,9 @@ It is common to use bullet points to draw out key headline messages, either for 
 
 ---
 
-## Active subheadings
+### Active subheadings
+
+---
 
 As with [active titles for charts](../writing-visualising/visualising.html#active-titles), active subheadings are descriptive and tell the trend by highlighting the main story. Active subheadings not only help to structure your writing, but also help users by highlighting the main message(s) you want to convey in your data.
 
@@ -75,8 +75,9 @@ See a [good example of active subheadings in practice](../statistics-production/
 
 ---
 
-## Reporting and interpreting numbers
+### Reporting and interpreting numbers
 
+---
 
 Reporting the numbers you work with is an important first step toward writing effective numeric descriptions. By including numbers in text, table or chart, you give the user the raw materials with which to perform comparisons across time, places or groups. However, if you stop there, you leave it to your readers to figure out how those data answer the question at hand.
 
@@ -90,9 +91,7 @@ Try to use prose to summarise the patterns so your user can see the general rela
 
 ---
 
-# Accessibility
-
----
+## Accessibility
 
 You should always write with your audience in mind. If you are writing something that will be available publicly, make sure that you [write content that is accessible for everyone](https://gds.blog.gov.uk/2016/02/23/writing-content-for-everyone/).
 
@@ -102,8 +101,9 @@ For tips on creating accessible content have a look at our [accessibility top ti
 
 ---
 
-## Creating hyperlinks
+### Creating hyperlinks
 
+---
 
 Avoid using full URLs in text. Hyperlinks should be used and they should provide a clear description of the destination. Avoid using 'For more information **click here**'. Screen readers often collate all links on a page into one list, so having numerous ‘click here’ links listed is confusing to the user and gives no description of the destinations. ‘For more information see **Guidance to support the summer 2021 exams**’ is an example of a good hyperlink.
 
@@ -111,9 +111,7 @@ Best practice on creating hyperlinks, particularly how to name them and common p
 
 ---
 
-# Advice and support
-
----
+## Advice and support
 
 More detailed advice and guidance on content design best practice is available from a number of resources across Government and beyond:
 
