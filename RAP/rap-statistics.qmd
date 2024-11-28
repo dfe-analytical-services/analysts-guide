@@ -1040,7 +1040,7 @@ You might be thinking that it would be nice if there was software that could hel
 
 **What does this mean?**
 
-A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure Devops, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the [Markdown Guide](https://www.markdownguide.org/basic-syntax/){target="_blank" rel="noopener noreferrer"}. 
+A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure DevOps, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the [Markdown Guide](https://www.markdownguide.org/basic-syntax/){target="_blank" rel="noopener noreferrer"}. 
 
 **Why do it?**
 
@@ -1048,13 +1048,13 @@ It's an easy way to answer questions that your audience will likely have regardi
 
 **How to get started**
 
-For new projects, you can use the create_project function in DfER. Set create_publication_proj to TRUE to create a pre-populated project with a customer folder structure, including a README template.  You can find more information on this in the [DfE R reference](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html). 
+For new projects, you can use the create_project function in DfER. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a README template.  You can find more information on this in the [DfE R reference](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html). 
 
-If you are creating your own README for existing projects, you should aim to have as many of the following sections as are applicable to your project:
+If you are creating your own README for existing projects, you should include all sections listed below that are applicable to your project:
 
 **Introduction**
 
-- Purpose: briefly explain the purpose of the repository.
+- Purpose: briefly explain the purpose of the code.
 - Overview: Provide a high-level summary of the contents and structure of the repository. 
 
 **Requirements**
