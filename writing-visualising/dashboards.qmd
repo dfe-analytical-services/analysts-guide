@@ -6,9 +6,7 @@ title: "Public dashboards"
 
 ---
 
-# When to use a dashboard
-
----
+## When to use a dashboard
 
 The primary route for publishing official statistics is using the [explore education statistics service](https://explore-education-statistics.service.gov.uk/) (EES). In addition to publishing on EES, there may be times where you want to compliment official statistics with a dashboard. This may be to do a deeper piece of analysis for a specific user group, or to make use of functionality that isn’t available within the platform.
 
@@ -22,9 +20,7 @@ There is also a dashboards version of the content design checklist. This checkli
 
 ---
 
-# Standards to follow
-
----
+## Standards to follow
 
 We expect all dashboards to follow a minimum set of standards to ensure coherence between our products and a minimum standard of quality for our end users.
 
@@ -48,9 +44,7 @@ The following sections cover the considerations in more detail, though when deve
 
 ---
 
-# Governance
-
----
+## Governance
 
 All teams developing dashboards to accompany Official Statistics should contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) for advice on the level of approval required as there may be times when HoP approval is needed in addition to team / unit leader approval. Approvals should be sent to the Statistics Development Team when asking for a new dashboard to be hosted on shinyapps.io.
 
@@ -65,9 +59,7 @@ Regular reflection on how teams are doing and finding ways to improve is an impo
 
 ---
 
-# User needs
-
----
+## User needs
 
 When designing a government service, always start by learning about the people who will use it. If you do not understand who they are or what they need from your service, you cannot build the right thing.
 
@@ -85,9 +77,7 @@ See the [service manual](https://www.gov.uk/service-manual/user-research/start-b
 
 ---
 
-# Software choices
-
----
+## Software choices
 
 When you make a decision about technology, you’re making a significant investment. The choices you make will have a huge impact on your ability to create, iterate and operate the service in a sustainable way. We should be choosing tools and technology that let us create a high quality service in a cost effective way and minimise the cost of changing direction in future.
 
@@ -123,9 +113,7 @@ The guidance on this site has a focus on R Shiny. However, if you are using Powe
 
 ---
 
-# Assessing engagement
-
----
+## Assessing engagement
 
 Work out what success looks like for your service and identify metrics which will tell you what’s working and what can be improved, combined with user research. For dashboards this will likely be things like the number of users and interactions with what you have created.
 
@@ -141,9 +129,7 @@ Google Analytics is a free service that collects information on who visits your 
 
 ---
 
-# Accessibility
-
----
+## Accessibility
 
 In line with [recent legislation](https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps) for public sector websites, all dashboards need to meet the latest [Web Content Accessibility Guidance](https://www.w3.org/TR/WCAG21/).
 
@@ -159,9 +145,7 @@ Automated tools can't check for everything and there's no substitute for giving 
 
 ---
 
-# Code testing
-
----
+## Code testing
 
 Testing is a way to capture desired behaviour of your code, in such a way that you can automatically verify that it keeps working the way you expect over time. It is essential for making sure that code works the way that you intend it to, and keeps working even after you make changes to the code so that your users have access to a stable service. You need to test your service regularly as part of quality assurance (QA) to make sure that it:
 
@@ -175,9 +159,7 @@ You should aim to automate as much of your testing as possible and run your test
 
 ---
 
-# Peer review
-
----
+## Peer review
 
 Peer review is a quality assurance activity, where an analyst other than the original author, views and tests the usage of a product or specific piece of code. This allows a fresh pair of eyes to take a look at your work. It validates that you have taken a correct approach and may highlight errors. This constructive feedback helps you to improve the quality. It provides confidence in your work, and ensures that it is fit for purpose.
 
@@ -186,9 +168,7 @@ Peer review is a quality assurance activity, where an analyst other than the ori
 
 ---
 
-# Iterative development
-
----
+## Iterative development
 
 Using [agile](https://www.gov.uk/service-manual/agile-delivery) methods means getting your service in front of real users as soon as possible. Then observing and generating data on how they use it and iterating the service based on what you’ve learned. Because you’re not specifying everything up front before you’ve developed an understanding of what users need, agile methods reduce the risk of delivering the wrong thing.
 
