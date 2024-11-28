@@ -9,9 +9,7 @@ title: "Routes for publishing"
 
 ---
 
-# Routes for publishing
-
----
+## Routes for publishing
 
 [Explore education statistics](https://explore-education-statistics.service.gov.uk/){target="_blank" rel="noopener noreferrer"} (EES) is the Department's statistics dissemination platform, designed to make DfE’s published statistics and data easier to find, access, use and understand. 
 
@@ -39,16 +37,15 @@ If you are unsure which route to use for publication please contact the [HoP Off
 
 ---
 
-# EES
-
----
+## EES
 
 All national, official and ad-hoc statistics should be published on EES. This section covers how to start publishing on EES and all the things you need to consider before publication. For more detailed guidance on how to use the platform, visit our [EES guidance page](ees.html)
 
 ---
 
-## How to publish
+### How to publish
 
+---
 
 <html>
 <head>
@@ -63,8 +60,9 @@ All national, official and ad-hoc statistics should be published on EES. This se
 
 ---
 
-## Publication checklist
+### Publication checklist
 
+---
 
 Before releasing statistics for the first time you may want to discuss the new process with key stakeholders and / or pre-release users to make them aware of the new service. You should also inform the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) and [Statistics HoP Office](mailto:Hop.STATISTICS@education.gov.uk).
 
@@ -97,8 +95,9 @@ Word templates for the data guidance, pra-list, and content can be found on [sha
 
 ---
 
-## Linking to GOV.UK
+### Linking to GOV.UK
 
+---
 
 You will need to arrange a GOV.UK statistics publication page so that it links to EES. Here is how to do that:
 
@@ -134,16 +133,16 @@ You can find what the link to your EES release will be by looking at the 'Sign o
 
 ---
 
-# GOV.UK
+## GOV.UK
 
----
 
 Management information releases can be published directly on gov.uk.
 
 ---
 
-## How to publish
+### How to publish
 
+---
 
 Ahead of publication, you’ll need to [raise a ticket with the Digital communications (gov.uk) team](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=1f40a44ddb50fa005ca2fddabf961922&sysparm_category=611828a6db6c2f403b929334ca9619f6&catalog_id=-1){target="_blank" rel="noopener noreferrer"} and ask them to create a new release (or add to a series if this already exists).
 
@@ -164,8 +163,9 @@ When you raise the ticket please ensure that all the documents you submit are in
 
 ---
 
-## Publication checklist
+### Publication checklist
 
+---
 
 Before you start creating your release you should have: 
 
@@ -181,9 +181,8 @@ Before you publish a release you should have:
 
 ---
 
-# Dashboards
+## Dashboards
 
----
 
 Dashboards built to meet a particular user need can be another helpful tool to help users access and understand your data, and can be hosted outside of EES or gov.uk.
 
