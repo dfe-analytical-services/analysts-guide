@@ -91,7 +91,7 @@ Please contact [coffee.coding@education.gov.uk](mailto:coffee.coding@education.g
 
 Reproducible Analytical Pipelines (RAP) Champions act as a point of contact for their division for everything RAP-related: improving the awareness and use of RAP in the department, improving the RAP support available to analysts and keeping track of progress made and areas requiring support.
 
-You can find more information on the RAP Champions Network page. Please contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) if you would like to learn more or sign up to be a champion.
+You can find more information on the [RAP Champions Network page](https://educationgovuk.sharepoint.com/sites/lvewp00487). Please contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) if you would like to learn more or sign up to be a champion.
 
 **Freestyle RAP sessions**
 
