@@ -14,9 +14,7 @@ We track analytics of users on the explore education statistics service using Go
 
 ---
 
-# User-led content improvements
-
----
+## User-led content improvements
 
 The below table gives some pointers on how you can use these stats to improve your release for users:
 
@@ -31,9 +29,7 @@ The below table gives some pointers on how you can use these stats to improve yo
 
 ---
 
-# Guidance for analytics
-
----
+## Guidance for analytics
 
 [Performance analysis: GDS starter guide to using Google Analytics](../resources/performance_analysis_ga_guide.pdf)
 
