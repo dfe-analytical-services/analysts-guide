@@ -6,8 +6,8 @@ title: "Open Data Standards"
 require(knitr)
 require(readxl)
 
-apprenticeship <- read_excel("../data_examples/apprenticeship_example.xlsx")
-metadata_data_example <- read_excel("../data_examples/metadata_data_example.xlsx")
+apprenticeship <- readxl::read_excel("../data_examples/apprenticeship_example.xlsx")
+metadata_data_example <- readxl::read_excel("../data_examples/metadata_data_example.xlsx")
 
 ```
 
@@ -33,9 +33,9 @@ An [interactive data screener](https://rsconnect/rsc/dfe-published-data-qa/){tar
 
 This can be run on any data file, though requires an associated [EES metadata file](#ees-metadata) to be able to process the file. The app runs on our Posit Connect (formerly RSConnect) servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on [GitHub](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}, and you can get in touch with us at explore.statistics@education.gov.uk.
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-important}
   All data and EES metadata files must be run through the [screening app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} before uploading to EES.
-</div>
+:::
 
 
 ---
@@ -71,13 +71,13 @@ An example pair of data and metadata files are illustrated in the files and tabl
 
 ---
 
-<div class="alert alert-dismissible alert-info">
-Note that the mandatory columns time_identifier, geographic_level and country_code are abridged in the table below to help with displaying in a web page, but are shown in the example file at the link above.
-</div>
+::: {.callout-note}
+The mandatory columns time_identifier, geographic_level and country_code are abridged in the table below to help with displaying in a web page, but are shown in the example file at the link above.
+:::
 
 ::: {.table-responsive}
 
-| time_period | ... | country_name | region_code | region_name | gender | school_phase | children_count  | children_percent |
+| time_period | ... | country_name | region_code | region_name | sex | school_phase | children_count  | children_percent |
 |-------------|-----|--------------|-------------|-------------|--------|--------------|-----------------|------------------|
 | 202021      | ... | England      |             |             | Total  | Total        | 1000            | 100.000          |
 | 202021      | ... | England      |             |             | Male   | Total        | 490             | 49.000           |
@@ -107,16 +107,16 @@ Note that the mandatory columns time_identifier, geographic_level and country_co
 
 | col_name         | col_type  | label        | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
 |------------------|-----------|--------------|--------------------|----------------|--------------|-------------|------------------------|
-| gender           | Filter    | Gender       |                    |                |              | Filter by pupil gender |             |
+| sex          | Filter    | Sex       |                    |                |              | Filter by pupil sex |             |
 | school_phase     | Filter    | School phase |                    |                |              | Filter by the phase of the school |  |
 | children_count  | Indicator | Number of children |              |                |              |             |                        |
 | children_percent | Indicator | Percentage of children |          | %              | 1            |             |                        |
 
 :::
 
-<div class="alert alert-dismissible alert-info">
-Note that for the children_percent column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users' needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.
-</div>
+::: {.callout-note}
+For the children_percent column, the underlying data is provided to 3 d.p., but the meta data constrains it to 1 d.p. This means that figures in tables in the publication will be presented to 1 d.p., but users will have access to the higher accuracy in the underlying data. As well as allowing EES to meet different users' needs, this also helps lower the risk of rounding errors in the underlying data creating unwanted behaviour in charts in EES.
+:::
 
 Further information on all of the requirements for appropriately prepared data files follow in the sections below.
 
@@ -272,9 +272,9 @@ If your current processes produce wide data that you need to switch to a tidy st
 
 These standards give you the power to format the data in a way that best meets the needs of the users. There are only a handful of formatting standards to follow to ensure best practice and consistency across all of our data.
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
 Data files must in comma separated values (CSV) format, and use UTF-8 encoding. You can specify this when saving the file in Excel, or exporting from elsewhere.
-</div>
+:::
 
 If you need to use commas within a cell, then you must add a text delimiter such as quotes to your file to define each cell - this is often done automatically for you, though if you're unsure then you can open up your CSV file in a text editor such as Notepad to check.
 
@@ -300,9 +300,9 @@ You should avoid references to time periods in the file name as this information
 
 In general you should avoid including the geographic level in the file name, unless it is a file that is specifically different (e.g. a file for school level data only).
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
 For use with EES all file names should be in lower case and avoid special characters or spaces. Any upper case characters in file names will be forced to lower case by EES, and will appear as lower case to the users.
-</div>
+:::
 
 ---
 
@@ -438,7 +438,7 @@ In line with the [GSS guidance on symbols](https://gss.civilservice.gov.uk/polic
 
 | Symbol      | Usage                                         | Example                                                   | Obsolete equivalents |
 |-------------|-----------------------------------------------|-----------------------------------------------------------| -------------------- |
-| z           | When an observation is **not applicable**     | No data for at gender level for boys at an all-girls school | |
+| z           | When an observation is **not applicable**     | No data for boys at an all-girls school | |
 | x           | When data is **unavailable** for other reasons| Data for an indicator is not collected in a certain region  | : |
 | c           | **Confidential** data | Data has been suppressed | |
 | low        | Rounds to 0, but is not 0 | Rounding to the nearest thousand, 499 would otherwise show as 0. Only use 0 for true 0's | ~ |
@@ -464,9 +464,9 @@ We only need to provide EES metadata for filters and indicators, we do not need 
 We do not need to provide metadata for filters that only have a single level, as this data is not useful for EES, and is there for the benefit of end users downloading the files.
 
 
-<div class="alert alert-dismissible alert-info">
-Note that any extra geography columns not specified in the [allowable values](#allowable-geographic-levels) above, or any time columns extra to time_period and time_identifier, are [filters](#filters), and should be included in EES metadata if they have two or more levels.
-</div>
+::: {.callout-note}
+Any extra geography columns not specified in the [allowable values](#allowable-geographic-levels) above, or any time columns extra to time_period and time_identifier, are [filters](#filters), and should be included in EES metadata if they have two or more levels.
+:::
 
 
 With some files there may be more than one way to specify the metadata that will work in EES and give an accurate representation of the data itself. In these cases we recommend that publication teams test out different approaches and decide their approach based on what will best meet the needs of the users of their data.
@@ -519,7 +519,7 @@ Each row represents a column in the data file.
 
 | col_name | col_type | label | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
 |----------|----------|-------|--------------------|----------------|-------------|------------------------|---|
-| gender | Filter | Gender | | | | Filter by pupil gender | |
+| sex | Filter | Sex | | | | Filter by pupil sex | |
 | school_phase | Filter | School phase | | | | Filter by the phase of the school | |
 | children_count | Indicator | Number of children | | | | | |
 | children_percent | Indicator | Percentage of children | | % | 1 | | |
@@ -697,9 +697,9 @@ If you have data from an unknown location, the standard is to use 'Not available
 
 We expect that all geography codes will be based on the Open Geography Portal and run checks against this for various levels in the [data screener](#How-to-check-against-these-standards), please contact us if you have data that doesn't match this.
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
 Where you have data for a legacy LA that does not have a 9-digit new code, leave those cells as blank instead.
-</div>
+:::
 
 ---
 
@@ -745,9 +745,10 @@ Where you have multiple geographic levels in a file, leave any not applicable co
 | Sponsor | sponsor_id, sponsor_name | Note that Sponsor ID is shown as Group ID on GIAS when looking at a Sponsor. |
 
 
-<div class="alert alert-dismissible alert-info">
+::: {.callout-note}
+## English devolved area
 [English devolved area](https://explore-education-statistics.service.gov.uk/glossary#english-devolved-area){target="_blank" rel="noopener noreferrer"} is used to refer to combined authorities, mayoral combined authorities and the Greater London Authority.
-</div>
+:::
 
 
 Planning area, School, Provider, and Institution level data will upload as normal to EES, though will not be read into the table tool or data blocks if they are mixed in with other levels. All data, including these levels are accessible in the downloadable files for users to explore in the same format as they are uploaded.
@@ -770,9 +771,9 @@ For Planning area and Institution data, any data files that **only** consist of 
 | Institution | No required columns, though we recommend you include institution_id and institution_name to make data matching easier | |
 
 
-<div class="alert alert-dismissible alert-warning">
+::: {.callout-note}
   If you have a level that isn’t covered above, please contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) with details and example data.
-</div>
+:::
 
 ---
 
@@ -1208,9 +1209,9 @@ Corresponding EES metadata file.
 
 ---
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
   <p>You must not include grouping filters as separate rows in the EES metadata, they should only be referenced in the filter_grouping_column.</p>
-</div>
+:::
 
 ---
 
@@ -1255,9 +1256,9 @@ knitr::include_graphics("../images/change_date_format.PNG")
 
 The indicators are the variables showing the measurements/statistics themselves, such as the number of pupils. These can be of different formats (e.g. text, numeric), although are numeric by default. The number of indicators will vary across publications and data files.
 
-<div class="alert alert-dismissible alert-danger">
+::: {.callout-warning}
   <p> **Every variable in your data set should have its own column, and each column should be a single data type**. E.g. do not create an indicator column called "pupils" that has both the number and percentage of pupils in it. Instead, create two separate columns for each measure.</p>
-</div>
+:::
 
 As an example, the number and percentage of pupil enrolments are the indicators in this dataset:
 
@@ -1364,9 +1365,9 @@ Any “_new” entry where no update is to be made should be left blank, whilst 
 Any discontinued col_names (i.e. with no single direct replacement) should have ‘y’ entered in the discontinued field. 
 Any completely new fields with no previous direct precursor should contain blanks in the first 5 columns.
 
-<div class="alert alert-dismissible alert-info">
-Your team should then keep a copy as a log of any changes and also send a copy to explore.statistics@education.gov.uk so we can look to update our standardized list of field names where appropriate.
-</div>
+::: {.callout-note}
+Your team should then keep a copy as a log of any changes and also send a copy to explore.statistics@education.gov.uk so we can look to update our standardised list of field names where appropriate.
+:::
 
 ---
 

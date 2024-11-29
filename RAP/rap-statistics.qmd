@@ -3,76 +3,84 @@ title: "RAP for Statistics"
 
 ---
 
-```{r include=FALSE}
-require(knitr)
-```
-
 <p class="text-muted">Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes</p>
 
 ---
 
-# What is RAP?
+## What is RAP?
+
+RAP (Reproducible Analytical Pipelines) are a way to create well documented, reproducible, quality analysis using the best tools available to us as analysts. In 2022, the Analysis Function published their [RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/), which outlines the expectation that RAP should be "the default approach to analysis in government". Each department is expected to publish a RAP implementation strategy to explain how they are going to support analysts to embed RAP into their day to day work. You can view the [RAP implementation plans for all departments, including DfE](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/departmental-rap-plans/) on the Analysis Function website. 
+
+Cam ran an introduction to RAP session for DISD in December 2020. The slides can be found on [GitHub](https://github.com/cjrace/introduction-to-rap){target="_blank" rel="noopener noreferrer"}, or you can [watch the recording](https://educationgovuk.sharepoint.com/:v:/r/sites/lvewp00086/WorkplaceDocuments/Statistics%20Services%20Unit/Statistics%20Development%20Team/Stream%20Migrated%20Videos/Recordings/An%20introduction%20to%20RAP-20201217_024855-Meeting%20Recording.mp4?csf=1&web=1&e=Fz1gXt).
+
+[RAP](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/){target="_blank" rel="noopener noreferrer"}  means using automation to our advantage when analysing data, which can be as simple as writing code so that we can click a button to execute and do the job for us. Most analysts will be using elements of RAP in their work, such as quality assurance and version control, without even thinking about it!
+
+Cross-government RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md){target="_blank" rel="noopener noreferrer"} to aim for. In DfE we have adapted these to form our own RAP baseline standards, which are described in detail on this page. 
+
+::: callout-note
+There is currently a clear expectation at DfE that any analyst working in statistics production should know RAP principles and be able to implement them using the recommended tools to meet at least the department’s definitions of “good” and “great” practice.
+:::
 
 ---
 
-RAP (Reproducible Analytical Pipelines) is doing well documented, reproducible, quality analysis using the best tools available to us as analysts.
-
-Cam ran an introduction to RAP session for DISD in December 2020, the slides can be found on [GitHub](https://github.com/cjrace/introduction-to-rap){target="_blank" rel="noopener noreferrer"}, and the recording is embedded below:
-
-<div align="center">
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/f4fb4ae9-3149-4d7c-8968-ff4c11dc8ac3?autoplay=false&amp;showinfo=false" allowfullscreen style="border:none;"></iframe>
-</div>
-
-[Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/){target="_blank" rel="noopener noreferrer"}, or RAP for short. The full words still hide the true meaning behind buzzwords and jargon though. What it actually means is using automation to our advantage when analysing data, and this is as simple as writing code such as a SQL query that we can click a button to execute and do the job for us. 
-
-The cross-government group of RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md){target="_blank" rel="noopener noreferrer"} to aim for (note that we have our own levels of practice below, which are building blocks to reach this end goal)
-
-We already have 'analytical pipelines' and have done for many years. The aim of RAP, is to automate the parts of these pipelines that can be automated, to increase efficiency and accuracy, while creating a clear audit trail to allow analyses to easily be re-run if needed. This will free us up to focus on the parts of our work where our human input can really add value. RAP is something we can use to reduce the burden on us by getting rid of some of the boring stuff, what's not to like!
-
-Cam and Sarah ran a session introducing how to get started with automated QA in relation to RAP, slides are available on [GitHub](https://sarahmwong.github.io/intro-to-automating-QA/#1){target="_blank" rel="noopener noreferrer"} and the recording of the session is below:
-
-<div align="center">
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/57eab29d-afeb-4651-a9f5-687098b84d13?autoplay=false&showinfo=false" allowfullscreen style="border:none;"></iframe>
-</div>
+### Benefits of RAP
 
 ---
 
-## Our scope
+According to the [Analysis Function](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/), using RAP should:
 
+* improve the quality of the analysis
+* increase trust in the analysis by producers, their managers and users
+* create a more efficient process
+* improve business continuity and knowledge management
 
-We want to focus on the parts of the production process that we have ownership and control over – so we are focussing on the process from data sources to publishable data files. This is the part of the process where RAP can currently add the most value - automating the production and quality assurance of our outputs currently takes up huge amount of analytical resource, which could be better spent providing insight and other value adding activity. 
-
-`r knitr::include_graphics("../images/RAP-Scope-Arrow.png")`
-
-In Official Statistics production we are using RAP as a framework for best practice when producing our published data files, as these are the foundations of our publications moving forward. Following this framework will help us to improve and standardise our current production processes and provide a clear 'pipeline' for analysts to follow. This will have the added benefit of setting a clear and defined world of tools and skills required, making learning and development that much clearer and easier. To get started with RAP, we first need to be able to understand what it actually means in practice, and be able to [assess our own work against the principles of RAP](#what-is-expected).
-
-Implementing RAP for us will involve combining the use of SQL, R, and clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help up-skill in those areas, see our [learning resources](../learning-development/learning-development.html) page.
-
-The collection of, and routine checking of data as it is coming into the department is also an area that RAP can be applied to. We have kept this out of scope at the moment as the levels of control in this area vary wildly from team to team. If you would like advice and help to automate any particular processes, feel free to [contact us](mailto:statistics.development@education.gov.uk).
+In DfE, we already have 'analytical pipelines' and have done for many years. The aim of RAP is to automate the parts of these pipelines that can be automated, to increase efficiency and accuracy, while creating a clear audit trail to allow analyses to easily be re-run if needed. This will free us up to focus on the parts of our work where our human input can really add value. RAP is something we can use to reduce the burden on us by getting rid of some of the boring stuff, what's not to like! RAP can also reduce risk through human error, since you will no longer have to copy and paste numbers between different documents or make substantial manual edits to code each time you need to re-run it.  
 
 ---
 
-# Core principles
+### Our scope
 
 ---
 
 
-**Data sources for a publication are stored in the same database** _- [Preparing data](#preparing-data)_
+We want to focus on the parts of the production process that we have ownership and control over – so for statistics production we are focussing on the process from data sources to publishable data files. This is the part of the process where RAP can currently add the most value - automating the production and quality assurance of our outputs currently takes up huge amount of analytical resource, which could be better spent providing insight and other value adding activity. 
+
+![](../images/RAP-Scope-Arrow.png)
+
+In Official Statistics production we are using RAP as a framework for best practice when producing our published data files, as these are the foundations of our publications moving forward. Following this framework will help us to improve and standardise our current production processes and provide a clear 'pipeline' for analysts to follow.  To get started with RAP, we first need to be able to understand what it actually means in practice, and be able to [assess our own work against the principles of RAP](#what-is-expected). From there, we can work out what training is needed, if any, and where additional support can help teams to meet the baseline. 
+
+In other areas of analysis, we recommend that RAP principles are applied proportionately. Whilst you wouldn't create a full RAP process for an ad-hoc, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results. 
+
+Implementing RAP for us will involve combining the use of SQL, R, and clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
+
+The collection of, and routine checking of data as it is coming into the department is also an area that RAP can be applied to. We have kept this out of scope at the moment as the levels of control in this area vary wildly from team to team. If you would like advice and help to automate any particular processes, feel free to [contact the Statistics Development Team](mailto:statistics.development@education.gov.uk).
+
+---
+
+## Core principles
+
+RAP has three core principles:
 
 
-**Underlying data files are produced using code, with no manual steps** _- [Writing code](#writing-code)_
+[Preparing data](#preparing-data): Data sources for a publication are stored in the same database
 
 
-**Files and scripts should be appropriately version controlled** _- [Version control](#version-control)_
+[Writing code](#writing-code): Underlying data files are produced using code, with no manual steps
+
+
+[Version control](#version-control): Files and scripts should be appropriately version controlled
+
+Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst. 
 
  
 ---
 
-# RAP in practice
+## RAP in practice
 
----
 
-The diagram below highlights what RAP means for us, and the varying levels in which it can be applied in all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice. The expectation is that all publications will meet the department's baseline implementation of RAP in the self-assessment tool. It's worth acknowledging that some teams are already working around great and best practice levels, and that we appreciate every team's situation is unique, our guidance is designed to be applicable across all official statistics publications by DfE.
+The diagram below highlights what RAP means for us, and the varying levels in which it can be applied in all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice. 
+
+The expectation is that all statistics publications will meet the department's baseline implementation of RAP, using the [self-assessment tool](https://rsconnect/rsc/publication-self-assessment/) to monitor their progress. It's worth acknowledging that some teams are already working around great and best practice levels, and that we appreciate every team's situation is unique, our guidance is designed to be applicable across all official statistics publications by DfE. Once teams achieve baseline status, their RAP process will be audited. 
 
 
 <html>
@@ -80,22 +88,19 @@ The diagram below highlights what RAP means for us, and the varying levels in wh
 <title>hex-diagram</title>
 <meta charset="utf-8"/>
 </head>
-<body><div class="mxgraph" style="max-width:100%;" data-mxgraph="{&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2023-08-16T09:01:49.863Z\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\&quot; etag=\&quot;cm8XBkAgEjbUSUNlSFzH\&quot; version=\&quot;21.6.2\&quot; type=\&quot;google\&quot;&gt;\n  &lt;diagram id=\&quot;_ltWYIdbVKAG_Xyvna0Y\&quot; name=\&quot;Page-1\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1363\&quot; dy=\&quot;679\&quot; grid=\&quot;0\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;0\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;UserObject label=\&quot;Sensible folder and file structure\&quot; link=\&quot;#sensible-folder-and-file-structure\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-5\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;69\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Use appropriate tools\&quot; link=\&quot;#appropriate-tools\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-6\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;fillColor=#4472C4;spacingLeft=7;spacingRight=7;rounded=0;shadow=0;sketch=0;backgroundOutline=0;gradientDirection=north;strokeColor=none;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;-55\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Processing is done with code\&quot; link=\&quot;#processing-is-done-with-code\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-7\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;7\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Basic automated QA\&quot; link=\&quot;#basic-automated-qa\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-8\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;132\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;All source data stored in a database\&quot; link=\&quot;#all-source-data-stored-in-a-database\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-9\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;-118\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Files meet data standards\&quot; link=\&quot;../statistics-production/ud.html#how-to-check-against-these-standards\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-10\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;-55\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Documentation\&quot; link=\&quot;#documentation\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-11\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;69\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Version controlled final code scripts\&quot; link=\&quot;#version-controlled-final-code-scripts\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-12\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;320\&quot; y=\&quot;327\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Recyclable code for future use\&quot; link=\&quot;#recyclable-code-for-future-use\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-13\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;195\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Dataset production scripts\&quot; link=\&quot;#dataset-production-scripts\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-14\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;257\&quot; y=\&quot;421\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Publication specific automated QA\&quot; link=\&quot;#publication-specific-automated-qa\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-15\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;382\&quot; y=\&quot;421\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Automated summaries\&quot; link=\&quot;#automated-summaries\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-17\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;194\&quot; y=\&quot;515\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Peer review of code within team\&quot; link=\&quot;#review-of-code-within-team\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-18\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;319\&quot; y=\&quot;515\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Collaboratively develop code using git\&quot; link=\&quot;#collaboratively-develop-code-using-git\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-19\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;674\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;&amp;#39;Clean&amp;#39; final code\&quot; link=\&quot;#clean-final-code\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-20\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;550\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;&amp;lt;div style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;Whole publication production scripts&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\&quot; link=\&quot;#whole-publication-production-scripts\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-21\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;align=center;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;612\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Use open source repositories\&quot; link=\&quot;#use-open-source-repositories\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-22\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;737\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Publication specific automated summaries\&quot; link=\&quot;#publication-specific-automated-summaries\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-23\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;550\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Peer review of code from outside the team\&quot; link=\&quot;#review-of-code-from-outside-the-team\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-24\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;674\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;mxCell id=\&quot;t2OgNqa9NwPCjF_SyjkI-25\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#4472c4&amp;quot;&amp;gt;Good practice&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-38\&quot; y=\&quot;652\&quot; width=\&quot;210\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;t2OgNqa9NwPCjF_SyjkI-26\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#70ad47&amp;quot;&amp;gt;Great practice&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;206\&quot; y=\&quot;652\&quot; width=\&quot;220\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;t2OgNqa9NwPCjF_SyjkI-27\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#ed7d31&amp;quot;&amp;gt;Best practice&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;572\&quot; y=\&quot;652\&quot; width=\&quot;200\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-1\&quot; value=\&quot;\&quot; style=\&quot;shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#4472c4;gradientColor=none;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;168.5\&quot; y=\&quot;26\&quot; width=\&quot;47\&quot; height=\&quot;538\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-2\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#4472c4&amp;quot;&amp;gt;Baseline expectation&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;35.5\&quot; y=\&quot;216\&quot; width=\&quot;313\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-4\&quot; value=\&quot;\&quot; style=\&quot;shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#ed7d31;gradientColor=none;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;659\&quot; y=\&quot;145\&quot; width=\&quot;47\&quot; height=\&quot;292\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-5\&quot; value=\&quot;&amp;lt;font color=&amp;quot;#ed7d31&amp;quot; style=&amp;quot;font-size: 32px&amp;quot;&amp;gt;Ambition&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;612\&quot; y=\&quot;216\&quot; width=\&quot;143\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+<body><div class="mxgraph" style="max-width:100%;" data-mxgraph="{&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2023-08-16T09:01:49.863Z\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\&quot; etag=\&quot;cm8XBkAgEjbUSUNlSFzH\&quot; version=\&quot;21.6.2\&quot; type=\&quot;google\&quot;&gt;\n  &lt;diagram id=\&quot;_ltWYIdbVKAG_Xyvna0Y\&quot; name=\&quot;Page-1\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1363\&quot; dy=\&quot;679\&quot; grid=\&quot;0\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;0\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;UserObject label=\&quot;Sensible folder and file structure\&quot; link=\&quot;#sensible-folder-and-file-structure\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-5\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;69\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Use appropriate tools\&quot; link=\&quot;#use-appropriate-tools\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-6\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;fillColor=#4472C4;spacingLeft=7;spacingRight=7;rounded=0;shadow=0;sketch=0;backgroundOutline=0;gradientDirection=north;strokeColor=none;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;-55\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Processing is done with code\&quot; link=\&quot;#processing-is-done-with-code\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-7\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;7\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Basic automated QA\&quot; link=\&quot;#basic-automated-qa\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-8\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;132\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;All source data stored in a database\&quot; link=\&quot;#all-source-data-stored-in-a-database\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-9\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;-118\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Files meet data standards\&quot; link=\&quot;../statistics-production/ud.html#how-to-check-against-these-standards\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-10\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;-55\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Documentation\&quot; link=\&quot;#documentation\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-11\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;69\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Version controlled final code scripts\&quot; link=\&quot;#version-controlled-final-code-scripts\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-12\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;320\&quot; y=\&quot;327\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Recyclable code for future use\&quot; link=\&quot;#recyclable-code-for-future-use\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-13\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;195\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Dataset production scripts\&quot; link=\&quot;#dataset-production-scripts\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-14\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;257\&quot; y=\&quot;421\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Publication specific automated QA\&quot; link=\&quot;#publication-specific-automated-qa\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-15\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;382\&quot; y=\&quot;421\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Automated summaries\&quot; link=\&quot;#automated-summaries\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-17\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;194\&quot; y=\&quot;515\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Peer review of code within team\&quot; link=\&quot;#review-of-code-within-team\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-18\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;319\&quot; y=\&quot;515\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Collaboratively develop code using git\&quot; link=\&quot;#collaboratively-develop-code-using-git\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-19\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;674\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;&amp;#39;Clean&amp;#39; final code\&quot; link=\&quot;#clean-final-code\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-20\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;550\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;&amp;lt;div style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;Whole publication production scripts&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\&quot; link=\&quot;#whole-publication-production-scripts\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-21\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;align=center;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;612\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Use open source repositories\&quot; link=\&quot;#use-open-source-repositories\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-22\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;737\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Publication specific automated summaries\&quot; link=\&quot;#publication-specific-automated-summaries\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-23\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;550\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Peer review of code from outside the team\&quot; link=\&quot;#review-of-code-from-outside-the-team\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-24\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;674\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;mxCell id=\&quot;t2OgNqa9NwPCjF_SyjkI-25\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#4472c4&amp;quot;&amp;gt;Good practice&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-38\&quot; y=\&quot;652\&quot; width=\&quot;210\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;t2OgNqa9NwPCjF_SyjkI-26\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#70ad47&amp;quot;&amp;gt;Great practice&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;206\&quot; y=\&quot;652\&quot; width=\&quot;220\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;t2OgNqa9NwPCjF_SyjkI-27\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#ed7d31&amp;quot;&amp;gt;Best practice&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;572\&quot; y=\&quot;652\&quot; width=\&quot;200\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-1\&quot; value=\&quot;\&quot; style=\&quot;shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#4472c4;gradientColor=none;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;168.5\&quot; y=\&quot;26\&quot; width=\&quot;47\&quot; height=\&quot;538\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-2\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#4472c4&amp;quot;&amp;gt;Baseline expectation&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;35.5\&quot; y=\&quot;216\&quot; width=\&quot;313\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-4\&quot; value=\&quot;\&quot; style=\&quot;shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#ed7d31;gradientColor=none;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;659\&quot; y=\&quot;145\&quot; width=\&quot;47\&quot; height=\&quot;292\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-5\&quot; value=\&quot;&amp;lt;font color=&amp;quot;#ed7d31&amp;quot; style=&amp;quot;font-size: 32px&amp;quot;&amp;gt;Ambition&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;612\&quot; y=\&quot;216\&quot; width=\&quot;143\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
 <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
 </body>
 </html>
 
 ---
 
-# What is expected
+## What is expected
+::: callout-warning
+It is expected that all teams' processes meet all elements of good and great practice as a baseline.
 
----
-
-<div class="alert alert-dismissible alert-warning">
-It is expected that **all teams' processes meet all elements of good and great practice** as a baseline.
-
-Teams are expected to review their own processes using the [publication self-assessment tool](https://rsconnect/rsc/publication-self-assessment){target="_blank" rel="noopener noreferrer"} and use the guidance on this site to start making improvements towards meeting the four core principles if they aren't already. If you would like additional help to review your processes, please contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
-</div>
+Teams are expected to review their own processes using the [publication self-assessment tool](https://rsconnect/rsc/publication-self-assessment){target="_blank" rel="noopener noreferrer"} and use the guidance on this site to start making improvements towards meeting the core principles if they aren't already. If you would like additional help to review your processes, please contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
+:::
 
 Teams will start from different places and implement changes at different rates, and in different ways. We do not expect that every team will follow the same path, or even end at the same point. Don't worry if this seems overwhelming at first, use the guidance here to identify areas for improvement and then tackle them with confidence.
 
@@ -105,26 +110,16 @@ While working to reach our baseline expectation of good and great practice, you 
 
 ## How to assess your publication
 
+The checklist provided in the [publication self-assessment tool](https://rsconnect/rsc/publication-self-assessment){target="_blank" rel="noopener noreferrer"}, shown below, is designed to make reviewing our processes against our RAP levels easier, giving a straightforward list of questions to check your work against. This will flag potential areas of improvement, and you can then use the links on the right hand side to go to the specific section of this page to find more detail and guidance on how to develop your current processes in line with best practice. 
 
-
-The checklist provided in the [publication self-assessment tool](https://rsconnect/rsc/publication-self-assessment){target="_blank" rel="noopener noreferrer"} is designed to make reviewing our processes against our RAP levels easier, giving a straightforward list of questions to check your work against. This will flag potential areas of improvement, and you can then use the links to go to the specific section with more detail and guidance on how to develop your current processes in line with best practice.
+![](../images/self-assessment.png)
 
 
 Some teams will already be looking at best practice, while others will still have work to do to achieve the department's baseline of good and great practice. We know that all teams are starting this from different points, and are here to support all teams from their respective starting positions.
 
 ---
 
-## Where we need to focus
-
-
-
-Most teams have already made progress with their production of tidy data files, and the release of the automated screener has now tied up that end point of the pipeline that we are all currently working towards. 
-
-The key now is for us to build on the work so far and focus on how we improve the quality and efficiency of our production processes up to that point. To do this, we need to make a concerted effort to standardise how we store and access our data, before then automating what we can to reduce the burden of getting the numbers ready and see the benefits of RAP. The exact meaning of this will vary within teams.
-
----
-
-## How to get started
+## How to get started with RAP
 
 Check your analysis against the Good, Great and Best practice standards under [RAP in practice](/RAP/rap-statistics.html#rap-in-practice).
 
@@ -132,56 +127,60 @@ Measure your publication against the RAP levels using our [self assessment tool]
 
 Once you've assessed your publication, have a look through our guidance below to narrow down how you can get started with improving those parts of your process.
 
-The Statistics Development Team invites teams to take part in our partnership programme to develop their skills and implement RAP principles to a relevant project. Visit our page on  [getting started with the partnership programme](../learning-development/learning-development.html#Support_available) for more details.
+The [Statistics Development Team](mailto:statistics.development@education.gov.uk) invites teams to take part in our partnership programme to develop their skills and implement RAP principles to a relevant project. Partnership programmes can offer additional resource and dedicated support to your team to implement specific RAP principles. Visit our page on  [getting started with the partnership programme](../learning-development/learning-support.html#partnership-programmes) for more details.
 
 ---
 
-# How does RAP fit into ADA/Databricks
+## How does RAP fit into ADA / Databricks
+
+Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the [ADA guidance on statistics publications](../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your work. 
 
 ---
 
-See the [ADA guidance on statistics publications](../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your statistics publication pipelines. 
+## Preparing data
+
+Preparing data is our first core RAP principle, which contains the following elements:
+
+* [All source data stored in a database](#all-source-data-stored-in-a-database) 
+* [Files meet data standards](#files-meet-data-standards)
+* [Sensible file and folder structure](#sensible-folder-and-file-structure)
+
+Your team should store the raw data you use to create underlying data in a Microsoft SQL Server database or in the Databricks platform. These are similar to a Sharepoint area or a shared folder, but offer dedicated data storage areas and allow multiple users to use the same file at once. This means that you can also run code against a single source of data, further reducing the risk of error.
 
 ---
 
-# Preparing data
+### All source data stored in a database 
 
 ---
 
-The first place to start for your teams RAP is to store the raw data you use to create underlying data in a Microsoft SQL Server database. This is similar to a Sharepoint area or a shared folder, but it's a dedicated data storage area which allows multiple users to use the same file at once, and for you to run code against the data in one place.
 
----
-
-## All source data stored in a database 
-
-
-`r knitr::include_graphics("../images/good.svg")`
+![](../images/good.svg)
 
 **What does this mean?** 
 
-When we refer to 'source data', we take this to mean the data you use at the start of the process to create the underlying data files. Any cleaning at the end of a collection will happen before this. 
+When we refer to 'source data', we take this to mean the data you use at the start of your process to create the underlying data files. Any cleaning at the end of a collection will happen before this. 
 
-In order for us to be able to have an end-to-end data pipeline where we can replicate our analysis across the department, we should store all of the raw data needed to create aggregate statistics in a managed Microsoft SQL Server. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process using SQL queries. 
+In order for us to be able to have an end-to-end data pipeline where we can replicate our analysis across the department, we should store all of the raw data needed to create aggregate statistics in a managed Microsoft SQL Server or in the Databricks platform. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process using SQL queries. 
 
-As far as meeting the requirement to have all source data in a database, databases other than SQL may be acceptable, though we can't support them in the same way.
+As far as meeting the requirement to have all source data in a database, databases other than SQL or Databricks may be acceptable, though we can't support them in the same way.
 
 
 **Why do it?**
 
 The principle is that this source data will remain stable and is the point you can go back to and re-run the processes from if necessary. If for any reason the source data needs to change, your processes will be set up in a way that you can easily re-run them to get updated outputs based on the amended source data with minimal effort.
 
-SQL is a fantastic language for large scale data joining and manipulation; it allows us to replicate end-to-end from raw data to final aggregate statistics output. Having all the data in one place and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results. 
+SQL is a fantastic language for large scale data joining and manipulation; it allows us to replicate end-to-end from raw data to final aggregate statistics output. Having all the data in one place and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results. You can run SQL queries against data in SQL Server or in Databricks, although SQL Server makes use of T-SQL and Databricks makes use of Spark SQL. 
 
 
 **How to get started**
 
-<!-- needs example -->
-For a collection of relevant resources to use when learning SQL, see our [learning resources](../learning-development/learning-development.html) page, and for guidance on best practice when writing SQL queries, see the [writing code](#writing-code) and [documentation](#documentation) sections on this page, as well as the guides immediately below on how to setup and use a SQL database. 
+For a collection of relevant resources to use when learning SQL, see our [learning resources](../learning-development/learning-development.html) page, and for guidance on best practice when writing SQL queries, see the [writing code](#writing-code) and [documentation](#documentation) sections on this page, as well as the guides immediately below on how to set up and use a SQL database. 
 
+For resources to help you learn about Databricks and how to migrate your data into the Unity Catalog, please see our [ADA and Databricks documentation](../ADA/ada.html). Legacy servers will be decommissioned in 2026, and all data will be migrated into the Databricks Unity Catalog instead. 
 
 ---
 
-### How to set up a SQL working area
+#### How to set up a SQL working area
 
 ---
 
@@ -189,11 +188,11 @@ There are a few different options, depending on where you want your new area to 
 
 ---
 
-### Moving data to different areas
+#### Moving data to different areas
 
 ---
 
-If your data is already in SQL, you can use this snippet of R code to move tables from one area (e.g. the iStore) to another (e.g. your team's modelling area) to ensure all data are stored in a database.
+If your data is already in SQL Server, you can use this snippet of R code to move tables from one area (e.g. the iStore) to another (e.g. your team's modelling area) to ensure all data are stored in a database.
 
 ``` {r connection_example, eval=FALSE}
 library(odbc)
@@ -227,18 +226,18 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 
 ---
 
-### Importing data to SQL Server
+#### Importing data to SQL Server
 
 ---
 
-There's lots of guidance online of how to import flat files from shared areas into Microsoft SQL server on the internet, including [this guide](https://docs.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard?view=sql-server-2017){target="_blank" rel="noopener noreferrer"}.
+There's lots of guidance online of how to import flat files from shared areas into Microsoft SQL Server on the internet, including [this guide](https://docs.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard?view=sql-server-2017){target="_blank" rel="noopener noreferrer"}.
 
 
 Remember that it is important to import them with consistent, thought-through [naming conventions](#naming-conventions). You will thank yourself later.
 
 ---
 
-### How to grant access to your area
+#### How to grant access to your area
 
 ---
 
@@ -246,22 +245,37 @@ Much like setting up a SQL area, there are different ways to do this depending o
 
 ---
 
-## Standardised reference data
+### Files meet data standards
 
+---
+
+![](../images/good.svg)
+
+#### Open Data Standards
+
+---
+
+You can find information on our standards for Open Data, including how to assess your data against these standards, on our [Open Data standards page](/statistics-production/ud.html#how-to-check-against-these-standards).
+
+---
+
+#### Standardised reference data
+
+---
 
 There will of course be cases where some of the data you use is reference data not owned by the DfE, or is available online for you to download rather than in an internal server. There are ways of incorporating this into a reproducible analytical pipeline nicely, sometimes you can even use links/URLs in your code that will always pull the latest data such that you will never need to change the link to reflect updates to the data!
 
 ---
 
-### Raw files on GitHub
+#### Raw files on GitHub
 
 ---
 
-If you want to use reference data from GitHub, you can use the URL to the *raw* file. A common example of when you might want to use this would be to use **geographic lookup tables** that contain names and codes of different geographic levels for EES files (which are available in our [data screener repository](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}). 
+If you want to use reference data from GitHub, you can use the URL to the raw file. A common example of when you might want to use this would be to use geographic lookup tables that contain names and codes of different geographic levels for EES files (which are available in our [data screener repository](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}). 
 
 If you find the data you're interested in within a repository, rather than copying, cloning or downloading the data, you should click the 'raw' button (see the below screenshot).
 
-`r knitr::include_graphics("../images/Github-raw-button.png")`
+![](../images/Github-raw-button.png)
 
 This should take you to a new window which contains the raw data from the CSV file. Copy the URL from this page, as this is what we can use to pull the latest data into our code. 
 
@@ -271,22 +285,101 @@ You can now use this URL as you would use a file path in a `read.csv()` query. F
 devolved_area_lookup <- read.csv("https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/master/data/english_devolved_areas.csv")
 ```
 
-The above code snippet will load in the data as it would with any other CSV, however the benefit is if that data file is updated on GitHub, when you run the code it will always pull the latest version. This is especially useful for look up tables and reference data, and is best RAP practice as it removed the need for any manual steps (like downloading, copying & pasting or manually updating the data/code)!
+The above code snippet will load in the data as it would with any other CSV, however the benefit is if that data file is updated on GitHub, when you run the code it will always pull the latest version. This is especially useful for lookup tables and reference data, and is best RAP practice as it removed the need for any manual steps (like downloading, copying & pasting or manually updating the data/code!)
 
 ---
 
-# Writing code
+### Sensible folder and file structure 
 
 ---
 
-The key thing to remember is that **we should be automating everything we can**, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand.
+![](../images/good.svg)
+
+**What does this mean?**
+
+As a minimum you should have a folder that includes all of the final versions of documents produced and published, per release, within a folder for the wider publication. Ask yourself if it would be easy for someone who isn't in the team to find specific files, and if not, is there a better way that you could name and structure your folders to make them more intuitive to navigate? 
+
+
+**Why do it?**
+
+How you organize and name your files will have a big impact on your ability to find those files later and to understand what they contain. You should be consistent and descriptive in naming and organizing files so that it is obvious where to find specific data and what the files contain.
+
+
+**How to get started**
+
+Some questions to help you consider whether your folder structure is sensible are:
+
+- Are all documentation, code and outputs for the publication saved in one folder area?
+- Is simple version control clearly applied (e.g. having all final files in a folder named "final"?
+- Are there sub-folders like 'code', 'documentation'', 'outputs' and 'final' to save the relevant working files in? 
+- Are you keeping a version log up to date with any changes made to files in this final folder?
+
+You could also consider using the [create_project() function](https://dfe-analytical-services.github.io/dfeR/reference/index.html#pre-populated-project) from the dfeR package to create a pre-populated folder structure for use with an R project
 
 ---
 
-## Processing is done with code
+#### Naming conventions
+
+---
+
+Having a **clear** and **consistent** naming convention for your files is critical. Remember that file names should:
 
 
-`r knitr::include_graphics("../images/good.svg")`
+**Be machine readable** 
+
+- Avoid spaces.
+- Avoid special characters such as: ~ ! @ # $ % ^ & * ( ) ` ; < > ? , [ ] { } ‘ “.
+- Be as short as practicable; overly long names do not work well with all types of software.
+
+
+**Be human readable** 
+
+- Be easy to understand the contents from the name.
+
+
+**Play well with default ordering**
+
+- Often (though not always!) you should have numbers first, particularly if your file names include dates.
+- Follow the [ISO 8601 date standard](https://www.iso.org/iso-8601-date-and-time-format.html) (YYYYMMDD) to ensure that all of your files stay in chronological order.
+- Use leading zeros to left pad numbers and ensure files sort properly, e.g. using 01, 02, 03 to avoid 1, 10, 2, 3.
+
+
+If in doubt, take a look at this [presentation](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank" rel="noopener noreferrer"}, or this [naming convention guide by Stanford](https://drive.google.com/file/d/12A4qZNwmL4s2NH8Ex161jgiJ9HrA06ZZ/view?pli=1){target="_blank" rel="noopener noreferrer"}, for examples reinforcing the above.
+
+---
+
+
+## Writing code
+
+Writing code is our second core RAP principle, and is made up of the following elements:
+
+* [Processing is done with code](#processing-is-done-with-code)
+* [Use appropriate tools](#use-appropriate-tools)
+* [Whole publication production scripts](#whole-publication-production-scripts)
+* [Dataset production scripts](#dataset-production-scripts)
+* [Recyclable code for future use](#recyclable-code-for-future-use)
+* [Clean final code](#clean-final-code)
+* [Peer review of code within team](#peer-review-of-code-within-team)
+* [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
+* [Basic automated QA](#basic-automated-qa)
+* [Publication specific automated QA](#publication-specific-automated-qa)
+* [Automated summaries](#automated-summaries)
+* [Publication specific automated summaries](#publication-specific-automated-summaries)
+
+
+
+::: callout-tip
+The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html). 
+:::
+
+---
+
+### Processing is done with code
+
+---
+
+
+![](../images/good.svg)
 
 **What does this mean?**
 
@@ -296,14 +389,14 @@ Even steps such as copy and pasting data, or pointing and clicking, are fraught 
 
 **Why do it?**
 
-Using code brings numerous benefits, computers are far quicker, more accurate, and far more reliable than humans in many of the tasks that we do. Writing out these instructions saves us significant amounts of time, particularly when it can be reused in future years, or even next week when one specific number in the source file suddenly changes, and also provides us with editable documentation for our production processes, saving the need for writing down information in extra documents. 
+Using code brings numerous benefits. Computers are far quicker, more accurate, and far more reliable than humans in many of the tasks that we do. Writing out these instructions saves us significant amounts of time, particularly when code can be reused in future years, or even next week when one specific number in the source file suddenly changes. Code scripts also provide us with editable documentation for our production processes, saving the need for writing down information in extra documents. 
 
-Reliability is a huge benefit of the automation that RAP brings - when one of the lines of data has to be amended a week before publication, it's a life saver to know that you can re-run your process in minutes, and reassuring to know that it will give you the result you want. You can run the same code 100 times, and be confident that it will follow the same steps in the same order every single time.
+Reliability is a huge benefit of the automation that RAP brings - when your data has to be amended a week before publication, it's a life saver to know that you can re-run your process in minutes, and reassuring to know that it will give you the result you want. You can run the same code 100 times, and be confident that it will follow the same steps in the same order every single time.
 
 
 **How to get started**
 
-See our [learning resources](../learning-development/learning-development.html) for a wealth of resources on SQL and R to learn the skills required to translate your process into code. 
+See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on SQL and R to learn the skills required to translate your process into code. 
 
 There are also two sections below with examples of tidying data in SQL and R to get you started.
 
@@ -311,7 +404,7 @@ Ensure that any last-minute fixes to the process are written in the code and not
 
 ---
 
-### Producing tidy underlying data in SQL
+#### Producing tidy underlying data in SQL
 
 ---
 
@@ -319,7 +412,7 @@ To get started, here is a [SQL query](https://github.com/TomFranklin/sql-applied
 
 ---
 
-### Tidying and processing data in R
+#### Tidying and processing data in R
 
 ---
 
@@ -328,7 +421,15 @@ To get started, here is a [SQL query](https://github.com/TomFranklin/sql-applied
 
 Using the `%>%` pipe in R can be incredibly powerful, and make your code much easier to follow, as well as more efficient. If you aren't yet familiar with this, have a look at [this article](https://seananderson.ca/2014/09/13/dplyr-intro/){target="_blank" rel="noopener noreferrer"} that provides a useful beginners guide to piping and the kinds of functions you can use it for. The possibilities stretch about as far as your imagination, and if you have a function or task you want to do within a pipe, googling 'how do I do X in dplyr r' will usually start to point you in the right direction, alternatively you can [contact us](mailto:statistics.development@education.gov.uk), and we'll be happy to help you figure out how to do what you need.
 
-A quick example of how powerful this is is below, where my_data is processed to create new columns, have column names renamed, have the column names tidied using the [janitor](https://garthtarr.github.io/meatR/janitor.html){target="_blank" rel="noopener noreferrer"} package, blank rows and columns removed, data filtered to only include specific geographic levels, and rows rearranged in order, all in a few lines of easy to follow code:
+A quick example of how powerful this is is below. The pipe operator passes the outcome of each line of code onto the next, so you can complete multiple steps of data manipulation in one section of code instead of writing separate steps for each one. In this code, we:
+
+* start with my_data
+* calculate a percentage column using mutate
+* rename the percentage column we created to "newPercentageColumn", rename "number" to "numberColumn", and rename "population" to "totalPopulationColumn"
+* use the `clean_names()` function from the [janitor](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) package to ensure that columns have consistent naming standards
+* use the `remove_empty()` function from the janitor package to remove any rows and columns that are composed entirely of NA values
+* filter the dataframe to only include Regional geographic level data
+* order the dataframe by time period and region name
 
 
 ```{r example, eval=FALSE, style="background-color: #f7fdfa"}
@@ -351,17 +452,18 @@ For further resources on learning R so that you're able to apply it to your ever
 
 ---
 
+### Use appropriate tools 
 
-## Appropriate tools 
+---
 
 
-`r knitr::include_graphics("../images/good.svg")`
+![](../images/good.svg)
 
 **What does this mean?**
 
-Using the recommended tools on our [learning](../learning-development/learning-development.html) page ([SQL](../learning-development/sql.html), [R](../learning-development/r.html) and [Git](../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.
+Using the recommended tools on our [learning](../learning-development/learning-support.html) page ([SQL](../learning-development/sql.html), [R](../learning-development/r.html) and [Git](../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.
 
-Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this [explanation of open-source](https://opensource.com/resources/what-open-source){target="_blank" rel="noopener noreferrer"}, as well as this guide to [working in an open-source way](https://opensource.com/open-source-way){target="_blank" rel="noopener noreferrer"}. In practical terms, this means moving away from the likes of SPSS, SASS and Excel VBA, and utilising the likes of R or Python, version controlled with git, and hosted in a publicly accessible repository. 
+Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this [explanation of open-source](https://opensource.com/resources/what-open-source){target="_blank" rel="noopener noreferrer"}, as well as this guide to [working in an open-source way](https://opensource.com/open-source-way){target="_blank" rel="noopener noreferrer"}. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with git, and hosted in a publicly accessible repository. 
 
 **Why do it?**
 
@@ -376,30 +478,55 @@ There are many reasons why we have recommended the tools that we have, the recom
 
 **How to get started**
 
-Go to our [learning](../learning-development/learning-development.html) page to read more about the recommended tools for the jobs we do, as well as looking at the resources available there for how to [build capability](../learning-development/learning-development.html#general_resources) in them. Always feel free to contact us if you have any specific questions or would like help in understanding how to use those tools in your work.
+Go to our [learning](../learning-development/learning-development.html) page to read more about the recommended tools for the jobs we do, as well as looking at the resources available there for how to [build capability](../learning-development/learning-support.html#general_resources) in them. Always feel free to contact us if you have any specific questions or would like help in understanding how to use those tools in your work.
 
-By following [our guidance](#Version_controlled_final_code_scripts) in saving versions of code in an Azure DevOps, we will then be able to mirror those repositories in a publicly available GitHub area.
+By following [our guidance](#version-controlled-final-code-scripts) in saving versions of code in an Azure DevOps, we will then be able to mirror those repositories in a publicly available GitHub area.
 
 ---
 
-## Using 'run' scripts
+### Whole publication production scripts
+
+---
+
+![](../images/best.svg)
+
+**What does this mean?**
+
+The ultimate aim is to utilise a single script to document and run off everything for a publication, the data files, any QA, any summary reports. This script should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script.
+All quality assurance for a file is also included in the single script that can be used to create a file from source data (see the [dataset production scripts section](#dataset-production-scripts))
+
+**Why do it?**
+
+This carries all of the same benefits as having a single 'run' script for a file, but at a wider publication level, effectively documenting the entire publication process in one place. This makes it easier for new analysts to pick up the process, as well as making it quicker and easier to rerun as all reports relating to that file are immediately available if you ever make changes file.
+
+**How to get started**
+
+The Education, Health and Care Plans production cycle is a good example of a single publication 'run' script. They have kept their actual data processing in SQL, but all the running and manipulation of the data happens in R.
+
+The cycle originally consisted of multiple SQL scripts, manual QA and generation of final files.
+
+![](../images/Old process.jpg)
+
+The team now have their end-to-end process fully documented, which can be run off of one single R script. The 'run' script points at the SQL scripts to run them all in one go, and also creates a QA report and corresponding metadata files that pass the data screener. Each data file can still be run in isolation from this script.
+
+![](../images/New process.jpg)
+
+---
+
+#### Using 'run' scripts
 
 
 Utilising a single 'run' script to execute processes written in other scripts brings a number of benefits. It isn't just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past. 
 
 ---
 
-### Connecting R to SQL
+#### Connecting R to SQL
 
 ---
 
 In order to create a single script to run all processes from, it is likely that you will need to use R to run SQL queries. If you are unsure of how to do this, take a look the guide on the [dfeR connecting to SQL documentation](https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html).
 
-If you prefer a video, Chris Mason-Thom did a coffee and coding session on this, which you can watch below: 
-
-<center>
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c9b7fd97-c854-4a1a-9074-cd80d2ea285e?autoplay=false&amp;showinfo=false" allowfullscreen style="border:none;"></iframe>
-</center>
+If you prefer a video, [Chris Mason-Thom did a coffee and coding session on this](https://web.microsoftstream.com/embed/video/c9b7fd97-c854-4a1a-9074-cd80d2ea285e).
 
 ---
 
@@ -407,7 +534,7 @@ If you prefer a video, Chris Mason-Thom did a coffee and coding session on this,
 
 ---
 
-`r knitr::include_graphics("../images/great.svg")`
+![](../images/great.svg)
 
 **What does this mean?**
 
@@ -427,41 +554,14 @@ Review your current process - how many file scripts does it take to get from sou
 
 You should automate any manual steps such as the example above. If it makes sense to, you could combine certain scripts to reduce the number. You can then write code in [R](../learning-development/r.html) to execute your scripts in order, so you are still only running one script to get the final output.
 
----
-
-### Whole publication production scripts
 
 ---
 
-`r knitr::include_graphics("../images/best.svg")`
-
-**What does this mean?**
-
-The ultimate aim is to utilise a single script to document and run off everything for a publication, the data files, any QA, any summary reports. This script should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script.
-All quality assurance for a file is also included in the single script that can be used to create a file from source data (see the [dataset production scripts section](#dataset-production-scripts))
-
-**Why do it?**
-
-This carries all of the same benefits as having a single 'run' script for a file, but at a wider publication level, effectively documenting the entire publication process in one place. This makes it easier for new analysts to pick up the process, as well as making it quicker and easier to rerun as all reports relating to that file are immediately available if you ever make changes file.
-
-**How to get started**
-
-The Education, Health and Care Plans production cycle is a good example of a single publication 'run' script. They have kept their actual data processing in SQL, but all the running and manipulation of the data happens in R.
-
-The cycle originally consisted of multiple SQL scripts, manual QA and generation of final files.
-
-`r knitr::include_graphics("../images/Old process.jpg")`
-
-The team now have their end-to-end process fully documented, which can be run off of one single R script. The 'run' script points at the SQL scripts to run them all in one go, and also creates a QA report and corresponding metadata files that pass the data screener. Each data file can still be run in isolation from this script.
-
-`r knitr::include_graphics("../images/New process.jpg")`
+### Recyclable code for future use 
 
 ---
 
-## Recyclable code for future use 
-
-
-`r knitr::include_graphics("../images/great.svg")`
+![](../images/great.svg)
 
 **What does this mean?**
 
@@ -499,8 +599,9 @@ data_filtered_last_year <- data %>%
 
 ---
 
-## Standards for coding
+#### Standards for coding
 
+---
 
 Code can be written in many different ways, and in languages such as R, there are often many different functions and routes that you can take to get to the same end result. On top of that, there are even more possibilities for how you can format the code. This section will take you through some widely used standards for coding to help bring standardisation to this area and make it easier to both write and use our code.
 
@@ -510,7 +611,7 @@ Code can be written in many different ways, and in languages such as R, there ar
 
 ---
 
-`r knitr::include_graphics("../images/best.svg")`
+![](../images/best.svg)
 
 **What does this mean?**
 
@@ -528,17 +629,18 @@ Clean code is efficient, easy to write, easy to review, and easy to amend for fu
 
 **How to get started**
 
-Watch the coffee and coding session introducing good code practice below:
+Watch [this coffee and coding session](https://web.microsoftstream.com/embed/video/624e3442-aa66-44e7-bb4f-717a6508b056) introducing good code practice, which covers:
 
-<center>
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/624e3442-aa66-44e7-bb4f-717a6508b056?autoplay=false&amp;showinfo=false" allowfullscreen style="border:none;"></iframe>
-</center>
+* key principles of good code practice
+* writing and refining code to make it easier to understand and modify
+* a real-life example of code improvement from within DfE
 
-Then you should also watch the follow up intermediate session:
+Then you should also watch [the follow up intermediate session](https://web.microsoftstream.com/embed/video/92d4ba05-d304-4009-b543-e5f4563f1d30), which covers:
 
-<center>
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/92d4ba05-d304-4009-b543-e5f4563f1d30?autoplay=false&amp;showinfo=false" allowfullscreen style="border:none;"></iframe>
-</center>
+* version control
+* improving code structure with functions
+* documentation and Markdown
+* interactive notebooks 
 
 Clean code should include comments. Comment why you've made decisions, don't comment what you are doing unless it is particularly complex as the code itself describes what you are doing. If in doubt, more comments are better than too few though. Ideally any specific comments or documentation should be alongside the code itself, rather than in separate documents.
 
@@ -548,7 +650,7 @@ Clean code should include comments. Comment why you've made decisions, don't com
 
 ---
 
-For best practice on writing SQL code, here is a particularly useful [word document](../resources/TSQL_Coding_Standards.docx){target="_blank" rel="noopener noreferrer"} produced by our [Data Hub](https://educationgovuk.sharepoint.com/sites/DataHubProgramme2/Shared%20Documents/Content%20Management/Data%20Hub%20one%20pager.pdf){target="_blank" rel="noopener noreferrer"}. This outlines a variety of best practices, ranging from naming conventions, to  to formatting your SQL code so that it is easy to follow visually.
+For best practice on writing T-SQL code used in SQL Server, here is a particularly useful [Word document](../resources/TSQL_Coding_Standards.docx){target="_blank" rel="noopener noreferrer"} produced by our Data Hub. This outlines a variety of best practices, ranging from naming conventions, to formatting your SQL code so that it is easy to follow visually.
 
 ---
 
@@ -558,12 +660,14 @@ For best practice on writing SQL code, here is a particularly useful [word docum
 
 When using R, it is generally best practice to use [R projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects){target="_blank" rel="noopener noreferrer"} as directories for your work.
 
-The recommended standard for styling your code in R, is the [tidyverse styling](https://style.tidyverse.org/){target="_blank" rel="noopener noreferrer"}, which is fast becoming the global standard. What is even better is that you can automate this using the [styler](https://styler.r-lib.org/){target="_blank" rel="noopener noreferrer"} package, which will literally style your code for you at the click of a button, and is well worth a look.
+The recommended standard for styling your code in R is the [tidyverse styling](https://style.tidyverse.org/){target="_blank" rel="noopener noreferrer"}, which is fast becoming the global standard. What is even better is that you can automate this using the [styler](https://styler.r-lib.org/){target="_blank" rel="noopener noreferrer"} package, which will literally style your code for you at the click of a button, and is well worth a look.
 
 
-`r knitr::include_graphics("../images/styler.gif")`
+![](../images/styler.gif)
 
 There is also plenty of guidance around the internet for [best practice](https://waterdata.usgs.gov/blog/intro-best-practices/){target="_blank" rel="noopener noreferrer"} when writing [efficient R code](https://waterdata.usgs.gov/blog/intro-best-practices/){target="_blank" rel="noopener noreferrer"}.
+
+To help you standardise your code further, you can make use of the functions contained within our [dfeR package](https://dfe-analytical-services.github.io/dfeR/index.html). The package includes functions to standardise formatting and rounding, to pull the latest ONS geography lookups, and to create a pre-populated folder structure, amongst many other things. 
 
 ---
 
@@ -575,12 +679,43 @@ If you ever find yourself writing HTML, or creating it through RMarkdown, you ca
 
 ---
 
-## Peer reviewing code
+### Peer review of code within team
 
+---
+
+![](../images/great.svg)
+
+**What does this mean?**
 
 Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to 'idiot check' our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it's quality and value. The [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html) and [Tidyteam](https://code-review.tidyverse.org/) contain detailed guidance on peer review, but we have summarised some of the information here for you as well. 
 
 Prior to receiving code for peer review, the author should ensure that all code files are clean, commented appropriately and for larger projects should be held in a repo with an appropriate [README](#writing-a-readme-file) file.
+
+You should check:
+
+- Is someone else in the team able to generate the same outputs?
+
+- Has someone else in the team reviewed the code and given feedback? 
+
+- Have you taken on their feedback and improved the code?
+
+
+**Why do it?**
+
+There are many benefits to this, for example:
+
+- Ensuring consistency across the team
+
+- Minimizing mistakes and their impact
+
+- Ensuring the requirements are met
+
+- Improving code performance
+
+- Sharing of techniques and knowledge
+
+
+**How to get started**
 
 When peer reviewing code you should consider the following questions - 
 
@@ -614,46 +749,6 @@ If you're unfamiliar with giving feedback on someone's code then it can be daunt
 * Diagnosis - use the example to discuss why this approach was taken, what could have been done differently and why alternatives could be an improvement
 * Actions - ask the person receiving feedback to suggest actions that they could follow to avoid this issue in future
 * Review - if you have time, revisit the discussion to look for progress following on from the feedback
-
----
-
-### Review of code within team 
-
----
-
-`r knitr::include_graphics("../images/great.svg")`
-
-**What does this mean?**
-
-- Is someone else in the team able to generate the same outputs?
-
-- Has someone else in the team reviewed the code and given feedback? 
-
-- Have you taken on their feedback and improved the code?
-
-
-**Why do it?**
-
-There are many benefits to this, for example:
-
-- Ensuring consistency across the team
-
-- Minimizing mistakes and their impact
-
-- Ensuring the requirements are met
-
-- Improving code performance
-
-- Sharing of techniques and knowledge
-
-
-**How to get started**
-
-If you can't answer yes, then:
-
-- Get a member of the team to run the code using only your documentation
-
-- Use their feedback to improve documentation/in-line comments in code
 
 - Other tips for getting started with peer review can be found in the [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html){target="_blank" rel="noopener noreferrer"} 
 
@@ -691,11 +786,11 @@ Unit: microseconds
 
 ---
 
-### Review of code from outside the team
+### Peer review of code from outside the team
 
 ---
 
-`r knitr::include_graphics("../images/best.svg")`
+![](../images/best.svg)
 
 **What does this mean?**
 
@@ -713,8 +808,13 @@ While peer reviewing code within the team is often practical, having external an
 
 ---
 
-## Automated quality assurance (QA)
+### Basic automated QA
 
+---
+
+![](../images/good.svg)
+
+**What does this mean?**
 
 Any data files that have been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability.
 
@@ -724,15 +824,7 @@ It is assumed that when using R, automated scripts will output .html reports tha
 
 For more information on general quality assurance best practice in DfE, see the [How to QA guide](https://dfe-analytical-services.github.io/how-to-qa/index.html).
 
----
-
-### Basic automated QA
-
----
-
-`r knitr::include_graphics("../images/good.svg")`
-
-**What does this mean?**
+Cam and Sarah ran a session introducing how to get started with automated QA in relation to RAP, slides are available on [GitHub](https://sarahmwong.github.io/intro-to-automating-QA/#1){target="_blank" rel="noopener noreferrer"} or you can [watch the recording of the session](https://web.microsoftstream.com/embed/video/57eab29d-afeb-4651-a9f5-687098b84d13).
 
 The list of basic automated QA checks, with code examples can be found below and in our [GitHub repository](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}:
 
@@ -766,7 +858,7 @@ Try using our [template code snippets](https://github.com/dfe-analytical-service
 
 ---
 
-`r knitr::include_graphics("../images/great.svg")`
+![](../images/great.svg)
 
 **What does this mean?**
 
@@ -780,17 +872,10 @@ Quality is one of the three pillars that our [code of practice](https://code.sta
 
 We expect that the basic level of automated QA will cover most needs that publication teams have. However, we also expect that each publication will have it's own quirks that require a more bespoke approach. An example of a publication with it's own bespoke QA checks will appear in this space shortly. For the time being, try to consider what things you'd usually check as flags that something hasn't gone right with your data. What are the unique aspects of your publication's data, and how can you automate checks against them to give you confidence in it's accuracy and reliability?
 
-For those who are interested in starting writing their own QA scripts, it's worth looking at packages in R such as [testthat](https://testthat.r-lib.org/){target="_blank" rel="noopener noreferrer"}, including the [coffee and coding talk](https://educationgovuk.sharepoint.com/sites/sarpi/g/WorkplaceDocuments/Forms/AllItems.aspx?RootFolder=/sites/sarpi/g/WorkplaceDocuments/Inducation%20learning%20and%20career%20development/Coffee%20and%20Coding/190306_peter_autotesting&FolderCTID=0x012000C61C1076C17C5547A6D6D8C2A27B5D97&View=%7b2B35083D-7626-48E2-9615-451544742692%7d){target="_blank" rel="noopener noreferrer"} on it by Peter Curtis, as well as this [guide on testing](http://r-pkgs.had.co.nz/tests.html){target="_blank" rel="noopener noreferrer"} by Hadley Wickham. 
+For those who are interested in starting writing their own QA scripts, it's worth looking at packages in R such as [testthat](https://testthat.r-lib.org/){target="_blank" rel="noopener noreferrer"}, including the [coffee and coding resources](https://educationgovuk.sharepoint.com/:f:/r/sites/sarpi/g/WorkplaceDocuments/Induction%20learning%20and%20career%20development/Coffee%20and%20Coding/190306_peter_autotesting?csf=1&web=1&e=F945Xq){target="_blank" rel="noopener noreferrer"} on it by Peter Curtis, as well as this [guide on testing](http://r-pkgs.had.co.nz/tests.html){target="_blank" rel="noopener noreferrer"} by Hadley Wickham. 
 
 The [janitor](https://garthtarr.github.io/meatR/janitor.html){target="_blank" rel="noopener noreferrer"} package in R also has some particularly useful functions, such as `clean_names()` to automatically clean up your variable names, `remove_empty()` to remove any completely empty rows and columns, and `get_dupes()` which retrieves any duplicate rows in your data - this last one is particularly powerful as you can feed it specific columns and see if there's any duplicate instances of values across those columns.
 
-
----
-
-## Automating summary statistics
-
-
-As a part of automating QA, we should also be looking to automate the production of summary statistics alongside the tidy underlying data files, this then provides us with instant insight into the stories underneath the numbers.
 
 ---
 
@@ -798,9 +883,11 @@ As a part of automating QA, we should also be looking to automate the production
 
 ---
 
-`r knitr::include_graphics("../images/great.svg")`
+![](../images/great.svg)
 
 **What does this mean?**
+
+As a part of automating QA, we should also be looking to automate the production of summary statistics alongside the tidy underlying data files, this then provides us with instant insight into the stories underneath the numbers.
 
 Summary outputs are automated and used to explore the stories of the data. 
 
@@ -834,7 +921,7 @@ Consider:
 
 ---
 
-`r knitr::include_graphics("../images/best.svg")`
+![](../images/best.svg)
 
 **What does this mean?**
 
@@ -857,11 +944,18 @@ Consider:
 
 ---
 
-# Version control
+## Version control
 
----
+Version control is our third core RAP principle, and is made up of the following elements:
 
-_When you assume you make an 'ass' out of 'u' and 'me'_. Everyone knows this saying, yet few of us heed its warning. 
+* [Documentation](#documentation)
+* [Version controlled final code scripts](#version-controlled-final-code-scripts)
+* [Use open source repositories](#use-open-source-repositories)
+* [Collaboratively develop code using Git](#collaboratively-develop-code-using-git)
+
+Version control is just a way to track changes to files. Using proper version control can avoid lots of potential problems, including running old scripts by accident, losing files, or ending up with a folder full of documents with suffixes like "final_final_FINAL". It also makes it much easier for new people to pick up your processes. 
+
+_When you assume you make an 'ass' out of 'u' and 'me'_. Everyone knows this saying, yet few of us heed its warning.
 
 The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.
 
@@ -869,66 +963,12 @@ As we work with code to process our data more and more, we can begin to utilise 
 
 ---
 
-## Sensible folder and file structure 
-
-
-`r knitr::include_graphics("../images/good.svg")`
-
-**What does this mean?**
-
-As a minimum you should have a folder that includes all of the final versions of documents produced and published, per release, within a folder for the wider publication. Ask yourself if it would be easy for someone who isn't in the team to find specific files, and if not, is there a better way that you could name and structure your folders to make them more intuitive to navigate? 
-
-
-**Why do it?**
-
-How you organize and name your files will have a big impact on your ability to find those files later and to understand what they contain. You should be consistent and descriptive in naming and organizing files so that it is obvious where to find specific data and what the files contain.
-
-
-**How to get started**
-
-Some questions to help you consider whether your folder structure is sensible are:
-
-- Are all documentation, code and outputs for the publication saved in one folder area?
-- Is simple version control clearly applied (e.g. having all final files in a folder named "final"?
-- Are there sub-folders like 'code', 'documentation'', 'outputs' and 'final' to save the relevant working files in? 
-- Are you keeping a version log up to date with any changes made to files in this final folder?
+### Documentation
 
 ---
 
-### Naming conventions
 
----
-
-Having a **clear** and **consistent** naming convention for your files is critical. Remember that file names should:
-
-
-**Be machine readable** 
-
-- Avoid spaces.
-- Avoid special characters such as: ~ ! @ # $ % ^ & * ( ) ` ; < > ? , [ ] { } ‘ “.
-- Be as short as practicable; overly long names do not work well with all types of software.
-
-
-**Be human readable** 
-
-- Be easy to understand the contents from the name.
-
-
-**Play well with default ordering**
-
-- Often (though not always!) you should have numbers first, particularly if your file names include dates.
-- Follow the ISO 8601 date standard (YYYYMMDD) to ensure that all of your files stay in chronological order.
-- Use leading zeros to left pad numbers and ensure files sort properly, avoiding 1,10,2,3.
-
-
-If in doubt, take a look at this [presentation](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank" rel="noopener noreferrer"}, or this [naming convention guide by Stanford](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming){target="_blank" rel="noopener noreferrer"}, for examples reinforcing the above.
-
----
-
-## Documentation
-
-
-`r knitr::include_graphics("../images/good.svg")`
+![](../images/good.svg)
 
 **What does this mean?**
 
@@ -950,7 +990,7 @@ Take a look at the sections below for further guidance on improving your documen
 
 ---
 
-### Commenting in code
+#### Commenting in code
 
 ---
 
@@ -994,7 +1034,7 @@ You might be thinking that it would be nice if there was software that could hel
 
 ---
 
-### Writing a README file
+#### Writing a README file
 
 ---
 
@@ -1018,14 +1058,6 @@ As a starting point, you should aim to have as many of the following sections as
 
 The [Self-assessment tool](https://github.com/dfe-analytical-services/publication-self-assessment-copy){target="_blank" rel="noopener noreferrer"} and the [QA app](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"} give two examples of readme files structured like this.
 
----
-
-## Version control with git
-
-
-If you do not already have git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
-
-For now, take a look at at the [resources for learning git](../learning-development/git.html) in the learning resources section.
 
 ---
 
@@ -1033,11 +1065,15 @@ For now, take a look at at the [resources for learning git](../learning-developm
 
 ---
 
-`r knitr::include_graphics("../images/great.svg")`
+![](../images/great.svg)
 
 **What does this mean?**
 
 This means having the final copies of code and documentation saved in a git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available. 
+
+If you do not already have git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
+
+For now, take a look at the [resources for learning git](../learning-development/git.html) in the learning resources section.
 
 **Why do it?**
 
@@ -1052,13 +1088,21 @@ We have a specific area set up for you to host your publication code in on the d
 To gain access to this area, please raise a request on service desk by navigating through the pages detailed in the animation below.
 
 
-`r knitr::include_graphics("../images/servicedesk_request.gif")`
+![](../images/servicedesk_request.gif)
 
 Once you have navigated to this page, fill out the form with the following details and send your request off.
 
-`r knitr::include_graphics("../images/devops_request_details.PNG")`
+![](../images/devops_request_details.PNG)
 
 Access is usually granted within a few working days. Alert the [Statistics Development Team](mailto:statistics.development@education.gov.uk) when this is confirmed, and we will set up your repository and give your team access.
+
+---
+
+#### renv
+
+---
+
+We recommend the use of the [renv package](https://rstudio.github.io/renv/articles/renv.html) to help maintain consistent versions of packages within your work. You can learn more about how to use renv [on our R page](../learning-development/r.html#renv). 
 
 ---
 
@@ -1066,7 +1110,7 @@ Access is usually granted within a few working days. Alert the [Statistics Devel
 
 ---
 
-`r knitr::include_graphics("../images/best.svg")`
+![](../images/best.svg)
 
 **What does this mean?**
 
@@ -1095,7 +1139,7 @@ You should consider the following principles making an Official Statistics produ
 
 When naming your publication's repository you should use the publication name fully written out, in lower case, and with dashes for spaces – ‘graduate-labour-market-statistics’. 
 
-A single repository should be used for all releases of your publication, there's no need to have multiple as all the history is saved within previous commits. You can make use of [tagging releases in git](../learning-development/git.html#Tagging_release_versions) to help differentiate between each cycle.
+A single repository should be used for all releases of your publication, there's no need to have multiple as all the history is saved within previous commits. You can make use of [tagging releases in Git](../learning-development/git.html#Tagging_release_versions) to help differentiate between each cycle.
 
 ---
 
@@ -1108,22 +1152,22 @@ Here are some general best practice tips:
 - Using .gitignore to ignore files and folders to prevent committing anything sensitive
 - Never committing outputs unless they’ve been checked over, even aggregates. We suggest only outputting to an output folder which is in the .gitignore file, to ensure this doesn’t happen by mistake
 - Keeping datasets and secrets (e.g. API keys) outside the repository as much as possible, make use of secure variables
-- Checking git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the git history and start the public repo without it
+- Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the git history and start the public repo without it
 - You can [remove a file from the entire commit history](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) if you did commit anything sensitive, although you still need to follow the usual procedures if this was a data breach
 
-You can find out more in the duck book's [guidance on using git](https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories). 
+You can find out more in the Duck Book's [guidance on using Git](https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories). 
 
 ---
 
-### Collaboratively develop code using git 
+### Collaboratively develop code using Git 
 
 ---
 
-`r knitr::include_graphics("../images/best.svg")`
+![](../images/best.svg)
 
 **What does this mean?**
 
-- Has code development taken place in git, collaboratively across the team? 
+- Has code development taken place in Git, collaboratively across the team? 
 
 - Are you making use of pull requests for team members to review and comment on code updates?
 
@@ -1132,7 +1176,7 @@ You can find out more in the duck book's [guidance on using git](https://best-pr
 
 **Why do it?**
 
-Using git allows multiple people to simultaneously develop the same code using branches, all with a crystal clear audit trail showing what changes were made when using commits. It makes it easy for team members to review changes via pull requests.
+Using Git allows multiple people to simultaneously develop the same code using branches, all with a crystal clear audit trail showing what changes were made when using commits. It makes it easy for team members to review changes via pull requests.
 
 **How to get started**
 
@@ -1140,15 +1184,15 @@ To get started you should:
 
 ---
 
-#### Get your code into a git controlled folder
+#### Get your code into a Git controlled folder
 
 ---
 
-Get code into a git controlled folder in whatever version it is currently in. Use the following steps to do so:
+Get code into a Git controlled folder in whatever version it is currently in. Use the following steps to do so:
 
 1. Open the folder where your project is saved, right click anywhere in that window, and click "Git Bash Here".
 
-2. This will open a black box. Type in the following and hit enter
+2. This will open a black box (the terminal). Type in the following and hit enter
 
 ``` {r git_init, eval=FALSE}
 git init
@@ -1166,11 +1210,11 @@ git remote add origin YOUR_URL_HERE
 git push -f origin --all
 ```
 
-* You may be prompted for either your windows or git credentials at this stage. 
+* You may be prompted for either your Windows or Git credentials at this stage. 
 
-  + If prompted for your **windows** credentials, enter the username and password combination you use to log into your DfE device.
+  + If prompted for your **Windows** credentials, enter the username and password combination you use to log into your DfE device.
 
-  + If prompted for your **git** credentials, visit your online repository, click on the blue "clone" box, and click "generate git credentials". This will generate a username and password for you to enter.
+  + If prompted for your **Git** credentials, visit your online repository, click on the blue "clone" box, and click "generate Git credentials". This will generate a username and password for you to enter.
 
 4. Visit your repository online, and check that all the files have uploaded. Other members of your team will now be able to work from your code.  
 
@@ -1187,7 +1231,7 @@ git push -f origin --all
 
 To clone code, they will need to do the following:
 
-1. Run through steps 1 - 2a of [getting a file into a git controlled folder](#get-your-code-into-a-git-controlled-folder)
+1. Run through steps 1 - 2a of [getting a file into a Git controlled folder](#get-your-code-into-a-git-controlled-folder)
 
 3. After running those lines, type in the following with your repository URL in the "YOUR_URL_HERE" space. This will clone the online repository to your local area.
 
@@ -1195,8 +1239,8 @@ To clone code, they will need to do the following:
 git clone YOUR_URL_HERE
 ```
 
-- Make use of git and version control in your team projects regularly. Like learning anything new, putting it into practice regularly is the best way to become confident in using it.  
+- Make use of Git and version control in your team projects regularly. Like learning anything new, putting it into practice regularly is the best way to become confident in using it.  
 
-Please refer to the other links on the [Git learning resources](../learning-development/git.html#other-resources) page to learn more about how to use git in practice.
+Please refer to the other links on the [Git learning resources](../learning-development/git.html#other-resources) page to learn more about how to use Git in practice.
 
 ---

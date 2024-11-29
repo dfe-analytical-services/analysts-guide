@@ -67,7 +67,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [User engagement](statistics-production/user-eng.html)
 - Guidance on understanding and engaging with the users of published statistics
 
-[EES analytics](statistics-production/user_analytics.html)
+[EES analytics](statistics-production/user-analytics.html)
 - Understanding how users are interacting with your publications
 
 ## Writing and visualising
