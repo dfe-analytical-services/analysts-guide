@@ -6,6 +6,15 @@ title: "Learning support"
 
 ---
 
+::: {.callout-tip}
+## Git DevOps guidance
+You can find helpful guidance on DevOps on [Azure DevOps for Analysis](https://dfe-analytical-services.github.io/azure-devops-for-analysis/index.html). 
+:::
+
+---
+
+## Tools and support channels
+
 As analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.
 
 For best practice when using software and coding in our process, see our [guidance on RAP expectations](../RAP/rap-expectations.html) and the [DfE Good Code Practice guide](https://dfe-analytical-services.github.io/good-code-practice/index.html).
