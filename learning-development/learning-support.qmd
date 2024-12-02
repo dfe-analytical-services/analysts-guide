@@ -33,9 +33,8 @@ For questions about publishing statistics, the statistics Code of Practice or ho
 
 For support in data harmonisation and data structuring standards, or support with analytical digital services including the explore education statistics service, and deploying and maintaining R Shiny applications contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
-For any technical questions about R, Git, SQL, RAP or statistics production, contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)  
- * This mailbox is monitored between 9-5 and we aim to reply within 2 days
- * No question is too small! We are always happy to help
+For any technical questions about R, Git, SQL, RAP or statistics production, contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk). This mailbox is monitored between 9-5 and we aim to reply within 2 days. No question is too small! We are always happy to help.
+
  
  ---
 
