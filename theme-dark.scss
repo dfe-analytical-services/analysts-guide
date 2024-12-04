@@ -1,3 +1,22 @@
 /*-- scss:defaults --*/
 
-$sidebar-fg: #2a9fd6;
+// Import common variables
+@import 'styles';
+
+$sidebar-fg: #31a3d8;
+
+
+
+// customise link colours 
+
+a {
+  color: #46ADDD; // Default link color
+
+  &:visited {
+    color: #F269EE; // Color for visited links
+  }
+
+  &:hover {
+    color: #57B215; // Color when hovering over the link
+  }
+}

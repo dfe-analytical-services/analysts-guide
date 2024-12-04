@@ -129,8 +129,8 @@ website:
 format:
   html:
     theme:
-      light: [cyborg, theme-dark.scss]
-      dark: [united, theme-light.scss]
+      dark:  [cyborg,theme-dark.scss]
+      light: [united,theme-light.scss]
     code-copy: true
     highlight-style: printing
     code-overflow: wrap
