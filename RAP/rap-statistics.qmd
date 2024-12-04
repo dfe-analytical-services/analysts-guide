@@ -1048,7 +1048,7 @@ It's an easy way to answer questions that your audience will likely have regardi
 
 **How to get started**
 
-For new projects, you can use the create_project function in DfER. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a [README template](https://github.com/dfe-analytical-services/dfeR/blob/main/README_template.md).  You can find more information on this in the [DfE R reference](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html).
+For new projects, you can use the create_project function in dfeR. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a [README template](https://github.com/dfe-analytical-services/dfeR/blob/main/README_template.md).  You can find more information on this in the [dfeR reference](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html).
 
 If you are creating your own README for existing projects, you should include all of the sections listed below:
 
