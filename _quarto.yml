@@ -132,7 +132,9 @@ format:
       dark:  [cyborg,theme-dark.scss]
       light: [united,theme-light.scss]
     code-copy: true
-    highlight-style: printing
+    highlight-style: 
+      dark: printing-dark.theme
+      light: printing-light.theme
     code-overflow: wrap
     toc: true
 
