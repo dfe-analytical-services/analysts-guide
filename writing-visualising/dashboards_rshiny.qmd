@@ -172,11 +172,23 @@ Given the above, all analysts intending to create a dashboard should ensure they
 
 Public facing DfE Shiny applications are currently published via the DfE Analytical Services [shinyapps.io](https://www.shinyapps.io/) account, with the authorisation and deployment of dashboards performed using GitHub. 
 
-You need to alert the explore education statistics platforms team of any new dashboard publication as early in development as possible and keep us updated on the expected publication date so that we can review the dashboard against DfE standards and set up and support on the deployment to ShinyApps.io. In addition, please notify us of any planned data updates or significant functional updates (at least 2 weeks before publication but preferably as soon as you know any updates are required).
+::: {.callout-important}
+## Publishing new public dashboards
+You need to alert the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) of any new dashboard publication **as early in development as possible** and keep us updated on the expected publication date so that we can review the dashboard against DfE standards and set up and support on the deployment to ShinyApps.io.
+:::
 
-All dashboard publications and major updates need authorisation from the relevant G6 or DD and the stats development team (with the former authorisation e-mail being forwarded on to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk)).
+If you are publishing a new dashboard, or adding major updates to an existing one, you must:
 
-The majority of dashboards made to support and augment our Official Statistics will be public facing. For public facing shiny apps you should publish via shinyapps.io. The Statistics Development Team manage a subscription for this and can help you get set up.
+- Obtain authorisation via email from the relevant G6 or DD and the [statistics development team](mailto:statistics.development@education.gov.uk) \
+- Forward authorisation emails to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk)
+
+::: {.callout-important}
+## Updating existing dashboards
+Please notify the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) of any planned data updates or significant functional updates **at least 2 weeks before publication** but preferably as soon as you know any updates are required.
+:::
+
+
+The majority of dashboards made to support and augment our Official Statistics will be public facing. For public facing shiny apps you should publish via shinyapps.io. The explore education statistics platforms team manage a subscription for this and can help you get set up.
 
 You will need:
 
