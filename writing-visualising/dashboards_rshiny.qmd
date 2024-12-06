@@ -177,7 +177,10 @@ Public facing DfE Shiny applications are currently published via the DfE Analyti
 You need to alert the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) of any new dashboard publication **as early in development as possible** and keep us updated on the expected publication date so that we can review the dashboard against DfE standards and set up and support on the deployment to ShinyApps.io.
 :::
 
-All dashboard publications and major updates need authorisation from the relevant G6 or DD and the [statistics development team](mailto:statistics.development@education.gov.uk) (with the former authorisation e-mail being forwarded on to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk)).
+If you are publishing a new dashboard, or adding major updates to an existing one, you must:
+
+- Obtain authorisation via email from the relevant G6 or DD and the [statistics development team](mailto:statistics.development@education.gov.uk) \
+- Forward authorisation emails to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk)
 
 ::: {.callout-important}
 ## Updating existing dashboards
