@@ -15,7 +15,7 @@
             "bold" : true
         },
         "Function" : {
-            "text-color" : "#FF851B",  
+            "text-color" : "#FF862D",  
             "selected-text-color" : "#ffffff"
         },
         "Variable" : {
@@ -53,7 +53,7 @@
             "selected-text-color" : "#ffffff"
         },
         "SpecialChar" : {
-            "text-color" : "#FF851B",
+            "text-color" : "#FF862D",
             "selected-text-color" : "#ffffff"
         },
         "String" : {
@@ -65,7 +65,7 @@
             "selected-text-color" : "#ffffff"
         },
         "SpecialString" : {
-            "text-color" : "#FF851B",
+            "text-color" : "#FF862D",
             "selected-text-color" : "#ffffff"
         },
         "Import" : {
@@ -89,7 +89,7 @@
             "selected-text-color" : "#ffffff"
         },
         "Constant" : {
-            "text-color" : "#FF851B",
+            "text-color" : "#FF862D",
             "selected-text-color" : "#ffffff"
         },
         "Comment" : {
@@ -118,7 +118,7 @@
             "selected-text-color" : "#ffffff"
         },
         "Warning" : {
-            "text-color" : "#FF851B",
+            "text-color" : "#FF862D",
             "selected-text-color" : "#ffffff"
         },
         "Alert" : {

@@ -5,23 +5,28 @@
 
 $sidebar-fg: #9c3815;
 
-
-// customise link colours 
-
+// Customise link colours
 a {
-  color: #9C3311; // Default link color
+  color: #9c3815 !important; 
 
   &:visited {
-    color: #6F0B63; // Color for visited links
+    color: #6F0B63 !important; 
   }
 
   &:hover {
-    color: #30600B; // Color when hovering over the link
+    color: #30600B !important; 
   }
-}
+  
+  &:active{
+     color: #9c3815 !important;
+  }
+    
+  }
+
+
 
 /* Background color for inline code */
-$code-bg:#E9ECEF; 
+$code-bg: #E9ECEF; 
 /* Font color for inline code */
 $code-color: #333333;  
 /* Background color for code blocks */

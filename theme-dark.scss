@@ -10,16 +10,35 @@ $sidebar-fg: #31a3d8;
 // customise link colours 
 
 a {
-  color: #46ADDD; // Default link color
+  color: #46ADDD !important; // Default link color
 
   &:visited {
-    color: #F269EE; // Color for visited links
+    color: #F269EE !important; // Color for visited links
   }
 
   &:hover {
-    color: #57B215; // Color when hovering over the link
+    color: #57B215 !important; // Color when hovering over the link
   }
 }
+
+
+// Change the background color for breadcrumbs
+.breadcrumb {
+  a {
+    color: #C4D6CE !important; // Replace with your desired breadcrumb link and list item color
+  }
+  
+  li{
+    color: #ffffff !important ;
+  }
+}
+
+.nav-page {
+    a {
+    color: #C4D6CE  !important; // Replace with your desired breadcrumb link color
+  }
+}
+
 
 /* Background color for inline code */
 $code-bg:#222222; 
