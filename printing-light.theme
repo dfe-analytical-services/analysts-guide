@@ -10,7 +10,7 @@
             "strike-through" : false
         },
         "Keyword" : {
-            "text-color" : "#D35400", 
+            "text-color" : "#8F3900", 
             "selected-text-color" : "#ffffff",
             "bold" : true
         },
@@ -53,7 +53,7 @@
             "selected-text-color" : "#ffffff"
         },
         "SpecialChar" : {
-            "text-color" : "#B43F00",
+            "text-color" : "#993500",
             "selected-text-color" : "#ffffff"
         },
         "String" : {
@@ -65,7 +65,7 @@
             "selected-text-color" : "#ffffff"
         },
         "SpecialString" : {
-            "text-color" : "#B43F00",
+            "text-color" : "#993500",
             "selected-text-color" : "#ffffff"
         },
         "Import" : {
@@ -89,7 +89,7 @@
             "selected-text-color" : "#ffffff"
         },
         "Constant" : {
-            "text-color" : "#D35400",
+            "text-color" : "#8F3900",
             "selected-text-color" : "#ffffff"
         },
         "Comment" : {

@@ -4,29 +4,23 @@
 @import 'styles';
 
 $sidebar-fg: #9c3815;
+$toc-color: #9c3815;
 
 // Customise link colours
 a {
   color: #9c3815 !important; 
-
-  &:visited {
-    color: #6F0B63 !important; 
-  }
-
-  &:hover {
-    color: #30600B !important; 
+  
+   &:visited {
+    color: #790C6E !important; // Color for visited links
   }
   
-  &:active{
-     color: #9c3815 !important;
+  &:hover {
+    color: #274E09 !important; // Color when hovering over the link
   }
     
   }
-
-
 
 /* Background color for inline code */
 $code-bg: #E9ECEF; 
 /* Font color for inline code */
 $code-color: #333333;  
-/* Background color for code blocks */

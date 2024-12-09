@@ -1,9 +1,7 @@
 // _styles.scss
 
-/*-- scss:rules --*/
 
-
-// Variables
+// Import roboto font
 
 $web-font-path: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" !default;
 @if $web-font-path {
@@ -24,3 +22,5 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: $line-break-margin;
   margin-bottom: $line-break-margin;
 }
+
+
