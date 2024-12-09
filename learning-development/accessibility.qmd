@@ -51,6 +51,33 @@ For more advice about colour in charts and visualisations specifically, includin
 
 ---
 
+## Assistive technology
+
+No automated tools fully cover accessibility, manual testing is always required, so if you want to do manual testing have a look at testing out the assistive software commonly used by users yourself.
+
+Magnifiers / advanced zoom:
+
+- Windows Magnifier, comes as standard with Windows ([guidance for how to turn on Magnifier](https://support.microsoft.com/en-gb/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198#:~:text=To%20quickly%20turn%20on%20Magnifier,turn%20on%20the%20Magnifier%20switch.))
+- [ZoomText](https://www.freedomscientific.com/products/software/zoomtext/), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
+
+Screen reader:
+
+- [Non-visual Desktop Access (NVDA) free download](https://www.nvaccess.org/download/)
+- [Job Access With Speech (JAWS)](https://www.freedomscientific.com/products/software/jaws/), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
+
+Voice activation:
+
+- [Dragon](https://www.nuance.com/en-gb/dragon.html), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
+
+
+Cognitive load:
+
+- While there isn't commonly used specific assistive technology for aiding users in reducing cognitive load, you can take many steps to reduce the cognitive load for users on your service, making it simpler to use for all. Have a read of [Cognitive Load as a Guide: 12 Spectrums to Improve Your Data Visualisations](https://nightingaledvs.com/cognitive-load-as-a-guide-12-spectrums-to-improve-your-data-visualizations/) as a starting point if you want to learn more.
+
+Along with devices and the software mentioned above, the [experience lab in the Sheffield DfE office](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx) also has a range of other equipment available, including access to a set of vision emulating glasses that you can wear to emulate different visual impairments.
+
+---
+
 ## Making spreadsheets accessible
 
 Public sector spreadsheets must meet the AA level of the Web Content Accessibility Guidelines (WCAG) 2.2, as required by law under The Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018. This guidance distinguishes between mandatory actions needed to comply with legal accessibility standards and best practices that enhance usability. Non-compliance can lead to legal complaints, making it crucial for content creators to understand and mitigate these risks.
@@ -147,34 +174,5 @@ Before Publishing
 - Accessibility Check: Use Excel’s accessibility checker, though be aware it might not catch everything. Consider using additional tools to identify issues.
 - Document Information (E): Ensure the document’s title and language information are completed.
 - Final Save (E): Position the cursor in cell A1 of the first worksheet before the final save to ensure it opens correctly.
-
-
-
----
-
-## Assistive technology
-
-No automated tools fully cover accessibility, manual testing is always required, so if you want to do manual testing have a look at testing out the assistive software commonly used by users yourself.
-
-Magnifiers / advanced zoom:
-
-- Windows Magnifier, comes as standard with Windows ([guidance for how to turn on Magnifier](https://support.microsoft.com/en-gb/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198#:~:text=To%20quickly%20turn%20on%20Magnifier,turn%20on%20the%20Magnifier%20switch.))
-- [ZoomText](https://www.freedomscientific.com/products/software/zoomtext/), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
-
-Screen reader:
-
-- [Non-visual Desktop Access (NVDA) free download](https://www.nvaccess.org/download/)
-- [Job Access With Speech (JAWS)](https://www.freedomscientific.com/products/software/jaws/), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
-
-Voice activation:
-
-- [Dragon](https://www.nuance.com/en-gb/dragon.html), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
-
-
-Cognitive load:
-
-- While there isn't commonly used specific assistive technology for aiding users in reducing cognitive load, you can take many steps to reduce the cognitive load for users on your service, making it simpler to use for all. Have a read of [Cognitive Load as a Guide: 12 Spectrums to Improve Your Data Visualisations](https://nightingaledvs.com/cognitive-load-as-a-guide-12-spectrums-to-improve-your-data-visualizations/) as a starting point if you want to learn more.
-
-Along with devices and the software mentioned above, the [experience lab in the Sheffield DfE office](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx) also has a range of other equipment available, including access to a set of vision emulating glasses that you can wear to emulate different visual impairments.
 
 ---
