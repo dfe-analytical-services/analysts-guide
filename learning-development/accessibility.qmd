@@ -84,15 +84,27 @@ Public sector spreadsheets must meet the AA level of the Web Content Accessibili
 
 When creating an accessible spreadsheet, it’s important to consider the needs of all users, including those with disabilities. To support analysts in making spreadsheets more accessible, apply the following strategies when creating spreadsheets:
 
+---
+
 ### Consult the Spreadsheet Accessibility Guidance
+
+---
 
 Before diving into the spreadsheet creation process, it's essential to familiarise yourself with the official [spreadsheet accessibility](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) guidance available on the Analysis Function Guidance Hub. This resource offers comprehensive insights into best practices for ensuring that your spreadsheets are accessible to all users.
 
+---
+
 ### Accessibility and consequences
+
+---
 
 In addition to accessibility, the guidance also addresses usability and machine readability. While these areas often overlap with accessibility, there are instances where they may conflict. Depending on user needs, it might be necessary to produce separate versions of a spreadsheet (one for human use and another optimised for machine readability) to ensure both accessibility and functionality are maintained.
 
+---
+
 ### Automate Accessibility During the Coding Process
+
+---
 
 Automation is a powerful way to ensure that accessibility is consistently applied throughout the spreadsheet creation process, especially when working with large datasets or producing numerous spreadsheets. By integrating accessibility into the coding process, you can streamline your workflow and reduce the chances of missing critical accessibility features.
 
@@ -119,7 +131,11 @@ By incorporating tools like ``gptables`` or ``a11ytables`` into your coding work
 - Note on automation packages:
 Neither of these packages are guaranteed to automatically produce perfectly accessible spreadsheets. The aim is to help you automate some of the edits.
 
-## Run an [Accessibility Check](https://analysisfunction.civilservice.gov.uk/policy-store/further-resources-for-releasing-statistics-in-spreadsheets/#section-3) 
+---
+
+### Run an [Accessibility Check](https://analysisfunction.civilservice.gov.uk/policy-store/further-resources-for-releasing-statistics-in-spreadsheets/#section-3) 
+
+---
 
 Before finalising your spreadsheet, it’s crucial to run it through an accessibility checker to identify potential issues. Here are two options you can use:
 
@@ -129,13 +145,23 @@ Before finalising your spreadsheet, it’s crucial to run it through an accessib
 
 By using one or both of these tools, you can ensure that your spreadsheet is as accessible as possible, though a final manual review is recommended to catch any issues that may have been overlooked.
 
-## Check Your Spreadsheet Against the [Accessible Spreadsheets Checklist](https://analysisfunction.civilservice.gov.uk/policy-store/making-spreadsheets-accessible-a-brief-checklist-of-the-basics/) Before Publication
+---
+
+### Checklist
+
+---
+
+You should check your spreadsheet against the [Accessible Spreadsheets Checklist](https://analysisfunction.civilservice.gov.uk/policy-store/making-spreadsheets-accessible-a-brief-checklist-of-the-basics/) before publication.
 
 Before publishing your spreadsheet, ensure that it meets accessibility standards by reviewing it against the following key points:
 
 <small>"If a point in the checklist has ‘(E)’ after it, it means it has been interpreted as essential to passing the accessibility regulations".</small>
 
-### Tables
+---
+
+#### Tables
+
+---
 
 - Mark Up Tables (E): Ensure all tables are properly marked up to assist screen readers in interpreting the content.
 Meaningful Names: Assign meaningful names to each table.
@@ -145,13 +171,21 @@ Meaningful Names: Assign meaningful names to each table.
 - Avoid Hidden Elements (E): Refrain from hiding rows or columns, or provide guidance if needed.
 Column Width: Adjust column widths to a sensible size to improve readability.
 
-### Footnotes
+---
+
+#### Footnotes
+
+---
 
 - Avoid Symbols and Superscripts (E): Instead of symbols or superscript text, use plain text or shorthand within square brackets. Use 'note' with numbers in square brackets for footnotes.
 - Placement: Place footnote markers in titles, column headings, or a notes column on the right. Avoid placing them directly in cells.
 - Notes Worksheet: Include all footnotes in a 'Notes' worksheet rather than below the table.
 
-### Formatting
+---
+
+#### Formatting
+
+---
 
 - Written Content (E): Ensure all written content follows accessibility guidelines.
 - Links (E): Use descriptive text for hyperlinks rather than URLs.
@@ -162,7 +196,11 @@ Avoid Symbols: Use symbols sparingly and avoid headers, footers, floating text b
 - Avoid Images: If images are necessary, ensure they have alternative text.
 - Remove Macros: Macros should be removed to avoid accessibility and security issues.
 
-### Structure
+---
+
+#### Structure
+
+---
 
 - Worksheet Names (E): Give each worksheet a unique name or number.
 - Remove Blank Sheets (E): Eliminate any blank worksheets.
