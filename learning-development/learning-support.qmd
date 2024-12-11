@@ -7,7 +7,7 @@ title: "Learning support"
 ---
 
 ::: {.callout-tip}
-## Git DevOps guidance
+## Azure DevOps guidance
 You can find helpful guidance on DevOps on [Azure DevOps for Analysis](https://dfe-analytical-services.github.io/azure-devops-for-analysis/index.html). 
 :::
 
