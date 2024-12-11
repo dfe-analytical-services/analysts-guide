@@ -65,6 +65,42 @@ Contact [statistics.development@education.gov.uk](mailto:statistics.development@
 
 ---
 
+## Learning and development resources
+
+### Explore education statistics show and tells
+
+A monthly opportunity to find out about our upcoming development plans and ask us any questions. You can catch up on previous show and tell sessions on our [EES intranet page](https://educationgovuk.sharepoint.com/sites/lveesfa00074/SSU%20%20Open%20sharing/Forms/AllItems.aspx?csf=1&web=1&e=dpHOpb&ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CCameron%2ERACE%40EDUCATION%2EGOV%2EUK&OR=Teams%2DHL&CT=1732613645843&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNDEwMjAwMTMxOCJ9&CID=f09f67a1%2Dc042%2Da000%2D66a2%2D7d2ece8d9f70&cidOR=SPO&FolderCTID=0x012000224A8980D0F5BE42981E5C8C6819EAD3&id=%2Fsites%2Flveesfa00074%2FSSU%20%20Open%20sharing%2FExplore%20education%20statistics%2FShow%20and%20tells)
+
+Please contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) if you would like to be added to the invite list.
+
+### AI Knowledge shares
+
+Join the Artificial Intelligence (AI) Knowledge Shares to hear from volunteers about their AI projects and use of AI in their work. You can catch up on past sessions in the [AI knowledge share folder](https://educationgovuk.sharepoint.com/sites/lveesfa00074/SSU%20%20Open%20sharing/Forms/AllItems.aspx?csf=1&web=1&e=tH6AbX&CID=1e1b3605%2Dbd42%2D451a%2D865e%2Ddd43bd2c4e7d&FolderCTID=0x012000224A8980D0F5BE42981E5C8C6819EAD3&id=%2Fsites%2Flveesfa00074%2FSSU%20%20Open%20sharing%2FAI%2FAI%20in%20DfE%20knowledge%2Dshares).
+
+Please contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) to be added to the mailing list.
+
+### Coffee and coding
+
+Coffee & coding is a chance to learn about and discuss coding tools and techniques with guest presenters.
+
+Anyone in DfE can volunteer to lead a session, and we cover a wide range of topics! You can see all of our previous Coffee & Coding session recordings and slides on the [Coffee and Coding Intranet page](https://educationgovuk.sharepoint.com/sites/sarpi/g/AC/Coffee%20and%20Coding.aspx), as well as details of upcoming sessions.
+
+Please contact [coffee.coding@education.gov.uk](mailto:coffee.coding@education.gov.uk) if you would like to sign up to the mailing list, have an idea for a session, or would like to volunteer to lead a session.
+
+### RAP Champions Network
+
+Reproducible Analytical Pipelines (RAP) Champions act as a point of contact for their division for everything RAP-related: improving the awareness and use of RAP in the department, improving the RAP support available to analysts and keeping track of progress made and areas requiring support.
+
+You can find more information on the [RAP Champions Network page](https://educationgovuk.sharepoint.com/sites/lvewp00487). Please contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) if you would like to learn more or sign up to be a champion.
+
+### Freestyle RAP sessions
+
+Freestyle RAP is a monthly open mic for all things Reproducible Analytical Pipelines! Come along for an hour of collaborative problem-solving, where our Statistics Development Team and a RAP champion are on hand to answer all your RAP questions. There is no set agenda and anyone who has an interest in RAP is welcome!
+
+Contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) to be added to the mailing list!
+
+---
+
 ## Partnership programmes
 
 The Statistics Services Unit offers bespoke partnership programmes for analyst teams across the department, designed as dedicated resource to support development work, either building skills or filling resource gaps to allow improvements in analytical or statistical outputs.

@@ -12,10 +12,9 @@ Everyone has a part to play in ensuring that the content and digital services th
 
 DfE have our own [Digital Accessibility Hub](https://educationgovuk.sharepoint.com/sites/lvewp00043) filled with helpful information on making the digital world more accessible.
 
-There are also the [DfE design manual](https://design.education.gov.uk), which has been created by the digital teams at DfE and includes [DfE's digital accessibility guidance](https://design.education.gov.uk/accessibility).
+There is also the [DfE design manual](https://design.education.gov.uk), which has been created by the digital teams at DfE and includes [DfE's digital accessibility guidance](https://design.education.gov.uk/accessibility).
 
-
-If you want to estimate or try to appreciate just how many people might have specific needs, there is the [How many people? tool](https://design.education.gov.uk/tools/how-many-users), simply enter how many people your audience is, and it will give you best estimates of how many people might have a disability, impairment or other characteristics which might affect how they use your service. 
+If you want to estimate or try to appreciate just how many people might have specific needs, there is the [How many people? tool](https://design.education.gov.uk/tools/how-many-users), simply enter the size of your expected audience, and it will give you best estimates of how many people might have a disability, impairment or other characteristics which might affect how they use your service. 
 
 ---
 
@@ -34,7 +33,7 @@ Colour blindness:
 
 Grey scale:
 
-- You can often check colours in grey scale by using a print preview and switching the colour mode
+- You can often check colours in greyscale by using a print preview and switching the colour mode
 - [ColToGrey function within the DescTools R package](https://andrisignorell.github.io/DescTools/reference/ColToGrey.html)
 
 For more advice about colour in charts and visualisations specifically, including more tools and resources for checking colours yourself, see the [Analysis function colours in charts guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9).
@@ -51,27 +50,66 @@ For more advice about colour in charts and visualisations specifically, includin
 
 ---
 
+## Assistive technology
+
+No automated tools fully cover accessibility. Manual testing is almost always required to make sure that your content is compliant with WCAG 2.2 and accessible to as many users as possible, so if you want to do manual testing have a look at testing out the assistive software commonly used by users yourself.
+
+Magnifiers / advanced zoom:
+
+- Windows Magnifier comes as standard with Windows ([guidance for how to turn on Magnifier](https://support.microsoft.com/en-gb/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198#:~:text=To%20quickly%20turn%20on%20Magnifier,turn%20on%20the%20Magnifier%20switch.))
+- [ZoomText](https://www.freedomscientific.com/products/software/zoomtext/), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
+
+Screen reader:
+
+- [Non-visual Desktop Access (NVDA) free download](https://www.nvaccess.org/download/)
+- [Job Access With Speech (JAWS)](https://www.freedomscientific.com/products/software/jaws/), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
+
+Voice activation:
+
+- [Dragon](https://www.nuance.com/en-gb/dragon.html), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
+
+
+Cognitive load:
+
+- While there isn't commonly used specific assistive technology for aiding users in reducing cognitive load, you can take many steps to reduce the cognitive load for users on your service, making it simpler to use for all. Have a read of [Cognitive Load as a Guide: 12 Spectrums to Improve Your Data Visualisations](https://nightingaledvs.com/cognitive-load-as-a-guide-12-spectrums-to-improve-your-data-visualizations/) as a starting point if you want to learn more.
+
+Along with devices and the software mentioned above, the [experience lab in the Sheffield DfE office](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx) also has a range of other equipment available, including access to a set of vision emulating glasses that you can wear to emulate different visual impairments.
+
+---
+
 ## Making spreadsheets accessible
 
 Public sector spreadsheets must meet the AA level of the Web Content Accessibility Guidelines (WCAG) 2.2, as required by law under The Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018. This guidance distinguishes between mandatory actions needed to comply with legal accessibility standards and best practices that enhance usability. Non-compliance can lead to legal complaints, making it crucial for content creators to understand and mitigate these risks.
 
-When creating an accessible spreadsheet, it’s important to consider the needs of all users, including those with disabilities. To support analysts in making spreadsheets more accessible, apply the following strategies when creating spreadsheets:
+When creating an accessible spreadsheet, it's important to consider the needs of all users, including those with disabilities. To support analysts in making spreadsheets more accessible, apply the following strategies when creating spreadsheets:
 
-### Consult the Spreadsheet Accessibility Guidance
+---
+
+### Consult the spreadsheet accessibility guidance
+
+---
 
 Before diving into the spreadsheet creation process, it's essential to familiarise yourself with the official [spreadsheet accessibility](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) guidance available on the Analysis Function Guidance Hub. This resource offers comprehensive insights into best practices for ensuring that your spreadsheets are accessible to all users.
 
+---
+
 ### Accessibility and consequences
+
+---
 
 In addition to accessibility, the guidance also addresses usability and machine readability. While these areas often overlap with accessibility, there are instances where they may conflict. Depending on user needs, it might be necessary to produce separate versions of a spreadsheet (one for human use and another optimised for machine readability) to ensure both accessibility and functionality are maintained.
 
-### Automate Accessibility During the Coding Process
+---
+
+### Automate accessibility during the coding process
+
+---
 
 Automation is a powerful way to ensure that accessibility is consistently applied throughout the spreadsheet creation process, especially when working with large datasets or producing numerous spreadsheets. By integrating accessibility into the coding process, you can streamline your workflow and reduce the chances of missing critical accessibility features.
 
-Here’s how you can automate accessibility using specific tools in Python and R:
+Here's how you can automate accessibility using specific tools in Python and R:
 
-#### Why Automate?
+#### Why automate?
 
 - Consistency: Automation helps maintain a consistent approach to accessibility across all spreadsheets, reducing the likelihood of human error.
 - Efficiency: Automating the process saves time, especially when dealing with large datasets or generating numerous tables.
@@ -92,7 +130,11 @@ By incorporating tools like ``gptables`` or ``a11ytables`` into your coding work
 - Note on automation packages:
 Neither of these packages are guaranteed to automatically produce perfectly accessible spreadsheets. The aim is to help you automate some of the edits.
 
-## Run an [Accessibility Check](https://analysisfunction.civilservice.gov.uk/policy-store/further-resources-for-releasing-statistics-in-spreadsheets/#section-3) 
+---
+
+### Run an [accessibility check](https://analysisfunction.civilservice.gov.uk/policy-store/further-resources-for-releasing-statistics-in-spreadsheets/#section-3) 
+
+---
 
 Before finalising your spreadsheet, it’s crucial to run it through an accessibility checker to identify potential issues. Here are two options you can use:
 
@@ -102,13 +144,23 @@ Before finalising your spreadsheet, it’s crucial to run it through an accessib
 
 By using one or both of these tools, you can ensure that your spreadsheet is as accessible as possible, though a final manual review is recommended to catch any issues that may have been overlooked.
 
-## Check Your Spreadsheet Against the [Accessible Spreadsheets Checklist](https://analysisfunction.civilservice.gov.uk/policy-store/making-spreadsheets-accessible-a-brief-checklist-of-the-basics/) Before Publication
+---
+
+### Checklist
+
+---
+
+You should check your spreadsheet against the [Accessible Spreadsheets Checklist](https://analysisfunction.civilservice.gov.uk/policy-store/making-spreadsheets-accessible-a-brief-checklist-of-the-basics/) before publication.
 
 Before publishing your spreadsheet, ensure that it meets accessibility standards by reviewing it against the following key points:
 
 <small>"If a point in the checklist has ‘(E)’ after it, it means it has been interpreted as essential to passing the accessibility regulations".</small>
 
-### Tables
+---
+
+#### Tables
+
+---
 
 - Mark Up Tables (E): Ensure all tables are properly marked up to assist screen readers in interpreting the content.
 Meaningful Names: Assign meaningful names to each table.
@@ -118,13 +170,21 @@ Meaningful Names: Assign meaningful names to each table.
 - Avoid Hidden Elements (E): Refrain from hiding rows or columns, or provide guidance if needed.
 Column Width: Adjust column widths to a sensible size to improve readability.
 
-### Footnotes
+---
+
+#### Footnotes
+
+---
 
 - Avoid Symbols and Superscripts (E): Instead of symbols or superscript text, use plain text or shorthand within square brackets. Use 'note' with numbers in square brackets for footnotes.
 - Placement: Place footnote markers in titles, column headings, or a notes column on the right. Avoid placing them directly in cells.
 - Notes Worksheet: Include all footnotes in a 'Notes' worksheet rather than below the table.
 
-### Formatting
+---
+
+#### Formatting
+
+---
 
 - Written Content (E): Ensure all written content follows accessibility guidelines.
 - Links (E): Use descriptive text for hyperlinks rather than URLs.
@@ -135,7 +195,11 @@ Avoid Symbols: Use symbols sparingly and avoid headers, footers, floating text b
 - Avoid Images: If images are necessary, ensure they have alternative text.
 - Remove Macros: Macros should be removed to avoid accessibility and security issues.
 
-### Structure
+---
+
+#### Structure
+
+---
 
 - Worksheet Names (E): Give each worksheet a unique name or number.
 - Remove Blank Sheets (E): Eliminate any blank worksheets.
@@ -147,34 +211,5 @@ Before Publishing
 - Accessibility Check: Use Excel’s accessibility checker, though be aware it might not catch everything. Consider using additional tools to identify issues.
 - Document Information (E): Ensure the document’s title and language information are completed.
 - Final Save (E): Position the cursor in cell A1 of the first worksheet before the final save to ensure it opens correctly.
-
-
-
----
-
-## Assistive technology
-
-No automated tools fully cover accessibility, manual testing is always required, so if you want to do manual testing have a look at testing out the assistive software commonly used by users yourself.
-
-Magnifiers / advanced zoom:
-
-- Windows Magnifier, comes as standard with Windows ([guidance for how to turn on Magnifier](https://support.microsoft.com/en-gb/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198#:~:text=To%20quickly%20turn%20on%20Magnifier,turn%20on%20the%20Magnifier%20switch.))
-- [ZoomText](https://www.freedomscientific.com/products/software/zoomtext/), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
-
-Screen reader:
-
-- [Non-visual Desktop Access (NVDA) free download](https://www.nvaccess.org/download/)
-- [Job Access With Speech (JAWS)](https://www.freedomscientific.com/products/software/jaws/), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
-
-Voice activation:
-
-- [Dragon](https://www.nuance.com/en-gb/dragon.html), available through the [experience lab in DfE](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx)
-
-
-Cognitive load:
-
-- While there isn't commonly used specific assistive technology for aiding users in reducing cognitive load, you can take many steps to reduce the cognitive load for users on your service, making it simpler to use for all. Have a read of [Cognitive Load as a Guide: 12 Spectrums to Improve Your Data Visualisations](https://nightingaledvs.com/cognitive-load-as-a-guide-12-spectrums-to-improve-your-data-visualizations/) as a starting point if you want to learn more.
-
-Along with devices and the software mentioned above, the [experience lab in the Sheffield DfE office](https://educationgovuk.sharepoint.com/sites/lvewp00043/SitePages/Experience-Lab.aspx) also has a range of other equipment available, including access to a set of vision emulating glasses that you can wear to emulate different visual impairments.
 
 ---
