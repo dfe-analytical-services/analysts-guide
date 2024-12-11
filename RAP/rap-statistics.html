@@ -1326,17 +1326,38 @@ Tip
 <h4 class="anchored" data-anchor-id="writing-a-readme-file">Writing a README file</h4>
 <hr>
 <p><strong>What does this mean?</strong></p>
-<p>A README is a text file (.txt) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it.</p>
+<p>A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure DevOps, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" rel="noopener noreferrer">Markdown Guide</a>.</p>
 <p><strong>Why do it?</strong></p>
 <p>It’s an easy way to answer questions that your audience will likely have regarding how to install and use your project and also how to collaborate with you.</p>
 <p><strong>How to get started</strong></p>
-<p>As a starting point, you should aim to have as many of the following sections as are applicable to your project:</p>
+<p>For new projects, you can use the create_project function in dfeR. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a <a href="https://github.com/dfe-analytical-services/dfeR/blob/main/README_template.md" target="_blank">README template</a>. You can find more information on this in the <a href="https://dfe-analytical-services.github.io/dfeR/reference/create_project.html" target="_blank">dfeR reference</a>.</p>
+<p>If you are creating your own README for existing projects, you should include all of the sections listed below:</p>
+<p><strong>Introduction</strong></p>
 <ul>
-<li>Introduction</li>
-<li>Requirements (access, software, skills/knowledge)</li>
-<li>How to use</li>
-<li>How to contribute</li>
-<li>Contact details</li>
+<li>Purpose: briefly explain the purpose of the code.</li>
+<li>Overview: Provide a high-level summary of the contents and structure of the repository.</li>
+</ul>
+<p><strong>Requirements</strong></p>
+<ul>
+<li>Access: Detail any permissions or access needed to use the repository at the top of this section, e.g.&nbsp;access to specific SQL databases. This is crucial for enabling new users to use the repository.</li>
+<li>Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R, or SQL.</li>
+<li>Version control/Renv: State how version control is managed and whether Renv is being used.</li>
+</ul>
+<p><strong>Getting started</strong></p>
+<ul>
+<li>Setup instructions: Provide step-by-step instructions on how to set up the environment, including installing dependencies.</li>
+<li>Data input/output: Describe the expected input data and where it can be found, as well as what output should be expected from the code.</li>
+</ul>
+<p><strong>How to run and update</strong></p>
+<ul>
+<li>Running the code: Explain how users can best run the code, for example by running a run all script.</li>
+<li>Updating guidelines: Outline the process for updating and contributing to the repository, including specific scripts and lines where updates are frequently needed. Describe how to get changes reviewed.</li>
+<li>Issue reporting: Explain how to report issues or suggest improvements. This could be through issues if using GitHub, boards in Azure DevOps or by emailing the team.</li>
+</ul>
+<p><strong>Contact details</strong></p>
+<ul>
+<li>Main contacts: List the names and contact information of people who maintain the repository.</li>
+<li>Support channels: Provide any information on how to get support, such as email addresses or teams channels.</li>
 </ul>
 <p>The <a href="https://github.com/dfe-analytical-services/publication-self-assessment-copy" target="_blank" rel="noopener noreferrer">Self-assessment tool</a> and the <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa" target="_blank" rel="noopener noreferrer">QA app</a> give two examples of readme files structured like this.</p>
 <hr>
