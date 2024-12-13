@@ -708,7 +708,18 @@
     "href": "learning-development/learning-support.html",
     "title": "Learning support",
     "section": "",
-    "text": "A collection of useful learning resources, and information on support and resources to get you started\nAs analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.\nFor best practice when using software and coding in our process, see our guidance on RAP expectations and the DfE Good Code Practice guide.\nFor questions about publishing statistics, the statistics Code of Practice or how your statistics publication should be badged, please contact the HoP Office.\nFor support in data harmonisation and data structuring standards, or support with analytical digital services including the explore education statistics service, and deploying and maintaining R Shiny applications contact the explore education statistics platforms team.\nYou can also access support on a variety of topics on the cross-government Digital Slack instance. Some useful channels to join are #accessibility, #ai, #data-science and #datavis.\nThere is also a cross-government data science Slack instance. Some useful channels to join are #chat-r, #chat-python, #info-events and #community-rap.\nIn DfE, you can also seek advice via Teams. Some useful groups are Statistics production and publishing, DfE R community, DfE Python community and DfE Analyst Network.",
+    "text": "A collection of useful learning resources, and information on support and resources to get you started",
+    "crumbs": [
+      "Learning resources",
+      "Learning support"
+    ]
+  },
+  {
+    "objectID": "learning-development/learning-support.html#tools-and-support-channels",
+    "href": "learning-development/learning-support.html#tools-and-support-channels",
+    "title": "Learning support",
+    "section": "Tools and support channels",
+    "text": "Tools and support channels\nAs analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.\nFor best practice when using software and coding in our process, see our guidance on RAP expectations and the DfE Good Code Practice guide.\nYou can also access support on a variety of topics on the cross-government Digital Slack instance. Some useful channels to join are #accessibility, #ai, #data-science and #datavis.\nThere is also a cross-government data science Slack instance. Some useful channels to join are #chat-r, #chat-python, #info-events and #community-rap.\nIn DfE, you can also seek advice via Teams. Some useful groups are Statistics production and publishing, DfE R community, DfE Python community and DfE Analyst Network.",
     "crumbs": [
       "Learning resources",
       "Learning support"
@@ -719,7 +730,7 @@
     "href": "learning-development/learning-support.html#email-support",
     "title": "Learning support",
     "section": "Email support",
-    "text": "Email support\n\nFor any technical questions about R, Git, SQL, RAP or statistics production, contact statistics.development@education.gov.uk\n\nThe mailbox is monitored between 9-5 and we aim to reply within 2 days\nNo question is too small! We are always happy to help",
+    "text": "Email support\nFor questions about publishing statistics, the statistics Code of Practice or how your statistics publication should be badged, please contact the HoP Office.\nFor support in data harmonisation and data structuring standards, or support with analytical digital services including the explore education statistics service, and deploying and maintaining R Shiny applications contact the explore education statistics platforms team.\nFor any technical questions about R, Git, SQL, RAP or statistics production, contact statistics.development@education.gov.uk. This mailbox is monitored between 9-5 and we aim to reply within 2 days. No question is too small! We are always happy to help.",
     "crumbs": [
       "Learning resources",
       "Learning support"
