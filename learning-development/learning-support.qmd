@@ -6,13 +6,18 @@ title: "Learning support"
 
 ---
 
+::: {.callout-tip}
+## Azure DevOps guidance
+You can find helpful guidance on DevOps on [Azure DevOps for Analysis](https://dfe-analytical-services.github.io/azure-devops-for-analysis/index.html). 
+:::
+
+---
+
+## Tools and support channels
+
 As analysts and statistics producers, we require a variety of tools to efficiently and reliably work with our data. Below are the recommended tools that give us the most power to do what we need. These have large user communities in DfE, and are already working in our current IT setup.
 
 For best practice when using software and coding in our process, see our [guidance on RAP expectations](../RAP/rap-expectations.html) and the [DfE Good Code Practice guide](https://dfe-analytical-services.github.io/good-code-practice/index.html).
-
-For questions about publishing statistics, the statistics Code of Practice or how your statistics publication should be badged, please contact the [HoP Office](mailto:hop.statistics@education.gov.uk).
-
-For support in data harmonisation and data structuring standards, or support with analytical digital services including the explore education statistics service, and deploying and maintaining R Shiny applications contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
 You can also access support on a variety of topics on the [cross-government Digital Slack instance](https://x-govuk.github.io/posts/how-to-use-cross-government-slack/). Some useful channels to join are `#accessibility`, `#ai`, `#data-science` and `#datavis`. 
 
@@ -24,9 +29,12 @@ In DfE, you can also seek advice via Teams. Some useful groups are [Statistics p
 
 ## Email support
 
- * For any technical questions about R, Git, SQL, RAP or statistics production, contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk)  
- * The mailbox is monitored between 9-5 and we aim to reply within 2 days
- * No question is too small! We are always happy to help
+For questions about publishing statistics, the statistics Code of Practice or how your statistics publication should be badged, please contact the [HoP Office](mailto:hop.statistics@education.gov.uk).
+
+For support in data harmonisation and data structuring standards, or support with analytical digital services including the explore education statistics service, and deploying and maintaining R Shiny applications contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
+
+For any technical questions about R, Git, SQL, RAP or statistics production, contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk). This mailbox is monitored between 9-5 and we aim to reply within 2 days. No question is too small! We are always happy to help.
+
  
  ---
 
