@@ -56,6 +56,8 @@ ADA diagram - https://app.diagrams.net/?libs=general;flowchart#G1oL9XauLLcVVbF5O
 
 ## Contribution
 
+Pages from this guide have different code owners, their review will automatically be sought on any contributions you make. For full details of the codeowners in this repo, see the [.github/CODEOWNERS file](https://github.com/dfe-analytical-services/analysts-guide/blob/main/.github/CODEOWNERS).
+
 If you're interested in contributing to this project, have a read of the [contributing guidelines](https://github.com/dfe-analytical-services/analysts-guide/blob/main/CONTRIBUTING.md).
 
 ---
