@@ -1322,7 +1322,7 @@ See our guidance on Good examples in EES for a [best practice example of a publi
 ## Methodology
 
 
-Appropriate methodological information must be made available for all published Official Statistics releases. Methodologies can follow our recommended [methodology template](../resources/Methodology template EES.docx), to ensure all the essential details are covered.
+Appropriate methodological information must be made available for all published Official Statistics releases. Methodologies can follow our recommended [methodology template](../resources/Methodology_template_EES.docx), to ensure all the essential details are covered.
 
 If you have not created or published a methodology page on EES before, the first thing your publication owner will need to do is create a methodology page.
 

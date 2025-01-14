@@ -1,0 +1,37 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# these will always be requested as reviewer when someone
+# opens a pull request.
+* @jen-machin
+
+# The workflow and website setup files are jointly owned
+_quarto.yml @jen-machin @cjrace
+.github @jen-machin @cjrace
+
+# The following files and folders are owned by the SDT team
+/ADA/ @jen-machin @chfoster @Lsnaathorst1 @mzayeddfe
+/RAP/ @jen-machin @chfoster @Lsnaathorst1 @mzayeddfe
+/resources/ @jen-machin @chfoster @Lsnaathorst1 @mzayeddfe
+/learning-development/ @jen-machin @chfoster @Lsnaathorst1 @mzayeddfe
+
+# The following files and folders are owned by the EESP team
+/statistics-production/api-data-standards.qmd @cjrace @rmbielby
+/statistics-production/ees.qmd @cjrace @rmbielby
+/statistics-production/embedded-charts.qmd @cjrace @rmbielby
+/statistics-production/examples.qmd @cjrace @rmbielby
+/statistics-production/ud.qmd @cjrace @rmbielby
+/data_examples/ @cjrace @rmbielby
+/writing-visualising/dashboards_rshiny.qmd @cjrace @rmbielby
+/writing-visualising/dashboards.qmd @cjrace @rmbielby
+/resources/Methodology_template_EES.docx @cjrace @rmbielby
+
+# The following files relate to publication scrums
+/resources/Content_Design_Logbook_Dashboards.xlsx @rmbielby
+/resources/Content_Design_Logbook.xlsx @rmbielby
+/resources/Content_Design_Scrum_Progression.pptx @rmbielby
+/resources/Content_Design_Scrums_Insights_final.docx @rmbielby
+/statistics-production/scrums.qmd @rmbielby
+
+# The following files cover our take on the analysis function best practice
+/writing-visualising/visualising.qmd @cjrace @jen-machin
+/writing-visualising/writing.qmd @cjrace @jen-machin
