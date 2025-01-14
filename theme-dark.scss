@@ -1,3 +1,44 @@
 /*-- scss:defaults --*/
 
-$sidebar-fg: #2a9fd6;
+// Import common variables
+@import 'styles';
+
+$sidebar-fg: #31a3d8;
+
+
+
+// customise link colours 
+
+a {
+  color: #31a3d8 !important; // Default link color
+  
+  &:hover {
+    color: #57B215 !important; // Color when hovering over the link
+  }
+
+}
+
+
+// Change the background color for breadcrumbs
+.breadcrumb {
+  a {
+    color: #C4D6CE !important; // breadcrumb link item color
+  }
+  
+  li{
+    color: #ffffff !important ; // breadcrumb list item color
+  }
+}
+
+.nav-page {
+    a {
+    color: #C4D6CE  !important; // bottom navigation link color
+  }
+}
+
+
+/* Background color for inline code */
+$code-bg:#555555; 
+/* Font color for inline code */
+$code-color: #ffffff;  
+
