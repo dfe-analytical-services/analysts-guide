@@ -12,10 +12,6 @@ $sidebar-fg: #31a3d8;
 a {
   color: #31a3d8 !important; // Default link color
   
-   &:visited {
-    color: #F269EE !important; // Color for visited links
-  }
-  
   &:hover {
     color: #57B215 !important; // Color when hovering over the link
   }
