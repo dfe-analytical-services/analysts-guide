@@ -1,0 +1,9 @@
+---
+title: "RAP for all analysis"
+format: html
+---
+
+
+<p class="text-muted">Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into all analytical processes</p>
+
+---
