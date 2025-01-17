@@ -7,3 +7,75 @@ format: html
 <p class="text-muted">Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into all analytical processes</p>
 
 ---
+
+## What is RAP?
+
+RAP (Reproducible Analytical Pipelines) are a way to create well documented, reproducible, quality analysis using the best tools available to us as analysts. In 2022, the Analysis Function published their [RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/), which outlines the expectation that RAP should be "the default approach to analysis in government". Each department is expected to publish a RAP implementation strategy to explain how they are going to support analysts to embed RAP into their day to day work. You can view the [RAP implementation plans for all departments, including DfE](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/departmental-rap-plans/) on the Analysis Function website. 
+
+Cam ran an introduction to RAP session for DISD in December 2020. The slides can be found on [GitHub](https://github.com/cjrace/introduction-to-rap){target="_blank" rel="noopener noreferrer"}, or you can [watch the recording](https://educationgovuk.sharepoint.com/:v:/r/sites/lvewp00086/WorkplaceDocuments/Statistics%20Services%20Unit/Statistics%20Development%20Team/Stream%20Migrated%20Videos/Recordings/An%20introduction%20to%20RAP-20201217_024855-Meeting%20Recording.mp4?csf=1&web=1&e=Fz1gXt).
+
+[RAP](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/){target="_blank" rel="noopener noreferrer"}  means using automation to our advantage when analysing data, which can be as simple as writing code so that we can click a button to execute and do the job for us. Most analysts will be using elements of RAP in their work, such as quality assurance and version control, without even thinking about it!
+
+Cross-government RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md){target="_blank" rel="noopener noreferrer"} to aim for. In DfE we have adapted these to form our own RAP principles, which are described in detail on this page. 
+
+::: callout-note
+RAP should  be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx). Statistics production has stricter expectations (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
+:::
+
+---
+
+### Benefits of RAP
+
+---
+
+According to the [Analysis Function](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/), using RAP should:
+
+* improve the quality of the analysis
+* increase trust in the analysis by producers, their managers and users
+* create a more efficient process
+* improve business continuity and knowledge management
+
+In DfE, we already have 'analytical pipelines' and have done for many years. The aim of RAP is to automate the parts of these pipelines that can be automated, to increase efficiency and accuracy, while creating a clear audit trail to allow analyses to easily be re-run if needed. This will free us up to focus on the parts of our work where our human input can really add value. RAP is something we can use to reduce the burden on us by getting rid of some of the boring stuff, what's not to like! RAP can also reduce risk through human error, since you will no longer have to copy and paste numbers between different documents or make substantial manual edits to code each time you need to re-run it.  
+
+---
+
+### Our scope
+
+---
+
+RAP principles can be applied proportionally to all analysis - they are simply best-practice when it comes to analysis and therefore we should all work towards RAP becoming our default way of working. Some principles are always applicable (like documentation, sensible folder/file structure, QA) whereas others are applicable to more specific situations (such as ensuring code is recyclable and easily updated - this applies more to analysis that is likely to be re-run in future).
+
+Whilst you might not create a full RAP process for an ad-hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results. 
+
+To get started with RAP, we first need to be able to understand what it actually means in practice, and be able to [assess our own work against the principles of RAP](#what-is-expected). From there, we can work out what training is needed, if any, and where additional support can help teams.
+
+Implementing RAP for us will involve combining the use of SQL, R, and clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
+
+The collection of, and routine checking of data as it is coming into the department is also an area that RAP can be applied to. We have kept this out of scope at the moment as the levels of control in this area vary wildly from team to team. If you would like advice and help to automate any particular processes, feel free to [contact the Statistics Development Team](mailto:statistics.development@education.gov.uk).
+
+---
+
+## Core principles
+
+RAP has three core principles:
+
+
+[Preparing data](#preparing-data): Data sources for a publication are stored in the same database
+
+
+[Writing code](#writing-code): Underlying data files are produced using code, with no manual steps
+
+
+[Version control](#version-control): Files and scripts should be appropriately version controlled
+
+Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst. 
+
+ 
+---
+
+## RAP in practice
+
+
+<!-- The diagram below highlights what RAP means for us, and the varying levels in which it can be applied in all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice.  -->
+
+<!-- The expectation is that all statistics publications will meet the department's baseline implementation of RAP, using the [self-assessment tool](https://rsconnect/rsc/publication-self-assessment/) to monitor their progress. It's worth acknowledging that some teams are already working around great and best practice levels, and that we appreciate every team's situation is unique, our guidance is designed to be applicable across all official statistics publications by DfE. Once teams achieve baseline status, their RAP process will be audited.  -->
