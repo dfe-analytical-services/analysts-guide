@@ -573,7 +573,10 @@ There are a couple of potential issues that you may run into when completing mig
 
 ---
 
-Shinytest2 makes use of the Chromote package, which needs to connect to your local instance of Google Chrome. Please make sure you have Google Chrome installed before you attempt to use shinytest2, otherwise it will not work. Sometimes your copy of Chrome might be installed in a different place to where Chromote expects to find it, which means that your tests will not be able to run. There is information on how to resolve this issue [in the Tips for Using R section](../learning-development/r.html#shinytest2---invalid-path-to-chrome-error-message)
+Shinytest2 needs to connect to your local copy of either MS Edge or Google Chrome by running a chromote session. The following issues can occur when shinytest2 tries to connect to run a Chromote session:
+
+- [R can't find Edge or Chrome / invalid path to chromote](../learning-development/r.html#shinytest2---invalid-path-to-chrome-error-message)
+- [Failed to launch Chrome / Edge due to trying to run in **old headless mode**](../learning-development/r.html#shinytest2---old-headless-mode-error-message)
 
 ---
 
