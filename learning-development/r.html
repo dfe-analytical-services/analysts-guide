@@ -557,6 +557,7 @@ cookieconsent.run({
   <li><a href="#packages-not-downloading-due-to-wininet-error-renv-0.17" id="toc-packages-not-downloading-due-to-wininet-error-renv-0.17" class="nav-link" data-scroll-target="#packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</a></li>
   <li><a href="#ssl-certificate-errors" id="toc-ssl-certificate-errors" class="nav-link" data-scroll-target="#ssl-certificate-errors">SSL certificate errors</a></li>
   <li><a href="#shinytest2---invalid-path-to-chrome-chromote-error-message" id="toc-shinytest2---invalid-path-to-chrome-chromote-error-message" class="nav-link" data-scroll-target="#shinytest2---invalid-path-to-chrome-chromote-error-message">shinytest2 - Invalid path to Chrome (chromote) error message</a></li>
+  <li><a href="#shinytest2---old-headless-mode-error-message" id="toc-shinytest2---old-headless-mode-error-message" class="nav-link" data-scroll-target="#shinytest2---old-headless-mode-error-message">shinytest2 - Old headless mode error message</a></li>
   </ul></li>
   <li><a href="#using-r-with-ada-databricks" id="toc-using-r-with-ada-databricks" class="nav-link" data-scroll-target="#using-r-with-ada-databricks">Using R with ADA / Databricks</a></li>
   </ul>
@@ -1334,6 +1335,29 @@ Guidance and tips for using the programming language R
 <p>Once you’ve added that and saved the .Renviron file, restart your R session and that should then be loaded and shinytest2 will run. You can double check that it’s set the environment variable properly by running the following command:</p>
 <p><code>Sys.getenv("CHROMOTE_CHROME")</code></p>
 <p>That command should return the path that you entered for Chrome.</p>
+<hr>
+</section>
+<section id="shinytest2---old-headless-mode-error-message" class="level3">
+<h3 class="anchored" data-anchor-id="shinytest2---old-headless-mode-error-message">shinytest2 - Old headless mode error message</h3>
+<hr>
+<p>When shinytest2 runs a Chrome or Edge browser window, it runs it in something called “headless mode”, which effectively means it’s running the browser in the background without you seeing the window on your desktop. The way headless mode works in Chrome and Edge recently changed, which triggers an error in shinytest2 if you haven’t updated your R settings to allow for this.</p>
+<p>The resulting error should look something like the following.</p>
+<pre><code>Error in with_random_port(launch_chrome_impl, path = path, args = args) :
+Cannot find an available port. Please try again.
+Caused by error in startup():
+! Failed to start chrome. Error:
+Old Headless mode has been removed from the Chrome binary. Please use the new 
+Headless mode (https://permanently-removed.invalid/docs/chromium/new-headless) 
+or the chrome-headless-shell which is a standalone implementation of the old 
+Headless mode (https://permanently-removed.invalid/blog/chrome-headless-shell).</code></pre>
+<p>To fix this issue, you just need to let R know that you want chromote sessions to run with the “new” headless mode. This can be done by setting a system variable in your .Renviron file as follows:</p>
+<ul>
+<li>open your .Renviron file for editing (for example, in the R console run <code>usethis::edit_r_environ()</code>)</li>
+<li>add the line <code>CHROMOTE_headless="new"</code> to the .Renviron file (and make sure the file ends in an empty line)</li>
+<li>Save the .Renviron file</li>
+<li>Restart your R session</li>
+</ul>
+<p>Now you should be able to run <code>shinytest2::test_app()</code> as normal.</p>
 <hr>
 </section>
 </section>
