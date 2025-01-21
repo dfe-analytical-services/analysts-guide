@@ -811,6 +811,36 @@ That command should return the path that you entered for Chrome.
 
 ---
 
+### shinytest2 - Old headless mode error message
+
+---
+
+When shinytest2 runs a Chrome or Edge browser window, it runs it in something called "headless mode", which effectively means it's running the browser in the background without you seeing the window on your desktop. The way headless mode works in Chrome and Edge recently changed, which triggers an error in shinytest2 if you haven't updated your R settings to allow for this.
+
+The resulting error should look something like the following.
+
+```
+Error in with_random_port(launch_chrome_impl, path = path, args = args) :
+Cannot find an available port. Please try again.
+Caused by error in startup():
+! Failed to start chrome. Error:
+Old Headless mode has been removed from the Chrome binary. Please use the new 
+Headless mode (https://permanently-removed.invalid/docs/chromium/new-headless) 
+or the chrome-headless-shell which is a standalone implementation of the old 
+Headless mode (https://permanently-removed.invalid/blog/chrome-headless-shell).
+```
+
+To fix this issue, you just need to let R know that you want chromote sessions to run with the "new" headless mode. This can be done by setting a system variable in your .Renviron file as follows:
+
+- open your .Renviron file for editing (for example, in the R console run `usethis::edit_r_environ()`)
+- add the line `CHROMOTE_headless="new"` to the .Renviron file (and make sure the file ends in an empty line)
+- Save the .Renviron file
+- Restart your R session
+
+Now you should be able to run `shinytest2::test_app()` as normal.
+
+---
+
 ## Using R with ADA / Databricks
 
 See our [guidance on how to connect to Databricks SQL Warehouse from R Studio](../ADA/databricks_rstudio_sql_warehouse.html), and [how to connect to Databricks personal cluster from R studio](../ADA/databricks_rstudio_personal_cluster.html)
