@@ -830,7 +830,7 @@ or the chrome-headless-shell which is a standalone implementation of the old
 Headless mode (https://permanently-removed.invalid/blog/chrome-headless-shell).
 ```
 
-To fix this issue, you just need to let R that you want chromote sessions to run with the "new" headless mode. This can be done by setting a system variable in your .Renviron file as follows:
+To fix this issue, you just need to let R know that you want chromote sessions to run with the "new" headless mode. This can be done by setting a system variable in your .Renviron file as follows:
 
 - open your .Renviron file for editing (for example, in the R console run `usethis::edit_r_environ()`)
 - add the line `CHROMOTE_headless="new"` to the .Renviron file (and make sure the file ends in an empty line)
