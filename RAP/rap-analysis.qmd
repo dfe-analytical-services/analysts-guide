@@ -18,7 +18,7 @@ Cam ran an introduction to RAP session for DISD in December 2020. The slides can
 
 Cross-government RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md){target="_blank" rel="noopener noreferrer"} to aim for. In DfE we have adapted these to form our own RAP principles, which are described in detail on this page. 
 
-::: callout-note
+::: {.callout-note #rap-proportional}
 RAP should  be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx). Statistics production has stricter expectations (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
 :::
 
@@ -76,6 +76,383 @@ Within each of these principles are separate elements of RAP. Each of these is d
 ## RAP in practice
 
 
-<!-- The diagram below highlights what RAP means for us, and the varying levels in which it can be applied in all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice.  -->
+The diagram below highlights what RAP means for us, and the varying levels in which it can be applied in all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice.
 
-<!-- The expectation is that all statistics publications will meet the department's baseline implementation of RAP, using the [self-assessment tool](https://rsconnect/rsc/publication-self-assessment/) to monitor their progress. It's worth acknowledging that some teams are already working around great and best practice levels, and that we appreciate every team's situation is unique, our guidance is designed to be applicable across all official statistics publications by DfE. Once teams achieve baseline status, their RAP process will be audited.  -->
+<!-- Hex diagram here to be completed (with links) and inserted: https://app.diagrams.net/#G12Ns_wuccZ3by80m3WQgnMkwIitLSU9so#%7B%22pageId%22%3A%22Yq3LPfLjmD18RLOfrUop%22%7D -->
+
+
+---
+
+## How to assess your project
+
+<!-- Use DfT checklist to recerate one here!!! -->
+
+---
+
+## How does RAP fit into ADA / Databricks
+
+Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the [ADA guidance on statistics publications](../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your work. 
+
+---
+
+---
+
+## Preparing data
+
+Preparing data is our first core RAP principle, which contains the following elements:
+
+<!-- * [All source data stored in a database](#all-source-data-stored-in-a-database)  -->
+<!-- * [Files meet data standards](#files-meet-data-standards) -->
+<!-- * [Sensible file and folder structure](#sensible-folder-and-file-structure) -->
+
+Your team should store the internal raw data in a Microsoft SQL Server database or in the Databricks platform. These are similar to a Sharepoint area or a shared folder, but offer dedicated data storage areas and allow multiple users to use the same file at once. This means that you can also run code against a single source of data, further reducing the risk of error.
+
+Where external data is used, the process of acquiring and storing the data should be well documented. The data should be stored approrpiately in areas with the correct levels of security. 
+
+---
+
+### Source data is acquired and stored sensibley
+
+---
+
+
+![](../images/good.svg)
+
+**What does this mean?** 
+
+When we refer to 'source data', we take this to mean the data you use at the start of your analytical process.
+
+In order for us to be able to have an end-to-end data pipeline where we can replicate our analysis across the department, we should ensure we acquire and store all source data in sensible locations with clear documentation. Consider what a new starter would need in order to understand the process of aquiring and using the source data without you there, and ensure that is in place! For example:
+
+a. **Data requested via email from other teams or departments** - have clear documentation containing the contact information, when you contact them, when to expect a response and a template email. 
+
+b. **Data downloaded from an external site** - See if the site has an API ([What is an API?](https://www.postman.com/what-is-an-api/)) - some government sites like [EES](https://explore-education-statistics.service.gov.uk/), [Nomis](https://www.nomisweb.co.uk/) and [ONS](https://www.ons.gov.uk/) have APIs and even R packages built to interact with them ([`eesyapi`](https://dfe-analytical-services.github.io/eesyapi.R/), [`nomisr`](https://docs.ropensci.org/nomisr/#:~:text=The%20nomisr%20package%20provides%20functions%20to%20find%20what,downloading%20data.%20nomisr%20returns%20data%20in%20tibble%20format.), [`monstR`](https://hfanalyticslab.github.io/monstR/)). If not, you can use the `download.file()` function to remove the manual step of clicking and downloading the data each time. Using a function also ensures it is always named and stored consistently. 
+
+c. **Data internal to the DfE** should either be stored in a managed Microsoft SQL Server or in the Databricks platform. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process using SQL queries. 
+
+**Why do it?**
+
+The principle is that this source data will remain stable and is the point you can go back to and re-run the processes from if necessary. If for any reason the source data needs to change, your processes will be set up in a way that you can easily re-run them to get updated outputs based on the amended source data with minimal effort.
+
+SQL is a fantastic language for large scale data joining and manipulation; it allows us to replicate end-to-end from raw data to final aggregate statistics output. Having all the data in one place and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results. You can run SQL queries against data in SQL Server or in Databricks, although SQL Server makes use of T-SQL and Databricks makes use of Spark SQL. 
+
+
+**How to get started**
+
+For a collection of relevant resources to use when learning SQL, see our [learning resources](../learning-development/learning-development.html) page, and for guidance on best practice when writing SQL queries, see the [writing code](#writing-code) and [documentation](#documentation) sections on this page, as well as the guides immediately below on how to set up and use a SQL database. 
+
+For resources to help you learn about Databricks and how to migrate your data into the Unity Catalog, please see our [ADA and Databricks documentation](../ADA/ada.html). Legacy servers will be decommissioned in 2026, and all data will be migrated into the Databricks Unity Catalog instead. 
+
+---
+
+#### How to set up a SQL working area
+
+---
+
+There are a few different options, depending on where you want your new area to exist. Visit our [SQL learning page](../learning-development/sql.html#Setting_up_a_SQL_area) for details.
+
+---
+
+#### Moving data to different areas
+
+---
+
+If your data is already in SQL Server, you can use this snippet of R code to move tables from one area (e.g. the iStore) to another (e.g. your team's modelling area) to ensure all data are stored in a database.
+
+``` {r connection_example, eval=FALSE}
+library(odbc)
+library(dplyr)
+library(dbplyr)
+library(DBI)
+
+# Step 1.1.: Connect to source server -------------------------------------------
+con_source <- dbConnect(odbc(),
+                     Driver = "SQL Server Native Client 11.0",
+                     Server = "Name_of_source_server",
+                     Database = "Source_database",
+                     Trusted_Connection = "yes"
+)
+
+# Step 1.2.: Connect to target server
+con_target <- dbConnect(odbc(),
+                        Driver = "SQL Server Native Client 11.0",
+                        Server = "Name_of_target_server",
+                        Database = "Your_target_database",
+                        Trusted_Connection = "yes"
+)
+
+# Step 2.1.: Pull the table from the source database
+table_for_transfer <- tbl(con_source,in_schema("schema_name", "table_name")) %>% collect()
+
+# Step 2.2.: Copy table into target database 
+dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfer)
+
+```
+
+---
+
+#### Importing data to SQL Server
+
+---
+
+There's lots of guidance online of how to import flat files from shared areas into Microsoft SQL Server on the internet, including [this guide](https://docs.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard?view=sql-server-2017){target="_blank" rel="noopener noreferrer"}.
+
+
+Remember that it is important to import them with consistent, thought-through [naming conventions](#naming-conventions). You will thank yourself later.
+
+---
+
+#### How to grant access to your area
+
+---
+
+Much like setting up a SQL area, there are different ways to do this depending on the server your database is in. Visit our [SQL learning page](../learning-development/sql.html#Givinggetting_access) for details.
+
+
+---
+
+### Sensible folder and file structure 
+
+---
+
+![](../images/good.svg)
+
+**What does this mean?**
+
+As a minimum you should have a folder that includes all of the final versions of documents produced and published within a folder for the wider project. Ask yourself if it would be easy for someone who isn't in the team to find specific files, and if not, is there a better way that you could name and structure your folders to make them more intuitive to navigate? 
+
+
+**Why do it?**
+
+How you organize and name your files will have a big impact on your ability to find those files later and to understand what they contain. You should be consistent and descriptive in naming and organizing files so that it is obvious where to find specific data and what the files contain.
+
+
+**How to get started**
+
+Some questions to help you consider whether your folder structure is sensible are:
+
+- Are all documentation, code and outputs for the project saved in one folder area?
+- Is simple version control clearly applied (e.g. having all final files in a folder named "final"?)
+- Are there sub-folders like 'code', 'documentation'', 'outputs' and 'final' to save the relevant working files in? 
+- Are you keeping a version log up to date with any changes made to files in this final folder? (Using Git removes the need to manually keep a log, as Git does this for you.)
+
+You could also consider using the [create_project() function](https://dfe-analytical-services.github.io/dfeR/reference/index.html#pre-populated-project) from the dfeR package to create a pre-populated folder structure for use with an R project
+
+---
+
+#### Naming conventions
+
+---
+
+Having a **clear** and **consistent** naming convention for your files is critical. Remember that file names should:
+
+
+**Be machine readable** 
+
+- Avoid spaces.
+- Avoid special characters such as: ~ ! @ # $ % ^ & * ( ) ` ; < > ? , [ ] { } ‘ “.
+- Be as short as practicable; overly long names do not work well with all types of software.
+
+
+**Be human readable** 
+
+- Be easy to understand the contents from the name.
+
+
+**Play well with default ordering**
+
+- Often (though not always!) you should have numbers first, particularly if your file names include dates.
+- Follow the [ISO 8601 date standard](https://www.iso.org/iso-8601-date-and-time-format.html) (YYYYMMDD) to ensure that all of your files stay in chronological order.
+- Use leading zeros to left pad numbers and ensure files sort properly, e.g. using 01, 02, 03 to avoid 1, 10, 2, 3.
+
+
+If in doubt, take a look at this [presentation](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank" rel="noopener noreferrer"}, or this [naming convention guide by Stanford](https://drive.google.com/file/d/12A4qZNwmL4s2NH8Ex161jgiJ9HrA06ZZ/view?pli=1){target="_blank" rel="noopener noreferrer"}, for examples reinforcing the above.
+
+---
+
+
+## Writing code
+
+Writing code is our second core RAP principle, and is made up of the following elements:
+
+* [Processing is done with code](#processing-is-done-with-code)
+* [Use appropriate tools](#use-appropriate-tools)
+<!-- * [Whole publication production scripts](#whole-publication-production-scripts) -->
+<!-- * [Dataset production scripts](#dataset-production-scripts) -->
+* [Recyclable code for future use](#recyclable-code-for-future-use)
+* [Clean final code](#clean-final-code)
+* [Peer review of code within team](#peer-review-of-code-within-team)
+* [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
+* [Basic automated QA](#basic-automated-qa)
+* [Publication specific automated QA](#publication-specific-automated-qa)
+* [Automated summaries](#automated-summaries)
+* [Publication specific automated summaries](#publication-specific-automated-summaries)
+
+
+
+::: callout-tip
+The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html). 
+:::
+
+---
+
+### Processing is done with code
+
+---
+
+
+![](../images/good.svg)
+
+**What does this mean?**
+
+All extraction, and processing of data should be done using code, avoiding any manual steps and moving away from a reliance on Excel, SPSS, and other manual processing. In order to carry out our jobs to the best of our ability it is imperative that we use the [appropriate tools](#appropriate-tools) for the work that we do.
+
+Even steps such as copy and pasting data, or pointing and clicking, are fraught with danger, and these risks should be minimised by using code to document and execute these processes instead. 
+
+**Why do it?**
+
+Using code brings numerous benefits. Computers are far quicker, more accurate, and far more reliable than humans in many of the tasks that we do. Writing out these instructions saves us significant amounts of time, particularly when code can be reused in future years, or even next week when one specific number in the source file suddenly changes. Code scripts also provide us with editable documentation for our production processes, saving the need for writing down information in extra documents. 
+
+Reliability is a huge benefit of the automation that RAP brings - when your data has to be amended a week before publication, it's a life saver to know that you can re-run your process in minutes, and reassuring to know that it will give you the result you want. You can run the same code 100 times, and be confident that it will follow the same steps in the same order every single time.
+
+
+**How to get started**
+
+See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on SQL and R to learn the skills required to translate your process into code. 
+
+There are also two sections below with examples of tidying data in SQL and R to get you started.
+
+Ensure that any last-minute fixes to the process are written in the code and not done with manual changes.
+
+---
+
+#### Producing tidy underlying data in SQL
+
+---
+
+To get started, here is a [SQL query](https://github.com/TomFranklin/sql-applied-data-tidying/blob/master/data_tidying_l_and_d.sql){target="_blank" rel="noopener noreferrer"} that you can run on your own machine and walks you through the basics of tidying a simple example dataset in SQL.
+
+---
+
+#### Tidying and processing data in R
+
+---
+
+[Here is a video](https://vimeo.com/33727555){target="_blank" rel="noopener noreferrer"} of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at [applied data tidying in R, by RStudio](https://www.youtube.com/watch?v=1ELALQlO-yM){target="_blank" rel="noopener noreferrer"}.
+
+
+Using the `%>%` pipe in R can be incredibly powerful, and make your code much easier to follow, as well as more efficient. If you aren't yet familiar with this, have a look at [this article](https://seananderson.ca/2014/09/13/dplyr-intro/){target="_blank" rel="noopener noreferrer"} that provides a useful beginners guide to piping and the kinds of functions you can use it for. The possibilities stretch about as far as your imagination, and if you have a function or task you want to do within a pipe, googling 'how do I do X in dplyr r' will usually start to point you in the right direction, alternatively you can [contact us](mailto:statistics.development@education.gov.uk), and we'll be happy to help you figure out how to do what you need.
+
+A quick example of how powerful this is is below. The pipe operator passes the outcome of each line of code onto the next, so you can complete multiple steps of data manipulation in one section of code instead of writing separate steps for each one. In this code, we:
+
+* start with my_data
+* calculate a percentage column using mutate
+* rename the percentage column we created to "newPercentageColumn", rename "number" to "numberColumn", and rename "population" to "totalPopulationColumn"
+* use the `clean_names()` function from the [janitor](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) package to ensure that columns have consistent naming standards
+* use the `remove_empty()` function from the janitor package to remove any rows and columns that are composed entirely of NA values
+* filter the dataframe to only include Regional geographic level data
+* order the dataframe by time period and region name
+
+
+```{r example, eval=FALSE, style="background-color: #f7fdfa"}
+processed_regional_data <- my_data %>% 
+  mutate(newPercentageColumn = (numberColumn / totalPopulationColumn) * 100) %>% 
+  rename(newPercentageColumn = percentageRate,
+         numberColumn = number,
+         totalPopulationColumn = population) %>% 
+  clean_names() %>% 
+  remove_empty() %>% 
+  filter(geographic_level == "Regional") %>% 
+  arrange(time_period, region_name)
+```
+
+
+[Helpful new functions](https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da){target="_blank" rel="noopener noreferrer"} in the tidyverse packages can help you to easily transform data from wide to long format (see tip 2 in the linked article for this, as it is often required for tidy data), as well as providing you with tools to allow you quickly and efficiently change the structure of your variables. 
+
+
+For further resources on learning R so that you're able to apply it to your everyday work, have a look at the [learning resources](../learning-development/learning-development.html) page.
+
+---
+
+### Use appropriate tools 
+
+---
+
+
+![](../images/good.svg)
+
+**What does this mean?**
+
+Using the recommended tools on our [learning](../learning-development/learning-support.html) page ([SQL](../learning-development/sql.html), [R](../learning-development/r.html) and [Git](../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.
+
+Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this [explanation of open-source](https://opensource.com/resources/what-open-source){target="_blank" rel="noopener noreferrer"}, as well as this guide to [working in an open-source way](https://opensource.com/open-source-way){target="_blank" rel="noopener noreferrer"}. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with git, and hosted in a publicly accessible repository. 
+
+**Why do it?**
+
+There are many reasons why we have recommended the tools that we have, the recommended tools are:
+
+- already in use at the department and easy for us to access
+- easy and **free** to learn
+- designed for the work that we do
+- used widely across data science in both the public and private sector
+- allow us to meet best practice when applying RAP to our processes
+
+
+**How to get started**
+
+Go to our [learning](../learning-development/learning-development.html) page to read more about the recommended tools for the jobs we do, as well as looking at the resources available there for how to [build capability](../learning-development/learning-support.html#general_resources) in them. Always feel free to contact us if you have any specific questions or would like help in understanding how to use those tools in your work.
+
+By following [our guidance](#version-controlled-final-code-scripts) in saving versions of code in an Azure DevOps, we will then be able to mirror those repositories in a publicly available GitHub area.
+
+---
+
+### Recyclable code for future use 
+
+---
+
+![](../images/great.svg)
+
+**What does this mean?**
+
+It's good practice when writing code to always write it with your future-self in mind. Alongside writing neat & well documented/commented code, this also means writing code that can be easily re-used in future, i.e. writing functions with *arguments* for variables that are likely to change (like year) rather than hard-coding them. 
+
+Even if you are working on a one-off project or piece of analysis, you might want to re-use chunks or sections, or others might want to run iterations in the future. This is also applicable to common questions your team receives (I.e. PQs and FOIs - can you create some re-usable code with interchangeable arguments for these?)
+
+We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a super short, simple piece of analysis, this might not be needed, however, it's always good to embed these best-practices into our default ways of working! 
+
+**Why do it?**
+
+One huge benefit that comes with using code in our processes, is that we can pick them up in future and reuse with minimum effort, saving us huge amounts of resource. To be able to do this, we need to be conscious of how we write our code, and write it in a way that makes it easy to use in future. 
+ 
+
+**How to get started**
+
+Review your code and consider the following:
+ 
+ - What steps might need re-editing or could become irrelevant?
+ - Can you move all variables that require manual input (e.g. table names, years) to be assigned at the top of the code, so it's easy to edit in one place with each iteration?
+ - Are there any fixed variables that are prone to changing such as geographic boundaries, that you could start preparing for changes now by making it easy to adapt in future?
+
+
+For example, if you refer to the year in your code a lot, consider replacing every instance with a named variable, which you only need to change once at the start of your code. In the example below, the year is set at the top of the code, and is used to define "prev_year", both of which are used further down the code to filter the data based on year.
+
+``` {r this_last_year, eval=FALSE, style="background-color: #f7fdfa"}
+
+this_year <- 2020
+prev_year <- this_year - 1
+
+data_filtered <- data %>% 
+  filter(year == this_year)
+
+data_filtered_last_year <- data %>% 
+  filter(year == prev_year)
+
+```
+
+---
+
+#### Standards for coding
+
+---
+
+Code can be written in many different ways, and in languages such as R, there are often many different functions and routes that you can take to get to the same end result. On top of that, there are even more possibilities for how you can format the code. This section will take you through some widely used standards for coding to help bring standardisation to this area and make it easier to both write and use our code.
