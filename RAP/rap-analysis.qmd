@@ -85,7 +85,7 @@ The diagram below highlights what RAP means for us, and the varying levels in wh
 
 ## How to assess your project
 
-<!-- Use DfT checklist to recerate one here!!! -->
+<!-- Use DfT checklist to recreate one here!!! -->
 
 ---
 
@@ -101,9 +101,8 @@ Teams can use data held on the Databricks platform to implement RAP principles l
 
 Preparing data is our first core RAP principle, which contains the following elements:
 
-<!-- * [All source data stored in a database](#all-source-data-stored-in-a-database)  -->
-<!-- * [Files meet data standards](#files-meet-data-standards) -->
-<!-- * [Sensible file and folder structure](#sensible-folder-and-file-structure) -->
+* [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly)
+* [Sensible file and folder structure](#sensible-folder-and-file-structure)
 
 Your team should store the internal raw data in a Microsoft SQL Server database or in the Databricks platform. These are similar to a Sharepoint area or a shared folder, but offer dedicated data storage areas and allow multiple users to use the same file at once. This means that you can also run code against a single source of data, further reducing the risk of error.
 
@@ -111,7 +110,7 @@ Where external data is used, the process of acquiring and storing the data shoul
 
 ---
 
-### Source data is acquired and stored sensibley
+### Source data is acquired and stored sensibly
 
 ---
 
@@ -277,18 +276,14 @@ Writing code is our second core RAP principle, and is made up of the following e
 
 * [Processing is done with code](#processing-is-done-with-code)
 * [Use appropriate tools](#use-appropriate-tools)
-<!-- * [Whole publication production scripts](#whole-publication-production-scripts) -->
-<!-- * [Dataset production scripts](#dataset-production-scripts) -->
+* [Whole pipeline run script](#whole-pipeline-run-script)
 * [Recyclable code for future use](#recyclable-code-for-future-use)
 * [Clean final code](#clean-final-code)
 * [Peer review of code within team](#peer-review-of-code-within-team)
 * [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
 * [Basic automated QA](#basic-automated-qa)
-* [Publication specific automated QA](#publication-specific-automated-qa)
-* [Automated summaries](#automated-summaries)
-* [Publication specific automated summaries](#publication-specific-automated-summaries)
-
-
+* [More specific/advanced automated QA/summaries](#more-specificadvanced-automated-qasummaries)
+* [Automated outputs using markdown/Quarto](#automated-outputs-sing-markdownquarto)
 
 ::: callout-tip
 The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html). 
@@ -822,10 +817,10 @@ For **written reports** and **presentations** we suggest you use quarto (more re
 
 Version control is our third core RAP principle, and is made up of the following elements:
 
-<!-- * [Documentation](#documentation) -->
-<!-- * [Version controlled final code scripts](#version-controlled-final-code-scripts) -->
-<!-- * [Use open source repositories](#use-open-source-repositories) -->
-<!-- * [Collaboratively develop code using Git](#collaboratively-develop-code-using-git) -->
+* [Documentation](#documentation)
+* [Version controlled final code scripts](#version-controlled-final-code-scripts)
+* [Code is stored in an appropriate repository](#code-is-stored-in-an-appropriate-repository)
+* [Collaboratively develop code using Git](#collaboratively-develop-code-using-git)
 
 Version control is just a way to track changes to files. Using proper version control can avoid lots of potential problems, including running old scripts by accident, losing files, or ending up with a folder full of documents with suffixes like "final_final_FINAL". It also makes it much easier for new people to pick up your processes. 
 
