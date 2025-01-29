@@ -1,3 +1,22 @@
 /*-- scss:defaults --*/
 
+// Import common variables
+@import 'styles';
+
 $sidebar-fg: #9c3815;
+$toc-color: #9c3815;
+
+// Customise link colours
+a {
+  color: #9c3815 !important; // Default link color
+  &:hover {
+    color: #274E09 !important; // Color when hovering over the link
+  }
+    
+  }
+
+/* Background color for inline code */
+$code-bg: #E9ECEF; 
+/* Font color for inline code */
+$code-color: #333333;  
+
