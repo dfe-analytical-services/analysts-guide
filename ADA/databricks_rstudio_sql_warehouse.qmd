@@ -47,7 +47,7 @@ Before you start, you must have:
 
 -   R and RStudio downloaded and installed
 
--   The `odbc` and `DBI` packages installed in RStudio
+-   The `odbc`, `DBI` and `usethis` packages installed in RStudio
 
 If you do not have access to Databricks or a SQL Warehouse within Databricks, you can request this using [a service request form](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=74bc3be81b212d504f999978b04bcb0b).
 
