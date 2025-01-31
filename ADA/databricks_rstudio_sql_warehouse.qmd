@@ -97,7 +97,7 @@ If you have previously set up an ODBC connection, or followed the [set up Databr
 
 ------------------------------------------------------------------------
 
-The `ODBC` package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.
+The `odbc` package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.
 
 To set the environment variables, call `usethis::edit_r_environ()`. You will then need to enter the following information:
 
@@ -179,7 +179,7 @@ It is very important that you immediately copy the access token that you are giv
 
 Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you. 
 
-To access the data, we will make use of the `ODBC` package. You can find documentation about this package [on the Posit website](https://solutions.posit.co/connections/db/r-packages/odbc/). You will also need to have the `DBI` package installed.  
+To access the data, we will make use of the `odbc` package. You can find documentation about this package [on the Posit website](https://solutions.posit.co/connections/db/r-packages/odbc/). You will also need to have the `DBI` package installed.  
 
 Include the following code in your R Script:
 
