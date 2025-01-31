@@ -102,9 +102,9 @@ The `odbc` package in RStudio allows you to connect to Databricks by creating an
 To set the environment variables, call `usethis::edit_r_environ()`. You will then need to enter the following information:
 
 ```         
-DATABRICKS_HOST=<databricks-host>
-DATABRICKS_SQL_PATH=<sql-warehouse-path>
-DATABRICKS_TOKEN=<personal-access-token> 
+DATABRICKS_HOST = "databricks-host"
+DATABRICKS_SQL_PATH = "sql-warehouse-path"
+DATABRICKS_TOKEN = "personal-access-token"
 ```
 
 The sections below describe where to find the information needed for each of the four environment variables.
@@ -149,7 +149,7 @@ The Databricks token is a personal access token.
 
 A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the SQL warehouse. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.
 
--   In Databricks, click on your email address in the top right corner, then click 'User settings'
+-   In Databricks, click on your user icon in the top right corner, then click 'Settings'
 
 -   Go to the 'Developer' tab in the side bar. Next to 'Access tokens', click the 'Manage' button
 
