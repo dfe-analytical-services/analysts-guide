@@ -107,13 +107,13 @@ DATABRICKS_SQL_PATH=<sql-warehouse-path>
 DATABRICKS_TOKEN=<personal-access-token> 
 ```
 
-Once you have entered the details, save and close your .Renviron file and restart R (Session > Restart R).
+The sections below describe where to find the information needed for each of the four environment variables.
 
 ::: callout-note
 Everyone in your team that wishes to connect to the SQL Warehouse in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.
 :::
 
-The sections below describe where to find the information needed for each of the four environment variables.
+Once you have entered the details, save and close your .Renviron file and restart R (Session > Restart R).
 
 ------------------------------------------------------------------------
 
