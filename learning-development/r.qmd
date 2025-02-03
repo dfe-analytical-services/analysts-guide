@@ -557,7 +557,7 @@ Caching allows you to save the outputs and then return them without having to ru
 
 ---
 
-There a lots of options for rendering tables in Quarto, RMarkdown and R Shiny, many of which are covered in [this blog about beautiful tables](https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/). Think about the user needs in the first instance and go from there - there's compelling arguments for each package mentioned.
+There are a lots of options for rendering tables in Quarto, RMarkdown and R Shiny, many of which are covered in [this blog about beautiful tables](https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/). Think about the user needs in the first instance and go from there - there's compelling arguments for each package mentioned.
 
 There's lots of examples to browse through from the [RStudio Table Contests](https://posit.co/blog/?search=table%2520contest) for inspiration.
 
