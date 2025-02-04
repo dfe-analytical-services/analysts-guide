@@ -37,7 +37,7 @@ If you like learning by watching then the [Posit Youtube channel](https://www.yo
 
 ---
 
-Our [template shiny app repository](https://github.com/dfe-analytical-services/shiny-template) is a useful starting point for all public facing dashboards in the department. Please see the [dashboard template section](#dfe-styling-and-the-dfe-r-shiny-template) for guidance on what the dashboard template includes and how to use it.
+Our [template Shiny app repository](https://github.com/dfe-analytical-services/shiny-template) is a useful starting point for all public facing dashboards in the department. Please see the [dashboard template section](#dfe-styling-and-the-dfe-r-shiny-template) for guidance on what the dashboard template includes and how to use it.
 
 [Shiny layouts](https://shiny.posit.co/r/layouts/) gives a high level idea of how to structure an R Shiny app. Alongside this it is recommended you take a look at [`bslib`](https://rstudio.github.io/bslib/index.html) which makes constructing beautiful user interfaces easy. This site is full of information on how to construct the page and how to work themeing.
 
@@ -85,7 +85,7 @@ For **interactive maps**, refer to [this section on interactive maps](../learnin
 
 For improving your **tables**, check out [this section on data tables](../learning-development/r.html#rendering-tables).
 
-For more advanced shiny knowledge it's worth taking a look at the guide to [engineering production-grade shiny apps](https://engineering-shiny.org/). It's worth reading and considering how much to adopt, remember that just because it sounds clever doesn't make it easy for other analysts to pick up. Read the [Don't sacrifice readability](https://engineering-shiny.org/need-for-optimization.html#dont-sacrifice-readability) section and then work from there.
+For more advanced Shiny knowledge it's worth taking a look at the guide to [engineering production-grade Shiny apps](https://engineering-shiny.org/). It's worth reading and considering how much to adopt, remember that just because it sounds clever doesn't make it easy for other analysts to pick up. Read the [Don't sacrifice readability](https://engineering-shiny.org/need-for-optimization.html#dont-sacrifice-readability) section and then work from there.
 
 ---
 

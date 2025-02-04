@@ -431,7 +431,7 @@ The [sf](https://r-spatial.github.io/sf/) package is usually needed for processi
 
 ---
 
-#### Example shiny app with map
+#### Example Shiny app with map
 
 ---
 
@@ -549,7 +549,7 @@ If the map layers on top are reactive (e.g. shaded polygons that change based on
 
 4. If all else fails, try the magical hammer of caching
 
-Caching allows you to save the outputs and then return them without having to run the process again. Caution and thorough testing is advised as this can get complicated and easily lead to bugs, though great rewards lurk beyond the risk. If you're interested in looking at this route, take a look at the [caching section of the mastering shiny guide](https://mastering-shiny.org/performance.html#caching). 
+Caching allows you to save the outputs and then return them without having to run the process again. Caution and thorough testing is advised as this can get complicated and easily lead to bugs, though great rewards lurk beyond the risk. If you're interested in looking at this route, take a look at the [caching section of the Mastering Shiny guide](https://mastering-shiny.org/performance.html#caching). 
 
 ---
 
