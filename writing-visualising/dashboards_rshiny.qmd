@@ -73,7 +73,7 @@ There are a lot of packages out there to use. Always worth checking the features
 
 For more **custom user interface**: 
 
-- have a read of [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/welcome.html) for how the web stuff works with shiny 
+- have a read of [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/welcome.html) for how the web stuff works with Shiny 
 - for easy theme customisation [Bootstrap Live Customiser](https://www.bootstrap-live-customizer.com/) 
 - For more context of the web bits, [HTML](https://www.w3schools.com/html/default.asp), [CSS](https://www.w3schools.com/css/default.asp) and [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_ver.asp) give a better understanding of what's under the hood. 
 
@@ -283,7 +283,7 @@ To set up a new app, send the above to [explore education statistics platforms t
 
 ---
 
-This checklist outlines the standard procedure for teams who are wishing to produce a public R shiny dashboard.
+This checklist outlines the standard procedure for teams who are wishing to produce a public R Shiny dashboard.
 
 Getting set up:
 
