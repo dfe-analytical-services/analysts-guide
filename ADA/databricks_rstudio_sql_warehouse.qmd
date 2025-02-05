@@ -69,7 +69,7 @@ Each of these steps is described in more detail in the sections below.
 
 ### Setting up the ODBC driver
 
-An ODBC driver is required for the `ODBC` package in R to work - you must install it before attempting to use the package to connect to your data. 
+An ODBC driver is required for the `odbc` package in R to work - you must install it before attempting to use the package to connect to your data. 
 
 ---
 
