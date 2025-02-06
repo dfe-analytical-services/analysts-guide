@@ -539,6 +539,7 @@ cookieconsent.run({
   <li><a href="#specifying-a-version-of-r-to-use" id="toc-specifying-a-version-of-r-to-use" class="nav-link" data-scroll-target="#specifying-a-version-of-r-to-use">Specifying a version of R to use</a></li>
   <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding">Rounding</a></li>
   <li><a href="#making-maps" id="toc-making-maps" class="nav-link" data-scroll-target="#making-maps">Making maps</a></li>
+  <li><a href="#rendering-tables" id="toc-rendering-tables" class="nav-link" data-scroll-target="#rendering-tables">Rendering tables</a></li>
   <li><a href="#passing-variables-as-arguments" id="toc-passing-variables-as-arguments" class="nav-link" data-scroll-target="#passing-variables-as-arguments">Passing variables as arguments</a></li>
   <li><a href="#reverse-additive-filters" id="toc-reverse-additive-filters" class="nav-link" data-scroll-target="#reverse-additive-filters">Reverse additive filters</a></li>
   <li><a href="#file-locations" id="toc-file-locations" class="nav-link" data-scroll-target="#file-locations">File locations</a></li>
@@ -1031,7 +1032,7 @@ Guidance and tips for using the programming language R
 <hr>
 </section>
 <section id="example-shiny-app-with-map" class="level4">
-<h4 class="anchored" data-anchor-id="example-shiny-app-with-map">Example shiny app with map</h4>
+<h4 class="anchored" data-anchor-id="example-shiny-app-with-map">Example Shiny app with map</h4>
 <hr>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shiny app ===================================================================</span></span>
@@ -1144,9 +1145,16 @@ Guidance and tips for using the programming language R
 <ol start="4" type="1">
 <li>If all else fails, try the magical hammer of caching</li>
 </ol>
-<p>Caching allows you to save the outputs and then return them without having to run the process again. Caution and thorough testing is advised as this can get complicated and easily lead to bugs, though great rewards lurk beyond the risk. If you’re interested in looking at this route, take a look at the <a href="https://mastering-shiny.org/performance.html#caching" target="_blank">caching section of the mastering shiny guide</a>.</p>
+<p>Caching allows you to save the outputs and then return them without having to run the process again. Caution and thorough testing is advised as this can get complicated and easily lead to bugs, though great rewards lurk beyond the risk. If you’re interested in looking at this route, take a look at the <a href="https://mastering-shiny.org/performance.html#caching" target="_blank">caching section of the Mastering Shiny guide</a>.</p>
 <hr>
 </section>
+</section>
+<section id="rendering-tables" class="level3">
+<h3 class="anchored" data-anchor-id="rendering-tables">Rendering tables</h3>
+<hr>
+<p>There are a lots of options for rendering tables in Quarto, RMarkdown and R Shiny, many of which are covered in <a href="https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/" target="_blank">this blog about beautiful tables</a>. Think about the user needs in the first instance and go from there - there’s compelling arguments for each package mentioned.</p>
+<p>There’s lots of examples to browse through from the <a href="https://posit.co/blog/?search=table%2520contest" target="_blank">RStudio Table Contests</a> for inspiration.</p>
+<hr>
 </section>
 <section id="passing-variables-as-arguments" class="level3">
 <h3 class="anchored" data-anchor-id="passing-variables-as-arguments">Passing variables as arguments</h3>
