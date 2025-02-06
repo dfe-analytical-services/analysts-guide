@@ -75,7 +75,7 @@ For more **custom user interface**:
 
 - have a read of [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/welcome.html) for how the web stuff works with Shiny 
 - for easy theme customisation [Bootstrap Live Customiser](https://www.bootstrap-live-customizer.com/) 
-- For more context of the web bits, [HTML](https://www.w3schools.com/html/default.asp), [CSS](https://www.w3schools.com/css/default.asp) and [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_ver.asp) give a better understanding of what's under the hood. 
+- for more context of the web bits, [HTML](https://www.w3schools.com/html/default.asp), [CSS](https://www.w3schools.com/css/default.asp) and [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_ver.asp) give a better understanding of what's under the hood. 
 
 :::{.callout-caution}
 HTML, CSS and Bootstrap are a slippery slope into web development. Remember that if you're working with Shiny then good analysis comes first!
