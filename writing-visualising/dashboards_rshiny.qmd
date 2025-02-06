@@ -96,7 +96,7 @@ For more advanced Shiny knowledge it's worth taking a look at the guide to [engi
 You should seek to make use of the community that is already out there, see what others are doing, ask them questions and for advice on any decisions or problems that you're facing, and share what it is that you're doing.
 
 - The [Statistics Development Team](mailto:statistics.development@education.gov.uk) are experienced with R Shiny and happy to help or offer advice;
-- the [DfE R community](https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9) on Teams is a place where you can post things you've learned or to ask for help;
+- The [DfE R community](https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9) on Teams is a place where you can post things you've learned or to ask for help;
 - Going beyond DfE there's a wealth of resources and communities online, including [Stack Overflow](https://stackoverflow.com/) discussions, cross government slack channels (e.g. #R and #Shiny on govdatascience.slack.com) and even tweets about [R Shiny on twitter](https://twitter.com/search?q=rshiny&src=spelling_expansion_revert_click).
 
 ---
