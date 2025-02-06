@@ -20,7 +20,7 @@ If you need a live version of the dashboard with the unpublished data for pre-re
 * Demo the chart in R-Studio
 * Create a copy of the chart repository on Azure DevOps, deploy this to rsconnect and use the rsconnect link as the embedded URL prior to publication (note this will need updating to the public ShinyApps link before the publication goes live).
 
-We are currently putting in place a case to provide an internal shiny server platform, which will allow greater control of security around our data and allow draft Shiny applications to use unpublished data for internal use.
+We are currently putting in place a case to provide an internal Shiny server platform, which will allow greater control of security around our data and allow draft Shiny applications to use unpublished data for internal use.
 
 ---
 
@@ -72,7 +72,7 @@ Other elements such as tables may also be possible if there's a clear use case f
 
 ---
 
-Our [template tiny shiny app repository](https://github.com/dfe-analytical-services/dfe-tiny-shiny) should be used a starting point for all embedded shiny charts.
+Our [template tiny shiny app repository](https://github.com/dfe-analytical-services/dfe-tiny-shiny) should be used a starting point for all embedded Shiny charts.
 
 To get an app set-up for use with EES, you'll need the [explore education statistics platforms](mailto:explore.statistics@education.gov.uk) team to create a repo for the app within the [DfE Analytical Services area on GitHub](https://github.com/dfe-analytical-services/dfe-tiny-shiny).
 
@@ -117,7 +117,7 @@ Many of the same principles that apply to creating a full R Shiny dashboard appl
 
 ---
 
-Example code for producing an embeddable shiny chart is given in the [template tiny shiny app repository](https://github.com/dfe-analytical-services/dfe-tiny-shiny/server.R). The following recommendations should be followed in adapting this code:
+Example code for producing an embeddable Shiny chart is given in the [template tiny shiny app repository](https://github.com/dfe-analytical-services/dfe-tiny-shiny/server.R). The following recommendations should be followed in adapting this code:
 
 * Figures should be produced using plotly/ggplot2
 * Figure lengths and heights should be in the range 6-10cm
