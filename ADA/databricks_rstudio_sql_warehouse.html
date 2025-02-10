@@ -587,7 +587,7 @@ Note
 <li><p>Access to the Databricks platform</p></li>
 <li><p>Access to data in a SQL Warehouse on Databricks</p></li>
 <li><p>R and RStudio downloaded and installed</p></li>
-<li><p>The <code>ODBC</code> and <code>DBI</code> packages installed in RStudio</p></li>
+<li><p>The <code>odbc</code>, <code>DBI</code> and <code>usethis</code> packages installed in RStudio</p></li>
 </ul>
 <p>If you do not have access to Databricks or a SQL Warehouse within Databricks, you can request this using <a href="https://dfe.service-now.com/serviceportal?id=sc_cat_item&amp;sys_id=74bc3be81b212d504f999978b04bcb0b" target="_blank">a service request form</a>.</p>
 <p>If you do not have R or RStudio, you can find them both in the Software Centre. Note that you need both R <strong>and</strong> RStudio installed.</p>
@@ -605,7 +605,7 @@ Note
 <hr>
 <section id="setting-up-the-odbc-driver" class="level3">
 <h3 class="anchored" data-anchor-id="setting-up-the-odbc-driver">Setting up the ODBC driver</h3>
-<p>An ODBC driver is required for the <code>ODBC</code> package in R to work - you must install it before attempting to use the package to connect to your data.</p>
+<p>An ODBC driver is required for the <code>odbc</code> package in R to work - you must install it before attempting to use the package to connect to your data.</p>
 <hr>
 <section id="install-the-simba-spark-odbc-driver-from-the-software-centre" class="level4">
 <h4 class="anchored" data-anchor-id="install-the-simba-spark-odbc-driver-from-the-software-centre">Install the Simba Spark ODBC driver from the Software Centre</h4>
@@ -639,12 +639,12 @@ Important
 <section id="establishing-an-rstudio-connection-using-environment-variables" class="level3">
 <h3 class="anchored" data-anchor-id="establishing-an-rstudio-connection-using-environment-variables">Establishing an RStudio connection using environment variables</h3>
 <hr>
-<p>The <code>ODBC</code> package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.</p>
+<p>The <code>odbc</code> package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.</p>
 <p>To set the environment variables, call <code>usethis::edit_r_environ()</code>. You will then need to enter the following information:</p>
-<pre><code>DATABRICKS_HOST=&lt;databricks-host&gt;
-DATABRICKS_SQL_PATH=&lt;sql-warehouse-path&gt;
-DATABRICKS_TOKEN=&lt;personal-access-token&gt; </code></pre>
-<p>Once you have entered the details, save and close your .Renviron file and restart R (Session &gt; Restart R).</p>
+<pre><code>DATABRICKS_HOST = "databricks-host"
+DATABRICKS_SQL_PATH = "sql-warehouse-path"
+DATABRICKS_TOKEN = "personal-access-token"</code></pre>
+<p>The sections below describe where to find the information needed for each of the four environment variables.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -658,7 +658,7 @@ Note
 <p>Everyone in your team that wishes to connect to the SQL Warehouse in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.</p>
 </div>
 </div>
-<p>The sections below describe where to find the information needed for each of the four environment variables.</p>
+<p>Once you have entered the details, save and close your .Renviron file and restart R (Session &gt; Restart R).</p>
 <hr>
 <section id="databricks-host" class="level4">
 <h4 class="anchored" data-anchor-id="databricks-host">Databricks host</h4>
@@ -685,7 +685,7 @@ Note
 <p>The Databricks token is a personal access token.</p>
 <p>A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the SQL warehouse. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.</p>
 <ul>
-<li><p>In Databricks, click on your email address in the top right corner, then click ‘User settings’</p></li>
+<li><p>In Databricks, click on your user icon in the top right corner, then click ‘Settings’</p></li>
 <li><p>Go to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button</p></li>
 </ul>
 <div data-align="center">
@@ -731,7 +731,7 @@ Warning
 <h3 class="anchored" data-anchor-id="pulling-data-into-rstudio-from-databricks">Pulling data into RStudio from Databricks</h3>
 <hr>
 <p>Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you.</p>
-<p>To access the data, we will make use of the <code>ODBC</code> package. You can find documentation about this package <a href="https://solutions.posit.co/connections/db/r-packages/odbc/" target="_blank">on the Posit website</a>. You will also need to have the <code>DBI</code> package installed.</p>
+<p>To access the data, we will make use of the <code>odbc</code> package. You can find documentation about this package <a href="https://solutions.posit.co/connections/db/r-packages/odbc/" target="_blank">on the Posit website</a>. You will also need to have the <code>DBI</code> package installed.</p>
 <p>Include the following code in your R Script:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
