@@ -9,19 +9,94 @@ title: "Creating R Shiny dashboards"
 
 ## Learning R Shiny
 
-Shiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage, embed them in [R Markdown documents](http://rmarkdown.rstudio.com/) or build [dashboards](http://rstudio.github.io/shinydashboard/). You can also extend your Shiny apps with [CSS themes](http://rstudio.github.io/shinythemes/), [htmlwidgets](http://www.htmlwidgets.org/), and [JavaScript actions](https://github.com/daattali/shinyjs/blob/master/README.md).
+Shiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage, embed them in [R Markdown documents](http://rmarkdown.rstudio.com/) or build dashboards. You can also extend your Shiny apps with [CSS themes](http://rstudio.github.io/shinythemes/), [htmlwidgets](http://www.htmlwidgets.org/), and [JavaScript actions](https://github.com/daattali/shinyjs/blob/master/README.md).
 
 The guidance on this page assumes you have prior knowledge of R, if you are new to R, then take a look at our [R resources page](../learning-development/r.html) to get started.
 
+For some initial inspiration, check out the [Shiny gallery](https://shiny.posit.co/r/gallery/).
+
+:::{.callout-tip}
+Just because something looks clever, doesn't mean you should do it. Don't over-complicate your user interface or the underlying code. Your priorities should be making something that meets user's needs, whilst also creating something that's manageable for whoever follows you in maintaining your dashboard.
+:::
+
+---
+
+### Getting started with Shiny
+
+---
+
 There are a lot of resources already available to support you when working with R Shiny, if you're new, then this [blog post](https://www.r-bloggers.com/2021/03/a-gentle-introduction-to-r-shiny/) provides a gentle introduction.
 
-Our [template shiny app repository](https://github.com/dfe-analytical-services/shiny-template) is a useful starting point for all public facing dashboards in the department. Please see the [dashboard template section](#dfe-dashboard-template) for guidance on what the dashboard template includes and how to use it.
+If you like learning by reading / doing then the [Posit Shiny-specific site](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html) has lots of resources that you can  work through. Likewise [Introduction section of Mastering Shiny](https://mastering-shiny.org/basic-intro.html) is also a helpful resources.
 
-For more advanced shiny knowledge it's worth taking a look at the guide to [engineering production-grade shiny apps](https://engineering-shiny.org/).
+If you like learning by watching then the [Posit Youtube channel](https://www.youtube.com/@PositPBC/videos) is also full of good resources. 
 
-Finally, you should seek to make use of the community that is already out there, see what others are doing, ask them questions and for advice on any decisions or problems that you're facing, and share what it is that you're doing.
-- The Statistics Development Team are experienced with R Shiny and happy to help or offer advice, and there is the [DfE R community](https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9) on teams.
-- There is a bank of [tips and tricks](https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.wiki/tab::d9f50997-7180-407d-baf9-47f9ec9d54a3?context=%7B%22subEntityId%22%3A%22%7B%5C%22pageId%5C%22%3A21%2C%5C%22origin%5C%22%3A2%7D%22%2C%22channelId%22%3A%2219%3A311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype%22%7D&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9){target="_blank" rel="noopener noreferrer"} stored in the DfE R teams area too.
+---
+
+### Creating a user interface
+
+---
+
+Our [template Shiny app repository](https://github.com/dfe-analytical-services/shiny-template) is a useful starting point for all public facing dashboards in the department. Please see the [dashboard template section](#dfe-styling-and-the-dfe-r-shiny-template) for guidance on what the dashboard template includes and how to use it.
+
+[Shiny layouts](https://shiny.posit.co/r/layouts/) gives a high level idea of how to structure an R Shiny app. Alongside this it is recommended you take a look at [`bslib`](https://rstudio.github.io/bslib/index.html) which makes constructing beautiful user interfaces easy. This site is full of information on how to construct the page and how to work themeing.
+
+:::{.callout-warning}
+Previously a lot of dashboards used `shinydashboard` - if starting afresh we **recommend `bslib` instead**. `shinydashboard` is uses an old version of bootstrap and has not been updated in many years. It shouldn't immediately break but a risk nonetheless.
+:::
+
+---
+
+### R Shiny Best Practice
+
+---
+
+Some key things you should include when building an app:
+
+- Your code should follow the [DfE Quality Assurance Framework](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx) 
+- You need to [**Accessibility Test**](#accessibility-testing-in-r-shiny) regardless of internal or external deployment
+- Your code should be [tested](#code-testing)
+- Your file structure should be [well-organised](https://mastering-shiny.org/best-practices.html#code-organization)
+- You should use [dependency management](https://mastering-shiny.org/best-practices.html#dependency-management)
+- If using [databases with Shiny](#databases-with-shiny), you should use the pool package. You should also be conscious of SQL Injection which is where code could be maliciously used to attack a database backend - see [SQL injection prevention](https://shiny.posit.co/r/articles/build/sql-injections/) for best practice
+- [Functions with Shiny](https://mastering-shiny.org/scaling-functions.html) make your life much easier
+
+---
+
+### Leveling up your Shiny
+
+---
+
+[Mastering Shiny](https://mastering-shiny.org/index.html) is a really useful read, especially the [Best Practice](https://mastering-shiny.org/scaling-intro.html) section.
+
+There are a lot of packages out there to use. Always worth checking the features they bring are accessible and that they are from reliable sources i.e. from CRAN / somewhere you trust.
+
+For more **custom user interface**: 
+
+- have a read of [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/welcome.html) for how the web stuff works with Shiny 
+- for easy theme customisation [Bootstrap Live Customiser](https://www.bootstrap-live-customizer.com/) 
+- for more context of the web bits, [HTML](https://www.w3schools.com/html/default.asp), [CSS](https://www.w3schools.com/css/default.asp) and [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_ver.asp) give a better understanding of what's under the hood. 
+
+:::{.callout-caution}
+HTML, CSS and Bootstrap are a slippery slope into web development. Remember that if you're working with Shiny then good analysis comes first!
+:::
+
+For **interactive maps**, refer to [this section on interactive maps](../learning-development/r.html#example-shiny-app-with-map).
+
+For improving your **tables**, check out [this section on data tables](../learning-development/r.html#rendering-tables).
+
+For more advanced Shiny knowledge it's worth taking a look at the guide to [engineering production-grade Shiny apps](https://engineering-shiny.org/). It's worth reading and considering how much to adopt, remember that just because it sounds clever doesn't make it easy for other analysts to pick up. Read the [Don't sacrifice readability](https://engineering-shiny.org/need-for-optimization.html#dont-sacrifice-readability) section and then work from there.
+
+---
+
+### Support within the department
+
+---
+
+You should seek to make use of the community that is already out there, see what others are doing, ask them questions and for advice on any decisions or problems that you're facing, and share what it is that you're doing.
+
+- The [Statistics Development Team](mailto:statistics.development@education.gov.uk) are experienced with R Shiny and happy to help or offer advice;
+- The [DfE R community](https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9) on Teams is a place where you can post things you've learned or to ask for help;
 - Going beyond DfE there's a wealth of resources and communities online, including [Stack Overflow](https://stackoverflow.com/) discussions, cross government slack channels (e.g. #R and #Shiny on govdatascience.slack.com) and even tweets about [R Shiny on twitter](https://twitter.com/search?q=rshiny&src=spelling_expansion_revert_click).
 
 ---
@@ -32,9 +107,11 @@ Our [template shiny app repository](https://github.com/dfe-analytical-services/s
 
 ---
 
-## What's in the template
+### What's in the template
 
-The template provides code for a basic interactive dashboard, with an example line chart using drop-downs for education level and geographic levels. It also includes an example accessibility statement (this is a requirement for all public dashboards and must be filled in, see the [Accessibility](#accessibility) and [Accessibility testing](#accessibility-testing) sections earlier in this guidance), and a 'Support and feedback' page with suggested contact information and links.
+---
+
+The template provides code for a basic interactive dashboard, with an example line chart using drop-downs for education level and geographic levels. It also includes an example accessibility statement (this is a requirement for all public dashboards and must be filled in, see the [Accessibility](../learning-development/accessibility.html) and [Accessibility testing](#accessibility-testing-in-r-shiny) sections), and a 'Support and feedback' page with suggested contact information and links.
 
 View the [latest version of the template dashboard](https://department-for-education.shinyapps.io/dfe-shiny-template/).
 
@@ -206,7 +283,7 @@ To set up a new app, send the above to [explore education statistics platforms t
 
 ---
 
-This checklist outlines the standard procedure for teams who are wishing to produce a public R shiny dashboard.
+This checklist outlines the standard procedure for teams who are wishing to produce a public R Shiny dashboard.
 
 Getting set up:
 
@@ -444,6 +521,74 @@ To publish the app, you'll need to set up a pipeline in Azure DevOps, guidance f
 Access to applications on the Posit Connect servers is locked down by default, so once the pipeline is set up and you've deployed the app you'll need to request for its access to be opened up by using an Posit Connect request on [ServiceNow](https://dfe.service-now.com/ithelpcentre?id=sc_cat_item&table=sc_cat_item&sys_id=c4304bf31b2b4690b192ec69b04bcb3e&searchTerm=posit%20connect).
 
 If you're running the app from an internal database, you'll need to contact the database owner to set up a local login, and then store those as variables against your specific app in rsconnect. You can raise a request to do this via [ServiceNow](https://dfe.service-now.com/ithelpcentre?id=sc_cat_item&table=sc_cat_item&sys_id=c4304bf31b2b4690b192ec69b04bcb3e&searchTerm=posit%20connect) and selecting 'Change app variables'.
+
+---
+
+### Databases with Shiny
+
+---
+
+Currently only internal dashboards can have connectivity to databases. Check out [this data article from Posit](https://solutions.posit.co/connections/db/best-practices/) on best practice - in particular you should look to use the [`pool`](https://rstudio.github.io/pool/) package for database connections and be careful of [SQL Injection](https://solutions.posit.co/connections/db/best-practices/run-queries-safely/).
+
+---
+
+### When to load data
+
+---
+
+On Posit Connect (internal dashboards only), a process is started up when a user opens your application. The process loads everything in your global environment (pre-server). These environment variables are shared between users with up to 20 users sharing a process by default. This can massively save on computation time.
+
+However, it might be more efficient for some of your data loading to be moved onto the server side. For example, let's say we have a dashboard showing school-level information. Collecting into memory data for every school is inefficient if a user is only looking for one. In this instance, we might set up a lazy connection to a database and only load the data when the user requests it on the server side. 
+
+In the example below, we demonstrate two examples. `unlazy_data` is all being used so we load it into the environment to be shared between multiple users. `lazy_school_table` is being used by one school at a time so is probably more efficient to load in only one school than all schools.
+
+```{r eval = FALSE}
+# NOT RUN
+if(FALSE){
+  # create a pool connection
+  connection <- pool::dbPool(...)
+  
+  # unlazy data collected into memory BEFORE server
+  unlazy_data <- dplyr::tbl(connection, DBI::Id(...)) |>
+    collect()
+  
+  # create a lazy connection to a database
+  lazy_school_table <- dplyr::tbl(connection, DBI::Id(...))
+  
+  # tell shiny to close the connection when the app stops
+  shiny::onStop(function() poolClose(connection))
+  
+  # an example ui to select a school
+  ui <- shiny::fluidPage(
+    shiny::selectInput(
+      inputId = "school"
+    ),
+    shiny::tableOutput("all_schools"),
+    shiny::tableOutput("one_school")
+  )
+  
+  # data collected into memory ON SERVER SIDE
+  server <- function(input, output, session){
+    school_level_data <- reactive({
+      lazy_school_table |>
+        filter(school_name == !!input$school) |>
+        collect()
+    })
+    
+    # table showing all schools
+    output$all_schools <- renderTable({
+      unlazy_data
+    })
+    
+    # table showing filtered school
+    output$one_school <- renderTable({
+      school_level_data()
+    })
+  }
+}
+```
+
+
 
 ---
 
