@@ -154,6 +154,35 @@ This is surprisingly neat to do. Let's say you wanted to roll back to version 1.
 
 ---
 
+## Migrating from renv to pak
+
+---
+
+[pak]() is a package being developed by POSIT to offer a new approach to installing packages that is faster and ... . It offers most of the same features as renv. As it is developed by the same people as renv (POSIT), we assume that in a few years it may overtake renv as the preferred dependency management package.
+
+If you want to migrate over, then the steps are as follows:
+
+1. Remove renv from your repo
+  a. Delete the renv folder
+  b. Delete the renv.lock file
+  c. Remove any renv lines from your .Rprofile
+
+2. Install pak - `install.packages("pak")`
+
+3. Create a new pak lockfile - `pak::lockfile_create()`
+
+And that's it! 
+
+### Translation renv to pak
+
+pak has rough equivalents to your common renv functions, the most common ones you'll need are:
+
+| action | renv | pak |
+|--------|------|-----|
+| create lockfile | renv::init() | pak::lockfile_create() |
+| install packages from lockfile | renv::restore() | pak::lockfile_install |
+| update lockfile | renv::snapshot() | pak::lockfile_update() |
+
 ##  Quick reference lookup
 
 
