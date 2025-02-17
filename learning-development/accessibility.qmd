@@ -6,7 +6,7 @@ title: Accessibility
 
 ---
 
-## Accessibility in DfE
+## Accessibility in DfE 
 
 Everyone has a part to play in ensuring that the content and digital services the DfE provides to its customers and colleagues are accessible. Everyone should have an understanding of their responsibilities to comply with the [Public Sector Bodies Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/contents/made) and the [Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/). Moreover, everyone should also understand the important and critical difference this makes to the everyday lives of millions of people.
 
