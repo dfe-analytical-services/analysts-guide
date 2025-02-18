@@ -1,0 +1,22 @@
+name: Create card from new issues
+on:
+  issues:
+    types: [opened]
+
+jobs:
+ create_trello_card_job:
+    runs-on: ubuntu-latest
+    name: Create Trello Card
+    steps:
+      - name: Call trello-github-actions
+        uses: Yleisradio/github-action-trello-integration@v1.1.0
+        with:
+          action: issue_opened_create_card
+        env:
+          TRELLO_API_KEY: ${{ secrets.TRELLO_API_KEY }}
+          TRELLO_API_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
+          TRELLO_BOARD_ID: '63ce4ffc2941150191e631f6'
+          # Backlog list ID
+          TRELLO_LIST_ID: '63ce5049694ed200b8685f41'
+
+
