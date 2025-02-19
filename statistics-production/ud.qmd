@@ -1155,6 +1155,8 @@ group above with education phase. Ideally, teams should report these as two sepa
 filters as follows (with establishment_type_group being listed as the 
 filter_grouping_column of education_phase in the meta data):
 
+::: {.table-responsive}
+
 | establishment_type_group | education_phase       | pupil_count |
 |--------------------------|-----------------------|-------------|
 | All state funded         | Primary               | 600         |
@@ -1163,8 +1165,12 @@ filter_grouping_column of education_phase in the meta data):
 | All schools              | Special               | 400         |
 | All schools              | All education phases  | 2000        |
 
+:::
+
 If a single field is necessary, the following is the fall back option to report as 
 a single category under phase_type_grouping:
+
+::: {.table-responsive}
 
 | phase_type_grouping                |
 |------------------------------------|
@@ -1173,6 +1179,8 @@ a single category under phase_type_grouping:
 | State-funded alternative provision |
 | Special                            |
 | All schools                        |
+
+:::
 
 ---
 
