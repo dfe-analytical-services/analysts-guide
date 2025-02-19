@@ -15,3 +15,6 @@ jobs:
           api-token: '${{ secrets.TRELLO_API_TOKEN }}'
           list-id: '63ce5064a4859b0387f46b9b'
           title-format: 'Analysts Guide PR: ${title}'
+          label-ids: |
+            '67b5ffd12ef51e02d66ad599'
+            '63ce4ffcbfa825468a8e2a69'
