@@ -1140,7 +1140,7 @@ Education phase should be listed under the column name **education_phase** where
 | Primary | PS |
 | Secondary | SS |
 | Special | SP |
-| Total | |
+| All education phases | |
 
 :::
 
