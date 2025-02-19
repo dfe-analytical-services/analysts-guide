@@ -47,9 +47,9 @@ A compute resource allows you to run your code using cloud computing power inste
 
 ------------------------------------------------------------------------
 
-A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python). You can create your own personal cluster within the Databricks interface.
+A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python) in the Databricks environment and can be set up to connect to RStudio as well. You can create your own personal cluster within the Databricks interface.
 
-When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the [Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/). Generally speaking a higher DBR version number will provide more functionality.
+When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on a personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the [Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/). Generally speaking a higher DBR version number will provide more functionality.
 
 Compute resources, including personal clusters, have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.
 
