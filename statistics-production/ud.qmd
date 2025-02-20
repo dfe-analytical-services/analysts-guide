@@ -1027,7 +1027,7 @@ on ethnicity statistics:
 
 ---
 
-#### Reporting on broad ethnic minorities catageories (e.g. BAME)
+#### Reporting on broad ethnic minority catageories (e.g. BAME)
 
 ---
 
@@ -1059,7 +1059,7 @@ Statistics producers should avoid where possible the practice of reporting aggre
 
 Where there is a reasonable need to publish or report statistics for a full aggregation of ethnic minorities (such as reporting on existing historical targets), official guidance is as follows:
 
-> Use "ethnic minorities" to refer to all ethnic groups except the white British group. This term includes white minorities, such as Gypsy, Roma and Irish Traveller groups. For comparisons with the white group as a whole, use ‘ethnic minorities (excluding White minorities)’.
+> Use "ethnic minorities" to refer to all ethnic groups except the white British group. This term includes white minorities, such as Gypsy, Roma and Irish Traveller groups. For comparisons with the white group as a whole, use "ethnic minorities (excluding White minorities)".
 
 ---
 
