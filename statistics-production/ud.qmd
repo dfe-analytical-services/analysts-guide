@@ -831,12 +831,13 @@ Special educational needs data uploaded to explore education statistics service 
 
 Top level fields are provided by **sen_status** and **sen_provision** as follows:
 
-| sen_status | sen_provision |
-| ---------- | --------------|
-| Any special educational need | Education, health and care plan |
-|                              | SEN support / SEN without an EHC plan |
-| No identified special educational need | No SEN provision |
-| Total      | Total |
+| sen_status                             | sen_provision                         |
+| -------------------------------------- | ------------------------------------- |
+| Any special educational need           | All SEN provision                     |
+|                                        | Education, health and care plan       |
+|                                        | SEN support / SEN without an EHC plan |
+| No identified special educational need | No SEN provision                      |
+| All pupils                             | All pupils                            |
 
 If both are provided, then **sen_status** should be listed as the filter_grouping_column of **sen_provision**.
 
@@ -984,38 +985,49 @@ Ethnicity breakdowns should be presented within the standard field names in any 
 The GSS publish standards on how to collect ethnicity data based on research conducted for the UK Census. The current guidelines (shown below) were developed as part of the 2011 Census and were unchanged in the 2021 census. We aim to follow as closely as reasonable to the GSS standards and guidance. Note the use of spaces around forward-slashes, which allows us to meet accessibility standards (in particular for the use of screen readers) as well as improving automated wrapping in text and value boxes.
 
 
-| ethnicity_major |    ethnicity_minor                                  |
-|------------|------------------------------------------------|
-| **White** |    English / Welsh / Scottish / Northern Irish / British    |
-|           |    Irish                                            |
-|           |    Gypsy or Irish Traveller                         |
-|           |    Any other White background                       |
-| **Mixed / Multiple ethnic groups** |    White and Black Caribbean |
-|           |    White and Black African                          |
-|           |    White and Asian                                  |
-|           |    Any other Mixed / Multiple ethnic background       |
-| **Asian / Asian British** |    Indian                             |
-|           |    Pakistani                                        |
-|           |    Bangladeshi                                      |
-|           |    Chinese                                          |
-|           |    Any other Asian background                       |
-| **Black / African / Caribbean / Black British** |    African          |
-|           |    Caribbean                       |
-|           |    Any other Black / African / Caribbean background                       |
-| **Other ethnic group** |    Arab                       |
-|           |    Any other ethnic group                       |
-| **Unknown** | Unknown |
+| ethnicity_major                    |    ethnicity_minor                                    |
+|------------------------------------|-------------------------------------------------------|
+| **White**                          | All white                                             |
+|                                    | English / Welsh / Scottish / Northern Irish / British |
+|                                    | Irish                                              |
+|                                    | Gypsy or Irish Traveller                           |
+|                                    | Any other White background                         |
+| **Mixed / Multiple ethnic groups** | All mixed / multiple ethnic groups |
+|                                    | White and Black Caribbean       |
+|                                    | White and Black African            |
+|                                    | White and Asian                                          |
+|                                    | Any other Mixed / Multiple ethnic background             |
+| **Asian / Asian British**          | All Asian / Asian British                   |
+|                                    | Indian                             |
+|                                    | Pakistani                                        |
+|                                    | Bangladeshi                                      |
+|                                    | Chinese                                          |
+|                                    | Any other Asian background                       |
+| **Black / African / Caribbean / Black British** | All Black / African / Caribbean / Black British |
+|                                    |    African          |
+|                                    | Caribbean                       |
+|                                    | Any other Black / African / Caribbean background                       |
+| **Other ethnic group**             | All other ethnic groups |
+|                                    | Arab                       |
+|                                    | Any other ethnic group                       |
+| **Unknown**                        | Unknown |
+| **All ethnic groups**              | All ethnic groups |
+| **Total**                          | Total |
 
-Note that these standards are written from the perspective of creating survey questions, i.e. the data collection phase. Where teams are trying to aggregate existing categories up to match the GSS guidance, careful consideration of how and where differing systems may or may not match with the guidance is necessary.
+Note that these standards are written from the perspective of creating survey questions, 
+i.e. the data collection phase. Where teams are trying to aggregate existing categories 
+to match the GSS guidance, careful consideration of how and where differing systems may 
+or may not match with the guidance is necessary.
 
-We recommend two alternative methods of ordering the above ethnic groups when reporting on ethnicity statistics:
+We recommend two alternative methods of ordering the above ethnic groups when reporting 
+on ethnicity statistics:
 
 *	Alphabetical: use in tables and when listing ethnic groups (with ‘Other ethnic group’ and sometimes ‘Unknown’ as a final category)
 *	In expected order of size (with largest first): useful in charts and visualisations as it makes data and patterns easier to read
 
 ---
 
-#### Reporting on broad ethnic minorities catageories (e.g. BAME)
+#### Reporting on broad ethnic minority categories (e.g. BAME)
 
 ---
 
@@ -1047,7 +1059,7 @@ Statistics producers should avoid where possible the practice of reporting aggre
 
 Where there is a reasonable need to publish or report statistics for a full aggregation of ethnic minorities (such as reporting on existing historical targets), official guidance is as follows:
 
-> Use ‘ethnic minorities’ to refer to all ethnic groups except the white British group. This term includes white minorities, such as Gypsy, Roma and Irish Traveller groups. For comparisons with the white group as a whole, use ‘ethnic minorities (excluding White minorities)’.
+> Use "ethnic minorities" to refer to all ethnic groups except the white British group. This term includes white minorities, such as Gypsy, Roma and Irish Traveller groups. For comparisons with the white group as a whole, use "ethnic minorities (excluding White minorities)".
 
 ---
 
@@ -1070,7 +1082,7 @@ A standardised set of establishment type fields has been developed, largely base
 | Independent |
 | Local authority maintained |
 | Non-maintained |
-| Total |
+| All schools |
 
 :::
 
@@ -1128,7 +1140,45 @@ Education phase should be listed under the column name **education_phase** where
 | Primary | PS |
 | Secondary | SS |
 | Special | SP |
-| Total | |
+| All education phases | |
+
+:::
+
+---
+
+#### Combining education phase and establishment type group
+
+---
+
+Many teams report a hybrid filter which combines a form of the establishment type 
+group above with education phase. Ideally, teams should report these as two separate 
+filters as follows (with establishment_type_group being listed as the 
+filter_grouping_column of education_phase in the meta data):
+
+::: {.table-responsive}
+
+| establishment_type_group | education_phase       | pupil_count |
+|--------------------------|-----------------------|-------------|
+| All state funded         | Primary               | 600         |
+| All state funded         | Secondary             | 800         |
+| All state funded         | Alternative provision | 200         |
+| All schools              | Special               | 400         |
+| All schools              | All education phases  | 2000        |
+
+:::
+
+If a single field is necessary, the following is the fall back option to report as 
+a single category under phase_type_grouping:
+
+::: {.table-responsive}
+
+| phase_type_grouping                |
+|------------------------------------|
+| State-funded primary               |
+| State-funded secondary             |
+| State-funded alternative provision |
+| Special                            |
+| All schools                        |
 
 :::
 
