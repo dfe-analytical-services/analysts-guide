@@ -1,0 +1,434 @@
+---
+  title: "Set up Databricks personal compute cluster with RStudio and `sparklyr`"
+---
+
+<p class="text-muted">
+
+The following instructions set up a `sparklyr` connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using `tidyverse` syntax.
+
+To use `sparklyr` you will need a personal cluster set up on Databricks. They can be used within the Databricks environment, or through RStudio. You can set one up yourself if you don't have access to one already.
+
+Within the Databricks environment they are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. From RStudio you will be able to use this method to execute queries using R with the performance benefits provided by Databricks.
+
+</p>
+
+::: callout-note
+Please note: This guidance should be followed if you wish to run R scripts from RStudio against data held against tables in Databricks, or if you wish to work with a file held in a Databricks volume. You can read more about volumes on our [Databricks fundamentals page](ADA/databricks_fundamentals.html#volumes).
+:::
+
+You can use data from Databricks with R code in two different ways:
+
+-   In scripts or notebooks via the Databricks environment
+-   In RStudio via an ODBC/`sparklyr` connection
+
+------------------------------------------------------------------------
+
+## Pre-requisites
+
+You must have:
+
+-   Access to Databricks and the data you'll be working with
+-   Access to a personal cluster on Databricks
+-   R and RStudio downloaded and installed on your laptop
+-   RTools installed on your laptop (available from the Software Centre)
+-   [Git](https://git-scm.com/downloads) installed on your laptop
+-   Membership of the active directory group 'AZURE INTERNET EXCLUDE INSPECTION PA'
+    -   Currently this involves logging an 'Access to Restricted Group' IT ticket through the ServiceNow portal
+
+------------------------------------------------------------------------
+
+## Compute resources
+
+When your data is moved to Databricks, it will be stored in the Unity Catalog and you will need to use a compute resource to access it from other software such as RStudio.
+
+A compute resource allows you to run your code using cloud computing power instead of using your laptop's processing power. This means that using compute resources can allow your code to run faster than it would if you ran it locally, as it is like using the processing resources of multiple computers at once. On this page, we will be referring to the use of personal clusters as the compute resource to run your code.
+
+------------------------------------------------------------------------
+
+### Personal clusters
+
+------------------------------------------------------------------------
+
+A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python) in the Databricks environment and can be set up to connect to RStudio as well. You can create your own personal cluster within the Databricks interface.
+
+When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on a personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the [Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/). Generally speaking a higher DBR version number will provide more functionality.
+
+Compute resources, including personal clusters, have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.
+
+An alternative to this is to specify packages / libraries to be installed on the cluster at start up. To do this click the name of your cluster from the 'Compute' page, then go to the 'Libraries' tab and click the 'Install new' button.
+
+::: callout-note
+## Clusters will shut down after being idle for an hour
+
+Use of compute resources are charged by the hour, and so personal clusters have been set to shut down after being unused for an hour in order to prevent unnecessary cost to the Department.
+:::
+
+------------------------------------------------------------------------
+
+## Process
+
+There are four steps to complete before your connection can be established. These are:
+
+-   Creating a personal compute resource (if you do not already have one)
+-   Installing the `reticulate`, `pysparklyr` and `sparklyr` packages
+-   Modifying your .Renviron file to establish a connection between RStudio and Databricks
+-   Adding connection code to your existing scripts in RStudio
+
+------------------------------------------------------------------------
+
+### Creating a personal compute resource
+
+------------------------------------------------------------------------
+
+1.  To create your own personal compute resource click the 'Create with DfE Personal Compute' button on the compute page\
+
+![](/images/ada-compute-personal.png)
+
+2.  You'll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type\
+    \
+    **Databricks runtime version** - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is '15.4 LTS'\
+    \
+    **Node type** - This option determines how powerful your cluster is and there are 2 options available by default:\
+
+    -   Standard 14GB 4-Core Nodes\
+    -   Large 28GB 8-Core Nodes\
+        \
+        If you require a larger personal cluster this can be requested by the ADA team.\
+        \
+        ![](/images/ada-compute-personal-create.png)
+
+3.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes\
+    \
+    ![](/images/ada-compute-personal-create-button.png)
+
+4.  Once the cluster is up and running the icon under the 'State' header on the 'Compute' page will appear as a green tick\
+    \
+    ![](/images/ada-compute-ready.png)
+
+------------------------------------------------------------------------
+
+## Setting up the ODBC driver
+
+::: callout-important
+If you have previously set up an ODBC connection, or followed the [set up Databricks SQL Warehouse with RStudio](/ADA/databricks_rstudio_sql_warehouse.html) guidance, then you can skip this step.
+:::
+
+-   Open the Software Centre via the start menu
+
+-   In the 'Applications' tab, click `Simba Spark ODBC Driver 64-bit`
+
+::: {align="center"}
+![](../images/databricks-software-centre.png)
+:::
+
+-   Click install
+
+------------------------------------------------------------------------
+
+### Establishing an RStudio connection using environment variables
+
+------------------------------------------------------------------------
+
+The `sparklyr` package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.
+
+::: callout-note
+If you have previously established a connection between a SQL Warehouse or personal cluster and RStudio, then some of these variables will already be in your .Renviron file.
+:::
+
+To set the environment variables, call `usethis::edit_r_environ()`. You will then need to enter the following information:
+
+```         
+DATABRICKS_HOST=<databricks-host>
+DATABRICKS_CLUSTER_ID=<databricks-cluster-id>
+DATABRICKS_TOKEN=<personal-access-token>
+```
+
+Once you have entered the details, save and close your .Renviron file and restart R (Session \> Restart R).
+
+::: callout-note
+Everyone in your team that wishes to connect to the data in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.
+:::
+
+The sections below describe where to find the information needed for each of the environment variables.
+
+------------------------------------------------------------------------
+
+#### Databricks host
+
+------------------------------------------------------------------------
+
+The Databricks host is the instance of Databricks that you want to connect to. It's the URL that you see in your browser bar when you're on the Databricks site and should end in "azuredatabricks.net" (ignore anything after this section of the URL).
+
+------------------------------------------------------------------------
+
+#### Databricks cluster id
+
+------------------------------------------------------------------------
+
+In Databricks, go to Compute in the left hand menu, and click on the name of your personal cluster:
+
+::: {align="center"}
+![](../images/databricks-cluster-id.png)
+:::
+
+On the Configuration tab, take the code between `clusters/` and `?` in the page URL. This is the ID for your personal cluster.
+
+------------------------------------------------------------------------
+
+#### Databricks token
+
+------------------------------------------------------------------------
+
+The Databricks token is a personal access token.
+
+A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the personal cluster. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.
+
+-   In Databricks, click on your email address in the top right corner, then click 'User settings'
+
+-   Go to the 'Developer' tab in the side bar. Next to 'Access tokens', click the 'Manage' button
+
+::: {align="center"}
+![](../images/databricks-access-tokens.png)
+:::
+
+-   Click the 'Generate new token' button
+
+-   Name the token, then click 'Generate'
+
+::: callout-note
+Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less.
+:::
+
+-   Make a note of the 'Databricks access token' it has given you
+
+::: callout-warning
+It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.
+:::
+
+------------------------------------------------------------------------
+
+### Setting up your `sparklyr` connection
+
+------------------------------------------------------------------------
+
+To connect to Databricks through `sparklyr` you will first need to install other packages which it depends on. The following steps are only required once, and once you have successfully connected you will only need to use the code from the 'Using `sparklyr` to access and navigate data' section below.
+
+#### Reticulate and python
+
+Behind the scenes `sparklyr` converts your queries to python when interfacing with Databricks. The `reticulate` package is used for managing python environments through R. It can be installed using the following line of code.
+
+``` r         
+install.packages("reticulate")
+```
+
+You will also need to use `reticulate` to install a python environment in the background, the version of python you install should be higher than 3.10. The version is passed to the function as a string as below.
+
+``` r          
+reticulate::install_python("3.10")
+```
+
+This step can take quite a while to complete. If you get an error here please consult the 'Troubleshooting' section below.
+
+To confirm that python has installed successfully you can use the function `reticulate::py_version()` to check the version number of python you are running.
+
+#### Pysparklyr
+
+The second dependency is `pysparklyr`, however currently there is a bug in the main version of `pysparklyr` that causes it to fail when building a python environment for Databricks on Windows machines.
+
+Due to this you will need to install the development version from GitHub. We can do this using the `remotes` package using the code below.
+
+``` r         
+remotes::install_github("mlverse/pysparklyr")
+```
+
+::: callout-note
+If you get an `Error in loadNamespace(x) : there is no package called 'remotes'` this means the `remotes` package isn't installed. Use `install.packages("remotes")` to install it and re-run the command above.
+:::
+
+The installation may prompt you to update a number of packages. If this happens enter `1` (to update all packages) into the prompt.
+
+::: callout-warning
+In this step there is often an issue where the `curl` package will not update and it will restore the previous version. Unfortunately this will cause issues as `pysparklyr` depends on functions from a later version of `curl`.
+
+If this occurs use the function `remove_packages("curl")` to manually uninstall it, then run `install.packages("curl")` to install the latest version.
+:::
+
+#### Sparklyr
+
+Finally we can install the `sparklyr` package.
+
+``` r         
+install.packages("sparklyr")
+```
+
+------------------------------------------------------------------------
+
+### Using sparklyr to access and navigate data
+
+------------------------------------------------------------------------
+
+Now that you have all the `sparklyr` dependencies set up on your laptop, and your environmental variables setup, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to databases before, this code will look quite familiar to you.
+
+#### Connect to Databricks through sparklyr
+
+Include the following code in your R Script, the query below will show the names of the catalogs available to you.
+
+::: callout-note
+If your personal cluster hasn't been started yet it will automatically begin booting up when you run the code below. If so, expect it to take a few minutes before you get any results as the cluster will have to start up first.
+
+If your cluster is already running it should begin executing your queries immediately.
+:::
+
+``` r
+library(sparklyr)
+
+
+sc <- spark_connect(
+  cluster_id = Sys.getenv("DATABRICKS_CLUSTER_ID"),
+  method = "databricks_connect"
+)
+
+sdf_sql(sc, "SHOW CATALOGS;")
+```
+
+From here you can use `sdf_sql()` to execute queries on your data. The first argument is always the spark connection `sc`, followed by the query you want to execute.
+
+#### Navigating catalogs and schema
+
+You can refer to a table or view with it's full three name reference *catalog_name.schema_name.table_name*, however always using the three names has drawbacks.
+
+Firstly the names can get quite long due to naming conventions, but more importantly it can create more code maintenance. For example, if you wanted to recreate a query in a different schema you would have to go and edit every table reference.
+
+Instead you can tell Databricks to use a specific catalog and all further queries through that spark connection will be executed within that catalog. This means you no longer have to specify the catalog when you refer to a schema, table or view.
+
+``` r         
+sdf_sql(sc, "USE CATALOG catalog_40_copper_analyst_training;")
+```
+
+::: callout-note
+You can also do this with the schema with `USE schema_name;` as the query. This would mean you can reference tables and views within that schema with just their name.
+:::
+
+::: callout-note
+If you set a catalog and schema for Databricks to use, but also want to refer to data in another catalog or schema you can still use *catalog_name.schema_name.table_name* or *schema_name.table_name* to access it.
+:::
+
+#### Overview of tables and columns
+
+Like SQL Server every catalog has an `information_schema` which contains all of the metadata about the tables, columns, etc.
+
+To look at in all the tables and views in any data catalog you can use the following code, which will store the result in a variable called `tables`.
+
+``` r          
+tables <- sdf_sql(sc, "SELECT * FROM information_schema.tables;")
+```
+
+If you `View(tables)` now you'll see that it is not currently a data frame but a list with several entities in it. This is because `sparklyr` is storing the connection to the data, along with any instructions on how to transform it rather than storing the data itself. This allows it to pass all of the instructions to Databricks so that it can do the heavy lifting, and only bring back the data required into R memory.
+
+Since we don't need to do any transformations here, we can simply tell `sparklyr` to `collect()` the data, which will turn it into an R data.frame.
+
+``` r         
+tables_df <- tables %>% collect()
+View(tables_df)
+```
+
+Similarly you can look at the columns, data types, etc. within a catalog using the `information_schema`.
+
+``` r         
+columns_df <- sdf_sql(sc, "SELECT * FROM information_schema.columns;") %>% collect()
+View(columns_df)
+```
+
+------------------------------------------------------------------------
+
+### Troubleshooting
+
+------------------------------------------------------------------------
+
+#### Python won't install
+
+------------------------------------------------------------------------
+
+The most likely reason that python would fail to install is that you haven't yet been granted access to the AD group 'AZURE INTERNET EXCLUDE INSPECTION PA' yet.
+
+If this is the case you will likely see a long error message which will contain the text `SSL: CERTIFICATE_VERIFY_FAILED` (you may need to scroll across the error message to see this as it's quite chunky).
+
+To fix this issue submit an IT service desk ticket requesting access to the group above and retry once your access has been granted.
+
+------------------------------------------------------------------------
+
+#### Using spark_connect() throws error: "'curl_parse_url' is not an exported object from namespace:curl"
+
+------------------------------------------------------------------------
+
+This error appears when your version of the `curl` package is too old to have the functions that `sparklyr` depends on.
+
+To uninstall the old version and update it use the following code and then re-run `spark_connect()`.
+
+``` r        
+remove.packages("curl")
+install.packages("curl")
+```
+
+------------------------------------------------------------------------
+
+#### Using spark_connect() throws error: "Databricks connect is not available in the current Python environment"
+
+------------------------------------------------------------------------
+
+This error is usually caused by having another python environment already loaded in your R session.
+
+To resolve this restart your R session (Session \> Restart R) then re-run the `spark_connect()` function.
+
+------------------------------------------------------------------------
+
+#### Using spark_connect() fails to create virtual environment
+
+------------------------------------------------------------------------
+
+If when you run `spark_connect()` for the first time it fails to create a virtual environment and throws an error similar to below:
+
+``` r         
+Error: Error installing package(s): "\"databricks-connect==16.1.0\"", "\"pandas!=2.1.0\"", "PyArrow", "grpcio", "google-api-python-client", "grpcio_status", "rpy2"
+```
+
+The most likely cause is that you're using the official `pysparklyr` package rather than the development version. To fix this use the following code and rerun the `spark_connect()` function.
+
+``` r         
+remove.packages("pysparklyr")
+remotes::install_github("mlverse/pysparklyr")
+```
+
+------------------------------------------------------------------------
+
+#### I'm having another problem with virtual environments
+
+------------------------------------------------------------------------
+
+There are a number of issues that can arise when `sparkylr` creates virtual environments, and sometimes trying to work out what is wrong is quite difficult.
+
+The easiest way to resolve the issue is usually to remove the virtual environments and let `sparklyr` create them again.
+
+There are 2 methods of doing this, the first uses the `reticulate` package to view and remove them. First we can list what virtual environments exist using the code below.
+
+``` r        
+reticulate::reticulate::virtualenv_list()
+#output: "r-sparklyr-databricks-16.1"
+```
+
+We can then remove that environment
+
+``` r        
+reticulate::virtualenv_remove("r-sparklyr-databricks-16.1") 
+#where "r-sparklyr-databricks-16.1" is what is returned from the code above
+```
+
+Once you've done this you can re-run `spark_connect()` and it should recreate the environment.
+
+If for some reason removing the environment through the command line doesn't work we can delete them using file explorer. However, first we need to find where they are kept. We can do this with the following line of code which will print the full system path of any virtual environments that exist on your machine.
+
+``` r        
+list.files(reticulate::virtualenv_root(), full.names = T)
+```
+
+Once you have the path you can navigate to the `.virtualenvs` folder and manually delete the folder within it that corresponds to the name of the faulty environment. You can then re-run `spark_connect()` and it will rebuild it from scratch.
