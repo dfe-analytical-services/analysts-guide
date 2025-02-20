@@ -2359,6 +2359,10 @@ Note
 <p>Special educational needs data uploaded to explore education statistics service is expected to conform closely to the <a href="https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code" target="_blank">School Census data guidance</a>.</p>
 <p>Top level fields are provided by <strong>sen_status</strong> and <strong>sen_provision</strong> as follows:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 49%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>sen_status</th>
@@ -2368,19 +2372,23 @@ Note
 <tbody>
 <tr class="odd">
 <td>Any special educational need</td>
-<td>Education, health and care plan</td>
+<td>All SEN provision</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>SEN support / SEN without an EHC plan</td>
+<td>Education, health and care plan</td>
 </tr>
 <tr class="odd">
+<td></td>
+<td>SEN support / SEN without an EHC plan</td>
+</tr>
+<tr class="even">
 <td>No identified special educational need</td>
 <td>No SEN provision</td>
 </tr>
-<tr class="even">
-<td>Total</td>
-<td>Total</td>
+<tr class="odd">
+<td>All pupils</td>
+<td>All pupils</td>
 </tr>
 </tbody>
 </table>
@@ -2577,8 +2585,8 @@ Note
 <p>The GSS publish standards on how to collect ethnicity data based on research conducted for the UK Census. The current guidelines (shown below) were developed as part of the 2011 Census and were unchanged in the 2021 census. We aim to follow as closely as reasonable to the GSS standards and guidance. Note the use of spaces around forward-slashes, which allows us to meet accessibility standards (in particular for the use of screen readers) as well as improving automated wrapping in text and value boxes.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 80%">
+<col style="width: 39%">
+<col style="width: 60%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2589,22 +2597,30 @@ Note
 <tbody>
 <tr class="odd">
 <td><strong>White</strong></td>
-<td>English / Welsh / Scottish / Northern Irish / British</td>
+<td>All white</td>
 </tr>
 <tr class="even">
+<td></td>
+<td>English / Welsh / Scottish / Northern Irish / British</td>
+</tr>
+<tr class="odd">
 <td></td>
 <td>Irish</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>Gypsy or Irish Traveller</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>Any other White background</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Mixed / Multiple ethnic groups</strong></td>
+<td>All mixed / multiple ethnic groups</td>
+</tr>
+<tr class="odd">
+<td></td>
 <td>White and Black Caribbean</td>
 </tr>
 <tr class="even">
@@ -2621,26 +2637,34 @@ Note
 </tr>
 <tr class="odd">
 <td><strong>Asian / Asian British</strong></td>
-<td>Indian</td>
+<td>All Asian / Asian British</td>
 </tr>
 <tr class="even">
+<td></td>
+<td>Indian</td>
+</tr>
+<tr class="odd">
 <td></td>
 <td>Pakistani</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>Bangladeshi</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>Chinese</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>Any other Asian background</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Black / African / Caribbean / Black British</strong></td>
+<td>All Black / African / Caribbean / Black British</td>
+</tr>
+<tr class="even">
+<td></td>
 <td>African</td>
 </tr>
 <tr class="odd">
@@ -2653,19 +2677,31 @@ Note
 </tr>
 <tr class="odd">
 <td><strong>Other ethnic group</strong></td>
-<td>Arab</td>
+<td>All other ethnic groups</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Any other ethnic group</td>
+<td>Arab</td>
 </tr>
 <tr class="odd">
+<td></td>
+<td>Any other ethnic group</td>
+</tr>
+<tr class="even">
 <td><strong>Unknown</strong></td>
 <td>Unknown</td>
 </tr>
+<tr class="odd">
+<td><strong>All ethnic groups</strong></td>
+<td>All ethnic groups</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td>Total</td>
+</tr>
 </tbody>
 </table>
-<p>Note that these standards are written from the perspective of creating survey questions, i.e.&nbsp;the data collection phase. Where teams are trying to aggregate existing categories up to match the GSS guidance, careful consideration of how and where differing systems may or may not match with the guidance is necessary.</p>
+<p>Note that these standards are written from the perspective of creating survey questions, i.e.&nbsp;the data collection phase. Where teams are trying to aggregate existing categories to match the GSS guidance, careful consideration of how and where differing systems may or may not match with the guidance is necessary.</p>
 <p>We recommend two alternative methods of ordering the above ethnic groups when reporting on ethnicity statistics:</p>
 <ul>
 <li>Alphabetical: use in tables and when listing ethnic groups (with ‘Other ethnic group’ and sometimes ‘Unknown’ as a final category)</li>
@@ -2673,8 +2709,8 @@ Note
 </ul>
 <hr>
 </section>
-<section id="reporting-on-broad-ethnic-minorities-catageories-e.g.-bame" class="level4">
-<h4 class="anchored" data-anchor-id="reporting-on-broad-ethnic-minorities-catageories-e.g.-bame">Reporting on broad ethnic minorities catageories (e.g.&nbsp;BAME)</h4>
+<section id="reporting-on-broad-ethnic-minority-categories-e.g.-bame" class="level4">
+<h4 class="anchored" data-anchor-id="reporting-on-broad-ethnic-minority-categories-e.g.-bame">Reporting on broad ethnic minority categories (e.g.&nbsp;BAME)</h4>
 <hr>
 <p>Published in March 2021, the report of the Commission on Race and Ethnic Disparities made a number of suggestions on how we discuss and report on race in the UK.</p>
 <p>One of the major elements was around aggregation of ethnic minorities into a single over-arching group (in particular BAME):</p>
@@ -2697,7 +2733,7 @@ Note
 </ul>
 <p>Where there is a reasonable need to publish or report statistics for a full aggregation of ethnic minorities (such as reporting on existing historical targets), official guidance is as follows:</p>
 <blockquote class="blockquote">
-<p>Use ‘ethnic minorities’ to refer to all ethnic groups except the white British group. This term includes white minorities, such as Gypsy, Roma and Irish Traveller groups. For comparisons with the white group as a whole, use ‘ethnic minorities (excluding White minorities)’.</p>
+<p>Use “ethnic minorities” to refer to all ethnic groups except the white British group. This term includes white minorities, such as Gypsy, Roma and Irish Traveller groups. For comparisons with the white group as a whole, use “ethnic minorities (excluding White minorities)”.</p>
 </blockquote>
 <hr>
 </section>
@@ -2733,7 +2769,7 @@ Note
 <td>Non-maintained</td>
 </tr>
 <tr class="even">
-<td>Total</td>
+<td>All schools</td>
 </tr>
 </tbody>
 </table>
@@ -2852,8 +2888,79 @@ Note
 <td>SP</td>
 </tr>
 <tr class="even">
-<td>Total</td>
+<td>All education phases</td>
 <td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</section>
+<section id="combining-education-phase-and-establishment-type-group" class="level4">
+<h4 class="anchored" data-anchor-id="combining-education-phase-and-establishment-type-group">Combining education phase and establishment type group</h4>
+<hr>
+<p>Many teams report a hybrid filter which combines a form of the establishment type group above with education phase. Ideally, teams should report these as two separate filters as follows (with establishment_type_group being listed as the filter_grouping_column of education_phase in the meta data):</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>establishment_type_group</th>
+<th>education_phase</th>
+<th>pupil_count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All state funded</td>
+<td>Primary</td>
+<td>600</td>
+</tr>
+<tr class="even">
+<td>All state funded</td>
+<td>Secondary</td>
+<td>800</td>
+</tr>
+<tr class="odd">
+<td>All state funded</td>
+<td>Alternative provision</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td>All schools</td>
+<td>Special</td>
+<td>400</td>
+</tr>
+<tr class="odd">
+<td>All schools</td>
+<td>All education phases</td>
+<td>2000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If a single field is necessary, the following is the fall back option to report as a single category under phase_type_grouping:</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>phase_type_grouping</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>State-funded primary</td>
+</tr>
+<tr class="even">
+<td>State-funded secondary</td>
+</tr>
+<tr class="odd">
+<td>State-funded alternative provision</td>
+</tr>
+<tr class="even">
+<td>Special</td>
+</tr>
+<tr class="odd">
+<td>All schools</td>
 </tr>
 </tbody>
 </table>
