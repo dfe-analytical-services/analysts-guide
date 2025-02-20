@@ -29,7 +29,9 @@ You must have:
 
 -   Access to Databricks and the data you'll be working with
 -   Access to a personal cluster on Databricks
--   R and RStudio downloaded
+-   R and RStudio downloaded and installed on your laptop
+-   RTools installed on your laptop (available from the Software Centre)
+-   [Git](https://git-scm.com/downloads) installed on your laptop
 -   Membership of the active directory group 'AZURE INTERNET EXCLUDE INSPECTION PA'
     -   Currently this involves logging an 'Access to Restricted Group' IT ticket through the ServiceNow portal
 
