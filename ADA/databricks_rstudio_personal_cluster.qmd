@@ -10,7 +10,7 @@ Personal clusters can be used within the Databricks environment, or through RStu
 
 A personal cluster is the most versatile type of compute and the most easily accessible for analysts within the Department. If you are considering converting an existing R / RStudio process to the Databricks environment a personal cluster is the best choice as you will be able to run like for like code on both environments.
 
-Within the Databricks environment they are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. Using this ODBC method from RStudio you will be able to query data using similar methods as you currently use when connecting to Microsoft SQL server. Usually this will take the form of submitting SQL queries to Databricks from R code running on your laptop.
+Within the Databricks environment personal clusters are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. Using this ODBC method from RStudio you will be able to query data using similar methods as you currently use when connecting to Microsoft SQL server. Usually this will take the form of submitting SQL queries to Databricks from R code running on your laptop.
 
 </p>
 
