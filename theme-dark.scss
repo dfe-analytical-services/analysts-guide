@@ -42,3 +42,27 @@ $code-bg:#555555;
 /* Font color for inline code */
 $code-color: #ffffff;  
 
+  
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #2a9fd6 #000000;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #2a9fd6;
+    border-radius: 10px;
+    border: 3px solid #000000;
+  }
+
+
