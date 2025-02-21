@@ -1,23 +1,27 @@
 ---
-  title: "Set up Databricks personal compute cluster with RStudio"
+  title: "Set up Databricks personal compute cluster with RStudio and `odbc` / `DBI`"
 ---
 
 <p class="text-muted">
 
-The following instructions set up an ODBC connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using an ODBC based package or `sparklyr`. Personal clusters are able to run SQL, R, Python and Scala. They can be used within the Databricks environment, or through RStudio and can be set up yourself if you don't have access to a SQL warehouse or shared cluster.
+The following instructions set up an ODBC connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using an ODBC based package.
+
+Personal clusters can be used within the Databricks environment, or through RStudio. You can set one up yourself if you don't have access to a SQL warehouse or shared cluster. 
+
+A personal cluster is the most versatile type of compute and the most easily accessible for analysts within the Department. If you are considering converting an existing R / RStudio process to the Databricks environment a personal cluster is the best choice as you will be able to run like for like code on both environments.
+
+Within the Databricks environment personal clusters are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. Using this ODBC method from RStudio you will be able to query data using similar methods as you currently use when connecting to Microsoft SQL server. Usually this will take the form of submitting SQL queries to Databricks from R code running on your laptop.
 
 </p>
 
 ::: callout-note
-
-Please note: This guidance should be followed if you wish to run R scripts from RStudio against data held against tables in Databricks, or if you wish to work with a file held in a Databricks volume. You can read more about volumes on our [Databricks fundamentals page](ADA/databricks_fundamentals.html#volumes). If you only need to run SQL scripts against Databricks data then we would suggest setting up a [SQL warehouse compute connection](/ADA/databricks_rstudio_sql_warehouse.html) instead. 
+Please note: This guidance should be followed if you wish to run R scripts from RStudio against data held against tables in Databricks, or if you wish to work with a file held in a Databricks volume. You can read more about volumes on our [Databricks fundamentals page](ADA/databricks_fundamentals.html#volumes).
 :::
-
 
 You can use data from Databricks with R code in two different ways:
 
-- In scripts or notebooks via the Databricks environment
-- In RStudio via an ODBC connection
+-   In scripts or notebooks via the Databricks environment
+-   In RStudio via an ODBC connection
 
 ------------------------------------------------------------------------
 
@@ -35,17 +39,17 @@ You must have:
 
 When your data is moved to Databricks, it will be stored in the Unity Catalog and you will need to use a compute resource to access it from other software such as RStudio.
 
-A compute resource allows you to run your code using cloud computing power instead of using your laptop's processing power. This means that using compute resources can allow your code to run faster than it would if you ran it locally, as it is like using the processing resources of multiple computers at once. On this page, we will be referring to the use of personal clusters as the compute resource to run your code. 
+A compute resource allows you to run your code using cloud computing power instead of using your laptop's processing power. This means that using compute resources can allow your code to run faster than it would if you ran it locally, as it is like using the processing resources of multiple computers at once. On this page, we will be referring to the use of personal clusters as the compute resource to run your code.
 
 ------------------------------------------------------------------------
 
 ### Personal clusters
 
----
+------------------------------------------------------------------------
 
-A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python). You can create your own personal cluster within the Databricks interface. 
+A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python) in the Databricks environment and can be set up to connect to RStudio as well. You can create your own personal cluster within the Databricks interface.
 
-When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the [Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/).
+When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on a personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the [Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/).
 
 Compute resources, including personal clusters, have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.
 
@@ -57,18 +61,18 @@ An alternative to this is to specify packages / libraries to be installed on the
 Use of compute resources are charged by the hour, and so personal clusters have been set to shut down after being unused for an hour in order to prevent unnecessary cost to the Department.
 :::
 
----
+------------------------------------------------------------------------
 
 ## Process
 
 There are four steps to complete before your connection can be established. These are:
 
-- Creating a personal compute resource (if you do not already have one)
-- Installing an ODBC driver on your laptop to enable a connection between your laptop and Databricks
-- Modifying your .Renviron file to establish a connection between RStudio and Databricks
-- Adding connection code to your existing scripts in RStudio
+-   Creating a personal compute resource (if you do not already have one)
+-   Installing an ODBC driver on your laptop to enable a connection between your laptop and Databricks
+-   Modifying your .Renviron file to establish a connection between RStudio and Databricks
+-   Adding connection code to your existing scripts in RStudio
 
----
+------------------------------------------------------------------------
 
 ### Creating a personal compute resource
 
@@ -99,13 +103,12 @@ There are four steps to complete before your connection can be established. Thes
     \
     ![](/images/ada-compute-ready.png)
 
-
 ------------------------------------------------------------------------
 
 ## Setting up the ODBC driver
 
 ::: callout-important
-If you have previously set up an ODBC connection, or followed the [set up Databricks SQL Warehouse with RStudio](/ADA/databricks_rstudio_sql_warehouse.html) guidance, then you can skip this step. 
+If you have previously set up an ODBC connection, or followed the [set up Databricks SQL Warehouse with RStudio](/ADA/databricks_rstudio_sql_warehouse.html) guidance, then you can skip this step.
 :::
 
 -   Open the Software Centre via the start menu
@@ -117,7 +120,6 @@ If you have previously set up an ODBC connection, or followed the [set up Databr
 :::
 
 -   Click install
-
 
 ------------------------------------------------------------------------
 
@@ -133,14 +135,13 @@ If you have previously established a connection between a SQL Warehouse and RStu
 
 To set the environment variables, call `usethis::edit_r_environ()`. You will then need to enter the following information:
 
-```
+```         
 DATABRICKS_HOST=<databricks-host>
 DATABRICKS_CLUSTER_PATH=<databricks-cluster-path>
 DATABRICKS_TOKEN=<personal-access-token>
-
 ```
 
-Once you have entered the details, save and close your .Renviron file and restart R (Session > Restart R).
+Once you have entered the details, save and close your .Renviron file and restart R (Session \> Restart R).
 
 ::: callout-note
 Everyone in your team that wishes to connect to the data in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.
@@ -156,21 +157,19 @@ The sections below describe where to find the information needed for each of the
 
 The Databricks host is the instance of Databricks that you want to connect to. It's the URL that you see in your browser bar when you're on the Databricks site and should end in "azuredatabricks.net" (ignore anything after this section of the URL).
 
----
+------------------------------------------------------------------------
 
 #### Databricks cluster path
 
----
+------------------------------------------------------------------------
 
 In Databricks, go to Compute in the left hand menu, and click on the name of your personal cluster:
 
 ::: {align="center"}
-![](../images/databricks-cluster-id.png)
+![](../images/databricks-cluster-path.png)
 :::
 
-
-On the Configuration tab, scroll to the bottom of the page and click Advanced Options > JDBC/ODBC > HTTP Path, and copy the text after the last forward slash. This is your cluster path. 
-
+On the Configuration tab, scroll to the bottom of the page and click Advanced Options \> JDBC/ODBC \> HTTP Path, and copy the text after the last forward slash. This is your cluster path.
 
 ------------------------------------------------------------------------
 
@@ -178,9 +177,9 @@ On the Configuration tab, scroll to the bottom of the page and click Advanced Op
 
 ------------------------------------------------------------------------
 
-The Databricks token is a personal access token. 
+The Databricks token is a personal access token.
 
-A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the SQL warehouse. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.
+A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the personal cluster. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.
 
 -   In Databricks, click on your email address in the top right corner, then click 'User settings'
 
@@ -195,7 +194,7 @@ A personal access token is is a security measure that acts as an identifier to l
 -   Name the token, then click 'Generate'
 
 ::: callout-note
-Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less. 
+Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less.
 :::
 
 -   Make a note of the 'Databricks access token' it has given you
@@ -204,34 +203,24 @@ Note that access tokens will only last as long as the value for the 'Lifetime (d
 It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.
 :::
 
-
 ------------------------------------------------------------------------
 
 ### Pulling data into RStudio from Databricks
 
 ------------------------------------------------------------------------
 
-Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to databases before, this code will look quite familiar to you. 
+Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to databases before, this code will look quite familiar to you.
 
-To access the data, we will make use of the `sparklyr` package. You will also need to have the `dbplyr` package installed.  
+To access the data, we will make use of the `odbc` and `DBI` packages.
 
 Include the following code in your R Script:
 
 ``` r
+library(odbc)
+library(DBI)
 
-library(tidyverse)
-library(sparklyr)
-library(dbplyr)
+con <- DBI::dbConnect(odbc::databricks(),
+                      httpPath = Sys.getenv("DATABRICKS_CLUSTER_PATH"))
 
-sc <- spark_connect(
-  cluster_id = Sys.getenv("DATABRICKS_CLUSTER_PATH"),
-  method = "databricks_connect"
-)
-
-tbl(
-  sc,
-  I("catalog_10_gold.information_schema.catalogs")
-) |>
-  head()
-
+dbGetQuery(con, "SHOW CATALOGS;")
 ```

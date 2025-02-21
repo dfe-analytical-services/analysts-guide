@@ -115,7 +115,10 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Setup Databricks SQL Warehouse with RStudio](ADA/databricks_rstudio_sql_warehouse.html)
 - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio.
 
-[Setup Databricks personal cluster Warehouse with RStudio](ADA/databricks_rstudio_personal_cluster.html)
+[Setup Databricks personal cluster with RStudio and `odbc` / `DBI`](ADA/databricks_rstudio_personal_cluster.html)
+- Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.
+
+[Setup Databricks personal cluster with RStudio and `sparklyr`](ADA/databricks_rstudio_personal_cluster_sparklyr.html)
 - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.
 
 
