@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Set up Databricks personal compute cluster with RStudio – Analysts’ Guide</title>
+<title>Set up Databricks personal compute cluster with RStudio and odbc / DBI – Analysts' Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,7 +144,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ADA and Databricks</li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_personal_cluster.html">Set up Databricks personal compute cluster with RStudio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ADA and Databricks</li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_personal_cluster.html">Set up Databricks personal compute cluster with RStudio and <code>odbc</code> / <code>DBI</code></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -480,7 +480,7 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Set up Databricks personal compute cluster with RStudio</span></a>
+ <span class="menu-text">Set up Databricks personal compute cluster with RStudio and <code>odbc</code> / <code>DBI</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -533,9 +533,9 @@ cookieconsent.run({
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ADA and Databricks</li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_personal_cluster.html">Set up Databricks personal compute cluster with RStudio</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ADA and Databricks</li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_personal_cluster.html">Set up Databricks personal compute cluster with RStudio and <code>odbc</code> / <code>DBI</code></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Set up Databricks personal compute cluster with RStudio</h1>
+<h1 class="title">Set up Databricks personal compute cluster with RStudio and <code>odbc</code> / <code>DBI</code></h1>
 </div>
 
 
@@ -553,7 +553,10 @@ cookieconsent.run({
 
 
 <p class="text-muted">
-</p><p>The following instructions set up an ODBC connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using an ODBC based package or <code>sparklyr</code>. Personal clusters are able to run SQL, R, Python and Scala. They can be used within the Databricks environment, or through RStudio and can be set up yourself if you don’t have access to a SQL warehouse or shared cluster.</p>
+</p><p>The following instructions set up an ODBC connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using an ODBC based package.</p>
+<p>Personal clusters can be used within the Databricks environment, or through RStudio. You can set one up yourself if you don’t have access to a SQL warehouse or shared cluster.</p>
+<p>A personal cluster is the most versatile type of compute and the most easily accessible for analysts within the Department. If you are considering converting an existing R / RStudio process to the Databricks environment a personal cluster is the best choice as you will be able to run like for like code on both environments.</p>
+<p>Within the Databricks environment personal clusters are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. Using this ODBC method from RStudio you will be able to query data using similar methods as you currently use when connecting to Microsoft SQL server. Usually this will take the form of submitting SQL queries to Databricks from R code running on your laptop.</p>
 <p></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -565,7 +568,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Please note: This guidance should be followed if you wish to run R scripts from RStudio against data held against tables in Databricks, or if you wish to work with a file held in a Databricks volume. You can read more about volumes on our <a href="ADA/databricks_fundamentals.html#volumes">Databricks fundamentals page</a>. If you only need to run SQL scripts against Databricks data then we would suggest setting up a <a href="../ADA/databricks_rstudio_sql_warehouse.html">SQL warehouse compute connection</a> instead.</p>
+<p>Please note: This guidance should be followed if you wish to run R scripts from RStudio against data held against tables in Databricks, or if you wish to work with a file held in a Databricks volume. You can read more about volumes on our <a href="ADA/databricks_fundamentals.html#volumes">Databricks fundamentals page</a>.</p>
 </div>
 </div>
 <p>You can use data from Databricks with R code in two different ways:</p>
@@ -592,8 +595,8 @@ Note
 <section id="personal-clusters" class="level3">
 <h3 class="anchored" data-anchor-id="personal-clusters">Personal clusters</h3>
 <hr>
-<p>A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python). You can create your own personal cluster within the Databricks interface.</p>
-<p>When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the <a href="https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/" target="_blank">Databricks documentation</a>.</p>
+<p>A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python) in the Databricks environment and can be set up to connect to RStudio as well. You can create your own personal cluster within the Databricks interface.</p>
+<p>When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on a personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the <a href="https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/" target="_blank">Databricks documentation</a>.</p>
 <p>Compute resources, including personal clusters, have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.</p>
 <p>An alternative to this is to specify packages / libraries to be installed on the cluster at start up. To do this click the name of your cluster from the ‘Compute’ page, then go to the ‘Libraries’ tab and click the ‘Install new’ button.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -702,8 +705,7 @@ Note
 <p>To set the environment variables, call <code>usethis::edit_r_environ()</code>. You will then need to enter the following information:</p>
 <pre><code>DATABRICKS_HOST=&lt;databricks-host&gt;
 DATABRICKS_CLUSTER_PATH=&lt;databricks-cluster-path&gt;
-DATABRICKS_TOKEN=&lt;personal-access-token&gt;
-</code></pre>
+DATABRICKS_TOKEN=&lt;personal-access-token&gt;</code></pre>
 <p>Once you have entered the details, save and close your .Renviron file and restart R (Session &gt; Restart R).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -731,7 +733,7 @@ Note
 <hr>
 <p>In Databricks, go to Compute in the left hand menu, and click on the name of your personal cluster:</p>
 <div data-align="center">
-<p><img src="../images/databricks-cluster-id.png" class="img-fluid"></p>
+<p><img src="../images/databricks-cluster-path.png" class="img-fluid"></p>
 </div>
 <p>On the Configuration tab, scroll to the bottom of the page and click Advanced Options &gt; JDBC/ODBC &gt; HTTP Path, and copy the text after the last forward slash. This is your cluster path.</p>
 <hr>
@@ -740,7 +742,7 @@ Note
 <h4 class="anchored" data-anchor-id="databricks-token">Databricks token</h4>
 <hr>
 <p>The Databricks token is a personal access token.</p>
-<p>A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the SQL warehouse. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.</p>
+<p>A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the personal cluster. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.</p>
 <ul>
 <li><p>In Databricks, click on your email address in the top right corner, then click ‘User settings’</p></li>
 <li><p>Go to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button</p></li>
@@ -788,23 +790,15 @@ Warning
 <h3 class="anchored" data-anchor-id="pulling-data-into-rstudio-from-databricks">Pulling data into RStudio from Databricks</h3>
 <hr>
 <p>Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to databases before, this code will look quite familiar to you.</p>
-<p>To access the data, we will make use of the <code>sparklyr</code> package. You will also need to have the <code>dbplyr</code> package installed.</p>
+<p>To access the data, we will make use of the <code>odbc</code> and <code>DBI</code> packages.</p>
 <p>Include the following code in your R Script:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sparklyr)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>sc <span class="ot">&lt;-</span> <span class="fu">spark_connect</span>(</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">cluster_id =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_CLUSTER_PATH"</span>),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"databricks_connect"</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl</span>(</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  sc,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">I</span>(<span class="st">"catalog_10_gold.information_schema.catalogs"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">databricks</span>(),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">httpPath =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_CLUSTER_PATH"</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SHOW CATALOGS;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

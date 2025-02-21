@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RAP expectations – Analysts’ Guide</title>
+<title>Set up Databricks personal compute cluster with RStudio and sparklyr – Analysts' Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,8 +63,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../RAP/rap-support.html" rel="next">
-<link href="../writing-visualising/writing.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -110,7 +142,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../RAP/rap-expectations.html">Reproducible Analytical Pipelines (RAP)</a></li><li class="breadcrumb-item"><a href="../RAP/rap-expectations.html">RAP expectations</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Set up Databricks personal compute cluster with RStudio and <code>sparklyr</code></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -361,16 +393,16 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link active">
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP expectations</span></a>
   </div>
 </li>
@@ -479,21 +511,31 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rap-expectations" id="toc-rap-expectations" class="nav-link active" data-scroll-target="#rap-expectations">RAP Expectations</a>
+  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
+  <li><a href="#compute-resources" id="toc-compute-resources" class="nav-link" data-scroll-target="#compute-resources">Compute resources</a>
   <ul class="collapse">
-  <li><a href="#analyst-leaders" id="toc-analyst-leaders" class="nav-link" data-scroll-target="#analyst-leaders">Analyst leaders</a></li>
-  <li><a href="#analyst-managers" id="toc-analyst-managers" class="nav-link" data-scroll-target="#analyst-managers">Analyst managers</a></li>
-  <li><a href="#analysts" id="toc-analysts" class="nav-link" data-scroll-target="#analysts">Analysts</a></li>
+  <li><a href="#personal-clusters" id="toc-personal-clusters" class="nav-link" data-scroll-target="#personal-clusters">Personal clusters</a></li>
+  </ul></li>
+  <li><a href="#process" id="toc-process" class="nav-link" data-scroll-target="#process">Process</a>
+  <ul class="collapse">
+  <li><a href="#creating-a-personal-compute-resource" id="toc-creating-a-personal-compute-resource" class="nav-link" data-scroll-target="#creating-a-personal-compute-resource">Creating a personal compute resource</a></li>
+  </ul></li>
+  <li><a href="#setting-up-the-odbc-driver" id="toc-setting-up-the-odbc-driver" class="nav-link" data-scroll-target="#setting-up-the-odbc-driver">Setting up the ODBC driver</a>
+  <ul class="collapse">
+  <li><a href="#establishing-an-rstudio-connection-using-environment-variables" id="toc-establishing-an-rstudio-connection-using-environment-variables" class="nav-link" data-scroll-target="#establishing-an-rstudio-connection-using-environment-variables">Establishing an RStudio connection using environment variables</a></li>
+  <li><a href="#setting-up-your-sparklyr-connection" id="toc-setting-up-your-sparklyr-connection" class="nav-link" data-scroll-target="#setting-up-your-sparklyr-connection">Setting up your <code>sparklyr</code> connection</a></li>
+  <li><a href="#using-sparklyr-to-access-and-navigate-data" id="toc-using-sparklyr-to-access-and-navigate-data" class="nav-link" data-scroll-target="#using-sparklyr-to-access-and-navigate-data">Using sparklyr to access and navigate data</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/rap-expectations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_personal_cluster_sparklyr.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../RAP/rap-expectations.html">Reproducible Analytical Pipelines (RAP)</a></li><li class="breadcrumb-item"><a href="../RAP/rap-expectations.html">RAP expectations</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">RAP expectations</h1>
+<h1 class="title">Set up Databricks personal compute cluster with RStudio and <code>sparklyr</code></h1>
 </div>
 
 
@@ -511,61 +553,433 @@ cookieconsent.run({
 
 
 <p class="text-muted">
-Expectations for analysts and senior colleagues around RAP
+</p><p>The following instructions set up a <code>sparklyr</code> connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using <code>tidyverse</code> syntax.</p>
+<p>To use <code>sparklyr</code> you will need a personal cluster set up on Databricks. They can be used within the Databricks environment, or through RStudio. You can set one up yourself if you don’t have access to one already.</p>
+<p>Within the Databricks environment they are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. From RStudio you will be able to use this method to execute queries using R with the performance benefits provided by Databricks.</p>
+<p></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please note: This guidance should be followed if you wish to run R scripts from RStudio against data held against tables in Databricks, or if you wish to work with a file held in a Databricks volume. You can read more about volumes on our <a href="ADA/databricks_fundamentals.html#volumes">Databricks fundamentals page</a>.</p>
+</div>
+</div>
+<p>You can use data from Databricks with R code in two different ways:</p>
+<ul>
+<li>In scripts or notebooks via the Databricks environment</li>
+<li>In RStudio via an ODBC/<code>sparklyr</code> connection</li>
+</ul>
+<hr>
+<section id="pre-requisites" class="level2">
+<h2 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h2>
+<p>You must have:</p>
+<ul>
+<li>Access to Databricks and the data you’ll be working with</li>
+<li>Access to a personal cluster on Databricks</li>
+<li>R and RStudio downloaded and installed on your laptop</li>
+<li>RTools installed on your laptop (available from the Software Centre)</li>
+<li><a href="https://git-scm.com/downloads" target="_blank">Git</a> installed on your laptop</li>
+<li>Membership of the active directory group ‘AZURE INTERNET EXCLUDE INSPECTION PA’
+<ul>
+<li>Currently this involves logging an ‘Access to Restricted Group’ IT ticket through the ServiceNow portal</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="compute-resources" class="level2">
+<h2 class="anchored" data-anchor-id="compute-resources">Compute resources</h2>
+<p>When your data is moved to Databricks, it will be stored in the Unity Catalog and you will need to use a compute resource to access it from other software such as RStudio.</p>
+<p>A compute resource allows you to run your code using cloud computing power instead of using your laptop’s processing power. This means that using compute resources can allow your code to run faster than it would if you ran it locally, as it is like using the processing resources of multiple computers at once. On this page, we will be referring to the use of personal clusters as the compute resource to run your code.</p>
+<hr>
+<section id="personal-clusters" class="level3">
+<h3 class="anchored" data-anchor-id="personal-clusters">Personal clusters</h3>
+<hr>
+<p>A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python) in the Databricks environment and can be set up to connect to RStudio as well. You can create your own personal cluster within the Databricks interface.</p>
+<p>When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on a personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the <a href="https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/" target="_blank">Databricks documentation</a>. Generally speaking a higher DBR version number will provide more functionality.</p>
+<p>Compute resources, including personal clusters, have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.</p>
+<p>An alternative to this is to specify packages / libraries to be installed on the cluster at start up. To do this click the name of your cluster from the ‘Compute’ page, then go to the ‘Libraries’ tab and click the ‘Install new’ button.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Clusters will shut down after being idle for an hour
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use of compute resources are charged by the hour, and so personal clusters have been set to shut down after being unused for an hour in order to prevent unnecessary cost to the Department.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="process" class="level2">
+<h2 class="anchored" data-anchor-id="process">Process</h2>
+<p>There are four steps to complete before your connection can be established. These are:</p>
+<ul>
+<li>Creating a personal compute resource (if you do not already have one)</li>
+<li>Installing the <code>reticulate</code>, <code>pysparklyr</code> and <code>sparklyr</code> packages</li>
+<li>Modifying your .Renviron file to establish a connection between RStudio and Databricks</li>
+<li>Adding connection code to your existing scripts in RStudio</li>
+</ul>
+<hr>
+<section id="creating-a-personal-compute-resource" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-personal-compute-resource">Creating a personal compute resource</h3>
+<hr>
+<ol type="1">
+<li>To create your own personal compute resource click the ‘Create with DfE Personal Compute’ button on the compute page<br>
+</li>
+</ol>
+<p><img src="../images/ada-compute-personal.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>You’ll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type<br>
+<br>
+<strong>Databricks runtime version</strong> - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is ‘15.4 LTS’<br>
+<br>
+<strong>Node type</strong> - This option determines how powerful your cluster is and there are 2 options available by default:<br>
 </p>
-<hr>
-<section id="rap-expectations" class="level2">
-<h2 class="anchored" data-anchor-id="rap-expectations">RAP Expectations</h2>
-<p>As government analysts working with statistics, we are required to ensure that our analysis is reproducible, transparent, and robust, using coding and code management best practices (source <a href="https://analysisfunction.civilservice.gov.uk/policy-store/competency-framework-for-the-government-statistician-group-gsg/" target="_blank">GSG competency framework</a>). Reproducible Analytical Pipelines (RAP) are a cross-government requirement to help analysts adopt best practices.</p>
-<p>We expect any analyst to know and be able to implement RAP principles, using the recommended tools to meet at least good and great practice. You can see examples of good, great, and best practice on our <a href="../RAP/rap-statistics.html">RAP in statistics guidance page</a>.</p>
-<p>We expect managers of analysts working in statistics production to support and prioritise the development required to build the skills needed to implement RAP using the recommended tools. Managers should ensure that the processes for any publications they own meet at least good and great practice.</p>
-<p>Although RAP is often discussed in the context of statistics production, RAP principles can also be applied to other analysis work. The <a href="https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/" target="_blank">cross-government RAP strategy</a> states a number of explicit expectations for analysts involved in the process, which are detailed in the following sections: <a href="#analyst-leaders">analyst leaders</a>, <a href="#analyst-managers">analyst managers</a> and <a href="#analysts">analysts</a>.</p>
-<hr>
-<section id="analyst-leaders" class="level3">
-<h3 class="anchored" data-anchor-id="analyst-leaders">Analyst leaders</h3>
-<hr>
-<p>Those giving senior sign off on publications and running analytical functions, usually G6 and SCS, analyst leaders will:</p>
 <ul>
-<li>ensure their analysts build RAP learning and development time into work plans</li>
-<li>help their teams to work with DDaT professionals to share knowledge</li>
-<li>promote a “RAP by default” approach for all appropriate analysis</li>
-<li>write and implement strategic plans to develop new analyses with RAP principles, and to redevelop existing products with RAP principles</li>
-<li>lead their RAP champions to advise analysis teams on how to implement RAP</li>
-<li>help teams to incorporate RAP development into workplans</li>
-<li>identify the most valuable projects by looking at how much capability the team already has and how risky and time-consuming the existing process is</li>
-<li>communicate the benefits of RAP to analysts, managers, and users</li>
-</ul>
+<li>Standard 14GB 4-Core Nodes<br>
+</li>
+<li>Large 28GB 8-Core Nodes<br>
+<br>
+If you require a larger personal cluster this can be requested by the ADA team.<br>
+<br>
+<img src="../images/ada-compute-personal-create.png" class="img-fluid"></li>
+</ul></li>
+<li><p>Click the ‘Create compute’ button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes<br>
+<br>
+<img src="../images/ada-compute-personal-create-button.png" class="img-fluid"></p></li>
+<li><p>Once the cluster is up and running the icon under the ‘State’ header on the ‘Compute’ page will appear as a green tick<br>
+<br>
+<img src="../images/ada-compute-ready.png" class="img-fluid"></p></li>
+</ol>
 <hr>
 </section>
-<section id="analyst-managers" class="level3">
-<h3 class="anchored" data-anchor-id="analyst-managers">Analyst managers</h3>
-<hr>
-<p>Roughly equivalent to Team Leaders and G7, analyst managers will:</p>
+</section>
+<section id="setting-up-the-odbc-driver" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-the-odbc-driver">Setting up the ODBC driver</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have previously set up an ODBC connection, or followed the <a href="../ADA/databricks_rstudio_sql_warehouse.html">set up Databricks SQL Warehouse with RStudio</a> guidance, then you can skip this step.</p>
+</div>
+</div>
 <ul>
-<li>work with security and IT teams to give analysts access to the right tools</li>
-<li>work with security and IT teams to develop platforms that are easy for analysts to access, flexible and responsive to the needs of analysts</li>
-<li>work with security, IT, and data teams to make sure that the tools data analysts need are available in the right place and are easy to access</li>
-<li>build extra time into projects to adopt new skills and practices where appropriate</li>
-<li>learn the skills they need to manage software</li>
-<li>evaluate RAP projects within organisations to understand and demonstrate the benefits of RAP</li>
-<li>mandate their teams use RAP principles whenever possible</li>
+<li><p>Open the Software Centre via the start menu</p></li>
+<li><p>In the ‘Applications’ tab, click <code>Simba Spark ODBC Driver 64-bit</code></p></li>
 </ul>
+<div data-align="center">
+<p><img src="../images/databricks-software-centre.png" class="img-fluid"></p>
+</div>
+<ul>
+<li>Click install</li>
+</ul>
+<hr>
+<section id="establishing-an-rstudio-connection-using-environment-variables" class="level3">
+<h3 class="anchored" data-anchor-id="establishing-an-rstudio-connection-using-environment-variables">Establishing an RStudio connection using environment variables</h3>
+<hr>
+<p>The <code>sparklyr</code> package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have previously established a connection between a SQL Warehouse or personal cluster and RStudio, then some of these variables will already be in your .Renviron file.</p>
+</div>
+</div>
+<p>To set the environment variables, call <code>usethis::edit_r_environ()</code>. You will then need to enter the following information:</p>
+<pre><code>DATABRICKS_HOST=&lt;databricks-host&gt;
+DATABRICKS_CLUSTER_ID=&lt;databricks-cluster-id&gt;
+DATABRICKS_TOKEN=&lt;personal-access-token&gt;</code></pre>
+<p>Once you have entered the details, save and close your .Renviron file and restart R (Session &gt; Restart R).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Everyone in your team that wishes to connect to the data in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.</p>
+</div>
+</div>
+<p>The sections below describe where to find the information needed for each of the environment variables.</p>
+<hr>
+<section id="databricks-host" class="level4">
+<h4 class="anchored" data-anchor-id="databricks-host">Databricks host</h4>
+<hr>
+<p>The Databricks host is the instance of Databricks that you want to connect to. It’s the URL that you see in your browser bar when you’re on the Databricks site and should end in “azuredatabricks.net” (ignore anything after this section of the URL).</p>
 <hr>
 </section>
-<section id="analysts" class="level3">
-<h3 class="anchored" data-anchor-id="analysts">Analysts</h3>
+<section id="databricks-cluster-id" class="level4">
+<h4 class="anchored" data-anchor-id="databricks-cluster-id">Databricks cluster id</h4>
 <hr>
-<p>Analysts working on analysis in government will:</p>
+<p>In Databricks, go to Compute in the left hand menu, and click on the name of your personal cluster:</p>
+<div data-align="center">
+<p><img src="../images/databricks-cluster-id.png" class="img-fluid"></p>
+</div>
+<p>On the Configuration tab, take the code between <code>clusters/</code> and <code>?</code> in the page URL. This is the ID for your personal cluster.</p>
+<hr>
+</section>
+<section id="databricks-token" class="level4">
+<h4 class="anchored" data-anchor-id="databricks-token">Databricks token</h4>
+<hr>
+<p>The Databricks token is a personal access token.</p>
+<p>A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the personal cluster. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.</p>
 <ul>
-<li>use open-source tools wherever whenever appropriate</li>
-<li>open source their code</li>
-<li>work with data engineers and architects to make sure that source data are versioned and stored so that analysis can be reproduced</li>
-<li>learn the skills they need to implement RAP principles</li>
-<li>engage with users of their analysis to demonstrate the value of RAP principles and build motivation for development</li>
-<li>deliver their analysis using RAP</li>
+<li><p>In Databricks, click on your email address in the top right corner, then click ‘User settings’</p></li>
+<li><p>Go to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button</p></li>
 </ul>
+<div data-align="center">
+<p><img src="../images/databricks-access-tokens.png" class="img-fluid"></p>
+</div>
+<ul>
+<li><p>Click the ‘Generate new token’ button</p></li>
+<li><p>Name the token, then click ‘Generate’</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less.</p>
+</div>
+</div>
+<ul>
+<li>Make a note of the ‘Databricks access token’ it has given you</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="setting-up-your-sparklyr-connection" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-your-sparklyr-connection">Setting up your <code>sparklyr</code> connection</h3>
+<hr>
+<p>To connect to Databricks through <code>sparklyr</code> you will first need to install other packages which it depends on. The following steps are only required once, and once you have successfully connected you will only need to use the code from the ‘Using <code>sparklyr</code> to access and navigate data’ section below.</p>
+<section id="reticulate-and-python" class="level4">
+<h4 class="anchored" data-anchor-id="reticulate-and-python">Reticulate and python</h4>
+<p>Behind the scenes <code>sparklyr</code> converts your queries to python when interfacing with Databricks. The <code>reticulate</code> package is used for managing python environments through R. It can be installed using the following line of code.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"reticulate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will also need to use <code>reticulate</code> to install a python environment in the background, the version of python you install should be higher than 3.10. The version is passed to the function as a string as below.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">install_python</span>(<span class="st">"3.10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This step can take quite a while to complete. If you get an error here please consult the ‘Troubleshooting’ section below.</p>
+<p>To confirm that python has installed successfully you can use the function <code>reticulate::py_version()</code> to check the version number of python you are running.</p>
+</section>
+<section id="pysparklyr" class="level4">
+<h4 class="anchored" data-anchor-id="pysparklyr">Pysparklyr</h4>
+<p>The second dependency is <code>pysparklyr</code>, however currently there is a bug in the main version of <code>pysparklyr</code> that causes it to fail when building a python environment for Databricks on Windows machines.</p>
+<p>Due to this you will need to install the development version from GitHub. We can do this using the <code>remotes</code> package using the code below.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mlverse/pysparklyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you get an <code>Error in loadNamespace(x) : there is no package called 'remotes'</code> this means the <code>remotes</code> package isn’t installed. Use <code>install.packages("remotes")</code> to install it and re-run the command above.</p>
+</div>
+</div>
+<p>The installation may prompt you to update a number of packages. If this happens enter <code>1</code> (to update all packages) into the prompt.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this step there is often an issue where the <code>curl</code> package will not update and it will restore the previous version. Unfortunately this will cause issues as <code>pysparklyr</code> depends on functions from a later version of <code>curl</code>.</p>
+<p>If this occurs use the function <code>remove_packages("curl")</code> to manually uninstall it, then run <code>install.packages("curl")</code> to install the latest version.</p>
+</div>
+</div>
+</section>
+<section id="sparklyr" class="level4">
+<h4 class="anchored" data-anchor-id="sparklyr">Sparklyr</h4>
+<p>Finally we can install the <code>sparklyr</code> package.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"sparklyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="using-sparklyr-to-access-and-navigate-data" class="level3">
+<h3 class="anchored" data-anchor-id="using-sparklyr-to-access-and-navigate-data">Using sparklyr to access and navigate data</h3>
+<hr>
+<p>Now that you have all the <code>sparklyr</code> dependencies set up on your laptop, and your environmental variables setup, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to databases before, this code will look quite familiar to you.</p>
+<section id="connect-to-databricks-through-sparklyr" class="level4">
+<h4 class="anchored" data-anchor-id="connect-to-databricks-through-sparklyr">Connect to Databricks through sparklyr</h4>
+<p>Include the following code in your R Script, the query below will show the names of the catalogs available to you.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your personal cluster hasn’t been started yet it will automatically begin booting up when you run the code below. If so, expect it to take a few minutes before you get any results as the cluster will have to start up first.</p>
+<p>If your cluster is already running it should begin executing your queries immediately.</p>
+</div>
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sparklyr)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sc <span class="ot">&lt;-</span> <span class="fu">spark_connect</span>(</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">cluster_id =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_CLUSTER_ID"</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"databricks_connect"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sdf_sql</span>(sc, <span class="st">"SHOW CATALOGS;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>From here you can use <code>sdf_sql()</code> to execute queries on your data. The first argument is always the spark connection <code>sc</code>, followed by the query you want to execute.</p>
+</section>
+<section id="navigating-catalogs-and-schema" class="level4">
+<h4 class="anchored" data-anchor-id="navigating-catalogs-and-schema">Navigating catalogs and schema</h4>
+<p>You can refer to a table or view with it’s full three name reference <em>catalog_name.schema_name.table_name</em>, however always using the three names has drawbacks.</p>
+<p>Firstly the names can get quite long due to naming conventions, but more importantly it can create more code maintenance. For example, if you wanted to recreate a query in a different schema you would have to go and edit every table reference.</p>
+<p>Instead you can tell Databricks to use a specific catalog and all further queries through that spark connection will be executed within that catalog. This means you no longer have to specify the catalog when you refer to a schema, table or view.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sdf_sql</span>(sc, <span class="st">"USE CATALOG catalog_40_copper_analyst_training;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can also do this with the schema with <code>USE schema_name;</code> as the query. This would mean you can reference tables and views within that schema with just their name.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you set a catalog and schema for Databricks to use, but also want to refer to data in another catalog or schema you can still use <em>catalog_name.schema_name.table_name</em> or <em>schema_name.table_name</em> to access it.</p>
+</div>
+</div>
+</section>
+<section id="overview-of-tables-and-columns" class="level4">
+<h4 class="anchored" data-anchor-id="overview-of-tables-and-columns">Overview of tables and columns</h4>
+<p>Like SQL Server every catalog has an <code>information_schema</code> which contains all of the metadata about the tables, columns, etc.</p>
+<p>To look at in all the tables and views in any data catalog you can use the following code, which will store the result in a variable called <code>tables</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tables <span class="ot">&lt;-</span> <span class="fu">sdf_sql</span>(sc, <span class="st">"SELECT * FROM information_schema.tables;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you <code>View(tables)</code> now you’ll see that it is not currently a data frame but a list with several entities in it. This is because <code>sparklyr</code> is storing the connection to the data, along with any instructions on how to transform it rather than storing the data itself. This allows it to pass all of the instructions to Databricks so that it can do the heavy lifting, and only bring back the data required into R memory.</p>
+<p>Since we don’t need to do any transformations here, we can simply tell <code>sparklyr</code> to <code>collect()</code> the data, which will turn it into an R data.frame.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tables_df <span class="ot">&lt;-</span> tables <span class="sc">%&gt;%</span> <span class="fu">collect</span>()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(tables_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Similarly you can look at the columns, data types, etc. within a catalog using the <code>information_schema</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>columns_df <span class="ot">&lt;-</span> <span class="fu">sdf_sql</span>(sc, <span class="st">"SELECT * FROM information_schema.columns;"</span>) <span class="sc">%&gt;%</span> <span class="fu">collect</span>()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(columns_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="troubleshooting" class="level3">
+<h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
+<hr>
+<section id="python-wont-install" class="level4">
+<h4 class="anchored" data-anchor-id="python-wont-install">Python won’t install</h4>
+<hr>
+<p>The most likely reason that python would fail to install is that you haven’t yet been granted access to the AD group ‘AZURE INTERNET EXCLUDE INSPECTION PA’ yet.</p>
+<p>If this is the case you will likely see a long error message which will contain the text <code>SSL: CERTIFICATE_VERIFY_FAILED</code> (you may need to scroll across the error message to see this as it’s quite chunky).</p>
+<p>To fix this issue submit an IT service desk ticket requesting access to the group above and retry once your access has been granted.</p>
+<hr>
+</section>
+<section id="using-spark_connect-throws-error-curl_parse_url-is-not-an-exported-object-from-namespacecurl" class="level4">
+<h4 class="anchored" data-anchor-id="using-spark_connect-throws-error-curl_parse_url-is-not-an-exported-object-from-namespacecurl">Using spark_connect() throws error: “‘curl_parse_url’ is not an exported object from namespace:curl”</h4>
+<hr>
+<p>This error appears when your version of the <code>curl</code> package is too old to have the functions that <code>sparklyr</code> depends on.</p>
+<p>To uninstall the old version and update it use the following code and then re-run <code>spark_connect()</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>(<span class="st">"curl"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"curl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="using-spark_connect-throws-error-databricks-connect-is-not-available-in-the-current-python-environment" class="level4">
+<h4 class="anchored" data-anchor-id="using-spark_connect-throws-error-databricks-connect-is-not-available-in-the-current-python-environment">Using spark_connect() throws error: “Databricks connect is not available in the current Python environment”</h4>
+<hr>
+<p>This error is usually caused by having another python environment already loaded in your R session.</p>
+<p>To resolve this restart your R session (Session &gt; Restart R) then re-run the <code>spark_connect()</code> function.</p>
+<hr>
+</section>
+<section id="using-spark_connect-fails-to-create-virtual-environment" class="level4">
+<h4 class="anchored" data-anchor-id="using-spark_connect-fails-to-create-virtual-environment">Using spark_connect() fails to create virtual environment</h4>
+<hr>
+<p>If when you run <code>spark_connect()</code> for the first time it fails to create a virtual environment and throws an error similar to below:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> Error installing <span class="fu">package</span>(s)<span class="sc">:</span> <span class="st">"</span><span class="sc">\"</span><span class="st">databricks-connect==16.1.0</span><span class="sc">\"</span><span class="st">"</span>, <span class="st">"</span><span class="sc">\"</span><span class="st">pandas!=2.1.0</span><span class="sc">\"</span><span class="st">"</span>, <span class="st">"PyArrow"</span>, <span class="st">"grpcio"</span>, <span class="st">"google-api-python-client"</span>, <span class="st">"grpcio_status"</span>, <span class="st">"rpy2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The most likely cause is that you’re using the official <code>pysparklyr</code> package rather than the development version. To fix this use the following code and rerun the <code>spark_connect()</code> function.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>(<span class="st">"pysparklyr"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mlverse/pysparklyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="im-having-another-problem-with-virtual-environments" class="level4">
+<h4 class="anchored" data-anchor-id="im-having-another-problem-with-virtual-environments">I’m having another problem with virtual environments</h4>
+<hr>
+<p>There are a number of issues that can arise when <code>sparkylr</code> creates virtual environments, and sometimes trying to work out what is wrong is quite difficult.</p>
+<p>The easiest way to resolve the issue is usually to remove the virtual environments and let <code>sparklyr</code> create them again.</p>
+<p>There are 2 methods of doing this, the first uses the <code>reticulate</code> package to view and remove them. First we can list what virtual environments exist using the code below.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span>reticulate<span class="sc">::</span><span class="fu">virtualenv_list</span>()</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#output: "r-sparklyr-databricks-16.1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can then remove that environment</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_remove</span>(<span class="st">"r-sparklyr-databricks-16.1"</span>) </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#where "r-sparklyr-databricks-16.1" is what is returned from the code above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once you’ve done this you can re-run <code>spark_connect()</code> and it should recreate the environment.</p>
+<p>If for some reason removing the environment through the command line doesn’t work we can delete them using file explorer. However, first we need to find where they are kept. We can do this with the following line of code which will print the full system path of any virtual environments that exist on your machine.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(reticulate<span class="sc">::</span><span class="fu">virtualenv_root</span>(), <span class="at">full.names =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once you have the path you can navigate to the <code>.virtualenvs</code> folder and manually delete the folder within it that corresponds to the name of the faulty environment. You can then re-run <code>spark_connect()</code> and it will rebuild it from scratch.</p>
 
 
+</section>
 </section>
 </section>
 
@@ -1131,18 +1545,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../writing-visualising/writing.html" class="pagination-link" aria-label="Writing about data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Writing about data</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../RAP/rap-support.html" class="pagination-link" aria-label="RAP support">
-        <span class="nav-page-text">RAP support</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1151,7 +1553,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/rap-expectations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_personal_cluster_sparklyr.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>
