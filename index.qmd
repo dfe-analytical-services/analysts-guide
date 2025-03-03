@@ -35,6 +35,18 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Python](learning-development/python.html)
 - Guidance and tips for using Python
 
+[Analytical Data Access (ADA) and Databricks](ADA/ada.html)
+- Information on the ADA project and guidance for analysts on how to interact with and use data stored in ADA using Databricks
+
+[Databricks fundamentals](ADA/databricks_fundamentals.qmd)
+- Fundamental concepts in Databricks that will help  you navigate and understand the platform
+
+[Databricks notebooks](ADA/databricks_notebooks.qmd)
+- Guidance on Notebooks in Databricks
+
+[Databricks workflows](ADA/databricks_workflows.qmd)
+- Guidance on Workflows in Databricks
+
 [Accessibility](learning-development/accessibility.html)
 - Tools and resources for digital accessibility
 
@@ -98,29 +110,25 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [RAP FAQs](RAP/rap-faq.html)
 - Frequently asked questions about RAP
 
-## Analytical Data Access (ADA) and Databricks
+## Databricks setup guides
 
-[Analytical Data Access (ADA) and Databricks](ADA/ada.html)
-- Guidance for analysts on how to interact with and use data stored in ADA using Databricks
+[SQL Warehouse with RStudio](ADA/databricks_rstudio_sql_warehouse.html)
+- Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio
 
-[Databricks Fundamental Concepts](ADA/databricks_fundamentals.qmd)
-- Fundamental concepts in DataBricks that will help  you navigate and understand the platform
+[Personal cluster with RStudio and `odbc` / `DBI`](ADA/databricks_rstudio_personal_cluster.html)
+- Guidance for analysts on how to connect to a Databricks personal cluster from RStudio using the odbc / DBI method
 
-[Databricks Notebooks](ADA/databricks_notebooks.qmd)
-- Guidance on Notebooks in DataBricks
+[Personal cluster with RStudio and `sparklyr`](ADA/databricks_rstudio_personal_cluster_sparklyr.html)
+- Guidance for analysts on how to connect to a Databricks personal cluster from RStudio using sparklyr
 
-[Databricks Workflows](ADA/databricks_workflows.qmd)
-- Guidance on Workflows in DataBricks
+[Use Databricks with Git](ADA/databricks_git.html)
+- Guidance for connecting Databricks to Git repositories
 
-[Setup Databricks SQL Warehouse with RStudio](ADA/databricks_rstudio_sql_warehouse.html)
-- Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio.
+[Script workflows in Databricks](ADA/databricks_workflow_script_databricks.html)
+- Guidance for scripting workflows in the Databricks interface
 
-[Setup Databricks personal cluster with RStudio and `odbc` / `DBI`](ADA/databricks_rstudio_personal_cluster.html)
-- Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.
-
-[Setup Databricks personal cluster with RStudio and `sparklyr`](ADA/databricks_rstudio_personal_cluster_sparklyr.html)
-- Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.
-
+[Script workflows in RStudio](ADA/databricks_workflow_script_rstudio.html)
+- Guidance for scripting workflows in RStudio
 
 ## Contact us
 
