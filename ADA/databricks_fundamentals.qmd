@@ -4,6 +4,10 @@ title: "Databricks fundamentals"
 
 ------------------------------------------------------------------------
 
+::: {.callout-important}
+Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+:::
+
 ## What is Databricks?
 
 Databricks is a web based platform for large scale data manipulation and analysis using code to create reproducible data pipelines. Primarily it takes the form of a website which you can create data pipelines and perform analysis in. It currently supports the languages R, SQL, Python and Scala, and integrates well with Git based version control systems such as GitHub or Azure DevOps.

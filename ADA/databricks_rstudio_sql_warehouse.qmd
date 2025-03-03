@@ -1,6 +1,10 @@
 ---
-  title: "Set up Databricks SQL Warehouse with RStudio"
+  title: "SQL Warehouse with RStudio"
 ---
+
+::: {.callout-important}
+Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+:::
 
 The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse which can then be used in RStudio to query data.
 
@@ -31,9 +35,9 @@ A SQL Warehouse is a SQL-only compute option which is quick to start and optimis
 
 This option is recommended if you only require SQL functionality in Databricks and is ideal if you already have existing RAP pipelines set up using SQL scripts in a Git repo. 
 
-SQL Warehouses do not support R, Python or Scala code. Currently they also do not support widgets within Databricks notebooks. If you want to use compute resources to run widgets or R or Python code, then you will need to use a personal cluster. There is guidance on the use of personal clusters on the [Using personal clusters with Databricks](ADA/databricks_rstudio_personal_cluster.html) page. 
+SQL Warehouses do not support R, Python or Scala code. Currently they also do not support widgets within Databricks notebooks. If you want to use compute resources to run widgets or R or Python code, then you will need to use a personal cluster. There is guidance on the use of personal clusters on the [Using personal clusters with Databricks](databricks_rstudio_personal_cluster.html) page. 
 
-SQL Warehouses enable you to access tables in the Unity Catalog, but not volumes within the Unity Catalog. Volumes are storage areas for files (e.g. .txt files or .csv files) rather than tables. You can learn more about volumes on [the Databricks documentation site](https://docs.databricks.com/en/volumes/index.html) or on our [Databricks fundamentals](ADA/databricks_fundamentals.html) page. To access a volume, you will also need to use a personal cluster. 
+SQL Warehouses enable you to access tables in the Unity Catalog, but not volumes within the Unity Catalog. Volumes are storage areas for files (e.g. .txt files or .csv files) rather than tables. You can learn more about volumes on [the Databricks documentation site](https://docs.databricks.com/en/volumes/index.html) or on our [Databricks fundamentals](databricks_fundamentals.html) page. To access a volume, you will also need to use a personal cluster. 
 
 ---
 

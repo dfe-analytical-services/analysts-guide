@@ -20,3 +20,18 @@ $code-bg: #E9ECEF;
 /* Font color for inline code */
 $code-color: #333333;  
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-color: #e95420 #ffffff;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #e95420;
+    border: 3px solid #ffffff;
+  }
+

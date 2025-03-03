@@ -1,6 +1,10 @@
 ---
-  title: "Set up Databricks personal compute cluster with RStudio and `odbc` / `DBI`"
+  title: "Personal cluster with RStudio and `odbc` / `DBI`"
 ---
+
+::: {.callout-important}
+Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+:::
 
 <p class="text-muted">
 
