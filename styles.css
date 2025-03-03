@@ -1,0 +1,18 @@
+.sidebar-logo {
+  max-height: 175px;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+  }
+  
+   /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+  
+    *::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    }
