@@ -140,9 +140,9 @@ If you have previously established a connection between a SQL Warehouse and RStu
 To set the environment variables, call `usethis::edit_r_environ()`. You will then need to enter the following information:
 
 ```         
-DATABRICKS_HOST=<databricks-host>
-DATABRICKS_CLUSTER_PATH=<databricks-cluster-path>
-DATABRICKS_TOKEN=<personal-access-token>
+DATABRICKS_HOST = "databricks-host"
+DATABRICKS_CLUSTER_PATH = "databricks-cluster-path"
+DATABRICKS_TOKEN = "personal-access-token"
 ```
 
 Once you have entered the details, save and close your .Renviron file and restart R (Session \> Restart R).
