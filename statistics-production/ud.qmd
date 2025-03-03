@@ -225,12 +225,12 @@ Additional filters are the release specific characteristics that we filter our d
 
 ---
 
-The policy of creating tidy data files effectively means optimising your filter-indicator combinations for use within the EES user interface. By doing so, end users will be better able to interact with your data and find the information that they're looking for.
+The policy of creating tidy data files effectively means optimising your filter-indicator combinations for use within the EES user interface. By doing so, end users will be better able to interact with your data and find the information that they're looking for. 
 
 The video below provides some context around this and shows how tidy data structures work better in the EES table tool when compared to wide (or pivoted) data sets.
 
 <center>
-<iframe width="560" height="315" src="https://web.microsoftstream.com/embed/video/fb2c32b2-7601-4698-9f9d-9d2b96c0a8f4?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+<iframe src="https://educationgovuk.sharepoint.com/sites/itops/_layouts/15/embed.aspx?UniqueId=35eeb7ef-9fbd-5c5d-bd24-b2ea42e5d884&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="560" height="315" frameborder="0" scrolling="no" allowfullscreen title="EES guidance - tidy versus wide data in the table tool-20230505_094924.mp4"></iframe>
 </center>
 
 The number of indicators should be kept to a minimum, whilst maintaining different types of measurements as distinct indicators. For example a wide structure might consist of something like the following:
@@ -255,13 +255,13 @@ This is a simplified example and your data will likely be more complex, but in m
 The next video illustrates the differences between wide and tidy data, showing examples of the same data organised in each structure.
 
 <center>
-<iframe width="560" height="315" src="https://web.microsoftstream.com/embed/video/c8f467db-31bb-4307-8d3b-11e5186c4049?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+<iframe src="https://educationgovuk.sharepoint.com/sites/itops/_layouts/15/embed.aspx?UniqueId=5eff0660-251c-5068-4756-0edfa6427c25&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="560" height="315" frameborder="0" scrolling="no" allowfullscreen title="EES guidance - tidy versus wide data, underlying data files-20230505_101122.mp4"></iframe>
 </center>
 
 If your current processes produce wide data that you need to switch to a tidy structure, one of doing this is using the `pivot_longer()` function in R. The following video demonstrates how to do that using the data shown in the previous videos.
 
 <center>
-<iframe width="560" height="315" src="https://web.microsoftstream.com/embed/video/023ba23c-a7bf-4313-91c8-9dc2e14b1c8e?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+<iframe src="https://educationgovuk.sharepoint.com/sites/itops/_layouts/15/embed.aspx?UniqueId=8d887edc-34be-5e8a-17b6-33e85f208373&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="560" height="315" frameborder="0" scrolling="no" allowfullscreen title="EES guidance - wide versus tidy, tidying in R-20230505_105910.mp4"></iframe>
 </center>
 
 ---
