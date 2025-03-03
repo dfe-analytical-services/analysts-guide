@@ -1,6 +1,10 @@
 ---
-  title: "Set up Databricks SQL Warehouse with RStudio"
+  title: "SQL Warehouse with RStudio"
 ---
+
+::: {.callout-important}
+Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+:::
 
 The following instructions will help you to set up a connection between your laptop and your Databricks SQL warehouse which can then be used in RStudio to query data.
 

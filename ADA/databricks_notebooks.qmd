@@ -4,6 +4,10 @@ title: "Databricks notebooks"
 
 ------------------------------------------------------------------------
 
+::: {.callout-important}
+Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+:::
+
 ## Notebooks
 
 Notebooks are a special kind of script that Databricks supports. They consist of code blocks and markdown blocks which can contain formatted text, links and images. Due to the ability to combine markdown with code they are very well suited to creating and documenting data pipelines, such as creating a core dataset that underpins your other products. They are particularly powerful when parameterised and used in conjuction with [Workflows](Databricks_workflows.qmd).

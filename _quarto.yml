@@ -4,7 +4,6 @@ project:
 website: 
   page-navigation: true
   back-to-top-navigation: true
-  announcement: "Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting statistics.development@education.gov.uk."
   title: "Analysts' Guide"
   site-url: "https://dfe-analytical-services.github.io/analysts-guide"
   repo-url: https://github.com/dfe-analytical-services/analysts-guide

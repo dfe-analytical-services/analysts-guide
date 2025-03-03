@@ -8,6 +8,12 @@ Guidance for analysts on how to connect Databricks to GitHub and Azure DevOps
 
 </p>
 
+::: callout-important
+Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+:::
+
+
+
 ------------------------------------------------------------------------
 
 ## Why should I use Git with Databricks?
