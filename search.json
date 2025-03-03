@@ -982,7 +982,7 @@
     "href": "index.html#learning-and-development",
     "title": "Analysts’ Guide",
     "section": "Learning and development",
-    "text": "Learning and development\nLearning support - Useful learning resources, and support to get you started\nSQL - Guidance and tips for accessing data via databases with SQL\nR - Guidance and tips for using R\nGit - Guidance and tips for version control with Git\nPython - Guidance and tips for using Python\nAccessibility - Tools and resources for digital accessibility",
+    "text": "Learning and development\nLearning support - Useful learning resources, and support to get you started\nSQL - Guidance and tips for accessing data via databases with SQL\nR - Guidance and tips for using R\nGit - Guidance and tips for version control with Git\nPython - Guidance and tips for using Python\nAnalytical Data Access (ADA) - Information on the ADA project and guidance for analysts on how to interact with and use data stored in ADA using Databricks\nDatabricks fundamentals - Fundamental concepts in Databricks that will help you navigate and understand the platform\nDatabricks notebooks - Guidance on Notebooks in Databricks\nDatabricks workflows - Guidance on Workflows in Databricks\nAccessibility - Tools and resources for digital accessibility",
     "crumbs": [
       "Welcome"
     ]
@@ -1018,11 +1018,11 @@
     ]
   },
   {
-    "objectID": "index.html#analytical-data-access-ada-and-databricks",
-    "href": "index.html#analytical-data-access-ada-and-databricks",
+    "objectID": "index.html#databricks-setup-guides",
+    "href": "index.html#databricks-setup-guides",
     "title": "Analysts’ Guide",
-    "section": "Analytical Data Access (ADA) and Databricks",
-    "text": "Analytical Data Access (ADA) and Databricks\nAnalytical Data Access (ADA) and Databricks - Guidance for analysts on how to interact with and use data stored in ADA using Databricks\nDatabricks Fundamental Concepts - Fundamental concepts in DataBricks that will help you navigate and understand the platform\nDatabricks Notebooks - Guidance on Notebooks in DataBricks\nDatabricks Workflows - Guidance on Workflows in DataBricks\nSetup Databricks SQL Warehouse with RStudio - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio.\nSetup Databricks personal cluster with RStudio and odbc / DBI - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.\nSetup Databricks personal cluster with RStudio and sparklyr - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio.",
+    "section": "Databricks setup guides",
+    "text": "Databricks setup guides\nSQL Warehouse with RStudio - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio\nPersonal cluster with RStudio and odbc / DBI - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio using the odbc / DBI method\nPersonal cluster with RStudio and sparklyr - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio using sparklyr\nUse Databricks with Git - Guidance for connecting Databricks to Git repositories\nScript workflows in Databricks - Guidance for scripting workflows in the Databricks interface\nScript workflows in RStudio - Guidance for scripting workflows in RStudio",
     "crumbs": [
       "Welcome"
     ]
