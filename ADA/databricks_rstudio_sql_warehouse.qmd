@@ -127,6 +127,10 @@ Once you have entered the details, save and close your .Renviron file and restar
 
 The Databricks host is the instance of Databricks that you want to connect to. It's the URL that you see in your browser bar when you're on the Databricks site and should end in "azuredatabricks.net" (ignore anything after this section of the URL).
 
+::: callout-important
+Do not include the / at the end of the URL when you add it to the .Renviron file
+:::
+
 ------------------------------------------------------------------------
 
 #### Databricks SQL Warehouse Path
