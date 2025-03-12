@@ -1063,7 +1063,32 @@ Where there is a reasonable need to publish or report statistics for a full aggr
 
 ---
 
+#### Non-GSS standard data collection 
+
+---
+
+##### Black British / Welsh and Asian British Welsh categories
+
+---
+
+From the start of the 2024/25 academic year, four additional ethnicity codes were added to the Common Basic Data Set (CBDS) for use within management information systems and for return to the Department via statutory data collections. These new codes are: 
+-	Asian British
+-	Asian Welsh
+-	Black British
+-	Black Welsh
+
+The guidance on how to process these codes in line with available GSS categories is as follows:
+
+-	Asian British and Asian Welsh should be included in the Any other Asian background ethnicity minor category
+-	Black British and Black Welsh should be included in the Any other Black / African / Caribbean background ethnicity minor category
+-	Asian British and Asian Welsh should both be included in any aggregations to Asian / Asian British
+-	Black British and Black Welsh should both be included in any aggregation to Black / African / Caribbean / Black British
+
+---
+
 ### Establishment characteristics
+
+---
 
 A standardised set of establishment type fields has been developed, largely based on the data reported by the School and Pupils Statistics publication. Reference files for the standardised fields are available in the data screener GitHub repository, with the standards summarised below.
 
