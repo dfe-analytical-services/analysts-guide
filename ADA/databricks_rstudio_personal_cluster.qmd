@@ -33,6 +33,8 @@ You can use data from Databricks with R code in two different ways:
 
 You must have:
 
+-   [Git](https://git-scm.com/downloads) installed
+-   RTools installed from the Software Centre (latest version is RTools 44)
 -   Access to Databricks and the data you'll be working with
 -   Access to a personal cluster on Databricks
 -   R and RStudio downloaded
