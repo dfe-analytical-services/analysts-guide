@@ -237,21 +237,13 @@ reticulate::install_python("3.10")
 
 This step can take quite a while to complete. If you get an error here please consult the 'Troubleshooting' section below.
 
-To confirm that python has installed successfully you can use the function `reticulate::py_version()` to check the version number of python you are running.
+#### Pysparklyr and sparklyr
 
-#### Pysparklyr
+The second dependency is `pysparklyr`. As part of the `pysparklyr` install it will also install `sparklyr` so there is no need to do this manually.
 
-The second dependency is `pysparklyr`, however currently there is a bug in the main version of `pysparklyr` that causes it to fail when building a python environment for Databricks on Windows machines.
-
-Due to this you will need to install the development version from GitHub. We can do this using the `remotes` package using the code below.
-
-``` r         
-remotes::install_github("mlverse/pysparklyr")
+``` r
+install.packages("pysparklyr")
 ```
-
-::: callout-note
-If you get an `Error in loadNamespace(x) : there is no package called 'remotes'` this means the `remotes` package isn't installed. Use `install.packages("remotes")` to install it and re-run the command above.
-:::
 
 The installation may prompt you to update a number of packages. If this happens enter `1` (to update all packages) into the prompt.
 
@@ -261,13 +253,17 @@ In this step there is often an issue where the `curl` package will not update an
 If this occurs use the function `remove_packages("curl")` to manually uninstall it, then run `install.packages("curl")` to install the latest version.
 :::
 
-#### Sparklyr
+#### Install databricks
 
-Finally we can install the `sparklyr` package.
+The next step is to use the `pysparklyr` package to `install_databricks()`. This will install the necessary software to connect to the Databricks platform. 
 
-``` r         
-install.packages("sparklyr")
+The installation is specific to the Databricks Runtime of your cluster, this means if you create a new cluster with a different DBR version you will need to run this function again to set up the new cluster.
+
+``` r
+pysparklyr::install_databricks(cluster_id = Sys.getenv("DATABRICKS_CLUSTER_ID"), as_job = F)
 ```
+
+This installation may take some time, but only needs to be done the first time you connect to a cluster.
 
 ------------------------------------------------------------------------
 
@@ -390,37 +386,18 @@ To resolve this restart your R session (Session \> Restart R) then re-run the `s
 
 ------------------------------------------------------------------------
 
-#### Using spark_connect() fails to create virtual environment
-
-------------------------------------------------------------------------
-
-If when you run `spark_connect()` for the first time it fails to create a virtual environment and throws an error similar to below:
-
-``` r         
-Error: Error installing package(s): "\"databricks-connect==16.1.0\"", "\"pandas!=2.1.0\"", "PyArrow", "grpcio", "google-api-python-client", "grpcio_status", "rpy2"
-```
-
-The most likely cause is that you're using the official `pysparklyr` package rather than the development version. To fix this use the following code and rerun the `spark_connect()` function.
-
-``` r         
-remove.packages("pysparklyr")
-remotes::install_github("mlverse/pysparklyr")
-```
-
-------------------------------------------------------------------------
-
 #### I'm having another problem with virtual environments
 
 ------------------------------------------------------------------------
 
 There are a number of issues that can arise when `sparkylr` creates virtual environments, and sometimes trying to work out what is wrong is quite difficult.
 
-The easiest way to resolve the issue is usually to remove the virtual environments and let `sparklyr` create them again.
+The easiest way to resolve the issue is usually to remove the virtual environments and let `pysparklyr` create them again with the `install_databricks()` function.
 
 There are 2 methods of doing this, the first uses the `reticulate` package to view and remove them. First we can list what virtual environments exist using the code below.
 
 ``` r        
-reticulate::reticulate::virtualenv_list()
+reticulate::virtualenv_list()
 #output: "r-sparklyr-databricks-16.1"
 ```
 
@@ -431,7 +408,7 @@ reticulate::virtualenv_remove("r-sparklyr-databricks-16.1")
 #where "r-sparklyr-databricks-16.1" is what is returned from the code above
 ```
 
-Once you've done this you can re-run `spark_connect()` and it should recreate the environment.
+Once you've done this you can re-run `pysparklyr::install_databricks()` and it should recreate the environment.
 
 If for some reason removing the environment through the command line doesn't work we can delete them using file explorer. However, first we need to find where they are kept. We can do this with the following line of code which will print the full system path of any virtual environments that exist on your machine.
 
@@ -439,4 +416,4 @@ If for some reason removing the environment through the command line doesn't wor
 list.files(reticulate::virtualenv_root(), full.names = T)
 ```
 
-Once you have the path you can navigate to the `.virtualenvs` folder and manually delete the folder within it that corresponds to the name of the faulty environment. You can then re-run `spark_connect()` and it will rebuild it from scratch.
+Once you have the path you can navigate to the `.virtualenvs` folder and manually delete the folder within it that corresponds to the name of the faulty environment. You can then re-run `pysparklyr::install_databricks()` and it will rebuild it from scratch.
