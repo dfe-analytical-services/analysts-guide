@@ -827,26 +827,11 @@ Warning
 <p>You will also need to use <code>reticulate</code> to install a python environment in the background, the version of python you install should be higher than 3.10. The version is passed to the function as a string as below.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">install_python</span>(<span class="st">"3.10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This step can take quite a while to complete. If you get an error here please consult the ‘Troubleshooting’ section below.</p>
-<p>To confirm that python has installed successfully you can use the function <code>reticulate::py_version()</code> to check the version number of python you are running.</p>
 </section>
-<section id="pysparklyr" class="level4">
-<h4 class="anchored" data-anchor-id="pysparklyr">Pysparklyr</h4>
-<p>The second dependency is <code>pysparklyr</code>, however currently there is a bug in the main version of <code>pysparklyr</code> that causes it to fail when building a python environment for Databricks on Windows machines.</p>
-<p>Due to this you will need to install the development version from GitHub. We can do this using the <code>remotes</code> package using the code below.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mlverse/pysparklyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you get an <code>Error in loadNamespace(x) : there is no package called 'remotes'</code> this means the <code>remotes</code> package isn’t installed. Use <code>install.packages("remotes")</code> to install it and re-run the command above.</p>
-</div>
-</div>
+<section id="pysparklyr-and-sparklyr" class="level4">
+<h4 class="anchored" data-anchor-id="pysparklyr-and-sparklyr">Pysparklyr and sparklyr</h4>
+<p>The second dependency is <code>pysparklyr</code>. As part of the <code>pysparklyr</code> install it will also install <code>sparklyr</code> so there is no need to do this manually.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pysparklyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The installation may prompt you to update a number of packages. If this happens enter <code>1</code> (to update all packages) into the prompt.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -863,10 +848,12 @@ Warning
 </div>
 </div>
 </section>
-<section id="sparklyr" class="level4">
-<h4 class="anchored" data-anchor-id="sparklyr">Sparklyr</h4>
-<p>Finally we can install the <code>sparklyr</code> package.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"sparklyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="install-databricks" class="level4">
+<h4 class="anchored" data-anchor-id="install-databricks">Install databricks</h4>
+<p>The next step is to use the <code>pysparklyr</code> package to <code>install_databricks()</code>. This will install the necessary software to connect to the Databricks platform.</p>
+<p>The installation is specific to the Databricks Runtime of your cluster, this means if you create a new cluster with a different DBR version you will need to run this function again to set up the new cluster.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pysparklyr<span class="sc">::</span><span class="fu">install_databricks</span>(<span class="at">cluster_id =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_CLUSTER_ID"</span>), <span class="at">as_job =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This installation may take some time, but only needs to be done the first time you connect to a cluster.</p>
 <hr>
 </section>
 </section>
@@ -977,31 +964,21 @@ Note
 <p>To resolve this restart your R session (Session &gt; Restart R) then re-run the <code>spark_connect()</code> function.</p>
 <hr>
 </section>
-<section id="using-spark_connect-fails-to-create-virtual-environment" class="level4">
-<h4 class="anchored" data-anchor-id="using-spark_connect-fails-to-create-virtual-environment">Using spark_connect() fails to create virtual environment</h4>
-<hr>
-<p>If when you run <code>spark_connect()</code> for the first time it fails to create a virtual environment and throws an error similar to below:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> Error installing <span class="fu">package</span>(s)<span class="sc">:</span> <span class="st">"</span><span class="sc">\"</span><span class="st">databricks-connect==16.1.0</span><span class="sc">\"</span><span class="st">"</span>, <span class="st">"</span><span class="sc">\"</span><span class="st">pandas!=2.1.0</span><span class="sc">\"</span><span class="st">"</span>, <span class="st">"PyArrow"</span>, <span class="st">"grpcio"</span>, <span class="st">"google-api-python-client"</span>, <span class="st">"grpcio_status"</span>, <span class="st">"rpy2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The most likely cause is that you’re using the official <code>pysparklyr</code> package rather than the development version. To fix this use the following code and rerun the <code>spark_connect()</code> function.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>(<span class="st">"pysparklyr"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mlverse/pysparklyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
 <section id="im-having-another-problem-with-virtual-environments" class="level4">
 <h4 class="anchored" data-anchor-id="im-having-another-problem-with-virtual-environments">I’m having another problem with virtual environments</h4>
 <hr>
 <p>There are a number of issues that can arise when <code>sparkylr</code> creates virtual environments, and sometimes trying to work out what is wrong is quite difficult.</p>
-<p>The easiest way to resolve the issue is usually to remove the virtual environments and let <code>sparklyr</code> create them again.</p>
+<p>The easiest way to resolve the issue is usually to remove the virtual environments and let <code>pysparklyr</code> create them again with the <code>install_databricks()</code> function.</p>
 <p>There are 2 methods of doing this, the first uses the <code>reticulate</code> package to view and remove them. First we can list what virtual environments exist using the code below.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span>reticulate<span class="sc">::</span><span class="fu">virtualenv_list</span>()</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#output: "r-sparklyr-databricks-16.1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_list</span>()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#output: "r-sparklyr-databricks-16.1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We can then remove that environment</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_remove</span>(<span class="st">"r-sparklyr-databricks-16.1"</span>) </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#where "r-sparklyr-databricks-16.1" is what is returned from the code above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Once you’ve done this you can re-run <code>spark_connect()</code> and it should recreate the environment.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_remove</span>(<span class="st">"r-sparklyr-databricks-16.1"</span>) </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#where "r-sparklyr-databricks-16.1" is what is returned from the code above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once you’ve done this you can re-run <code>pysparklyr::install_databricks()</code> and it should recreate the environment.</p>
 <p>If for some reason removing the environment through the command line doesn’t work we can delete them using file explorer. However, first we need to find where they are kept. We can do this with the following line of code which will print the full system path of any virtual environments that exist on your machine.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(reticulate<span class="sc">::</span><span class="fu">virtualenv_root</span>(), <span class="at">full.names =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Once you have the path you can navigate to the <code>.virtualenvs</code> folder and manually delete the folder within it that corresponds to the name of the faulty environment. You can then re-run <code>spark_connect()</code> and it will rebuild it from scratch.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(reticulate<span class="sc">::</span><span class="fu">virtualenv_root</span>(), <span class="at">full.names =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once you have the path you can navigate to the <code>.virtualenvs</code> folder and manually delete the folder within it that corresponds to the name of the faulty environment. You can then re-run <code>pysparklyr::install_databricks()</code> and it will rebuild it from scratch.</p>
 
 
 </section>
