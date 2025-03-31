@@ -179,7 +179,7 @@ In Databricks, go to Compute in the left hand menu, and click on the name of you
 ![](../images/databricks-cluster-path.png)
 :::
 
-On the Configuration tab, scroll to the bottom of the page and click Advanced Options \> JDBC/ODBC \> HTTP Path, and copy the text after the last forward slash. This is your cluster path.
+On the Configuration tab, scroll to the bottom of the page and click Advanced Options \> JDBC/ODBC \> HTTP Path, and copy the text in the box. This is your cluster path.
 
 ------------------------------------------------------------------------
 
