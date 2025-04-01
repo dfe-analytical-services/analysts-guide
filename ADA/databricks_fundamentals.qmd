@@ -155,7 +155,7 @@ Examples of files suitable to be stored in a volume include CSVs, JSON and other
 
 Each user has their own workspace which serves as a personal document and code storage area. It contains a user folder which is only accessible to that user by default, along with any Git repositories that you have cloned or created within Databricks.
 
-Your workspace can be accessed through the 'Catalog' option in the Databricks sidebar.
+Your workspace can be accessed in the Databricks sidebar.
 
 ![](/images/ada-workspace-repos.png){fig-align="center"}
 
@@ -165,6 +165,8 @@ Everything in your workspace is only accessible to you unless you share it with 
 ## Don't overshare
 
 Sharing code this way can be useful but has it's risks. If you allow other users to edit and run your workbooks it's possible that they can make changes or run it simultaneously resulting in unexpected results.
+
+**DO NOT** share with "all workspace users" as as this shares your personal workspace or folder or notebook with over 700+ users on the platform and could result in a data breach. 
 
 For collaboration on code you should use a GitHub/DevOps repository which each user can clone and work on independently.
 :::
