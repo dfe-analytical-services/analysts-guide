@@ -99,7 +99,10 @@ We hope it can prove a useful community driven resource for everyone from the mo
 ## Reproducible Analytical Pipelines (RAP)
 
 [RAP in statistics](RAP/rap-statistics.html)
-- Detailed RAP guidance for statistics publications
+- Detailed RAP guidance on what RAP is and the core principles for statistics publications
+
+[RAP start guide](RAP/rap-start-guide.html)
+- Detailed guidance on how to get started with RAP for statistics publications
 
 [RAP expectations](RAP/rap-expectations.html)
 - Guidance for all analysts on expectations of RAP

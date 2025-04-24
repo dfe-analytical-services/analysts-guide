@@ -70,7 +70,7 @@ RAP has three core principles:
 
 [Version control](#version-control): Files and scripts should be appropriately version controlled
 
-Within each of these principles are separate elements of RAP, which are shown in the diagram below. You can find further information on each of the elements by clicking on the links in the diagram or visiting the [getting started with RAP page](../RAP/rap-getting-started.html). 
+Within each of these principles are separate elements of RAP, which are shown in the diagram below. You can find further information on each of the elements by clicking on the links in the diagram or visiting the [RAP start guide page](../RAP/rap-start-guide.html). 
 
  
 ---
