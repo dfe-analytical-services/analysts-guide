@@ -190,6 +190,8 @@ This is surprisingly neat to do. Let's say you wanted to roll back to version 1.
 
 - Malcolm Barrett has done some slides on [dplyr](https://malco.io/slides/hs_dplyr/#1){target="_blank" rel="noopener noreferrer"}, [ggplot2](https://malco.io/slides/hs_ggplot2/#1){target="_blank" rel="noopener noreferrer"}, and using [purrr](https://lar-purrr.netlify.app/#1){target="_blank" rel="noopener noreferrer"} which may be useful if you're looking at learning more about any of those packages.
 
+- Check out the [gallery of R charts](https://www.r-graph-gallery.com/){target="_blank" rel="noopener noreferrer"} for some visualisation inspiration - this website has over 400 examples grouped into 50 different chart types!
+
 - Also check out the [janitor](https://garthtarr.github.io/meatR/janitor.html){target="_blank" rel="noopener noreferrer"} package, it has some particularly powerful functions that are worth a look for tidying and QA'ing data.
 
 ---
