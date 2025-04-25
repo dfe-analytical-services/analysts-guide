@@ -25,7 +25,7 @@ Teams can use data held on the Databricks platform to implement RAP principles l
 ---
 
 ::: {.callout-note}
-This section below is split by the three core principles, [preparing data], [writing code] and [documentation]. 
+This section below is split by the three core principles, [preparing data], [writing code] and [version control]. 
 
 Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst.
 :::

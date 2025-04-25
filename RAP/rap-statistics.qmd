@@ -62,13 +62,13 @@ The collection of, and routine checking of data as it is coming into the departm
 RAP has three core principles:
 
 
-[Preparing data](#preparing-data): Data sources for a publication are stored in the same database
+[Preparing data](../RAP/rap-start-guide.html#preparing-data): Data sources for a publication are stored in the same database
 
 
-[Writing code](#writing-code): Underlying data files are produced using code, with no manual steps
+[Writing code](../RAP/rap-start-guide.html#writing-code): Underlying data files are produced using code, with no manual steps
 
 
-[Version control](#version-control): Files and scripts should be appropriately version controlled
+[Version control](../RAP/rap-start-guide.html#version-control): Files and scripts should be appropriately version controlled
 
 Within each of these principles are separate elements of RAP, which are shown in the diagram below. You can find further information on each of the elements by clicking on the links in the diagram or visiting the [RAP start guide page](../RAP/rap-start-guide.html). 
 
@@ -116,6 +116,8 @@ The checklist provided in the [publication self-assessment tool](https://rsconne
 
 
 Some teams will already be looking at best practice, while others will still have work to do to achieve the department's baseline of good and great practice. We know that all teams are starting this from different points, and are here to support all teams from their respective starting positions.
+
+For guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes and where to start, see the [RAP start guide page](../RAP/rap-start-guide.html).
 
 ---
 

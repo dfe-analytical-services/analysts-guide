@@ -112,7 +112,7 @@ website:
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
           - RAP/rap-statistics.qmd
-          - RAP/rap-getting-started.qmd
+          - RAP/rap-start-guide.qmd
       - section: "Databricks Setup Guides"
         contents:
           - ADA/databricks_rstudio_sql_warehouse.qmd
