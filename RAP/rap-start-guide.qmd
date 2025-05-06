@@ -1,14 +1,14 @@
 ---
-title: "RAP start guide"
+title: "Getting started with RAP"
 ---
 
 ---
 
-<p class="text-muted">Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes</p>
+<p class="text-muted">Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes. Check the [RAP for statistics page](../RAP/rap-statistics.html) for information on the core principles of RAP. </p>
 
 ---
 
-Check your analysis against the Good, Great and Best practice standards under [RAP in practice](/RAP/rap-statistics.html#rap-in-practice).
+Check your publication against the Good, Great and Best practice standards under [RAP in practice](/RAP/rap-statistics.html#rap-in-practice).
 
 Measure your publication against the RAP levels using our [self assessment tool](https://rsconnect/rsc/publication-self-assessment/){target="_blank" rel="noopener noreferrer"}. This will give you a good starting point and initial points to work on to progress to the next level of RAP.
 
