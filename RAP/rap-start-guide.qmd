@@ -68,7 +68,6 @@ Before applying RAP principles to your chosen area, it’s useful to get a sense
 
 * Identify quick wins 
 * Plan your work realistically
-* Prioritise quick wins
 * Communicate expectations with colleagues and stakeholders
 
 The matrix below, from the Department for Transport’s [Strategic Reproducible Analysis guidance](https://department-for-transport.github.io/strategic_reproducible_analysis/estimating-length-and-complexity-of-projects.html#examples-in-r), provides example estimates for different types of RAP tasks. It categorises them by complexity and gives a rough idea of how long each might take to implement.
