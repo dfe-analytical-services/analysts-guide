@@ -73,6 +73,8 @@ Before applying RAP principles to your chosen area, it’s useful to get a sense
 
 The matrix below, from the Department for Transport’s [Strategic Reproducible Analysis guidance](https://department-for-transport.github.io/strategic_reproducible_analysis/estimating-length-and-complexity-of-projects.html#examples-in-r), provides example estimates for different types of RAP tasks. It categorises them by complexity and gives a rough idea of how long each might take to implement.
 
+You can use this matrix to help you decide where to start. For example, if you’ve identified a high-priority chunk that also looks like a low-effort task, that could be a great place to begin. On the other hand, if a chunk is high-priority but high-effort, you might want to plan more time or break it down further.
+
 Actual timings will vary between analysts. Beginner coders will usually take longer than experienced coders, and some tasks may be easier for you than others. The estimates are just a guide to help you think about the effort and time involved.
 
 ![](../images/dft_matrix.png)
