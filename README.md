@@ -52,6 +52,10 @@ PRA - https://app.diagrams.net/#G1x1VLZghqCCnmDWHqgjpdU6fSSehms4FL
 
 ADA diagram - https://app.diagrams.net/?libs=general;flowchart#G1oL9XauLLcVVbF5O_qzZhtcqQbPW9myJk
 
+The diagrams are amended on the links above. Once you have finished amending a diagram, go to 
+file > Embed > HTML. Leave the option of 'Include a copy of my diagram selected', change the 
+boarder colour to none and untick the rest of the options. Press create and copy and paste the HTML 
+code over the top of the existing code in the .qmd file.
 ---
 
 ## Contribution
