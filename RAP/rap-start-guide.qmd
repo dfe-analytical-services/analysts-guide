@@ -24,8 +24,46 @@ Teams can use data held on the Databricks platform to implement RAP principles l
 
 ---
 
-::: {.callout-note}
-This section below is split by the three core principles, [preparing data], [writing code] and [version control]. 
+## Getting started 
+
+This section on splitting your project into chunks and prioritising draws on guidance from the Department for Transport’s [Strategic Reproducible Analysis resource](https://department-for-transport.github.io/strategic_reproducible_analysis/index.html).
+
+### Splitting your project into chunks
+
+When preparing statistics for publication, it's often more effective to think of your process as a series of modular, logical chunks, rather than a single pipeline or list of steps. This approach makes your work easier to understand, maintain and reuse, especially when collaborating with others or updating parts of your process.
+
+A chunk is a self-contained part of your analysis that:
+
+-   **Has a defined data input.** This may be a raw data or cleaned data ready for analysis.
+-   **Performs one main task.** Eask chunk should do something specific and easily describable like 'clean data', 'calculate headline figures' or 'create tidy data'.
+-   **Groups similar tasks together.** For example, suppressing all data points should be done in one 'suppression' chunk.
+-   **Avoids duplication.** If multiple outputs rely on the same data preparation, that preparation should be its own chunk. Then, separate chunks can handle the specific outputs.
+-   **Produces a defined output.** This could be cleaned data, suppressed data or tidy data.
+
+By breaking your work into logical chunks, you make it easier to test, document and update your process. It also makes quality assurance and communication with your team about the process easier.
+
+### Prioritise
+
+Although it might feel natural to work through your process and improve it in chronological order, well-structured code gives you the flexibility to start where it matters most. Prioritising the right chunks early can accelerate your progress and help you see the benefits of RAP sooner.
+
+When deciding where to begin, consider the following:
+
+-   Which chunks deliver the greatest value?
+
+-   Where are the biggest time-saving opportunities?
+
+-   Can a chunk serve multiple purposes?
+
+-   Are other chunks dependent on this one?
+
+-   Is the current method causing problems, or is it relatively robust?
+
+---
+
+::: callout-note
+Now that you’ve prioritised the area of your workflow to focus on, the next step is to apply the relevant RAP (Reproducible Analytical Pipeline) principles to that part of your process.
+
+This section below is split by the three core principles, [preparing data], [writing code](#writing-code) and [version control].
 
 Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst.
 :::
