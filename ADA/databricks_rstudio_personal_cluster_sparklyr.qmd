@@ -386,6 +386,16 @@ To resolve this restart your R session (Session \> Restart R) then re-run the `s
 
 ------------------------------------------------------------------------
 
+#### Queries hang when connecting to Databricks from RStudio on Azure Virtual Desktop
+
+------------------------------------------------------------------------
+
+If your query runs for a long time and doesn't return any results, check that you have a config.yml file. 
+
+The `spark_connect()` function requires this config file to run correctly. If you don't have a config.yml file, create a blank one in your project folder, and your queries should then run correctly. 
+
+------------------------------------------------------------------------
+
 #### I'm having another problem with virtual environments
 
 ------------------------------------------------------------------------
