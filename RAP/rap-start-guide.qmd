@@ -32,7 +32,11 @@ Teams can use data held on the Databricks platform to implement RAP principles l
 
 This section on splitting your project into chunks and prioritising draws on guidance from the Department for Transport’s [Strategic Reproducible Analysis resource](https://department-for-transport.github.io/strategic_reproducible_analysis/index.html).
 
+---
+
 ### Splitting your project into chunks
+
+---
 
 When preparing statistics for publication, it's often more effective to think of your process as a series of modular, logical chunks, rather than a single pipeline or list of steps. This approach makes your work easier to understand, maintain and reuse, especially when collaborating with others or updating parts of your process.
 
@@ -46,7 +50,11 @@ A chunk is a self-contained part of your analysis that:
 
 By breaking your work into logical chunks, you make it easier to test, document and update your process. It also makes quality assurance and communication with your team about the process easier.
 
+---
+
 ### Prioritise
+
+---
 
 Although it might feel natural to work through your process and improve it in chronological order, well-structured code gives you the flexibility to start where it matters most. Prioritising the right chunks early can accelerate your progress and help you see the benefits of RAP sooner.
 
@@ -62,7 +70,11 @@ When deciding where to begin, consider the following:
 
 -   Is the current method causing problems, or is it relatively robust?
 
+---
+
 ### Estimating Effort and Complexity
+
+---
 
 Before applying RAP principles to your chosen area, it’s useful to get a sense of how much time and effort each improvement might take. This can help you:
 
