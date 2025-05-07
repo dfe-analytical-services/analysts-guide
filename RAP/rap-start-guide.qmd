@@ -74,13 +74,13 @@ The matrix below, from the Department for Transport’s [Strategic Reproducible 
 
 You can use this matrix to help you decide where to start. For example, if you’ve identified a high-priority chunk that also looks like a low-effort task, that could be a great place to begin. On the other hand, if a chunk is high-priority but high-effort, you might want to plan more time or break it down further.
 
-Actual timings will vary between analysts. Beginner coders will usually take longer than experienced coders, and some tasks may be easier for you than others. The estimates are just a guide to help you think about the effort and time involved.
-
 ![](../images/dft_matrix.png)
+Actual timings will vary between analysts. Beginner coders will usually take longer than experienced coders, and some tasks may be easier for you than others. The estimates are just a guide to help you think about the effort and time involved.
 
 ---
 
 ::: callout-note
+# Apply the principles
 Now that you’ve prioritised the area of your workflow to focus on, the next step is to apply the relevant RAP (Reproducible Analytical Pipeline) principles to that part of your process.
 
 This section below is split by the three core principles, [preparing data], [writing code](#writing-code) and [version control].
@@ -88,6 +88,7 @@ This section below is split by the three core principles, [preparing data], [wri
 Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst.
 :::
 
+---
 
 ## Preparing data
 
