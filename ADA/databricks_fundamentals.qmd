@@ -91,6 +91,24 @@ There are a few different ways of storing files and data on Databricks. Your dat
 
 ------------------------------------------------------------------------
 
+::: callout-caution
+## Data changes during migration to Databricks
+
+Please note that if you have had data migrated from SQL Server to the Unity Catalog, some changes may have been made to table and / or column names. Databricks does not support spaces in table or column names, and will automatically replace spaces with underscores (_). 
+
+The following special characters are also unsupported:
+
+- full stop (.)
+- forward slash (/)
+- All ASCII control characters
+
+If column or table names contain hyphens, you will need to use [backticks](https://dictionary.cambridge.org/dictionary/english/backtick) around the column or table name when referencing them in your code, e.g:
+
+``SELECT * FROM `table-name` WHERE `column-name` = 1``
+
+You can find more information on Databricks object names in the [Databricks SQL reference manual](https://docs.databricks.com/gcp/en/sql/language-manual/sql-ref-names), and more information on how special characters will be re-mapped in the [special characters list](https://educationgovuk-my.sharepoint.com/:x:/g/personal/ruwanika_weerakkody_education_gov_uk/EQxT1U-AbLFCmjTU-fYuK9EBkdYMyHjVrYeBUTWy2q9mFw?e=c4TLDX).
+:::
+
 The majority of data and files on Databricks should be stored in the 'unity catalog'. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.
 
 The unity catalog can be accessed through the 'Catalog' option in the Databricks sidebar.
