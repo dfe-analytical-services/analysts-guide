@@ -25,9 +25,9 @@ To improve your publication process using RAP, first ensure you have checked you
 
 Once you've completed these steps, see the guidance below to help you get started with implementing RAP principles into your work by: 
 
-1. Splitting your process into [logical chunks](#Splitting-your-project-into-chunks), [estimating the effort and complexity](#Estimating-Effort-and-Complexity) and [prioritising](#Prioritise). 
+1. Splitting your process into [logical chunks](#splitting-your-project-into-chunks), [estimating the effort and complexity](#estimating-effort-and-complexity) and [prioritising](#prioritise). 
 
-2. Apply the relevant RAP principles from [preparing data](#preparing-data), [writing code](#writing-code) and [version control](version-control).
+2. Apply the relevant RAP principles from [preparing data](#preparing-data), [writing code](#writing-code) and [version control](#version-control).
 
 
 ::: callout-tip
