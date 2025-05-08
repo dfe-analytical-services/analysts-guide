@@ -21,7 +21,7 @@ Teams can use data held on the Databricks platform to implement RAP principles l
 
 ## Getting started 
 
-To improve your publication process using RAP, ensure you have checked your publication against the Good, Great and Best practice standards under [RAP in practice](/RAP/rap-statistics.html#rap-in-practice). Then measure your publication against the RAP levels using our [self assessment tool](https://rsconnect/rsc/publication-self-assessment/){target="_blank" rel="noopener noreferrer"}.
+To improve your publication process using RAP, first ensure you have checked your publication against the Good, Great and Best practice standards under [RAP in practice](/RAP/rap-statistics.html#rap-in-practice). Then measure your publication against the RAP levels using our [self assessment tool](https://rsconnect/rsc/publication-self-assessment/){target="_blank" rel="noopener noreferrer"}.
 
 Once you've completed these steps, see the guidance below to help you get started with implementing RAP principles into your work by: 
 
