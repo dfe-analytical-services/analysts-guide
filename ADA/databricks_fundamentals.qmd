@@ -102,7 +102,7 @@ The following special characters are also unsupported:
 - forward slash (/)
 - All ASCII control characters
 
-If column or table names contain hyphens, you will need to use [backticks](https://dictionary.cambridge.org/dictionary/english/backtick) around the column or table name when referencing them in your code, e.g:
+If column or table names contain hyphens, you will need to use [backticks](https://dictionary.cambridge.org/dictionary/english/backtick) around the column or table name when referencing them in your code, e.g.:
 
 ``SELECT * FROM `table-name` WHERE `column-name` = 1``
 
