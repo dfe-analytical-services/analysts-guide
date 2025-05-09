@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -67,17 +68,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../writing-visualising/dashboards.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0d331833c0899d52d8ff3a445c87918a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e9fb78f62c489661678ff9c216b8110c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-24b95b3762cc9396e1c581e2a7cd9ff9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-37e51258159c7d0a8cb8a50354e53c5f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-62e78e9e59e0651f7e01720e86733257.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-675e34ecf2fdcfb1b625b2a9982bd9d8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-fe93c050ee4711094fdfcc91cba07144.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-7337f635df332ff43b85381b13a4738e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,7 +147,167 @@ cookieconsent.run({
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -567,6 +729,7 @@ cookieconsent.run({
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../writing-visualising/dashboards.html">Writing and visualising</a></li><li class="breadcrumb-item"><a href="../writing-visualising/dashboards_rshiny.html">Creating R Shiny dashboards</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Creating R Shiny dashboards</h1>
@@ -728,8 +891,8 @@ Caution
 <p>Which produces the following chart with tooltips appearing when the user hovers over any given data point:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="girafe html-widget html-fill-item" id="htmlwidget-939a876573cf3bbddba5" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-939a876573cf3bbddba5">{"x":{"html":"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='ggiraph-svg' role='graphics-document' id='svg_df56555f_051c_49c9_8b33_68dac18ee413' viewBox='0 0 532.8 345.6'>\n <defs id='svg_df56555f_051c_49c9_8b33_68dac18ee413_defs'>\n  <clipPath id='svg_df56555f_051c_49c9_8b33_68dac18ee413_c1'>\n   <rect x='0' y='0' width='532.8' height='345.6'/>\n  <\/clipPath>\n  <clipPath id='svg_df56555f_051c_49c9_8b33_68dac18ee413_c2'>\n   <rect x='37.44' y='5.48' width='402.26' height='308.42'/>\n  <\/clipPath>\n <\/defs>\n <g id='svg_df56555f_051c_49c9_8b33_68dac18ee413_rootg' class='ggiraph-svg-rootg'>\n  <g clip-path='url(#svg_df56555f_051c_49c9_8b33_68dac18ee413_c1)'>\n   <rect x='0' y='0' width='532.8' height='345.6' fill='#FFFFFF' fill-opacity='1' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.75' stroke-linejoin='round' stroke-linecap='round' class='ggiraph-svg-bg'/>\n   <rect x='0' y='0' width='532.8' height='345.6' fill='#FFFFFF' fill-opacity='1' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='round'/>\n  <\/g>\n  <g clip-path='url(#svg_df56555f_051c_49c9_8b33_68dac18ee413_c2)'>\n   <rect x='37.44' y='5.48' width='402.26' height='308.42' fill='#EBEBEB' fill-opacity='1' stroke='none'/>\n   <polyline points='37.44,282.35 439.70,282.35' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,223.94 439.70,223.94' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,165.53 439.70,165.53' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,107.12 439.70,107.12' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,48.70 439.70,48.70' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='55.73,313.89 55.73,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='179.69,313.89 179.69,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='303.65,313.89 303.65,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='427.62,313.89 427.62,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,311.56 439.70,311.56' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,253.15 439.70,253.15' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,194.73 439.70,194.73' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,136.32 439.70,136.32' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,77.91 439.70,77.91' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,19.50 439.70,19.50' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='117.71,313.89 117.71,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='241.67,313.89 241.67,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='365.63,313.89 365.63,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e1' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e2' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e3' cx='74.32' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e4' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e5' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e6' cx='99.11' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e7' cx='80.52' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e8' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e9' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e10' cx='86.72' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e11' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e12' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e13' cx='80.52' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e14' cx='61.93' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e15' cx='68.12' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.2'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e16' cx='86.72' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e17' cx='74.32' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e18' cx='80.52' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e19' cx='99.11' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e20' cx='86.72' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e21' cx='99.11' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e22' cx='86.72' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e23' cx='55.73' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e24' cx='99.11' cy='253.15' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.5 &amp;lt;br/&amp;gt;Length= 1.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e25' cx='111.51' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e26' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e27' cx='92.92' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e28' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e29' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e30' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e31' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e32' cx='86.72' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e33' cx='86.72' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e34' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e35' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e36' cx='68.12' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.2'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e37' cx='74.32' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e38' cx='80.52' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e39' cx='74.32' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e40' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e41' cx='74.32' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e42' cx='74.32' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e43' cx='74.32' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e44' cx='92.92' cy='241.46' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.6 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e45' cx='111.51' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e46' cx='80.52' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e47' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e48' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e49' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e50' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e51' cx='285.06' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e52' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e53' cx='297.46' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e54' cx='241.67' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e55' cx='278.86' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e56' cx='272.66' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e57' cx='285.06' cy='124.64' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.6 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e58' cx='198.29' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e59' cx='278.86' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e60' cx='235.47' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 3.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e61' cx='210.68' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e62' cx='254.07' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.2'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e63' cx='241.67' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e64' cx='285.06' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e65' cx='216.88' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 3.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e66' cx='266.46' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e67' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e68' cx='247.87' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 4.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e69' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e70' cx='235.47' cy='183.05' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.1 &amp;lt;br/&amp;gt;Length= 3.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e71' cx='291.26' cy='101.28' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.8'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e72' cx='241.67' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e73' cx='297.46' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e74' cx='285.06' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e75' cx='260.27' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e76' cx='266.46' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e77' cx='291.26' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.8'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e78' cx='303.65' cy='112.96' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.7 &amp;lt;br/&amp;gt;Length= 5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e79' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e80' cx='210.68' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e81' cx='229.28' cy='183.05' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.1 &amp;lt;br/&amp;gt;Length= 3.8'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e82' cx='223.08' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e83' cx='235.47' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 3.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e84' cx='309.85' cy='124.64' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.6 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e85' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e86' cx='272.66' cy='124.64' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.6 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e87' cx='285.06' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e88' cx='266.46' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e89' cx='247.87' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e90' cx='241.67' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e91' cx='266.46' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 4.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e92' cx='278.86' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e93' cx='241.67' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e94' cx='198.29' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e95' cx='254.07' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.2'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e96' cx='254.07' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 4.2'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e97' cx='254.07' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.2'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e98' cx='260.27' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e99' cx='179.69' cy='183.05' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.1 &amp;lt;br/&amp;gt;Length= 3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e100' cx='247.87' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e101' cx='365.63' cy='19.5' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.5 &amp;lt;br/&amp;gt;Length= 6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e102' cx='309.85' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e103' cx='359.44' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e104' cx='340.84' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e105' cx='353.24' cy='54.55' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.2 &amp;lt;br/&amp;gt;Length= 5.8'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e106' cx='402.82' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 6.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e107' cx='272.66' cy='112.96' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.7 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e108' cx='384.23' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 6.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e109' cx='353.24' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.8'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e110' cx='371.83' cy='19.5' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.5 &amp;lt;br/&amp;gt;Length= 6.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e111' cx='309.85' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e112' cx='322.25' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 5.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e113' cx='334.64' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e114' cx='303.65' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e115' cx='309.85' cy='31.18' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.4 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e116' cx='322.25' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.3'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e117' cx='334.64' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e118' cx='409.02' cy='54.55' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.2 &amp;lt;br/&amp;gt;Length= 6.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e119' cx='421.42' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 6.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e120' cx='303.65' cy='136.32' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e121' cx='347.04' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e122' cx='297.46' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e123' cx='409.02' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 6.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e124' cx='297.46' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e125' cx='347.04' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e126' cx='365.63' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e127' cx='291.26' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.8'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e128' cx='297.46' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e129' cx='340.84' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e130' cx='353.24' cy='124.64' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.6 &amp;lt;br/&amp;gt;Length= 5.8'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e131' cx='371.83' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 6.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e132' cx='390.43' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 6.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e133' cx='340.84' cy='54.55' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.2 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e134' cx='309.85' cy='136.32' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e135' cx='340.84' cy='148' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e136' cx='371.83' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 6.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e137' cx='340.84' cy='31.18' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.4 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e138' cx='334.64' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e139' cx='291.26' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.8'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e140' cx='328.45' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e141' cx='340.84' cy='31.18' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.4 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e142' cx='309.85' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e143' cx='309.85' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e144' cx='359.44' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.9'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e145' cx='347.04' cy='19.5' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.5 &amp;lt;br/&amp;gt;Length= 5.7'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e146' cx='316.05' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.2'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e147' cx='303.65' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 5'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e148' cx='316.05' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 5.2'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e149' cx='328.45' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.4'/>\n   <circle id='svg_df56555f_051c_49c9_8b33_68dac18ee413_e150' cx='309.85' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.1'/>\n  <\/g>\n  <g clip-path='url(#svg_df56555f_051c_49c9_8b33_68dac18ee413_c1)'>\n   <text x='18.53' y='314.77' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>0.0<\/text>\n   <text x='18.53' y='256.35' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>0.5<\/text>\n   <text x='18.53' y='197.94' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>1.0<\/text>\n   <text x='18.53' y='139.53' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>1.5<\/text>\n   <text x='18.53' y='81.12' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>2.0<\/text>\n   <text x='18.53' y='22.71' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>2.5<\/text>\n   <polyline points='34.70,311.56 37.44,311.56' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,253.15 37.44,253.15' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,194.73 37.44,194.73' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,136.32 37.44,136.32' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,77.91 37.44,77.91' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,19.50 37.44,19.50' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='117.71,316.63 117.71,313.89' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='241.67,316.63 241.67,313.89' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='365.63,316.63 365.63,313.89' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <text x='114.91' y='325.24' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>2<\/text>\n   <text x='238.87' y='325.24' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>4<\/text>\n   <text x='362.84' y='325.24' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>6<\/text>\n   <text x='204.29' y='337.83' font-size='8.25pt' font-family='DejaVu Sans'>Petal.Length<\/text>\n   <text transform='translate(13.50,190.98) rotate(-90.00)' font-size='8.25pt' font-family='DejaVu Sans'>Petal.Width<\/text>\n   <rect x='450.66' y='120.39' width='76.66' height='78.59' fill='#FFFFFF' fill-opacity='1' stroke='none'/>\n   <text x='456.14' y='135.04' font-size='8.25pt' font-family='DejaVu Sans'>Species<\/text>\n   <rect x='456.14' y='141.66' width='17.28' height='17.28' fill='#EBEBEB' fill-opacity='1' stroke='none'/>\n   <circle cx='464.78' cy='150.3' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round'/>\n   <rect x='456.14' y='158.94' width='17.28' height='17.28' fill='#EBEBEB' fill-opacity='1' stroke='none'/>\n   <circle cx='464.78' cy='167.58' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round'/>\n   <rect x='456.14' y='176.22' width='17.28' height='17.28' fill='#EBEBEB' fill-opacity='1' stroke='none'/>\n   <circle cx='464.78' cy='184.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round'/>\n   <text x='478.9' y='153.51' font-size='6.6pt' font-family='DejaVu Sans'>setosa<\/text>\n   <text x='478.9' y='170.79' font-size='6.6pt' font-family='DejaVu Sans'>versicolor<\/text>\n   <text x='478.9' y='188.07' font-size='6.6pt' font-family='DejaVu Sans'>virginica<\/text>\n  <\/g>\n <\/g>\n<\/svg>","js":null,"uid":"svg_df56555f_051c_49c9_8b33_68dac18ee413","ratio":1.541666666666667,"settings":{"tooltip":{"css":".tooltip_SVGID_ { padding:5px;background:black;color:white;border-radius:2px;text-align:left; ; position:absolute;pointer-events:none;z-index:999;}","placement":"doc","opacity":0.9,"offx":10,"offy":10,"use_cursor_pos":true,"use_fill":false,"use_stroke":false,"delay_over":200,"delay_out":500},"hover":{"css":".hover_data_SVGID_ { fill:orange;stroke:black;cursor:pointer; }\ntext.hover_data_SVGID_ { stroke:none;fill:orange; }\ncircle.hover_data_SVGID_ { fill:orange;stroke:black; }\nline.hover_data_SVGID_, polyline.hover_data_SVGID_ { fill:none;stroke:orange; }\nrect.hover_data_SVGID_, polygon.hover_data_SVGID_, path.hover_data_SVGID_ { fill:orange;stroke:none; }\nimage.hover_data_SVGID_ { stroke:orange; }","reactive":true,"nearest_distance":null},"hover_inv":{"css":""},"hover_key":{"css":".hover_key_SVGID_ { fill:orange;stroke:black;cursor:pointer; }\ntext.hover_key_SVGID_ { stroke:none;fill:orange; }\ncircle.hover_key_SVGID_ { fill:orange;stroke:black; }\nline.hover_key_SVGID_, polyline.hover_key_SVGID_ { fill:none;stroke:orange; }\nrect.hover_key_SVGID_, polygon.hover_key_SVGID_, path.hover_key_SVGID_ { fill:orange;stroke:none; }\nimage.hover_key_SVGID_ { stroke:orange; }","reactive":true},"hover_theme":{"css":".hover_theme_SVGID_ { fill:orange;stroke:black;cursor:pointer; }\ntext.hover_theme_SVGID_ { stroke:none;fill:orange; }\ncircle.hover_theme_SVGID_ { fill:orange;stroke:black; }\nline.hover_theme_SVGID_, polyline.hover_theme_SVGID_ { fill:none;stroke:orange; }\nrect.hover_theme_SVGID_, polygon.hover_theme_SVGID_, path.hover_theme_SVGID_ { fill:orange;stroke:none; }\nimage.hover_theme_SVGID_ { stroke:orange; }","reactive":true},"select":{"css":".select_data_SVGID_ { fill:red;stroke:gray; }","type":"single","only_shiny":false,"selected":[]},"select_inv":{"css":""},"select_key":{"css":".select_key_SVGID_ { fill:red;stroke:black;cursor:pointer; }\ntext.select_key_SVGID_ { stroke:none;fill:red; }\ncircle.select_key_SVGID_ { fill:red;stroke:black; }\nline.select_key_SVGID_, polyline.select_key_SVGID_ { fill:none;stroke:red; }\nrect.select_key_SVGID_, polygon.select_key_SVGID_, path.select_key_SVGID_ { fill:red;stroke:none; }\nimage.select_key_SVGID_ { stroke:red; }","type":"single","only_shiny":true,"selected":[]},"select_theme":{"css":".select_theme_SVGID_ { fill:red;stroke:black;cursor:pointer; }\ntext.select_theme_SVGID_ { stroke:none;fill:red; }\ncircle.select_theme_SVGID_ { fill:red;stroke:black; }\nline.select_theme_SVGID_, polyline.select_theme_SVGID_ { fill:none;stroke:red; }\nrect.select_theme_SVGID_, polygon.select_theme_SVGID_, path.select_theme_SVGID_ { fill:red;stroke:none; }\nimage.select_theme_SVGID_ { stroke:red; }","type":"single","only_shiny":true,"selected":[]},"zoom":{"min":1,"max":1,"duration":300},"toolbar":{"position":"topright","pngname":"diagram","tooltips":null,"fixed":false,"hidden":[],"delay_over":200,"delay_out":500},"sizing":{"rescale":true,"width":1}}},"evals":[],"jsHooks":[]}</script>
+<div class="girafe html-widget html-fill-item" id="htmlwidget-16c60846559c8be1d75c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-16c60846559c8be1d75c">{"x":{"html":"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='ggiraph-svg' role='graphics-document' id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7' viewBox='0 0 532.8 345.6'>\n <defs id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_defs'>\n  <clipPath id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_c1'>\n   <rect x='0' y='0' width='532.8' height='345.6'/>\n  <\/clipPath>\n  <clipPath id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_c2'>\n   <rect x='37.44' y='5.48' width='402.26' height='308.42'/>\n  <\/clipPath>\n <\/defs>\n <g id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_rootg' class='ggiraph-svg-rootg'>\n  <g clip-path='url(#svg_4fc74c86_e1af_4141_b4c5_211406085fe7_c1)'>\n   <rect x='0' y='0' width='532.8' height='345.6' fill='#FFFFFF' fill-opacity='1' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.75' stroke-linejoin='round' stroke-linecap='round' class='ggiraph-svg-bg'/>\n   <rect x='0' y='0' width='532.8' height='345.6' fill='#FFFFFF' fill-opacity='1' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='round'/>\n  <\/g>\n  <g clip-path='url(#svg_4fc74c86_e1af_4141_b4c5_211406085fe7_c2)'>\n   <rect x='37.44' y='5.48' width='402.26' height='308.42' fill='#EBEBEB' fill-opacity='1' stroke='none'/>\n   <polyline points='37.44,282.35 439.70,282.35' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,223.94 439.70,223.94' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,165.53 439.70,165.53' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,107.12 439.70,107.12' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,48.70 439.70,48.70' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='55.73,313.89 55.73,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='179.69,313.89 179.69,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='303.65,313.89 303.65,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='427.62,313.89 427.62,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.53' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,311.56 439.70,311.56' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,253.15 439.70,253.15' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,194.73 439.70,194.73' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,136.32 439.70,136.32' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,77.91 439.70,77.91' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='37.44,19.50 439.70,19.50' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='117.71,313.89 117.71,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='241.67,313.89 241.67,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='365.63,313.89 365.63,5.48' fill='none' stroke='#FFFFFF' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e1' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e2' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e3' cx='74.32' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e4' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e5' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e6' cx='99.11' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e7' cx='80.52' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e8' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e9' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e10' cx='86.72' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e11' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e12' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e13' cx='80.52' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e14' cx='61.93' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e15' cx='68.12' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.2'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e16' cx='86.72' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e17' cx='74.32' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e18' cx='80.52' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e19' cx='99.11' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e20' cx='86.72' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e21' cx='99.11' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e22' cx='86.72' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e23' cx='55.73' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e24' cx='99.11' cy='253.15' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.5 &amp;lt;br/&amp;gt;Length= 1.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e25' cx='111.51' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e26' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e27' cx='92.92' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e28' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e29' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e30' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e31' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e32' cx='86.72' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e33' cx='86.72' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e34' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e35' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e36' cx='68.12' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.2'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e37' cx='74.32' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e38' cx='80.52' cy='299.88' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.1 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e39' cx='74.32' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e40' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e41' cx='74.32' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e42' cx='74.32' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e43' cx='74.32' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e44' cx='92.92' cy='241.46' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.6 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e45' cx='111.51' cy='264.83' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.4 &amp;lt;br/&amp;gt;Length= 1.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e46' cx='80.52' cy='276.51' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.3 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e47' cx='92.92' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e48' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e49' cx='86.72' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e50' cx='80.52' cy='288.19' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='setosa &amp;lt;br/&amp;gt;Width= 0.2 &amp;lt;br/&amp;gt;Length= 1.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e51' cx='285.06' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e52' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e53' cx='297.46' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e54' cx='241.67' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e55' cx='278.86' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e56' cx='272.66' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e57' cx='285.06' cy='124.64' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.6 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e58' cx='198.29' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e59' cx='278.86' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e60' cx='235.47' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 3.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e61' cx='210.68' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e62' cx='254.07' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.2'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e63' cx='241.67' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e64' cx='285.06' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e65' cx='216.88' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 3.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e66' cx='266.46' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e67' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e68' cx='247.87' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 4.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e69' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e70' cx='235.47' cy='183.05' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.1 &amp;lt;br/&amp;gt;Length= 3.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e71' cx='291.26' cy='101.28' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.8'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e72' cx='241.67' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e73' cx='297.46' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e74' cx='285.06' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e75' cx='260.27' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e76' cx='266.46' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e77' cx='291.26' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.8'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e78' cx='303.65' cy='112.96' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.7 &amp;lt;br/&amp;gt;Length= 5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e79' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e80' cx='210.68' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e81' cx='229.28' cy='183.05' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.1 &amp;lt;br/&amp;gt;Length= 3.8'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e82' cx='223.08' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e83' cx='235.47' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 3.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e84' cx='309.85' cy='124.64' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.6 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e85' cx='272.66' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e86' cx='272.66' cy='124.64' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.6 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e87' cx='285.06' cy='136.32' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 4.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e88' cx='266.46' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e89' cx='247.87' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e90' cx='241.67' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e91' cx='266.46' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 4.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e92' cx='278.86' cy='148' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 4.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e93' cx='241.67' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e94' cx='198.29' cy='194.73' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1 &amp;lt;br/&amp;gt;Length= 3.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e95' cx='254.07' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.2'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e96' cx='254.07' cy='171.37' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.2 &amp;lt;br/&amp;gt;Length= 4.2'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e97' cx='254.07' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.2'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e98' cx='260.27' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e99' cx='179.69' cy='183.05' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.1 &amp;lt;br/&amp;gt;Length= 3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e100' cx='247.87' cy='159.69' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='versicolor &amp;lt;br/&amp;gt;Width= 1.3 &amp;lt;br/&amp;gt;Length= 4.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e101' cx='365.63' cy='19.5' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.5 &amp;lt;br/&amp;gt;Length= 6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e102' cx='309.85' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e103' cx='359.44' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e104' cx='340.84' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e105' cx='353.24' cy='54.55' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.2 &amp;lt;br/&amp;gt;Length= 5.8'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e106' cx='402.82' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 6.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e107' cx='272.66' cy='112.96' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.7 &amp;lt;br/&amp;gt;Length= 4.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e108' cx='384.23' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 6.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e109' cx='353.24' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.8'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e110' cx='371.83' cy='19.5' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.5 &amp;lt;br/&amp;gt;Length= 6.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e111' cx='309.85' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e112' cx='322.25' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 5.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e113' cx='334.64' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e114' cx='303.65' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e115' cx='309.85' cy='31.18' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.4 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e116' cx='322.25' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.3'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e117' cx='334.64' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e118' cx='409.02' cy='54.55' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.2 &amp;lt;br/&amp;gt;Length= 6.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e119' cx='421.42' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 6.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e120' cx='303.65' cy='136.32' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e121' cx='347.04' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e122' cx='297.46' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e123' cx='409.02' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 6.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e124' cx='297.46' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e125' cx='347.04' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e126' cx='365.63' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e127' cx='291.26' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.8'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e128' cx='297.46' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e129' cx='340.84' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e130' cx='353.24' cy='124.64' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.6 &amp;lt;br/&amp;gt;Length= 5.8'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e131' cx='371.83' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 6.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e132' cx='390.43' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 6.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e133' cx='340.84' cy='54.55' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.2 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e134' cx='309.85' cy='136.32' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.5 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e135' cx='340.84' cy='148' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.4 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e136' cx='371.83' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 6.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e137' cx='340.84' cy='31.18' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.4 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e138' cx='334.64' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e139' cx='291.26' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 4.8'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e140' cx='328.45' cy='66.23' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.1 &amp;lt;br/&amp;gt;Length= 5.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e141' cx='340.84' cy='31.18' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.4 &amp;lt;br/&amp;gt;Length= 5.6'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e142' cx='309.85' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e143' cx='309.85' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 5.1'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e144' cx='359.44' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.9'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e145' cx='347.04' cy='19.5' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.5 &amp;lt;br/&amp;gt;Length= 5.7'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e146' cx='316.05' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.2'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e147' cx='303.65' cy='89.59' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.9 &amp;lt;br/&amp;gt;Length= 5'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e148' cx='316.05' cy='77.91' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2 &amp;lt;br/&amp;gt;Length= 5.2'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e149' cx='328.45' cy='42.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 2.3 &amp;lt;br/&amp;gt;Length= 5.4'/>\n   <circle id='svg_4fc74c86_e1af_4141_b4c5_211406085fe7_e150' cx='309.85' cy='101.28' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round' title='virginica &amp;lt;br/&amp;gt;Width= 1.8 &amp;lt;br/&amp;gt;Length= 5.1'/>\n  <\/g>\n  <g clip-path='url(#svg_4fc74c86_e1af_4141_b4c5_211406085fe7_c1)'>\n   <text x='18.53' y='314.77' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>0.0<\/text>\n   <text x='18.53' y='256.35' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>0.5<\/text>\n   <text x='18.53' y='197.94' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>1.0<\/text>\n   <text x='18.53' y='139.53' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>1.5<\/text>\n   <text x='18.53' y='81.12' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>2.0<\/text>\n   <text x='18.53' y='22.71' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>2.5<\/text>\n   <polyline points='34.70,311.56 37.44,311.56' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,253.15 37.44,253.15' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,194.73 37.44,194.73' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,136.32 37.44,136.32' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,77.91 37.44,77.91' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='34.70,19.50 37.44,19.50' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='117.71,316.63 117.71,313.89' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='241.67,316.63 241.67,313.89' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='365.63,316.63 365.63,313.89' fill='none' stroke='#333333' stroke-opacity='1' stroke-width='1.07' stroke-linejoin='round' stroke-linecap='butt'/>\n   <text x='114.91' y='325.24' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>2<\/text>\n   <text x='238.87' y='325.24' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>4<\/text>\n   <text x='362.84' y='325.24' font-size='6.6pt' font-family='DejaVu Sans' fill='#4D4D4D' fill-opacity='1'>6<\/text>\n   <text x='204.29' y='337.83' font-size='8.25pt' font-family='DejaVu Sans'>Petal.Length<\/text>\n   <text transform='translate(13.50,190.98) rotate(-90.00)' font-size='8.25pt' font-family='DejaVu Sans'>Petal.Width<\/text>\n   <rect x='450.66' y='120.39' width='76.66' height='78.59' fill='#FFFFFF' fill-opacity='1' stroke='none'/>\n   <text x='456.14' y='135.04' font-size='8.25pt' font-family='DejaVu Sans'>Species<\/text>\n   <rect x='456.14' y='141.66' width='17.28' height='17.28' fill='#EBEBEB' fill-opacity='1' stroke='none'/>\n   <circle cx='464.78' cy='150.3' r='1.47pt' fill='#F8766D' fill-opacity='1' stroke='#F8766D' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round'/>\n   <rect x='456.14' y='158.94' width='17.28' height='17.28' fill='#EBEBEB' fill-opacity='1' stroke='none'/>\n   <circle cx='464.78' cy='167.58' r='1.47pt' fill='#00BA38' fill-opacity='1' stroke='#00BA38' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round'/>\n   <rect x='456.14' y='176.22' width='17.28' height='17.28' fill='#EBEBEB' fill-opacity='1' stroke='none'/>\n   <circle cx='464.78' cy='184.86' r='1.47pt' fill='#619CFF' fill-opacity='1' stroke='#619CFF' stroke-opacity='1' stroke-width='0.71' stroke-linejoin='round' stroke-linecap='round'/>\n   <text x='478.9' y='153.51' font-size='6.6pt' font-family='DejaVu Sans'>setosa<\/text>\n   <text x='478.9' y='170.79' font-size='6.6pt' font-family='DejaVu Sans'>versicolor<\/text>\n   <text x='478.9' y='188.07' font-size='6.6pt' font-family='DejaVu Sans'>virginica<\/text>\n  <\/g>\n <\/g>\n<\/svg>","js":null,"uid":"svg_4fc74c86_e1af_4141_b4c5_211406085fe7","ratio":1.541666666666667,"settings":{"tooltip":{"css":".tooltip_SVGID_ { padding:5px;background:black;color:white;border-radius:2px;text-align:left; ; position:absolute;pointer-events:none;z-index:999;}","placement":"doc","opacity":0.9,"offx":10,"offy":10,"use_cursor_pos":true,"use_fill":false,"use_stroke":false,"delay_over":200,"delay_out":500},"hover":{"css":".hover_data_SVGID_ { fill:orange;stroke:black;cursor:pointer; }\ntext.hover_data_SVGID_ { stroke:none;fill:orange; }\ncircle.hover_data_SVGID_ { fill:orange;stroke:black; }\nline.hover_data_SVGID_, polyline.hover_data_SVGID_ { fill:none;stroke:orange; }\nrect.hover_data_SVGID_, polygon.hover_data_SVGID_, path.hover_data_SVGID_ { fill:orange;stroke:none; }\nimage.hover_data_SVGID_ { stroke:orange; }","reactive":true,"nearest_distance":null},"hover_inv":{"css":""},"hover_key":{"css":".hover_key_SVGID_ { fill:orange;stroke:black;cursor:pointer; }\ntext.hover_key_SVGID_ { stroke:none;fill:orange; }\ncircle.hover_key_SVGID_ { fill:orange;stroke:black; }\nline.hover_key_SVGID_, polyline.hover_key_SVGID_ { fill:none;stroke:orange; }\nrect.hover_key_SVGID_, polygon.hover_key_SVGID_, path.hover_key_SVGID_ { fill:orange;stroke:none; }\nimage.hover_key_SVGID_ { stroke:orange; }","reactive":true},"hover_theme":{"css":".hover_theme_SVGID_ { fill:orange;stroke:black;cursor:pointer; }\ntext.hover_theme_SVGID_ { stroke:none;fill:orange; }\ncircle.hover_theme_SVGID_ { fill:orange;stroke:black; }\nline.hover_theme_SVGID_, polyline.hover_theme_SVGID_ { fill:none;stroke:orange; }\nrect.hover_theme_SVGID_, polygon.hover_theme_SVGID_, path.hover_theme_SVGID_ { fill:orange;stroke:none; }\nimage.hover_theme_SVGID_ { stroke:orange; }","reactive":true},"select":{"css":".select_data_SVGID_ { fill:red;stroke:gray; }","type":"single","only_shiny":false,"selected":[]},"select_inv":{"css":""},"select_key":{"css":".select_key_SVGID_ { fill:red;stroke:black;cursor:pointer; }\ntext.select_key_SVGID_ { stroke:none;fill:red; }\ncircle.select_key_SVGID_ { fill:red;stroke:black; }\nline.select_key_SVGID_, polyline.select_key_SVGID_ { fill:none;stroke:red; }\nrect.select_key_SVGID_, polygon.select_key_SVGID_, path.select_key_SVGID_ { fill:red;stroke:none; }\nimage.select_key_SVGID_ { stroke:red; }","type":"single","only_shiny":true,"selected":[]},"select_theme":{"css":".select_theme_SVGID_ { fill:red;stroke:black;cursor:pointer; }\ntext.select_theme_SVGID_ { stroke:none;fill:red; }\ncircle.select_theme_SVGID_ { fill:red;stroke:black; }\nline.select_theme_SVGID_, polyline.select_theme_SVGID_ { fill:none;stroke:red; }\nrect.select_theme_SVGID_, polygon.select_theme_SVGID_, path.select_theme_SVGID_ { fill:red;stroke:none; }\nimage.select_theme_SVGID_ { stroke:red; }","type":"single","only_shiny":true,"selected":[]},"zoom":{"min":1,"max":1,"duration":300},"toolbar":{"position":"topright","pngname":"diagram","tooltips":null,"fixed":false,"hidden":[],"delay_over":200,"delay_out":500},"sizing":{"rescale":true,"width":1}}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>To render this within a Shiny application, we would then need to add the following lines to the ui.R and server.R files respectively:</p>
@@ -1275,380 +1438,255 @@ Updating existing dashboards
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dfe-analytical-services\.github\.io\/analysts-guide");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = true;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/dfe-analytical-services\.github\.io\/analysts-guide");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1656,185 +1694,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../writing-visualising/dashboards.html" class="pagination-link" aria-label="Public dashboards">
