@@ -613,6 +613,12 @@ cookieconsent.run({
  <span class="menu-text">RAP for Statistics</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-start-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting started with RAP</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -1125,6 +1131,13 @@ Note
 <hr>
 <p>This error is usually caused by having another python environment already loaded in your R session.</p>
 <p>To resolve this restart your R session (Session &gt; Restart R) then re-run the <code>spark_connect()</code> function.</p>
+<hr>
+</section>
+<section id="queries-hang-when-connecting-to-databricks-from-rstudio-on-azure-virtual-desktop" class="level4">
+<h4 class="anchored" data-anchor-id="queries-hang-when-connecting-to-databricks-from-rstudio-on-azure-virtual-desktop">Queries hang when connecting to Databricks from RStudio on Azure Virtual Desktop</h4>
+<hr>
+<p>If your query runs for a long time and doesn’t return any results, check that you have a config.yml file.</p>
+<p>The <code>spark_connect()</code> function requires this config file to run correctly. If you don’t have a config.yml file, create a blank one in your project folder, and your queries should then run correctly.</p>
 <hr>
 </section>
 <section id="im-having-another-problem-with-virtual-environments" class="level4">

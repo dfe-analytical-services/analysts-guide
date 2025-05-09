@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Getting started with RAP – Analysts’ Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ADA/databricks_rstudio_sql_warehouse.html" rel="next">
+<link href="../RAP/rap-faq.html" rel="prev">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-24b95b3762cc9396e1c581e2a7cd9ff9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-37e51258159c7d0a8cb8a50354e53c5f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fe93c050ee4711094fdfcc91cba07144.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-7337f635df332ff43b85381b13a4738e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KBJCBD114T"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KBJCBD114T', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"headline",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../RAP/rap-expectations.html">Reproducible Analytical Pipelines (RAP)</a></li><li class="breadcrumb-item"><a href="../RAP/rap-start-guide.html">Getting started with RAP</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-microsoft-teams"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a50f82a2718184a0e98ba86c3d411a02f%40thread.skype/conversations?groupId=6572094f-43a3-4537-bcf0-fc27dc6557ed&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">
+            DfE analysts network
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3ae3c8551e86094e259a60848fcff4dbc1%40thread.skype/conversations?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">
+            Statistics production
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">
+            DfE R community
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-camera-reels"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Statistician%27s%20Guide%20to%20the%20Galaxy?csf=1&amp;web=1&amp;e=owScaj" target="_blank">
+            Guide to the Galaxy sessions
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Explore%20Education%20Statistics?csf=1&amp;web=1&amp;e=HVpi0D" target="_blank">
+            EES show and tells
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series?csf=1&amp;web=1&amp;e=H0pcSH" target="_blank">
+            RAP knowledge share series
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/sites/sarpi/g/AC/Coffee%20and%20Coding.aspx?xsdata=MDV8MDF8fGU5YTkwYWU1OTNiNjQzZTIyZTM2MDhkYjVhY2MxN2JlfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2MzgyMDM2MDQ4MjEyMjUwMTR8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPbTFsWlhScGJtZGZXVlJuZUUxRVVUTlphbGwwVGpKUk1FNTVNREJhYW1zMVRGUnJNbHBYV1hSTmVtTjZXbXBCTWxwdFZUQlBWMVV3UUhSb2NtVmhaQzUyTWk5dFpYTnpZV2RsY3k4eE5qZzBOell6TmpneE5qRXh8YjdlZWE0MGYzNDg5NGYxYzJlMzYwOGRiNWFjYzE3YmV8MmE3NzU1YzRmOWMyNDZlOTkwYWVmMjlkZjY5NjczZWE%3D&amp;sdata=ajlKYUZuNHFyNU9XSm5WR3ZZaUZHZDB4bjVJYkJzRFZNc0U1Uit5V1Q5cz0%3D&amp;ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CTess%2EWILLIAMS%40EDUCATION%2EGOV%2EUK&amp;OR=Teams%2DHL&amp;CT=1684763684990&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA0MDIwMjcwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D" target="_blank">
+            Coffee and coding sessions
+            </a>
+          </li>
+      </ul>
+    </div>
+    <a href="https://explore-education-statistics.service.gov.uk/" title="Explore education statistics" class="quarto-navigation-tool px-1" aria-label="Explore education statistics" target="_blank"><i class="bi bi-graph-up"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-2" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-2">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide" target="_blank">
+            Source code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" target="_blank">
+            Suggest changes
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Learning resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analytical Data Access (ADA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_fundamentals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_notebooks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks workflows</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessibility</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Statistics production</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Routes for publishing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open Data Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/api-data-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics API Data Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Explore education statistics (EES)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good examples in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Embedded visualisations in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publication scrums</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">User engagement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EES analytics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Writing and visualising</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Public dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating R Shiny dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualising data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing about data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP expectations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP FAQs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-start-guide.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Getting started with RAP</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Databricks Setup Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL Warehouse with RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personal cluster with RStudio and <code>odbc</code> / <code>DBI</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_rstudio_personal_cluster_sparklyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personal cluster with RStudio and <code>sparklyr</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Databricks with Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_workflow_script_databricks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Script workflows in Databricks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_workflow_script_rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Script workflows in RStudio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
+  <ul class="collapse">
+  <li><a href="#splitting-your-project-into-chunks" id="toc-splitting-your-project-into-chunks" class="nav-link" data-scroll-target="#splitting-your-project-into-chunks">Splitting your project into chunks</a></li>
+  <li><a href="#estimating-effort-and-complexity" id="toc-estimating-effort-and-complexity" class="nav-link" data-scroll-target="#estimating-effort-and-complexity">Estimating Effort and Complexity</a></li>
+  <li><a href="#prioritise" id="toc-prioritise" class="nav-link" data-scroll-target="#prioritise">Prioritise</a></li>
+  </ul></li>
+  <li><a href="#apply-the-principles" id="toc-apply-the-principles" class="nav-link" data-scroll-target="#apply-the-principles">Apply the principles</a></li>
+  <li><a href="#preparing-data" id="toc-preparing-data" class="nav-link" data-scroll-target="#preparing-data">Preparing data</a>
+  <ul class="collapse">
+  <li><a href="#all-source-data-stored-in-a-database" id="toc-all-source-data-stored-in-a-database" class="nav-link" data-scroll-target="#all-source-data-stored-in-a-database">All source data stored in a database</a></li>
+  <li><a href="#files-meet-data-standards" id="toc-files-meet-data-standards" class="nav-link" data-scroll-target="#files-meet-data-standards">Files meet data standards</a></li>
+  <li><a href="#sensible-folder-and-file-structure" id="toc-sensible-folder-and-file-structure" class="nav-link" data-scroll-target="#sensible-folder-and-file-structure">Sensible folder and file structure</a></li>
+  </ul></li>
+  <li><a href="#writing-code" id="toc-writing-code" class="nav-link" data-scroll-target="#writing-code">Writing code</a>
+  <ul class="collapse">
+  <li><a href="#processing-is-done-with-code" id="toc-processing-is-done-with-code" class="nav-link" data-scroll-target="#processing-is-done-with-code">Processing is done with code</a></li>
+  <li><a href="#use-appropriate-tools" id="toc-use-appropriate-tools" class="nav-link" data-scroll-target="#use-appropriate-tools">Use appropriate tools</a></li>
+  <li><a href="#whole-publication-production-scripts" id="toc-whole-publication-production-scripts" class="nav-link" data-scroll-target="#whole-publication-production-scripts">Whole publication production scripts</a></li>
+  <li><a href="#dataset-production-scripts" id="toc-dataset-production-scripts" class="nav-link" data-scroll-target="#dataset-production-scripts">Dataset production scripts</a></li>
+  <li><a href="#recyclable-code-for-future-use" id="toc-recyclable-code-for-future-use" class="nav-link" data-scroll-target="#recyclable-code-for-future-use">Recyclable code for future use</a></li>
+  <li><a href="#clean-final-code" id="toc-clean-final-code" class="nav-link" data-scroll-target="#clean-final-code">Clean final code</a></li>
+  <li><a href="#peer-review-of-code-within-team" id="toc-peer-review-of-code-within-team" class="nav-link" data-scroll-target="#peer-review-of-code-within-team">Peer review of code within team</a></li>
+  <li><a href="#peer-review-of-code-from-outside-the-team" id="toc-peer-review-of-code-from-outside-the-team" class="nav-link" data-scroll-target="#peer-review-of-code-from-outside-the-team">Peer review of code from outside the team</a></li>
+  <li><a href="#basic-automated-qa" id="toc-basic-automated-qa" class="nav-link" data-scroll-target="#basic-automated-qa">Basic automated QA</a></li>
+  <li><a href="#publication-specific-automated-qa" id="toc-publication-specific-automated-qa" class="nav-link" data-scroll-target="#publication-specific-automated-qa">Publication specific automated QA</a></li>
+  <li><a href="#automated-summaries" id="toc-automated-summaries" class="nav-link" data-scroll-target="#automated-summaries">Automated summaries</a></li>
+  <li><a href="#publication-specific-automated-summaries" id="toc-publication-specific-automated-summaries" class="nav-link" data-scroll-target="#publication-specific-automated-summaries">Publication specific automated summaries</a></li>
+  </ul></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version control</a>
+  <ul class="collapse">
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#version-controlled-final-code-scripts" id="toc-version-controlled-final-code-scripts" class="nav-link" data-scroll-target="#version-controlled-final-code-scripts">Version controlled final code scripts</a></li>
+  <li><a href="#use-open-source-repositories" id="toc-use-open-source-repositories" class="nav-link" data-scroll-target="#use-open-source-repositories">Use open source repositories</a></li>
+  <li><a href="#collaboratively-develop-code-using-git" id="toc-collaboratively-develop-code-using-git" class="nav-link" data-scroll-target="#collaboratively-develop-code-using-git">Collaboratively develop code using Git</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/rap-start-guide.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../RAP/rap-expectations.html">Reproducible Analytical Pipelines (RAP)</a></li><li class="breadcrumb-item"><a href="../RAP/rap-start-guide.html">Getting started with RAP</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Getting started with RAP</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<hr>
+<p class="text-muted">
+</p><p>Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes. Check the <a href="../RAP/rap-statistics.html">RAP for statistics page</a> for information on the core principles of RAP.</p>
+<p></p>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How does RAP fit into ADA / Databricks
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the <a href="../ADA/ada.html#what-ada-means-for-statistics-publications">ADA guidance on statistics publications</a> to see how migrating to ADA and Databricks will affect your work.</p>
+</div>
+</div>
+<hr>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>To improve your publication process using RAP, first ensure you have checked your publication against the Good, Great and Best practice standards under <a href="../RAP/rap-statistics.html#rap-in-practice">RAP in practice</a>. Then measure your publication against the RAP levels using our <a href="https://rsconnect/rsc/publication-self-assessment/" target="_blank" rel="noopener noreferrer">self assessment tool</a>.</p>
+<p>Once you’ve completed these steps, see the guidance below to help you get started with implementing RAP principles into your work by:</p>
+<ol type="1">
+<li><p>Splitting your process into <a href="#splitting-your-project-into-chunks">logical chunks</a>, <a href="#estimating-effort-and-complexity">estimating the effort and complexity</a> and <a href="#prioritise">prioritising</a>.</p></li>
+<li><p>Apply the relevant RAP principles from <a href="#preparing-data">preparing data</a>, <a href="#writing-code">writing code</a> and <a href="#version-control">version control</a>.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Need more support?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> invites teams to take part in our partnership programme to develop their skills and implement RAP principles to a relevant project. Partnership programmes can offer additional resource and dedicated support to your team to implement specific RAP principles. Visit our page on <a href="../learning-development/learning-support.html#partnership-programmes">getting started with the partnership programme</a> for more details.</p>
+</div>
+</div>
+<hr>
+<section id="splitting-your-project-into-chunks" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-your-project-into-chunks">Splitting your project into chunks</h3>
+<p>This section on splitting your project into chunks and prioritising draws on guidance from the Department for Transport’s <a href="https://department-for-transport.github.io/strategic_reproducible_analysis/index.html" target="_blank">Strategic Reproducible Analysis resource</a>.</p>
+<hr>
+<p>When preparing statistics for publication, it’s often more effective to think of your process as a series of modular, logical chunks, rather than a single pipeline or list of steps. This approach makes your work easier to understand, maintain and reuse, especially when collaborating with others or updating parts of your process.</p>
+<p>A chunk is a self-contained part of your analysis that:</p>
+<ul>
+<li><strong>Has a defined data input.</strong> This may be a raw data or cleaned data ready for analysis.</li>
+<li><strong>Performs one main task.</strong> Eask chunk should do something specific and easily describable like ‘clean data’, ‘calculate headline figures’ or ‘create tidy data’.</li>
+<li><strong>Groups similar tasks together.</strong> For example, suppressing all data points should be done in one ‘suppression’ chunk.</li>
+<li><strong>Avoids duplication.</strong> If multiple outputs rely on the same data preparation, that preparation should be its own chunk. Then, separate chunks can handle the specific outputs.</li>
+<li><strong>Produces a defined output.</strong> This could be cleaned data, suppressed data or tidy data.</li>
+</ul>
+<p>By breaking your work into logical chunks, you make it easier to test, document and update your process. It also makes quality assurance and communication with your team about the process easier.</p>
+<hr>
+</section>
+<section id="estimating-effort-and-complexity" class="level3">
+<h3 class="anchored" data-anchor-id="estimating-effort-and-complexity">Estimating Effort and Complexity</h3>
+<hr>
+<p>Before applying RAP principles to your chosen area, it’s useful to get a sense of how much time and effort each improvement might take. This can help you:</p>
+<ul>
+<li>Identify quick wins</li>
+<li>Plan your work realistically</li>
+<li>Communicate expectations with colleagues and stakeholders</li>
+</ul>
+<p>The matrix below, from the Department for Transport’s <a href="https://department-for-transport.github.io/strategic_reproducible_analysis/estimating-length-and-complexity-of-projects.html#examples-in-r" target="_blank">Strategic Reproducible Analysis guidance</a>, provides example estimates for different types of RAP tasks. It categorises them by complexity and gives a rough idea of how long each might take to implement.</p>
+<p>You can use this matrix to help you decide where to start. For example, if you’ve identified a high-priority chunk that also looks like a low-effort task, that could be a great place to begin. On the other hand, if a chunk is high-priority but high-effort, you might want to plan more time or break it down further.</p>
+<p><img src="../images/dft_matrix.png" class="img-fluid"></p>
+<p>Actual timings will vary between analysts. Beginner coders will usually take longer than experienced coders, and some tasks may be easier for you than others. The estimates are just a guide to help you think about the effort and time involved.</p>
+<hr>
+</section>
+<section id="prioritise" class="level3">
+<h3 class="anchored" data-anchor-id="prioritise">Prioritise</h3>
+<hr>
+<p>Although it might feel natural to work through your process and improve it in chronological order, well-structured code gives you the flexibility to start where it matters most. Prioritising the right chunks early can accelerate your progress and help you see the benefits of RAP sooner.</p>
+<p>When deciding where to begin, consider the following:</p>
+<ul>
+<li><p>Which chunks deliver the greatest value?</p></li>
+<li><p>Where are the biggest time-saving opportunities?</p></li>
+<li><p>Can a chunk serve multiple purposes?</p></li>
+<li><p>Are other chunks dependent on this one?</p></li>
+<li><p>Is the current method causing problems, or is it relatively robust?</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="apply-the-principles" class="level2">
+<h2 class="anchored" data-anchor-id="apply-the-principles">Apply the principles</h2>
+<p>Now that you’ve prioritised the area of your workflow to focus on, the next step is to apply the relevant RAP (Reproducible Analytical Pipeline) principles to that part of your process.</p>
+<p>This section below is split by the three core principles, <a href="#preparing-data">preparing data</a>, <a href="#writing-code">writing code</a> and <a href="version-control">version control</a>.</p>
+<p>Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst.</p>
+<hr>
+</section>
+<section id="preparing-data" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-data">Preparing data</h2>
+<p>Preparing data is our first core RAP principle, which contains the following elements:</p>
+<ul>
+<li><a href="#all-source-data-stored-in-a-database">All source data stored in a database</a></li>
+<li><a href="#files-meet-data-standards">Files meet data standards</a></li>
+<li><a href="#sensible-folder-and-file-structure">Sensible file and folder structure</a></li>
+</ul>
+<p>Your team should store the raw data you use to create underlying data in a Microsoft SQL Server database or in the Databricks platform. These are similar to a Sharepoint area or a shared folder, but offer dedicated data storage areas and allow multiple users to use the same file at once. This means that you can also run code against a single source of data, further reducing the risk of error.</p>
+<hr>
+<section id="all-source-data-stored-in-a-database" class="level3">
+<h3 class="anchored" data-anchor-id="all-source-data-stored-in-a-database">All source data stored in a database</h3>
+<hr>
+<p><img src="../images/good.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>When we refer to ‘source data’, we take this to mean the data you use at the start of your process to create the underlying data files. Any cleaning at the end of a collection will happen before this.</p>
+<p>In order for us to be able to have an end-to-end data pipeline where we can replicate our analysis across the department, we should store all of the raw data needed to create aggregate statistics in a managed Microsoft SQL Server or in the Databricks platform. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process using SQL queries.</p>
+<p>As far as meeting the requirement to have all source data in a database, databases other than SQL or Databricks may be acceptable, though we can’t support them in the same way.</p>
+<p><strong>Why do it?</strong></p>
+<p>The principle is that this source data will remain stable and is the point you can go back to and re-run the processes from if necessary. If for any reason the source data needs to change, your processes will be set up in a way that you can easily re-run them to get updated outputs based on the amended source data with minimal effort.</p>
+<p>SQL is a fantastic language for large scale data joining and manipulation; it allows us to replicate end-to-end from raw data to final aggregate statistics output. Having all the data in one place and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results. You can run SQL queries against data in SQL Server or in Databricks, although SQL Server makes use of T-SQL and Databricks makes use of Spark SQL.</p>
+<p><strong>How to get started</strong></p>
+<p>For a collection of relevant resources to use when learning SQL, see our <a href="../learning-development/learning-development.html">learning resources</a> page, and for guidance on best practice when writing SQL queries, see the <a href="#writing-code">writing code</a> and <a href="#documentation">documentation</a> sections on this page, as well as the guides immediately below on how to set up and use a SQL database.</p>
+<p>For resources to help you learn about Databricks and how to migrate your data into the Unity Catalog, please see our <a href="../ADA/ada.html">ADA and Databricks documentation</a>. Legacy servers will be decommissioned in 2026, and all data will be migrated into the Databricks Unity Catalog instead.</p>
+<hr>
+<section id="how-to-set-up-a-sql-working-area" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-set-up-a-sql-working-area">How to set up a SQL working area</h4>
+<hr>
+<p>There are a few different options, depending on where you want your new area to exist. Visit our <a href="../learning-development/sql.html#Setting_up_a_SQL_area">SQL learning page</a> for details.</p>
+<hr>
+</section>
+<section id="moving-data-to-different-areas" class="level4">
+<h4 class="anchored" data-anchor-id="moving-data-to-different-areas">Moving data to different areas</h4>
+<hr>
+<p>If your data is already in SQL Server, you can use this snippet of R code to move tables from one area (e.g.&nbsp;the iStore) to another (e.g.&nbsp;your team’s modelling area) to ensure all data are stored in a database.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1.1.: Connect to source server -------------------------------------------</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>con_source <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">odbc</span>(),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Driver =</span> <span class="st">"SQL Server Native Client 11.0"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Server =</span> <span class="st">"Name_of_source_server"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Database =</span> <span class="st">"Source_database"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Trusted_Connection =</span> <span class="st">"yes"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1.2.: Connect to target server</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>con_target <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">odbc</span>(),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Driver =</span> <span class="st">"SQL Server Native Client 11.0"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Server =</span> <span class="st">"Name_of_target_server"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Database =</span> <span class="st">"Your_target_database"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Trusted_Connection =</span> <span class="st">"yes"</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2.1.: Pull the table from the source database</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>table_for_transfer <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con_source,<span class="fu">in_schema</span>(<span class="st">"schema_name"</span>, <span class="st">"table_name"</span>)) <span class="sc">%&gt;%</span> <span class="fu">collect</span>()</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2.2.: Copy table into target database </span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con_target,<span class="st">"whatever_you_want_to_call_new_table"</span>, table_for_transfer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+<section id="importing-data-to-sql-server" class="level4">
+<h4 class="anchored" data-anchor-id="importing-data-to-sql-server">Importing data to SQL Server</h4>
+<hr>
+<p>There’s lots of guidance online of how to import flat files from shared areas into Microsoft SQL Server on the internet, including <a href="https://docs.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard?view=sql-server-2017" target="_blank" rel="noopener noreferrer">this guide</a>.</p>
+<p>Remember that it is important to import them with consistent, thought-through <a href="#naming-conventions">naming conventions</a>. You will thank yourself later.</p>
+<hr>
+</section>
+<section id="how-to-grant-access-to-your-area" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-grant-access-to-your-area">How to grant access to your area</h4>
+<hr>
+<p>Much like setting up a SQL area, there are different ways to do this depending on the server your database is in. Visit our <a href="../learning-development/sql.html#Givinggetting_access">SQL learning page</a> for details.</p>
+<hr>
+</section>
+</section>
+<section id="files-meet-data-standards" class="level3">
+<h3 class="anchored" data-anchor-id="files-meet-data-standards">Files meet data standards</h3>
+<hr>
+<p><img src="../images/good.svg" class="img-fluid"></p>
+<section id="open-data-standards" class="level4">
+<h4 class="anchored" data-anchor-id="open-data-standards">Open Data Standards</h4>
+<hr>
+<p>You can find information on our standards for Open Data, including how to assess your data against these standards, on our <a href="../statistics-production/ud.html#how-to-check-against-these-standards">Open Data standards page</a>.</p>
+<hr>
+</section>
+<section id="standardised-reference-data" class="level4">
+<h4 class="anchored" data-anchor-id="standardised-reference-data">Standardised reference data</h4>
+<hr>
+<p>There will of course be cases where some of the data you use is reference data not owned by the DfE, or is available online for you to download rather than in an internal server. There are ways of incorporating this into a reproducible analytical pipeline nicely, sometimes you can even use links/URLs in your code that will always pull the latest data such that you will never need to change the link to reflect updates to the data!</p>
+<hr>
+</section>
+<section id="raw-files-on-github" class="level4">
+<h4 class="anchored" data-anchor-id="raw-files-on-github">Raw files on GitHub</h4>
+<hr>
+<p>If you want to use reference data from GitHub, you can use the URL to the raw file. A common example of when you might want to use this would be to use geographic lookup tables that contain names and codes of different geographic levels for EES files (which are available in our <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa" target="_blank" rel="noopener noreferrer">data screener repository</a>).</p>
+<p>If you find the data you’re interested in within a repository, rather than copying, cloning or downloading the data, you should click the ‘raw’ button (see the below screenshot).</p>
+<p><img src="../images/Github-raw-button.png" class="img-fluid"></p>
+<p>This should take you to a new window which contains the raw data from the CSV file. Copy the URL from this page, as this is what we can use to pull the latest data into our code.</p>
+<p>You can now use this URL as you would use a file path in a <code>read.csv()</code> query. For example;</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devolved_area_lookup <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/master/data/english_devolved_areas.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The above code snippet will load in the data as it would with any other CSV, however the benefit is if that data file is updated on GitHub, when you run the code it will always pull the latest version. This is especially useful for lookup tables and reference data, and is best RAP practice as it removed the need for any manual steps (like downloading, copying &amp; pasting or manually updating the data/code!)</p>
+<hr>
+</section>
+</section>
+<section id="sensible-folder-and-file-structure" class="level3">
+<h3 class="anchored" data-anchor-id="sensible-folder-and-file-structure">Sensible folder and file structure</h3>
+<hr>
+<p><img src="../images/good.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>As a minimum you should have a folder that includes all of the final versions of documents produced and published, per release, within a folder for the wider publication. Ask yourself if it would be easy for someone who isn’t in the team to find specific files, and if not, is there a better way that you could name and structure your folders to make them more intuitive to navigate?</p>
+<p><strong>Why do it?</strong></p>
+<p>How you organize and name your files will have a big impact on your ability to find those files later and to understand what they contain. You should be consistent and descriptive in naming and organizing files so that it is obvious where to find specific data and what the files contain.</p>
+<p><strong>How to get started</strong></p>
+<p>Some questions to help you consider whether your folder structure is sensible are:</p>
+<ul>
+<li>Are all documentation, code and outputs for the publication saved in one folder area?</li>
+<li>Is simple version control clearly applied (e.g.&nbsp;having all final files in a folder named “final”?</li>
+<li>Are there sub-folders like ‘code’, ‘documentation’‘, ’outputs’ and ‘final’ to save the relevant working files in?</li>
+<li>Are you keeping a version log up to date with any changes made to files in this final folder?</li>
+</ul>
+<p>You could also consider using the <a href="https://dfe-analytical-services.github.io/dfeR/reference/index.html#pre-populated-project" target="_blank">create_project() function</a> from the dfeR package to create a pre-populated folder structure for use with an R project</p>
+<hr>
+<section id="naming-conventions" class="level4">
+<h4 class="anchored" data-anchor-id="naming-conventions">Naming conventions</h4>
+<hr>
+<p>Having a <strong>clear</strong> and <strong>consistent</strong> naming convention for your files is critical. Remember that file names should:</p>
+<p><strong>Be machine readable</strong></p>
+<ul>
+<li>Avoid spaces.</li>
+<li>Avoid special characters such as: ~ ! @ # $ % ^ &amp; * ( ) ` ; &lt; &gt; ? , [ ] { } ‘ “.</li>
+<li>Be as short as practicable; overly long names do not work well with all types of software.</li>
+</ul>
+<p><strong>Be human readable</strong></p>
+<ul>
+<li>Be easy to understand the contents from the name.</li>
+</ul>
+<p><strong>Play well with default ordering</strong></p>
+<ul>
+<li>Often (though not always!) you should have numbers first, particularly if your file names include dates.</li>
+<li>Follow the <a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank">ISO 8601 date standard</a> (YYYYMMDD) to ensure that all of your files stay in chronological order.</li>
+<li>Use leading zeros to left pad numbers and ensure files sort properly, e.g.&nbsp;using 01, 02, 03 to avoid 1, 10, 2, 3.</li>
+</ul>
+<p>If in doubt, take a look at this <a href="https://speakerdeck.com/jennybc/how-to-name-files" target="_blank" rel="noopener noreferrer">presentation</a>, or this <a href="https://drive.google.com/file/d/12A4qZNwmL4s2NH8Ex161jgiJ9HrA06ZZ/view?pli=1" target="_blank" rel="noopener noreferrer">naming convention guide by Stanford</a>, for examples reinforcing the above.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="writing-code" class="level2">
+<h2 class="anchored" data-anchor-id="writing-code">Writing code</h2>
+<p>Writing code is our second core RAP principle, and is made up of the following elements:</p>
+<ul>
+<li><a href="#processing-is-done-with-code">Processing is done with code</a></li>
+<li><a href="#use-appropriate-tools">Use appropriate tools</a></li>
+<li><a href="#whole-publication-production-scripts">Whole publication production scripts</a></li>
+<li><a href="#dataset-production-scripts">Dataset production scripts</a></li>
+<li><a href="#recyclable-code-for-future-use">Recyclable code for future use</a></li>
+<li><a href="#clean-final-code">Clean final code</a></li>
+<li><a href="#peer-review-of-code-within-team">Peer review of code within team</a></li>
+<li><a href="#peer-review-of-code-from-outside-the-team">Peer review of code from outside the team</a></li>
+<li><a href="#basic-automated-qa">Basic automated QA</a></li>
+<li><a href="#publication-specific-automated-qa">Publication specific automated QA</a></li>
+<li><a href="#automated-summaries">Automated summaries</a></li>
+<li><a href="#publication-specific-automated-summaries">Publication specific automated summaries</a></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our <a href="../learning-development/learning-support.html">learning support page</a>.</p>
+</div>
+</div>
+<hr>
+<section id="processing-is-done-with-code" class="level3">
+<h3 class="anchored" data-anchor-id="processing-is-done-with-code">Processing is done with code</h3>
+<hr>
+<p><img src="../images/good.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>All extraction, and processing of data should be done using code, avoiding any manual steps and moving away from a reliance on Excel, SPSS, and other manual processing. In order to carry out our jobs to the best of our ability it is imperative that we use the <a href="#appropriate-tools">appropriate tools</a> for the work that we do.</p>
+<p>Even steps such as copy and pasting data, or pointing and clicking, are fraught with danger, and these risks should be minimised by using code to document and execute these processes instead.</p>
+<p><strong>Why do it?</strong></p>
+<p>Using code brings numerous benefits. Computers are far quicker, more accurate, and far more reliable than humans in many of the tasks that we do. Writing out these instructions saves us significant amounts of time, particularly when code can be reused in future years, or even next week when one specific number in the source file suddenly changes. Code scripts also provide us with editable documentation for our production processes, saving the need for writing down information in extra documents.</p>
+<p>Reliability is a huge benefit of the automation that RAP brings - when your data has to be amended a week before publication, it’s a life saver to know that you can re-run your process in minutes, and reassuring to know that it will give you the result you want. You can run the same code 100 times, and be confident that it will follow the same steps in the same order every single time.</p>
+<p><strong>How to get started</strong></p>
+<p>See our <a href="../learning-development/learning-support.html">learning resources</a> for a wealth of resources on SQL and R to learn the skills required to translate your process into code.</p>
+<p>There are also two sections below with examples of tidying data in SQL and R to get you started.</p>
+<p>Ensure that any last-minute fixes to the process are written in the code and not done with manual changes.</p>
+<hr>
+<section id="producing-tidy-underlying-data-in-sql" class="level4">
+<h4 class="anchored" data-anchor-id="producing-tidy-underlying-data-in-sql">Producing tidy underlying data in SQL</h4>
+<hr>
+<p>To get started, here is a <a href="https://github.com/TomFranklin/sql-applied-data-tidying/blob/master/data_tidying_l_and_d.sql" target="_blank" rel="noopener noreferrer">SQL query</a> that you can run on your own machine and walks you through the basics of tidying a simple example dataset in SQL.</p>
+<hr>
+</section>
+<section id="tidying-and-processing-data-in-r" class="level4">
+<h4 class="anchored" data-anchor-id="tidying-and-processing-data-in-r">Tidying and processing data in R</h4>
+<hr>
+<p><a href="https://vimeo.com/33727555" target="_blank" rel="noopener noreferrer">Here is a video</a> of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at <a href="https://www.youtube.com/watch?v=1ELALQlO-yM" target="_blank" rel="noopener noreferrer">applied data tidying in R, by RStudio</a>.</p>
+<p>Using the <code>%&gt;%</code> pipe in R can be incredibly powerful, and make your code much easier to follow, as well as more efficient. If you aren’t yet familiar with this, have a look at <a href="https://seananderson.ca/2014/09/13/dplyr-intro/" target="_blank" rel="noopener noreferrer">this article</a> that provides a useful beginners guide to piping and the kinds of functions you can use it for. The possibilities stretch about as far as your imagination, and if you have a function or task you want to do within a pipe, googling ‘how do I do X in dplyr r’ will usually start to point you in the right direction, alternatively you can <a href="mailto:statistics.development@education.gov.uk">contact us</a>, and we’ll be happy to help you figure out how to do what you need.</p>
+<p>A quick example of how powerful this is is below. The pipe operator passes the outcome of each line of code onto the next, so you can complete multiple steps of data manipulation in one section of code instead of writing separate steps for each one. In this code, we:</p>
+<ul>
+<li>start with my_data</li>
+<li>calculate a percentage column using mutate</li>
+<li>rename the percentage column we created to “newPercentageColumn”, rename “number” to “numberColumn”, and rename “population” to “totalPopulationColumn”</li>
+<li>use the <code>clean_names()</code> function from the <a href="https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html" target="_blank">janitor</a> package to ensure that columns have consistent naming standards</li>
+<li>use the <code>remove_empty()</code> function from the janitor package to remove any rows and columns that are composed entirely of NA values</li>
+<li>filter the dataframe to only include Regional geographic level data</li>
+<li>order the dataframe by time period and region name</li>
+</ul>
+<div class="cell" style="background-color: #f7fdfa">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>processed_regional_data <span class="ot">&lt;-</span> my_data <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">newPercentageColumn =</span> (numberColumn <span class="sc">/</span> totalPopulationColumn) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">newPercentageColumn =</span> percentageRate,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">numberColumn =</span> number,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">totalPopulationColumn =</span> population) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(geographic_level <span class="sc">==</span> <span class="st">"Regional"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(time_period, region_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><a href="https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da" target="_blank" rel="noopener noreferrer">Helpful new functions</a> in the tidyverse packages can help you to easily transform data from wide to long format (see tip 2 in the linked article for this, as it is often required for tidy data), as well as providing you with tools to allow you quickly and efficiently change the structure of your variables.</p>
+<p>For further resources on learning R so that you’re able to apply it to your everyday work, have a look at the <a href="../learning-development/learning-development.html">learning resources</a> page.</p>
+<hr>
+</section>
+</section>
+<section id="use-appropriate-tools" class="level3">
+<h3 class="anchored" data-anchor-id="use-appropriate-tools">Use appropriate tools</h3>
+<hr>
+<p><img src="../images/good.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>Using the recommended tools on our <a href="../learning-development/learning-support.html">learning</a> page (<a href="../learning-development/sql.html">SQL</a>, <a href="../learning-development/r.html">R</a> and <a href="../learning-development/git.html">Git</a>), or other suitable alternatives that allow you to meet the <a href="#core-principles">core principles</a>. Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.</p>
+<p>Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this <a href="https://opensource.com/resources/what-open-source" target="_blank" rel="noopener noreferrer">explanation of open-source</a>, as well as this guide to <a href="https://opensource.com/open-source-way" target="_blank" rel="noopener noreferrer">working in an open-source way</a>. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with git, and hosted in a publicly accessible repository.</p>
+<p><strong>Why do it?</strong></p>
+<p>There are many reasons why we have recommended the tools that we have, the recommended tools are:</p>
+<ul>
+<li>already in use at the department and easy for us to access</li>
+<li>easy and <strong>free</strong> to learn</li>
+<li>designed for the work that we do</li>
+<li>used widely across data science in both the public and private sector</li>
+<li>allow us to meet best practice when applying RAP to our processes</li>
+</ul>
+<p><strong>How to get started</strong></p>
+<p>Go to our <a href="../learning-development/learning-development.html">learning</a> page to read more about the recommended tools for the jobs we do, as well as looking at the resources available there for how to <a href="../learning-development/learning-support.html#general_resources">build capability</a> in them. Always feel free to contact us if you have any specific questions or would like help in understanding how to use those tools in your work.</p>
+<p>By following <a href="#version-controlled-final-code-scripts">our guidance</a> in saving versions of code in an Azure DevOps, we will then be able to mirror those repositories in a publicly available GitHub area.</p>
+<hr>
+</section>
+<section id="whole-publication-production-scripts" class="level3">
+<h3 class="anchored" data-anchor-id="whole-publication-production-scripts">Whole publication production scripts</h3>
+<hr>
+<p><img src="../images/best.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>The ultimate aim is to utilise a single script to document and run off everything for a publication, the data files, any QA, any summary reports. This script should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script. All quality assurance for a file is also included in the single script that can be used to create a file from source data (see the <a href="#dataset-production-scripts">dataset production scripts section</a>)</p>
+<p><strong>Why do it?</strong></p>
+<p>This carries all of the same benefits as having a single ‘run’ script for a file, but at a wider publication level, effectively documenting the entire publication process in one place. This makes it easier for new analysts to pick up the process, as well as making it quicker and easier to rerun as all reports relating to that file are immediately available if you ever make changes file.</p>
+<p><strong>How to get started</strong></p>
+<p>The Education, Health and Care Plans production cycle is a good example of a single publication ‘run’ script. They have kept their actual data processing in SQL, but all the running and manipulation of the data happens in R.</p>
+<p>The cycle originally consisted of multiple SQL scripts, manual QA and generation of final files.</p>
+<p><img src="../images/Old process.jpg" class="img-fluid"></p>
+<p>The team now have their end-to-end process fully documented, which can be run off of one single R script. The ‘run’ script points at the SQL scripts to run them all in one go, and also creates a QA report and corresponding metadata files that pass the data screener. Each data file can still be run in isolation from this script.</p>
+<p><img src="../images/New process.jpg" class="img-fluid"></p>
+<hr>
+<section id="using-run-scripts" class="level4">
+<h4 class="anchored" data-anchor-id="using-run-scripts">Using ‘run’ scripts</h4>
+<p>Utilising a single ‘run’ script to execute processes written in other scripts brings a number of benefits. It isn’t just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past.</p>
+<hr>
+</section>
+<section id="connecting-r-to-sql" class="level4">
+<h4 class="anchored" data-anchor-id="connecting-r-to-sql">Connecting R to SQL</h4>
+<hr>
+<p>In order to create a single script to run all processes from, it is likely that you will need to use R to run SQL queries. If you are unsure of how to do this, take a look the guide on the <a href="https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html" target="_blank">dfeR connecting to SQL documentation</a>.</p>
+<p>If you prefer a video, <a href="https://web.microsoftstream.com/embed/video/c9b7fd97-c854-4a1a-9074-cd80d2ea285e" target="_blank">Chris Mason-Thom did a coffee and coding session on this</a>.</p>
+<hr>
+</section>
+</section>
+<section id="dataset-production-scripts" class="level3">
+<h3 class="anchored" data-anchor-id="dataset-production-scripts">Dataset production scripts</h3>
+<hr>
+<p><img src="../images/great.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>Each dataset can be created by running a single script, which may ‘source’ multiple scripts within it. This <strong>does not</strong> mean that all of the code to create a file must be written in a single script, but instead that there is a single ‘create file’ or ‘run’ script that sources every step in the correct order such that every step from beginning to end will be executed if you run that single ‘run’ script.</p>
+<p>This ‘run’ script should take the source data right through to final output at the push of a button, including any manipulation, aggregation, suppression etc.</p>
+<p><strong>Why do it?</strong></p>
+<p>Having a script that documents the whole process for this saves time when needing to rerun processes, and provides a clear documentation of how a file is produced.</p>
+<p><strong>How to get started</strong></p>
+<p>Review your current process - how many file scripts does it take to get from source data to final output, why are they separated, and what order should they be run in? Do you still have manual steps that could introduce human error (for example, manually moving column orders around in excel)?</p>
+<p>You should automate any manual steps such as the example above. If it makes sense to, you could combine certain scripts to reduce the number. You can then write code in <a href="../learning-development/r.html">R</a> to execute your scripts in order, so you are still only running one script to get the final output.</p>
+<hr>
+</section>
+<section id="recyclable-code-for-future-use" class="level3">
+<h3 class="anchored" data-anchor-id="recyclable-code-for-future-use">Recyclable code for future use</h3>
+<hr>
+<p><img src="../images/great.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>We’d expect that any recyclable code would take less than 30 minutes of editing before being able to run again in a future iteration of the publication.</p>
+<p><strong>Why do it?</strong></p>
+<p>One huge benefit that comes with using code in our processes, is that we can pick them up in future years and reuse with minimum effort, saving us huge amounts of resource. To be able to do this, we need to be conscious of how we write our code, and write it in a way that makes it easy to use in future releases for the publication.</p>
+<p><strong>How to get started</strong></p>
+<p>Review your code and consider the following:</p>
+<ul>
+<li>What steps might need re-editing or could become irrelevant?</li>
+<li>Can you move all variables that require manual input (e.g.&nbsp;table names, years) to be assigned at the top of the code, so it’s easy to edit in one place with each iteration?</li>
+<li>Are there any fixed variables that are prone to changing such as geographic boundaries, that you could start preparing for changes now by making it easy to adapt in future?</li>
+</ul>
+<p>For example, if you refer to the year of publication in your code a lot, consider replacing every instance with a named variable, which you only need to change once at the start of your code. In the example below, the year is set at the top of the code, and is used to define “prev_year”, both of which are used further down the code to filter the data based on year.</p>
+<div class="cell" style="background-color: #f7fdfa">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>this_year <span class="ot">&lt;-</span> <span class="dv">2020</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>prev_year <span class="ot">&lt;-</span> this_year <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>data_filtered <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> this_year)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>data_filtered_last_year <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> prev_year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<section id="standards-for-coding" class="level4">
+<h4 class="anchored" data-anchor-id="standards-for-coding">Standards for coding</h4>
+<hr>
+<p>Code can be written in many different ways, and in languages such as R, there are often many different functions and routes that you can take to get to the same end result. On top of that, there are even more possibilities for how you can format the code. This section will take you through some widely used standards for coding to help bring standardisation to this area and make it easier to both write and use our code.</p>
+<hr>
+</section>
+</section>
+<section id="clean-final-code" class="level3">
+<h3 class="anchored" data-anchor-id="clean-final-code">Clean final code</h3>
+<hr>
+<p><img src="../images/best.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<ul>
+<li><p>This code should meet the best practice standards below (for SQL and R). If you are using a different language, such as Python, then contact us for advice on the best standards to use when writing code.</p></li>
+<li><p>There should be no redundant or duplicated code, even if this has been commented out. It should be removed from the files to prevent confusion further down the line.</p></li>
+<li><p>The only comments left in the code should be those describing the decisions you have made to help other analysts (and future you) to understand your code. More guidance on <a href="#commenting-in-code">commenting in code</a> can be found later on this page.</p></li>
+</ul>
+<p><strong>Why do it?</strong></p>
+<p>Clean code is efficient, easy to write, easy to review, and easy to amend for future use. Below are some recommended standards to follow when writing code in SQL and R.</p>
+<p><strong>How to get started</strong></p>
+<p>Watch <a href="https://web.microsoftstream.com/embed/video/624e3442-aa66-44e7-bb4f-717a6508b056" target="_blank">this coffee and coding session</a> introducing good code practice, which covers:</p>
+<ul>
+<li>key principles of good code practice</li>
+<li>writing and refining code to make it easier to understand and modify</li>
+<li>a real-life example of code improvement from within DfE</li>
+</ul>
+<p>Then you should also watch <a href="https://web.microsoftstream.com/embed/video/92d4ba05-d304-4009-b543-e5f4563f1d30" target="_blank">the follow up intermediate session</a>, which covers:</p>
+<ul>
+<li>version control</li>
+<li>improving code structure with functions</li>
+<li>documentation and Markdown</li>
+<li>interactive notebooks</li>
+</ul>
+<p>Clean code should include comments. Comment why you’ve made decisions, don’t comment what you are doing unless it is particularly complex as the code itself describes what you are doing. If in doubt, more comments are better than too few though. Ideally any specific comments or documentation should be alongside the code itself, rather than in separate documents.</p>
+<hr>
+<section id="sql" class="level4">
+<h4 class="anchored" data-anchor-id="sql">SQL</h4>
+<hr>
+<p>For best practice on writing T-SQL code used in SQL Server, here is a particularly useful <a href="../resources/TSQL_Coding_Standards.docx" target="_blank" rel="noopener noreferrer">Word document</a> produced by our Data Hub. This outlines a variety of best practices, ranging from naming conventions, to formatting your SQL code so that it is easy to follow visually.</p>
+<hr>
+</section>
+<section id="r" class="level4">
+<h4 class="anchored" data-anchor-id="r">R</h4>
+<hr>
+<p>When using R, it is generally best practice to use <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects" target="_blank" rel="noopener noreferrer">R projects</a> as directories for your work.</p>
+<p>The recommended standard for styling your code in R is the <a href="https://style.tidyverse.org/" target="_blank" rel="noopener noreferrer">tidyverse styling</a>, which is fast becoming the global standard. What is even better is that you can automate this using the <a href="https://styler.r-lib.org/" target="_blank" rel="noopener noreferrer">styler</a> package, which will literally style your code for you at the click of a button, and is well worth a look.</p>
+<p><img src="../images/styler.gif" class="img-fluid"></p>
+<p>There is also plenty of guidance around the internet for <a href="https://waterdata.usgs.gov/blog/intro-best-practices/" target="_blank" rel="noopener noreferrer">best practice</a> when writing <a href="https://waterdata.usgs.gov/blog/intro-best-practices/" target="_blank" rel="noopener noreferrer">efficient R code</a>.</p>
+<p>To help you standardise your code further, you can make use of the functions contained within our <a href="https://dfe-analytical-services.github.io/dfeR/index.html" target="_blank">dfeR package</a>. The package includes functions to standardise formatting and rounding, to pull the latest ONS geography lookups, and to create a pre-populated folder structure, amongst many other things.</p>
+<hr>
+</section>
+<section id="html" class="level4">
+<h4 class="anchored" data-anchor-id="html">HTML</h4>
+<hr>
+<p>If you ever find yourself writing HTML, or creating it through RMarkdown, you can check your HTML using <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3’s validator</a>.</p>
+<hr>
+</section>
+</section>
+<section id="peer-review-of-code-within-team" class="level3">
+<h3 class="anchored" data-anchor-id="peer-review-of-code-within-team">Peer review of code within team</h3>
+<hr>
+<p><img src="../images/great.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to ‘idiot check’ our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it’s quality and value. The <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html" target="_blank">Duck Book</a> and <a href="https://code-review.tidyverse.org/" target="_blank">Tidyteam</a> contain detailed guidance on peer review, but we have summarised some of the information here for you as well.</p>
+<p>Prior to receiving code for peer review, the author should ensure that all code files are clean, commented appropriately and for larger projects should be held in a repo with an appropriate <a href="#writing-a-readme-file">README</a> file.</p>
+<p>You should check:</p>
+<ul>
+<li><p>Is someone else in the team able to generate the same outputs?</p></li>
+<li><p>Has someone else in the team reviewed the code and given feedback?</p></li>
+<li><p>Have you taken on their feedback and improved the code?</p></li>
+</ul>
+<p><strong>Why do it?</strong></p>
+<p>There are many benefits to this, for example:</p>
+<ul>
+<li><p>Ensuring consistency across the team</p></li>
+<li><p>Minimizing mistakes and their impact</p></li>
+<li><p>Ensuring the requirements are met</p></li>
+<li><p>Improving code performance</p></li>
+<li><p>Sharing of techniques and knowledge</p></li>
+</ul>
+<p><strong>How to get started</strong></p>
+<p>When peer reviewing code you should consider the following questions -</p>
+<ul>
+<li>Do you understand what the code does? If not, is there supporting documentation or code comments that allow you to understand it?</li>
+<li>Does the code do what the author intended?</li>
+<li>Have any dependencies (either on separate pieces of code, data files, or packages) been documented?</li>
+<li>Are there any tests / checks that could be added into the code that would help to give greater confidence that it is doing what it is intended to?</li>
+<li>Are there comments explaining why any decisions have been made?</li>
+<li>Is the code written and structured sensibly?</li>
+<li>Are there any ways to make the code more efficient (either in number of lines or raw speed)? Is there duplication that could be simplified using functions?</li>
+<li>Does the code follow best practice for styling and structure?</li>
+<li>Are there any other teams/bits of code you’re aware of that do similar things and would be useful to point the authors towards?</li>
+<li>At the end of the review, was there any information you needed to ask about that should be made more apparent in the code or documentation?</li>
+</ul>
+<p>Depending on your access you may or may not be able to run the code yourself, but there should be enough information within the code and documentation to be able to respond to the questions above. If you are able to run the code, you could also check -</p>
+<ul>
+<li>Does the code run without errors? If warnings are displayed, are they explained?</li>
+<li>If the project has unit/integration tests, do they pass?</li>
+<li>Can you replicate previous output using the same code and input data?</li>
+</ul>
+<p>If you would like a more thorough list of questions to follow, then the Duck Book has checklists available for three levels of peer review, based on risk:</p>
+<ul>
+<li><a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_lower.html" target="_blank">Lower</a></li>
+<li><a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_moderate.html" target="_blank">Moderate</a></li>
+<li><a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_higher.html" target="_blank">Higher</a></li>
+</ul>
+<p>If you’re unfamiliar with giving feedback on someone’s code then it can be daunting at first. Feedback should always be constructive and practical. It is recommended that you use the CEDAR model to structure your comments:</p>
+<ul>
+<li><p>Context - describe the issue and the potential impact</p></li>
+<li><p>Examples - give specific examples of when and where the issue has been present (specifying the line numbers of the code where the issue can be found can be useful here)</p></li>
+<li><p>Diagnosis - use the example to discuss why this approach was taken, what could have been done differently and why alternatives could be an improvement</p></li>
+<li><p>Actions - ask the person receiving feedback to suggest actions that they could follow to avoid this issue in future</p></li>
+<li><p>Review - if you have time, revisit the discussion to look for progress following on from the feedback</p></li>
+<li><p>Other tips for getting started with peer review can be found in the <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html" target="_blank" rel="noopener noreferrer">Duck Book</a></p></li>
+<li><p>The Duck Book also contains some helpful <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/checklists.html" target="_blank" rel="noopener noreferrer">code QA checklists</a> to help get you thinking about what to check</p></li>
+</ul>
+<hr>
+<section id="improving-code-performance" class="level4">
+<h4 class="anchored" data-anchor-id="improving-code-performance">Improving code performance</h4>
+<hr>
+<p>Peer reviewing code and not sure where to start? Improving code performance can be a great quick-win for many production teams. There will be cases where code you are reviewing does things in a slightly different way to how you would: profiling the R code with the microbenchmark package is a way to objectively figure out which method is more efficient.</p>
+<p>For example below, we are testing out case_when, if_else and ifelse.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>( </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">case_when</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"low"</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"high"</span>), </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">if_else</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ifelse</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>) </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Running the code outputs a table in the R console, giving profile stats for each expression. Here, it is clear that on average, if_else() is the fastest function for the job.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Unit<span class="sc">:</span> microseconds</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                                         expr     min       lq     mean   median       uq      max neval</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">case_when</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"low"</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"high"</span>) <span class="fl">167.901</span> <span class="fl">206.2510</span> <span class="fl">372.7321</span> <span class="fl">300.2515</span> <span class="fl">420.1005</span> <span class="fl">4187.001</span>   <span class="dv">100</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">if_else</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>)  <span class="fl">55.301</span>  <span class="fl">74.0010</span> <span class="fl">125.8741</span> <span class="fl">103.7015</span> <span class="fl">138.3010</span>  <span class="fl">538.201</span>   <span class="dv">100</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">ifelse</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>) <span class="fl">266.200</span> <span class="fl">339.4505</span> <span class="fl">466.7650</span> <span class="fl">399.7010</span> <span class="fl">637.6010</span>  <span class="fl">851.502</span>   <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="peer-review-of-code-from-outside-the-team" class="level3">
+<h3 class="anchored" data-anchor-id="peer-review-of-code-from-outside-the-team">Peer review of code from outside the team</h3>
+<hr>
+<p><img src="../images/best.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<ul>
+<li><p>Has someone from outside of the team and publication area reviewed the code and given feedback?</p></li>
+<li><p>Have you taken on their feedback and improved the code?</p></li>
+</ul>
+<p><strong>Why do it?</strong></p>
+<p>All of the benefits you get from peer reviewing within your own team, multiple times over. Having someone external offers new perspectives, holds you to account by breaking down assumptions, and offers far greater opportunity for building capability through knowledge sharing.</p>
+<p><strong>How to get started</strong></p>
+<p>While peer reviewing code within the team is often practical, having external analysts peer review your code can bring a fresh perspective. If you’re interested in this, please contact us, and we can help you to arrange someone external to your team to review your processes. For this to work smoothly, we recommend that your code is easily accessible for other analysts, such as hosted in an Azure DevOps repo and mirrored to github.</p>
+<hr>
+</section>
+<section id="basic-automated-qa" class="level3">
+<h3 class="anchored" data-anchor-id="basic-automated-qa">Basic automated QA</h3>
+<hr>
+<p><img src="../images/good.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>Any data files that have been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability.</p>
+<p>Some teams are already making great progress with automated QA and realising the benefits of it. The Statistics Development Team are working with these to provide generalised code that teams can use as a starting point for automated QA. The intention is that teams can then run this as a minimum, before then looking to develop more area specific checks to the script and/or continue with current checking processes in tandem. If your team already use, or are working towards using, automated QA then get in touch as we’d be keen to see what you have.</p>
+<p>It is assumed that when using R, automated scripts will output .html reports that the team can read through to understand their data and identify any issues, and save as a part of their process documentation.</p>
+<p>For more information on general quality assurance best practice in DfE, see the <a href="https://dfe-analytical-services.github.io/how-to-qa/index.html" target="_blank">How to QA guide</a>.</p>
+<p>Cam and Sarah ran a session introducing how to get started with automated QA in relation to RAP, slides are available on <a href="https://sarahmwong.github.io/intro-to-automating-QA/#1" target="_blank" rel="noopener noreferrer">GitHub</a> or you can <a href="https://web.microsoftstream.com/embed/video/57eab29d-afeb-4651-a9f5-687098b84d13" target="_blank">watch the recording of the session</a>.</p>
+<p>The list of basic automated QA checks, with code examples can be found below and in our <a href="https://github.com/dfe-analytical-services/automated-data-qa" target="_blank" rel="noopener noreferrer">GitHub repository</a>:</p>
+<ul>
+<li><p>Checking for <a href="https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_minimum_values.R" target="_blank" rel="noopener noreferrer">minimum</a>, <a href="https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_maximum_values.R" target="_blank" rel="noopener noreferrer">maximum</a>, and <a href="https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_average_values.R" target="_blank" rel="noopener noreferrer">average</a> values across your data</p></li>
+<li><p>Checking for <a href="https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_extreme_values.R" target="_blank" rel="noopener noreferrer">extreme values and outliers</a></p></li>
+<li><p>Ensuring there are no <a href="https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_duplicate_rows.R" target="_blank" rel="noopener noreferrer">duplicate rows</a> or <a href="https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_duplicate_columns.R" target="_blank" rel="noopener noreferrer">duplicate columns</a></p></li>
+<li><p>Checking that where appropriate, <a href="https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_LA_subtotals_vs_region.R" target="_blank" rel="noopener noreferrer">geographical subtotals add up to totals</a> (e.g.&nbsp;all the numeric values for LAs in Yorkshire and The Humber add up to the regional total)</p></li>
+<li><p>Basic <a href="https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/create_scatter_plot.R" target="_blank" rel="noopener noreferrer">trend analysis using scatter plots</a>, to help you spot outliers and help tell the story of your data.</p></li>
+</ul>
+<p>The Statistics Development Team have developed <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">the QA app</a> to include some of these basic QA outputs.</p>
+<p><strong>Why do it?</strong></p>
+<p>Quality is one of the three pillars that our <a href="https://code.statisticsauthority.gov.uk/the-code/quality/" target="_blank" rel="noopener noreferrer">code of practice</a> is built upon. These basic level checks allow us to have confidence that we are accurately processing the data.</p>
+<p>Automating these checks ensures their accuracy and reliability, as well as being dramatically quicker than doing these manually.</p>
+<p><strong>How to get started</strong></p>
+<p>Try using our <a href="https://github.com/dfe-analytical-services/automated-data-qa" target="_blank">template code snippets</a> to get an idea of how you could automate QA of your own publication files. A recording of our introduction to automated QA is also available at the top of the page.</p>
+<hr>
+</section>
+<section id="publication-specific-automated-qa" class="level3">
+<h3 class="anchored" data-anchor-id="publication-specific-automated-qa">Publication specific automated QA</h3>
+<hr>
+<p><img src="../images/great.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>Many teams will have aspects of their data and processes that require Quality Assuring beyond the generalisable basic checks above. Therefore it is expected that teams develop their own automated QA checks to QA specificities of their publications not covered by the basic checks.</p>
+<p><strong>Why do it?</strong></p>
+<p>Quality is one of the three pillars that our <a href="https://code.statisticsauthority.gov.uk/the-code/quality/" target="_blank" rel="noopener noreferrer">code of practice</a> is built upon. By building upon the basic checks to develop bespoke QA for our publications, we can increase our confidence in the quality of the processes and outputs that they produce.</p>
+<p><strong>How to get started</strong></p>
+<p>We expect that the basic level of automated QA will cover most needs that publication teams have. However, we also expect that each publication will have it’s own quirks that require a more bespoke approach. An example of a publication with it’s own bespoke QA checks will appear in this space shortly. For the time being, try to consider what things you’d usually check as flags that something hasn’t gone right with your data. What are the unique aspects of your publication’s data, and how can you automate checks against them to give you confidence in it’s accuracy and reliability?</p>
+<p>For those who are interested in starting writing their own QA scripts, it’s worth looking at packages in R such as <a href="https://testthat.r-lib.org/" target="_blank" rel="noopener noreferrer">testthat</a>, including the <a href="https://educationgovuk.sharepoint.com/:f:/r/sites/sarpi/g/WorkplaceDocuments/Induction%20learning%20and%20career%20development/Coffee%20and%20Coding/190306_peter_autotesting?csf=1&amp;web=1&amp;e=F945Xq" target="_blank" rel="noopener noreferrer">coffee and coding resources</a> on it by Peter Curtis, as well as this <a href="http://r-pkgs.had.co.nz/tests.html" target="_blank" rel="noopener noreferrer">guide on testing</a> by Hadley Wickham.</p>
+<p>The <a href="https://garthtarr.github.io/meatR/janitor.html" target="_blank" rel="noopener noreferrer">janitor</a> package in R also has some particularly useful functions, such as <code>clean_names()</code> to automatically clean up your variable names, <code>remove_empty()</code> to remove any completely empty rows and columns, and <code>get_dupes()</code> which retrieves any duplicate rows in your data - this last one is particularly powerful as you can feed it specific columns and see if there’s any duplicate instances of values across those columns.</p>
+<hr>
+</section>
+<section id="automated-summaries" class="level3">
+<h3 class="anchored" data-anchor-id="automated-summaries">Automated summaries</h3>
+<hr>
+<p><img src="../images/great.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>As a part of automating QA, we should also be looking to automate the production of summary statistics alongside the tidy underlying data files, this then provides us with instant insight into the stories underneath the numbers.</p>
+<p>Summary outputs are automated and used to explore the stories of the data.</p>
+<p>The Statistics Development Team have developed <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">the QA app</a> to include some of these automated summaries, including minimum, maximum and average summaries for each indicator.</p>
+<p>At a basic level we want teams to make use of the QA app to explore their data:</p>
+<ul>
+<li><p>Have you used the outputs of the automated QA from the screener to understand the data?</p></li>
+<li><p>Run automated QA, ensure that all interesting outputs/trends are reflected in the accompanying text</p></li>
+</ul>
+<p><strong>Why do it?</strong></p>
+<p>Value is one of the three pillars of our <a href="https://code.statisticsauthority.gov.uk/the-code/value/" target="_blank" rel="noopener noreferrer">code of practice</a>. Even more specifically it states that <strong>‘Statistics and data should be presented clearly, explained meaningfully and provide authoritative insights that serve the public good.’</strong>.</p>
+<p>As a result, we should be developing automated summaries to help us to better understand the story of the data and be authoritative and rigorous in our telling of it.</p>
+<p><strong>How to get started</strong></p>
+<p>Consider:</p>
+<ul>
+<li><p>Use the additional tabs available after a data file passes the <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank" rel="noopener noreferrer">data screener</a> as a starting point to explore trends across breakdowns and years.</p></li>
+<li><p>Running your publication-specific automated QA, ensuring that all interesting outputs/trends are reflected in the accompanying text</p></li>
+</ul>
+<hr>
+</section>
+<section id="publication-specific-automated-summaries" class="level3">
+<h3 class="anchored" data-anchor-id="publication-specific-automated-summaries">Publication specific automated summaries</h3>
+<hr>
+<p><img src="../images/best.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<ul>
+<li><p>Have you gone beyond the outputs of the QA app to consider automating further insights for your publication specifically? E.g. year on year changes for specific measures, comparisons of different characteristics that are of interest to the general public</p></li>
+<li><p>Are you using these outputs to write your commentary?</p></li>
+</ul>
+<p><strong>Why do it?</strong></p>
+<p>All publications are different, and therefore it is important that for each publication, teams go beyond the basics and produce automated summaries specific to their area.</p>
+<p><strong>How to get started</strong></p>
+<p>Consider:</p>
+<ul>
+<li><p>Integrating extra publication-specific QA into the production process</p></li>
+<li><p>Consider outputs specific to your publication that would help you to write commentary/draw out interesting analysis</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="version-control" class="level2">
+<h2 class="anchored" data-anchor-id="version-control">Version control</h2>
+<p>Version control is our third core RAP principle, and is made up of the following elements:</p>
+<ul>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#version-controlled-final-code-scripts">Version controlled final code scripts</a></li>
+<li><a href="#use-open-source-repositories">Use open source repositories</a></li>
+<li><a href="#collaboratively-develop-code-using-git">Collaboratively develop code using Git</a></li>
+</ul>
+<p>Version control is just a way to track changes to files. Using proper version control can avoid lots of potential problems, including running old scripts by accident, losing files, or ending up with a folder full of documents with suffixes like “final_final_FINAL”. It also makes it much easier for new people to pick up your processes.</p>
+<p><em>When you assume you make an ‘ass’ out of ‘u’ and ‘me’</em>. Everyone knows this saying, yet few of us heed its warning.</p>
+<p>The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.</p>
+<p>As we work with code to process our data more and more, we can begin to utilise version control software to make this process much easier, allowing simultaneous collaboration on files.</p>
+<hr>
+<section id="documentation" class="level3">
+<h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
+<hr>
+<p><img src="../images/good.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<ul>
+<li><p>You should be annotating as you go, ensuring that every process and decision made is written down. Processes are ideally written with code, and decisions in comments.</p></li>
+<li><p>There should be a <a href="#writing-a-readme-file">README</a> notes file, that clearly details the steps in the process, any dependencies (such as places where access needs to be requested to) and how to carry out the process.</p></li>
+<li><p>Any specialist terms should also be defined if required (e.g.&nbsp;The NFTYPE lookup can be found in xxxxx. “NFTYPE” means school type).</p></li>
+</ul>
+<p><strong>Why do it?</strong></p>
+<p>When documenting your processes you should leave nothing to chance, we all have wasted time in the past trying to work out what it was that we had done before, and that time increases even more when we are picking up someone else’s work. Thorough documentation saves us time, and provides a clear audit trail of what we do. This is key for the ‘Reproducible’ part of RAP, our processes must be easily reproducible and clear documentation is fundamental to that.</p>
+<p><strong>How to get started</strong></p>
+<p>Take a look at your processes and be critical - could another analyst pick them up without you there to help them? If the answer is no (don’t feel ashamed, it will be for many teams) then go through and note down areas that require improvement, so that you can revise them with your team.</p>
+<p>Take a look at the sections below for further guidance on improving your documentation.</p>
+<hr>
+<section id="commenting-in-code" class="level4">
+<h4 class="anchored" data-anchor-id="commenting-in-code">Commenting in code</h4>
+<hr>
+<p>When writing code, whether that is SQL, R, or something else, make sure you’re commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Script Name<span class="sc">:</span>     Section <span class="dv">251</span> Table A <span class="dv">2019</span> <span class="sc">-</span> s251_tA_2019.sql</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Description<span class="sc">:</span>     Extraction of data from IStore and production of underlying data file</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Author<span class="sc">:</span>          Cam Race</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Creation Date<span class="sc">:</span>   <span class="dv">15</span><span class="sc">/</span><span class="dv">11</span><span class="sc">/</span><span class="dv">2019</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span><span class="er">//</span>  Process</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">1.</span> Extract the data <span class="cf">for</span> each available year</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">2.</span> Match <span class="cf">in</span> extra geographical information</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">3.</span> Create aggregations <span class="sc">-</span> both categorical and geographical totals</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">4.</span> Tidy up and output results</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">5.</span> Metadata creation</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Commented lines should begin with – (SQL) or # (R), followed by one space and your comment. Remember that <strong>comments should explain the why, not the what.</strong></p>
+<p>In SQL you can also use <code>/**</code> and <code>**/</code> to bookend comments over multiple lines.</p>
+<p>In rmarkdown documents you can bookend comments by using <code>&lt;!--</code> and <code>--&gt;</code>.</p>
+<p>Use commented lines of - to break up your files into scannable chunks based upon the structure and subheadings, like the R example below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the data -------------------------------------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Doing this can visually break up your code into sections that are easy to navigate around. It will also add that section to your outline, which can be used in RStudio using Ctrl-Shift-O. More details on the possibilities for this can be found in the <a href="https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections" target="_blank" rel="noopener noreferrer">RStudio guidance on folding and sectioning code</a>.</p>
+<p>You might be thinking that it would be nice if there was software that could help you with documentation, if so, read on, as Git is an incredibly powerful tool that can help us easily and thoroughly document versions of our files. If you’re at the stage where you are developing your own functions and packages in R, then take a look at <a href="https://roxygen2.r-lib.org/" target="_blank" rel="noopener noreferrer">roxygen2</a> as well.</p>
+<hr>
+</section>
+<section id="writing-a-readme-file" class="level4">
+<h4 class="anchored" data-anchor-id="writing-a-readme-file">Writing a README file</h4>
+<hr>
+<p><strong>What does this mean?</strong></p>
+<p>A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure DevOps, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" rel="noopener noreferrer">Markdown Guide</a>.</p>
+<p><strong>Why do it?</strong></p>
+<p>It’s an easy way to answer questions that your audience will likely have regarding how to install and use your project and also how to collaborate with you.</p>
+<p><strong>How to get started</strong></p>
+<p>For new projects, you can use the create_project function in dfeR. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a README template. You can find more information on this in the <a href="https://dfe-analytical-services.github.io/dfeR/reference/create_project.html" target="_blank">dfeR reference</a>.</p>
+<p>If you are creating your own README for existing projects, you should include all of the sections listed below:</p>
+<p><strong>Introduction</strong></p>
+<ul>
+<li>Purpose: briefly explain the purpose of the code.</li>
+<li>Overview: Provide a high-level summary of the contents and structure of the repository.</li>
+</ul>
+<p><strong>Requirements</strong></p>
+<ul>
+<li>Access: Detail any permissions or access needed to use the repository at the top of this section, e.g.&nbsp;access to specific SQL databases. This is crucial for enabling new users to use the repository.</li>
+<li>Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R, or SQL.</li>
+<li>Version control/Renv: State how version control is managed and whether Renv is being used.</li>
+</ul>
+<p><strong>Getting started</strong></p>
+<ul>
+<li>Setup instructions: Provide step-by-step instructions on how to set up the environment, including installing dependencies.</li>
+<li>Data input/output: Describe the expected input data and where it can be found, as well as what output should be expected from the code.</li>
+</ul>
+<p><strong>How to run and update</strong></p>
+<ul>
+<li>Running the code: Explain how users can best run the code, for example by running a run all script.</li>
+<li>Updating guidelines: Outline the process for updating and contributing to the repository, including specific scripts and lines where updates are frequently needed. Describe how to get changes reviewed.</li>
+<li>Issue reporting: Explain how to report issues or suggest improvements. This could be through issues if using GitHub, boards in Azure DevOps or by emailing the team.</li>
+</ul>
+<p><strong>Contact details</strong></p>
+<ul>
+<li>Main contacts: List the names and contact information of people who maintain the repository.</li>
+<li>Support channels: Provide any information on how to get support, such as email addresses or teams channels.</li>
+</ul>
+<p>The <a href="https://github.com/dfe-analytical-services/publication-self-assessment-copy" target="_blank" rel="noopener noreferrer">Self-assessment tool</a> and the <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa" target="_blank" rel="noopener noreferrer">QA app</a> give two examples of readme files structured like this.</p>
+<hr>
+</section>
+</section>
+<section id="version-controlled-final-code-scripts" class="level3">
+<h3 class="anchored" data-anchor-id="version-controlled-final-code-scripts">Version controlled final code scripts</h3>
+<hr>
+<p><img src="../images/great.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>This means having the final copies of code and documentation saved in a git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available.</p>
+<p>If you do not already have git downloaded, you can <a href="https://git-scm.com/downloads" target="_blank">download the latest version from their website</a>.</p>
+<p>For now, take a look at the <a href="../learning-development/git.html">resources for learning git</a> in the learning resources section.</p>
+<p><strong>Why do it?</strong></p>
+<p>Having the final copy of the scripts version controlled gives assurance around how the data was created. It also allows teams to easily record any last minute changes to the code after the initial final version by using the version control to log this.</p>
+<p><strong>How to get started</strong></p>
+<p>The first step is to get your final versions of code and documentation together in a single folder.</p>
+<p>We have a specific area set up for you to host your publication code in on the dfe-gov-uk instance of Azure DevOps, entitled official-statistics-production.</p>
+<p>To gain access to this area, please raise a request on service desk by navigating through the pages detailed in the animation below.</p>
+<p><img src="../images/servicedesk_request.gif" class="img-fluid"></p>
+<p>Once you have navigated to this page, fill out the form with the following details and send your request off.</p>
+<p><img src="../images/devops_request_details.PNG" class="img-fluid"></p>
+<p>Access is usually granted within a few working days. Alert the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> when this is confirmed, and we will set up your repository and give your team access.</p>
+<hr>
+<section id="renv" class="level4">
+<h4 class="anchored" data-anchor-id="renv">renv</h4>
+<hr>
+<p>We recommend the use of the <a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank">renv package</a> to help maintain consistent versions of packages within your work. You can learn more about how to use renv <a href="../learning-development/r.html#renv">on our R page</a>.</p>
+<hr>
+</section>
+</section>
+<section id="use-open-source-repositories" class="level3">
+<h3 class="anchored" data-anchor-id="use-open-source-repositories">Use open source repositories</h3>
+<hr>
+<p><img src="../images/best.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<p>Saving or cloning your work into a repository that is visible to the public. We currently have brilliant examples of this in our <a href="https://github.com/dfe-analytical-services" target="_blank">DfE analytical services GitHub area</a>, in which all of the code used to create public dashboards is publicly available.</p>
+<p>For statistics publications we expect teams to be able to mirror their proccess code on GitHub after publication, which will help open up their code for other analysts to learn from.</p>
+<p>We are currently working on ways to mirror private repos (i.e.&nbsp;AzureDevOps) to public repos on publication of your data. If you are interested in this please contact the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a>.</p>
+<p><strong>Why do it?</strong></p>
+<p>It’s a key part of the <a href="https://www.gov.uk/government/publications/technology-code-of-practice/technology-code-of-practice#be-open-and-use-open-source" target="_blank" rel="noopener noreferrer">technology code of practice</a> as an agreed standard for <a href="https://www.gov.uk/guidance/be-open-and-use-open-source" target="_blank" rel="noopener noreferrer">digital services across government</a>.</p>
+<p><strong>How to get started?</strong></p>
+<p>Contact us to get a repository set up in Azure DevOps, to set up a mirroring process to GitHub or to set up a repository on our dfe-analytical-services area on GitHub.</p>
+<p>You should consider the following principles making an Official Statistics production repository public (some examples are R specific though can be applied to other languages):</p>
+<ul>
+<li>Follow the guidance on <a href="#writing-a-readme-file">writing a readme file</a>, and add context in about what Official/National statistics are</li>
+<li>Ensure no data (either input or output) is included in the repository</li>
+<li>Have a clear and organised folder structure (such as having R scripts in an ‘R’ folder)</li>
+<li>Check your code is styled according the <a href="#clean-final-code">tidyverse styling</a></li>
+<li>Use <a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank" rel="noopener noreferrer">renv</a> for package management</li>
+<li>Use an <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects" target="_blank" rel="noopener noreferrer">R project</a></li>
+</ul>
+<p>When naming your publication’s repository you should use the publication name fully written out, in lower case, and with dashes for spaces – ‘graduate-labour-market-statistics’.</p>
+<p>A single repository should be used for all releases of your publication, there’s no need to have multiple as all the history is saved within previous commits. You can make use of <a href="../learning-development/git.html#Tagging_release_versions">tagging releases in Git</a> to help differentiate between each cycle.</p>
+<hr>
+<section id="avoid-revealing-sensitive-information" class="level4">
+<h4 class="anchored" data-anchor-id="avoid-revealing-sensitive-information">Avoid revealing sensitive information</h4>
+<hr>
+<p>Here are some general best practice tips:</p>
+<ul>
+<li>Using .gitignore to ignore files and folders to prevent committing anything sensitive</li>
+<li>Never committing outputs unless they’ve been checked over, even aggregates. We suggest only outputting to an output folder which is in the .gitignore file, to ensure this doesn’t happen by mistake</li>
+<li>Keeping datasets and secrets (e.g.&nbsp;API keys) outside the repository as much as possible, make use of secure variables</li>
+<li>Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the git history and start the public repo without it</li>
+<li>You can <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository" target="_blank">remove a file from the entire commit history</a> if you did commit anything sensitive, although you still need to follow the usual procedures if this was a data breach</li>
+</ul>
+<p>You can find out more in the Duck Book’s <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories" target="_blank">guidance on using Git</a>.</p>
+<hr>
+</section>
+</section>
+<section id="collaboratively-develop-code-using-git" class="level3">
+<h3 class="anchored" data-anchor-id="collaboratively-develop-code-using-git">Collaboratively develop code using Git</h3>
+<hr>
+<p><img src="../images/best.svg" class="img-fluid"></p>
+<p><strong>What does this mean?</strong></p>
+<ul>
+<li><p>Has code development taken place in Git, collaboratively across the team?</p></li>
+<li><p>Are you making use of pull requests for team members to review and comment on code updates?</p></li>
+<li><p>Is there a clear paper trail of changes to code (commits)?</p></li>
+</ul>
+<p><strong>Why do it?</strong></p>
+<p>Using Git allows multiple people to simultaneously develop the same code using branches, all with a crystal clear audit trail showing what changes were made when using commits. It makes it easy for team members to review changes via pull requests.</p>
+<p><strong>How to get started</strong></p>
+<p>To get started you should:</p>
+<hr>
+<section id="get-your-code-into-a-git-controlled-folder" class="level4">
+<h4 class="anchored" data-anchor-id="get-your-code-into-a-git-controlled-folder">Get your code into a Git controlled folder</h4>
+<hr>
+<p>Get code into a Git controlled folder in whatever version it is currently in. Use the following steps to do so:</p>
+<ol type="1">
+<li><p>Open the folder where your project is saved, right click anywhere in that window, and click “Git Bash Here”.</p></li>
+<li><p>This will open a black box (the terminal). Type in the following and hit enter</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>git init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>After hitting enter, type in the following and hit enter again after each line. You will need the URL of your Azure DevOps repository to complete this step. Contact the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> if you are not sure what this is or do not have one.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>git add .</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>git commit <span class="sc">-</span>m <span class="st">"first commit"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>git remote add origin YOUR_URL_HERE</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>git push <span class="sc">-</span>f origin <span class="sc">--</span>all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>You may be prompted for either your Windows or Git credentials at this stage.</p>
+<ul>
+<li><p>If prompted for your <strong>Windows</strong> credentials, enter the username and password combination you use to log into your DfE device.</p></li>
+<li><p>If prompted for your <strong>Git</strong> credentials, visit your online repository, click on the blue “clone” box, and click “generate Git credentials”. This will generate a username and password for you to enter.</p></li>
+</ul></li>
+</ul>
+<ol start="4" type="1">
+<li>Visit your repository online, and check that all the files have uploaded. Other members of your team will now be able to work from your code.</li>
+</ol>
+<hr>
+</section>
+<section id="build-capability-within-the-team" class="level4">
+<h4 class="anchored" data-anchor-id="build-capability-within-the-team">Build capability within the team</h4>
+<hr>
+<ul>
+<li><p>Ensure all team members have access to your project in the Azure DevOps official-statistics-production area. Contact the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> if there are any issues.</p></li>
+<li><p>Get team members to clone your repository in to their personal area, so everyone is able to work on code at the same time.</p></li>
+</ul>
+<p>To clone code, they will need to do the following:</p>
+<ol type="1">
+<li><p>Run through steps 1 - 2a of <a href="#get-your-code-into-a-git-controlled-folder">getting a file into a Git controlled folder</a></p></li>
+<li><p>After running those lines, type in the following with your repository URL in the “YOUR_URL_HERE” space. This will clone the online repository to your local area.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>git clone YOUR_URL_HERE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Make use of Git and version control in your team projects regularly. Like learning anything new, putting it into practice regularly is the best way to become confident in using it.</li>
+</ul>
+<p>Please refer to the other links on the <a href="../learning-development/git.html#other-resources">Git learning resources</a> page to learn more about how to use Git in practice.</p>
+<hr>
+
+
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dfe-analytical-services\.github\.io\/analysts-guide");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../RAP/rap-faq.html" class="pagination-link" aria-label="RAP FAQs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">RAP FAQs</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="pagination-link" aria-label="SQL Warehouse with RStudio">
+        <span class="nav-page-text">SQL Warehouse with RStudio</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Department for Education, 2024</p>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/rap-start-guide.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+<p>This page is maintained by statistics.development@education.gov.uk</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
