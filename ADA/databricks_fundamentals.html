@@ -760,6 +760,28 @@ Important
 <section id="unity-catalog" class="level3">
 <h3 class="anchored" data-anchor-id="unity-catalog">Unity catalog</h3>
 <hr>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data changes during migration to Databricks
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please note that if you have had data migrated from SQL Server to the Unity Catalog, some changes may have been made to table and / or column names. Databricks does not support spaces in table or column names, and will automatically replace spaces with underscores (_).</p>
+<p>The following special characters are also unsupported:</p>
+<ul>
+<li>full stop (.)</li>
+<li>forward slash (/)</li>
+<li>All ASCII control characters</li>
+</ul>
+<p>If column or table names contain hyphens, you will need to use <a href="https://dictionary.cambridge.org/dictionary/english/backtick" target="_blank">backticks</a> around the column or table name when referencing them in your code, e.g.:</p>
+<p><code>SELECT * FROM `table-name` WHERE `column-name` = 1</code></p>
+<p>You can find more information on Databricks object names in the <a href="https://docs.databricks.com/gcp/en/sql/language-manual/sql-ref-names" target="_blank">Databricks SQL reference manual</a>, and more information on how special characters will be re-mapped in the <a href="https://educationgovuk-my.sharepoint.com/:x:/g/personal/ruwanika_weerakkody_education_gov_uk/EQxT1U-AbLFCmjTU-fYuK9EBkdYMyHjVrYeBUTWy2q9mFw?e=c4TLDX" target="_blank">special characters list</a>.</p>
+</div>
+</div>
 <p>The majority of data and files on Databricks should be stored in the ‘unity catalog’. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.</p>
 <p>The unity catalog can be accessed through the ‘Catalog’ option in the Databricks sidebar.</p>
 <p><img src="../images/ada-unity-catalog-sidebar.png" class="img-fluid"></p>
