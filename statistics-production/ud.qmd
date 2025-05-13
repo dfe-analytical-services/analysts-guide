@@ -328,7 +328,7 @@ Titles should use abbreviations only when necessary to reduce the length of the 
 
 Most indicators should be reducible to a simple context / title (e.g. schools, pupils, students, teachers, starts, apprenticeships, expenditure, income, etc) and a data type (e.g. count, sum, percent, score, average, median, fte, etc). Assuming this ideal (tidy data structure) case, the preferred layout is:
 
-{title}_{data type}
+{title / context}_{data type}
 
 For example:
 
@@ -336,7 +336,7 @@ starts_count, starts_sum, starts_percent, starts_average, starts_median, absence
 
 Whilst data producers should generally aim to fit the basic layout above (i.e. by using filters to cover categorization and limiting criteria), there may be circumstances in which additional flags need to be included that can’t be placed in Filters. In these circumstances, the guidance is to follow the below ordering:
 
-{title}_{levels}_{above / below}_{exclusivity}_{additional}_{data type}
+{title / context}\_{data type}\_{levels}\_{above / below}\_{exclusivity}\_{additional}
 
 If your data doesn't appear to fit with just using the basic {title}_{data type} column naming format and you'd like to use the extended structure above, then please get in touch and we can work through how the extended structure can work with your data.
 
@@ -346,7 +346,7 @@ The table below summarises these guidelines.
 
 | Name | Individual form | Full indicator example | Description |
 |------|-----------------|------------------------|-------------|
-| Title | title / name e.g. population, pupils, starters | population_count, pupil_count, starter_count | title of the field, avoid abbreviations where possible |
+| Title / context | title / name e.g. population, pupils, starters | population_count, pupil_count, starter_count | title of the field, avoid abbreviations where possible |
 | Data type | count / percent | pupil_count, pupil_percent | Number or Percentage where applicable |
 | Levels | l + (level number) | population_count_l1 | l1, l2, l3 etc |
 | Above or Below | plus / minus | population_count_plus | Using ‘plus’ or ‘minus’ to denote above or below |
