@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,8 +39,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-24b95b3762cc9396e1c581e2a7cd9ff9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-37e51258159c7d0a8cb8a50354e53c5f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8cf7951aadf289b66ec2ccef2125e090.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b415d0d2b46a5f18405b0268e112ba9f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-fe93c050ee4711094fdfcc91cba07144.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -1384,11 +1384,11 @@ Warning
 <h4 class="anchored" data-anchor-id="indicator-names">Indicator names</h4>
 <hr>
 <p>Most indicators should be reducible to a simple context / title (e.g.&nbsp;schools, pupils, students, teachers, starts, apprenticeships, expenditure, income, etc) and a data type (e.g.&nbsp;count, sum, percent, score, average, median, fte, etc). Assuming this ideal (tidy data structure) case, the preferred layout is:</p>
-<p>{title}_{data type}</p>
+<p>{title / context}_{data type}</p>
 <p>For example:</p>
 <p>starts_count, starts_sum, starts_percent, starts_average, starts_median, absence_percent, pupils_count, pupils_percent</p>
 <p>Whilst data producers should generally aim to fit the basic layout above (i.e.&nbsp;by using filters to cover categorization and limiting criteria), there may be circumstances in which additional flags need to be included that can’t be placed in Filters. In these circumstances, the guidance is to follow the below ordering:</p>
-<p>{title}<em>{levels}</em>{above / below}<em>{exclusivity}</em>{additional}_{data type}</p>
+<p>{title / context}_{data type}_{levels}_{above / below}_{exclusivity}_{additional}</p>
 <p>If your data doesn’t appear to fit with just using the basic {title}_{data type} column naming format and you’d like to use the extended structure above, then please get in touch and we can work through how the extended structure can work with your data.</p>
 <p>The table below summarises these guidelines.</p>
 <div class="table-responsive">
@@ -1409,7 +1409,7 @@ Warning
 </thead>
 <tbody>
 <tr class="odd">
-<td>Title</td>
+<td>Title / context</td>
 <td>title / name e.g.&nbsp;population, pupils, starters</td>
 <td>population_count, pupil_count, starter_count</td>
 <td>title of the field, avoid abbreviations where possible</td>
