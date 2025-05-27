@@ -204,4 +204,42 @@ con <- DBI::dbConnect(
 odbcListObjects(con)
 ```
 
----
+------------------------------------------------------------------------
+
+### Troubleshooting
+
+------------------------------------------------------------------------
+
+#### sqlQuery doesn't work
+
+------------------------------------------------------------------------
+
+The sqlQuery function is part of the `RODBC` package, which is different to the `odbc` package that we have recommended in this guidance. 
+
+If you wish to continue using `sqlQuery()` in your code, you will need to set up your connection using `RODBC` instead of `odbc`. You can find guidance on how to do this [on the Databricks guidance website](https://learn.microsoft.com/en-us/azure/databricks/integrations/odbc/connect-databricks-excel-python-r).
+
+The other alternative is to continue using `odbc` and switch to the `DBI` package instead, as in this example:
+
+``` {r dbgetquery, eval=FALSE}
+
+library(odbc)
+library(DBI)
+
+con <- DBI::dbConnect(
+  odbc::databricks(),
+  httpPath = Sys.getenv("DATABRICKS_SQL_PATH")
+)
+
+# dbGetQuery should be used for SELECT statements only
+dbGetQuery(con, "SELECT * FROM mtcars")
+
+#Tell odbc which catalog to use
+dbExecute(con, "USE CATALOG catalog_40_copper_proj_fe_skills_statistics_dev;")
+
+# dbExecute can be used for more complex data manipulation
+dbExecute(con, "CREATE OR REPLACE TEMPORARY VIEW test_persist AS
+          SELECT * FROM VALUES('1', 'HI', v_test) as (column1, text, test_var);")
+
+```
+
+
