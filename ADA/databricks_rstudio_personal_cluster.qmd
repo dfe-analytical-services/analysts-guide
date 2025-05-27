@@ -234,3 +234,67 @@ con <- DBI::dbConnect(odbc::databricks(),
 
 dbGetQuery(con, "SHOW CATALOGS;")
 ```
+
+------------------------------------------------------------------------
+
+### Troubleshooting
+
+------------------------------------------------------------------------
+
+#### dbWriteTable fails with an error 
+
+------------------------------------------------------------------------
+
+To use dbWriteTable with odbc, you need to add an additional `useNativeQuery` argument to the dbConnect function as in the following example: 
+
+``` r
+
+library(DBI)
+library(odbc)
+
+con <- DBI::dbConnect(odbc::databricks(),
+                      httpPath = Sys.getenv("GROUP_ASSIGNED_CLUSTER_PATH"),
+                      useNativeQuery = FALSE) #required for dbWriteTable to work
+
+##Declare a SQL variable in Databricks
+dbExecute(con, "DECLARE OR REPLACE VARIABLE v_test string = 'This is a test string variable';")
+
+#Select the SQL variable
+dbGetQuery(con, "SELECT v_test;")
+
+#Select some data from Databricks including the variable value
+dbGetQuery(con, "SELECT * FROM VALUES('1', 'HI', v_test) as (column1, text, test_var);")
+#works
+
+#Create a temporary view from variable
+dbExecute(con, "CREATE OR REPLACE TEMPORARY VIEW test_persist AS
+          SELECT * FROM VALUES('1', 'HI', v_test) as (column1, text, test_var);")
+
+#Select from temporary view
+dbGetQuery(con, "SELECT * FROM test_persist")
+#Doesn't work because the view has 'forgotten' what v_test is. Just storing a reference to a value it can't access instead of materialising the value of the variable (which is obviously what you would want/expect/would work)
+
+#Tell ODBC which catalog to use
+dbExecute(con, "USE CATALOG catalog_40_copper_proj_fe_skills_statistics_dev;")
+
+#Create a 'test' schema if it doesn't exist
+dbExecute(con, "CREATE SCHEMA IF NOT EXISTS test;")
+
+#Tell ODBC to use the 'test' schema
+dbExecute(con, "USE test;")
+
+#Store variable in a permentant table
+dbExecute(con, "CREATE OR REPLACE TABLE test_persist_table AS
+          SELECT * FROM VALUES('1', 'HI', v_test) as (column1, text, test_var);")
+
+#Retrieve the data including the variable value
+dbGetQuery(con, "SELECT * FROM test_persist_table;")
+
+df <- data.frame(col1 = c("Hello", "world","I'm","here"),
+                col2 = c(1,2,3,4))
+
+dbWriteTable(con, Id(schema = "test", table = 'demo_write_table_from_r'), df, overwrite = T)
+
+dbGetQuery(con, "SELECT * FROM demo_write_table_from_r;")
+
+```
