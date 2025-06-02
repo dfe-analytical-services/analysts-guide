@@ -79,7 +79,7 @@ You should use the [renv package](https://rstudio.github.io/renv/articles/renv.h
 
 Packages and versions of R regularly update. Over time, this can cause code to break - e.g. if different dependencies are required for later versions of packages to work. Using renv creates a "snapshot" of your code and packages at the time you created it, which anyone can then recreate when they come to use your code. 
 
-This is really important for reproducibility, and will help you meet elements of great practice with [recyclable code for future use](../RAP/rap.html#recyclable-code-for-future-use).
+This is really important for reproducibility, and will help you meet elements of great practice with [recyclable code for future use](../RAP/rap-start-guide.html#recyclable-code-for-future-use).
 
 ---
 
