@@ -238,7 +238,7 @@ library(DBI)
 
 con <- DBI::dbConnect(
   odbc::databricks(),
-  httpPath = Sys.getenv("DATABRICKS_SQL_PATH")
+  httpPath = Sys.getenv("DATABRICKS_CLUSTER_PATH")
 )
 #Tell odbc which catalog to use
 dbExecute(con, "USE CATALOG catalog_40_copper_proj_fe_skills_statistics_dev;")
