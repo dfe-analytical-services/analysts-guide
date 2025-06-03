@@ -10,6 +10,13 @@ Please be aware that the Databricks platform is regularly updated and may look d
 
 The following instructions set up an ODBC connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using an ODBC based package.
 
+::: {.callout-warning}
+# If your existing code uses sqlQuery() 
+If your code makes use of the sqlQuery() function, you will need to use an alternative set up method using the RODBC package. You can find more information on this in the [Troubleshooting section](#Troubleshooting) at the end of this page. 
+:::
+
+
+
 Personal clusters can be used within the Databricks environment, or through RStudio. You can set one up yourself if you don't have access to a SQL warehouse or shared cluster. 
 
 A personal cluster is the most versatile type of compute and the most easily accessible for analysts within the Department. If you are considering converting an existing R / RStudio process to the Databricks environment a personal cluster is the best choice as you will be able to run like for like code on both environments.
@@ -229,8 +236,27 @@ Include the following code in your R Script:
 library(odbc)
 library(DBI)
 
-con <- DBI::dbConnect(odbc::databricks(),
-                      httpPath = Sys.getenv("DATABRICKS_CLUSTER_PATH"))
+con <- DBI::dbConnect(
+  odbc::databricks(),
+  httpPath = Sys.getenv("DATABRICKS_SQL_PATH")
+)
+#Tell odbc which catalog to use
+dbExecute(con, "USE CATALOG catalog_40_copper_proj_fe_skills_statistics_dev;")
 
-dbGetQuery(con, "SHOW CATALOGS;")
+# dbGetQuery should be used for SELECT statements only
+dbGetQuery(con, "SELECT * FROM mtcars")
 ```
+
+------------------------------------------------------------------------
+
+### Troubleshooting
+
+------------------------------------------------------------------------
+
+#### sqlQuery() doesn't work
+
+------------------------------------------------------------------------
+
+The sqlQuery function is part of the `RODBC` package, which is different to the `odbc` package that we have recommended in this guidance.
+
+If you wish to keep using sqlQuery(), you will need to follow the instructions detailed in the Databricks [Connect to Azure Databricks from Python or R](https://learn.microsoft.com/en-us/azure/databricks/integrations/odbc/connect-databricks-excel-python-r) page. 
