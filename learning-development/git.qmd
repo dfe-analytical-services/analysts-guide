@@ -29,6 +29,8 @@ Git is the best way to track changes to your code and data files. With Git, you 
 
 It makes collaboration easy by enabling multiple people to work on the same project simultaneously without overwriting each other's changes. Git also allows you to test changes to code freely by creating branches, ensuring that your main code remains intact. It also supports quality assurance by allowing you to request reviews of your changes before merging it into the main branch. As a reviewer, it makes it much easier to understand what changes have been made by clearly showing what has been added, modified or removed in each update. 
 
+Using Git also makes it easier for the Statistics Development Team to support you. If you run into a problem with your code, having your work version-controlled in Git means the team can quickly see your code and what's changed, helping you troubleshoot more effectively. 
+
 ## How to install Git
 
 Download it from the [Git website](https://git-scm.com/downloads){target="_blank" rel="noopener noreferrer"}.
