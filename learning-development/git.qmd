@@ -27,10 +27,9 @@ It is widely used across DfE and integrates neatly with our use of Azure DevOps,
 
 Git is the best way to track changes to your code and data files. With Git, you can keep a complete history of your work, allowing you to revisit or undo changes whenever needed. 
 
-It makes collaboration easy by enabling multiple people to work on the same project simultaneously without overwriting each others changes. Git also allows you to experiment freely by creating branches for new ideas or approaches, ensuring that your main code remains intact. It also supports quality assurance by allowing you to request reviews of your changes before merging it into the main branch. As a reviewer, it makes it much easier to understand what changes have been made by clearly showing what has been added, modified or removed in each update. 
+It makes collaboration easy by enabling multiple people to work on the same project simultaneously without overwriting each other's changes. Git also allows you to test changes to code freely by creating branches, ensuring that your main code remains intact. It also supports quality assurance by allowing you to request reviews of your changes before merging it into the main branch. As a reviewer, it makes it much easier to understand what changes have been made by clearly showing what has been added, modified or removed in each update. 
 
 ## How to install Git
-
 
 Download it from the [Git website](https://git-scm.com/downloads){target="_blank" rel="noopener noreferrer"}.
 
@@ -42,7 +41,9 @@ When you first try to use Git you may be prompted for a GitHub username and pass
 
 ## Best places to start
 
-- [Contact us](mailto:statistics.development@education.gov.uk) about attending one of our in-person Git workshops
+- Work through [DfE Git Academy](https://dfe-analytical-services.github.io/git-academy/https://dfe-analytical-services.github.io/git-academy). This is a collection of interactive tasks which you can use to learn and practice using Git. See the [prerequisites section](https://dfe-analytical-services.github.io/git-academy/prerequisites.html) for information on how to get started. 
+
+- [Contact us](mailto:statistics.development@education.gov.uk) about attending one of our in-person Git workshops.
 
 - If you're new to Git and are unsure of what it does, then take a look through these [Git for humans slides](https://speakerdeck.com/alicebartlett/git-for-humans){target="_blank" rel="noopener noreferrer"}
 
