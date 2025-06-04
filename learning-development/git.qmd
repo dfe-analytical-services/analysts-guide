@@ -31,6 +31,8 @@ It makes collaboration easy by enabling multiple people to work on the same proj
 
 Using Git also makes it easier for the Statistics Development Team to support you. If you run into a problem with your code, having your work version-controlled in Git means the team can quickly see your code and what's changed, helping you troubleshoot more effectively. 
 
+Git also helps you avoid accidentally losing code, or ending up with multiple saved versions of the same file. Instead of saving files as final_version, final_final or final_final_use_this_one, Git keeps everything organised and traceable. This means you always know which version is the latest and why. 
+
 ## How to install Git
 
 Download it from the [Git website](https://git-scm.com/downloads){target="_blank" rel="noopener noreferrer"}.
