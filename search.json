@@ -516,6 +516,17 @@
     ]
   },
   {
+    "objectID": "learning-development/git.html#why-use-git",
+    "href": "learning-development/git.html#why-use-git",
+    "title": "Git",
+    "section": "Why use Git",
+    "text": "Why use Git\nGit is the best way to track changes to your code and data files. With Git, you can keep a complete history of your work, allowing you to revisit or undo changes whenever needed.\nIt makes collaboration easy by enabling multiple people to work on the same project simultaneously without overwriting each other’s changes. Git also allows you to test changes to code freely by creating branches, ensuring that your main code remains intact. It also supports quality assurance by allowing you to request reviews of your changes before merging it into the main branch. As a reviewer, it makes it much easier to understand what changes have been made by clearly showing what has been added, modified or removed in each update.\nUsing Git also makes it easier for the Statistics Development Team to support you. If you run into a problem with your code, having your work version-controlled in Git means the team can quickly see your code and what’s changed, helping you troubleshoot more effectively.\nGit also helps you avoid accidentally losing code, or ending up with multiple saved versions of the same file. Instead of saving files as final_version, final_final or final_final_use_this_one, Git keeps everything organised and traceable. This means you always know which version is the latest and why.",
+    "crumbs": [
+      "Learning resources",
+      "Git"
+    ]
+  },
+  {
     "objectID": "learning-development/git.html#how-to-install-git",
     "href": "learning-development/git.html#how-to-install-git",
     "title": "Git",
@@ -531,7 +542,7 @@
     "href": "learning-development/git.html#best-places-to-start",
     "title": "Git",
     "section": "Best places to start",
-    "text": "Best places to start\n\nContact us about attending one of our in-person Git workshops\nIf you’re new to Git and are unsure of what it does, then take a look through these Git for humans slides\nDavid Sands’ guide to getting started with Git is a helpful place to start. When watching video 03, do NOT run the code to change your proxy settings! Ignore this part of the video.\nGooey Git by David Sands, provides a very neat overview of using git with R.",
+    "text": "Best places to start\n\nWork through DfE Git Academy. This is a collection of interactive tasks which you can use to learn and practice using Git. See the prerequisites section for information on how to get started.\nContact us about attending one of our in-person Git workshops.\nIf you’re new to Git and are unsure of what it does, then take a look through these Git for humans slides\nDavid Sands’ guide to getting started with Git is a helpful place to start. When watching video 03, do NOT run the code to change your proxy settings! Ignore this part of the video.\nGooey Git by David Sands, provides a very neat overview of using git with R.",
     "crumbs": [
       "Learning resources",
       "Git"
