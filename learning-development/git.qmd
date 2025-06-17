@@ -45,7 +45,7 @@ When you first try to use Git you may be prompted for a GitHub username and pass
 
 ## Best places to start
 
-- Work through [DfE Git Academy](https://dfe-analytical-services.github.io/git-academy/https://dfe-analytical-services.github.io/git-academy). This is a collection of interactive tasks which you can use to learn and practice using Git. See the [prerequisites section](https://dfe-analytical-services.github.io/git-academy/prerequisites.html) for information on how to get started. 
+- Work through [DfE Git Academy](https://dfe-analytical-services.github.io/git-academy/). This is a collection of interactive tasks which you can use to learn and practice using Git. See the [prerequisites section](https://dfe-analytical-services.github.io/git-academy/prerequisites.html) for information on how to get started. 
 
 - [Contact us](mailto:statistics.development@education.gov.uk) about attending one of our in-person Git workshops.
 
