@@ -189,7 +189,7 @@ Now that you have enabled ODBC connections on your laptop, and enabled a connect
 
 To access the data, we will make use of the `odbc` package. You can find documentation about this package [on the Posit website](https://solutions.posit.co/connections/db/r-packages/odbc/). You will also need to have the `DBI` package installed.  
 
-Include the following code in your R Script:
+Include the following code in your R Script, making sure to replace the catalog name and the SQL query with your own catalog details and code:
 
 
 ``` {r databricks_connect_sql, eval=FALSE}
@@ -200,8 +200,26 @@ con <- DBI::dbConnect(
   odbc::databricks(),
   httpPath = Sys.getenv("DATABRICKS_SQL_PATH")
 )
+#Tell odbc which catalog to use
+dbExecute(con, "USE CATALOG catalog_40_copper_proj_fe_skills_statistics_dev;")
 
-odbcListObjects(con)
+# dbGetQuery should be used for SELECT statements only
+dbGetQuery(con, "SELECT * FROM mtcars")
 ```
 
----
+------------------------------------------------------------------------
+
+### Troubleshooting
+
+------------------------------------------------------------------------
+
+#### sqlQuery() doesn't work
+
+------------------------------------------------------------------------
+
+The sqlQuery() function is part of the `RODBC` package, which is different to the `odbc` package that we have recommended in this guidance. You cannot use the `RODBC` package with a SQL warehouse, so you have two options:
+
+- Modify your code to use the `odbc` and `DBI` packages as described in this guidance
+- Set up a personal cluster and use the `RODBC` package with that instead. You can find guidance on how to set up a personal cluster on our [set up Databricks personal compute cluster with RStudio and odbc / DBI](/ADA/databricks_rstudio_personal_cluster.html) page. Ensure you follow the troubleshooting section to set up a RODBC connection.
+
+
