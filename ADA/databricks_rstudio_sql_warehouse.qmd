@@ -220,6 +220,6 @@ dbGetQuery(con, "SELECT * FROM mtcars")
 The sqlQuery() function is part of the `RODBC` package, which is different to the `odbc` package that we have recommended in this guidance. You cannot use the `RODBC` package with a SQL warehouse, so you have two options:
 
 - Modify your code to use the `odbc` and `DBI` packages as described in this guidance
-- Set up a personal cluster and use the `RODBC` package with that instead. You can find guidance on how to set up a personal cluster on our [set up Databricks personal compute cluster with RStudio and odbc / DBI](/ADA/databricks_rstudio_personal_cluster.html) page.
+- Set up a personal cluster and use the `RODBC` package with that instead. You can find guidance on how to set up a personal cluster on our [set up Databricks personal compute cluster with RStudio and odbc / DBI](/ADA/databricks_rstudio_personal_cluster.html) page. Ensure you follow the troubleshooting section to set up a RODBC connection.
 
 
