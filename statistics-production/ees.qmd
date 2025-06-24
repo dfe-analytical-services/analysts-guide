@@ -223,13 +223,54 @@ For example:
 
 ---
 
+#### Publication titles
+
+---
+
+Naming a publication can be incredibly tough, but it is one of the most important parts of a publication and often determines whether users can find the statistics they are looking for.
+
+[GOV.UK provide guidance for statistics publication titles](https://www.gov.uk/guidance/how-to-publish-on-gov-uk/statistics), we aim to stay in line with this as far as practicable.
+
+When naming a publication, you should consider the following:
+
+Rules to follow when naming a publication:
+- Keep the title between 30 and 60 characters long (optimised for search engines)
+- Keep it unique, consider other publications that already exist
+- Use plain language, avoid jargon and acronyms where possible
+- Use sentence case
+- Avoid using the word "statistics" or "data" in the title
+- Avoid using geographic coverage such as "in England" in the title, put it in the summary, unless it is a particularly unique part of the publication (e.g. UK wide data)
+- Use a colon instead of hyphens or dashes, and use a comma if you need a second separator
+- Follow the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide)
+- Follow the [DfE style guide](https://educationgovuk.sharepoint.com/sites/communications/SitePages/style-guide.aspx)
+
+Use the publication summary to include additional information about the publication, such as the frequency of releases, geographical coverage, breakdowns, and any other relevant information that might not be possible to fit within the title. While the title may be seen alone at times. It is better to keep the title shorter and use the summary to provide a fuller picture of the publication.
+
+When deciding on a title, look at how users are referring to your data. 
+1. Look at the [EES analytics](https://rsconnect/rsc/ees-analytics/) for what sites are linking to your publication and how they reference it
+2. Look at the search terms ([EES analytics](https://rsconnect/rsc/ees-analytics/)) that users are using to find your publication
+3. Google phrases and terms that you would use and see how they appear in searches
+4. Look at how those in the sector and wider department refer to the topic area
+5. Look at [Google Trends](https://trends.google.com/trends/) to see how popular the different terms you are considering are
+
+There are some existing longer titles on the site, these should not be seen as examples to follow. Long titles can cause a number of issues, including:
+- They can be truncated in analytics data, preventing us from aggregating data on the publication (anything over 66 characters starts to break this, 100 characters is completely unusable).
+- They can hinder search engine optimisation (SEO), recommended to keep under 60 characters.
+- They extend the length of URLs, making them unweildy and difficult to use.
+- They can prevent downloads from working correctly, as some systems may not handle long URLs well and fail to open ZIP folders with long paths.
+- They can be truncated in search results, making it harder for users to find the publication.
+- They can be difficult to read and understand, especially for users with cognitive disabilities.
+- They can be difficult to remember, making it harder for users to return to the publication in the future.
+
+---
+
 #### Publication summaries
 
 ---
 
-Publication summaries are a key tool in helping users find the statistics that they're looking for. We use them on gov.uk pages and in the EES find statistics page.
+Publication summaries are a key tool in helping users find the statistics that they're looking for. We use them on GOV.UK pages and in the EES find statistics page. We aim to stay in line with [GOV.UK guidance on publication summaries](https://www.gov.uk/guidance/how-to-publish-on-gov-uk/statistics), as well as keeping them underneath 160 characters to ensure they can also be used as meta descriptions for search engines.
 
-You only have 160 characters – to make sure you are fully utilising these, have a look through the following advice:
+There is a hard limit of 160 characters, including spaces - to make sure you are fully utilising these, have a look through the following advice:
 
 * Use plain language to use terms and phrases that users are likely to use e.g. gender pay gap versus Annual Survey of Hours and Earnings.
 
@@ -239,13 +280,15 @@ You only have 160 characters – to make sure you are fully utilising these, hav
 
 * Is it clear what breakdowns you cover? E.g. Ethnicity, Sex, SEN?
 
-* Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g. Free School Meals (FSM)
+* Include the abbreviations but make sure to also write them out in full so that people can search for either, e.g. Free School Meals (FSM).
 
 * Avoid phrases like "This release covers" as this wastes characters and delays users getting to the main information.
 
 * Have you looked at the EES analytics to see what users key search terms on your publication are? Are key words front loaded In your summary?
 
-- Don’t waste space on including definitions of a topic within the summary.
+* Don’t waste space on including definitions of a topic within the summary.
+
+* Avoid repeating the publication title in the summary, treat them a pairing that will be seen together to maximise the characters available.
 
 ---
 
