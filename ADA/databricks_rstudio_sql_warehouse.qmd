@@ -137,7 +137,7 @@ Do not include the / at the end of the URL when you add it to the .Renviron file
 
 ------------------------------------------------------------------------
 
-As described in the [SQL Warehouses section](/ADA/ada.html#sql-warehouse), in Databricks, SQL Warehouses are a way to gain access to your data in the Unity Catalog. They run queries and return the results either to the user or to a table. 
+As described in the [SQL Warehouses section](#sql-warehouse), in Databricks, SQL Warehouses are a way to gain access to your data in the Unity Catalog. They run queries and return the results either to the user or to a table. 
 
 To get the Warehouse ID, follow these steps:
 
