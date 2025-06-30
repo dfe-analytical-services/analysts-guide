@@ -685,6 +685,7 @@ cookieconsent.run({
   <li><a href="#setting-up-the-odbc-driver" id="toc-setting-up-the-odbc-driver" class="nav-link" data-scroll-target="#setting-up-the-odbc-driver">Setting up the ODBC driver</a></li>
   <li><a href="#establishing-an-rstudio-connection-using-environment-variables" id="toc-establishing-an-rstudio-connection-using-environment-variables" class="nav-link" data-scroll-target="#establishing-an-rstudio-connection-using-environment-variables">Establishing an RStudio connection using environment variables</a></li>
   <li><a href="#pulling-data-into-rstudio-from-databricks" id="toc-pulling-data-into-rstudio-from-databricks" class="nav-link" data-scroll-target="#pulling-data-into-rstudio-from-databricks">Pulling data into RStudio from Databricks</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_sql_warehouse.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -925,7 +926,7 @@ Warning
 <hr>
 <p>Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you.</p>
 <p>To access the data, we will make use of the <code>odbc</code> package. You can find documentation about this package <a href="https://solutions.posit.co/connections/db/r-packages/odbc/" target="_blank">on the Posit website</a>. You will also need to have the <code>DBI</code> package installed.</p>
-<p>Include the following code in your R Script:</p>
+<p>Include the following code in your R Script, making sure to replace the catalog name and the SQL query with your own catalog details and code:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
@@ -934,12 +935,28 @@ Warning
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  odbc<span class="sc">::</span><span class="fu">databricks</span>(),</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">httpPath =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_SQL_PATH"</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">odbcListObjects</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Tell odbc which catalog to use</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, <span class="st">"USE CATALOG catalog_40_copper_proj_fe_skills_statistics_dev;"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># dbGetQuery should be used for SELECT statements only</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM mtcars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
+</section>
+<section id="troubleshooting" class="level3">
+<h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
+<hr>
+<section id="sqlquery-doesnt-work" class="level4">
+<h4 class="anchored" data-anchor-id="sqlquery-doesnt-work">sqlQuery() doesn’t work</h4>
+<hr>
+<p>The sqlQuery() function is part of the <code>RODBC</code> package, which is different to the <code>odbc</code> package that we have recommended in this guidance. You cannot use the <code>RODBC</code> package with a SQL warehouse, so you have two options:</p>
+<ul>
+<li>Modify your code to use the <code>odbc</code> and <code>DBI</code> packages as described in this guidance</li>
+<li>Set up a personal cluster and use the <code>RODBC</code> package with that instead. You can find guidance on how to set up a personal cluster on our <a href="../ADA/databricks_rstudio_personal_cluster.html">set up Databricks personal compute cluster with RStudio and odbc / DBI</a> page. Ensure you follow the troubleshooting section to set up a RODBC connection.</li>
+</ul>
 
 
+</section>
 </section>
 </section>
 

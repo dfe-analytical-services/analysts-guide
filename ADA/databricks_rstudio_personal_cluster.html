@@ -691,6 +691,7 @@ cookieconsent.run({
   <ul class="collapse">
   <li><a href="#establishing-an-rstudio-connection-using-environment-variables" id="toc-establishing-an-rstudio-connection-using-environment-variables" class="nav-link" data-scroll-target="#establishing-an-rstudio-connection-using-environment-variables">Establishing an RStudio connection using environment variables</a></li>
   <li><a href="#pulling-data-into-rstudio-from-databricks" id="toc-pulling-data-into-rstudio-from-databricks" class="nav-link" data-scroll-target="#pulling-data-into-rstudio-from-databricks">Pulling data into RStudio from Databricks</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_personal_cluster.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -733,6 +734,19 @@ Important
 </div>
 <p class="text-muted">
 </p><p>The following instructions set up an ODBC connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using an ODBC based package.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If your existing code uses sqlQuery()
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your code makes use of the sqlQuery() function, you will need to use an alternative set up method using the RODBC package. You can find more information on this in the <a href="#Troubleshooting">Troubleshooting section</a> at the end of this page.</p>
+</div>
+</div>
 <p>Personal clusters can be used within the Databricks environment, or through RStudio. You can set one up yourself if you don’t have access to a SQL warehouse or shared cluster.</p>
 <p>A personal cluster is the most versatile type of compute and the most easily accessible for analysts within the Department. If you are considering converting an existing R / RStudio process to the Databricks environment a personal cluster is the best choice as you will be able to run like for like code on both environments.</p>
 <p>Within the Databricks environment personal clusters are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. Using this ODBC method from RStudio you will be able to query data using similar methods as you currently use when connecting to Microsoft SQL server. Usually this will take the form of submitting SQL queries to Databricks from R code running on your laptop.</p>
@@ -989,12 +1003,28 @@ Warning
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">databricks</span>(),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">httpPath =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_CLUSTER_PATH"</span>))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SHOW CATALOGS;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  odbc<span class="sc">::</span><span class="fu">databricks</span>(),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">httpPath =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_CLUSTER_PATH"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Tell odbc which catalog to use</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, <span class="st">"USE CATALOG catalog_40_copper_proj_fe_skills_statistics_dev;"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># dbGetQuery should be used for SELECT statements only</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM mtcars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="troubleshooting" class="level3">
+<h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
+<hr>
+<section id="sqlquery-doesnt-work" class="level4">
+<h4 class="anchored" data-anchor-id="sqlquery-doesnt-work">sqlQuery() doesn’t work</h4>
+<hr>
+<p>The sqlQuery function is part of the <code>RODBC</code> package, which is different to the <code>odbc</code> package that we have recommended in this guidance.</p>
+<p>If you wish to keep using sqlQuery(), you will need to follow the instructions detailed in the Databricks <a href="https://learn.microsoft.com/en-us/azure/databricks/integrations/odbc/connect-databricks-excel-python-r" target="_blank">Connect to Azure Databricks from Python or R</a> page.</p>
 
 
+</section>
 </section>
 </section>
 
