@@ -234,19 +234,21 @@ Naming a publication can be incredibly tough, but it is one of the most importan
 When naming a publication, you should consider the following:
 
 Rules to follow when naming a publication:
-- Keep the title between 30 and 60 characters long (optimised for search engines)
-- Keep it unique, consider other publications that already exist
-- Use plain language, avoid jargon and acronyms where possible
-- Use sentence case
-- Avoid using the word "statistics" or "data" in the title
-- Avoid using geographic coverage such as "in England" in the title, put it in the summary, unless it is a particularly unique part of the publication (e.g. UK wide data)
-- Use a colon instead of hyphens or dashes, and use a comma if you need a second separator
-- Follow the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide)
-- Follow the [DfE style guide](https://educationgovuk.sharepoint.com/sites/communications/SitePages/style-guide.aspx)
+
+* Keep the title between 30 and 60 characters long (optimised for search engines)
+* Keep it unique, consider other publications that already exist
+* Use plain language, avoid jargon and acronyms where possible
+* Use sentence case (where only the first letter of sentence is capitalised)
+* Avoid using the word "statistics" or "data" in the title
+* Avoid using geographic coverage such as "in England" in the title, put it in the summary, unless it is a particularly unique part of the publication (e.g. UK wide data)
+* Use a colon instead of hyphens or dashes, and use a comma if you need a second separator
+* Follow the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide)
+* Follow the [DfE style guide](https://educationgovuk.sharepoint.com/sites/communications/SitePages/style-guide.aspx)
 
 Use the publication summary to include additional information about the publication, such as the frequency of releases, geographical coverage, breakdowns, and any other relevant information that might not be possible to fit within the title. While the title may be seen alone at times. It is better to keep the title shorter and use the summary to provide a fuller picture of the publication.
 
 When deciding on a title, look at how users are referring to your data. 
+
 1. Look at the [EES analytics](https://rsconnect/rsc/ees-analytics/) for what sites are linking to your publication and how they reference it
 2. Look at the search terms ([EES analytics](https://rsconnect/rsc/ees-analytics/)) that users are using to find your publication
 3. Google phrases and terms that you would use and see how they appear in searches
@@ -254,13 +256,20 @@ When deciding on a title, look at how users are referring to your data.
 5. Look at [Google Trends](https://trends.google.com/trends/) to see how popular the different terms you are considering are
 
 There are some existing longer titles on the site, these should not be seen as examples to follow. Long titles can cause a number of issues, including:
-- They can be truncated in analytics data, preventing us from aggregating data on the publication (anything over 66 characters starts to break this, 100 characters is completely unusable).
-- They can hinder search engine optimisation (SEO), recommended to keep under 60 characters.
-- They extend the length of URLs, making them unweildy and difficult to use.
-- They can prevent downloads from working correctly, as some systems may not handle long URLs well and fail to open ZIP folders with long paths.
-- They can be truncated in search results, making it harder for users to find the publication.
-- They can be difficult to read and understand, especially for users with cognitive disabilities.
-- They can be difficult to remember, making it harder for users to return to the publication in the future.
+
+* can be truncated in analytics data, preventing us from aggregating data on the publication (anything over 66 characters starts to break this, 100 characters is completely unusable)
+* can hinder search engine optimisation (SEO), recommended to keep under 60 characters
+* extend the length of URLs, making them unwieldly and difficult to use
+* can prevent downloads from working correctly, as some systems may not handle long URLs well and fail to open ZIP folders with long paths
+* can be truncated in search results, making it harder for users to find the publication
+* can be difficult to read and understand, especially for users with cognitive disabilities
+* can be difficult to remember, making it harder for users to return to the publication in the future
+
+Some good examples of titles currently on the site:
+
+* Early years education recovery
+* Education, health and care plans
+* Pupil attendance in schools
 
 ---
 
