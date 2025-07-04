@@ -60,7 +60,7 @@ For data to be used with the table tool and charts in EES, it needs to meet the 
   * filter grouping information;
   * number of decimal places to display for indicator fields (i.e. allowing a lower precision to be presented in the dervied tables than the underlying data - useful for minimising rounding errors in aggregates);
   * units for indicator fields (e.g. £, %);
-* The data should use the [appropriate GSS codes](#data-symbols) for suppressed, , not available and not applicable entries.
+* The data should use the [appropriate GSS codes](#data-symbols) for suppressed, low, not available and not applicable entries.
 * The data field IDs, labels and items should conform to [DfE harmonised variables](#common-harmonised-variables) where available.
 
 An example pair of data and metadata files are illustrated in the files and tables below.
