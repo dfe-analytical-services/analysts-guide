@@ -60,7 +60,7 @@ For data to be used with the table tool and charts in EES, it needs to meet the 
   * filter grouping information;
   * number of decimal places to display for indicator fields (i.e. allowing a lower precision to be presented in the dervied tables than the underlying data - useful for minimising rounding errors in aggregates);
   * units for indicator fields (e.g. £, %);
-* The data should use the [appropriate GSS codes](#data-symbols) for suppressed, low, not available and not applicable entries.
+* The data should use the [appropriate GSS codes](#data-symbols) for suppressed, , not available and not applicable entries.
 * The data field IDs, labels and items should conform to [DfE harmonised variables](#common-harmonised-variables) where available.
 
 An example pair of data and metadata files are illustrated in the files and tables below.
@@ -441,7 +441,7 @@ In line with the [GSS guidance on symbols](https://gss.civilservice.gov.uk/polic
 | z           | When an observation is **not applicable**     | No data for boys at an all-girls school | |
 | x           | When data is **unavailable** for other reasons| Data for an indicator is not collected in a certain region  | : |
 | c           | **Confidential** data | Data has been suppressed | |
-| low        | Rounds to 0, but is not 0 | Rounding to the nearest thousand, 499 would otherwise show as 0. Only use 0 for true 0's | ~ |
+| low / k     | Rounds to 0, but is not 0 | Rounding to the nearest thousand, 499 would otherwise show as 0. Only use 0 for true 0's | ~ |
 | u       | When an observation is of *low reliability* | Data for a local authority is identified as missing returns so is removed from regional and national totals | |
 
 
