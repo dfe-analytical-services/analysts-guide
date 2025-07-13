@@ -106,10 +106,10 @@ We are currently developing a route to allow charts via R Shiny apps to be hoste
 
 Many of the same principles that apply to creating a full R Shiny dashboard apply to creating a custom embeddable charts. These are:
 
-   * [Accessibility](dashboards.html#accessibility-testing);
-   * [Reliability](dashboards.html#testing-r-shiny);
-   * [Performance](dashboards.html#performance-testing);
-   * [Coherent styling](dashboards.html#styling).
+   * [Accessibility](../writing-visualising/dashboards.html#accessibility);
+   * [Reliability](../writing-visualising/dashboards.html#code-testing);
+   * [Performance](../writing-visualising/dashboards.html#governance);
+   * [Coherent styling](../writing-visualising/dashboards.html#standards-to-follow).
 
 ---
 
