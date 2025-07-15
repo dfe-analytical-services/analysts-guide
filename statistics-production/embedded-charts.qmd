@@ -108,8 +108,8 @@ Many of the same principles that apply to creating a full R Shiny dashboard appl
 
    * [Accessibility](../writing-visualising/dashboards.html#accessibility);
    * [Reliability](../writing-visualising/dashboards.html#code-testing);
-   * [Performance](../writing-visualising/dashboards.html#governance);
-   * [Coherent styling](../writing-visualising/dashboards.html#standards-to-follow).
+   * [Performance](../writing-visualising/dashboards_rshiny.html#dashboard-performance);
+   * [Coherent styling](../writing-visualising/dashboards_rshiny.html#dfe-styling-and-the-dfe-r-shiny-template).
 
 ---
 
