@@ -719,6 +719,7 @@ cookieconsent.run({
   </ul></li>
   <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
   <ul class="collapse">
+  <li><a href="#cant-restore-from-lockfile" id="toc-cant-restore-from-lockfile" class="nav-link" data-scroll-target="#cant-restore-from-lockfile">Can’t restore from lockfile</a></li>
   <li><a href="#cant-find-make-error" id="toc-cant-find-make-error" class="nav-link" data-scroll-target="#cant-find-make-error">Can’t find make error</a></li>
   <li><a href="#packages-not-downloading-due-to-wininet-error-renv-0.17" id="toc-packages-not-downloading-due-to-wininet-error-renv-0.17" class="nav-link" data-scroll-target="#packages-not-downloading-due-to-wininet-error-renv-0.17">Packages not downloading due to “wininet” error (renv 0.17)</a></li>
   <li><a href="#ssl-certificate-errors" id="toc-ssl-certificate-errors" class="nav-link" data-scroll-target="#ssl-certificate-errors">SSL certificate errors</a></li>
@@ -1464,6 +1465,18 @@ Guidance and tips for using the programming language R
 </section>
 <section id="troubleshooting" class="level2">
 <h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
+<section id="cant-restore-from-lockfile" class="level3">
+<h3 class="anchored" data-anchor-id="cant-restore-from-lockfile">Can’t restore from lockfile</h3>
+<hr>
+<p>Sometimes when reviving an old branch of a <code>renv</code> controlled project, you may find a number of older versions of R packages fail to restore (e.g.&nbsp;Matrix, terra). Normally if it’s just one or two, you can do the following to manually update them:</p>
+<pre><code>renv::install("package")
+renv::record("package")
+
+# Then you can try restoring again
+renv::restore()</code></pre>
+<p>However, sometimes you have so many packages this becomes tedious. In these instances you can do the nuclear option of updating all packages to their latest versions by using <code>renv::init()</code> and then selecting to discard the old lockfile and re-initialising the project from the options you’ll be prompted with in the console.</p>
+<hr>
+</section>
 <section id="cant-find-make-error" class="level3">
 <h3 class="anchored" data-anchor-id="cant-find-make-error">Can’t find make error</h3>
 <hr>
