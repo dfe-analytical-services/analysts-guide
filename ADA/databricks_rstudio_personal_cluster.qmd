@@ -260,7 +260,6 @@ dbGetQuery(con, "SELECT * FROM mtcars")
 To use dbWriteTable with odbc, you need to add an additional `useNativeQuery` argument to the dbConnect function as in the following example: 
 
 ``` r
-
 library(DBI)
 library(odbc)
 
