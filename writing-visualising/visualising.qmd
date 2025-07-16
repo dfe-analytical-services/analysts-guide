@@ -29,7 +29,7 @@ Put information such as the measure, source, population, geographical coverage a
 
 The majority of charts should be line or bar charts and be kept simple, and you should use the [Analysis Function guidance on choosing charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-3) to help guide your decision. You should only use complex charts where there is a clear user need, as simple charts are the easiest for users to understand
 
-DWP have created a [Data Visualisation Thinking](https://dataviztraining.dwpdata.info/index.html) course that may be useful to look at when creating more complex charts.
+There is a [free data visualisation e-learning course](https://analysisfunction.civilservice.gov.uk/support/communicating-analysis/introduction-to-data-visualisation-e-learning/) that provides an introductory level course for anyone who has to create data visualisations for internal or external communications.
 
 ---
 
