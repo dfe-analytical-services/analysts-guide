@@ -755,7 +755,7 @@ renv::record("package")
 renv::restore()
 ```
 
-However, sometimes you have so many packages this becomes tedious. In these instances you can do the nuclear option of updating all packages to their latest versions by using `renv::init()` and then selecting to discard the old lockfile and re-initialising the project.
+However, sometimes you have so many packages this becomes tedious. In these instances you can do the nuclear option of updating all packages to their latest versions by using `renv::init()` and then selecting to discard the old lockfile and re-initialising the project from the options you'll be prompted with in the console.
 
 ---
 
