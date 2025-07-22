@@ -441,12 +441,14 @@ In line with the [GSS guidance on symbols](https://gss.civilservice.gov.uk/polic
 | z           | When an observation is **not applicable**     | No data for boys at an all-girls school | |
 | x           | When data is **unavailable** for other reasons| Data for an indicator is not collected in a certain region  | : |
 | c           | **Confidential** data | Data has been suppressed | |
-| low        | Rounds to 0, but is not 0 | Rounding to the nearest thousand, 499 would otherwise show as 0. Only use 0 for true 0's | ~ |
+| low / k     | Rounds to 0, but is not 0 | Rounding to the nearest thousand, 499 would otherwise show as 0. Only use 0 for true 0's | ~ |
 | u       | When an observation is of *low reliability* | Data for a local authority is identified as missing returns so is removed from regional and national totals | |
 
+::: {.callout-note}
+Use of the word low may be problematic for sensitive data such as data on deaths. If this is the case you should instead use k to represent a low figure that appears as a zero when rounded. Where this is not the case however, low is preferred as it is clearer for users.
+:::
 
-If you have any other conventions you've used in previous publications, or a scenario that isn't covered above, check the [GSS guidance](https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/){target="_blank" rel="noopener noreferrer"} (ignoring the part around separate columns for symbols), and contact us.
-
+If you have any other conventions you've used in previous publications, a scenario that isn't covered above or want more details on when and where to use the symbols, check the [GSS guidance](https://gss.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/){target="_blank" rel="noopener noreferrer"} (ignoring the part around separate columns for symbols), and contact us.
 
 ---
 

@@ -741,6 +741,24 @@ mutated <- mutate(mtcars, new_var = wt ** 2)
 
 ## Troubleshooting
 
+### Can't restore from lockfile
+
+---
+
+Sometimes when reviving an old branch of a `renv` controlled project, you may find a number of older versions of R packages fail to restore (e.g. Matrix, terra). Normally if it's just one or two, you can do the following to manually update them:
+
+```
+renv::install("package")
+renv::record("package")
+
+# Then you can try restoring again
+renv::restore()
+```
+
+However, sometimes you have so many packages this becomes tedious. In these instances you can do the nuclear option of updating all packages to their latest versions by using `renv::init()` and then selecting to discard the old lockfile and re-initialising the project from the options you'll be prompted with in the console.
+
+---
+
 ### Can't find make error
 
 ---
