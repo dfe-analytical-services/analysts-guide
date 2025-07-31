@@ -1218,9 +1218,43 @@ A filter is a variable that we break our data down by, such as school type, pupi
 
 Filter names must not include spaces, and ideally be formatted in [snake_case](https://en.wikipedia.org/wiki/Snake_case){target="_blank" rel="noopener noreferrer"} for ease of use. You can use abbreviations to keep the names short and usable, your users will be able to see what each variable name means in the data guidance. **Avoid starting variable names with a numeric character.**
 
-Aggregates should be included for all filters where possible. There will be some situations where aggregation does not work, this will not break the platform, though may make the data less user-friendly. In general, if you can't aggregate, e.g. if you have headcount and fte, then this is an indication that they are instead separate measures and should have separate indicator columns rather than forcing them into a filter column.
+### Aggregates and default filters
 
-**For aggregate rows you should refer to these as ‘Total’.** When using filters such as school type or FSM eligibility this can be quite simple, as shown in the example below:
+Aggregates should be included for all filters where possible. There will be some situations where aggregation does not work, this will not break the platform, though may make the data less user-friendly. In general, if you can't aggregate, e.g. if you have headcount and FTE, then this is an indication that they are instead separate measures and should have separate indicator columns rather than forcing them into a filter column.
+
+**The standard entry for aggregate rows on the platform is ‘Total’.** When using filters such as school type this can be quite simple, as shown in the example below:
+
+::: {.table-responsive}
+
+| time_period | time_identifier | geographic_level | country_code | country_name | school_type |  headcount |
+|-------------|-----------------|------------------|--------------|--------------|-------------|------------|
+| 201819      |	Academic year   |	National         | E92000001    | England      | Total       |  590       |
+| 201819      |	Academic year   |	National         | E92000001    |	England      | Primary     |  280       |
+| 201819      |	Academic year   |	National         | E92000001    |	England      | Secondary   |  310       |
+
+:::
+
+Note that the `Total` entry is used as a default option in the table tool, so if 
+the user does not select any options in a given filter, then the table tool will
+auto-select `Total` on their behalf. If `Total` does not feel appropriate (for
+example if the default is a median or a mean or Total is just ambiguous), then
+an alternative default item can be set in the meta data. To do this, simply add
+a column in your meta data file called `filter_default` and assign the item name
+corresponding to what you feel should be the auto-selected option.
+
+::: {.callout-warning}
+Note that `filter_default` is not compatible with the table tool hierarchies and
+that `Total` should awlays be used for any filters included in a hierarchy.
+:::
+
+### Single entry columns
+
+It is possible that you wish to include a filter that only has a single level, 
+like FSM_status in the example below that only has 'Eligible'. This is to be 
+expected, and you do not need to unnecessarily double the size of your file by 
+adding a 'Total' that duplicates what is already there. Where this is the case, 
+do not include this filter in the EES metadata as the platform does not need to 
+read that column into the table tool.
 
 ::: {.table-responsive}
 
@@ -1232,7 +1266,6 @@ Aggregates should be included for all filters where possible. There will be some
 
 :::
 
-It is possible that you wish to include a filter that only has a single level, like FSM_status in the above example that only has 'Eligible'. This is to be expected, and you do not need to unnecessarily double the size of your file by adding a 'Total' that duplicates what is already there. Where this is the case, do not include this filter in the EES metadata as the platform does not need to read that column into the table tool.
 
 ---
 
