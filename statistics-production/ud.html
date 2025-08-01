@@ -684,6 +684,8 @@ cookieconsent.run({
   </ul></li>
   <li><a href="#filters" id="toc-filters" class="nav-link" data-scroll-target="#filters">Filters</a>
   <ul class="collapse">
+  <li><a href="#aggregates-and-default-filters" id="toc-aggregates-and-default-filters" class="nav-link" data-scroll-target="#aggregates-and-default-filters">Aggregates and default filters</a></li>
+  <li><a href="#single-entry-columns" id="toc-single-entry-columns" class="nav-link" data-scroll-target="#single-entry-columns">Single entry columns</a></li>
   <li><a href="#grouping-filters" id="toc-grouping-filters" class="nav-link" data-scroll-target="#grouping-filters">Grouping filters</a></li>
   <li><a href="#dates-as-filters" id="toc-dates-as-filters" class="nav-link" data-scroll-target="#dates-as-filters">Dates as filters</a></li>
   </ul></li>
@@ -3175,8 +3177,81 @@ Note
 <h2 class="anchored" data-anchor-id="filters">Filters</h2>
 <p>A filter is a variable that we break our data down by, such as school type, pupil characteristics, or NQT status. There are no required standards for these, you can include any filters that you feel benefit the users of your data.</p>
 <p>Filter names must not include spaces, and ideally be formatted in <a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake_case</a> for ease of use. You can use abbreviations to keep the names short and usable, your users will be able to see what each variable name means in the data guidance. <strong>Avoid starting variable names with a numeric character.</strong></p>
-<p>Aggregates should be included for all filters where possible. There will be some situations where aggregation does not work, this will not break the platform, though may make the data less user-friendly. In general, if you can’t aggregate, e.g.&nbsp;if you have headcount and fte, then this is an indication that they are instead separate measures and should have separate indicator columns rather than forcing them into a filter column.</p>
-<p><strong>For aggregate rows you should refer to these as ‘Total’.</strong> When using filters such as school type or FSM eligibility this can be quite simple, as shown in the example below:</p>
+<section id="aggregates-and-default-filters" class="level3">
+<h3 class="anchored" data-anchor-id="aggregates-and-default-filters">Aggregates and default filters</h3>
+<p>Aggregates should be included for all filters where possible. There will be some situations where aggregation does not work, this will not break the platform, though may make the data less user-friendly. In general, if you can’t aggregate, e.g.&nbsp;if you have headcount and FTE, then this is an indication that they are instead separate measures and should have separate indicator columns rather than forcing them into a filter column.</p>
+<p><strong>The standard entry for aggregate rows on the platform is ‘Total’.</strong> When using filters such as school type this can be quite simple, as shown in the example below:</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time_period</th>
+<th>time_identifier</th>
+<th>geographic_level</th>
+<th>country_code</th>
+<th>country_name</th>
+<th>school_type</th>
+<th>headcount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>201819</td>
+<td>Academic year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>Total</td>
+<td>590</td>
+</tr>
+<tr class="even">
+<td>201819</td>
+<td>Academic year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>Primary</td>
+<td>280</td>
+</tr>
+<tr class="odd">
+<td>201819</td>
+<td>Academic year</td>
+<td>National</td>
+<td>E92000001</td>
+<td>England</td>
+<td>Secondary</td>
+<td>310</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note that the <code>Total</code> entry is used as a default option in the table tool, so if the user does not select any options in a given filter, then the table tool will auto-select <code>Total</code> on their behalf. If <code>Total</code> does not feel appropriate (for example if the default is a median or a mean or Total is just ambiguous), then an alternative default item can be set in the meta data. To do this, simply add a column in your meta data file called <code>filter_default</code> and assign the item name corresponding to what you feel should be the auto-selected option.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that <code>filter_default</code> is not compatible with the table tool hierarchies and that <code>Total</code> should awlays be used for any filters included in a hierarchy.</p>
+</div>
+</div>
+</section>
+<section id="single-entry-columns" class="level3">
+<h3 class="anchored" data-anchor-id="single-entry-columns">Single entry columns</h3>
+<p>It is possible that you wish to include a filter that only has a single level, like FSM_status in the example below that only has ‘Eligible’. This is to be expected, and you do not need to unnecessarily double the size of your file by adding a ‘Total’ that duplicates what is already there. Where this is the case, do not include this filter in the EES metadata as the platform does not need to read that column into the table tool.</p>
 <div class="table-responsive">
 <table class="caption-top table">
 <colgroup>
@@ -3235,8 +3310,8 @@ Note
 </tbody>
 </table>
 </div>
-<p>It is possible that you wish to include a filter that only has a single level, like FSM_status in the above example that only has ‘Eligible’. This is to be expected, and you do not need to unnecessarily double the size of your file by adding a ‘Total’ that duplicates what is already there. Where this is the case, do not include this filter in the EES metadata as the platform does not need to read that column into the table tool.</p>
 <hr>
+</section>
 <section id="grouping-filters" class="level3">
 <h3 class="anchored" data-anchor-id="grouping-filters">Grouping filters</h3>
 <hr>
