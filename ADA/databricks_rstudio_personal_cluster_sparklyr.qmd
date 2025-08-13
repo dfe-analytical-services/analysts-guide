@@ -246,7 +246,7 @@ sdf_sql(sc, "USE CATALOG "[catalog name];")
 ```
 
 ::: callout-important
-If you are re-installing sparklyr after previously connecting with a different method, you may need to first delete reticulate. You can do this by:
+If you are re-installing sparklyr after previously connecting with the reticulate method, you may need to first delete reticulate. You can do this by:
 
 1.  Press the Windows key, open Run, and type %appdata%.
 2.  In the File Explorer window that opens, navigate up one level to the AppData folder.
