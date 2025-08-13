@@ -2,8 +2,8 @@
   title: "Personal cluster with RStudio and `sparklyr`"
 ---
 
-::: {.callout-important}
-Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+::: callout-important
+Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development\@education.gov.uk](mailto:statistics.development@education.gov.uk).
 :::
 
 <p class="text-muted">
@@ -74,7 +74,7 @@ Use of compute resources are charged by the hour, and so personal clusters have 
 There are four steps to complete before your connection can be established. These are:
 
 -   Creating a personal compute resource (if you do not already have one)
--   Installing the `reticulate`, `pysparklyr` and `sparklyr` packages
+-   Installing the `pysparklyr` and `sparklyr` packages
 -   Modifying your .Renviron file to establish a connection between RStudio and Databricks
 -   Adding connection code to your existing scripts in RStudio
 
@@ -219,23 +219,41 @@ It is very important that you immediately copy the access token that you are giv
 
 ------------------------------------------------------------------------
 
-To connect to Databricks through `sparklyr` you will first need to install other packages which it depends on. The following steps are only required once, and once you have successfully connected you will only need to use the code from the 'Using `sparklyr` to access and navigate data' section below.
+#### Sparklyr connection
 
-#### Reticulate and python
+::: callout-warning
+Sparklyr can be inconsistent with connection methods and code changing regularly. If you are looking for a more stable connection, consider using [Personal cluster with RStudio and `odbc` / `DBI page](ADA/databricks_rstudio_personal_cluster.html).
+:::
 
-Behind the scenes `sparklyr` converts your queries to python when interfacing with Databricks. The `reticulate` package is used for managing python environments through R. It can be installed using the following line of code.
+After setting up your Host and Token in your .Renviron file, you can connect to your cluster by providing the Cluster's ID and the method to `spark_connect()`.
 
-``` r         
-install.packages("reticulate")
+``` r
+install.packages("sparklyr")
+library(`sparklyr`)
+
+sc <- spark_connect(
+  cluster_id = "Enter here your cluster ID",
+  method = "databricks_connect"
+)
 ```
 
-You will also need to use `reticulate` to install a python environment in the background, the version of python you install should be higher than 3.10. The version is passed to the function as a string as below.
+This may take a few minutes and once completed, you should see your catalogs and schemas in the RStudio Connections pane.
 
-``` r          
-reticulate::install_python("3.10")
+You can test the connection by entering the below code into the console and updating `[catalog name]` with the name of the catalog you want to use.
+
+``` r
+sdf_sql(sc, "USE CATALOG "[catalog name];")
 ```
 
-This step can take quite a while to complete. If you get an error here please consult the 'Troubleshooting' section below.
+::: callout-important
+If you are re-installing sparklyr after previously connecting with a different method, you may need to first delete reticulate. You can do this by:
+
+1.  Press the Windows key, open Run, and type %appdata%.
+2.  In the File Explorer window that opens, navigate up one level to the AppData folder.
+3.  Open the Local folder.
+4.  Inside Local, go to the RStudio folder and delete the reticulate folder.
+5.  Return to the Local folder, then go to R \> cache, and delete the reticulate folder there as well.
+:::
 
 #### Pysparklyr and sparklyr
 
@@ -255,7 +273,7 @@ If this occurs use the function `remove_packages("curl")` to manually uninstall 
 
 #### Install databricks
 
-The next step is to use the `pysparklyr` package to `install_databricks()`. This will install the necessary software to connect to the Databricks platform. 
+The next step is to use the `pysparklyr` package to `install_databricks()`. This will install the necessary software to connect to the Databricks platform.
 
 The installation is specific to the Databricks Runtime of your cluster, this means if you create a new cluster with a different DBR version you will need to run this function again to set up the new cluster.
 
@@ -305,7 +323,7 @@ Firstly the names can get quite long due to naming conventions, but more importa
 
 Instead you can tell Databricks to use a specific catalog and all further queries through that spark connection will be executed within that catalog. This means you no longer have to specify the catalog when you refer to a schema, table or view.
 
-``` r         
+``` r
 sdf_sql(sc, "USE CATALOG catalog_40_copper_analyst_training;")
 ```
 
@@ -323,7 +341,7 @@ Like SQL Server every catalog has an `information_schema` which contains all of 
 
 To look at in all the tables and views in any data catalog you can use the following code, which will store the result in a variable called `tables`.
 
-``` r          
+``` r
 tables <- sdf_sql(sc, "SELECT * FROM information_schema.tables;")
 ```
 
@@ -331,14 +349,14 @@ If you `View(tables)` now you'll see that it is not currently a data frame but a
 
 Since we don't need to do any transformations here, we can simply tell `sparklyr` to `collect()` the data, which will turn it into an R data.frame.
 
-``` r         
+``` r
 tables_df <- tables %>% collect()
 View(tables_df)
 ```
 
 Similarly you can look at the columns, data types, etc. within a catalog using the `information_schema`.
 
-``` r         
+``` r
 columns_df <- sdf_sql(sc, "SELECT * FROM information_schema.columns;") %>% collect()
 View(columns_df)
 ```
@@ -369,7 +387,7 @@ This error appears when your version of the `curl` package is too old to have th
 
 To uninstall the old version and update it use the following code and then re-run `spark_connect()`.
 
-``` r        
+``` r
 remove.packages("curl")
 install.packages("curl")
 ```
@@ -390,9 +408,9 @@ To resolve this restart your R session (Session \> Restart R) then re-run the `s
 
 ------------------------------------------------------------------------
 
-If your query runs for a long time and doesn't return any results, check that you have a config.yml file. 
+If your query runs for a long time and doesn't return any results, check that you have a config.yml file.
 
-The `spark_connect()` function requires this config file to run correctly. If you don't have a config.yml file, create a blank one in your project folder, and your queries should then run correctly. 
+The `spark_connect()` function requires this config file to run correctly. If you don't have a config.yml file, create a blank one in your project folder, and your queries should then run correctly.
 
 ------------------------------------------------------------------------
 
@@ -406,14 +424,14 @@ The easiest way to resolve the issue is usually to remove the virtual environmen
 
 There are 2 methods of doing this, the first uses the `reticulate` package to view and remove them. First we can list what virtual environments exist using the code below.
 
-``` r        
+``` r
 reticulate::virtualenv_list()
 #output: "r-sparklyr-databricks-16.1"
 ```
 
 We can then remove that environment
 
-``` r        
+``` r
 reticulate::virtualenv_remove("r-sparklyr-databricks-16.1") 
 #where "r-sparklyr-databricks-16.1" is what is returned from the code above
 ```
@@ -422,7 +440,7 @@ Once you've done this you can re-run `pysparklyr::install_databricks()` and it s
 
 If for some reason removing the environment through the command line doesn't work we can delete them using file explorer. However, first we need to find where they are kept. We can do this with the following line of code which will print the full system path of any virtual environments that exist on your machine.
 
-``` r        
+``` r
 list.files(reticulate::virtualenv_root(), full.names = T)
 ```
 
