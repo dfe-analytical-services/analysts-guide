@@ -225,7 +225,7 @@ It is very important that you immediately copy the access token that you are giv
 Sparklyr can be inconsistent with connection methods and code changing regularly. If you are looking for a more stable connection, consider using [Personal cluster with RStudio and `odbc` / `DBI page](ADA/databricks_rstudio_personal_cluster.html).
 :::
 
-After setting up your Host and Token in your .Renviron file, you can connect to your cluster by providing the Cluster's ID and the method to `spark_connect()`.
+After setting up your [Host and Token](ADA/databricks_rstudio_personal_cluster_sparklyr.html#establishing-an-rstudio-connection-using-environment-variables) in your .Renviron file, you can connect to your cluster by providing the Cluster's ID and the method to `spark_connect()`.
 
 ``` r
 install.packages("sparklyr")
