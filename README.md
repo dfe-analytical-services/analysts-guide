@@ -38,13 +38,9 @@ Each page of the site is a single quarto document, with index.qmd as the homepag
 
 1. (In R Studio) clicking 'build site' in the build pane
 
-2. Running the following line in the terminal:
+2. Run `quarto preview` in the terminal, adding `--render all` at the end if you want to pre-render the whole site like the R Studio option does (slower initially, but faster to navigate through multiple pages)
 
-```
-quarto preview --render all
-```
-
-3. Using `quarto::quarto_preview(render = "All")` if in an R console with the quarto R package installed
+3. Using `quarto::quarto_preview()` if in an R console with the quarto R package installed, `render = "All"` gives the equivalent behaviour to `--render all` in the terminal
 
 ### Tests
 
