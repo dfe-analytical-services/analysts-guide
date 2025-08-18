@@ -34,7 +34,17 @@ The guidance website is deployed to https://dfe-analytical-services.github.io/an
 
 ## How to use
 
-Each page of the site is a single quarto document, with index.qmd as the homepage. When the project is opened locally in RStudio you will be able to preview the website by typing the command `quarto preview` into the terminal or using `quarto::quarto_preview()` in the R console.
+Each page of the site is a single quarto document, with index.qmd as the homepage. When the project is opened locally in RStudio you will be able to preview the whole website using one of the following options:
+
+1. (In R Studio) clicking 'build site' in the build pane
+
+2. Running the following line in the terminal:
+
+```
+quarto preview --render all
+```
+
+3. Using `quarto::quarto_preview(render = "All")` if in an R console with the quarto R package installed
 
 ### Tests
 
