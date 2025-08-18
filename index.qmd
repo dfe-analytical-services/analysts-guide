@@ -121,9 +121,6 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Personal cluster with RStudio and `odbc` / `DBI`](ADA/databricks_rstudio_personal_cluster.html)
 - Guidance for analysts on how to connect to a Databricks personal cluster from RStudio using the odbc / DBI method
 
-[Personal cluster with RStudio and `sparklyr`](ADA/databricks_rstudio_personal_cluster_sparklyr.html)
-- Guidance for analysts on how to connect to a Databricks personal cluster from RStudio using sparklyr
-
 [Use Databricks with Git](ADA/git_databricks.html)
 - Guidance for connecting Databricks to Git repositories
 

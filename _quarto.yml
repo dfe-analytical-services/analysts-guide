@@ -117,7 +117,7 @@ website:
         contents:
           - ADA/databricks_rstudio_sql_warehouse.qmd
           - ADA/databricks_rstudio_personal_cluster.qmd
-          - ADA/databricks_rstudio_personal_cluster_sparklyr.qmd
+          - ADA/databricks_rstudio_personal_cluster_sparklyr_archive.qmd
           - ADA/git_databricks.qmd
           - ADA/databricks_workflow_script_databricks.qmd
           - ADA/databricks_workflow_script_rstudio.qmd
