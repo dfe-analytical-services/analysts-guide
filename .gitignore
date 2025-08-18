@@ -9,3 +9,5 @@ _site/
 site_libs/
 
 .DS_Store
+
+README.html
