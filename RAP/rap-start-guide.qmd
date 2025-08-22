@@ -433,7 +433,7 @@ For further resources on learning R so that you're able to apply it to your ever
 
 Using the recommended tools on our [learning](../learning-development/learning-support.html) page ([SQL](../learning-development/sql.html), [R](../learning-development/r.html) and [Git](../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.
 
-Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this [explanation of open-source](https://opensource.com/resources/what-open-source){target="_blank" rel="noopener noreferrer"}, as well as this guide to [working in an open-source way](https://opensource.com/open-source-way){target="_blank" rel="noopener noreferrer"}. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with git, and hosted in a publicly accessible repository. 
+Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this [explanation of open-source](https://opensource.com/resources/what-open-source){target="_blank" rel="noopener noreferrer"}, as well as this guide to [working in an open-source way](https://opensource.com/open-source-way){target="_blank" rel="noopener noreferrer"}. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with Git, and hosted in a publicly accessible repository. 
 
 **Why do it?**
 
@@ -774,7 +774,7 @@ All of the benefits you get from peer reviewing within your own team, multiple t
 
 **How to get started**
 
-While peer reviewing code within the team is often practical, having external analysts peer review your code can bring a fresh perspective. If you're interested in this, please contact us, and we can help you to arrange someone external to your team to review your processes. For this to work smoothly, we recommend that your code is easily accessible for other analysts, such as hosted in an Azure DevOps repo and mirrored to github.
+While peer reviewing code within the team is often practical, having external analysts peer review your code can bring a fresh perspective. If you're interested in this, please contact us, and we can help you to arrange someone external to your team to review your processes. For this to work smoothly, we recommend that your code is easily accessible for other analysts, such as hosted in an Azure DevOps repo and mirrored to GitHub.
 
 ---
 
@@ -1062,11 +1062,11 @@ The [Self-assessment tool](https://github.com/dfe-analytical-services/publicatio
 
 **What does this mean?**
 
-This means having the final copies of code and documentation saved in a git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available. 
+This means having the final copies of code and documentation saved in a Git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available. 
 
-If you do not already have git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
+If you do not already have Git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
 
-For now, take a look at the [resources for learning git](../learning-development/git.html) in the learning resources section.
+For now, take a look at the [resources for learning Git](../learning-development/git.html) in the learning resources section.
 
 **Why do it?**
 
@@ -1145,7 +1145,7 @@ Here are some general best practice tips:
 - Using .gitignore to ignore files and folders to prevent committing anything sensitive
 - Never committing outputs unless they’ve been checked over, even aggregates. We suggest only outputting to an output folder which is in the .gitignore file, to ensure this doesn’t happen by mistake
 - Keeping datasets and secrets (e.g. API keys) outside the repository as much as possible, make use of secure variables
-- Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the git history and start the public repo without it
+- Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the Git history and start the public repo without it
 - You can [remove a file from the entire commit history](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) if you did commit anything sensitive, although you still need to follow the usual procedures if this was a data breach
 
 You can find out more in the Duck Book's [guidance on using Git](https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories). 
