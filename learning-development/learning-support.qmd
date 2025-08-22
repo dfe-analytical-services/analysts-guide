@@ -101,12 +101,6 @@ Reproducible Analytical Pipelines (RAP) Champions act as a point of contact for 
 
 You can find more information on the [RAP Champions Network page](https://educationgovuk.sharepoint.com/sites/lvewp00487). Please contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) if you would like to learn more or sign up to be a champion.
 
-### Freestyle RAP sessions
-
-Freestyle RAP is a monthly open mic for all things Reproducible Analytical Pipelines! Come along for an hour of collaborative problem-solving, where our Statistics Development Team and a RAP champion are on hand to answer all your RAP questions. There is no set agenda and anyone who has an interest in RAP is welcome!
-
-Contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) to be added to the mailing list!
-
 ---
 
 ## Partnership programmes
