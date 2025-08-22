@@ -48,11 +48,11 @@ Our current workshops are:
 
 In this workshop, we cover:
 
-*	What are git, Azure DevOps and GitHub and what are the differences?
+*	What are Git, Azure DevOps and GitHub and what are the differences?
 *	How can they help your work?
-*	How to start working with git and DevOps in the DfE ecosystem
+*	How to start working with Git and DevOps in the DfE ecosystem
 *	Managing projects and tasks with DevOps Boards
-*	Basic version control with git – add/stage, commit, push and pull
+*	Basic version control with Git – add/stage, commit, push and pull
 *	Working with branches
 *	Tracking changes and who made them
 *	Merging, pull requests and merge conflicts
@@ -100,12 +100,6 @@ Please contact [coffee.coding@education.gov.uk](mailto:coffee.coding@education.g
 Reproducible Analytical Pipelines (RAP) Champions act as a point of contact for their division for everything RAP-related: improving the awareness and use of RAP in the department, improving the RAP support available to analysts and keeping track of progress made and areas requiring support.
 
 You can find more information on the [RAP Champions Network page](https://educationgovuk.sharepoint.com/sites/lvewp00487). Please contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) if you would like to learn more or sign up to be a champion.
-
-### Freestyle RAP sessions
-
-Freestyle RAP is a monthly open mic for all things Reproducible Analytical Pipelines! Come along for an hour of collaborative problem-solving, where our Statistics Development Team and a RAP champion are on hand to answer all your RAP questions. There is no set agenda and anyone who has an interest in RAP is welcome!
-
-Contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) to be added to the mailing list!
 
 ---
 
@@ -157,9 +151,9 @@ Teams participating in tiers 1-3 will be assigned a named person from the Statis
 
 ---
 
-Once you have a clear, defined piece of work that you think would be appropriate for a partnership programme, contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk). 
+Once you have a clear, defined piece of work that you think would be appropriate for a partnership programme, please [download our application form (.docx)](../resources/2025_PP_detailed_outline_[project_name].docx), and email it to [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk). 
 
-You will be sent a form to complete so that you can outline your project and requirements from us. Once we have received your completed form, we'll have an introductory meeting with your team to discuss the project and agree an appropriate tier and timescales. We will then assess your needs, determine who will be best placed to complete the work, and prioritise it according to our existing workload. Your team will be kept updated throughout the process.
+Our application form gives you a chance to outline your project and what your requirements from us are, if you have any questions when filling it out feel free to reach out to the mailbox and we'll be happy to advice or talk you through it. Once we have received your completed form, we'll have an introductory meeting with your team to discuss the project and agree an appropriate tier and timescales. We will then assess your needs, determine who will be best placed to complete the work, and prioritise it according to our existing workload. Your team will be kept updated throughout the process.
 
 ::: {.callout-important}
 ## Tier 3 programmes

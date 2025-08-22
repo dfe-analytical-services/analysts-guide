@@ -213,7 +213,7 @@ We recommend this because in addition to notebooks being different to how many t
 When you have a full script in an IDE, the script will provide the same output consistently. However, with notebooks you can run code cells independently of one another. You must ensure that you run all code cells in the correct sequential order. If you do not run all code cells in order then your output could be inconsistent and result in errors, potentially making QA more difficult. This introduces more manual steps and increases the risk of human error.
 
 :::{.callout-warning}
-When using Databricks notebooks with git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the `Clear all cell outputs` option in the Databricks "Run" menu to avoid inadvertently sharing data that only you and your team should have access to. 
+When using Databricks notebooks with Git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the `Clear all cell outputs` option in the Databricks "Run" menu to avoid inadvertently sharing data that only you and your team should have access to. 
 :::
 
 
@@ -227,7 +227,7 @@ The table below, taken from [NHS-R guidance](https://nhsdigital.github.io/rap-co
 | Deterministic outputs (i.e. same result every run) | No | Yes |
 | Supports modular code structure & packages | No | Yes |
 | Supports unit testing frameworks | No | Yes |
-| Nice version control (e.g. readable git diffs) | No | Yes |
+| Nice version control (e.g. readable Git diffs) | No | Yes |
 | Autocomplete / auto-formatting & syntax highlighting | Yes** | Yes |
 | Compatible with sharing code externally | Yes*** | Yes |
   

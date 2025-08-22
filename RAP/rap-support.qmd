@@ -27,7 +27,7 @@ Learning resources and materials for [SQL](../learning-development/sql.html), [R
 
  *	In person workshops covering specific technical skills in practice
  *	3 hours long, with people working in small groups
- *	We currently offer two workshops: introduction to git and Azure DevOps, and introduction to R and RAP. We can travel to your site to deliver these. 
+ *	We currently offer two workshops: introduction to Git and Azure DevOps, and introduction to R and RAP. We can travel to your site to deliver these. 
  * Contact [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk) to register interest in workshops happening at your site or to request new topics!
 
 We’re also considering a dedicated G6 / G7 programme to build confidence and set expectations. This may include:
