@@ -1,0 +1,6 @@
+---
+  title: "Personal cluster with RStudio and `sparklyr`"
+---
+The sparklyr package can be inconsistent in how it handles connections, and its behavior may not always align with the guidance currently available to us. Due to this, we’ve temporarily archived the instructions for connecting to Databricks via sparklyr.
+
+If you are looking for a more stable connection, consider using [Personal cluster with RStudio and `odbc` / `DBI` page](databricks_rstudio_personal_cluster.html).
