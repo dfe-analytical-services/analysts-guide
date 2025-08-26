@@ -209,7 +209,7 @@ In order to access data and run code you need to set up a compute resource. A co
 
 There are several types of compute available and you will need to make the most appropriate choice for the kind of processing you're wanting to do. The table below summarises the compute types and their differences.
 
-| **Compute type** | **Configuration** | **Code language support** | **Availability** | **To note** | **User cases** |
+| **Compute type** | **Configuration** | **Code language support** | **Availability** | **To note** | **Use cases** |
 |-|-|-|-|-|-|
 | Serverless | Handled by Databricks  | SQL <br> Python | All workspace users | No query can run longer than 48 hours <br> <br> Minimal warm-up time | Quick start to query in SQL/Python |
 | SQL Warehouse | Created by ADA team for each catalog  | SQL | Only other users of same warehouse (typically your team) | This is the recommended compute for any SQL activities <br> <br> Shared resource so more efficient <br> <br> Relatively short boot up time | Query data optimised for SQL only <br> <br> Only compute option for SQL Editor |
