@@ -211,7 +211,7 @@ There are several types of compute available and you will need to make the most 
 
 | **Compute type** | **Configuration** | **Code language support** | **Availability** | **To note** | **Use cases** |
 |-|-|-|-|-|-|
-| Serverless | Handled by Databricks  | SQL <br> Python | All workspace users | No query can run longer than 48 hours <br> <br> Minimal warm-up time | Quick start to query in SQL/Python |
+| Serverless | Handled by Databricks  | SQL <br> Python | All workspace users | No query can run longer than 48 hours <br> <br> Minimal warm-up time | Quick start to query in SQL / Python |
 | SQL Warehouse | Created by ADA team for each catalog  | SQL | Only other users of same warehouse (typically your team) | This is the recommended compute for any SQL activities <br> <br> Shared resource so more efficient <br> <br> Relatively short boot up time | Query data optimised for SQL only <br> <br> Only compute option for SQL Editor |
 | Personal Cluster | Set up by you with choice of standard (roughly same power as DfE laptop device) or large (roughly double power of standard) | SQL <br> Python  <br> R <br> Scala | Only you | Shut down after being unused for an hour <br> <br> Least cost effective so only use if needed <br> <br> Compute power has been limited to the two options but this can be raised if really necessary <br> <br> Takes a few minutes to boot up | Need specific versions/libraries <br> <br> Only option for R coding |
 | Shared Cluster | Created by ADA team for specific projects | SQL <br> Python <br> Scala | Other users on same project | Shared resource so more efficient <br> <br> Takes a few minutes to boot up | Shared resource to be more cost effective - where using Python or Scala please use this or Serverless |
