@@ -139,9 +139,9 @@ For example, this might be:
 We have four levels of support available:
 
 - One-off bespoke support via a team meeting or a workshop, or one-off peer review 
-- **Tier 1**: occasional check-in meetings to provide best practice guidance 
-- **Tier 2**: hands on support for teams with skills or resource gaps 
-- **Tier 3**: designated resource working within your team to write code / complete a project for you, designed for complex projects and with the aim of handing the project back to the team at the end of the partnership for continued iteration and maintenance as appropriate
+- **Tier 1**: advisory only — team self-directs using provided resources and occasional check-ins  
+- **Tier 2**: regular coaching, feedback, occasional hands-on support, reviews and regular check-ins
+- **Tier 3**: deep partnership, with minimum of 1-2 days flexible resource embedded into your team each week
 
 Teams participating in tiers 1-3 will be assigned a named person from the Statistics Services Unit who will support you in completing the project. During the partnership, there will be regular update meetings and progress reports to help keep the work to the agreed timescale. 
 

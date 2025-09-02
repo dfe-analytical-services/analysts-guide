@@ -42,21 +42,12 @@ Keep an eye out on Teams for this programme being advertised and contact [statis
 
 ## Partnership programme
 
-The Statistics Development Team invites teams to take part in our partnership programme. The programme can help individuals with:
+The Statistics Development Team invites teams to take part in our partnership programme to make use of flexible resource available to support developments and improvements to analytical processes in DfE. The programme can help teams with:
 
 * Using a relevant project to develop new coding skills and improving current confidence
 * Streamlining data production processes to free up time for secondary analysis
 * Improving the presentation and consistency of statistical products for users
 
-The partnership programme is a great opportunity to work with the Statistics Development Team, using protected time to work on things that are otherwise usually deprioritised. We understand the pressures of BAU work mean that development time is often hard to fit in, but this programme offers designated support and clear project planning from our team so that these improvements can be achieved. Putting in the work at these early stages will save more time and resource in the long run, and we are keen to support as many teams as possible to free up time in the future for even more interesting analysis.
-
-**The Ask**
-
-We ask that you/a designated member of your team are given protected time to work on a specific project, with support from us. Some examples of previous projects we have helped support are:
-
-* The automation of the SEN2 release, creating automated QA reports and all EES outputs at the click of a button.
-* The automation of the HoP rolling brief document, removing arduous tasks like copying, pasting, and formatting in Word.
-
-The time commitment of the programme will be dependent on the size of the work and what level of support is required. [Please get in touch with us](mailto:Statistics.DEVELOPMENT@education.gov.uk) if you are interested and would like to discuss further.
+See the [partnership programme section on the learning and development page](../learning-development/learning-support.html#partnership-programmes) for more details of how to make use of the support on offer.
 
 ---
