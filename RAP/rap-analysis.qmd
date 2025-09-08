@@ -92,64 +92,143 @@ Whilst all RAP principles can be applied to any type of analysis, we recognise t
 
 
 ::: {.callout-tip collapse="true"}
-### Ad-hoc analysis (unlikely to be repeated)
+## Ad-hoc analysis (unlikely to be repeated)
 
 Analysis that is performed outside of regular reporting processes, often to answer a specific need or question, but is unlikely to be requested again in any form. 
 
-#### Esssential 
-- Sensible folder and file structure
-- Documentation 
-- Use of appropriate tools e.g., R, SQL, Python
-- Processing is done with code, where possible 
-- 'Clean' final code
-- Peer code review
-- Source data is acquired and stored sensibly 
+### Essential 
+- Sensible folder and file structure  
+- Documentation  
+- Use of appropriate tools e.g., R, SQL, Python  
+- Processing is done with code, where possible  
+- 'Clean' final code  
+- Peer code review  
+- Source data is acquired and stored sensibly  
 
-
+### Recommended 
+- Code collaboratively developed using Git
+- Recyclable code for future use
+- Code stored in an appropriate repository
+- Whole pipeline can run from a single script or workflow
+- Project specific automated sense checks
+- Automated high level checks 
 :::
 
 ::: {.callout-tip collapse="true"}
-### Ad-hoc analysis (likley to be repeated e.g., different breakdowns)
+## Ad-hoc analysis (likley to be repeated e.g., different breakdowns)
 
 Analysis that is performed outside of regular reporting processes, often to answer a specific need or question and is likely to be requested again in the same or a similar form. 
 
-#### Esssential 
-- Sensible folder and file structure
-- Source data is acquired and stored sensibly 
-- Recyclable code for future use 
-- Documentation 
-- Processing is done with code, where possible
-- Code stored in an appropriate repository 
-- Use of appropriate tools e.g., R, SQL, Python
-- Automated high level checks 
-- 'Clean' final code
-- Peer code review
-- Version controlled final scripts
-- Project specific automated sense checks
-
+### Essential 
+- Sensible folder and file structure  
+- Documentation  
+- Use of appropriate tools e.g., R, SQL, Python  
+- Processing is done with code, where possible  
+- 'Clean' final code  
+- Peer code review  
+- Source data is acquired and stored sensibly  
 :::
 
+::: {.callout-tip collapse="true"}
+## Ad-hoc analysis (likley to be repeated e.g., different breakdowns)
+
+Analysis that is performed outside of regular reporting processes, often to answer a specific need or question and is likely to be requested again in the same or a similar form. 
+
+### Essential 
+- Sensible folder and file structure  
+- Documentation  
+- Use of appropriate tools e.g., R, SQL, Python  
+- Processing is done with code, where possible  
+- 'Clean' final code  
+- Peer code review  
+- Source data is acquired and stored sensibly  
+:::
 
 ::: {.callout-tip collapse="true"}
-### Analysis at pace
+## Internal regular reporting
 
-Analysis which is quickly conducted and often not pre-planned, aimed at delivering timely insights to support fast decision making. 
+### Essential 
+- Sensible folder and file structure  
+- Documentation  
+- Use of appropriate tools e.g., R, SQL, Python  
+- Processing is done with code, where possible  
+- 'Clean' final code  
+- Peer code review  
+- Source data is acquired and stored sensibly  
+:::
 
-#### Esssential 
+::: {.callout-tip collapse="true"}
+## Analysis at pace
 
-- Sensible folder and file structure
-- Documentation 
-- Use of appropriate tools e.g., R, SQL, Python
-- Processing is done with code, where possible 
-- Peer code review
-- Source data is acquired and stored sensibly
+Analysis which must be quickly conducted and often not pre-planned, aimed at delivering timely insights to support fast decision making.
 
-#### Recommended 
+### Essential 
+- Sensible folder and file structure  
+- Documentation  
+- Use of appropriate tools e.g., R, SQL, Python  
+- Processing is done with code, where possible  
+- Peer code review  
+- Source data is acquired and stored sensibly  
 
+### Recommended 
 - 'Clean' final code
-- Version controlled final scripts 
-- Project specific automated summaries 
+- Version controlled final scripts
+- Project specific automated summaries
+- Automated reproducible reports
+- Recyclable code for future use
+- Code stored in an appropriate repository
+:::
 
+::: {.callout-tip collapse="true"}
+## Analysis repeated on different datasets
+
+### Essential 
+- Sensible folder and file structure  
+- Documentation  
+- Use of appropriate tools e.g., R, SQL, Python  
+- Processing is done with code, where possible  
+- 'Clean' final code  
+- Peer code review  
+- Source data is acquired and stored sensibly  
+:::
+
+::: {.callout-tip collapse="true"}
+## Spreadsheet based analysis and models 
+
+### Essential 
+- Sensible folder and file structure  
+- Documentation  
+- Use of appropriate tools e.g., R, SQL, Python  
+- Processing is done with code, where possible  
+- 'Clean' final code  
+- Peer code review  
+- Source data is acquired and stored sensibly  
+:::
+
+::: {.callout-tip collapse="true"}
+## Data collection and preparation
+
+### Essential 
+- Sensible folder and file structure  
+- Documentation  
+- Use of appropriate tools e.g., R, SQL, Python  
+- Processing is done with code, where possible  
+- 'Clean' final code  
+- Peer code review  
+- Source data is acquired and stored sensibly  
+:::
+
+::: {.callout-tip collapse="true"}
+## Cross departmental analysis 
+
+### Essential 
+- Sensible folder and file structure  
+- Documentation  
+- Use of appropriate tools e.g., R, SQL, Python  
+- Processing is done with code, where possible  
+- 'Clean' final code  
+- Peer code review  
+- Source data is acquired and stored sensibly  
 :::
 
 <!-- Use DfT checklist to recreate one here!!! -->
