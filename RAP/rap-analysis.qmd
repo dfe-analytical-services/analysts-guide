@@ -127,7 +127,7 @@ Analysis that is performed outside of regular reporting processes, often to answ
 :::
 
 ::: {.callout-tip collapse="true"}
-## Ad-hoc analysis (likley to be repeated e.g., different breakdowns)
+## Ad-hoc analysis (likely to be repeated e.g., different breakdowns)
 
 Analysis that is performed outside of regular reporting processes, often to answer a specific need or question and is likely to be requested again in the same or a similar form. 
 
