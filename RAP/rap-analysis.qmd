@@ -97,21 +97,33 @@ Whilst all RAP principles can be applied to any type of analysis, we recognise t
 Analysis that is performed outside of regular reporting processes, often to answer a specific need or question, but is unlikely to be requested again in any form. 
 
 ### Essential 
-- Sensible folder and file structure  
-- Documentation  
-- Use of appropriate tools e.g., R, SQL, Python  
+
+#### Good practice
+- Use of appropriate tools e.g., R, SQL, Python 
+- Sensible folder and file structure 
 - Processing is done with code, where possible  
-- 'Clean' final code  
-- Peer code review  
 - Source data is acquired and stored sensibly  
+- Documentation  
+
+#### Great practice
+- Peer code review  
+ 
+#### Best practice 
+- 'Clean' final code  
 
 ### Recommended 
-- Code collaboratively developed using Git
-- Recyclable code for future use
-- Code stored in an appropriate repository
-- Whole pipeline can run from a single script or workflow
-- Project specific automated sense checks
+
+#### Good practice 
 - Automated high level checks 
+
+#### Great practice 
+- Recyclable code for future use
+- Project specific automated sense checks
+
+#### Best practice
+- Whole pipeline can run from a single script or workflow
+- Code collaboratively developed using Git
+- Code stored in an appropriate repository
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -120,41 +132,70 @@ Analysis that is performed outside of regular reporting processes, often to answ
 Analysis that is performed outside of regular reporting processes, often to answer a specific need or question and is likely to be requested again in the same or a similar form. 
 
 ### Essential 
-- Sensible folder and file structure  
-- Documentation  
+
+#### Good practice
 - Use of appropriate tools e.g., R, SQL, Python  
+- Sensible folder and file structure
 - Processing is done with code, where possible  
-- 'Clean' final code  
+- Source data is acquired and stored sensibly 
+- Documentation  
+- Automated high level checks
+
+#### Great practice
+
+- Recyclable code for future use#
+- Project specific automated sense checks
+- Version controlled final scripts
 - Peer code review  
-- Source data is acquired and stored sensibly  
+
+#### Best practice
+- 'Clean' final code  
+- Code stored in an appropriate repository 
+
+
+### Recommended
+
+#### Best practice
+- Whole pipeline can run from a single script or workflow
+- Code collaboratively developed using Git
+- Automated reproducible reports
+- Peer review from someone outside the team 
+ 
 :::
 
 ::: {.callout-tip collapse="true"}
-## Ad-hoc analysis (likley to be repeated e.g., different breakdowns)
+## Internal irregular reporting
 
-Analysis that is performed outside of regular reporting processes, often to answer a specific need or question and is likely to be requested again in the same or a similar form. 
-
-### Essential 
-- Sensible folder and file structure  
-- Documentation  
-- Use of appropriate tools e.g., R, SQL, Python  
-- Processing is done with code, where possible  
-- 'Clean' final code  
-- Peer code review  
-- Source data is acquired and stored sensibly  
-:::
-
-::: {.callout-tip collapse="true"}
-## Internal regular reporting
+Non-routine analysis initiated within the department to address specific internal needs. It’s not part of scheduled reporting and may vary in format.
 
 ### Essential 
-- Sensible folder and file structure  
-- Documentation  
+
+#### Good practice
 - Use of appropriate tools e.g., R, SQL, Python  
+- Sensible folder and file structure
 - Processing is done with code, where possible  
-- 'Clean' final code  
+- Source data is acquired and stored sensibly 
+- Documentation  
+- Automated high level checks
+
+#### Great practice
+- Recyclable code for future use#
+- Project specific automated sense checks
+- Version controlled final scripts
 - Peer code review  
-- Source data is acquired and stored sensibly  
+
+#### Best practice
+- 'Clean' final code
+- Code stored in an appropriate repository
+- Code collaboratively developed using Git 
+- Automated reproducible reports
+
+
+
+### Recommended 
+
+#### Best practice
+- Peer review from someone outside the team 
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -163,20 +204,29 @@ Analysis that is performed outside of regular reporting processes, often to answ
 Analysis which must be quickly conducted and often not pre-planned, aimed at delivering timely insights to support fast decision making.
 
 ### Essential 
-- Sensible folder and file structure  
-- Documentation  
+
+#### Good practice
 - Use of appropriate tools e.g., R, SQL, Python  
+- Sensible folder and file structure
 - Processing is done with code, where possible  
-- Peer code review  
-- Source data is acquired and stored sensibly  
+- Source data is acquired and stored sensibly 
+- Documentation  
+
+#### Great practice
+- Peer code review 
 
 ### Recommended 
-- 'Clean' final code
-- Version controlled final scripts
-- Project specific automated summaries
-- Automated reproducible reports
+
+#### Great practice
 - Recyclable code for future use
+- Project specific automated sense checks
+- Version controlled final scripts
+
+
+#### Best practice
+- 'Clean' final code
 - Code stored in an appropriate repository
+- Automated reproducible reports
 :::
 
 ::: {.callout-tip collapse="true"}
