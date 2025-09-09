@@ -164,9 +164,9 @@ Analysis that is performed outside of regular reporting processes, often to answ
 :::
 
 ::: {.callout-tip collapse="true"}
-## Internal irregular reporting
+## Internal regular reporting
 
-Non-routine analysis initiated within the department to address specific internal needs. It’s not part of scheduled reporting and may vary in format.
+Recurring analysis produced within the department to support ongoing operational needs. It often follows a consistent format and schedule, and is used to monitor key internal activities.
 
 ### Essential 
 
