@@ -3,49 +3,52 @@ title: "RAP for all analysis"
 format: html
 ---
 
+<p class="text-muted">
 
-<p class="text-muted">Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into all analytical processes</p>
+Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into all analytical processes
 
----
+</p>
+
+------------------------------------------------------------------------
 
 ## What is RAP?
 
-RAP (Reproducible Analytical Pipelines) are a way to create well documented, reproducible, quality analysis using the best tools available to us as analysts. In 2022, the Analysis Function published their [RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/), which outlines the expectation that RAP should be "the default approach to analysis in government". Each department is expected to publish a RAP implementation strategy to explain how they are going to support analysts to embed RAP into their day to day work. You can view the [RAP implementation plans for all departments, including DfE](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/departmental-rap-plans/) on the Analysis Function website. 
+RAP (Reproducible Analytical Pipelines) are a way to create well documented, reproducible, quality analysis using the best tools available to us as analysts. In 2022, the Analysis Function published their [RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/), which outlines the expectation that RAP should be "the default approach to analysis in government". Each department is expected to publish a RAP implementation strategy to explain how they are going to support analysts to embed RAP into their day to day work. You can view the [RAP implementation plans for all departments, including DfE](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/departmental-rap-plans/) on the Analysis Function website.
 
 Cam ran an introduction to RAP session for DISD in December 2020. The slides can be found on [GitHub](https://github.com/cjrace/introduction-to-rap){target="_blank" rel="noopener noreferrer"}, or you can [watch the recording](https://educationgovuk.sharepoint.com/:v:/r/sites/lvewp00086/WorkplaceDocuments/Statistics%20Services%20Unit/Statistics%20Development%20Team/Stream%20Migrated%20Videos/Recordings/An%20introduction%20to%20RAP-20201217_024855-Meeting%20Recording.mp4?csf=1&web=1&e=Fz1gXt).
 
-[RAP](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/){target="_blank" rel="noopener noreferrer"}  means using automation to our advantage when analysing data, which can be as simple as writing code so that we can click a button to execute and do the job for us. Most analysts will be using elements of RAP in their work, such as quality assurance and version control, without even thinking about it!
+[RAP](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/){target="_blank" rel="noopener noreferrer"} means using automation to our advantage when analysing data, which can be as simple as writing code so that we can click a button to execute and do the job for us. Most analysts will be using elements of RAP in their work, such as quality assurance and version control, without even thinking about it!
 
-Cross-government RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md){target="_blank" rel="noopener noreferrer"} to aim for. In DfE we have adapted these to form our own RAP principles, which are described in detail on this page. 
+Cross-government RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md){target="_blank" rel="noopener noreferrer"} to aim for. In DfE we have adapted these to form our own RAP principles, which are described in detail on this page.
 
-::: {.callout-note #rap-proportional}
-RAP should  be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx). Statistics production has stricter expectations (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
+::: {#rap-proportional .callout-note}
+RAP should be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx). Statistics production has stricter expectations (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
 :::
 
----
+------------------------------------------------------------------------
 
 ### Benefits of RAP
 
----
+------------------------------------------------------------------------
 
 According to the [Analysis Function](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/), using RAP should:
 
-* improve the quality of the analysis
-* increase trust in the analysis by producers, their managers and users
-* create a more efficient process
-* improve business continuity and knowledge management
+-   improve the quality of the analysis
+-   increase trust in the analysis by producers, their managers and users
+-   create a more efficient process
+-   improve business continuity and knowledge management
 
-In DfE, we already have 'analytical pipelines' and have done for many years. The aim of RAP is to automate the parts of these pipelines that can be automated, to increase efficiency and accuracy, while creating a clear audit trail to allow analyses to easily be re-run if needed. This will free us up to focus on the parts of our work where our human input can really add value. RAP is something we can use to reduce the burden on us by getting rid of some of the boring stuff, what's not to like! RAP can also reduce risk through human error, since you will no longer have to copy and paste numbers between different documents or make substantial manual edits to code each time you need to re-run it.  
+In DfE, we already have 'analytical pipelines' and have done for many years. The aim of RAP is to automate the parts of these pipelines that can be automated, to increase efficiency and accuracy, while creating a clear audit trail to allow analyses to easily be re-run if needed. This will free us up to focus on the parts of our work where our human input can really add value. RAP is something we can use to reduce the burden on us by getting rid of some of the boring stuff, what's not to like! RAP can also reduce risk through human error, since you will no longer have to copy and paste numbers between different documents or make substantial manual edits to code each time you need to re-run it.
 
----
+------------------------------------------------------------------------
 
 ### Our scope
 
----
+------------------------------------------------------------------------
 
 RAP principles can be applied proportionally to all analysis - they are simply best-practice when it comes to analysis and therefore we should all work towards RAP becoming our default way of working. Some principles are always applicable (like documentation, sensible folder/file structure, QA) whereas others are applicable to more specific situations (such as ensuring code is recyclable and easily updated - this applies more to analysis that is likely to be re-run in future).
 
-Whilst you might not create a full RAP process for an ad-hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results. 
+Whilst you might not create a full RAP process for an ad-hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
 
 To get started with RAP, we first need to be able to understand what it actually means in practice, and be able to [assess our own work against the principles of RAP](#what-is-expected). From there, we can work out what training is needed, if any, and where additional support can help teams.
 
@@ -53,114 +56,96 @@ Implementing RAP for us will involve combining the use of SQL, R, and clear, con
 
 The collection of, and routine checking of data as it is coming into the department is also an area that RAP can be applied to. We have kept this out of scope at the moment as the levels of control in this area vary wildly from team to team. If you would like advice and help to automate any particular processes, feel free to [contact the Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
----
+------------------------------------------------------------------------
 
-## Core principles
+## Core principles {#core-principles}
 
 RAP has three core principles:
 
-
 [Preparing data](#preparing-data): Data sources for a publication are stored in the same database
-
 
 [Writing code](#writing-code): Underlying data files are produced using code, with no manual steps
 
-
 [Version control](#version-control): Files and scripts should be appropriately version controlled
 
-Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst. 
+Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst.
 
- 
----
+------------------------------------------------------------------------
 
 ## RAP in practice
 
-
 The diagram below highlights what RAP means for us, and the varying levels at which it can be applied across all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice.
 
-
 <!-- draw.io diagram -->
-<div class="mxgraph" style="max-width:100%;" data-mxgraph="{&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;dark-mode&quot;:&quot;auto&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0\&quot; version=\&quot;28.0.7\&quot;&gt;\n  &lt;diagram id=\&quot;_ltWYIdbVKAG_Xyvna0Y\&quot; name=\&quot;Page-1\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1818\&quot; dy=\&quot;752\&quot; grid=\&quot;0\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;0\&quot; fold=\&quot;1\&quot; page=\&quot;0\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; background=\&quot;none\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;UserObject label=\&quot;Sensible folder and file structure\&quot; link=\&quot;../RAP/rap-start-guide.html#sensible-folder-and-file-structure\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-5\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;fontSize=14;locked=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;69\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Use appropriate tools e.g., R, SQL, Python\&quot; link=\&quot;../RAP/rap-start-guide.html#use-appropriate-tools\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-6\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;fillColor=#4472C4;spacingLeft=7;spacingRight=7;rounded=0;shadow=0;sketch=0;backgroundOutline=0;gradientDirection=north;strokeColor=none;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;-55\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Processing is done with code, where possible\&quot; link=\&quot;../RAP/rap-start-guide.html#processing-is-done-with-code\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-7\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;4\&quot; y=\&quot;421\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Automated high level checks\&quot; link=\&quot;../RAP/rap-start-guide.html#basic-automated-qa\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-8\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;69\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Documentation\&quot; link=\&quot;../RAP/rap-start-guide.html#documentation\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-11\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;-58\&quot; y=\&quot;515\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Version controlled final code scripts\&quot; link=\&quot;../RAP/rap-start-guide.html#version-controlled-final-code-scripts\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-12\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;320\&quot; y=\&quot;327\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Recyclable code for future use\&quot; link=\&quot;../RAP/rap-start-guide.html#recyclable-code-for-future-use\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-13\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;195\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Peer code review\&quot; link=\&quot;../RAP/rap-start-guide.html#dataset-production-scripts\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-14\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;257\&quot; y=\&quot;421\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Project specific automated sense checks\&quot; link=\&quot;../RAP/rap-start-guide.html#publication-specific-automated-qa\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-15\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;197\&quot; y=\&quot;517\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Collaboratively develop code using git\&quot; link=\&quot;../RAP/rap-start-guide.html#collaboratively-develop-code-using-git\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-19\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;674\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;&amp;#39;Clean&amp;#39; final code\&quot; link=\&quot;../RAP/rap-start-guide.html#clean-final-code\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-20\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;550\&quot; y=\&quot;326\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;&amp;lt;div style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;Whole pipeline can be run from a single script or workflow&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\&quot; link=\&quot;../RAP/rap-start-guide.html#whole-publication-production-scripts\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-21\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;align=center;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;612\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Automated reproducible reports\&quot; link=\&quot;../RAP/rap-start-guide.html#use-open-source-repositories\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-22\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;737\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Code stored in an appropriate repository\&quot; link=\&quot;../RAP/rap-start-guide.html#publication-specific-automated-summaries\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-23\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;550\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;UserObject label=\&quot;Peer review from outside the team\&quot; link=\&quot;../RAP/rap-start-guide.html#peer-review-of-code-from-outside-the-team\&quot; id=\&quot;t2OgNqa9NwPCjF_SyjkI-24\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;674\&quot; y=\&quot;514\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n        &lt;mxCell id=\&quot;t2OgNqa9NwPCjF_SyjkI-25\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#4472c4&amp;quot;&amp;gt;Good practice&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-38\&quot; y=\&quot;652\&quot; width=\&quot;210\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;t2OgNqa9NwPCjF_SyjkI-26\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#70ad47&amp;quot;&amp;gt;Great practice&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;206\&quot; y=\&quot;652\&quot; width=\&quot;220\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;t2OgNqa9NwPCjF_SyjkI-27\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#ed7d31&amp;quot;&amp;gt;Best practice&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;572\&quot; y=\&quot;652\&quot; width=\&quot;200\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-1\&quot; value=\&quot;\&quot; style=\&quot;shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#4472c4;gradientColor=none;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;168.5\&quot; y=\&quot;26\&quot; width=\&quot;47\&quot; height=\&quot;538\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-2\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#4472c4&amp;quot;&amp;gt;Baseline expectation&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;35.5\&quot; y=\&quot;216\&quot; width=\&quot;313\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-4\&quot; value=\&quot;\&quot; style=\&quot;shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#ed7d31;gradientColor=none;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;659\&quot; y=\&quot;145\&quot; width=\&quot;47\&quot; height=\&quot;292\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;S840XJ58BQc_PQPuIZfj-5\&quot; value=\&quot;&amp;lt;font color=&amp;quot;#ed7d31&amp;quot; style=&amp;quot;font-size: 32px&amp;quot;&amp;gt;Ambition&amp;lt;/font&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;612\&quot; y=\&quot;216\&quot; width=\&quot;143\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;UserObject label=\&quot;Source data is acquired and stored sensibly\&quot; link=\&quot;../RAP/rap-start-guide.html#processing-is-done-with-code\&quot; id=\&quot;m64QDAUWRqu3AbltyGjd-1\&quot;&gt;\n          &lt;mxCell style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n            &lt;mxGeometry x=\&quot;129\&quot; y=\&quot;420\&quot; width=\&quot;120\&quot; height=\&quot;120\&quot; as=\&quot;geometry\&quot; /&gt;\n          &lt;/mxCell&gt;\n        &lt;/UserObject&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+
+::: {.mxgraph style="max-width:100%;" data-mxgraph="{\"lightbox\":false,\"nav\":true,\"dark-mode\":\"auto\",\"edit\":\"_blank\",\"xml\":\"<mxfile host=\\\"app.diagrams.net\\\" agent=\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0\\\" version=\\\"28.0.7\\\">\\n  <diagram id=\\\"_ltWYIdbVKAG_Xyvna0Y\\\" name=\\\"Page-1\\\">\\n    <mxGraphModel dx=\\\"1818\\\" dy=\\\"752\\\" grid=\\\"0\\\" gridSize=\\\"10\\\" guides=\\\"1\\\" tooltips=\\\"1\\\" connect=\\\"1\\\" arrows=\\\"0\\\" fold=\\\"1\\\" page=\\\"0\\\" pageScale=\\\"1\\\" pageWidth=\\\"827\\\" pageHeight=\\\"1169\\\" background=\\\"none\\\" math=\\\"0\\\" shadow=\\\"0\\\">\\n      <root>\\n        <mxCell id=\\\"0\\\" />\\n        <mxCell id=\\\"1\\\" parent=\\\"0\\\" />\\n        <UserObject label=\\\"Sensible folder and file structure\\\" link=\\\"../RAP/rap-start-guide.html#sensible-folder-and-file-structure\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-5\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;fontSize=14;locked=0;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"69\\\" y=\\\"326\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Use appropriate tools e.g., R, SQL, Python\\\" link=\\\"../RAP/rap-start-guide.html#use-appropriate-tools\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-6\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;fillColor=#4472C4;spacingLeft=7;spacingRight=7;rounded=0;shadow=0;sketch=0;backgroundOutline=0;gradientDirection=north;strokeColor=none;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"-55\\\" y=\\\"326\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Processing is done with code, where possible\\\" link=\\\"../RAP/rap-start-guide.html#processing-is-done-with-code\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-7\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"4\\\" y=\\\"421\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Automated high level checks\\\" link=\\\"../RAP/rap-start-guide.html#basic-automated-qa\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-8\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"69\\\" y=\\\"514\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Documentation\\\" link=\\\"../RAP/rap-start-guide.html#documentation\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-11\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"-58\\\" y=\\\"515\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Version controlled final code scripts\\\" link=\\\"../RAP/rap-start-guide.html#version-controlled-final-code-scripts\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-12\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"320\\\" y=\\\"327\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Recyclable code for future use\\\" link=\\\"../RAP/rap-start-guide.html#recyclable-code-for-future-use\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-13\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"195\\\" y=\\\"326\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Peer code review\\\" link=\\\"../RAP/rap-start-guide.html#dataset-production-scripts\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-14\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"257\\\" y=\\\"421\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Project specific automated sense checks\\\" link=\\\"../RAP/rap-start-guide.html#publication-specific-automated-qa\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-15\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"197\\\" y=\\\"517\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Collaboratively develop code using git\\\" link=\\\"../RAP/rap-start-guide.html#collaboratively-develop-code-using-git\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-19\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"674\\\" y=\\\"326\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"&#39;Clean&#39; final code\\\" link=\\\"../RAP/rap-start-guide.html#clean-final-code\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-20\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"550\\\" y=\\\"326\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Whole pipeline can be run from a single script or workflow&lt;/font&gt;&lt;/div&gt;\\\" link=\\\"../RAP/rap-start-guide.html#whole-publication-production-scripts\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-21\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;align=center;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"612\\\" y=\\\"420\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Automated reproducible reports\\\" link=\\\"../RAP/rap-start-guide.html#use-open-source-repositories\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-22\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"737\\\" y=\\\"420\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Code stored in an appropriate repository\\\" link=\\\"../RAP/rap-start-guide.html#publication-specific-automated-summaries\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-23\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"550\\\" y=\\\"514\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <UserObject label=\\\"Peer review from outside the team\\\" link=\\\"../RAP/rap-start-guide.html#peer-review-of-code-from-outside-the-team\\\" id=\\\"t2OgNqa9NwPCjF_SyjkI-24\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n            <mxGeometry x=\\\"674\\\" y=\\\"514\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n        <mxCell id=\\\"t2OgNqa9NwPCjF_SyjkI-25\\\" value=\\\"&lt;font style=&quot;font-size: 32px&quot; color=&quot;#4472c4&quot;&gt;Good practice&lt;/font&gt;\\\" style=\\\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n          <mxGeometry x=\\\"-38\\\" y=\\\"652\\\" width=\\\"210\\\" height=\\\"30\\\" as=\\\"geometry\\\" />\\n        </mxCell>\\n        <mxCell id=\\\"t2OgNqa9NwPCjF_SyjkI-26\\\" value=\\\"&lt;font style=&quot;font-size: 32px&quot; color=&quot;#70ad47&quot;&gt;Great practice&lt;/font&gt;\\\" style=\\\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n          <mxGeometry x=\\\"206\\\" y=\\\"652\\\" width=\\\"220\\\" height=\\\"30\\\" as=\\\"geometry\\\" />\\n        </mxCell>\\n        <mxCell id=\\\"t2OgNqa9NwPCjF_SyjkI-27\\\" value=\\\"&lt;font style=&quot;font-size: 32px&quot; color=&quot;#ed7d31&quot;&gt;Best practice&lt;/font&gt;\\\" style=\\\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n          <mxGeometry x=\\\"572\\\" y=\\\"652\\\" width=\\\"200\\\" height=\\\"30\\\" as=\\\"geometry\\\" />\\n        </mxCell>\\n        <mxCell id=\\\"S840XJ58BQc_PQPuIZfj-1\\\" value=\\\"\\\" style=\\\"shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#4472c4;gradientColor=none;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n          <mxGeometry x=\\\"168.5\\\" y=\\\"26\\\" width=\\\"47\\\" height=\\\"538\\\" as=\\\"geometry\\\" />\\n        </mxCell>\\n        <mxCell id=\\\"S840XJ58BQc_PQPuIZfj-2\\\" value=\\\"&lt;font style=&quot;font-size: 32px&quot; color=&quot;#4472c4&quot;&gt;Baseline expectation&lt;/font&gt;\\\" style=\\\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n          <mxGeometry x=\\\"35.5\\\" y=\\\"216\\\" width=\\\"313\\\" height=\\\"50\\\" as=\\\"geometry\\\" />\\n        </mxCell>\\n        <mxCell id=\\\"S840XJ58BQc_PQPuIZfj-4\\\" value=\\\"\\\" style=\\\"shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#ed7d31;gradientColor=none;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n          <mxGeometry x=\\\"659\\\" y=\\\"145\\\" width=\\\"47\\\" height=\\\"292\\\" as=\\\"geometry\\\" />\\n        </mxCell>\\n        <mxCell id=\\\"S840XJ58BQc_PQPuIZfj-5\\\" value=\\\"&lt;font color=&quot;#ed7d31&quot; style=&quot;font-size: 32px&quot;&gt;Ambition&lt;/font&gt;\\\" style=\\\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\\\" parent=\\\"1\\\" vertex=\\\"1\\\">\\n          <mxGeometry x=\\\"612\\\" y=\\\"216\\\" width=\\\"143\\\" height=\\\"50\\\" as=\\\"geometry\\\" />\\n        </mxCell>\\n        <UserObject label=\\\"Source data is acquired and stored sensibly\\\" link=\\\"../RAP/rap-start-guide.html#processing-is-done-with-code\\\" id=\\\"m64QDAUWRqu3AbltyGjd-1\\\">\\n          <mxCell style=\\\"shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\\\" vertex=\\\"1\\\" parent=\\\"1\\\">\\n            <mxGeometry x=\\\"129\\\" y=\\\"420\\\" width=\\\"120\\\" height=\\\"120\\\" as=\\\"geometry\\\" />\\n          </mxCell>\\n        </UserObject>\\n      </root>\\n    </mxGraphModel>\\n  </diagram>\\n</mxfile>\\n\"}"}
+:::
+
+```{=html}
 <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+```
 
-
----
+------------------------------------------------------------------------
 
 ## Choosing the right RAP principles for your analysis
 
 Whilst all RAP principles can be applied to any type of analysis, we recognise that different types of analysis conducted across the department may benefit from a tailored approach. To support this, we’ve outlined a selection of common analysis types below, along with the RAP principles we suggest as essential and recommended for each. This guidance is intended to help teams prioritise their efforts and embed RAP in a way that is both practical and impactful.
 
-
 ::: {.callout-tip collapse="true"}
 ## Ad-hoc analysis (unlikely to be repeated)
 
-Analysis that is performed outside of regular reporting processes, often to answer a specific need or question, but is unlikely to be requested again in any form. 
+Analysis that is performed outside of regular reporting processes, often to answer a specific need or question, but is unlikely to be requested again in any form.
 
-### Essential 
+We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
-#### Good practice
-- Use of appropriate tools e.g., R, SQL, Python 
-- Sensible folder and file structure 
-- Processing is done with code, where possible  
-- Source data is acquired and stored sensibly  
-- Documentation  
+### Recommended principles
 
-#### Great practice
-- Peer code review  
- 
-#### Best practice 
-- 'Clean' final code  
+![](../images/good.svg)
 
-### Recommended 
+-   Use of appropriate tools e.g., R, SQL, Python
+-   Sensible folder and file structure
+-   Processing is done with code, where possible\
+-   Source data is acquired and stored sensibly\
+-   Documentation
 
-#### Good practice 
-- Automated high level checks 
+![](../images/great.svg)
 
-#### Great practice 
-- Recyclable code for future use
-- Project specific automated sense checks
+-   Peer code review
 
-#### Best practice
-- Whole pipeline can run from a single script or workflow
-- Code collaboratively developed using Git
-- Code stored in an appropriate repository
+![](../images/best.svg)
+
+-   'Clean' final code
 :::
 
 ::: {.callout-tip collapse="true"}
 ## Ad-hoc analysis (likely to be repeated e.g., different breakdowns)
 
-Analysis that is performed outside of regular reporting processes, often to answer a specific need or question and is likely to be requested again in the same or a similar form. 
+Analysis that is performed outside of regular reporting processes, often to answer a specific need or question and is likely to be requested again in the same or a similar form.
 
-### Essential 
+We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
-#### Good practice
-- Use of appropriate tools e.g., R, SQL, Python  
-- Sensible folder and file structure
-- Processing is done with code, where possible  
-- Source data is acquired and stored sensibly 
-- Documentation  
-- Automated high level checks
+### Recommended principles
 
-#### Great practice
+![](../images/good.svg)
 
-- Recyclable code for future use#
-- Project specific automated sense checks
-- Version controlled final scripts
-- Peer code review  
+-   Use of appropriate tools e.g., R, SQL, Python\
+-   Sensible folder and file structure
+-   Processing is done with code, where possible\
+-   Source data is acquired and stored sensibly
+-   Documentation\
+-   Automated high level checks
 
-#### Best practice
-- 'Clean' final code  
-- Code stored in an appropriate repository 
+![](../images/great.svg)
 
+-   Recyclable code for future use
+-   Project specific automated sense checks
+-   Version controlled final scripts
+-   Peer code review
 
-### Recommended
+![](../images/best.svg)
 
-#### Best practice
-- Whole pipeline can run from a single script or workflow
-- Code collaboratively developed using Git
-- Automated reproducible reports
-- Peer review from someone outside the team 
- 
+- 'Clean' final code
+- Code stored in an appropriate repository
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -168,34 +153,32 @@ Analysis that is performed outside of regular reporting processes, often to answ
 
 Recurring analysis produced within the department to support ongoing operational needs. It often follows a consistent format and schedule, and is used to monitor key internal activities.
 
-### Essential 
+We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
-#### Good practice
-- Use of appropriate tools e.g., R, SQL, Python  
-- Sensible folder and file structure
-- Processing is done with code, where possible  
-- Source data is acquired and stored sensibly 
-- Documentation  
-- Automated high level checks
+### Recommended principles
 
-#### Great practice
-- Recyclable code for future use#
-- Project specific automated sense checks
-- Version controlled final scripts
-- Peer code review  
+![](../images/good.svg)
 
-#### Best practice
-- 'Clean' final code
-- Code stored in an appropriate repository
-- Code collaboratively developed using Git 
-- Automated reproducible reports
+-   Use of appropriate tools e.g., R, SQL, Python\
+-   Sensible folder and file structure
+-   Processing is done with code, where possible\
+-   Source data is acquired and stored sensibly
+-   Documentation\
+-   Automated high level checks
 
+![](../images/great.svg)
 
+-   Recyclable code for future use#
+-   Project specific automated sense checks
+-   Version controlled final scripts
+-   Peer code review
 
-### Recommended 
+![](../images/best.svg)
 
-#### Best practice
-- Peer review from someone outside the team 
+-   'Clean' final code
+-   Code stored in an appropriate repository
+-   Code collaboratively developed using Git
+-   Automated reproducible reports
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -203,158 +186,206 @@ Recurring analysis produced within the department to support ongoing operational
 
 Analysis which must be quickly conducted and often not pre-planned, aimed at delivering timely insights to support fast decision making.
 
-### Essential 
+We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
-#### Good practice
-- Use of appropriate tools e.g., R, SQL, Python  
-- Sensible folder and file structure
-- Processing is done with code, where possible  
-- Source data is acquired and stored sensibly 
-- Documentation  
+### Recommended principles
 
-#### Great practice
-- Peer code review 
+![](../images/good.svg)
 
-### Recommended 
+-   Use of appropriate tools e.g., R, SQL, Python\
+-   Sensible folder and file structure
+-   Processing is done with code, where possible\
+-   Source data is acquired and stored sensibly
+-   Documentation
 
-#### Great practice
-- Recyclable code for future use
-- Project specific automated sense checks
-- Version controlled final scripts
+![](../images/great.svg)
 
-
-#### Best practice
-- 'Clean' final code
-- Code stored in an appropriate repository
-- Automated reproducible reports
+-   Peer code review
 :::
 
 ::: {.callout-tip collapse="true"}
 ## Analysis repeated on different datasets
 
-### Essential 
-- Sensible folder and file structure  
-- Documentation  
-- Use of appropriate tools e.g., R, SQL, Python  
-- Processing is done with code, where possible  
-- 'Clean' final code  
-- Peer code review  
-- Source data is acquired and stored sensibly  
+We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
+
+### Recommended principles
+
+![](../images/good.svg)
+
+-   Use of appropriate tools e.g., R, SQL, Python\
+-   Sensible folder and file structure
+-   Processing is done with code, where possible\
+-   Source data is acquired and stored sensibly
+-   Documentation\
+-   Automated high level checks
+
+![](../images/great.svg)
+
+-   Recyclable code for future use#
+-   Project specific automated sense checks
+-   Version controlled final scripts
+-   Peer code review
+
+![](../images/best.svg)
+
+-   'Clean' final code
+-   Whole pipeline can be run from a single script or workflow
+-   Code stored in an appropriate repository
+-   Code collaboratively developed using Git
 :::
 
-::: {.callout-tip collapse="true"}
-## Spreadsheet based analysis and models 
 
-### Essential 
-- Sensible folder and file structure  
-- Documentation  
-- Use of appropriate tools e.g., R, SQL, Python  
-- Processing is done with code, where possible  
-- 'Clean' final code  
-- Peer code review  
-- Source data is acquired and stored sensibly  
+::: {.callout-tip collapse="true"}
+## Spreadsheet based analysis and models
+
+We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
+
+### Recommended principles
+
+![](../images/good.svg)
+
+-   Sensible folder and file structure
+-   Source data is acquired and stored sensibly
+-   Documentation\
+-   Automated high level checks
+
+![](../images/great.svg)
+-   Peer code review
+
 :::
 
 ::: {.callout-tip collapse="true"}
 ## Data collection and preparation
 
-### Essential 
-- Sensible folder and file structure  
-- Documentation  
-- Use of appropriate tools e.g., R, SQL, Python  
-- Processing is done with code, where possible  
-- 'Clean' final code  
-- Peer code review  
-- Source data is acquired and stored sensibly  
+We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
+
+### Recommended principles
+
+![](../images/good.svg)
+
+-   Use of appropriate tools e.g., R, SQL, Python\
+-   Sensible folder and file structure
+-   Processing is done with code, where possible\
+-   Source data is acquired and stored sensibly
+-   Documentation\
+-   Automated high level checks
+
+![](../images/great.svg)
+
+-   Recyclable code for future use
+-   Version controlled final scripts
+-   Peer code review
+
+![](../images/best.svg)
+
+-   'Clean' final code
+-   Code stored in an appropriate repository
+-   Code collaboratively developed using Git
 :::
 
 ::: {.callout-tip collapse="true"}
-## Cross departmental analysis 
+## Cross departmental analysis
 
-### Essential 
-- Sensible folder and file structure  
-- Documentation  
-- Use of appropriate tools e.g., R, SQL, Python  
-- Processing is done with code, where possible  
-- 'Clean' final code  
-- Peer code review  
-- Source data is acquired and stored sensibly  
+We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
+
+### Recommended principles
+
+![](../images/good.svg)
+
+-   Use of appropriate tools e.g., R, SQL, Python\
+-   Sensible folder and file structure
+-   Processing is done with code, where possible\
+-   Source data is acquired and stored sensibly
+-   Documentation\
+-   Automated high level checks
+
+![](../images/great.svg)
+
+-   Recyclable code for future use#
+-   Project specific automated sense checks
+-   Version controlled final scripts
+-   Peer code review
+
+![](../images/best.svg)
+
+-   'Clean' final code
+-   Code stored in an appropriate repository
+-   Code collaboratively developed using Git
+-   Peer reviewed from someone outside the team
 :::
 
 <!-- Use DfT checklist to recreate one here!!! -->
 
----
+------------------------------------------------------------------------
 
 ## How does RAP fit into ADA / Databricks
 
-Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the [ADA guidance on statistics publications](../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your work. 
+Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the [ADA guidance on statistics publications](../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your work.
 
----
+------------------------------------------------------------------------
 
----
+------------------------------------------------------------------------
 
-## Preparing data
+## Preparing data {#preparing-data}
 
 Preparing data is our first core RAP principle, which contains the following elements:
 
-* [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly)
-* [Sensible file and folder structure](#sensible-folder-and-file-structure)
+-   [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly)
+-   [Sensible file and folder structure](#sensible-folder-and-file-structure)
 
 Your team should store the internal raw data in a Microsoft SQL Server database or in the Databricks platform. These are similar to a Sharepoint area or a shared folder, but offer dedicated data storage areas and allow multiple users to use the same file at once. This means that you can also run code against a single source of data, further reducing the risk of error.
 
-Where external data is used, the process of acquiring and storing the data should be well documented. The data should be stored approrpiately in areas with the correct levels of security. 
+Where external data is used, the process of acquiring and storing the data should be well documented. The data should be stored approrpiately in areas with the correct levels of security.
 
----
+------------------------------------------------------------------------
 
-### Source data is acquired and stored sensibly
+### Source data is acquired and stored sensibly {#source-data-is-acquired-and-stored-sensibly}
 
----
-
+------------------------------------------------------------------------
 
 ![](../images/good.svg)
 
-**What does this mean?** 
+**What does this mean?**
 
 When we refer to 'source data', we take this to mean the data you use at the start of your analytical process.
 
 In order for us to be able to have an end-to-end data pipeline where we can replicate our analysis across the department, we should ensure we acquire and store all source data in sensible locations with clear documentation. Consider what a new starter would need in order to understand the process of aquiring and using the source data without you there, and ensure that is in place! For example:
 
-a. **Data requested via email from other teams or departments** - have clear documentation containing the contact information, when you contact them, when to expect a response and a template email. 
+a.  **Data requested via email from other teams or departments** - have clear documentation containing the contact information, when you contact them, when to expect a response and a template email.
 
-b. **Data downloaded from an external site** - See if the site has an API ([What is an API?](https://www.postman.com/what-is-an-api/)) - some government sites like [EES](https://explore-education-statistics.service.gov.uk/), [Nomis](https://www.nomisweb.co.uk/) and [ONS](https://www.ons.gov.uk/) have APIs and even R packages built to interact with them ([`eesyapi`](https://dfe-analytical-services.github.io/eesyapi.R/), [`nomisr`](https://docs.ropensci.org/nomisr/#:~:text=The%20nomisr%20package%20provides%20functions%20to%20find%20what,downloading%20data.%20nomisr%20returns%20data%20in%20tibble%20format.), [`monstR`](https://hfanalyticslab.github.io/monstR/)). If not, you can use the `download.file()` function to remove the manual step of clicking and downloading the data each time. Using a function also ensures it is always named and stored consistently. 
+b.  **Data downloaded from an external site** - See if the site has an API ([What is an API?](https://www.postman.com/what-is-an-api/)) - some government sites like [EES](https://explore-education-statistics.service.gov.uk/), [Nomis](https://www.nomisweb.co.uk/) and [ONS](https://www.ons.gov.uk/) have APIs and even R packages built to interact with them ([`eesyapi`](https://dfe-analytical-services.github.io/eesyapi.R/), [`nomisr`](https://docs.ropensci.org/nomisr/#:~:text=The%20nomisr%20package%20provides%20functions%20to%20find%20what,downloading%20data.%20nomisr%20returns%20data%20in%20tibble%20format.), [`monstR`](https://hfanalyticslab.github.io/monstR/)). If not, you can use the `download.file()` function to remove the manual step of clicking and downloading the data each time. Using a function also ensures it is always named and stored consistently.
 
-c. **Data internal to the DfE** should either be stored in a managed Microsoft SQL Server or in the Databricks platform. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process using SQL queries. 
+c.  **Data internal to the DfE** should either be stored in a managed Microsoft SQL Server or in the Databricks platform. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process using SQL queries.
 
 **Why do it?**
 
 The principle is that this source data will remain stable and is the point you can go back to and re-run the processes from if necessary. If for any reason the source data needs to change, your processes will be set up in a way that you can easily re-run them to get updated outputs based on the amended source data with minimal effort.
 
-SQL is a fantastic language for large scale data joining and manipulation; it allows us to replicate end-to-end from raw data to final aggregate statistics output. Having all the data in one place and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results. You can run SQL queries against data in SQL Server or in Databricks, although SQL Server makes use of T-SQL and Databricks makes use of Spark SQL. 
-
+SQL is a fantastic language for large scale data joining and manipulation; it allows us to replicate end-to-end from raw data to final aggregate statistics output. Having all the data in one place and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results. You can run SQL queries against data in SQL Server or in Databricks, although SQL Server makes use of T-SQL and Databricks makes use of Spark SQL.
 
 **How to get started**
 
-For a collection of relevant resources to use when learning SQL, see our [learning resources](../learning-development/learning-development.html) page, and for guidance on best practice when writing SQL queries, see the [writing code](#writing-code) and [documentation](#documentation) sections on this page, as well as the guides immediately below on how to set up and use a SQL database. 
+For a collection of relevant resources to use when learning SQL, see our [learning resources](../learning-development/learning-development.html) page, and for guidance on best practice when writing SQL queries, see the [writing code](#writing-code) and [documentation](#documentation) sections on this page, as well as the guides immediately below on how to set up and use a SQL database.
 
-For resources to help you learn about Databricks and how to migrate your data into the Unity Catalog, please see our [ADA and Databricks documentation](../ADA/ada.html). Legacy servers will be decommissioned in 2026, and all data will be migrated into the Databricks Unity Catalog instead. 
+For resources to help you learn about Databricks and how to migrate your data into the Unity Catalog, please see our [ADA and Databricks documentation](../ADA/ada.html). Legacy servers will be decommissioned in 2026, and all data will be migrated into the Databricks Unity Catalog instead.
 
----
+------------------------------------------------------------------------
 
 #### How to set up a SQL working area
 
----
+------------------------------------------------------------------------
 
 There are a few different options, depending on where you want your new area to exist. Visit our [SQL learning page](../learning-development/sql.html#Setting_up_a_SQL_area) for details.
 
----
+------------------------------------------------------------------------
 
 #### Moving data to different areas
 
----
+------------------------------------------------------------------------
 
 If your data is already in SQL Server, you can use this snippet of R code to move tables from one area (e.g. the iStore) to another (e.g. your team's modelling area) to ensure all data are stored in a database.
 
-``` {r connection_example, eval=FALSE}
+```{r connection_example, eval=FALSE}
 library(odbc)
 library(dplyr)
 library(dbplyr)
@@ -384,113 +415,103 @@ dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfe
 
 ```
 
----
+------------------------------------------------------------------------
 
 #### Importing data to SQL Server
 
----
+------------------------------------------------------------------------
 
 There's lots of guidance online of how to import flat files from shared areas into Microsoft SQL Server on the internet, including [this guide](https://docs.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard?view=sql-server-2017){target="_blank" rel="noopener noreferrer"}.
 
-
 Remember that it is important to import them with consistent, thought-through [naming conventions](#naming-conventions). You will thank yourself later.
 
----
+------------------------------------------------------------------------
 
 #### How to grant access to your area
 
----
+------------------------------------------------------------------------
 
 Much like setting up a SQL area, there are different ways to do this depending on the server your database is in. Visit our [SQL learning page](../learning-development/sql.html#Givinggetting_access) for details.
 
+------------------------------------------------------------------------
 
----
+### Sensible folder and file structure {#sensible-folder-and-file-structure}
 
-### Sensible folder and file structure 
-
----
+------------------------------------------------------------------------
 
 ![](../images/good.svg)
 
 **What does this mean?**
 
-As a minimum you should have a folder that includes all of the final versions of documents produced and published within a folder for the wider project. Ask yourself if it would be easy for someone who isn't in the team to find specific files, and if not, is there a better way that you could name and structure your folders to make them more intuitive to navigate? 
-
+As a minimum you should have a folder that includes all of the final versions of documents produced and published within a folder for the wider project. Ask yourself if it would be easy for someone who isn't in the team to find specific files, and if not, is there a better way that you could name and structure your folders to make them more intuitive to navigate?
 
 **Why do it?**
 
 How you organize and name your files will have a big impact on your ability to find those files later and to understand what they contain. You should be consistent and descriptive in naming and organizing files so that it is obvious where to find specific data and what the files contain.
 
-
 **How to get started**
 
 Some questions to help you consider whether your folder structure is sensible are:
 
-- Are all documentation, code and outputs for the project saved in one folder area?
-- Is simple version control clearly applied (e.g. having all final files in a folder named "final"?)
-- Are there sub-folders like 'code', 'documentation'', 'outputs' and 'final' to save the relevant working files in? 
-- Are you keeping a version log up to date with any changes made to files in this final folder? (Using Git removes the need to manually keep a log, as Git does this for you.)
+-   Are all documentation, code and outputs for the project saved in one folder area?
+-   Is simple version control clearly applied (e.g. having all final files in a folder named "final"?)
+-   Are there sub-folders like 'code', 'documentation'', 'outputs' and 'final' to save the relevant working files in?
+-   Are you keeping a version log up to date with any changes made to files in this final folder? (Using Git removes the need to manually keep a log, as Git does this for you.)
 
 You could also consider using the [create_project() function](https://dfe-analytical-services.github.io/dfeR/reference/index.html#pre-populated-project) from the dfeR package to create a pre-populated folder structure for use with an R project
 
----
+------------------------------------------------------------------------
 
-#### Naming conventions
+#### Naming conventions {#naming-conventions}
 
----
+------------------------------------------------------------------------
 
 Having a **clear** and **consistent** naming convention for your files is critical. Remember that file names should:
 
+**Be machine readable**
 
-**Be machine readable** 
+-   Avoid spaces.
+-   Avoid special characters such as: \~ ! \@ \# \$ % \^ & \* ( ) \` ; \< \> ? , \[ \] { } ‘ “.
+-   Be as short as practicable; overly long names do not work well with all types of software.
 
-- Avoid spaces.
-- Avoid special characters such as: ~ ! @ # $ % ^ & * ( ) ` ; < > ? , [ ] { } ‘ “.
-- Be as short as practicable; overly long names do not work well with all types of software.
+**Be human readable**
 
-
-**Be human readable** 
-
-- Be easy to understand the contents from the name.
-
+-   Be easy to understand the contents from the name.
 
 **Play well with default ordering**
 
-- Often (though not always!) you should have numbers first, particularly if your file names include dates.
-- Follow the [ISO 8601 date standard](https://www.iso.org/iso-8601-date-and-time-format.html) (YYYYMMDD) to ensure that all of your files stay in chronological order.
-- Use leading zeros to left pad numbers and ensure files sort properly, e.g. using 01, 02, 03 to avoid 1, 10, 2, 3.
-
+-   Often (though not always!) you should have numbers first, particularly if your file names include dates.
+-   Follow the [ISO 8601 date standard](https://www.iso.org/iso-8601-date-and-time-format.html) (YYYYMMDD) to ensure that all of your files stay in chronological order.
+-   Use leading zeros to left pad numbers and ensure files sort properly, e.g. using 01, 02, 03 to avoid 1, 10, 2, 3.
 
 If in doubt, take a look at this [presentation](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank" rel="noopener noreferrer"}, or this [naming convention guide by Stanford](https://drive.google.com/file/d/12A4qZNwmL4s2NH8Ex161jgiJ9HrA06ZZ/view?pli=1){target="_blank" rel="noopener noreferrer"}, for examples reinforcing the above.
 
----
+------------------------------------------------------------------------
 
-
-## Writing code
+## Writing code {#writing-code}
 
 Writing code is our second core RAP principle, and is made up of the following elements:
 
-* [Processing is done with code](#processing-is-done-with-code)
-* [Use appropriate tools](#use-appropriate-tools)
-* [Whole pipeline run script](#whole-pipeline-run-script)
-* [Recyclable code for future use](#recyclable-code-for-future-use)
-* [Clean final code](#clean-final-code)
-* [Peer review of code within team](#peer-review-of-code-within-team)
-* [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
-* [Basic automated QA](#basic-automated-qa)
-* [More specific/advanced automated QA/summaries](#more-specificadvanced-automated-qasummaries)
-* [Automated outputs using markdown/Quarto](#automated-outputs-sing-markdownquarto)
+-   [Processing is done with code](#processing-is-done-with-code)
+-   [Use appropriate tools](#use-appropriate-tools)
+-   [Whole pipeline run script](#whole-pipeline-run-script)
+-   [Recyclable code for future use](#recyclable-code-for-future-use)
+-   [Clean final code](#clean-final-code)
+-   [Peer review of code within team](#peer-review-of-code-within-team)
+-   [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
+-   [Basic automated QA](#basic-automated-qa)
+-   [More specific/advanced automated QA/summaries](#more-specificadvanced-automated-qasummaries)
+-   [Automated outputs using markdown/Quarto](#automated-outputs-sing-markdownquarto)
 
 ::: callout-tip
-The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html). 
+The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html).
 :::
 
----
+------------------------------------------------------------------------
 
-### Processing is done with code
+### Processing is done with code {#processing-is-done-with-code}
 
----
-
+------------------------------------------------------------------------
 
 ![](../images/good.svg)
 
@@ -498,52 +519,49 @@ The key thing to remember is that we should be automating everything we can, and
 
 All extraction, and processing of data should be done using code, avoiding any manual steps and moving away from a reliance on Excel, SPSS, and other manual processing. In order to carry out our jobs to the best of our ability it is imperative that we use the [appropriate tools](#appropriate-tools) for the work that we do.
 
-Even steps such as copy and pasting data, or pointing and clicking, are fraught with danger, and these risks should be minimised by using code to document and execute these processes instead. 
+Even steps such as copy and pasting data, or pointing and clicking, are fraught with danger, and these risks should be minimised by using code to document and execute these processes instead.
 
 **Why do it?**
 
-Using code brings numerous benefits. Computers are far quicker, more accurate, and far more reliable than humans in many of the tasks that we do. Writing out these instructions saves us significant amounts of time, particularly when code can be reused in future years, or even next week when one specific number in the source file suddenly changes. Code scripts also provide us with editable documentation for our production processes, saving the need for writing down information in extra documents. 
+Using code brings numerous benefits. Computers are far quicker, more accurate, and far more reliable than humans in many of the tasks that we do. Writing out these instructions saves us significant amounts of time, particularly when code can be reused in future years, or even next week when one specific number in the source file suddenly changes. Code scripts also provide us with editable documentation for our production processes, saving the need for writing down information in extra documents.
 
 Reliability is a huge benefit of the automation that RAP brings - when your data has to be amended a week before publication, it's a life saver to know that you can re-run your process in minutes, and reassuring to know that it will give you the result you want. You can run the same code 100 times, and be confident that it will follow the same steps in the same order every single time.
 
-
 **How to get started**
 
-See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on SQL and R to learn the skills required to translate your process into code. 
+See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on SQL and R to learn the skills required to translate your process into code.
 
 There are also two sections below with examples of tidying data in SQL and R to get you started.
 
 Ensure that any last-minute fixes to the process are written in the code and not done with manual changes.
 
----
+------------------------------------------------------------------------
 
 #### Producing tidy underlying data in SQL
 
----
+------------------------------------------------------------------------
 
 To get started, here is a [SQL query](https://github.com/TomFranklin/sql-applied-data-tidying/blob/master/data_tidying_l_and_d.sql){target="_blank" rel="noopener noreferrer"} that you can run on your own machine and walks you through the basics of tidying a simple example dataset in SQL.
 
----
+------------------------------------------------------------------------
 
 #### Tidying and processing data in R
 
----
+------------------------------------------------------------------------
 
 [Here is a video](https://vimeo.com/33727555){target="_blank" rel="noopener noreferrer"} of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at [applied data tidying in R, by RStudio](https://www.youtube.com/watch?v=1ELALQlO-yM){target="_blank" rel="noopener noreferrer"}.
-
 
 Using the `%>%` pipe in R can be incredibly powerful, and make your code much easier to follow, as well as more efficient. If you aren't yet familiar with this, have a look at [this article](https://seananderson.ca/2014/09/13/dplyr-intro/){target="_blank" rel="noopener noreferrer"} that provides a useful beginners guide to piping and the kinds of functions you can use it for. The possibilities stretch about as far as your imagination, and if you have a function or task you want to do within a pipe, googling 'how do I do X in dplyr r' will usually start to point you in the right direction, alternatively you can [contact us](mailto:statistics.development@education.gov.uk), and we'll be happy to help you figure out how to do what you need.
 
 A quick example of how powerful this is is below. The pipe operator passes the outcome of each line of code onto the next, so you can complete multiple steps of data manipulation in one section of code instead of writing separate steps for each one. In this code, we:
 
-* start with my_data
-* calculate a percentage column using mutate
-* rename the percentage column we created to "newPercentageColumn", rename "number" to "numberColumn", and rename "population" to "totalPopulationColumn"
-* use the `clean_names()` function from the [janitor](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) package to ensure that columns have consistent naming standards
-* use the `remove_empty()` function from the janitor package to remove any rows and columns that are composed entirely of NA values
-* filter the dataframe to only include Regional geographic level data
-* order the dataframe by time period and region name
-
+-   start with my_data
+-   calculate a percentage column using mutate
+-   rename the percentage column we created to "newPercentageColumn", rename "number" to "numberColumn", and rename "population" to "totalPopulationColumn"
+-   use the `clean_names()` function from the [janitor](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) package to ensure that columns have consistent naming standards
+-   use the `remove_empty()` function from the janitor package to remove any rows and columns that are composed entirely of NA values
+-   filter the dataframe to only include Regional geographic level data
+-   order the dataframe by time period and region name
 
 ```{r example, eval=FALSE, style="background-color: #f7fdfa"}
 processed_regional_data <- my_data %>% 
@@ -557,18 +575,15 @@ processed_regional_data <- my_data %>%
   arrange(time_period, region_name)
 ```
 
-
-[Helpful new functions](https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da){target="_blank" rel="noopener noreferrer"} in the tidyverse packages can help you to easily transform data from wide to long format (see tip 2 in the linked article for this, as it is often required for tidy data), as well as providing you with tools to allow you quickly and efficiently change the structure of your variables. 
-
+[Helpful new functions](https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da){target="_blank" rel="noopener noreferrer"} in the tidyverse packages can help you to easily transform data from wide to long format (see tip 2 in the linked article for this, as it is often required for tidy data), as well as providing you with tools to allow you quickly and efficiently change the structure of your variables.
 
 For further resources on learning R so that you're able to apply it to your everyday work, have a look at the [learning resources](../learning-development/learning-development.html) page.
 
----
+------------------------------------------------------------------------
 
-### Use appropriate tools 
+### Use appropriate tools {#use-appropriate-tools}
 
----
-
+------------------------------------------------------------------------
 
 ![](../images/good.svg)
 
@@ -576,18 +591,17 @@ For further resources on learning R so that you're able to apply it to your ever
 
 Using the recommended tools on our [learning](../learning-development/learning-support.html) page ([SQL](../learning-development/sql.html), [R](../learning-development/r.html) and [Git](../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.
 
-Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this [explanation of open-source](https://opensource.com/resources/what-open-source){target="_blank" rel="noopener noreferrer"}, as well as this guide to [working in an open-source way](https://opensource.com/open-source-way){target="_blank" rel="noopener noreferrer"}. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with git, and hosted in a publicly accessible repository. 
+Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this [explanation of open-source](https://opensource.com/resources/what-open-source){target="_blank" rel="noopener noreferrer"}, as well as this guide to [working in an open-source way](https://opensource.com/open-source-way){target="_blank" rel="noopener noreferrer"}. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with git, and hosted in a publicly accessible repository.
 
 **Why do it?**
 
 There are many reasons why we have recommended the tools that we have, the recommended tools are:
 
-- already in use at the department and easy for us to access
-- easy and **free** to learn
-- designed for the work that we do
-- used widely across data science in both the public and private sector
-- allow us to meet best practice when applying RAP to our processes
-
+-   already in use at the department and easy for us to access
+-   easy and **free** to learn
+-   designed for the work that we do
+-   used widely across data science in both the public and private sector
+-   allow us to meet best practice when applying RAP to our processes
 
 **How to get started**
 
@@ -595,20 +609,19 @@ Go to our [learning](../learning-development/learning-development.html) page to 
 
 By following [our guidance](#version-controlled-final-code-scripts) in saving versions of code in an Azure DevOps, we will then be able to mirror those repositories in a publicly available GitHub area.
 
----
+------------------------------------------------------------------------
 
-### Whole pipeline run script
+### Whole pipeline run script {#whole-pipeline-run-script}
 
----
+------------------------------------------------------------------------
 
 ![](../images/best.svg)
 
 **What does this mean?**
 
-We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a super short, simple piece of analysis, this might not be needed, however, it's always good to embed these best-practices into our default ways of working! 
+We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a super short, simple piece of analysis, this might not be needed, however, it's always good to embed these best-practices into our default ways of working!
 
-The ultimate aim is to utilise a single script to document and run off everything for a project, the data files, any QA, any summary reports. This script should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script.
-All quality assurance for a file is also included in the single script that can be used to create a file from source data.
+The ultimate aim is to utilise a single script to document and run off everything for a project, the data files, any QA, any summary reports. This script should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script. All quality assurance for a file is also included in the single script that can be used to create a file from source data.
 
 **Why do it?**
 
@@ -620,62 +633,59 @@ The Education, Health and Care Plans production cycle is a good example of a sin
 
 The cycle originally consisted of multiple SQL scripts, manual QA and generation of final files.
 
-![](../images/Old process.jpg)
+![](../images/Old%20process.jpg)
 
 The team now have their end-to-end process fully documented, which can be run off of one single R script. The 'run' script points at the SQL scripts to run them all in one go, and also creates a QA report and corresponding metadata files that pass the data screener. Each data file can still be run in isolation from this script.
 
-![](../images/New process.jpg)
+![](../images/New%20process.jpg)
 
----
+------------------------------------------------------------------------
 
 #### Using 'run' scripts
 
+Utilising a single 'run' script to execute processes written in other scripts brings a number of benefits. It isn't just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past.
 
-Utilising a single 'run' script to execute processes written in other scripts brings a number of benefits. It isn't just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past. 
-
----
+------------------------------------------------------------------------
 
 #### Connecting R to SQL
 
----
+------------------------------------------------------------------------
 
 In order to create a single script to run all processes from, it is likely that you will need to use R to run SQL queries. If you are unsure of how to do this, take a look the guide on the [dfeR connecting to SQL documentation](https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html).
 
 If you prefer a video, [Chris Mason-Thom did a coffee and coding session on this](https://web.microsoftstream.com/embed/video/c9b7fd97-c854-4a1a-9074-cd80d2ea285e).
 
----
+------------------------------------------------------------------------
 
-### Recyclable code for future use 
+### Recyclable code for future use {#recyclable-code-for-future-use}
 
----
+------------------------------------------------------------------------
 
 ![](../images/great.svg)
 
 **What does this mean?**
 
-It's good practice when writing code to always write it with your future-self in mind. Alongside writing neat & well documented/commented code, this also means writing code that can be easily re-used in future, i.e. writing functions with *arguments* for variables that are likely to change (like year) rather than hard-coding them. 
+It's good practice when writing code to always write it with your future-self in mind. Alongside writing neat & well documented/commented code, this also means writing code that can be easily re-used in future, i.e. writing functions with *arguments* for variables that are likely to change (like year) rather than hard-coding them.
 
 Even if you are working on a one-off project or piece of analysis, you might want to re-use chunks or sections, or others might want to run iterations in the future. This is also applicable to common questions your team receives (I.e. PQs and FOIs - can you create some re-usable code with interchangeable arguments for these?)
 
-We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a super short, simple piece of analysis, this might not be needed, however, it's always good to embed these best-practices into our default ways of working! 
+We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a super short, simple piece of analysis, this might not be needed, however, it's always good to embed these best-practices into our default ways of working!
 
 **Why do it?**
 
-One huge benefit that comes with using code in our processes, is that we can pick them up in future and reuse with minimum effort, saving us huge amounts of resource. To be able to do this, we need to be conscious of how we write our code, and write it in a way that makes it easy to use in future. 
- 
+One huge benefit that comes with using code in our processes, is that we can pick them up in future and reuse with minimum effort, saving us huge amounts of resource. To be able to do this, we need to be conscious of how we write our code, and write it in a way that makes it easy to use in future.
 
 **How to get started**
 
 Review your code and consider the following:
- 
- - What steps might need re-editing or could become irrelevant?
- - Can you move all variables that require manual input (e.g. table names, years) to be assigned at the top of the code, so it's easy to edit in one place with each iteration?
- - Are there any fixed variables that are prone to changing such as geographic boundaries, that you could start preparing for changes now by making it easy to adapt in future?
 
+-   What steps might need re-editing or could become irrelevant?
+-   Can you move all variables that require manual input (e.g. table names, years) to be assigned at the top of the code, so it's easy to edit in one place with each iteration?
+-   Are there any fixed variables that are prone to changing such as geographic boundaries, that you could start preparing for changes now by making it easy to adapt in future?
 
 For example, if you refer to the year in your code a lot, consider replacing every instance with a named variable, which you only need to change once at the start of your code. In the example below, the year is set at the top of the code, and is used to define "prev_year", both of which are used further down the code to filter the data based on year.
 
-``` {r this_last_year, eval=FALSE, style="background-color: #f7fdfa"}
+```{r this_last_year, eval=FALSE, style="background-color: #f7fdfa"}
 
 this_year <- 2020
 prev_year <- this_year - 1
@@ -688,91 +698,88 @@ data_filtered_last_year <- data %>%
 
 ```
 
----
+------------------------------------------------------------------------
 
 #### Standards for coding
 
----
+------------------------------------------------------------------------
 
 Code can be written in many different ways, and in languages such as R, there are often many different functions and routes that you can take to get to the same end result. On top of that, there are even more possibilities for how you can format the code. This section will take you through some widely used standards for coding to help bring standardisation to this area and make it easier to both write and use our code.
 
----
+------------------------------------------------------------------------
 
-### Clean final code 
+### Clean final code {#clean-final-code}
 
----
+------------------------------------------------------------------------
 
 ![](../images/best.svg)
 
 **What does this mean?**
 
-- This code should meet the best practice standards below (for SQL and R). If you are using a different language, such as Python, then contact us for advice on the best standards to use when writing code. 
+-   This code should meet the best practice standards below (for SQL and R). If you are using a different language, such as Python, then contact us for advice on the best standards to use when writing code.
 
-- There should be no redundant or duplicated code, even if this has been commented out. It should be removed from the files to prevent confusion further down the line.
+-   There should be no redundant or duplicated code, even if this has been commented out. It should be removed from the files to prevent confusion further down the line.
 
-- The only comments left in the code should be those describing the decisions you have made to help other analysts (and future you) to understand your code. More guidance on [commenting in code](#commenting-in-code) can be found later on this page.
-
+-   The only comments left in the code should be those describing the decisions you have made to help other analysts (and future you) to understand your code. More guidance on [commenting in code](#commenting-in-code) can be found later on this page.
 
 **Why do it?**
 
-Clean code is efficient, easy to write, easy to review, and easy to amend for future use. Below are some recommended standards to follow when writing code in SQL and R. 
-
+Clean code is efficient, easy to write, easy to review, and easy to amend for future use. Below are some recommended standards to follow when writing code in SQL and R.
 
 **How to get started**
 
 Watch [this coffee and coding session](https://web.microsoftstream.com/embed/video/624e3442-aa66-44e7-bb4f-717a6508b056) introducing good code practice, which covers:
 
-* key principles of good code practice
-* writing and refining code to make it easier to understand and modify
-* a real-life example of code improvement from within DfE
+-   key principles of good code practice
+-   writing and refining code to make it easier to understand and modify
+-   a real-life example of code improvement from within DfE
 
 Then you should also watch [the follow up intermediate session](https://web.microsoftstream.com/embed/video/92d4ba05-d304-4009-b543-e5f4563f1d30), which covers:
 
-* version control
-* improving code structure with functions
-* documentation and Markdown
-* interactive notebooks 
+-   version control
+-   improving code structure with functions
+-   documentation and Markdown
+-   interactive notebooks
 
 Clean code should include comments. Comment why you've made decisions, don't comment what you are doing unless it is particularly complex as the code itself describes what you are doing. If in doubt, more comments are better than too few though. Ideally any specific comments or documentation should be alongside the code itself, rather than in separate documents.
 
----
+------------------------------------------------------------------------
 
 #### SQL
 
----
+------------------------------------------------------------------------
 
 For best practice on writing T-SQL code used in SQL Server, here is a particularly useful [Word document](../resources/TSQL_Coding_Standards.docx){target="_blank" rel="noopener noreferrer"} produced by our Data Hub. This outlines a variety of best practices, ranging from naming conventions, to formatting your SQL code so that it is easy to follow visually.
 
----
+------------------------------------------------------------------------
 
 #### R
 
----
+------------------------------------------------------------------------
 
 When using R, it is generally best practice to use [R projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects){target="_blank" rel="noopener noreferrer"} as directories for your work.
 
 The recommended standard for styling your code in R is the [tidyverse styling](https://style.tidyverse.org/){target="_blank" rel="noopener noreferrer"}, which is fast becoming the global standard. What is even better is that you can automate this using the [styler](https://styler.r-lib.org/){target="_blank" rel="noopener noreferrer"} package, which will literally style your code for you at the click of a button, and is well worth a look.
 
-
 ![](../images/styler.gif)
 
 There is also plenty of guidance around the internet for [best practice](https://waterdata.usgs.gov/blog/intro-best-practices/){target="_blank" rel="noopener noreferrer"} when writing [efficient R code](https://waterdata.usgs.gov/blog/intro-best-practices/){target="_blank" rel="noopener noreferrer"}.
 
-To help you standardise your code further, you can make use of the functions contained within our [dfeR package](https://dfe-analytical-services.github.io/dfeR/index.html). The package includes functions to standardise formatting and rounding, to pull the latest ONS geography lookups, and to create a pre-populated folder structure, amongst many other things. 
+To help you standardise your code further, you can make use of the functions contained within our [dfeR package](https://dfe-analytical-services.github.io/dfeR/index.html). The package includes functions to standardise formatting and rounding, to pull the latest ONS geography lookups, and to create a pre-populated folder structure, amongst many other things.
 
----
+------------------------------------------------------------------------
 
 #### HTML
 
----
+------------------------------------------------------------------------
 
 If you ever find yourself writing HTML, or creating it through RMarkdown, you can check your HTML using [W3's validator](https://validator.w3.org/){target="_blank" rel="noopener noreferrer"}.
 
----
+------------------------------------------------------------------------
 
-### Peer review of code within team
+### Peer review of code within team {#peer-review-of-code-within-team}
 
----
+------------------------------------------------------------------------
 
 ![](../images/great.svg)
 
@@ -782,84 +789,86 @@ If you ever find yourself writing HTML, or creating it through RMarkdown, you ca
 
 **What does this mean?**
 
-Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to 'idiot check' our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it's quality and value. The [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html) and [Tidyteam](https://code-review.tidyverse.org/) contain detailed guidance on peer review, but we have summarised some of the information here for you as well. 
+Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to 'idiot check' our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it's quality and value. The [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html) and [Tidyteam](https://code-review.tidyverse.org/) contain detailed guidance on peer review, but we have summarised some of the information here for you as well.
 
 Prior to receiving code for peer review, the author should ensure that all code files are clean, commented appropriately and for larger projects should be held in a repo with an appropriate [README](#writing-a-readme-file) file.
 
 You should check:
 
-- Is someone else in the team able to generate the same outputs?
+-   Is someone else in the team able to generate the same outputs?
 
-- Has someone else in the team reviewed the code and given feedback? 
+-   Has someone else in the team reviewed the code and given feedback?
 
-- Have you taken on their feedback and improved the code?
-
+-   Have you taken on their feedback and improved the code?
 
 **Why do it?**
 
 There are many benefits to this, for example:
 
-- Ensuring consistency across the team
+-   Ensuring consistency across the team
 
-- Minimizing mistakes and their impact
+-   Minimizing mistakes and their impact
 
-- Ensuring the requirements are met
+-   Ensuring the requirements are met
 
-- Improving code performance
+-   Improving code performance
 
-- Sharing of techniques and knowledge
-
+-   Sharing of techniques and knowledge
 
 **How to get started**
 
-When peer reviewing code you should consider the following questions - 
+When peer reviewing code you should consider the following questions -
 
-* Do you understand what the code does? If not, is there supporting documentation or code comments that allow you to understand it? 
-* Does the code do what the author intended?
-* Have any dependencies (either on separate pieces of code, data files, or packages) been documented? 
-* Are there any tests / checks that could be added into the code that would help to give greater confidence that it is doing what it is intended to?
-* Are there comments explaining why any decisions have been made?
-* Is the code written and structured sensibly?
-* Are there any ways to make the code more efficient (either in number of lines or raw speed)? Is there duplication that could be simplified using functions?
-* Does the code follow best practice for styling and structure?
-* Are there any other teams/bits of code you're aware of that do similar things and would be useful to point the authors towards?
-* At the end of the review, was there any information you needed to ask about that should be made more apparent in the code or documentation?
+-   Do you understand what the code does? If not, is there supporting documentation or code comments that allow you to understand it?
+-   Does the code do what the author intended?
+-   Have any dependencies (either on separate pieces of code, data files, or packages) been documented?
+-   Are there any tests / checks that could be added into the code that would help to give greater confidence that it is doing what it is intended to?
+-   Are there comments explaining why any decisions have been made?
+-   Is the code written and structured sensibly?
+-   Are there any ways to make the code more efficient (either in number of lines or raw speed)? Is there duplication that could be simplified using functions?
+-   Does the code follow best practice for styling and structure?
+-   Are there any other teams/bits of code you're aware of that do similar things and would be useful to point the authors towards?
+-   At the end of the review, was there any information you needed to ask about that should be made more apparent in the code or documentation?
 
-Depending on your access you may or may not be able to run the code yourself, but there should be enough information within the code and documentation to be able to respond to the questions above. If you are able to run the code, you could also check - 
+Depending on your access you may or may not be able to run the code yourself, but there should be enough information within the code and documentation to be able to respond to the questions above. If you are able to run the code, you could also check -
 
-* Does the code run without errors? If warnings are displayed, are they explained? 
-* If the project has unit/integration tests, do they pass?
-* Can you replicate previous output using the same code and input data? 
+-   Does the code run without errors? If warnings are displayed, are they explained?
+-   If the project has unit/integration tests, do they pass?
+-   Can you replicate previous output using the same code and input data?
 
 If you would like a more thorough list of questions to follow, then the Duck Book has checklists available for three levels of peer review, based on risk:
 
-* [Lower](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_lower.html)
-* [Moderate](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_moderate.html)
-* [Higher](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_higher.html)
+-   [Lower](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_lower.html)
+-   [Moderate](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_moderate.html)
+-   [Higher](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_higher.html)
 
 If you're unfamiliar with giving feedback on someone's code then it can be daunting at first. Feedback should always be constructive and practical. It is recommended that you use the CEDAR model to structure your comments:
 
-* Context - describe the issue and the potential impact
-* Examples - give specific examples of when and where the issue has been present (specifying the line numbers of the code where the issue can be found can be useful here)
-* Diagnosis - use the example to discuss why this approach was taken, what could have been done differently and why alternatives could be an improvement
-* Actions - ask the person receiving feedback to suggest actions that they could follow to avoid this issue in future
-* Review - if you have time, revisit the discussion to look for progress following on from the feedback
+-   Context - describe the issue and the potential impact
 
-- Other tips for getting started with peer review can be found in the [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html){target="_blank" rel="noopener noreferrer"} 
+-   Examples - give specific examples of when and where the issue has been present (specifying the line numbers of the code where the issue can be found can be useful here)
 
-- The Duck Book also contains some helpful [code QA checklists](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklists.html){target="_blank" rel="noopener noreferrer"} to help get you thinking about what to check
+-   Diagnosis - use the example to discuss why this approach was taken, what could have been done differently and why alternatives could be an improvement
 
----
+-   Actions - ask the person receiving feedback to suggest actions that they could follow to avoid this issue in future
+
+-   Review - if you have time, revisit the discussion to look for progress following on from the feedback
+
+-   Other tips for getting started with peer review can be found in the [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html){target="_blank" rel="noopener noreferrer"}
+
+-   The Duck Book also contains some helpful [code QA checklists](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklists.html){target="_blank" rel="noopener noreferrer"} to help get you thinking about what to check
+
+------------------------------------------------------------------------
 
 #### Improving code performance
 
----
+------------------------------------------------------------------------
 
 Peer reviewing code and not sure where to start? Improving code performance can be a great quick-win for many production teams. There will be cases where code you are reviewing does things in a slightly different way to how you would: profiling the R code with the microbenchmark package is a way to objectively figure out which method is more efficient.
 
 For example below, we are testing out case_when, if_else and ifelse.
 
-``` {r microbenchmark, eval=FALSE}
+```{r microbenchmark, eval=FALSE}
 microbenchmark::microbenchmark( 
    case_when(1:1000 < 3 ~ "low", TRUE ~ "high"), 
    if_else(1:1000 < 3, "low", "high"),
@@ -869,7 +878,7 @@ microbenchmark::microbenchmark(
 
 Running the code outputs a table in the R console, giving profile stats for each expression. Here, it is clear that on average, if_else() is the fastest function for the job.
 
-``` {r code_outputs, eval=FALSE}
+```{r code_outputs, eval=FALSE}
 Unit: microseconds
                                          expr     min       lq     mean   median       uq      max neval
  case_when(1:1000 < 3 ~ "low", TRUE ~ "high") 167.901 206.2510 372.7321 300.2515 420.1005 4187.001   100
@@ -878,22 +887,21 @@ Unit: microseconds
 
 ```
 
+------------------------------------------------------------------------
 
----
+### Peer review of code from outside the team {#peer-review-of-code-from-outside-the-team}
 
-### Peer review of code from outside the team
-
----
+------------------------------------------------------------------------
 
 ![](../images/best.svg)
 
 **What does this mean?**
 
-- Has someone from outside of the team and publication area reviewed the code and given feedback? 
+-   Has someone from outside of the team and publication area reviewed the code and given feedback?
 
-- Have you taken on their feedback and improved the code?
+-   Have you taken on their feedback and improved the code?
 
-We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a short, simple piece of analysis, this might not be needed or might not be possible if work is sensitive. However, if the work is business critical, high-profile, or long-term, it is worth considering whether it's appropriate and beneficial. 
+We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a short, simple piece of analysis, this might not be needed or might not be possible if work is sensitive. However, if the work is business critical, high-profile, or long-term, it is worth considering whether it's appropriate and beneficial.
 
 **Why do it?**
 
@@ -903,17 +911,17 @@ All of the benefits you get from peer reviewing within your own team, multiple t
 
 While peer reviewing code within the team is often practical, having external analysts peer review your code can bring a fresh perspective. If you're interested in this, please contact us, and we can help you to arrange someone external to your team to review your processes. For this to work smoothly, we recommend that your code is easily accessible for other analysts, such as hosted in an Azure DevOps repo and mirrored to github.
 
----
+------------------------------------------------------------------------
 
-### Basic automated QA
+### Basic automated QA {#basic-automated-qa}
 
----
+------------------------------------------------------------------------
 
 ![](../images/good.svg)
 
 **What does this mean?**
 
-In most analytical pipelines, there will be data files ingested, and data files produced. We should be quality assuring at every step that we can. QA can be kept more basic on smaller analytical projects, but it can never be ignored or avoided altogether! The QA team have put together a [flowchart to help you identify the QA needed in different scenarios](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx#%E2%80%8Bwhat-qa-tasks-do-i-need-to-carry-out). 
+In most analytical pipelines, there will be data files ingested, and data files produced. We should be quality assuring at every step that we can. QA can be kept more basic on smaller analytical projects, but it can never be ignored or avoided altogether! The QA team have put together a [flowchart to help you identify the QA needed in different scenarios](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx#%E2%80%8Bwhat-qa-tasks-do-i-need-to-carry-out).
 
 Inputs, outputs, and even the code/process, can all have **automated QA** embedded. Some teams are already making great progress with automated QA and realising the benefits of it. The Statistics Development Team are working with these to provide generalised code that teams can use as a starting point for automated QA. The intention is that teams can then run this as a minimum, before then looking to develop more area specific checks to the script and/or continue with current checking processes in tandem. If your team already use, or are working towards using, automated QA then get in touch as we'd be keen to see what you have.
 
@@ -925,19 +933,17 @@ Cam and Sarah ran a session introducing how to get started with automated QA in 
 
 The list of basic automated QA checks, with code examples can be found below and in our [GitHub repository](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}:
 
-* Checking for [minimum](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_minimum_values.R){target="_blank" rel="noopener noreferrer"}, [maximum](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_maximum_values.R){target="_blank" rel="noopener noreferrer"}, and [average](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_average_values.R){target="_blank" rel="noopener noreferrer"} values across your data
+-   Checking for [minimum](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_minimum_values.R){target="_blank" rel="noopener noreferrer"}, [maximum](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_maximum_values.R){target="_blank" rel="noopener noreferrer"}, and [average](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_average_values.R){target="_blank" rel="noopener noreferrer"} values across your data
 
-* Checking for [extreme values and outliers](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_extreme_values.R){target="_blank" rel="noopener noreferrer"}
+-   Checking for [extreme values and outliers](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_extreme_values.R){target="_blank" rel="noopener noreferrer"}
 
-* Ensuring there are no [duplicate rows](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_duplicate_rows.R){target="_blank" rel="noopener noreferrer"} or [duplicate columns](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_duplicate_columns.R){target="_blank" rel="noopener noreferrer"}
+-   Ensuring there are no [duplicate rows](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_duplicate_rows.R){target="_blank" rel="noopener noreferrer"} or [duplicate columns](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_duplicate_columns.R){target="_blank" rel="noopener noreferrer"}
 
-* Checking that where appropriate, [geographical subtotals add up to totals](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_LA_subtotals_vs_region.R){target="_blank" rel="noopener noreferrer"} (e.g. all the numeric values for LAs in Yorkshire and The Humber add up to the regional total)
+-   Checking that where appropriate, [geographical subtotals add up to totals](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_LA_subtotals_vs_region.R){target="_blank" rel="noopener noreferrer"} (e.g. all the numeric values for LAs in Yorkshire and The Humber add up to the regional total)
 
-* Basic [trend analysis using scatter plots](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/create_scatter_plot.R){target="_blank" rel="noopener noreferrer"}, to help you spot outliers and help tell the story of your data.
-
+-   Basic [trend analysis using scatter plots](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/create_scatter_plot.R){target="_blank" rel="noopener noreferrer"}, to help you spot outliers and help tell the story of your data.
 
 The Statistics Development Team have developed [the QA app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} to include some of these basic QA outputs.
-
 
 **Why do it?**
 
@@ -949,11 +955,11 @@ Automating these checks ensures their accuracy and reliability, as well as being
 
 Try using our [template code snippets](https://github.com/dfe-analytical-services/automated-data-qa) to get an idea of how you could automate QA of your own publication files. A recording of our introduction to automated QA is also available at the top of the page.
 
----
+------------------------------------------------------------------------
 
-### More specific/advanced automated QA/summaries
+### More specific/advanced automated QA/summaries {#more-specificadvanced-automated-qasummaries}
 
----
+------------------------------------------------------------------------
 
 ![](../images/great.svg)
 
@@ -967,21 +973,21 @@ As a part of automating QA, we should also be looking to automate the production
 
 Quality is one of the three pillars that our [code of practice](https://code.statisticsauthority.gov.uk/the-code/quality/){target="_blank" rel="noopener noreferrer"} is built upon. By building upon the basic checks to develop bespoke QA for our publications, we can increase our confidence in the quality of the processes and outputs that they produce.
 
-Value is another one of the three pillars of our [code of practice](https://code.statisticsauthority.gov.uk/the-code/value/){target="_blank" rel="noopener noreferrer"}. Even more specifically it states that __'Statistics and data should be presented clearly, explained meaningfully and provide authoritative insights that serve the public good.'__. As a result, we should be developing automated summaries to help us to better understand the story of the data and be authoritative and rigorous in our telling of it.
+Value is another one of the three pillars of our [code of practice](https://code.statisticsauthority.gov.uk/the-code/value/){target="_blank" rel="noopener noreferrer"}. Even more specifically it states that **'Statistics and data should be presented clearly, explained meaningfully and provide authoritative insights that serve the public good.'**. As a result, we should be developing automated summaries to help us to better understand the story of the data and be authoritative and rigorous in our telling of it.
 
 **How to get started**
 
 We expect that the basic level of automated QA will cover most generic needs. However, we also expect that each analytical project will have it's own quirks that require a more bespoke approach. Try to consider what things you'd usually check as flags that something hasn't gone right with your data. What are the unique aspects of your project's data, and how can you automate checks against them to give you confidence in it's accuracy and reliability?
 
-For those who are interested in starting writing their own QA scripts, it's worth looking at packages in R such as [testthat](https://testthat.r-lib.org/){target="_blank" rel="noopener noreferrer"}, including the [coffee and coding resources](https://educationgovuk.sharepoint.com/:f:/r/sites/sarpi/g/WorkplaceDocuments/Induction%20learning%20and%20career%20development/Coffee%20and%20Coding/190306_peter_autotesting?csf=1&web=1&e=F945Xq){target="_blank" rel="noopener noreferrer"} on it by Peter Curtis, as well as this [guide on testing](http://r-pkgs.had.co.nz/tests.html){target="_blank" rel="noopener noreferrer"} by Hadley Wickham. 
+For those who are interested in starting writing their own QA scripts, it's worth looking at packages in R such as [testthat](https://testthat.r-lib.org/){target="_blank" rel="noopener noreferrer"}, including the [coffee and coding resources](https://educationgovuk.sharepoint.com/:f:/r/sites/sarpi/g/WorkplaceDocuments/Induction%20learning%20and%20career%20development/Coffee%20and%20Coding/190306_peter_autotesting?csf=1&web=1&e=F945Xq){target="_blank" rel="noopener noreferrer"} on it by Peter Curtis, as well as this [guide on testing](http://r-pkgs.had.co.nz/tests.html){target="_blank" rel="noopener noreferrer"} by Hadley Wickham.
 
 The [janitor](https://garthtarr.github.io/meatR/janitor.html){target="_blank" rel="noopener noreferrer"} package in R also has some particularly useful functions, such as `clean_names()` to automatically clean up your variable names, `remove_empty()` to remove any completely empty rows and columns, and `get_dupes()` which retrieves any duplicate rows in your data - this last one is particularly powerful as you can feed it specific columns and see if there's any duplicate instances of values across those columns.
 
----
+------------------------------------------------------------------------
 
 ### Automated outputs using markdown/Quarto
 
----
+------------------------------------------------------------------------
 
 ![](../images/best.svg)
 
@@ -991,57 +997,55 @@ Often, outputs of an analytical project are not just data files. They can includ
 
 **Why do it?**
 
-Writing, producing and updating these types of outputs can be one of the longest parts of an analytical process. If you have automated templates, you could save large amounts of time that is usually spent manually copying, pasting, and updating documents. You can also be confident that each time you run the pipeline, these outputs will be updated with the most up-to-date figures, without the risk of missing anything in a manual copy and paste process. 
+Writing, producing and updating these types of outputs can be one of the longest parts of an analytical process. If you have automated templates, you could save large amounts of time that is usually spent manually copying, pasting, and updating documents. You can also be confident that each time you run the pipeline, these outputs will be updated with the most up-to-date figures, without the risk of missing anything in a manual copy and paste process.
 
 **How to get started**
 
-For **visualisations** we suggest you use the `ggplot` and `ggraph` packages. In our dashboards guidance we have a section on [R chart styling and colours](../writing-visualising/dashboards_rshiny.html#consistency-in-r-chart-styling-and-colours). The [`afcharts` package](https://analysisfunction.civilservice.gov.uk/blog/automated-data-visualisation-best-practice-in-r-afcharts-release/) is also recommended, as it automates setting colours, fonts, text sizing, axis labelling and much more. Their [cookbook](https://best-practice-and-impact.github.io/afcharts/articles/cookbook.html) provides handy examples of how to use the code. 
+For **visualisations** we suggest you use the `ggplot` and `ggraph` packages. In our dashboards guidance we have a section on [R chart styling and colours](../writing-visualising/dashboards_rshiny.html#consistency-in-r-chart-styling-and-colours). The [`afcharts` package](https://analysisfunction.civilservice.gov.uk/blog/automated-data-visualisation-best-practice-in-r-afcharts-release/) is also recommended, as it automates setting colours, fonts, text sizing, axis labelling and much more. Their [cookbook](https://best-practice-and-impact.github.io/afcharts/articles/cookbook.html) provides handy examples of how to use the code.
 
-For **written reports** and **presentations** we suggest you use quarto (more recent/up-to-date than Rmarkdown!). You can use quarto to generate html pages, pdf documents, slides and even word documents. Here are some examples to get you started: 
+For **written reports** and **presentations** we suggest you use quarto (more recent/up-to-date than Rmarkdown!). You can use quarto to generate html pages, pdf documents, slides and even word documents. Here are some examples to get you started:
 
-- The guidance site you're reading right now was written in quarto! You can view the code here: [Analysts guide repo](https://github.com/dfe-analytical-services/analysts-guide)
-- Online quarto guidance is extensive and a great place to start: [Quarto guide](https://quarto.org/docs/guide/)
-- Two examples of quarto slides/presentations can be seen on GitHub: 
-  + [bslib coffee & coding slides](https://github.com/dfe-analytical-services/coffee-and-coding/tree/main/2024-07-02-bslib)
-  + ['targets' coffee & coding slides](https://github.com/JT-39/targets-coffee-code)
-- Our [basic automated QA guidance](https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-statistics.html#basic-automated-qa) provides the link to [an example markdown QA report](https://github.com/dfe-analytical-services/automated-data-qa/tree/main). 
+-   The guidance site you're reading right now was written in quarto! You can view the code here: [Analysts guide repo](https://github.com/dfe-analytical-services/analysts-guide)
+-   Online quarto guidance is extensive and a great place to start: [Quarto guide](https://quarto.org/docs/guide/)
+-   Two examples of quarto slides/presentations can be seen on GitHub:
+    -   [bslib coffee & coding slides](https://github.com/dfe-analytical-services/coffee-and-coding/tree/main/2024-07-02-bslib)
+    -   ['targets' coffee & coding slides](https://github.com/JT-39/targets-coffee-code)
+-   Our [basic automated QA guidance](https://dfe-analytical-services.github.io/analysts-guide/RAP/rap-statistics.html#basic-automated-qa) provides the link to [an example markdown QA report](https://github.com/dfe-analytical-services/automated-data-qa/tree/main).
 
+------------------------------------------------------------------------
 
----
-
-## Version control
+## Version control {#version-control}
 
 Version control is our third core RAP principle, and is made up of the following elements:
 
-* [Documentation](#documentation)
-* [Version controlled final code scripts](#version-controlled-final-code-scripts)
-* [Code is stored in an appropriate repository](#code-is-stored-in-an-appropriate-repository)
-* [Collaboratively develop code using Git](#collaboratively-develop-code-using-git)
+-   [Documentation](#documentation)
+-   [Version controlled final code scripts](#version-controlled-final-code-scripts)
+-   [Code is stored in an appropriate repository](#code-is-stored-in-an-appropriate-repository)
+-   [Collaboratively develop code using Git](#collaboratively-develop-code-using-git)
 
-Version control is just a way to track changes to files. Using proper version control can avoid lots of potential problems, including running old scripts by accident, losing files, or ending up with a folder full of documents with suffixes like "final_final_FINAL". It also makes it much easier for new people to pick up your processes. 
+Version control is just a way to track changes to files. Using proper version control can avoid lots of potential problems, including running old scripts by accident, losing files, or ending up with a folder full of documents with suffixes like "final_final_FINAL". It also makes it much easier for new people to pick up your processes.
 
-_When you assume you make an 'ass' out of 'u' and 'me'_. Everyone knows this saying, yet few of us heed its warning.
+*When you assume you make an 'ass' out of 'u' and 'me'*. Everyone knows this saying, yet few of us heed its warning.
 
 The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.
 
 As we work with code to process our data more and more, we can begin to utilise version control software to make this process much easier, allowing simultaneous collaboration on files.
 
----
+------------------------------------------------------------------------
 
-### Documentation
+### Documentation {#documentation}
 
----
-
+------------------------------------------------------------------------
 
 ![](../images/good.svg)
 
 **What does this mean?**
 
-- You should be annotating as you go, ensuring that every process and decision made is written down. Processes are ideally written with code, and decisions in comments. 
+-   You should be annotating as you go, ensuring that every process and decision made is written down. Processes are ideally written with code, and decisions in comments.
 
-- There should be a [README](#writing-a-readme-file) notes file, that clearly details the steps in the process, any dependencies (such as places where access needs to be requested to) and how to carry out the process. 
+-   There should be a [README](#writing-a-readme-file) notes file, that clearly details the steps in the process, any dependencies (such as places where access needs to be requested to) and how to carry out the process.
 
-- Any specialist terms should also be defined if required (e.g. The NFTYPE lookup can be found in xxxxx. "NFTYPE" means school type).
+-   Any specialist terms should also be defined if required (e.g. The NFTYPE lookup can be found in xxxxx. "NFTYPE" means school type).
 
 **Why do it?**
 
@@ -1053,13 +1057,13 @@ Take a look at your processes and be critical - could another analyst pick them 
 
 Take a look at the sections below for further guidance on improving your documentation.
 
----
+------------------------------------------------------------------------
 
-#### Commenting in code
+#### Commenting in code {#commenting-in-code}
 
----
+------------------------------------------------------------------------
 
-When writing code, whether that is SQL, R, or something else, make sure you're commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this: 
+When writing code, whether that is SQL, R, or something else, make sure you're commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this:
 
 ```{r comments_example, eval=FALSE}
 ----------------------------------------------------------------------------------------
@@ -1079,16 +1083,15 @@ When writing code, whether that is SQL, R, or something else, make sure you're c
 ----------------------------------------------------------------------------------------
 ```
 
-Commented lines should begin with -- (SQL) or # (R), followed by one space and your comment. Remember that **comments should explain the why, not the what.** 
+Commented lines should begin with -- (SQL) or \# (R), followed by one space and your comment. Remember that **comments should explain the why, not the what.**
 
-In SQL you can also use `/**` and `**/` to bookend comments over multiple lines. 
+In SQL you can also use `/**` and `**/` to bookend comments over multiple lines.
 
 In rmarkdown documents you can bookend comments by using `<!--` and `-->`.
 
 Use commented lines of - to break up your files into scannable chunks based upon the structure and subheadings, like the R example below:
 
-
-``` {r comments_example_2, eval=FALSE}
+```{r comments_example_2, eval=FALSE}
 # Importing the data -------------------------------------------------------------------
 
 ```
@@ -1097,15 +1100,15 @@ Doing this can visually break up your code into sections that are easy to naviga
 
 You might be thinking that it would be nice if there was software that could help you with documentation, if so, read on, as Git is an incredibly powerful tool that can help us easily and thoroughly document versions of our files. If you're at the stage where you are developing your own functions and packages in R, then take a look at [roxygen2](https://roxygen2.r-lib.org/){target="_blank" rel="noopener noreferrer"} as well.
 
----
+------------------------------------------------------------------------
 
-#### Writing a README file
+#### Writing a README file {#writing-a-readme-file}
 
----
+------------------------------------------------------------------------
 
 **What does this mean?**
 
-A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure DevOps, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the [Markdown Guide](https://www.markdownguide.org/basic-syntax/){target="_blank" rel="noopener noreferrer"}. 
+A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure DevOps, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the [Markdown Guide](https://www.markdownguide.org/basic-syntax/){target="_blank" rel="noopener noreferrer"}.
 
 **Why do it?**
 
@@ -1113,50 +1116,50 @@ It's an easy way to answer questions that your audience will likely have regardi
 
 **How to get started**
 
-For new projects, you can use the create_project function in dfeR. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a [README template](https://github.com/dfe-analytical-services/dfeR/blob/main/README_template.md).  You can find more information on this in the [dfeR reference](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html).
+For new projects, you can use the create_project function in dfeR. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a [README template](https://github.com/dfe-analytical-services/dfeR/blob/main/README_template.md). You can find more information on this in the [dfeR reference](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html).
 
 If you are creating your own README for existing projects, you should include all of the sections listed below:
 
 **Introduction**
 
-- Purpose: briefly explain the purpose of the code.
-- Overview: Provide a high-level summary of the contents and structure of the repository. 
+-   Purpose: briefly explain the purpose of the code.
+-   Overview: Provide a high-level summary of the contents and structure of the repository.
 
 **Requirements**
 
-- Access: Detail any permissions or access needed to use the repository at the top of this section, e.g. access to specific SQL databases. This is crucial for enabling new users to use the repository.
-- Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R, or SQL.
-- Version control/Renv: State how version control is managed and whether Renv is being used. 
+-   Access: Detail any permissions or access needed to use the repository at the top of this section, e.g. access to specific SQL databases. This is crucial for enabling new users to use the repository.
+-   Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R, or SQL.
+-   Version control/Renv: State how version control is managed and whether Renv is being used.
 
 **Getting started**
 
-- Setup instructions: Provide step-by-step instructions on how to set up the environment, including installing dependencies. 
-- Data input/output: Describe the expected input data and where it can be found, as well as what output should be expected from the code. 
+-   Setup instructions: Provide step-by-step instructions on how to set up the environment, including installing dependencies.
+-   Data input/output: Describe the expected input data and where it can be found, as well as what output should be expected from the code.
 
 **How to run and update**
 
-- Running the code: Explain how users can best run the code, for example by running a run all script. 
-- Updating guidelines: Outline the process for updating and contributing to the repository, including specific scripts and lines where updates are frequently needed. Describe how to get changes reviewed. 
-- Issue reporting: Explain how to report issues or suggest improvements. This could be through issues if using GitHub, boards in Azure DevOps or by emailing the team.  
+-   Running the code: Explain how users can best run the code, for example by running a run all script.
+-   Updating guidelines: Outline the process for updating and contributing to the repository, including specific scripts and lines where updates are frequently needed. Describe how to get changes reviewed.
+-   Issue reporting: Explain how to report issues or suggest improvements. This could be through issues if using GitHub, boards in Azure DevOps or by emailing the team.
 
 **Contact details**
 
-- Main contacts: List the names and contact information of people who maintain the repository. 
-- Support channels: Provide any information on how to get support, such as email addresses or teams channels. 
+-   Main contacts: List the names and contact information of people who maintain the repository.
+-   Support channels: Provide any information on how to get support, such as email addresses or teams channels.
 
 The [Self-assessment tool](https://github.com/dfe-analytical-services/publication-self-assessment-copy){target="_blank" rel="noopener noreferrer"} and the [QA app](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"} give two examples of readme files structured like this.
 
----
+------------------------------------------------------------------------
 
-### Version controlled final code scripts 
+### Version controlled final code scripts {#version-controlled-final-code-scripts}
 
----
+------------------------------------------------------------------------
 
 ![](../images/great.svg)
 
 **What does this mean?**
 
-This means having the final copies of code and documentation saved in a git-controlled repository (typically in Azure DevOps or GitHub). Access to Azure DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available. 
+This means having the final copies of code and documentation saved in a git-controlled repository (typically in Azure DevOps or GitHub). Access to Azure DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available.
 
 If you do not already have git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
 
@@ -1164,44 +1167,43 @@ For now, take a look at the [resources for learning git](../learning-development
 
 **Why do it?**
 
-Having the final copy of the scripts version controlled gives assurance around how the data was created. It also allows teams to easily record any last minute changes to the code after the initial final version by using the version control to log this. 
+Having the final copy of the scripts version controlled gives assurance around how the data was created. It also allows teams to easily record any last minute changes to the code after the initial final version by using the version control to log this.
 
 **How to get started**
 
 The first step is to get your final versions of code and documentation together in a single folder.
 
-Many teams/work areas have their own Azure DevOps project areas. Investigate whether this is the case, and if you aren't aware of any area being available to you, you can request to create one via an IT ticket. 
+Many teams/work areas have their own Azure DevOps project areas. Investigate whether this is the case, and if you aren't aware of any area being available to you, you can request to create one via an IT ticket.
 
 To either create a new project area or gain access to an existing one, please raise a request on service desk by navigating through the pages detailed in the animation below.
-
 
 ![](../images/servicedesk_request.gif)
 
 Access is usually granted within a few working days. Check who the administrators of your new area are, as they will be the ones with the ability to create a repository for you and set the correct permissions.
 
----
+------------------------------------------------------------------------
 
 #### renv
 
----
+------------------------------------------------------------------------
 
-We recommend the use of the [renv package](https://rstudio.github.io/renv/articles/renv.html) to help maintain consistent versions of packages within your work. You can learn more about how to use renv [on our R page](../learning-development/r.html#renv). 
+We recommend the use of the [renv package](https://rstudio.github.io/renv/articles/renv.html) to help maintain consistent versions of packages within your work. You can learn more about how to use renv [on our R page](../learning-development/r.html#renv).
 
----
+------------------------------------------------------------------------
 
-### Code is stored in an appropriate repository
+### Code is stored in an appropriate repository {#code-is-stored-in-an-appropriate-repository}
 
----
+------------------------------------------------------------------------
 
 ![](../images/best.svg)
 
 **What does this mean?**
 
-Analysis should always be stored in the correct type of repository - what this means is dependent on the analysis/project. 
+Analysis should always be stored in the correct type of repository - what this means is dependent on the analysis/project.
 
-- **Sensitive or unpublished** work should never be shared outside of the department, and sometimes cannot be shared outside of a small team/area. In these instances, the code, files and folders should be stored in an **Azure DevOps** repository with the correct security procedures. The security settings of your repository are probably down to your project admins. The [Statistics Development Team](mailto:statistics.development@education.gov.uk) have experience and knowledge setting up Azure DevOps projects with the correct permissions, so get in touch if with them if you have questions or need any help.
+-   **Sensitive or unpublished** work should never be shared outside of the department, and sometimes cannot be shared outside of a small team/area. In these instances, the code, files and folders should be stored in an **Azure DevOps** repository with the correct security procedures. The security settings of your repository are probably down to your project admins. The [Statistics Development Team](mailto:statistics.development@education.gov.uk) have experience and knowledge setting up Azure DevOps projects with the correct permissions, so get in touch if with them if you have questions or need any help.
 
-- **Published analysis** that uses public data should be stored in the public [DfE analytical services GitHub area](https://github.com/dfe-analytical-services) repository in line with transparency, audibility and trustworthiness. We currently have brilliant examples of this in our [DfE analytical services GitHub area](https://github.com/dfe-analytical-services), in which all of the code used to create public dashboards is publicly available. 
+-   **Published analysis** that uses public data should be stored in the public [DfE analytical services GitHub area](https://github.com/dfe-analytical-services) repository in line with transparency, audibility and trustworthiness. We currently have brilliant examples of this in our [DfE analytical services GitHub area](https://github.com/dfe-analytical-services), in which all of the code used to create public dashboards is publicly available.
 
 We are currently working on ways to mirror private repos (i.e. AzureDevOps) to public repos on publication of your data/analysis. If you are interested in this please contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
@@ -1215,49 +1217,48 @@ Contact us to get a repository set up in Azure DevOps, to set up a mirroring pro
 
 You should consider the following principles making a repository public (some examples are R specific though can be applied to other languages):
 
-- Follow the guidance on [writing a readme file](#writing-a-readme-file), and add context in about what Official/National statistics are
-- Ensure no data (either input or output) is included in the repository
-- Have a clear and organised folder structure (such as having R scripts in an 'R' folder)
-- Check your code is styled according the [tidyverse styling](#clean-final-code)
-- Use [renv](https://rstudio.github.io/renv/articles/renv.html){target="_blank" rel="noopener noreferrer"} for package management
-- Use an [R project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects){target="_blank" rel="noopener noreferrer"}
+-   Follow the guidance on [writing a readme file](#writing-a-readme-file), and add context in about what Official/National statistics are
+-   Ensure no data (either input or output) is included in the repository
+-   Have a clear and organised folder structure (such as having R scripts in an 'R' folder)
+-   Check your code is styled according the [tidyverse styling](#clean-final-code)
+-   Use [renv](https://rstudio.github.io/renv/articles/renv.html){target="_blank" rel="noopener noreferrer"} for package management
+-   Use an [R project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects){target="_blank" rel="noopener noreferrer"}
 
-When naming your repository you should use a sensible and informative name fully written out, in lower case, and with dashes for spaces – ‘graduate-labour-market-statistics’. 
+When naming your repository you should use a sensible and informative name fully written out, in lower case, and with dashes for spaces – ‘graduate-labour-market-statistics’.
 
 A single repository should be used for all versions.iterations of your analysis, there's no need to have multiple as all the history is saved within previous commits. You can make use of [tagging in Git](../learning-development/git.html#Tagging_release_versions) to help differentiate between each iteration.
 
----
+------------------------------------------------------------------------
 
 #### Avoid revealing sensitive information
 
----
+------------------------------------------------------------------------
 
 Here are some general best practice tips:
 
-- Using .gitignore to ignore files and folders to prevent committing anything sensitive
-- Never committing outputs unless they’ve been checked over, even aggregates. We suggest only outputting to an output folder which is in the .gitignore file, to ensure this doesn’t happen by mistake
-- Keeping datasets and secrets (e.g. API keys) outside the repository as much as possible, make use of secure variables
-- Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the git history and start the public repo without it
-- You can [remove a file from the entire commit history](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) if you did commit anything sensitive, although you still need to follow the usual procedures if this was a data breach
+-   Using .gitignore to ignore files and folders to prevent committing anything sensitive
+-   Never committing outputs unless they’ve been checked over, even aggregates. We suggest only outputting to an output folder which is in the .gitignore file, to ensure this doesn’t happen by mistake
+-   Keeping datasets and secrets (e.g. API keys) outside the repository as much as possible, make use of secure variables
+-   Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the git history and start the public repo without it
+-   You can [remove a file from the entire commit history](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) if you did commit anything sensitive, although you still need to follow the usual procedures if this was a data breach
 
-You can find out more in the Duck Book's [guidance on using Git](https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories). 
+You can find out more in the Duck Book's [guidance on using Git](https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories).
 
----
+------------------------------------------------------------------------
 
-### Collaboratively develop code using Git 
+### Collaboratively develop code using Git {#collaboratively-develop-code-using-git}
 
----
+------------------------------------------------------------------------
 
 ![](../images/best.svg)
 
 **What does this mean?**
 
-- Has code development taken place in Git, collaboratively across the team? 
+-   Has code development taken place in Git, collaboratively across the team?
 
-- Are you making use of pull requests for team members to review and comment on code updates?
+-   Are you making use of pull requests for team members to review and comment on code updates?
 
-- Is there a clear paper trail of changes to code (commits)?
-
+-   Is there a clear paper trail of changes to code (commits)?
 
 **Why do it?**
 
@@ -1267,25 +1268,25 @@ Using Git allows multiple people to simultaneously develop the same code using b
 
 To get started you should:
 
----
+------------------------------------------------------------------------
 
-#### Get your code into a Git controlled folder
+#### Get your code into a Git controlled folder {#get-your-code-into-a-git-controlled-folder}
 
----
+------------------------------------------------------------------------
 
 Get code into a Git controlled folder in whatever version it is currently in. Use the following steps to do so:
 
-1. Open the folder where your project is saved, right click anywhere in that window, and click "Git Bash Here".
+1.  Open the folder where your project is saved, right click anywhere in that window, and click "Git Bash Here".
 
-2. This will open a black box (the terminal). Type in the following and hit enter
+2.  This will open a black box (the terminal). Type in the following and hit enter
 
-``` {r git_init, eval=FALSE}
+```{r git_init, eval=FALSE}
 git init
 ```
 
-3. After hitting enter, type in the following and hit enter again after each line. You will need the URL of your Azure DevOps repository to complete this step. Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) if you are not sure what this is or do not have one.
+3.  After hitting enter, type in the following and hit enter again after each line. You will need the URL of your Azure DevOps repository to complete this step. Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) if you are not sure what this is or do not have one.
 
-``` {r git_steps, eval=FALSE}
+```{r git_steps, eval=FALSE}
 git add .
 
 git commit -m "first commit"
@@ -1295,37 +1296,36 @@ git remote add origin YOUR_URL_HERE
 git push -f origin --all
 ```
 
-* You may be prompted for either your Windows or Git credentials at this stage. 
+-   You may be prompted for either your Windows or Git credentials at this stage.
 
-  + If prompted for your **Windows** credentials, enter the username and password combination you use to log into your DfE device.
+    -   If prompted for your **Windows** credentials, enter the username and password combination you use to log into your DfE device.
 
-  + If prompted for your **Git** credentials, visit your online repository, click on the blue "clone" box, and click "generate Git credentials". This will generate a username and password for you to enter.
+    -   If prompted for your **Git** credentials, visit your online repository, click on the blue "clone" box, and click "generate Git credentials". This will generate a username and password for you to enter.
 
-4. Visit your repository online, and check that all the files have uploaded. Other members of your team will now be able to work from your code.  
+4.  Visit your repository online, and check that all the files have uploaded. Other members of your team will now be able to work from your code.
 
----
+------------------------------------------------------------------------
 
-#### Build capability within the team 
+#### Build capability within the team
 
----
+------------------------------------------------------------------------
 
+-   Ensure all team members have access to your repository. Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) if there are any issues.
 
-- Ensure all team members have access to your repository. Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) if there are any issues.
-
-- Get team members to clone your repository in to their personal area, so everyone is able to work on code at the same time.
+-   Get team members to clone your repository in to their personal area, so everyone is able to work on code at the same time.
 
 To clone code, they will need to do the following:
 
-1. Run through steps 1 - 2a of [getting a file into a Git controlled folder](#get-your-code-into-a-git-controlled-folder)
+1.  Run through steps 1 - 2a of [getting a file into a Git controlled folder](#get-your-code-into-a-git-controlled-folder)
 
-3. After running those lines, type in the following with your repository URL in the "YOUR_URL_HERE" space. This will clone the online repository to your local area.
+2.  After running those lines, type in the following with your repository URL in the "YOUR_URL_HERE" space. This will clone the online repository to your local area.
 
-``` {r git_team_steps, eval=FALSE} 
+```{r git_team_steps, eval=FALSE}
 git clone YOUR_URL_HERE
 ```
 
-- Make use of Git and version control in your team projects regularly. Like learning anything new, putting it into practice regularly is the best way to become confident in using it.  
+-   Make use of Git and version control in your team projects regularly. Like learning anything new, putting it into practice regularly is the best way to become confident in using it.
 
 Please refer to the other links on the [Git learning resources](../learning-development/git.html#other-resources) page to learn more about how to use Git in practice.
 
----
+------------------------------------------------------------------------
