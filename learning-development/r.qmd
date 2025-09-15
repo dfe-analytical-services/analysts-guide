@@ -360,7 +360,7 @@ This queries the properties of the SQL table that you're interacting with, ident
 ## Tips for using R
 
 
-A selection of handy bits of code and workarounds for common issues. More useful code snippets can also be found in our [github repo](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}
+A selection of handy bits of code and workarounds for common issues. More useful code snippets can also be found in our [GitHub repo](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}.
 
 ---
 
