@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,16 +70,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9735d7d36fde03e47719b008688da432.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-fb26ef72f2837c0db49bdd4b27e0be95.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-26ac690749268b8513e5ca4398b861fa.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d110cbfe490f79260b9d4decdd7f0164.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7da6390389da21578714b439d4022f7e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77b970fad4b9d8d6bf6f2e24e7b902d9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-066c23e47fd3472f9e43fa4f4815bd77.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-254c27614a12397cd96e56f9dd51b4b9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -322,7 +323,8 @@ cookieconsent.run({
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -750,7 +752,7 @@ cookieconsent.run({
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How does RAP fit into ADA / Databricks
+<span class="screen-reader-only">Note</span>How does RAP fit into ADA / Databricks
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -772,7 +774,7 @@ How does RAP fit into ADA / Databricks
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Need more support?
+<span class="screen-reader-only">Tip</span>Need more support?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -869,7 +871,7 @@ Need more support?
 <hr>
 <p>If your data is already in SQL Server, you can use this snippet of R code to move tables from one area (e.g.&nbsp;the iStore) to another (e.g.&nbsp;your team’s modelling area) to ensure all data are stored in a database.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
@@ -894,7 +896,7 @@ Need more support?
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>table_for_transfer <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con_source,<span class="fu">in_schema</span>(<span class="st">"schema_name"</span>, <span class="st">"table_name"</span>)) <span class="sc">%&gt;%</span> <span class="fu">collect</span>()</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2.2.: Copy table into target database </span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con_target,<span class="st">"whatever_you_want_to_call_new_table"</span>, table_for_transfer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con_target,<span class="st">"whatever_you_want_to_call_new_table"</span>, table_for_transfer)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -937,7 +939,7 @@ Need more support?
 <p>This should take you to a new window which contains the raw data from the CSV file. Copy the URL from this page, as this is what we can use to pull the latest data into our code.</p>
 <p>You can now use this URL as you would use a file path in a <code>read.csv()</code> query. For example;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devolved_area_lookup <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/master/data/english_devolved_areas.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devolved_area_lookup <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/master/data/english_devolved_areas.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The above code snippet will load in the data as it would with any other CSV, however the benefit is if that data file is updated on GitHub, when you run the code it will always pull the latest version. This is especially useful for lookup tables and reference data, and is best RAP practice as it removed the need for any manual steps (like downloading, copying &amp; pasting or manually updating the data/code!)</p>
 <hr>
@@ -1054,7 +1056,7 @@ Tip
 <li>order the dataframe by time period and region name</li>
 </ul>
 <div class="cell" style="background-color: #f7fdfa">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>processed_regional_data <span class="ot">&lt;-</span> my_data <span class="sc">%&gt;%</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>processed_regional_data <span class="ot">&lt;-</span> my_data <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">newPercentageColumn =</span> (numberColumn <span class="sc">/</span> totalPopulationColumn) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">newPercentageColumn =</span> percentageRate,</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">numberColumn =</span> number,</span>
@@ -1062,7 +1064,7 @@ Tip
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(geographic_level <span class="sc">==</span> <span class="st">"Regional"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(time_period, region_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(time_period, region_name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><a href="https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da" target="_blank" rel="noopener noreferrer">Helpful new functions</a> in the tidyverse packages can help you to easily transform data from wide to long format (see tip 2 in the linked article for this, as it is often required for tidy data), as well as providing you with tools to allow you quickly and efficiently change the structure of your variables.</p>
 <p>For further resources on learning R so that you’re able to apply it to your everyday work, have a look at the <a href="../learning-development/learning-development.html">learning resources</a> page.</p>
@@ -1075,7 +1077,7 @@ Tip
 <p><img src="../images/good.svg" class="img-fluid"></p>
 <p><strong>What does this mean?</strong></p>
 <p>Using the recommended tools on our <a href="../learning-development/learning-support.html">learning</a> page (<a href="../learning-development/sql.html">SQL</a>, <a href="../learning-development/r.html">R</a> and <a href="../learning-development/git.html">Git</a>), or other suitable alternatives that allow you to meet the <a href="#core-principles">core principles</a>. Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.</p>
-<p>Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this <a href="https://opensource.com/resources/what-open-source" target="_blank" rel="noopener noreferrer">explanation of open-source</a>, as well as this guide to <a href="https://opensource.com/open-source-way" target="_blank" rel="noopener noreferrer">working in an open-source way</a>. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with git, and hosted in a publicly accessible repository.</p>
+<p>Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this <a href="https://opensource.com/resources/what-open-source" target="_blank" rel="noopener noreferrer">explanation of open-source</a>, as well as this guide to <a href="https://opensource.com/open-source-way" target="_blank" rel="noopener noreferrer">working in an open-source way</a>. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with Git, and hosted in a publicly accessible repository.</p>
 <p><strong>Why do it?</strong></p>
 <p>There are many reasons why we have recommended the tools that we have, the recommended tools are:</p>
 <ul>
@@ -1149,14 +1151,14 @@ Tip
 </ul>
 <p>For example, if you refer to the year of publication in your code a lot, consider replacing every instance with a named variable, which you only need to change once at the start of your code. In the example below, the year is set at the top of the code, and is used to define “prev_year”, both of which are used further down the code to filter the data based on year.</p>
 <div class="cell" style="background-color: #f7fdfa">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>this_year <span class="ot">&lt;-</span> <span class="dv">2020</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>this_year <span class="ot">&lt;-</span> <span class="dv">2020</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>prev_year <span class="ot">&lt;-</span> this_year <span class="sc">-</span> <span class="dv">1</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>data_filtered <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> this_year)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>data_filtered_last_year <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> prev_year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> prev_year)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 <section id="standards-for-coding" class="level4">
@@ -1282,19 +1284,19 @@ Tip
 <p>Peer reviewing code and not sure where to start? Improving code performance can be a great quick-win for many production teams. There will be cases where code you are reviewing does things in a slightly different way to how you would: profiling the R code with the microbenchmark package is a way to objectively figure out which method is more efficient.</p>
 <p>For example below, we are testing out case_when, if_else and ifelse.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>( </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>( </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">case_when</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"low"</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"high"</span>), </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">if_else</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>),</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ifelse</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>) </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Running the code outputs a table in the R console, giving profile stats for each expression. Here, it is clear that on average, if_else() is the fastest function for the job.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Unit<span class="sc">:</span> microseconds</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Unit<span class="sc">:</span> microseconds</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                                         expr     min       lq     mean   median       uq      max neval</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">case_when</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"low"</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"high"</span>) <span class="fl">167.901</span> <span class="fl">206.2510</span> <span class="fl">372.7321</span> <span class="fl">300.2515</span> <span class="fl">420.1005</span> <span class="fl">4187.001</span>   <span class="dv">100</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">if_else</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>)  <span class="fl">55.301</span>  <span class="fl">74.0010</span> <span class="fl">125.8741</span> <span class="fl">103.7015</span> <span class="fl">138.3010</span>  <span class="fl">538.201</span>   <span class="dv">100</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">ifelse</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>) <span class="fl">266.200</span> <span class="fl">339.4505</span> <span class="fl">466.7650</span> <span class="fl">399.7010</span> <span class="fl">637.6010</span>  <span class="fl">851.502</span>   <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">ifelse</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span> <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"low"</span>, <span class="st">"high"</span>) <span class="fl">266.200</span> <span class="fl">339.4505</span> <span class="fl">466.7650</span> <span class="fl">399.7010</span> <span class="fl">637.6010</span>  <span class="fl">851.502</span>   <span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1311,7 +1313,7 @@ Tip
 <p><strong>Why do it?</strong></p>
 <p>All of the benefits you get from peer reviewing within your own team, multiple times over. Having someone external offers new perspectives, holds you to account by breaking down assumptions, and offers far greater opportunity for building capability through knowledge sharing.</p>
 <p><strong>How to get started</strong></p>
-<p>While peer reviewing code within the team is often practical, having external analysts peer review your code can bring a fresh perspective. If you’re interested in this, please contact us, and we can help you to arrange someone external to your team to review your processes. For this to work smoothly, we recommend that your code is easily accessible for other analysts, such as hosted in an Azure DevOps repo and mirrored to github.</p>
+<p>While peer reviewing code within the team is often practical, having external analysts peer review your code can bring a fresh perspective. If you’re interested in this, please contact us, and we can help you to arrange someone external to your team to review your processes. For this to work smoothly, we recommend that your code is easily accessible for other analysts, such as hosted in an Azure DevOps repo and mirrored to GitHub.</p>
 <hr>
 </section>
 <section id="basic-automated-qa" class="level3">
@@ -1433,7 +1435,7 @@ Tip
 <hr>
 <p>When writing code, whether that is SQL, R, or something else, make sure you’re commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Script Name<span class="sc">:</span>     Section <span class="dv">251</span> Table A <span class="dv">2019</span> <span class="sc">-</span> s251_tA_2019.sql</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Description<span class="sc">:</span>     Extraction of data from IStore and production of underlying data file</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Author<span class="sc">:</span>          Cam Race</span>
@@ -1447,14 +1449,14 @@ Tip
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">3.</span> Create aggregations <span class="sc">-</span> both categorical and geographical totals</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">4.</span> Tidy up and output results</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">5.</span> Metadata creation</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Commented lines should begin with – (SQL) or # (R), followed by one space and your comment. Remember that <strong>comments should explain the why, not the what.</strong></p>
 <p>In SQL you can also use <code>/**</code> and <code>**/</code> to bookend comments over multiple lines.</p>
 <p>In rmarkdown documents you can bookend comments by using <code>&lt;!--</code> and <code>--&gt;</code>.</p>
 <p>Use commented lines of - to break up your files into scannable chunks based upon the structure and subheadings, like the R example below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the data -------------------------------------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the data -------------------------------------------------------------------</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Doing this can visually break up your code into sections that are easy to navigate around. It will also add that section to your outline, which can be used in RStudio using Ctrl-Shift-O. More details on the possibilities for this can be found in the <a href="https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections" target="_blank" rel="noopener noreferrer">RStudio guidance on folding and sectioning code</a>.</p>
 <p>You might be thinking that it would be nice if there was software that could help you with documentation, if so, read on, as Git is an incredibly powerful tool that can help us easily and thoroughly document versions of our files. If you’re at the stage where you are developing your own functions and packages in R, then take a look at <a href="https://roxygen2.r-lib.org/" target="_blank" rel="noopener noreferrer">roxygen2</a> as well.</p>
@@ -1506,9 +1508,9 @@ Tip
 <hr>
 <p><img src="../images/great.svg" class="img-fluid"></p>
 <p><strong>What does this mean?</strong></p>
-<p>This means having the final copies of code and documentation saved in a git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available.</p>
-<p>If you do not already have git downloaded, you can <a href="https://git-scm.com/downloads" target="_blank">download the latest version from their website</a>.</p>
-<p>For now, take a look at the <a href="../learning-development/git.html">resources for learning git</a> in the learning resources section.</p>
+<p>This means having the final copies of code and documentation saved in a Git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available.</p>
+<p>If you do not already have Git downloaded, you can <a href="https://git-scm.com/downloads" target="_blank">download the latest version from their website</a>.</p>
+<p>For now, take a look at the <a href="../learning-development/git.html">resources for learning Git</a> in the learning resources section.</p>
 <p><strong>Why do it?</strong></p>
 <p>Having the final copy of the scripts version controlled gives assurance around how the data was created. It also allows teams to easily record any last minute changes to the code after the initial final version by using the version control to log this.</p>
 <p><strong>How to get started</strong></p>
@@ -1559,7 +1561,7 @@ Tip
 <li>Using .gitignore to ignore files and folders to prevent committing anything sensitive</li>
 <li>Never committing outputs unless they’ve been checked over, even aggregates. We suggest only outputting to an output folder which is in the .gitignore file, to ensure this doesn’t happen by mistake</li>
 <li>Keeping datasets and secrets (e.g.&nbsp;API keys) outside the repository as much as possible, make use of secure variables</li>
-<li>Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the git history and start the public repo without it</li>
+<li>Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the Git history and start the public repo without it</li>
 <li>You can <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository" target="_blank">remove a file from the entire commit history</a> if you did commit anything sensitive, although you still need to follow the usual procedures if this was a data breach</li>
 </ul>
 <p>You can find out more in the Duck Book’s <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories" target="_blank">guidance on using Git</a>.</p>
@@ -1590,19 +1592,19 @@ Tip
 <li><p>This will open a black box (the terminal). Type in the following and hit enter</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>git init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>git init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
 <li>After hitting enter, type in the following and hit enter again after each line. You will need the URL of your Azure DevOps repository to complete this step. Contact the <a href="mailto:statistics.development@education.gov.uk">Statistics Development Team</a> if you are not sure what this is or do not have one.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>git add .</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>git add .</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>git commit <span class="sc">-</span>m <span class="st">"first commit"</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>git remote add origin YOUR_URL_HERE</span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>git push <span class="sc">-</span>f origin <span class="sc">--</span>all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>git push <span class="sc">-</span>f origin <span class="sc">--</span>all</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><p>You may be prompted for either your Windows or Git credentials at this stage.</p>
@@ -1629,7 +1631,7 @@ Tip
 <li><p>After running those lines, type in the following with your repository URL in the “YOUR_URL_HERE” space. This will clone the online repository to your local area.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>git clone YOUR_URL_HERE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>git clone YOUR_URL_HERE</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Make use of Git and version control in your team projects regularly. Like learning anything new, putting it into practice regularly is the best way to become confident in using it.</li>
@@ -1707,13 +1709,14 @@ Tip
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

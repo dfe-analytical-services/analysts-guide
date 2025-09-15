@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,16 +70,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9735d7d36fde03e47719b008688da432.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-fb26ef72f2837c0db49bdd4b27e0be95.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-26ac690749268b8513e5ca4398b861fa.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d110cbfe490f79260b9d4decdd7f0164.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7da6390389da21578714b439d4022f7e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77b970fad4b9d8d6bf6f2e24e7b902d9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-066c23e47fd3472f9e43fa4f4815bd77.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-254c27614a12397cd96e56f9dd51b4b9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -322,7 +323,8 @@ cookieconsent.run({
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -820,13 +822,13 @@ Guidance and tips for using the programming language R
 <li>Configuring the proxy settings by running the below in R - this also helps if you are getting timeout issues when trying to webscrape with R:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">no_proxy=</span><span class="st">"*"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">no_proxy=</span><span class="st">"*"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
 <li>Specifying the renv library as the install location. It’s a bit of a fudge, though these lines are helpful to get the packages from the renv lockfile installed and you running the project when needed:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>myPath <span class="ot">&lt;-</span> <span class="fu">.libPaths</span>()[<span class="dv">1</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>myPath <span class="ot">&lt;-</span> <span class="fu">.libPaths</span>()[<span class="dv">1</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>forceInstall <span class="ot">&lt;-</span> <span class="cf">function</span>(pkg, path) {</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>missing <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(<span class="fu">eval</span>(<span class="fu">parse</span>(<span class="at">text=</span> <span class="fu">paste0</span>(<span class="st">"!require("</span>,pkg,<span class="st">")"</span>))))</span>
@@ -842,13 +844,13 @@ Guidance and tips for using the programming language R
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>renvPackages <span class="ot">&lt;-</span> <span class="fu">names</span>(jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(<span class="st">"renv.lock"</span>, <span class="at">flatten =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>Packages)</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">lapply</span>(renvPackages, forceInstall, <span class="at">path =</span> myPath))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">lapply</span>(renvPackages, forceInstall, <span class="at">path =</span> myPath))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>More manual equivalent to use for specific packages:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>() <span class="co"># note down output 1, and reuse in the lib argument of install.packages() as below</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>() <span class="co"># note down output 1, and reuse in the lib argument of install.packages() as below</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>, <span class="at">lib =</span> <span class="st">"C:/Users/swong/OneDrive - Department for Education/Documents/stats-production-guidance/renv/library/R-4.0/x86_64-w64-mingw32"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>, <span class="at">lib =</span> <span class="st">"C:/Users/swong/OneDrive - Department for Education/Documents/stats-production-guidance/renv/library/R-4.0/x86_64-w64-mingw32"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1070,7 +1072,7 @@ Guidance and tips for using the programming language R
 <p>If you’re familiar with dplyr then using the dbplyr package to interact with a SQL database is a good way to go. It allows you to use common dplyr functions such as <code>select()</code>, <code>filter()</code>, <code>mutate()</code>, <code>group_by()</code>, <code>summarise()</code> and <code>arrange()</code> with a SQL database.</p>
 <p>As with sending a SQL script, you’ll need to create the connection to the database as shown in the <a href="https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html" target="_blank">dfeR package</a> and then create piped queries as you would with dplyr:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Library calls ====</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Library calls ====</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
@@ -1092,7 +1094,7 @@ Guidance and tips for using the programming language R
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl</span>(con, <span class="fu">Id</span>(<span class="at">schema=</span><span class="st">'dbo'</span>, <span class="at">table=</span><span class="st">'table_name'</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(example_id_column, example_filter_column, example_indicator_column) <span class="sc">%&gt;%</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(example_filter_column<span class="sc">==</span><span class="st">'Filter entry 1'</span>, example_indicator_column <span class="sc">&lt;=</span> <span class="dv">120</span>)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The key differences to just using dplyr with a data frame are:</p>
 <ul>
@@ -1108,9 +1110,9 @@ Guidance and tips for using the programming language R
 <h4 class="anchored" data-anchor-id="dbi-varcharmax-column-ordering-bug">DBI varchar(max) column ordering bug</h4>
 <p>A known bug in DBI is that if a SQL table contains columns of type varchar(max), then any queries including those columns will fail if those columns aren’t the last to be called in the query. This is a bit esoteric, but you can identify this issue if you’re getting the following error message when you run your query:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> nanodbc<span class="sc">/</span>nanodbc.cpp<span class="sc">:</span><span class="dv">3166</span><span class="sc">:</span> <span class="dv">07009</span><span class="sc">:</span> [Microsoft][SQL Server Native Client <span class="fl">11.0</span>]Invalid Descriptor Index </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> nanodbc<span class="sc">/</span>nanodbc.cpp<span class="sc">:</span><span class="dv">3166</span><span class="sc">:</span> <span class="dv">07009</span><span class="sc">:</span> [Microsoft][SQL Server Native Client <span class="fl">11.0</span>]Invalid Descriptor Index </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Warning message<span class="sc">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>In <span class="fu">dbClearResult</span>(rs) <span class="sc">:</span> Result already cleared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>In <span class="fu">dbClearResult</span>(rs) <span class="sc">:</span> Result already cleared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>There are a couple of solutions to this:</p>
 <ul>
@@ -1119,7 +1121,7 @@ Guidance and tips for using the programming language R
 </ul>
 <p>This latter route can be automated using the following function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tbl_fix_nvarchar <span class="ot">&lt;-</span> <span class="cf">function</span>(con, schema, table){</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tbl_fix_nvarchar <span class="ot">&lt;-</span> <span class="cf">function</span>(con, schema, table){</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  column.types <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    con,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="st">"SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH FROM INFORMATION_SCHEMA.COLUMNS "</span>,</span>
@@ -1137,7 +1139,7 @@ Guidance and tips for using the programming language R
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(COLUMN_NAME)</span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl</span>(con, <span class="fu">Id</span>(<span class="at">schema=</span>schema, <span class="at">table=</span>table)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">all_of</span>(ct))</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This queries the properties of the SQL table that you’re interacting with, identifies any varchar(max) columns (i.e.&nbsp;where CHARACTER_MAXIMUM_LENGTH equals 1) and then creates a column ordering in your query whereby any varchar(max) columns present are placed to the end.</p>
 </section>
@@ -1145,7 +1147,7 @@ Guidance and tips for using the programming language R
 </section>
 <section id="tips-for-using-r" class="level2">
 <h2 class="anchored" data-anchor-id="tips-for-using-r">Tips for using R</h2>
-<p>A selection of handy bits of code and workarounds for common issues. More useful code snippets can also be found in our <a href="https://github.com/dfe-analytical-services/automated-data-qa" target="_blank" rel="noopener noreferrer">github repo</a></p>
+<p>A selection of handy bits of code and workarounds for common issues. More useful code snippets can also be found in our <a href="https://github.com/dfe-analytical-services/automated-data-qa" target="_blank" rel="noopener noreferrer">GitHub repo</a>.</p>
 <hr>
 <section id="specifying-a-version-of-r-to-use" class="level3">
 <h3 class="anchored" data-anchor-id="specifying-a-version-of-r-to-use">Specifying a version of R to use</h3>
@@ -1159,8 +1161,8 @@ Guidance and tips for using the programming language R
 <p>The base R function of <code>round()</code> can behave unusually due to the way numbers are stored within R itself. <code>round()</code> is supposed to use a ‘banker’s round’, in which mid-point values (e.g.&nbsp;0.5, 1.5, 2.5) are rounded to the closest even number. For example, using <code>round()</code>, 1.5 should round to 2, but 2.5 should also round to 2. This is different than the way in which SQL performs rounding, which is always to round numbers at the mid-way point up to the next number (e.g.&nbsp;2.5 rounds to 3).</p>
 <p>However, when investigating numbers in R, you can see that they are not always stored in the way you might think. This is due to floating point numbers. Whilst humans use base 10 (numbers 0-9), computers store numbers in a binary (base 2) system as a combinations of 1s and 0s. When translating between base 2 and base 10, sometimes numbers can be not quite what we expect. For example, asking R to print the number 1.4 to 18 decimal places shows that it is actually stored as:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sprintf</span>(<span class="st">"%.18f"</span>, <span class="fl">1.4</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"1.399999999999999911"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sprintf</span>(<span class="st">"%.18f"</span>, <span class="fl">1.4</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"1.399999999999999911"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>These slight differences in the floating point numbers behind the scenes can result in unusual rounding errors using round(). If you’re interested, <a href="https://stat.ethz.ch/pipermail/r-help/2007-August/138014.html" target="_blank">there’s more information available in these forum posts</a>.</p>
 <p>To round numbers upwards in a way that is consistent with SQL and other programming languages, we recommend using the roundFiveUp() function in the <a href="https://github.com/dfe-analytical-services/dfeR" target="_blank" rel="noopener noreferrer">dfeR R package</a>.</p>
@@ -1203,7 +1205,7 @@ Guidance and tips for using the programming language R
 <h4 class="anchored" data-anchor-id="example-shiny-app-with-map">Example Shiny app with map</h4>
 <hr>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shiny app ===================================================================</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shiny app ===================================================================</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimal example code for a shiny app with interactive map</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Can copy and paste into a single app.R file and run to test</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1290,7 +1292,7 @@ Guidance and tips for using the programming language R
 <span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the application ---------------------------------------------------------</span></span>
-<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1329,7 +1331,7 @@ Guidance and tips for using the programming language R
 <hr>
 <p>This can be worked around by using a combination of <code>eval()</code> and <code>parse()</code>, as shown in the below function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>showFilterLevels <span class="ot">&lt;-</span> <span class="cf">function</span>(data, meta) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>showFilterLevels <span class="ot">&lt;-</span> <span class="cf">function</span>(data, meta) {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  filters <span class="ot">&lt;-</span> meta <span class="sc">%&gt;%</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(col_type <span class="sc">==</span> <span class="st">"Filter"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(col_name)</span>
@@ -1341,7 +1343,7 @@ Guidance and tips for using the programming language R
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">lapply</span>(filters, levelsTable)</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output)</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1362,7 +1364,7 @@ Guidance and tips for using the programming language R
 <hr>
 <p>There’s an easy way to interweave multiple vectors into one single vector using <code>c(rbind())</code>. The example below shows two vectors, but you can have even more if you need.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Two vectors, x and y</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Two vectors, x and y</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1370,7 +1372,7 @@ Guidance and tips for using the programming language R
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">rbind</span>(x, y))</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Output below</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 1 4 2 5 3 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 1 4 2 5 3 6</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1379,12 +1381,12 @@ Guidance and tips for using the programming language R
 <hr>
 <p>When pulling ggplot charts into RMarkdown reports, you can consider making them even more user-friendly and interactive with plotly. <a href="https://plotly.com/ggplot2" target="_blank" rel="noopener noreferrer">Further information on how to make your charts interactive with plotly</a> can be found online.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Simple ggplot chart called "p"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Simple ggplot chart called "p"</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>)      <span class="co"># Use hollow circles</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply ggplotly() to it to make it interactive</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplotly</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplotly</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1393,7 +1395,7 @@ Guidance and tips for using the programming language R
 <hr>
 <p>Have you ever needed to replace every value in your data with another? This can come in handy when you are looking at suppression, e.g.&nbsp;converting all NAs to “z” or all values under a certain threshold to “c”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(<span class="sc">~</span> <span class="fu">replace</span>(., . <span class="sc">==</span> <span class="st">"Value to replace"</span>, <span class="st">"Replacement"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(<span class="sc">~</span> <span class="fu">replace</span>(., . <span class="sc">==</span> <span class="st">"Value to replace"</span>, <span class="st">"Replacement"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1402,7 +1404,7 @@ Guidance and tips for using the programming language R
 <hr>
 <p>The group_by() function in dplyr is really useful, but can be fiddly if you only want to use it for one operation in a chunk of code. The with_groups() function from <a href="https://dplyr.tidyverse.org/reference/with_groups.html" target="_blank" rel="noopener noreferrer">dplyr</a> lets you do this, saving you having to group and ungroup data each time.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">annual_average =</span> <span class="fu">with_groups</span>(time_period, mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">annual_average =</span> <span class="fu">with_groups</span>(time_period, mean))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1412,7 +1414,7 @@ Guidance and tips for using the programming language R
 <p>Often we’ll take chunks of code and reuse them for new projects. This can lead to building up a long list of packages to install, not all of which end up being used in your new code. The <strong>NCmisc</strong> package is a really handy way to check which packages and functions are used in your code.</p>
 <p>Firstly, load up all the packages the code has <code>library()</code> commands for, then run the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.functions.in.file</span>(<span class="st">'your-filename-here.R'</span>, <span class="at">alphabetic =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.functions.in.file</span>(<span class="st">'your-filename-here.R'</span>, <span class="at">alphabetic =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1421,11 +1423,11 @@ Guidance and tips for using the programming language R
 <hr>
 <p>The <a href="https://github.com/crsh/depgraph" target="_blank" rel="noopener noreferrer">depgraph package</a> allows you to plot a graph of all the dependencies in your R project, which can be a useful tool to help you cut down on the number of package dependencies. Briefly, in these graphs you can look for “hot spots” in the network (big bright dots), which represent packages that have many upstream dependencies but are potentially easy to remove because they have few downstream dependencies (that is, only your package depends on them).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dependency_graph</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dependency_graph</span>(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">pkg =</span> multibridge_pkg</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  , <span class="at">suggests =</span> <span class="cn">FALSE</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  , <span class="at">option =</span> <span class="st">"cividis"</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1434,7 +1436,7 @@ Guidance and tips for using the programming language R
 <hr>
 <p>The <a href="https://www.rdocumentation.org/packages/simEd/versions/2.0.0/topics/set.seed" target="_blank" rel="noopener noreferrer">set.seed()</a> function generates a sequence of random numbers, starting from the value you define in the brackets. This ensures you get the same sequence of random numbers each time you run set.seed() with the same value, which is helpful to test that your results are reproducible.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># random sampling</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># random sampling</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"K"</span> <span class="st">"N"</span> <span class="st">"R"</span> <span class="st">"Z"</span> <span class="st">"G"</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
@@ -1444,7 +1446,7 @@ Guidance and tips for using the programming language R
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">42</span>); <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Q"</span> <span class="st">"E"</span> <span class="st">"A"</span> <span class="st">"J"</span> <span class="st">"D"</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">42</span>); <span class="fu">sample</span>(LETTERS, <span class="dv">5</span>)</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Q"</span> <span class="st">"E"</span> <span class="st">"A"</span> <span class="st">"J"</span> <span class="st">"D"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Q"</span> <span class="st">"E"</span> <span class="st">"A"</span> <span class="st">"J"</span> <span class="st">"D"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1453,12 +1455,12 @@ Guidance and tips for using the programming language R
 <hr>
 <p>The <a href="https://cran.r-project.org/web/packages/tidylog/readme/README.html" target="_blank" rel="noopener noreferrer">tidylog package</a> is a really useful tool for providing automated feedback on dplyr and tidyr operations.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidylog)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidylog)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">4</span>)</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; filter: removed 21 rows (66%), 11 rows remaining</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>mutated <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mtcars, <span class="at">new_var =</span> wt <span class="sc">**</span> <span class="dv">2</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mutate: new variable 'new_var' (double) with 29 unique values and 0% NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mutate: new variable 'new_var' (double) with 29 unique values and 0% NA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -1622,13 +1624,14 @@ Headless mode (https://permanently-removed.invalid/blog/chrome-headless-shell).<
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

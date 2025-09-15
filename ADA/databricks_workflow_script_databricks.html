@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,16 +70,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9735d7d36fde03e47719b008688da432.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-fb26ef72f2837c0db49bdd4b27e0be95.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-26ac690749268b8513e5ca4398b861fa.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d110cbfe490f79260b9d4decdd7f0164.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7da6390389da21578714b439d4022f7e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77b970fad4b9d8d6bf6f2e24e7b902d9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-066c23e47fd3472f9e43fa4f4815bd77.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-254c27614a12397cd96e56f9dd51b4b9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -322,7 +323,8 @@ cookieconsent.run({
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -726,23 +728,23 @@ Important
 <li><p>Create a third notebook and title it ‘Create and run job’. In the first cell load the <code>tidyverse</code>package. Install the <code>devtools</code> package and load it, then use it’s <code>install_github()</code> function to install the <code>databricks</code> package. Load the newly installed <code>databricks</code> package.<br>
 </p></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(tidyverse)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(devtools)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install_github</span>(<span class="st">"databrickslabs/databricks-sdk-r"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(databricks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(databricks)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="5" type="1">
 <li>Create a new code chunk and create a <a href="https://docs.databricks.com/en/notebooks/widgets.html" target="_blank">text widget</a> to contain your DataBricks access token. Run this cell to create the widget at the top of the page. Once the widget is there add in your personal access token into the text box.</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbutils.widgets.text</span>(<span class="st">"api_token"</span>, <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbutils.widgets.text</span>(<span class="st">"api_token"</span>, <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Databricks access token
+<span class="screen-reader-only">Note</span>Databricks access token
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -756,7 +758,7 @@ Databricks access token
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Don’t put your token into the code
+<span class="screen-reader-only">Important</span>Don’t put your token into the code
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -766,14 +768,14 @@ Don’t put your token into the code
 <ol start="6" type="1">
 <li><p>We can now connect to the API through the <code>databricks</code> package using the <code>databricks::DatabricksClient()</code> function. It requires the <code>host</code> which is the URL of the Databricks platform up until (and including) the first <code>/</code>, and your token. We’ll store the result in a variable called <code>client</code> as we need to pass this to the other functions in the <code>databricks</code> library.<br>
 We can then use the <code>databricks::clustersList()</code> function to fetch a list of the clusters, which we can view using <code>display()</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>host <span class="ot">&lt;-</span> <span class="st">"https://adb-5037484389568426.6.azuredatabricks.net/"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>host <span class="ot">&lt;-</span> <span class="st">"https://adb-5037484389568426.6.azuredatabricks.net/"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>api_token <span class="ot">&lt;-</span> <span class="fu">dbutils.widgets.get</span>(<span class="st">"api_token"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> databricks<span class="sc">::</span><span class="fu">DatabricksClient</span>(<span class="at">host =</span> host, <span class="at">token =</span> api_token)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>clusters <span class="ot">&lt;-</span> databricks<span class="sc">::</span><span class="fu">clustersList</span>(client)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(clusters <span class="sc">%&gt;%</span> <span class="fu">select</span>(cluster_id, creator_user_name, cluster_name, spark_version, cluster_cores, cluster_memory_mb))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(clusters <span class="sc">%&gt;%</span> <span class="fu">select</span>(cluster_id, creator_user_name, cluster_name, spark_version, cluster_cores, cluster_memory_mb))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="../images/ada-workflows-databricks-api-cluster.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -781,7 +783,7 @@ We can then use the <code>databricks::clustersList()</code> function to fetch a 
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Clusters
+<span class="screen-reader-only">Note</span>Clusters
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -790,26 +792,26 @@ Clusters
 </div>
 </div></li>
 <li><p>Make a note of your cluster ID and save it in a variable called <code>cluster_id</code>. You could automate this step by filtering the <code>clusters</code> data frame as long as you ensure that it only results a single <code>cluster_id</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  cluster_id <span class="ot">&lt;-</span> <span class="st">"&lt;your cluster id&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  cluster_id <span class="ot">&lt;-</span> <span class="st">"&lt;your cluster id&gt;"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Create a new code block and we’ll start by setting some parameters for the job. Firstly we’ll need a <code>job_name</code>, and the paths to the Notebooks we’re wanting to include in the workflow. We’ll also need to create a unique <code>task_key</code> for each of the Notebook tasks we’re going to set up.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>job_name <span class="ot">&lt;-</span> <span class="st">"test job"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>job_name <span class="ot">&lt;-</span> <span class="st">"test job"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>first_notebook_path <span class="ot">&lt;-</span> <span class="st">"/Users/nicholas.treece@education.gov.uk/R SDK/Test Notebook"</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>second_notebook_path <span class="ot">&lt;-</span> <span class="st">"/Users/nicholas.treece@education.gov.uk/R SDK/Test Notebook 2"</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>task_key_1 <span class="ot">&lt;-</span> <span class="st">"test_key"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>task_key_2 <span class="ot">&lt;-</span> <span class="st">"test_key_2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>task_key_2 <span class="ot">&lt;-</span> <span class="st">"test_key_2"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
 <p>We can then define the tasks as lists. There are many options available available for setting when creating a task, a full list of which can be found in the <a href="https://docs.databricks.com/api/workspace/jobs/create#tasks" target="_blank">tasks section of the job API documentation</a>. When reading this documentation any parameter that is marked as an <em>object</em> needs to be passed as a <em>list</em> (<code>list()</code>) in R, and anything marked as an <em>array</em> should be passed as a <em>vector</em> (<code>c()</code>).</p>
 <p>For the first task we’ll give it the first <code>task_key</code> we created above, and tell it to run on our existing cluster by passing the ID of our cluster to <code>existing_cluster_id</code>, we’ll then specify that it is a <code>notebook_task</code> and pass that a list with the <code>notebook_path</code> and the <code>source</code> which we will set to <code>WORKSPACE</code> (as opposed to a Git repository) for the purposes of this tutorial.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> first_job_task <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> first_job_task <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">task_key =</span> task_key_1,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">existing_cluster_id =</span> cluster_id,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">notebook_task =</span> <span class="fu">list</span>(</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">notebook_path =</span> first_notebook_path,</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">source =</span> <span class="st">"WORKSPACE"</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                  )</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>For the second task we will do the same, but using the second <code>task_key</code> and <code>notebook_path</code> we defined. In addition, we’ll also add a <code>depends_on</code> clause with the previous <code>task_key</code> (passed in a list), and specify it is only to <code>run_if</code> <code>ALL_SUCCESS</code>. This means that the second task won’t begin processing unless all of the tasks it <code>depends_on</code> have completed successfully.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>second_job_task <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>second_job_task <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">task_key =</span> task_key_2,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">existing_cluster_id =</span> cluster_id,</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">notebook_task =</span> <span class="fu">list</span>(</span>
@@ -818,33 +820,33 @@ Clusters
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                  ),</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">depends_on =</span> <span class="fu">list</span>(<span class="at">task_key =</span> task_key_1),</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">run_if =</span> <span class="st">"ALL_SUCCESS"</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="9" type="1">
 <li><p>Now we have both of our tasks defined we can create the job using the <code>databricks::jobCreate()</code> function. We pass it the <code>client</code> as the first argument, then the job <code>name</code> we defined. The <code>tasks</code> are passed as a list which contains each of the task lists we built above.<br>
 We’ll also tell it to send us <code>email_notifications</code> by passing a list with an <code>on_success</code> value of email addresses.<br>
 <br>
 The function returns the ID of the job we just created, so we will want to store the response in a variable called <code>workflow</code> so we can refer to it later.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>workflow <span class="ot">&lt;-</span> <span class="fu">jobsCreate</span>(client,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>workflow <span class="ot">&lt;-</span> <span class="fu">jobsCreate</span>(client,</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name =</span> job_name,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">tasks =</span> <span class="fu">list</span>(first_job_task, <span class="co">#list</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                                   second_job_task), <span class="co">#list</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">email_notifications =</span> <span class="fu">list</span>(</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">on_success =</span> <span class="fu">c</span>(<span class="st">"your-email"</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                                            ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                                            ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lists of lists
+<span class="screen-reader-only">Note</span>Lists of lists
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>A <code>list()</code> in R is used to contain any number and type of data, including other <code>list()</code>s. This makes it excellent for storing hierarchical data in one place, however it can get quite confusing quite quickly.</p>
 <p><strong>Sometimes it’s easier to break these <code>lists()</code> up into pieces</strong> by defining them seperately, as we did above by defining the task lists separately then passing them to the <code>tasks</code> argument in the <code>jobsCreate()</code> function.</p>
 <p>This often makes it easier to think about and construct, but certainly makes it easier to read. Consider the code below which does exactly the same thing as the code above, but is just written all at once.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>workflow <span class="ot">&lt;-</span> <span class="fu">jobsCreate</span>(client,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>workflow <span class="ot">&lt;-</span> <span class="fu">jobsCreate</span>(client,</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">name =</span> job_name,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">tasks =</span> <span class="fu">list</span>(</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">list</span>(</span>
@@ -869,24 +871,24 @@ Lists of lists
 <span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>                      <span class="at">email_notifications =</span> <span class="fu">list</span>(</span>
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">on_success =</span> <span class="fu">c</span>(<span class="st">"your-email"</span>)</span>
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>                                            )</span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>                      )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>                      )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We can see here that the code is getting very long, and is also more difficult to see which options relate to which list. If it weren’t for being diligent with indentation here we’d have to resort to counting brackets to see what belonged where. This is especially problematic if you accidentally delete a bracket and need to work out where it was meant to go.</p>
 </div>
 </div></li>
 <li><p>We can now get the ID of the job that was created and tell the API to run the job. In a new code chunk we’ll store the <code>job_id</code> from the <code>workflow</code> variable above. We’ll then use the <code>databricks::jobsRunNow()</code> function to tell it to run the workflow we just created by passing it the <code>job_id</code> we just stored. We’ll also store the <code>job_run_id</code> returned by the <code>databricks::jobsRunNow()</code> function.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>job_id <span class="ot">&lt;-</span> workflow<span class="sc">$</span>job_id</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>job_id <span class="ot">&lt;-</span> workflow<span class="sc">$</span>job_id</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>job_run <span class="ot">&lt;-</span> <span class="fu">jobsRunNow</span>(client, </span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">job_id =</span> job_id)</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>job_run_id <span class="ot">&lt;-</span> job_run<span class="sc">$</span>run_id</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>job_run_id <span class="ot">&lt;-</span> job_run<span class="sc">$</span>run_id</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We will now use this to create links to the job and the specific run of the job we just set off.</p></li>
 <li><p>In a new code cell, define a <code>job_link</code> by <code>paste0()</code>ing the <code>host</code> variable we passed to the <code>databricks::DatabricksClient()</code> function earlier, followed by <code>"job/"</code> followed by the <code>job_id</code> defined above.<br>
 We can then create a <code>job_run_link</code> by <code>paste0()</code>ing together the <code>job_link</code> followed by <code>"/runs/"</code> then the <code>job_run_id</code> from the previous step.<br>
 We can then output the <code>job_link</code> as text at the bottom of the cell.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>job_link <span class="ot">&lt;-</span> <span class="fu">paste0</span>(host,<span class="st">"jobs/"</span>,job_id)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>job_link <span class="ot">&lt;-</span> <span class="fu">paste0</span>(host,<span class="st">"jobs/"</span>,job_id)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>job_run_link <span class="ot">&lt;-</span> <span class="fu">paste0</span>(job_link,<span class="st">"/runs/"</span>, job_run_id)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>job_link</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>job_link</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>In a new cell, output the <code>job_run_link</code>.</p>
 <p><img src="../images/ada-workflow-output-link.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -895,7 +897,7 @@ We can then output the <code>job_link</code> as text at the bottom of the cell.<
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Output limits on code chunks
+<span class="screen-reader-only">Note</span>Output limits on code chunks
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -908,7 +910,7 @@ Output limits on code chunks
 <li><p>You’ve now created a workflow with code, and each time you re-run this notebook another workflow with the same name will be created. As this is a tutorial which most analysts may have to follow at some point, the logical conclusion is that we will end up with hundreds of ‘test jobs’ cluttering up the workflow page.<br>
 <br>
 To avoid that let’s use the <code>databricks::jobsDelete()</code> function to clean up after ourselves. All that we need to do is pass the function the <code>client</code>, and <code>job_id</code> variables from above.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobsDelete</span>(client, job_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobsDelete</span>(client, job_id)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -923,15 +925,15 @@ Note
 <p><img src="../images/ada-workflows-multiple-jobs.png" class="img-fluid"></p>
 <p>If this is the case we’ll want to clean up each of these, ideally without having to manually click through the UI process for each one.</p>
 <p>To do this, firstly call the <code>databricks::jobsList()</code> function, passing it the <code>client</code> variable, and specifying the <code>name</code> of the jobs you want to list. Then filter the list to just the jobs with a <code>creator_user_name</code> of your email address. To see the resulting jobs use the <code>display()</code> function as below at the bottom of a code chunk.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_jobs <span class="ot">&lt;-</span> <span class="fu">jobsList</span>(client, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_jobs <span class="ot">&lt;-</span> <span class="fu">jobsList</span>(client, </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">"test job"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">filter</span>(creator_user_name <span class="sc">==</span> <span class="st">'nicholas.treece@education.gov.uk'</span>)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(my_jobs <span class="sc">%&gt;%</span> <span class="fu">select</span>(job_id, creator_user_name, run_as_user_name, created_time))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(my_jobs <span class="sc">%&gt;%</span> <span class="fu">select</span>(job_id, creator_user_name, run_as_user_name, created_time))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We can now loop through the individual <code>job_id</code>s contained in <code>my_jobs</code> and use the <code>databricks::jobsDelete()</code> function to remove them all at once, programmatically.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(job_id <span class="cf">in</span> my_jobs<span class="sc">$</span>job_id){</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(job_id <span class="cf">in</span> my_jobs<span class="sc">$</span>job_id){</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">jobsDelete</span>(client, job_id)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></li>
 </ol>
@@ -1003,13 +1005,14 @@ Note
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

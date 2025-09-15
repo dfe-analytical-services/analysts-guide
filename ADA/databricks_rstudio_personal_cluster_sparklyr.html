@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,16 +68,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9735d7d36fde03e47719b008688da432.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-fb26ef72f2837c0db49bdd4b27e0be95.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-26ac690749268b8513e5ca4398b861fa.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d110cbfe490f79260b9d4decdd7f0164.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7da6390389da21578714b439d4022f7e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77b970fad4b9d8d6bf6f2e24e7b902d9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-066c23e47fd3472f9e43fa4f4815bd77.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-254c27614a12397cd96e56f9dd51b4b9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -320,7 +321,8 @@ cookieconsent.run({
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -789,7 +791,7 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Clusters will shut down after being idle for an hour
+<span class="screen-reader-only">Note</span>Clusters will shut down after being idle for an hour
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -990,15 +992,15 @@ Warning
 <section id="reticulate-and-python" class="level4">
 <h4 class="anchored" data-anchor-id="reticulate-and-python">Reticulate and python</h4>
 <p>Behind the scenes <code>sparklyr</code> converts your queries to python when interfacing with Databricks. The <code>reticulate</code> package is used for managing python environments through R. It can be installed using the following line of code.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"reticulate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"reticulate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You will also need to use <code>reticulate</code> to install a python environment in the background, the version of python you install should be higher than 3.10. The version is passed to the function as a string as below.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">install_python</span>(<span class="st">"3.10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">install_python</span>(<span class="st">"3.10"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This step can take quite a while to complete. If you get an error here please consult the ‘Troubleshooting’ section below.</p>
 </section>
 <section id="pysparklyr-and-sparklyr" class="level4">
 <h4 class="anchored" data-anchor-id="pysparklyr-and-sparklyr">Pysparklyr and sparklyr</h4>
 <p>The second dependency is <code>pysparklyr</code>. As part of the <code>pysparklyr</code> install it will also install <code>sparklyr</code> so there is no need to do this manually.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pysparklyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pysparklyr"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The installation may prompt you to update a number of packages. If this happens enter <code>1</code> (to update all packages) into the prompt.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1019,7 +1021,7 @@ Warning
 <h4 class="anchored" data-anchor-id="install-databricks">Install databricks</h4>
 <p>The next step is to use the <code>pysparklyr</code> package to <code>install_databricks()</code>. This will install the necessary software to connect to the Databricks platform.</p>
 <p>The installation is specific to the Databricks Runtime of your cluster, this means if you create a new cluster with a different DBR version you will need to run this function again to set up the new cluster.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pysparklyr<span class="sc">::</span><span class="fu">install_databricks</span>(<span class="at">cluster_id =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_CLUSTER_ID"</span>), <span class="at">as_job =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pysparklyr<span class="sc">::</span><span class="fu">install_databricks</span>(<span class="at">cluster_id =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_CLUSTER_ID"</span>), <span class="at">as_job =</span> F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This installation may take some time, but only needs to be done the first time you connect to a cluster.</p>
 <hr>
 </section>
@@ -1045,7 +1047,7 @@ Note
 <p>If your cluster is already running it should begin executing your queries immediately.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sparklyr)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sparklyr)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sc <span class="ot">&lt;-</span> <span class="fu">spark_connect</span>(</span>
@@ -1053,7 +1055,7 @@ Note
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"databricks_connect"</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sdf_sql</span>(sc, <span class="st">"SHOW CATALOGS;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sdf_sql</span>(sc, <span class="st">"SHOW CATALOGS;"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>From here you can use <code>sdf_sql()</code> to execute queries on your data. The first argument is always the spark connection <code>sc</code>, followed by the query you want to execute.</p>
 </section>
 <section id="navigating-catalogs-and-schema" class="level4">
@@ -1061,7 +1063,7 @@ Note
 <p>You can refer to a table or view with it’s full three name reference <em>catalog_name.schema_name.table_name</em>, however always using the three names has drawbacks.</p>
 <p>Firstly the names can get quite long due to naming conventions, but more importantly it can create more code maintenance. For example, if you wanted to recreate a query in a different schema you would have to go and edit every table reference.</p>
 <p>Instead you can tell Databricks to use a specific catalog and all further queries through that spark connection will be executed within that catalog. This means you no longer have to specify the catalog when you refer to a schema, table or view.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sdf_sql</span>(sc, <span class="st">"USE CATALOG catalog_40_copper_analyst_training;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sdf_sql</span>(sc, <span class="st">"USE CATALOG catalog_40_copper_analyst_training;"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1093,14 +1095,14 @@ Note
 <h4 class="anchored" data-anchor-id="overview-of-tables-and-columns">Overview of tables and columns</h4>
 <p>Like SQL Server every catalog has an <code>information_schema</code> which contains all of the metadata about the tables, columns, etc.</p>
 <p>To look at in all the tables and views in any data catalog you can use the following code, which will store the result in a variable called <code>tables</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tables <span class="ot">&lt;-</span> <span class="fu">sdf_sql</span>(sc, <span class="st">"SELECT * FROM information_schema.tables;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tables <span class="ot">&lt;-</span> <span class="fu">sdf_sql</span>(sc, <span class="st">"SELECT * FROM information_schema.tables;"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If you <code>View(tables)</code> now you’ll see that it is not currently a data frame but a list with several entities in it. This is because <code>sparklyr</code> is storing the connection to the data, along with any instructions on how to transform it rather than storing the data itself. This allows it to pass all of the instructions to Databricks so that it can do the heavy lifting, and only bring back the data required into R memory.</p>
 <p>Since we don’t need to do any transformations here, we can simply tell <code>sparklyr</code> to <code>collect()</code> the data, which will turn it into an R data.frame.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tables_df <span class="ot">&lt;-</span> tables <span class="sc">%&gt;%</span> <span class="fu">collect</span>()</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(tables_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tables_df <span class="ot">&lt;-</span> tables <span class="sc">%&gt;%</span> <span class="fu">collect</span>()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(tables_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Similarly you can look at the columns, data types, etc. within a catalog using the <code>information_schema</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>columns_df <span class="ot">&lt;-</span> <span class="fu">sdf_sql</span>(sc, <span class="st">"SELECT * FROM information_schema.columns;"</span>) <span class="sc">%&gt;%</span> <span class="fu">collect</span>()</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(columns_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>columns_df <span class="ot">&lt;-</span> <span class="fu">sdf_sql</span>(sc, <span class="st">"SELECT * FROM information_schema.columns;"</span>) <span class="sc">%&gt;%</span> <span class="fu">collect</span>()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(columns_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
@@ -1120,8 +1122,8 @@ Note
 <hr>
 <p>This error appears when your version of the <code>curl</code> package is too old to have the functions that <code>sparklyr</code> depends on.</p>
 <p>To uninstall the old version and update it use the following code and then re-run <code>spark_connect()</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>(<span class="st">"curl"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"curl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>(<span class="st">"curl"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"curl"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 <section id="using-spark_connect-throws-error-databricks-connect-is-not-available-in-the-current-python-environment" class="level4">
@@ -1144,14 +1146,14 @@ Note
 <p>There are a number of issues that can arise when <code>sparkylr</code> creates virtual environments, and sometimes trying to work out what is wrong is quite difficult.</p>
 <p>The easiest way to resolve the issue is usually to remove the virtual environments and let <code>pysparklyr</code> create them again with the <code>install_databricks()</code> function.</p>
 <p>There are 2 methods of doing this, the first uses the <code>reticulate</code> package to view and remove them. First we can list what virtual environments exist using the code below.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_list</span>()</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#output: "r-sparklyr-databricks-16.1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_list</span>()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#output: "r-sparklyr-databricks-16.1"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We can then remove that environment</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_remove</span>(<span class="st">"r-sparklyr-databricks-16.1"</span>) </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#where "r-sparklyr-databricks-16.1" is what is returned from the code above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_remove</span>(<span class="st">"r-sparklyr-databricks-16.1"</span>) </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#where "r-sparklyr-databricks-16.1" is what is returned from the code above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Once you’ve done this you can re-run <code>pysparklyr::install_databricks()</code> and it should recreate the environment.</p>
 <p>If for some reason removing the environment through the command line doesn’t work we can delete them using file explorer. However, first we need to find where they are kept. We can do this with the following line of code which will print the full system path of any virtual environments that exist on your machine.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(reticulate<span class="sc">::</span><span class="fu">virtualenv_root</span>(), <span class="at">full.names =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(reticulate<span class="sc">::</span><span class="fu">virtualenv_root</span>(), <span class="at">full.names =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Once you have the path you can navigate to the <code>.virtualenvs</code> folder and manually delete the folder within it that corresponds to the name of the faulty environment. You can then re-run <code>pysparklyr::install_databricks()</code> and it will rebuild it from scratch.</p>
 
 
@@ -1224,13 +1226,14 @@ Note
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
