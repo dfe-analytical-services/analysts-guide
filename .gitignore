@@ -8,3 +8,7 @@
 _site/
 
 .DS_Store
+
+README.html
+README_files/
+

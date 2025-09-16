@@ -44,6 +44,8 @@ There are currently no automated tests on this project.
 
 RAP Hexagons - https://app.diagrams.net/#G1usTSACWv_gRBgibnKRK52ksOksF303Dv
 
+RAP for analysis Hexagons - https://app.diagrams.net/#G1JAqnfQQC3sSFABRwPpZpAozAfo_OWAbS#%7B%22pageId%22%3A%22_ltWYIdbVKAG_Xyvna0Y%22%7D
+
 RAP Badges - https://app.diagrams.net/#G1uSCknFwmzhy-YHZTGmkuqoMM_zDH2yC0
 
 Create release - https://app.diagrams.net/#G1NcVNEtMtNO--2NtV6RPxceiRv3fDGQ7y
