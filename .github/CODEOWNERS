@@ -9,10 +9,10 @@ _quarto.yml  @cjrace @rmbielby
 .github  @cjrace @rmbielby
 
 # The following files and folders are owned by the SDT team
-/ADA/  @Lsnaathorst1 @mzayeddfe 
-/RAP/  @Lsnaathorst1 @mzayeddfe
-/resources/  @Lsnaathorst1 @mzayeddfe
-/learning-development/  @Lsnaathorst1 @mzayeddfe
+/ADA/ @laragarbett @Lsnaathorst1 @mzayeddfe 
+/RAP/ @laragarbett @Lsnaathorst1 @mzayeddfe
+/resources/ @laragarbett @Lsnaathorst1 @mzayeddfe
+/learning-development/ @laragarbett @Lsnaathorst1 @mzayeddfe
 
 # The following files and folders are owned by the EESP team
 /statistics-production/api-data-standards.qmd @rmbielby
