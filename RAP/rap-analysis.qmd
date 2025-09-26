@@ -203,6 +203,8 @@ We recommend the following principles for this type of analysis. Analysts should
 ::: {.callout-tip collapse="true"}
 ## Analysis repeated on different datasets
 
+This refers to the use of a consistent analytical approach applied to multiple datasets. Although the method remains the same, the data inputs vary e.g., by time period, breakdown or  variable.
+
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
 ### Recommended principles
@@ -236,6 +238,8 @@ We recommend the following principles for this type of analysis. Analysts should
 ::: {.callout-tip collapse="true"}
 ## Spreadsheet based analysis and models
 
+Analysis carried out using spreadsheet software like Microsoft Excel. These models typically include formulas, pivot tables, and visualisations to explore data, test scenarios, or support decision making.
+
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
 ### Recommended principles
@@ -256,6 +260,8 @@ We recommend the following principles for this type of analysis. Analysts should
 
 ::: {.callout-tip collapse="true"}
 ## Data collection and preparation
+
+The process of gathering, cleaning, and organising raw data to ensure it is suitable for analysis. This includes sourcing data, resolving inconsistencies, standardising formats, and combining datasets.
 
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
@@ -286,6 +292,8 @@ We recommend the following principles for this type of analysis. Analysts should
 
 ::: {.callout-tip collapse="true"}
 ## Cross departmental analysis
+
+Analysis that involves collaboration between multiple teams or areas in the department. It draws on data and expertise from different areas of the organisation to provide a more comprehensive view. This type of analysis often requires agreement on shared definitions and metrics.
 
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
