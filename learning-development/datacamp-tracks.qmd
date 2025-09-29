@@ -25,7 +25,7 @@ Learning tracks are sets of courses put together using DataCamp to help you buil
 
 Each track is tailored to different levels of technical skills and experience, helping you decide which track would be best for you. You'll find estimated duration per course and per track to help you plan your time, and a special AI for All track to get everyone up to speed on foundational AI concepts. Use this page to identify the track that best fits your current goals and needs and head over to [DataCamp](https://www.datacamp.com/) to start learning!
 
-## Summary of Learning Tracks
+## Summary of learning tracks
 
 | Track Name | Target Persona | Estimated Duration |
 |-------------------|------------------------|-----------------------------|
@@ -37,11 +37,11 @@ Each track is tailored to different levels of technical skills and experience, h
 | Experienced – High Technical Skill | Experienced member, high technical skill | \~20 hours |
 | One Big Thing – AI for All: A Headstart! | All staff, introductory AI awareness | \~6–8 hours |
 
-## DataCamp Learning Tracks for Analysts
+## DataCamp learning tracks for analysts
 
-### Track 1: New to Role – Intro Level
+### Track 1: new to role – intro level
 
-**Estimated Total Duration**: \~13 hours
+**Estimated total duration**: \~13 hours
 
 | Course | UKSA/GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
@@ -52,9 +52,9 @@ Each track is tailored to different levels of technical skills and experience, h
 | Communicating Data Insights | Data communication | Learn how to present findings clearly to stakeholders. | 2h | [Link](https://www.datacamp.com/courses/communicating-data-insights) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-### Track 2: New to Role – Intermediate Level
+### Track 2: new to role – intermediate level
 
-**Estimated Total Duration**: \~14 hours
+**Estimated total duration**: \~14 hours
 
 | Course | UKSA/GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
@@ -64,9 +64,9 @@ Each track is tailored to different levels of technical skills and experience, h
 | Introduction to Git | Reproducibility | Learn version control basics to track and share code. | 2h | [Link](https://www.datacamp.com/courses/introduction-to-git) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-### Track 3: New to Role – High Technical Skill
+### Track 3: new to role – high technical skill
 
-**Estimated Total Duration**: \~15 hours
+**Estimated total duration**: \~15 hours
 
 | Course | UKSA/GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
@@ -77,9 +77,9 @@ Each track is tailored to different levels of technical skills and experience, h
 | Advanced SQL | Complex querying | Learn subqueries, window functions, and performance tuning. | 3h | [Link](https://www.datacamp.com/courses/advanced-sql) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-### Track 4: Experienced – Low Technical Skill
+### Track 4: experienced – low technical skill
 
-**Estimated Total Duration**: \~16 hours
+**Estimated total duration**: \~16 hours
 
 | Course | UKSA/GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
@@ -91,9 +91,9 @@ Each track is tailored to different levels of technical skills and experience, h
 | Introduction to SQL | Data acquisition | Learn to query databases using SELECT, WHERE, and JOIN. | 2h | [Link](https://www.datacamp.com/courses/introduction-to-sql) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-### Track 5: Experienced – Intermediate Technical Skill
+### Track 5: experienced – intermediate technical skill
 
-**Estimated Total Duration**: \~18 hours
+**Estimated total duration**: \~18 hours
 
 | Course | UKSA/GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
@@ -105,9 +105,9 @@ Each track is tailored to different levels of technical skills and experience, h
 | SQL for Data Analysis | Analytical querying | Learn to extract insights from databases. | 3h | [Link](https://www.datacamp.com/courses/sql-for-data-analysis) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-### Track 6: Experienced – High Technical Skill
+### Track 6: experienced – high technical skill
 
-**Estimated Total Duration**: \~20 hours
+**Estimated total duration**: \~20 hours
 
 | Course | UKSA/GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
@@ -120,9 +120,9 @@ Each track is tailored to different levels of technical skills and experience, h
 | Building Dashboards in Power BI | Visual storytelling | Learn to create interactive dashboards. | 2h | [Link](https://www.datacamp.com/courses/building-dashboards-in-power-bi) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-### Track 7: One Big Thing – AI for All: A Headstart!
+### Track 7: One Big Thing – AI for all: a headstart!
 
-**Estimated Total Duration**: \~6–8 hours
+**Estimated total duration**: \~6–8 hours
 
 | Course | Description | Duration | Link |
 |-----------------|--------------------|-----------------|-----------------|
