@@ -35,6 +35,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Python](learning-development/python.html)
 - Guidance and tips for using Python
 
+[Datacamp learning tracks for analysts](learning-development/datacamp-tracks.html)
+- Recommended Datacamp learning tracks for analysts 
+
 [Analytical Data Access (ADA)](ADA/ada.html)
 - Information on the ADA project and guidance for analysts on how to interact with and use data stored in ADA using Databricks
 

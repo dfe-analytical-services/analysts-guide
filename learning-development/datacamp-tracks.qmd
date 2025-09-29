@@ -1,0 +1,122 @@
+---
+title: "Datacamp learning tracks"
+format: html
+---
+
+<p class="text-muted">  Learning tracks for analysts looking to upskill using Datacamp </p>
+
+---
+
+This page contains a tailored set of learning paths designed to support your development as an analyst in the Department for Education (DfE). These tracks draw on DataCamp's extensive course offerings to build competencies aligned with the Government Statistical Service (GSG) framework.
+
+Each track is tailored to different levels of technical skills and career stage, helping you decide which track would be best for you. You'll find estimated duration to help you plan your time, and a special AI for All track to get everyone up to speed on foundational AI concepts. Use this page to identify the track that best fits your current goals and needs and head over to [Datacamp](https://www.datacamp.com/) to start learning!
+
+---
+
+# Summary of Learning Tracks
+
+| Track Name | Target Persona | Estimated Duration |
+|-------------------|------------------------|-----------------------------|
+| New to Role – Intro Level | New to role, low technical skill | \~13 hours |
+| New to Role – Intermediate Level | New to role, intermediate technical skill | \~14 hours |
+| New to Role – High Technical Skill | New to role, high technical skill | \~15 hours |
+| Experienced – Low Technical Skill | Experienced member, low technical skill | \~16 hours |
+| Experienced – Intermediate Technical Skill | Experienced member, intermediate technical skill | \~18 hours |
+| Experienced – High Technical Skill | Experienced member, high technical skill | \~20 hours |
+| One Big Thing – AI for All: A Headstart! | All staff, introductory AI awareness | \~6–8 hours |
+
+# DataCamp Learning Tracks for Analysts
+
+## Track 1: New to Role – Intro Level
+
+**Estimated Total Duration**: \~13 hours
+
+| Course | UKSA/GSG Competency | Description | Duration | Link |
+|---------------|---------------|---------------|---------------|---------------|
+| Introduction to Python OR R | Programming fundamentals | Learn Python or R basics, variables, lists, functions, and data structures for analysis. | 4h | [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), [R](https://www.datacamp.com/courses/free-introduction-to-r) |
+| Introduction to SQL | Data acquisition & querying | Learn to query databases using SELECT, WHERE, and JOIN. | 2h | [Link](https://www.datacamp.com/courses/introduction-to-sql) |
+| Introduction to Data Science | Data literacy | Understand the data science workflow, roles, and tools. | 2h | [Link](https://www.datacamp.com/courses/data-science-for-everyone) |
+| Understanding Data Ethics | Ethical use of data | Explore responsible data use, privacy, and fairness. | 1h | [Link](https://www.datacamp.com/courses/data-ethics) |
+| Communicating Data Insights | Data communication | Learn how to present findings clearly to stakeholders. | 2h | [Link](https://www.datacamp.com/courses/communicating-data-insights) |
+| Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
+
+## Track 2: New to Role – Intermediate Level
+
+**Estimated Total Duration**: \~14 hours
+
+| Course | UKSA/GSG Competency | Description | Duration | Link |
+|---------------|---------------|---------------|---------------|---------------|
+| Intermediate Python OR R | Programming logic & control | Learn loops, conditionals, and functions to build more complex scripts. | 4h | [Python](https://www.datacamp.com/courses/intermediate-python), [R](https://www.datacamp.com/courses/intermediate-r) |
+| Exploratory Data Analysis in Python OR R | Data exploration & validation | Learn how to summarize, visualize, and interpret data distributions. | 3h | [Python](https://www.datacamp.com/courses/exploratory-data-analysis-in-python), [R](https://www.datacamp.com/courses/exploratory-data-analysis-in-r) |
+| Joining Data in SQL | Data integration | Learn INNER JOIN, LEFT JOIN, and UNION to combine datasets. | 2h | [Link](https://www.datacamp.com/courses/joining-data-in-sql) |
+| Introduction to Git | Reproducibility | Learn version control basics to track and share code. | 2h | [Link](https://www.datacamp.com/courses/introduction-to-git) |
+| Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
+
+## Track 3: New to Role – High Technical Skill
+
+**Estimated Total Duration**: \~15 hours
+
+| Course | UKSA/GSG Competency | Description | Duration | Link |
+|---------------|---------------|---------------|---------------|---------------|
+| Machine Learning Fundamentals in Python OR R | Advanced analysis | Learn supervised learning, model training, and evaluation. | 3h | [Python](https://www.datacamp.com/tracks/machine-learning-fundamentals-with-python), [R](https://www.datacamp.com/courses/machine-learning-in-r) |
+| Feature Engineering in Python OR R | Model improvement | Learn how to transform raw data into features for better models. | 2h | [Python](https://www.datacamp.com/courses/feature-engineering-for-machine-learning), [R](https://www.datacamp.com/courses/feature-engineering-in-r) |
+| Data Cleaning in Python OR R | Data quality | Learn techniques to handle missing, inconsistent, and messy data. | 2h | [Python](https://www.datacamp.com/courses/cleaning-data-in-python), [R](https://www.datacamp.com/courses/data-cleaning-in-r) |
+| Data Engineering for Everyone | Data pipelines | Understand the basics of data engineering and ETL workflows. | 2h | [Link](https://www.datacamp.com/courses/data-engineering-for-everyone) |
+| Advanced SQL | Complex querying | Learn subqueries, window functions, and performance tuning. | 3h | [Link](https://www.datacamp.com/courses/advanced-sql) |
+| Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
+
+## Track 4: Experienced – Low Technical Skill
+
+**Estimated Total Duration**: \~16 hours
+
+| Course | UKSA/GSG Competency | Description | Duration | Link |
+|---------------|---------------|---------------|---------------|---------------|
+| Introduction to Python OR R | Programming fundamentals | Learn basic syntax, data types, and operations. | 4h | [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), [R](https://www.datacamp.com/courses/free-introduction-to-r) |
+| Introduction to Power BI | Data visualization | Learn how to build dashboards and reports using Power BI. | 3h | [Link](https://www.datacamp.com/courses/introduction-to-power-bi) |
+| Communicating Data Insights | Data communication | Learn how to present findings clearly to stakeholders. | 2h | [Link](https://www.datacamp.com/courses/communicating-data-insights) |
+| Understanding Prompt Engineering | AI literacy | Learn how to design effective prompts for generative AI tools. | 1.5h | [Link](https://www.datacamp.com/courses/understanding-prompt-engineering) |
+| Introduction to Data Ethics | Ethical use of data | Explore responsible data use, privacy, and fairness. | 1h | [Link](https://www.datacamp.com/courses/data-ethics) |
+| Introduction to SQL | Data acquisition | Learn to query databases using SELECT, WHERE, and JOIN. | 2h | [Link](https://www.datacamp.com/courses/introduction-to-sql) |
+| Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
+
+## Track 5: Experienced – Intermediate Technical Skill
+
+**Estimated Total Duration**: \~18 hours
+
+| Course | UKSA/GSG Competency | Description | Duration | Link |
+|---------------|---------------|---------------|---------------|---------------|
+| Intermediate Python OR R | Programming logic | Learn loops, conditionals, and functions. | 4h | [Python](https://www.datacamp.com/courses/intermediate-python), [R](https://www.datacamp.com/courses/intermediate-r) |
+| Exploratory Data Analysis in Python OR R | Data exploration | Learn how to summarize, visualize, and interpret data. | 3h | [Python](https://www.datacamp.com/courses/exploratory-data-analysis-in-python), [R](https://www.datacamp.com/courses/exploratory-data-analysis-in-r) |
+| Introduction to Git | Reproducibility | Learn version control basics. | 2h | [Link](https://www.datacamp.com/courses/introduction-to-git) |
+| Data Cleaning in Python OR R | Data quality | Handle missing and messy data. | 2h | [Python](https://www.datacamp.com/courses/cleaning-data-in-python), [R](https://www.datacamp.com/courses/data-cleaning-in-r) |
+| Data Ethics and Bias | Responsible analysis | Understand bias and fairness in data work. | 2h | [Link](https://www.datacamp.com/courses/data-ethics-and-bias) |
+| SQL for Data Analysis | Analytical querying | Learn to extract insights from databases. | 3h | [Link](https://www.datacamp.com/courses/sql-for-data-analysis) |
+| Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
+
+## Track 6: Experienced – High Technical Skill
+
+**Estimated Total Duration**: \~20 hours
+
+| Course | UKSA/GSG Competency | Description | Duration | Link |
+|---------------|---------------|---------------|---------------|---------------|
+| Machine Learning Fundamentals in Python OR R | Advanced modelling | Learn supervised learning, model training, and evaluation. | 3h | [Python](https://www.datacamp.com/tracks/machine-learning-fundamentals-with-python), [R](https://www.datacamp.com/courses/machine-learning-in-r) |
+| Feature Engineering in Python OR R | Model improvement | Transform raw data into features. | 2h | [Python](https://www.datacamp.com/courses/feature-engineering-for-machine-learning), [R](https://www.datacamp.com/courses/feature-engineering-in-r) |
+| Advanced SQL | Complex querying | Learn subqueries, window functions, and performance tuning. | 3h | [Link](https://www.datacamp.com/courses/advanced-sql) |
+| Data Engineering for Everyone | Data pipelines | Understand ETL workflows and data infrastructure. | 2h | [Link](https://www.datacamp.com/courses/data-engineering-for-everyone) |
+| Git and Version Control | Reproducibility | Learn branching, merging, and collaboration. | 2h | [Link](https://www.datacamp.com/courses/git-and-version-control) |
+| Data Ethics and Privacy | Responsible data use | Explore privacy, consent, and ethical frameworks. | 2h | [Link](https://www.datacamp.com/courses/data-ethics-and-privacy) |
+| Building Dashboards in Power BI | Visual storytelling | Learn to create interactive dashboards. | 2h | [Link](https://www.datacamp.com/courses/building-dashboards-in-power-bi) |
+| Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
+
+## Track 7: One Big Thing – AI for All: A Headstart!
+
+**Estimated Total Duration**: \~6–8 hours
+
+| Course | Description | Duration | Link |
+|-----------------|--------------------|-----------------|-----------------|
+| Understanding AI | Learn what AI is, how it works, and where it’s used. | 2h | [Link](https://www.datacamp.com/courses/understanding-artificial-intelligence) |
+| Introduction to Machine Learning | Understand ML concepts like supervised learning and model evaluation. | 2h | [Link](https://www.datacamp.com/courses/understanding-machine-learning) |
+| Understanding Prompt Engineering | Learn how to design effective prompts for generative AI tools. | 1.5h | [Link](https://www.datacamp.com/courses/understanding-prompt-engineering) |
+| AI Ethics | Explore fairness, transparency, and responsible AI use. | 1h | [Link](https://www.datacamp.com/courses/ai-ethics) |
+| ChatGPT for Data Analysis | Learn how to use ChatGPT for data tasks. | 1h | [Link](https://www.datacamp.com/courses/understanding-chatgpt) |
+| AI for Decision-Making | Understand how AI supports policy and operational decisions. | 1h | [Link](https://www.datacamp.com/courses/ai-business-fundamentals) |

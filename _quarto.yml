@@ -83,6 +83,7 @@ website:
           - learning-development/r.qmd
           - learning-development/git.qmd
           - learning-development/python.qmd
+          - learning-development/datacamp-tracks.qmd
           - ADA/ada.qmd
           - ADA/databricks_fundamentals.qmd
           - ADA/databricks_notebooks.qmd
