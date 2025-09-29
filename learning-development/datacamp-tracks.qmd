@@ -9,7 +9,7 @@ format: html
 
 This page contains a tailored set of learning paths designed to support your development as an analyst in the Department for Education (DfE). These tracks draw on DataCamp's extensive course offerings to build competencies aligned with the Government Statistical Service (GSG) framework.
 
-Each track is tailored to different levels of technical skills and experience, helping you decide which track would be best for you. You'll find estimated duration to help you plan your time, and a special AI for All track to get everyone up to speed on foundational AI concepts. Use this page to identify the track that best fits your current goals and needs and head over to [Datacamp](https://www.datacamp.com/) to start learning!
+Each track is tailored to different levels of technical skills and experience, helping you decide which track would be best for you. You'll find estimated duration per course and per track to help you plan your time, and a special AI for All track to get everyone up to speed on foundational AI concepts. Use this page to identify the track that best fits your current goals and needs and head over to [Datacamp](https://www.datacamp.com/) to start learning!
 
 ---
 
