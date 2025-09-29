@@ -7,13 +7,25 @@ format: html
 
 ---
 
-This page contains a tailored set of learning paths designed to support your development as an analyst in the Department for Education (DfE). These tracks draw on DataCamp's extensive course offerings to build competencies aligned with the Government Statistical Service (GSG) framework.
+Our analytical L&D offer includes full enterprise access to [Datacamp](https://www.datacamp.com/). This page contains a tailored set of DataCamp learning paths designed to support your development as an analyst in the Department for Education (DfE).
 
-Each track is tailored to different levels of technical skills and experience, helping you decide which track would be best for you. You'll find estimated duration per course and per track to help you plan your time, and a special AI for All track to get everyone up to speed on foundational AI concepts. Use this page to identify the track that best fits your current goals and needs and head over to [Datacamp](https://www.datacamp.com/) to start learning!
+## What is DataCamp? 
+
+DataCamp is an online learning platform focused on data and analytics skills. It offers over 400 interactive courses across Python, R, SQL, Power BI, Tableau, machine learning, data engineering, and more. The platform is designed to be hands-on: less theory, more doing. You code directly in the browser, get instant feedback, and can apply your learning through real-world projects and assessments.
+
+## How do I get access to DataCamp? 
+
+If you’d like a license, please email datacamp.requests@education.gov.uk copying your line manager. We expect everyone requesting access to have a development conversation with their manager, outlining how they plan to use - and are using - the platform to support their learning and development, making sure this is captured in their personal L&D plan.
 
 ---
 
-# Summary of Learning Tracks
+## What are learning tracks? 
+
+Learning tracks are sets of courses put together using DataCamp to help you build the right skills. These tracks draw on DataCamp's extensive course offerings to build competencies aligned with the Government Statistical Service (GSG) framework.
+
+Each track is tailored to different levels of technical skills and experience, helping you decide which track would be best for you. You'll find estimated duration per course and per track to help you plan your time, and a special AI for All track to get everyone up to speed on foundational AI concepts. Use this page to identify the track that best fits your current goals and needs and head over to [DataCamp](https://www.datacamp.com/) to start learning!
+
+## Summary of Learning Tracks
 
 | Track Name | Target Persona | Estimated Duration |
 |-------------------|------------------------|-----------------------------|
@@ -25,9 +37,9 @@ Each track is tailored to different levels of technical skills and experience, h
 | Experienced – High Technical Skill | Experienced member, high technical skill | \~20 hours |
 | One Big Thing – AI for All: A Headstart! | All staff, introductory AI awareness | \~6–8 hours |
 
-# DataCamp Learning Tracks for Analysts
+## DataCamp Learning Tracks for Analysts
 
-## Track 1: New to Role – Intro Level
+### Track 1: New to Role – Intro Level
 
 **Estimated Total Duration**: \~13 hours
 
@@ -40,7 +52,7 @@ Each track is tailored to different levels of technical skills and experience, h
 | Communicating Data Insights | Data communication | Learn how to present findings clearly to stakeholders. | 2h | [Link](https://www.datacamp.com/courses/communicating-data-insights) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-## Track 2: New to Role – Intermediate Level
+### Track 2: New to Role – Intermediate Level
 
 **Estimated Total Duration**: \~14 hours
 
@@ -52,7 +64,7 @@ Each track is tailored to different levels of technical skills and experience, h
 | Introduction to Git | Reproducibility | Learn version control basics to track and share code. | 2h | [Link](https://www.datacamp.com/courses/introduction-to-git) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-## Track 3: New to Role – High Technical Skill
+### Track 3: New to Role – High Technical Skill
 
 **Estimated Total Duration**: \~15 hours
 
@@ -65,7 +77,7 @@ Each track is tailored to different levels of technical skills and experience, h
 | Advanced SQL | Complex querying | Learn subqueries, window functions, and performance tuning. | 3h | [Link](https://www.datacamp.com/courses/advanced-sql) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-## Track 4: Experienced – Low Technical Skill
+### Track 4: Experienced – Low Technical Skill
 
 **Estimated Total Duration**: \~16 hours
 
@@ -79,7 +91,7 @@ Each track is tailored to different levels of technical skills and experience, h
 | Introduction to SQL | Data acquisition | Learn to query databases using SELECT, WHERE, and JOIN. | 2h | [Link](https://www.datacamp.com/courses/introduction-to-sql) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-## Track 5: Experienced – Intermediate Technical Skill
+### Track 5: Experienced – Intermediate Technical Skill
 
 **Estimated Total Duration**: \~18 hours
 
@@ -93,7 +105,7 @@ Each track is tailored to different levels of technical skills and experience, h
 | SQL for Data Analysis | Analytical querying | Learn to extract insights from databases. | 3h | [Link](https://www.datacamp.com/courses/sql-for-data-analysis) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-## Track 6: Experienced – High Technical Skill
+### Track 6: Experienced – High Technical Skill
 
 **Estimated Total Duration**: \~20 hours
 
@@ -108,7 +120,7 @@ Each track is tailored to different levels of technical skills and experience, h
 | Building Dashboards in Power BI | Visual storytelling | Learn to create interactive dashboards. | 2h | [Link](https://www.datacamp.com/courses/building-dashboards-in-power-bi) |
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
-## Track 7: One Big Thing – AI for All: A Headstart!
+### Track 7: One Big Thing – AI for All: A Headstart!
 
 **Estimated Total Duration**: \~6–8 hours
 
