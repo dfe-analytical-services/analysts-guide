@@ -134,7 +134,7 @@ You'll find estimated duration per course and per track to help you plan your ti
 | Data Engineering for Everyone | Data pipelines | Understand ETL workflows and data infrastructure. | 2h | [Link](https://www.datacamp.com/courses/data-engineering-for-everyone) |
 | Git and Version Control | Reproducibility | Learn branching, merging, and collaboration. | 2h | [Link](https://www.datacamp.com/courses/git-and-version-control) |
 | Data Ethics and Privacy | Responsible data use | Explore privacy, consent, and ethical frameworks. | 2h | [Link](https://www.datacamp.com/courses/data-ethics-and-privacy) |
-| Building Dashboards in Power BI OR R Shiny OR Python| Visual storytelling | Learn to create interactive dashboards. | 2h | [Power BI](https://www.datacamp.com/courses/building-dashboards-in-power-bi), [R Shiny](https://app.datacamp.com/learn/courses/building-web-applications-with-shiny-in-r), [Python](https://app.datacamp.com/learn/courses/building-dashboards-with-dash-and-plotly)|
+| Building Dashboards in Power BI OR R Shiny OR Python| Visual storytelling | Learn to create interactive dashboards. | 2-4h | [Power BI](https://www.datacamp.com/courses/building-dashboards-in-power-bi), [R Shiny](https://app.datacamp.com/learn/courses/building-web-applications-with-shiny-in-r), [Python](https://app.datacamp.com/learn/courses/building-dashboards-with-dash-and-plotly)|
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
 
