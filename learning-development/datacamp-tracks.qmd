@@ -3,7 +3,7 @@ title: "Datacamp learning tracks"
 format: html
 ---
 
-<p class="text-muted">  Learning tracks for analysts looking to upskill using Datacamp </p>
+<p class="text-muted">Learning tracks for analysts looking to upskill using DataCamp</p>
 
 ---
 
