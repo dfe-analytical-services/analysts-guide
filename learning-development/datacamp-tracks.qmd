@@ -126,7 +126,7 @@ You'll find estimated duration per course and per track to help you plan your ti
 
 **Estimated total duration**: \~20-22 hours
 
-| Course | UKSA/GSG Competency | Description | Duration | Link |
+| Course | UKSA / GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
 | Machine Learning Fundamentals in Python OR R | Advanced modelling | Learn supervised learning, model training, and evaluation. | 3h | [Python](https://www.datacamp.com/tracks/machine-learning-fundamentals-with-python), [R](https://www.datacamp.com/courses/machine-learning-in-r) |
 | Feature Engineering in Python OR R | Model improvement | Transform raw data into features. | 2h | [Python](https://www.datacamp.com/courses/feature-engineering-for-machine-learning), [R](https://www.datacamp.com/courses/feature-engineering-in-r) |
