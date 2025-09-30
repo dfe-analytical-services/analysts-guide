@@ -98,7 +98,7 @@ You'll find estimated duration per course and per track to help you plan your ti
 
 **Estimated total duration**: \~16 hours
 
-| Course | UKSA/GSG Competency | Description | Duration | Link |
+| Course | UKSA / GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
 | Introduction to Python OR R | Programming fundamentals | Learn basic syntax, data types, and operations. | 4h | [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), [R](https://www.datacamp.com/courses/free-introduction-to-r) |
 | Introduction to Power BI | Data visualization | Learn how to build dashboards and reports using Power BI. | 3h | [Link](https://www.datacamp.com/courses/introduction-to-power-bi) |
