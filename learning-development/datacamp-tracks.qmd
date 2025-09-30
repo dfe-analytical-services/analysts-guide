@@ -7,7 +7,9 @@ format: html
 
 ---
 
-Our analytical L&D offer includes full enterprise access to [Datacamp](https://www.datacamp.com/). This page contains a tailored set of DataCamp learning paths designed to support your development as an analyst in the Department for Education (DfE).
+Our analytical L&D offer includes full enterprise access to [Datacamp](https://www.datacamp.com/), more information on this can be found on the [DfE intranet](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Accessing-DataCamp.aspx?xsdata=MDV8MDJ8fGY1OWQ3MGYyNWY1MDQ5OTdkZjg5MDhkZGZmNmMxYTBjfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2Mzg5NDc1NjE5MTUwODA1ODV8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKRFFTSTZJbFJsWVcxelgwRlVVRk5sY25acFkyVmZVMUJQVEU5R0lpd2lWaUk2SWpBdU1DNHdNREF3SWl3aVVDSTZJbGRwYmpNeUlpd2lRVTRpT2lKUGRHaGxjaUlzSWxkVUlqb3hNWDA9fDF8TDJOb1lYUnpMekU1T2pBMFptRXdaak5qTFdFeVkyWXRORGd3TmkxaVlqRmxMV0kzTURjellURm1abU0wWkY4ellqSmlNakkzTXkxaFpqSTNMVFE1WTJNdFlURTJNeTB6WmpCa1pURmlNREl5WldaQWRXNXhMbWRpYkM1emNHRmpaWE12YldWemMyRm5aWE12TVRjMU9URTFPVE01TVRJeU5BPT18MDZlMTllOWFjZjljNGE3YzQ3ODUwOGRkZmY2YzFhMGN8NzYzMjdmZmE3Mjk1NGU2NDhjNzhmZmU0NGU2NmZjZGM%3D&sdata=TVo5MXNjd2VvcFNDNkVDZ1YzdGU1VEdSZmw4akhsYi91KzIrdnFQVlAzUT0%3D&ovuser=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9%2CCameron.RACE%40EDUCATION.GOV.UK&OR=Teams-HL&CT=1759168995150&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNTA4MjgxNzkxMiIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D). 
+
+This page contains a tailored set of DataCamp learning paths designed to support your development as an analyst in the Department for Education (DfE).
 
 ## What is DataCamp? 
 
