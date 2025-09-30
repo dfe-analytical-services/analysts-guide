@@ -95,7 +95,7 @@ Each track is tailored to different levels of technical skills and experience, h
 
 **Estimated total duration**: \~18 hours
 
-| Course | UKSA/GSG Competency | Description | Duration | Link |
+| Course | UKSA / GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
 | Intermediate Python OR R | Programming logic | Learn loops, conditionals, and functions. | 4h | [Python](https://www.datacamp.com/courses/intermediate-python), [R](https://www.datacamp.com/courses/intermediate-r) |
 | Exploratory Data Analysis in Python OR R | Data exploration | Learn how to summarize, visualize, and interpret data. | 3h | [Python](https://www.datacamp.com/courses/exploratory-data-analysis-in-python), [R](https://www.datacamp.com/courses/exploratory-data-analysis-in-r) |
