@@ -124,7 +124,7 @@ You'll find estimated duration per course and per track to help you plan your ti
 
 ### Track 7: experienced – high technical skill
 
-**Estimated total duration**: \~20 hours
+**Estimated total duration**: \~20-22 hours
 
 | Course | UKSA/GSG Competency | Description | Duration | Link |
 |---------------|---------------|---------------|---------------|---------------|
