@@ -39,7 +39,7 @@ You'll find estimated duration per course and per track to help you plan your ti
 | New to Role – High Technical Skill | New to role, high technical skill | \~15 hours |
 | Experienced – Low Technical Skill | Experienced member, low technical skill | \~16 hours |
 | Experienced – Intermediate Technical Skill | Experienced member, intermediate technical skill | \~18 hours |
-| Experienced – High Technical Skill | Experienced member, high technical skill | \~20 hours |
+| Experienced – High Technical Skill | Experienced member, high technical skill | \~20-22 hours |
 
 ## DataCamp learning tracks
 
