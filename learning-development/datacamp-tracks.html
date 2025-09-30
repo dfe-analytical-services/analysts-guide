@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Personal cluster with RStudio and odbc / DBI – Analysts' Guide</title>
+<title>DataCamp learning tracks – Analysts’ Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +29,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ADA/databricks_rstudio_personal_cluster_sparklyr_archive.html" rel="next">
-<link href="../ADA/databricks_rstudio_sql_warehouse.html" rel="prev">
+<link href="../ADA/ada.html" rel="next">
+<link href="../learning-development/python.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -308,7 +273,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_sql_warehouse.html">Databricks Setup Guides</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_personal_cluster.html">Personal cluster with RStudio and <code>odbc</code> / <code>DBI</code></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../learning-development/learning-support.html">Learning resources</a></li><li class="breadcrumb-item"><a href="../learning-development/datacamp-tracks.html">DataCamp learning tracks</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -407,13 +372,13 @@ cookieconsent.run({
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Learning resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
@@ -446,7 +411,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../learning-development/datacamp-tracks.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/datacamp-tracks.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">DataCamp learning tracks</span></a>
   </div>
 </li>
@@ -631,13 +596,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Databricks Setup Guides</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
@@ -646,7 +611,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Personal cluster with RStudio and <code>odbc</code> / <code>DBI</code></span></a>
   </div>
 </li>
@@ -686,31 +651,30 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
-  <li><a href="#compute-resources" id="toc-compute-resources" class="nav-link" data-scroll-target="#compute-resources">Compute resources</a>
+  <li><a href="#what-is-datacamp" id="toc-what-is-datacamp" class="nav-link active" data-scroll-target="#what-is-datacamp">What is DataCamp?</a></li>
+  <li><a href="#how-do-i-get-access-to-datacamp" id="toc-how-do-i-get-access-to-datacamp" class="nav-link" data-scroll-target="#how-do-i-get-access-to-datacamp">How do I get access to DataCamp?</a></li>
+  <li><a href="#what-are-learning-tracks" id="toc-what-are-learning-tracks" class="nav-link" data-scroll-target="#what-are-learning-tracks">What are learning tracks?</a></li>
+  <li><a href="#summary-of-learning-tracks" id="toc-summary-of-learning-tracks" class="nav-link" data-scroll-target="#summary-of-learning-tracks">Summary of learning tracks</a></li>
+  <li><a href="#datacamp-learning-tracks" id="toc-datacamp-learning-tracks" class="nav-link" data-scroll-target="#datacamp-learning-tracks">DataCamp learning tracks</a>
   <ul class="collapse">
-  <li><a href="#personal-clusters" id="toc-personal-clusters" class="nav-link" data-scroll-target="#personal-clusters">Personal clusters</a></li>
-  </ul></li>
-  <li><a href="#process" id="toc-process" class="nav-link" data-scroll-target="#process">Process</a>
-  <ul class="collapse">
-  <li><a href="#creating-a-personal-compute-resource" id="toc-creating-a-personal-compute-resource" class="nav-link" data-scroll-target="#creating-a-personal-compute-resource">Creating a personal compute resource</a></li>
-  </ul></li>
-  <li><a href="#setting-up-the-odbc-driver" id="toc-setting-up-the-odbc-driver" class="nav-link" data-scroll-target="#setting-up-the-odbc-driver">Setting up the ODBC driver</a>
-  <ul class="collapse">
-  <li><a href="#establishing-an-rstudio-connection-using-environment-variables" id="toc-establishing-an-rstudio-connection-using-environment-variables" class="nav-link" data-scroll-target="#establishing-an-rstudio-connection-using-environment-variables">Establishing an RStudio connection using environment variables</a></li>
-  <li><a href="#pulling-data-into-rstudio-from-databricks" id="toc-pulling-data-into-rstudio-from-databricks" class="nav-link" data-scroll-target="#pulling-data-into-rstudio-from-databricks">Pulling data into RStudio from Databricks</a></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
+  <li><a href="#track-1-one-big-thing-ai-for-all-a-headstart" id="toc-track-1-one-big-thing-ai-for-all-a-headstart" class="nav-link" data-scroll-target="#track-1-one-big-thing-ai-for-all-a-headstart">Track 1: One Big Thing – AI for all: a headstart!</a></li>
+  <li><a href="#track-2-new-to-role-intro-level" id="toc-track-2-new-to-role-intro-level" class="nav-link" data-scroll-target="#track-2-new-to-role-intro-level">Track 2: new to role – intro level</a></li>
+  <li><a href="#track-3-new-to-role-intermediate-level" id="toc-track-3-new-to-role-intermediate-level" class="nav-link" data-scroll-target="#track-3-new-to-role-intermediate-level">Track 3: new to role – intermediate level</a></li>
+  <li><a href="#track-4-new-to-role-high-technical-skill" id="toc-track-4-new-to-role-high-technical-skill" class="nav-link" data-scroll-target="#track-4-new-to-role-high-technical-skill">Track 4: new to role – high technical skill</a></li>
+  <li><a href="#track-5-experienced-low-technical-skill" id="toc-track-5-experienced-low-technical-skill" class="nav-link" data-scroll-target="#track-5-experienced-low-technical-skill">Track 5: experienced – low technical skill</a></li>
+  <li><a href="#track-6-experienced-intermediate-technical-skill" id="toc-track-6-experienced-intermediate-technical-skill" class="nav-link" data-scroll-target="#track-6-experienced-intermediate-technical-skill">Track 6: experienced – intermediate technical skill</a></li>
+  <li><a href="#track-7-experienced-high-technical-skill" id="toc-track-7-experienced-high-technical-skill" class="nav-link" data-scroll-target="#track-7-experienced-high-technical-skill">Track 7: experienced – high technical skill</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_personal_cluster.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/learning-development/datacamp-tracks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_sql_warehouse.html">Databricks Setup Guides</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_rstudio_personal_cluster.html">Personal cluster with RStudio and <code>odbc</code> / <code>DBI</code></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../learning-development/learning-support.html">Learning resources</a></li><li class="breadcrumb-item"><a href="../learning-development/datacamp-tracks.html">DataCamp learning tracks</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Personal cluster with RStudio and <code>odbc</code> / <code>DBI</code></h1>
+<h1 class="title">DataCamp learning tracks</h1>
 </div>
 
 
@@ -727,312 +691,511 @@ cookieconsent.run({
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting <a href="mailto:statistics.development@education.gov.uk">statistics.development@education.gov.uk</a>.</p>
-</div>
-</div>
 <p class="text-muted">
-</p><p>The following instructions set up an ODBC connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using an ODBC based package.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>If your existing code uses sqlQuery()
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If your code makes use of the sqlQuery() function, you will need to use an alternative set up method using the RODBC package. You can find more information on this in the <a href="#Troubleshooting">Troubleshooting section</a> at the end of this page.</p>
-</div>
-</div>
-<p>Personal clusters can be used within the Databricks environment, or through RStudio. You can set one up yourself if you don’t have access to a SQL warehouse or shared cluster.</p>
-<p>A personal cluster is the most versatile type of compute and the most easily accessible for analysts within the Department. If you are considering converting an existing R / RStudio process to the Databricks environment a personal cluster is the best choice as you will be able to run like for like code on both environments.</p>
-<p>Within the Databricks environment personal clusters are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. Using this ODBC method from RStudio you will be able to query data using similar methods as you currently use when connecting to Microsoft SQL server. Usually this will take the form of submitting SQL queries to Databricks from R code running on your laptop.</p>
-<p></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Please note: This guidance should be followed if you wish to run R scripts from RStudio against data held against tables in Databricks, or if you wish to work with a file held in a Databricks volume. You can read more about volumes on our <a href="ADA/databricks_fundamentals.html#volumes">Databricks fundamentals page</a>.</p>
-</div>
-</div>
-<p>You can use data from Databricks with R code in two different ways:</p>
-<ul>
-<li>In scripts or notebooks via the Databricks environment</li>
-<li>In RStudio via an ODBC connection</li>
-</ul>
-<hr>
-<section id="pre-requisites" class="level2">
-<h2 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h2>
-<p>You must have:</p>
-<ul>
-<li><a href="https://git-scm.com/downloads" target="_blank">Git</a> installed</li>
-<li>RTools installed from the Software Centre (latest version is RTools 44)</li>
-<li>Access to Databricks and the data you’ll be working with</li>
-<li>Access to a personal cluster on Databricks</li>
-<li>R and RStudio downloaded</li>
-</ul>
-<hr>
-</section>
-<section id="compute-resources" class="level2">
-<h2 class="anchored" data-anchor-id="compute-resources">Compute resources</h2>
-<p>When your data is moved to Databricks, it will be stored in the Unity Catalog and you will need to use a compute resource to access it from other software such as RStudio.</p>
-<p>A compute resource allows you to run your code using cloud computing power instead of using your laptop’s processing power. This means that using compute resources can allow your code to run faster than it would if you ran it locally, as it is like using the processing resources of multiple computers at once. On this page, we will be referring to the use of personal clusters as the compute resource to run your code.</p>
-<hr>
-<section id="personal-clusters" class="level3">
-<h3 class="anchored" data-anchor-id="personal-clusters">Personal clusters</h3>
-<hr>
-<p>A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python) in the Databricks environment and can be set up to connect to RStudio as well. You can create your own personal cluster within the Databricks interface.</p>
-<p>When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on a personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the <a href="https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/" target="_blank">Databricks documentation</a>.</p>
-<p>Compute resources, including personal clusters, have no storage of their own. This means that if you install libraries or packages onto a cluster they will only remain installed until the cluster is stopped. Once re-started those libraries will need to be installed again.</p>
-<p>An alternative to this is to specify packages / libraries to be installed on the cluster at start up. To do this click the name of your cluster from the ‘Compute’ page, then go to the ‘Libraries’ tab and click the ‘Install new’ button.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Clusters will shut down after being idle for an hour
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Use of compute resources are charged by the hour, and so personal clusters have been set to shut down after being unused for an hour in order to prevent unnecessary cost to the Department.</p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="process" class="level2">
-<h2 class="anchored" data-anchor-id="process">Process</h2>
-<p>There are four steps to complete before your connection can be established. These are:</p>
-<ul>
-<li>Creating a personal compute resource (if you do not already have one)</li>
-<li>Installing an ODBC driver on your laptop to enable a connection between your laptop and Databricks</li>
-<li>Modifying your .Renviron file to establish a connection between RStudio and Databricks</li>
-<li>Adding connection code to your existing scripts in RStudio</li>
-</ul>
-<hr>
-<section id="creating-a-personal-compute-resource" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-personal-compute-resource">Creating a personal compute resource</h3>
-<hr>
-<ol type="1">
-<li>To create your own personal compute resource click the ‘Create with DfE Personal Compute’ button on the compute page<br>
-</li>
-</ol>
-<p><img src="../images/ada-compute-personal.png" class="img-fluid"></p>
-<ol start="2" type="1">
-<li><p>You’ll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type<br>
-<br>
-<strong>Databricks runtime version</strong> - This is the version of the Databricks software that will be present on your compute resource. Generally it is recommended you go with the latest LTS (long term support) version. At the time of writing this is ‘15.4 LTS’<br>
-<br>
-<strong>Node type</strong> - This option determines how powerful your cluster is and there are 2 options available by default:<br>
+Learning tracks for analysts looking to upskill using DataCamp
 </p>
-<ul>
-<li>Standard 14GB 4-Core Nodes<br>
-</li>
-<li>Large 28GB 8-Core Nodes<br>
-<br>
-If you require a larger personal cluster this can be requested by the ADA team.<br>
-<br>
-<img src="../images/ada-compute-personal-create.png" class="img-fluid"></li>
-</ul></li>
-<li><p>Click the ‘Create compute’ button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes<br>
-<br>
-<img src="../images/ada-compute-personal-create-button.png" class="img-fluid"></p></li>
-<li><p>Once the cluster is up and running the icon under the ‘State’ header on the ‘Compute’ page will appear as a green tick<br>
-<br>
-<img src="../images/ada-compute-ready.png" class="img-fluid"></p></li>
-</ol>
+<hr>
+<p>Our analytical L&amp;D offer includes full enterprise access to <a href="https://www.datacamp.com/" target="_blank">Datacamp</a>, more information on this can be found on the <a href="https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Accessing-DataCamp.aspx?xsdata=MDV8MDJ8fGY1OWQ3MGYyNWY1MDQ5OTdkZjg5MDhkZGZmNmMxYTBjfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2Mzg5NDc1NjE5MTUwODA1ODV8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKRFFTSTZJbFJsWVcxelgwRlVVRk5sY25acFkyVmZVMUJQVEU5R0lpd2lWaUk2SWpBdU1DNHdNREF3SWl3aVVDSTZJbGRwYmpNeUlpd2lRVTRpT2lKUGRHaGxjaUlzSWxkVUlqb3hNWDA9fDF8TDJOb1lYUnpMekU1T2pBMFptRXdaak5qTFdFeVkyWXRORGd3TmkxaVlqRmxMV0kzTURjellURm1abU0wWkY4ellqSmlNakkzTXkxaFpqSTNMVFE1WTJNdFlURTJNeTB6WmpCa1pURmlNREl5WldaQWRXNXhMbWRpYkM1emNHRmpaWE12YldWemMyRm5aWE12TVRjMU9URTFPVE01TVRJeU5BPT18MDZlMTllOWFjZjljNGE3YzQ3ODUwOGRkZmY2YzFhMGN8NzYzMjdmZmE3Mjk1NGU2NDhjNzhmZmU0NGU2NmZjZGM%3D&amp;sdata=TVo5MXNjd2VvcFNDNkVDZ1YzdGU1VEdSZmw4akhsYi91KzIrdnFQVlAzUT0%3D&amp;ovuser=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9%2CCameron.RACE%40EDUCATION.GOV.UK&amp;OR=Teams-HL&amp;CT=1759168995150&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNTA4MjgxNzkxMiIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D" target="_blank">DfE intranet</a>.</p>
+<p>This page contains a tailored set of DataCamp learning paths designed to support your development as an analyst in the Department for Education (DfE). The first of these paths is AI for all, which has been developed in alignment with the <a href="https://educationgovuk.sharepoint.com/sites/dfe-home/SitePages/One-Big-Thing-2025.aspx" target="_blank">One Big Thing 2025</a> initiative, which aims to build foundational understanding of artificial intelligence across the Civil Service.</p>
+<section id="what-is-datacamp" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-datacamp">What is DataCamp?</h2>
+<p>DataCamp is an online learning platform focused on data and analytics skills. It offers over 400 interactive courses across Python, R, SQL, Power BI, Tableau, machine learning, data engineering, and more. The platform is designed to be hands-on: less theory, more doing. You code directly in the browser, get instant feedback, and can apply your learning through real-world projects and assessments.</p>
+</section>
+<section id="how-do-i-get-access-to-datacamp" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-i-get-access-to-datacamp">How do I get access to DataCamp?</h2>
+<p>If you’d like a license, please email datacamp.requests@education.gov.uk copying your line manager. We expect everyone requesting access to have a development conversation with their manager, outlining how they plan to use - and are using - the platform to support their learning and development, making sure this is captured in their personal L&amp;D plan.</p>
 <hr>
 </section>
+<section id="what-are-learning-tracks" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-learning-tracks">What are learning tracks?</h2>
+<p>Learning tracks are sets of courses put together using DataCamp to help you build the right skills. These tracks draw on DataCamp’s extensive course offerings to build competencies aligned with the Government Statistical Service (GSG) framework.</p>
+<p>The AI for All track is specially designed to get everyone up to speed on foundational AI concepts, in line with <a href="https://educationgovuk.sharepoint.com/sites/dfe-home/SitePages/One-Big-Thing-2025.aspx" target="_blank">One Big Thing 2025</a>. Each of the remaining tracks are tailored to different levels of technical skills and experience, helping you decide which track would be best for you.</p>
+<p>You’ll find estimated duration per course and per track to help you plan your time. Use this page to identify the track that best fits your current goals and needs and head over to <a href="https://www.datacamp.com/" target="_blank">DataCamp</a> to start learning!</p>
 </section>
-<section id="setting-up-the-odbc-driver" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-the-odbc-driver">Setting up the ODBC driver</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you have previously set up an ODBC connection, or followed the <a href="../ADA/databricks_rstudio_sql_warehouse.html">set up Databricks SQL Warehouse with RStudio</a> guidance, then you can skip this step.</p>
-</div>
-</div>
-<ul>
-<li><p>Open the Software Centre via the start menu</p></li>
-<li><p>In the ‘Applications’ tab, click <code>Simba Spark ODBC Driver 64-bit</code></p></li>
-</ul>
-<div data-align="center">
-<p><img src="../images/databricks-software-centre.png" class="img-fluid"></p>
-</div>
-<ul>
-<li>Click install</li>
-</ul>
-<hr>
-<section id="establishing-an-rstudio-connection-using-environment-variables" class="level3">
-<h3 class="anchored" data-anchor-id="establishing-an-rstudio-connection-using-environment-variables">Establishing an RStudio connection using environment variables</h3>
-<hr>
-<p>The <code>ODBC</code> package in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you have previously established a connection between a SQL Warehouse and RStudio, then some of these variables will already be in your .Renviron file.</p>
-</div>
-</div>
-<p>To set the environment variables, call <code>usethis::edit_r_environ()</code>. You will then need to enter the following information:</p>
-<pre><code>DATABRICKS_HOST = "databricks-host"
-DATABRICKS_CLUSTER_PATH = "databricks-cluster-path"
-DATABRICKS_TOKEN = "personal-access-token"</code></pre>
-<p>Once you have entered the details, save and close your .Renviron file and restart R (Session &gt; Restart R).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Everyone in your team that wishes to connect to the data in Databricks and run your code must set up their .Renviron file individually, otherwise their connection will fail.</p>
-</div>
-</div>
-<p>The sections below describe where to find the information needed for each of the environment variables.</p>
-<hr>
-<section id="databricks-host" class="level4">
-<h4 class="anchored" data-anchor-id="databricks-host">Databricks host</h4>
-<hr>
-<p>The Databricks host is the instance of Databricks that you want to connect to. It’s the URL that you see in your browser bar when you’re on the Databricks site and should end in “azuredatabricks.net” (ignore anything after this section of the URL).</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do not include the / at the end of the URL when you add it to the .Renviron file</p>
-</div>
-</div>
-<hr>
+<section id="summary-of-learning-tracks" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-learning-tracks">Summary of learning tracks</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 33%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Track Name</th>
+<th>Target Persona</th>
+<th>Estimated Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>One Big Thing – AI for All: A Headstart!</td>
+<td>All staff, introductory AI awareness</td>
+<td>~6–8 hours</td>
+</tr>
+<tr class="even">
+<td>New to Role – Intro Level</td>
+<td>New to role, low technical skill</td>
+<td>~13 hours</td>
+</tr>
+<tr class="odd">
+<td>New to Role – Intermediate Level</td>
+<td>New to role, intermediate technical skill</td>
+<td>~14 hours</td>
+</tr>
+<tr class="even">
+<td>New to Role – High Technical Skill</td>
+<td>New to role, high technical skill</td>
+<td>~15 hours</td>
+</tr>
+<tr class="odd">
+<td>Experienced – Low Technical Skill</td>
+<td>Experienced member, low technical skill</td>
+<td>~16 hours</td>
+</tr>
+<tr class="even">
+<td>Experienced – Intermediate Technical Skill</td>
+<td>Experienced member, intermediate technical skill</td>
+<td>~18 hours</td>
+</tr>
+<tr class="odd">
+<td>Experienced – High Technical Skill</td>
+<td>Experienced member, high technical skill</td>
+<td>~20-22 hours</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="databricks-cluster-path" class="level4">
-<h4 class="anchored" data-anchor-id="databricks-cluster-path">Databricks cluster path</h4>
-<hr>
-<p>In Databricks, go to Compute in the left hand menu, and click on the name of your personal cluster:</p>
-<div data-align="center">
-<p><img src="../images/databricks-cluster-path.png" class="img-fluid"></p>
-</div>
-<p>On the Configuration tab, scroll to the bottom of the page and click Advanced Options &gt; JDBC/ODBC &gt; HTTP Path, and copy the text in the box. This is your cluster path.</p>
-<hr>
+<section id="datacamp-learning-tracks" class="level2">
+<h2 class="anchored" data-anchor-id="datacamp-learning-tracks">DataCamp learning tracks</h2>
+<section id="track-1-one-big-thing-ai-for-all-a-headstart" class="level3">
+<h3 class="anchored" data-anchor-id="track-1-one-big-thing-ai-for-all-a-headstart">Track 1: One Big Thing – AI for all: a headstart!</h3>
+<p><strong>Estimated total duration</strong>: ~6–8 hours</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Course</th>
+<th>Description</th>
+<th>Duration</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Understanding AI</td>
+<td>Learn what AI is, how it works, and where it’s used.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/understanding-artificial-intelligence" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Introduction to Machine Learning</td>
+<td>Understand ML concepts like supervised learning and model evaluation.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/understanding-machine-learning" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Understanding Prompt Engineering</td>
+<td>Learn how to design effective prompts for generative AI tools.</td>
+<td>1.5h</td>
+<td><a href="https://www.datacamp.com/courses/understanding-prompt-engineering" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>AI Ethics</td>
+<td>Explore fairness, transparency, and responsible AI use.</td>
+<td>1h</td>
+<td><a href="https://www.datacamp.com/courses/ai-ethics" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>ChatGPT for Data Analysis</td>
+<td>Learn how to use ChatGPT for data tasks.</td>
+<td>1h</td>
+<td><a href="https://www.datacamp.com/courses/understanding-chatgpt" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>AI for Decision-Making</td>
+<td>Understand how AI supports policy and operational decisions.</td>
+<td>1h</td>
+<td><a href="https://www.datacamp.com/courses/ai-business-fundamentals" target="_blank">Link</a></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="databricks-token" class="level4">
-<h4 class="anchored" data-anchor-id="databricks-token">Databricks token</h4>
-<hr>
-<p>The Databricks token is a personal access token.</p>
-<p>A personal access token is is a security measure that acts as an identifier to let Databricks know who is accessing information from the personal cluster. Access tokens are usually set for a limited amount of time, so they will need renewing periodically.</p>
-<ul>
-<li><p>In Databricks, click on your email address in the top right corner, then click ‘User settings’</p></li>
-<li><p>Go to the ‘Developer’ tab in the side bar. Next to ‘Access tokens’, click the ‘Manage’ button</p></li>
-</ul>
-<div data-align="center">
-<p><img src="../images/databricks-access-tokens.png" class="img-fluid"></p>
-</div>
-<ul>
-<li><p>Click the ‘Generate new token’ button</p></li>
-<li><p>Name the token, then click ‘Generate’</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that access tokens will only last as long as the value for the ‘Lifetime (days)’ field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less.</p>
-</div>
-</div>
-<ul>
-<li>Make a note of the ‘Databricks access token’ it has given you</li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.</p>
-</div>
-</div>
-<hr>
+<section id="track-2-new-to-role-intro-level" class="level3">
+<h3 class="anchored" data-anchor-id="track-2-new-to-role-intro-level">Track 2: new to role – intro level</h3>
+<p><strong>Estimated total duration</strong>: ~13 hours</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Course</th>
+<th>UKSA/GSG Competency</th>
+<th>Description</th>
+<th>Duration</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Introduction to Python OR R</td>
+<td>Programming fundamentals</td>
+<td>Learn Python or R basics, variables, lists, functions, and data structures for analysis.</td>
+<td>4h</td>
+<td><a href="https://www.datacamp.com/courses/intro-to-python-for-data-science" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/free-introduction-to-r" target="_blank">R</a></td>
+</tr>
+<tr class="even">
+<td>Introduction to SQL</td>
+<td>Data acquisition &amp; querying</td>
+<td>Learn to query databases using SELECT, WHERE, and JOIN.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/introduction-to-sql" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Introduction to Data Science</td>
+<td>Data literacy</td>
+<td>Understand the data science workflow, roles, and tools.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-science-for-everyone" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Understanding Data Ethics</td>
+<td>Ethical use of data</td>
+<td>Explore responsible data use, privacy, and fairness.</td>
+<td>1h</td>
+<td><a href="https://www.datacamp.com/courses/data-ethics" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Communicating Data Insights</td>
+<td>Data communication</td>
+<td>Learn how to present findings clearly to stakeholders.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/communicating-data-insights" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Data Storytelling</td>
+<td>Insight presentation</td>
+<td>Learn narrative techniques to make data compelling.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-storytelling" target="_blank">Link</a></td>
+</tr>
+</tbody>
+</table>
 </section>
+<section id="track-3-new-to-role-intermediate-level" class="level3">
+<h3 class="anchored" data-anchor-id="track-3-new-to-role-intermediate-level">Track 3: new to role – intermediate level</h3>
+<p><strong>Estimated total duration</strong>: ~14 hours</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Course</th>
+<th>UKSA / GSG Competency</th>
+<th>Description</th>
+<th>Duration</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intermediate Python OR R</td>
+<td>Programming logic &amp; control</td>
+<td>Learn loops, conditionals, and functions to build more complex scripts.</td>
+<td>4h</td>
+<td><a href="https://www.datacamp.com/courses/intermediate-python" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/intermediate-r" target="_blank">R</a></td>
+</tr>
+<tr class="even">
+<td>Exploratory Data Analysis in Python OR R</td>
+<td>Data exploration &amp; validation</td>
+<td>Learn how to summarize, visualize, and interpret data distributions.</td>
+<td>3h</td>
+<td><a href="https://www.datacamp.com/courses/exploratory-data-analysis-in-python" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/exploratory-data-analysis-in-r" target="_blank">R</a></td>
+</tr>
+<tr class="odd">
+<td>Joining Data in SQL</td>
+<td>Data integration</td>
+<td>Learn INNER JOIN, LEFT JOIN, and UNION to combine datasets.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/joining-data-in-sql" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Introduction to Git</td>
+<td>Reproducibility</td>
+<td>Learn version control basics to track and share code.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/introduction-to-git" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Data Storytelling</td>
+<td>Insight presentation</td>
+<td>Learn narrative techniques to make data compelling.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-storytelling" target="_blank">Link</a></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="pulling-data-into-rstudio-from-databricks" class="level3">
-<h3 class="anchored" data-anchor-id="pulling-data-into-rstudio-from-databricks">Pulling data into RStudio from Databricks</h3>
-<hr>
-<p>Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to databases before, this code will look quite familiar to you.</p>
-<p>To access the data, we will make use of the <code>odbc</code> and <code>DBI</code> packages.</p>
-<p>Include the following code in your R Script:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(odbc)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  odbc<span class="sc">::</span><span class="fu">databricks</span>(),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">httpPath =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DATABRICKS_CLUSTER_PATH"</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Tell odbc which catalog to use</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, <span class="st">"USE CATALOG catalog_40_copper_proj_fe_skills_statistics_dev;"</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># dbGetQuery should be used for SELECT statements only</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM mtcars"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
+<section id="track-4-new-to-role-high-technical-skill" class="level3">
+<h3 class="anchored" data-anchor-id="track-4-new-to-role-high-technical-skill">Track 4: new to role – high technical skill</h3>
+<p><strong>Estimated total duration</strong>: ~15 hours</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Course</th>
+<th>UKSA / GSG Competency</th>
+<th>Description</th>
+<th>Duration</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Machine Learning Fundamentals in Python OR R</td>
+<td>Advanced analysis</td>
+<td>Learn supervised learning, model training, and evaluation.</td>
+<td>3h</td>
+<td><a href="https://www.datacamp.com/tracks/machine-learning-fundamentals-with-python" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/machine-learning-in-r" target="_blank">R</a></td>
+</tr>
+<tr class="even">
+<td>Feature Engineering in Python OR R</td>
+<td>Model improvement</td>
+<td>Learn how to transform raw data into features for better models.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/feature-engineering-for-machine-learning" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/feature-engineering-in-r" target="_blank">R</a></td>
+</tr>
+<tr class="odd">
+<td>Data Cleaning in Python OR R</td>
+<td>Data quality</td>
+<td>Learn techniques to handle missing, inconsistent, and messy data.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/cleaning-data-in-python" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/data-cleaning-in-r" target="_blank">R</a></td>
+</tr>
+<tr class="even">
+<td>Data Engineering for Everyone</td>
+<td>Data pipelines</td>
+<td>Understand the basics of data engineering and ETL workflows.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-engineering-for-everyone" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Advanced SQL</td>
+<td>Complex querying</td>
+<td>Learn subqueries, window functions, and performance tuning.</td>
+<td>3h</td>
+<td><a href="https://www.datacamp.com/courses/advanced-sql" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Data Storytelling</td>
+<td>Insight presentation</td>
+<td>Learn narrative techniques to make data compelling.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-storytelling" target="_blank">Link</a></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="troubleshooting" class="level3">
-<h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
-<hr>
-<section id="sqlquery-doesnt-work" class="level4">
-<h4 class="anchored" data-anchor-id="sqlquery-doesnt-work">sqlQuery() doesn’t work</h4>
-<hr>
-<p>The sqlQuery function is part of the <code>RODBC</code> package, which is different to the <code>odbc</code> package that we have recommended in this guidance.</p>
-<p>If you wish to keep using sqlQuery(), you will need to follow the instructions detailed in the Databricks <a href="https://learn.microsoft.com/en-us/azure/databricks/integrations/odbc/connect-databricks-excel-python-r" target="_blank">Connect to Azure Databricks from Python or R</a> page.</p>
+<section id="track-5-experienced-low-technical-skill" class="level3">
+<h3 class="anchored" data-anchor-id="track-5-experienced-low-technical-skill">Track 5: experienced – low technical skill</h3>
+<p><strong>Estimated total duration</strong>: ~16 hours</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Course</th>
+<th>UKSA / GSG Competency</th>
+<th>Description</th>
+<th>Duration</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Introduction to Python OR R</td>
+<td>Programming fundamentals</td>
+<td>Learn basic syntax, data types, and operations.</td>
+<td>4h</td>
+<td><a href="https://www.datacamp.com/courses/intro-to-python-for-data-science" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/free-introduction-to-r" target="_blank">R</a></td>
+</tr>
+<tr class="even">
+<td>Introduction to Power BI</td>
+<td>Data visualization</td>
+<td>Learn how to build dashboards and reports using Power BI.</td>
+<td>3h</td>
+<td><a href="https://www.datacamp.com/courses/introduction-to-power-bi" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Communicating Data Insights</td>
+<td>Data communication</td>
+<td>Learn how to present findings clearly to stakeholders.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/communicating-data-insights" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Understanding Prompt Engineering</td>
+<td>AI literacy</td>
+<td>Learn how to design effective prompts for generative AI tools.</td>
+<td>1.5h</td>
+<td><a href="https://www.datacamp.com/courses/understanding-prompt-engineering" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Introduction to Data Ethics</td>
+<td>Ethical use of data</td>
+<td>Explore responsible data use, privacy, and fairness.</td>
+<td>1h</td>
+<td><a href="https://www.datacamp.com/courses/data-ethics" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Introduction to SQL</td>
+<td>Data acquisition</td>
+<td>Learn to query databases using SELECT, WHERE, and JOIN.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/introduction-to-sql" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Data Storytelling</td>
+<td>Insight presentation</td>
+<td>Learn narrative techniques to make data compelling.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-storytelling" target="_blank">Link</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="track-6-experienced-intermediate-technical-skill" class="level3">
+<h3 class="anchored" data-anchor-id="track-6-experienced-intermediate-technical-skill">Track 6: experienced – intermediate technical skill</h3>
+<p><strong>Estimated total duration</strong>: ~18 hours</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Course</th>
+<th>UKSA / GSG Competency</th>
+<th>Description</th>
+<th>Duration</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intermediate Python OR R</td>
+<td>Programming logic</td>
+<td>Learn loops, conditionals, and functions.</td>
+<td>4h</td>
+<td><a href="https://www.datacamp.com/courses/intermediate-python" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/intermediate-r" target="_blank">R</a></td>
+</tr>
+<tr class="even">
+<td>Exploratory Data Analysis in Python OR R</td>
+<td>Data exploration</td>
+<td>Learn how to summarize, visualize, and interpret data.</td>
+<td>3h</td>
+<td><a href="https://www.datacamp.com/courses/exploratory-data-analysis-in-python" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/exploratory-data-analysis-in-r" target="_blank">R</a></td>
+</tr>
+<tr class="odd">
+<td>Introduction to Git</td>
+<td>Reproducibility</td>
+<td>Learn version control basics.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/introduction-to-git" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Data Cleaning in Python OR R</td>
+<td>Data quality</td>
+<td>Handle missing and messy data.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/cleaning-data-in-python" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/data-cleaning-in-r" target="_blank">R</a></td>
+</tr>
+<tr class="odd">
+<td>Data Ethics and Bias</td>
+<td>Responsible analysis</td>
+<td>Understand bias and fairness in data work.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-ethics-and-bias" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>SQL for Data Analysis</td>
+<td>Analytical querying</td>
+<td>Learn to extract insights from databases.</td>
+<td>3h</td>
+<td><a href="https://www.datacamp.com/courses/sql-for-data-analysis" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Data Storytelling</td>
+<td>Insight presentation</td>
+<td>Learn narrative techniques to make data compelling.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-storytelling" target="_blank">Link</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="track-7-experienced-high-technical-skill" class="level3">
+<h3 class="anchored" data-anchor-id="track-7-experienced-high-technical-skill">Track 7: experienced – high technical skill</h3>
+<p><strong>Estimated total duration</strong>: ~20-22 hours</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Course</th>
+<th>UKSA / GSG Competency</th>
+<th>Description</th>
+<th>Duration</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Machine Learning Fundamentals in Python OR R</td>
+<td>Advanced modelling</td>
+<td>Learn supervised learning, model training, and evaluation.</td>
+<td>3h</td>
+<td><a href="https://www.datacamp.com/tracks/machine-learning-fundamentals-with-python" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/machine-learning-in-r" target="_blank">R</a></td>
+</tr>
+<tr class="even">
+<td>Feature Engineering in Python OR R</td>
+<td>Model improvement</td>
+<td>Transform raw data into features.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/feature-engineering-for-machine-learning" target="_blank">Python</a>, <a href="https://www.datacamp.com/courses/feature-engineering-in-r" target="_blank">R</a></td>
+</tr>
+<tr class="odd">
+<td>Advanced SQL</td>
+<td>Complex querying</td>
+<td>Learn subqueries, window functions, and performance tuning.</td>
+<td>3h</td>
+<td><a href="https://www.datacamp.com/courses/advanced-sql" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Data Engineering for Everyone</td>
+<td>Data pipelines</td>
+<td>Understand ETL workflows and data infrastructure.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-engineering-for-everyone" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Git and Version Control</td>
+<td>Reproducibility</td>
+<td>Learn branching, merging, and collaboration.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/git-and-version-control" target="_blank">Link</a></td>
+</tr>
+<tr class="even">
+<td>Data Ethics and Privacy</td>
+<td>Responsible data use</td>
+<td>Explore privacy, consent, and ethical frameworks.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-ethics-and-privacy" target="_blank">Link</a></td>
+</tr>
+<tr class="odd">
+<td>Building Dashboards in Power BI OR R Shiny OR Python</td>
+<td>Visual storytelling</td>
+<td>Learn to create interactive dashboards.</td>
+<td>2-4h</td>
+<td><a href="https://www.datacamp.com/courses/building-dashboards-in-power-bi" target="_blank">Power BI</a>, <a href="https://app.datacamp.com/learn/courses/building-web-applications-with-shiny-in-r" target="_blank">R Shiny</a>, <a href="https://app.datacamp.com/learn/courses/building-dashboards-with-dash-and-plotly" target="_blank">Python</a></td>
+</tr>
+<tr class="even">
+<td>Data Storytelling</td>
+<td>Insight presentation</td>
+<td>Learn narrative techniques to make data compelling.</td>
+<td>2h</td>
+<td><a href="https://www.datacamp.com/courses/data-storytelling" target="_blank">Link</a></td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
 </section>
 </section>
 
@@ -1452,13 +1615,13 @@ Warning
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="pagination-link" aria-label="SQL Warehouse with RStudio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SQL Warehouse with RStudio</span>
+      <a href="../learning-development/python.html" class="pagination-link" aria-label="Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ADA/databricks_rstudio_personal_cluster_sparklyr_archive.html" class="pagination-link" aria-label="Personal cluster with RStudio and `sparklyr`">
-        <span class="nav-page-text">Personal cluster with RStudio and <code>sparklyr</code></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ADA/ada.html" class="pagination-link" aria-label="Analytical Data Access (ADA)">
+        <span class="nav-page-text">Analytical Data Access (ADA)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1470,7 +1633,7 @@ Warning
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_rstudio_personal_cluster.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/learning-development/datacamp-tracks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>
