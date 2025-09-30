@@ -1,5 +1,5 @@
 ---
-title: "Datacamp learning tracks"
+title: "DataCamp learning tracks"
 format: html
 ---
 
