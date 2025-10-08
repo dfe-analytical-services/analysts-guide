@@ -238,13 +238,27 @@ library(DBI)
 
 con <- DBI::dbConnect(
   odbc::databricks(),
-  httpPath = Sys.getenv("DATABRICKS_CLUSTER_PATH")
+  httpPath = Sys.getenv("DATABRICKS_CLUSTER_PATH"),
+  useNativeQuery = FALSE #required for dbWriteTable to work
 )
-#Tell odbc which catalog to use
-dbExecute(con, "USE CATALOG catalog_40_copper_proj_fe_skills_statistics_dev;")
 
-# dbGetQuery should be used for SELECT statements only
-dbGetQuery(con, "SELECT * FROM mtcars")
+#dbExecute should be used for commands which don't return any data
+#Tell odbc which catalog to use
+dbExecute(con, "USE CATALOG catalog_40_copper_analyst_training;")
+
+#Tell odbc which schema to use
+dbExecute(con, "USE steam;")
+
+#dbGetQuery should be used for queries that return results
+#Show the tables in the selected catalog / schema
+dbGetQuery(con, "SHOW TABLES;")
+
+#Select data from a table
+dbGetQuery(con, "SELECT * FROM games_description;")
+
+#you can also get data from tables from any catalog / schema you have access to 
+#using the three-level namespace
+dbGetQuery(con, "SELECT * FROM catalog_40_copper_analyst_training.steam.games_description;")
 ```
 
 ------------------------------------------------------------------------
