@@ -1,5 +1,5 @@
 ---
-title: "RAP for Statistics"
+title: "RAP for statistics"
 
 ---
 

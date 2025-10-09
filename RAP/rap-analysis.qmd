@@ -39,7 +39,7 @@ In DfE, we already have 'analytical pipelines' and have done for many years. The
 ### Applying RAP principles proportionally
 
 ::: callout-note
-RAP should be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx). Statistics production has stricter expectations (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
+RAP should be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx). Statistics production has clearer expectations due to their regularity and commonalities between publication processing (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
 :::
 
 RAP principles represent best practice in analytical work and should be our default approach wherever possible. While not every principle will apply to every situation, many are universally beneficial and can be adopted even in ad-hoc or one-off pieces of work.
