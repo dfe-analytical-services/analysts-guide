@@ -58,7 +58,7 @@ Principles applicable in more specific situations include:
 
 -   Project specific automated sense checks
 
-Whilst you might not create a full RAP process for an ad-hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
+Whilst you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
 
 ### Getting started with RAP for analysis
 
