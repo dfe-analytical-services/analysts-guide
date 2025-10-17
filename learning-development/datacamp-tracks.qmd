@@ -40,6 +40,7 @@ You'll find estimated duration per course and per track to help you plan your ti
 | Experienced – Low Technical Skill | Experienced member, low technical skill | \~16 hours |
 | Experienced – Intermediate Technical Skill | Experienced member, intermediate technical skill | \~18 hours |
 | Experienced – High Technical Skill | Experienced member, high technical skill | \~20-22 hours |
+| Familiarising with R | Anyone wanting to brush up on R | \~22 hours |
 
 ## DataCamp learning tracks
 
@@ -137,4 +138,14 @@ You'll find estimated duration per course and per track to help you plan your ti
 | Building Dashboards in Power BI OR R Shiny OR Python| Visual storytelling | Learn to create interactive dashboards. | 2-4h | [Power BI](https://www.datacamp.com/courses/building-dashboards-in-power-bi), [R Shiny](https://app.datacamp.com/learn/courses/building-web-applications-with-shiny-in-r), [Python](https://app.datacamp.com/learn/courses/building-dashboards-with-dash-and-plotly)|
 | Data Storytelling | Insight presentation | Learn narrative techniques to make data compelling. | 2h | [Link](https://www.datacamp.com/courses/data-storytelling) |
 
+### Track 8: familiarising with R
 
+**Estimated total duration**: \~22 hours
+
+| Course | Description | Duration | Link |
+|-----------------|--------------------|-----------------|-----------------|
+| Introduction to R | Learn R basics, data types, and operations. | 4h | [Link](https://app.datacamp.com/learn/courses/free-introduction-to-r) |
+| Intermediate R | Build on your R skills with loops, conditionals, and functions. | 6h | [Link](https://app.datacamp.com/learn/courses/intermediate-r) |
+| Introduction to Writing Functions in R | Learn how to write reusable functions in R. | 4h | [Link](https://app.datacamp.com/learn/courses/introduction-to-writing-functions-in-r) |
+| Introduction to Statistics in R | Use basic statistical concepts and analysis in R. | 4h | [Link](https://app.datacamp.com/learn/courses/introduction-to-statistics-in-r) |
+| Introduction to the Tidyverse | Learn data manipulation and visualization using dplyr and ggplot2. | 4h | [Link](https://app.datacamp.com/learn/courses/introduction-to-the-tidyverse) |
