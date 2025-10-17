@@ -11,3 +11,5 @@ site_libs/
 .DS_Store
 
 README.html
+
+**/*.quarto_ipynb
