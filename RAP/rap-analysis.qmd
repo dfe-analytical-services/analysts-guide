@@ -9,7 +9,7 @@ format: html
 
 ---
 
-If you're unfamiliar with Reproducible Analytical Pipelines (RAP), or want a refresher on what RAP is and why it matters, start with our [What is  RAP? page](../rap/what-is-rap.html). It covers the background and benefits of RAP as well as an introduction on how to apply RAP principles that underpin RAP across government analysis proportionately.
+If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, start with our [What is RAP? page](../rap/what-is-rap.html). It covers the background and benefits of RAP, as well as an introduction RAP principles. 
 
 ---
 
@@ -24,7 +24,7 @@ Implementing RAP may involve combining the use of SQL, R and using clear, consis
 ### Applying RAP principles proportionally
 
 ::: callout-note
-RAP should be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx). Statistics production has clearer expectations due to their regularity and commonalities between publication processing (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
+RAP should be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx). Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
 :::
 
 Whilst you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.

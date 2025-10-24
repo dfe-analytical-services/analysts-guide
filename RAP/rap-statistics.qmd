@@ -7,7 +7,7 @@ title: "RAP for statistics"
 
 ---
 
-If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, start with our [What is RAP? page](../rap/what-is-rap.html).  It covers the background and benefits of RAP as well as an introduction on how to apply RAP principles that underpin RAP across government analysis proportionately.
+If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, start with our [What is RAP? page](../rap/what-is-rap.html). It covers the background and benefits of RAP, as well as an introduction RAP principles. 
 
 ---
 
