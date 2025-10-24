@@ -218,38 +218,6 @@ We recommend the following principles for this type of analysis. Analysts should
 -   Code collaboratively developed using Git
 :::
 
-::: {.callout-tip collapse="true"}
-## Cross departmental analysis
-
-Analysis that involves collaboration between multiple teams or areas in the department. It draws on data and expertise from different areas of the organisation to provide a more comprehensive view. This type of analysis often requires agreement on shared definitions and metrics.
-
-We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
-
-### Recommended principles
-
-![](../images/good.svg)
-
--   Source data is acquired and stored sensibly
--   Sensible folder and file structure
--   Processing is done with code, where possible
--   Use of appropriate tools e.g., R, SQL, Python
--   Automated high level checks
--   Documentation
-
-![](../images/great.svg)
-
--   Recyclable code for future use
--   Peer code review
--   Project specific automated sense checks
--   Version controlled final scripts
-
-![](../images/best.svg)
-
--   'Clean' final code
--   Peer reviewed from someone outside the team
--   Code collaboratively developed using Git
-:::
-
 <!-- Use DfT checklist to recreate one here!!! -->
 
 ------------------------------------------------------------------------
