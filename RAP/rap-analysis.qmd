@@ -3,7 +3,7 @@ title: "RAP for general analysis"
 format: html
 ---
 
----
+------------------------------------------------------------------------
 
 <p class="text-muted">Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into general analysis processes</p>
 
@@ -11,27 +11,39 @@ format: html
 
 If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, start with our [What is RAP? page](../rap/what-is-rap.html). It covers the background and benefits of RAP, as well as an introduction RAP principles. 
 
----
+------------------------------------------------------------------------
 
 ### Getting started with RAP for analysis
 
+------------------------------------------------------------------------
 To get started with RAP for analysis, start by exploring the RAP principles in the diagram below, which outline what good, great and best practice looks like.
 
 Once you are familiar with the principles, take a look at the different types of analysis commonly carried out across the department. This will help you understand which RAP principles are recommended for your type of analysis.
 
 Implementing RAP may involve combining the use of SQL, R and using clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
 
+------------------------------------------------------------------------
+
 ### Applying RAP principles proportionally
 
-::: callout-note
-RAP should be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx). Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
-:::
+------------------------------------------------------------------------
 
-Whilst you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
+RAP should be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx).
+
+Applying RAP pinciples proportionately means tailoring your approach to the scale, complexity and potential impact of the analysis, just as you would with QA. Not every piece of work will require a fully automated pipeline. but all analysis should aim to be reproducible where possible. 
+
+When deciding what RAP principles to apply, consider factors like who will use the analysis, how it will be used, the level of public or ministerial interest and the potential risks involved. Use the guidance below as a starting point, but apply judgement based on the specific context of your work, as you would when determining proportionate QA. 
+
+
+For example, you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
+
+Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
 
 ------------------------------------------------------------------------
 
 ## RAP for analysis principles
+
+------------------------------------------------------------------------
 
 The diagram below highlights what RAP means for us, and the varying levels at which it can be applied across all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice.
 
@@ -43,6 +55,8 @@ The diagram below highlights what RAP means for us, and the varying levels at wh
 ------------------------------------------------------------------------
 
 ## Choosing the right RAP principles for your analysis
+
+------------------------------------------------------------------------
 
 Whilst all RAP principles can be applied to any type of analysis, we recognise that different types of analysis conducted across the department may benefit from a tailored approach. To support this, we’ve outlined a selection of common analysis types below, along with the RAP principles we suggest as essential and recommended for each. This guidance is intended to help teams prioritise their efforts and embed RAP in a way that is both practical and impactful.
 
@@ -224,11 +238,15 @@ We recommend the following principles for this type of analysis. Analysts should
 
 ## How does RAP fit into ADA / Databricks
 
+------------------------------------------------------------------------
+
 Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the [ADA guidance on statistics publications](../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your work.
 
 ------------------------------------------------------------------------
 
 ## Core principles {#core-principles}
+
+------------------------------------------------------------------------
 
 RAP has three core principles:
 
@@ -243,6 +261,8 @@ Within each of these principles are separate elements of RAP. Each of these is d
 ------------------------------------------------------------------------
 
 ## Preparing data {#preparing-data}
+
+------------------------------------------------------------------------
 
 Preparing data is our first core RAP principle, which contains the following elements:
 
@@ -406,6 +426,8 @@ If in doubt, take a look at this [presentation](https://speakerdeck.com/jennybc/
 
 ## Writing code {#writing-code}
 
+------------------------------------------------------------------------
+
 Writing code is our second core RAP principle, and is made up of the following elements:
 
 -   [Processing is done with code](#processing-is-done-with-code)
@@ -558,6 +580,7 @@ The team now have their end-to-end process fully documented, which can be run of
 ------------------------------------------------------------------------
 
 #### Using 'run' scripts
+
 
 Utilising a single 'run' script to execute processes written in other scripts brings a number of benefits. It isn't just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past.
 
@@ -1215,6 +1238,8 @@ git clone YOUR_URL_HERE
 
 
 ## Integrating RAP principles into spreadsheets
+
+------------------------------------------------------------------------
 
 In some cases, spreadsheet tools like Microsoft Excel are still used for some types of analysis, particularly ad hoc, exploratory, or early-stage work. While the long-term aim is to move towards fully  (RAP) processes using code, this section outlines how RAP principles can be applied to spreadsheet work to improve quality, transparency, and maintainability, even before moving fully into code.
 
