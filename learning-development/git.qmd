@@ -83,9 +83,10 @@ However, you can still run the full suite of Git commands by simply typing them 
 
 - GitHub have created a [cheat sheet for Git commands](https://education.github.com/git-cheat-sheet-education.pdf){target="_blank" rel="noopener noreferrer"}.
 
-### Understanding Git flow
+## Understanding Git flow
 
 ![](../images/git_command_diagram.png)
+
 ---
 
 ## Other resources
