@@ -18,6 +18,10 @@ This page includes specific guidance for R Shiny dashboards, for teams using Pow
 
 There is also a dashboards version of the content design checklist. This checklist runs through a number of things to think about when developing dashboards to compliment official statistics and is worth using to design and also review any dashboards you own - [Dashboards checklist (.xlsx)](../resources/Content_Design_Logbook_Dashboards.xlsx). We also have a [dashboard procedure checklist](#dashboard-procedure-checklist) in this guidance page that outlines the steps required to set up an R Shiny dashboard.
 
+::: callout-tip
+Given that DfE policy is to use dashboards as supplementary tools to Official Statistics releases on EES, dashboards themselves should *not* display the Official Statistics logo. This should be reserved purely for the primary release of the data via EES.
+:::
+
 ---
 
 ## Standards to follow
