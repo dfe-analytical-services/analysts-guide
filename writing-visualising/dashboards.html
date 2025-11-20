@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,8 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-788c433e063a1f7562f12bcd6757a559.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-dec6eef91aea8c7d9154008d44824683.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c5e89593a5abdc90b64f541ec31c09cc.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-aece424036e73454b149aecc80462d0d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-6790b518375e9643e8089ff0043da231.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -698,6 +698,19 @@ Guidance for publishing public statistics dashboards
 <p>This guidance is aimed primarily at dashboards published to supplement Official Statistics to the wider public. See the <a href="#how-to-publish-an-r-shiny-dashboard">how to publish an R Shiny dashboard</a> section below for more information on the guidance for internal only R Shiny dashboards, or public facing R Shiny dashboards via shinyapps.io.</p>
 <p>This page includes specific guidance for R Shiny dashboards, for teams using PowerBI, the department has a set of PowerBI dashboard standards that can be found on the <a href="https://dfe-analytical-services.github.io/powerbi_dashboardstandards/" target="_blank">DfE’s analytical services GitHub area</a>.</p>
 <p>There is also a dashboards version of the content design checklist. This checklist runs through a number of things to think about when developing dashboards to compliment official statistics and is worth using to design and also review any dashboards you own - <a href="../resources/Content_Design_Logbook_Dashboards.xlsx">Dashboards checklist (.xlsx)</a>. We also have a <a href="#dashboard-procedure-checklist">dashboard procedure checklist</a> in this guidance page that outlines the steps required to set up an R Shiny dashboard.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given that DfE policy is to use dashboards as supplementary tools to Official Statistics releases on EES, dashboards themselves should <em>not</em> display the Official Statistics logo. This should be reserved purely for the primary release of the data via EES.</p>
+</div>
+</div>
 <hr>
 </section>
 <section id="standards-to-follow" class="level2">
@@ -705,7 +718,8 @@ Guidance for publishing public statistics dashboards
 <p>We expect all dashboards to follow a minimum set of standards to ensure coherence between our products and a minimum standard of quality for our end users.</p>
 <p>These standards are constantly evolving, and all feedback and contributions are welcome, contact the <a href="mailto:explore.statistics@education.gov.uk">explore education statistics platforms team</a>.</p>
 <p>All dashboards should have a clear use case and reasoning for why they are required. They also need to meet the <a href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag" target="_blank">latest accessibility regulations</a> for public sector services.</p>
-<p>Dashboards, along with the Official Statistics that they supplement, are a digital service that we provide, and we should ensure we follow the <a href="https://www.gov.uk/service-manual/service-standard" target="_blank">Service Standard</a>. The standard covers a number of aspects that all producers should be considering when developing a dashboard, and strongly influence the guidance on this page.</p>
+<p>Dashboards, along with the Official Statistics that they supplement, are a digital service that we provide, and we should ensure we follow the <a href="https://www.gov.uk/service-manual/service-standard" target="_blank">Service Standard</a>, and the <a href="https://osr.statisticsauthority.gov.uk/publication/regulatory-guidance-dashboards/" target="_blank">Office for Statistics Regulation (OSR) regulatory guidance on dashboards</a>.</p>
+<p>The standards and regulatory guidance cover a number of aspects that all producers should be considering when developing a dashboard, and strongly influence the guidance on this page.</p>
 <p>All data must be published on EES as open CSV files so that it is accessible in one place and we are not publishing anything new via dashboards.</p>
 <p>When published, dashboards can be directed to from existing EES releases using the related links at the top right of a release page, or by being included as a url anywhere in the release content.</p>
 <p>The following sections cover the considerations in more detail, though when developing a dashboard you need to commit to thinking about:</p>
