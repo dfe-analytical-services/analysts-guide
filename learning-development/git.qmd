@@ -85,7 +85,7 @@ However, you can still run the full suite of Git commands by simply typing them 
 
 ## Understanding Git flow
 
-![](../images/git_command_diagram.png)
+![A diagram depicting the 4 different file locations involved in a git process: The working directory (the current folder you are working in), the staging area (a collection of files to be transferred), the local repository (the locally saved version controlled collection of code), and the remote repository (the remote saved version controlled collection of code). It shows how git clone takes code from the remote to the local, and git checkout takes code from the local into the staging and then the working directory, how git add takes code from the working directory to the staging area and git commit from the staging area to the local repository, finally git push pushing to the remote. It also shows how git pull taking code back from the remote repository to the local, staging area and working directory, is an amalgamation of git fetch, taking it from remote to local, and git merge, local through staging to the working directory.](../images/git_command_diagram.svg)
 
 ---
 
