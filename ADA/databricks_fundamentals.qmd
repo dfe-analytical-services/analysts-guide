@@ -199,7 +199,7 @@ In addition to your personal workspace, Databricks provides access to several sh
 
 Here's a brief overview of each option:
 
-| Environment ID prefix | Environment Name | Purpose/Description |
+| Environment ID prefix | Environment Name | Purpose / Description |
 |------------------------|------------------------|------------------------|
 | S101**d01** | Development | Contains example notebooks and test data |
 | S101**d02** | Training | Used for training courses. Contains sample data and course material |
