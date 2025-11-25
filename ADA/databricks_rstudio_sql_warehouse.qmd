@@ -71,7 +71,7 @@ Each of these steps is described in more detail in the sections below.
 
 ::: callout-warning
 # Check your Databricks Workspace
-Before following the process, ensure you are on the correct Databricks Workspace by clicking on the Workspace drop-down, usually found in the top right of the Databricks interface. Make sure you are in the production Workspace by checking that you are on the Workspace that begins `S101p01`  — the **`p`** indicates production.
+Before following the process, ensure you are on the correct Databricks Workspace by clicking on the Workspace drop-down, usually found in the top right of the Databricks interface. Make sure you are in the production Workspace by checking that you are on the Workspace that begins `s101p01`  — the **`p`** indicates production.
 
 If you are in the wrong Workspace (e.g., one starting with `s101d01` for development), you will not be able to access the `catalog_40_copper_analyst_training` catalog.
 :::
