@@ -663,6 +663,7 @@ cookieconsent.run({
   <li><a href="#storage" id="toc-storage" class="nav-link" data-scroll-target="#storage">Storage</a></li>
   <li><a href="#unity-catalog" id="toc-unity-catalog" class="nav-link" data-scroll-target="#unity-catalog">Unity catalog</a></li>
   <li><a href="#workspaces---databricks-file-system-dbfs" id="toc-workspaces---databricks-file-system-dbfs" class="nav-link" data-scroll-target="#workspaces---databricks-file-system-dbfs">Workspaces - Databricks file system (DBFS)</a></li>
+  <li><a href="#workspaces-dropdown-guide" id="toc-workspaces-dropdown-guide" class="nav-link" data-scroll-target="#workspaces-dropdown-guide">Workspaces dropdown guide</a></li>
   <li><a href="#repositories-for-version-control" id="toc-repositories-for-version-control" class="nav-link" data-scroll-target="#repositories-for-version-control">Repositories for version control</a></li>
   </ul></li>
   <li><a href="#compute" id="toc-compute" class="nav-link" data-scroll-target="#compute">Compute</a></li>
@@ -854,6 +855,55 @@ Important
 <p>For collaboration on code you should use a GitHub/DevOps repository which each user can clone and work on independently.</p>
 </div>
 </div>
+<hr>
+</section>
+<section id="workspaces-dropdown-guide" class="level3">
+<h3 class="anchored" data-anchor-id="workspaces-dropdown-guide">Workspaces dropdown guide</h3>
+<hr>
+<p>In addition to your personal workspace, Databricks provides access to several shared environments, each designed for a specific purpose. You can see environments you have access to in the dropdown menu, normally at the top right of the Databricks interface.</p>
+<p><img src="../images/databricks-dropdown.png" class="img-fluid"></p>
+<p>Here’s a brief overview of each option:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Environment ID prefix</th>
+<th>Environment Name</th>
+<th>Purpose / Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S101<strong>d01</strong></td>
+<td>Development</td>
+<td>Contains example notebooks and test data</td>
+</tr>
+<tr class="even">
+<td>S101<strong>d02</strong></td>
+<td>Training</td>
+<td>Used for training courses. Contains sample data and course material</td>
+</tr>
+<tr class="odd">
+<td>S101<strong>t02</strong></td>
+<td>Test</td>
+<td>Used for ADA testing</td>
+</tr>
+<tr class="even">
+<td>S101<strong>p02</strong></td>
+<td>Preproduction</td>
+<td>Contains some PDR data but not kept up-to-date</td>
+</tr>
+<tr class="odd">
+<td>S101<strong>p01</strong></td>
+<td>Production</td>
+<td>Contains real data</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
 <section id="repositories-for-version-control" class="level3">
