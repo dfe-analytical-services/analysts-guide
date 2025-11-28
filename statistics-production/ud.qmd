@@ -1202,9 +1202,9 @@ a single category under phase_type_grouping:
 
 | phase_type_grouping                |
 |------------------------------------|
-| State-funded primary               |
-| State-funded secondary             |
-| State-funded alternative provision |
+| State funded primary               |
+| State funded secondary             |
+| State funded alternative provision |
 | Special                            |
 | All schools                        |
 
