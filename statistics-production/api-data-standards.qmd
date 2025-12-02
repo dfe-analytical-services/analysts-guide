@@ -32,18 +32,18 @@ Examples of these that do and don't meet the API data standards are provided in 
 
 The following are steps to follow when planning on publishing a data set via the API:
 
-### At least a few weeks / months before publication
+### At least a few weeks / month before publication
 
-[ ] Check column names and filter items against the data dictionary
-[ ] Review data structure and confirm (new) column names with the Explore education statistics team
-[ ] Alert the Opportunity Missions dashboard team (and any other known users) of any changes to existing API data sets or new data API data sets
+- Check column names and filter items against the data dictionary
+- Review data structure and confirm (new) column names with the Explore education statistics team
+- Alert the Opportunity Missions dashboard team (and any other known users) of any changes to existing API data sets or new data API data sets
 
 ### Prior to approval of the release on EES
 
-[ ] Screen data files
-[ ] Upload data files to your release as normal
-[ ] Submit a request to [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk) to activate the files as API data sets
-[ ] Once activated, follow normal sign-off process
+- Screen data files
+- Upload data files to your release as normal
+- Submit a request to [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk) to activate the files as API data sets
+- Once activated, follow normal sign-off process
 
 ## Character limits for col_names and filter items
 
