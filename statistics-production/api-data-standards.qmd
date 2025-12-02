@@ -36,7 +36,7 @@ The following are steps to follow when planning on publishing a data set via the
 
 - Check column names and filter items against the data dictionary
 - Review data structure and confirm (new) column names with the Explore education statistics team
-- Alert the Opportunity Missions dashboard team (and any other known users) of any changes to existing API data sets or new data API data sets
+- Alert key known end users / stakeholders of any changes to existing API data sets or new data API data sets (e.g. Opportunity Mission dashboard team, Compare school and college performance)
 
 ### Prior to approval of the release on EES
 
