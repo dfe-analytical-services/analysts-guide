@@ -18,6 +18,10 @@ This page includes specific guidance for R Shiny dashboards, for teams using Pow
 
 There is also a dashboards version of the content design checklist. This checklist runs through a number of things to think about when developing dashboards to compliment official statistics and is worth using to design and also review any dashboards you own - [Dashboards checklist (.xlsx)](../resources/Content_Design_Logbook_Dashboards.xlsx). We also have a [dashboard procedure checklist](#dashboard-procedure-checklist) in this guidance page that outlines the steps required to set up an R Shiny dashboard.
 
+::: callout-tip
+Given that DfE policy is to use dashboards as supplementary tools to Official Statistics releases on EES, dashboards themselves should *not* display the Official Statistics logo. This should be reserved purely for the primary release of the data via EES.
+:::
+
 ---
 
 ## Standards to follow
@@ -28,7 +32,9 @@ These standards are constantly evolving, and all feedback and contributions are 
 
 All dashboards should have a clear use case and reasoning for why they are required. They also need to meet the [latest accessibility regulations](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag) for public sector services.
 
-Dashboards, along with the Official Statistics that they supplement, are a digital service that we provide, and we should ensure we follow the [Service Standard](https://www.gov.uk/service-manual/service-standard). The standard covers a number of aspects that all producers should be considering when developing a dashboard, and strongly influence the guidance on this page.
+Dashboards, along with the Official Statistics that they supplement, are a digital service that we provide, and we should ensure we follow the [Service Standard](https://www.gov.uk/service-manual/service-standard), and the [Office for Statistics Regulation (OSR) regulatory guidance on dashboards](https://osr.statisticsauthority.gov.uk/publication/regulatory-guidance-dashboards/).
+
+The standards and regulatory guidance cover a number of aspects that all producers should be considering when developing a dashboard, and strongly influence the guidance on this page.
 
 All data must be published on EES as open CSV files so that it is accessible in one place and we are not publishing anything new via dashboards.
 
