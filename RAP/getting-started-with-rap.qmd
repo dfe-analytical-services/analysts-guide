@@ -1,0 +1,177 @@
+---
+title: "Getting started with RAP"
+format: html
+---
+
+
+<p class="text-muted">
+
+Introductory information about Reproducible Analytical Pipelines (RAP), and how to get started.
+
+</p>
+
+------------------------------------------------------------------------
+
+## What is RAP?
+
+RAP are a way of working that make analytical processes consistent, reliable and easy to update. They focuses on clear documentation and structured processes so that analysis can be understood and reproduced by others. A key part of RAP is using code to automate processes and reduce manual steps, which improves efficiency and transparency. This approach, referred to as reproducible analysis, makes the it easier to understand, repeat and improve processes over time. 
+
+As described in the [DfT RAP guidance](https://department-for-transport.github.io/strategic_reproducible_analysis/what-is-reproducible-analysis.html), the “pipeline” refers to a streamlined approach that takes data from extraction, through preparation and quality assurance, all the way to final outputs. 
+
+In 2022, the Analysis Function published their [RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/), which outlines the expectation that RAP should be "the default approach to analysis in government". Each department is expected to publish a RAP implementation strategy to explain how they are going to support analysts to embed RAP into their day to day work. You can view the [RAP implementation plans for all departments, including DfE](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/departmental-rap-plans/) on the Analysis Function website.
+
+A session introducing RAP was held for the Data Insight and Statistics Division in December 2020. The slides can be found on [GitHub](https://github.com/cjrace/introduction-to-rap){target="_blank" rel="noopener noreferrer"}, or you can [watch the recording](https://educationgovuk.sharepoint.com/:v:/r/sites/lvewp00086/WorkplaceDocuments/Statistics%20Services%20Unit/Statistics%20Development%20Team/Stream%20Migrated%20Videos/Recordings/An%20introduction%20to%20RAP-20201217_024855-Meeting%20Recording.mp4?csf=1&web=1&e=Fz1gXt).
+
+------------------------------------------------------------------------
+
+### Benefits of RAP
+
+------------------------------------------------------------------------
+
+According to the [Analysis Function](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/), using RAP should:
+
+-   improve the quality of the analysis
+-   increase trust in the analysis by producers, their managers and users
+-   create a more efficient process
+-   improve business continuity and knowledge management
+
+In DfE, we have worked with ‘analytical pipelines’ for many years. RAP aims to automate these pipelines wherever possible, to increase efficiency and accuracy, while creating a clear audit trail to allow analyses to be re-run easily. This allows us to focus on where human input can really add value. RAP reduces human error, removing the need to copy and paste between documents or make manual edits to code each time it's re-run. Ultimately, RAP can reduce the burden on us by removing the boring stuff; what’s not to like?!
+
+
+------------------------------------------------------------------------
+
+### RAP expectations
+
+------------------------------------------------------------------------
+
+RAP is now the default approach to analysis in DfE. All analysts are expected to follow RAP principles in their work, proportionate to the task at hand. This includes ad-hoc analysis, one-off reports and one-off statistics production, as well as repeatable processes. You can find more information on expectations of government analysts on the [RAP expectations page](../RAP/rap-expectations.html).
+
+
+<p class="text-muted">
+
+Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes. Check the [RAP for statistics page](../RAP/rap-statistics.html) for information on the core principles of RAP.
+
+</p>
+
+---
+
+::: callout-note
+# How does RAP fit into ADA / Databricks
+Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the [ADA guidance on statistics publications](../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your work.
+:::
+
+---
+
+## Getting started 
+
+If your process is for official statistics, first ensure you have checked against the Good, Great and Best practice standards under [RAP for statistics](/RAP/rap-statistics.html#rap-in-practice). Then measure your publication against the RAP levels using our [self assessment tool](https://rsconnect/rsc/publication-self-assessment/).
+
+If your process is for general analysis, check against the Good, Great and Best principles mapped to the relevant analysis type  on the [RAP for Analysis](/RAP/rap-analysis.html#rap-for-analysis-principles) page for. 
+
+Once you've completed these steps, see the guidance below to help you get started with implementing RAP principles into your work by: 
+
+1. Splitting your process into [logical chunks](#splitting-your-project-into-chunks), [estimating the effort and complexity](#estimating-effort-and-complexity) and [prioritising](#prioritise). 
+
+2. Apply the relevant RAP principles from [preparing data](#preparing-data), [writing code](#writing-code) and [version control](#version-control).
+
+
+::: callout-tip
+# Need more support?   
+The [Statistics Development Team](mailto:statistics.development@education.gov.uk) invites teams to take part in our partnership programme to develop their skills and implement RAP principles to a relevant project. Partnership programmes can offer additional resource and dedicated support to your team to implement specific RAP principles. Visit our page on [getting started with the partnership programme](../learning-development/learning-support.html#partnership-programmes) for more details.
+::: 
+
+---
+
+### Splitting your project into chunks
+
+This section on splitting your project into chunks and prioritising draws on guidance from the Department for Transport’s [Strategic Reproducible Analysis resource](https://department-for-transport.github.io/strategic_reproducible_analysis/index.html).
+
+---
+
+When creating or amending your RAP process, it's often more effective to think of your process as a series of modular, logical chunks, rather than a single pipeline or list of steps. This approach makes your work easier to understand, maintain and reuse, especially when collaborating with others or updating parts of your process.
+
+A chunk is a self-contained part of your analysis that:
+
+-   **Has a defined data input.** This may be a raw data or cleaned data ready for analysis.
+-   **Performs one main task.** Each chunk should do something specific and easily describable like 'clean data', 'calculate headline figures' or 'create tidy data'.
+-   **Groups similar tasks together.** For example, suppressing all data points should be done in one 'suppression' chunk.
+-   **Avoids duplication.** If multiple outputs rely on the same data preparation, that preparation should be its own chunk. Then, separate chunks can handle the specific outputs.
+-   **Produces a defined output.** This could be cleaned data, suppressed data or tidy data.
+
+By breaking your work into logical chunks, you make it easier to test, document and update your process. It also makes quality assurance and communication with your team about the process easier.
+
+---
+
+### Estimating Effort and Complexity
+
+---
+
+Before applying RAP principles to your chosen area, it’s useful to get a sense of how much time and effort each improvement might take. This can help you:
+
+* Identify quick wins 
+* Plan your work realistically
+* Communicate expectations with colleagues and stakeholders
+
+The matrix below, from the Department for Transport’s [Strategic Reproducible Analysis guidance](https://department-for-transport.github.io/strategic_reproducible_analysis/estimating-length-and-complexity-of-projects.html#examples-in-r), provides example estimates for different types of RAP tasks. It categorises them by complexity and gives a rough idea of how long each might take to implement.
+
+You can use this matrix to help you decide where to start. For example, if you’ve identified a high-priority chunk that also looks like a low-effort task, that could be a great place to begin. On the other hand, if a chunk is high-priority but high-effort, you might want to plan more time or break it down further.
+
+![](../images/dft_matrix.png)
+
+Actual timings will vary between analysts. Beginner coders will usually take longer than experienced coders, and some tasks may be easier for you than others. The estimates are just a guide to help you think about the effort and time involved.
+
+--- 
+
+### Prioritise
+
+---
+
+Although it might feel natural to work through your process and improve it in chronological order, well-structured code gives you the flexibility to start where it matters most. Prioritising the right chunks early can accelerate your progress and help you see the benefits of RAP sooner.
+
+When deciding where to begin, consider the following:
+
+-   Which chunks deliver the greatest value?
+
+-   Where are the biggest time-saving opportunities?
+
+-   Can a chunk serve multiple purposes?
+
+-   Are other chunks dependent on this one?
+
+-   Is the current method causing problems, or is it relatively robust?
+
+------------------------------------------------------------------------
+
+### RAP principles
+
+------------------------------------------------------------------------
+
+RAP principles represent best practice in analytical work and should be our default approach wherever possible. While not every principle will apply to every situation, many are universally beneficial and can be adopted even in ad-hoc or one-off pieces of work.
+
+Cross-government RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md) to aim for. In DfE, we have used these to develop two sets of RAP principles to reflect the different needs of statistics production processes and general analysis. 
+
+The [RAP for statistics principles](../RAP/rap-statistics.html) reflect where processes are often repeated and structured, allowing for more automation and standardisation.
+
+The [RAP for general analysis principles](../RAP/rap-analysis.html) reflect that general analysis can be more varied, but still benefits from applying RAP principles proportionally.
+
+Always applicable RAP principles include:
+
+-   Documentation
+
+-   Sensible folder and file structure
+
+-   Source data is acquired and stored sensibly
+
+Principles applicable in more specific situations include:
+
+-   Recyclable code for future use
+
+-   Project specific automated sense checks
+
+------------------------------------------------------------------------
+
+### RAP support
+
+------------------------------------------------------------------------
+
+You can find support available for RAP on the [RAP support page](../RAP/rap-support.html), and answers to common questions on the [RAP FAQS page](../RAP/rap-faqs.html).
