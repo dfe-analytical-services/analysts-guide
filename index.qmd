@@ -107,6 +107,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [RAP start guide](RAP/rap-start-guide.html)
 - Detailed guidance on how to get started with RAP for statistics publications
 
+[RAP in all analysis](RAP/rap-analysis.html)
+- Detailed RAP guidance for all other analytical work
+
 [RAP expectations](RAP/rap-expectations.html)
 - Guidance for all analysts on expectations of RAP
 

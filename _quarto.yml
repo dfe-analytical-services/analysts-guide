@@ -109,12 +109,17 @@ website:
           - writing-visualising/writing.qmd
       - section: "Reproducible Analytical Pipelines (RAP)"
         contents: 
+          - RAP/what-is-rap.qmd
           - RAP/rap-expectations.qmd
+          - RAP/rap-statistics.qmd
+          - RAP/rap-analysis.qmd
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
           - RAP/rap-statistics.qmd
           - RAP/rap-start-guide.qmd
       - section: "Databricks Setup Guides"
+
+      - section: "ADA and Databricks"
         contents:
           - ADA/databricks_rstudio_sql_warehouse.qmd
           - ADA/databricks_rstudio_personal_cluster.qmd
