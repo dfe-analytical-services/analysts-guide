@@ -1,0 +1,94 @@
+Source data acquired sensibly 
+
+---
+
+![](../images/good.svg)
+
+**What does this mean?** 
+
+When we refer to 'source data', we take this to mean the data you use at the start of your process to create the underlying data files. Any cleaning at the end of a collection will happen before this. 
+
+In order for us to be able to have an end-to-end data pipeline where we can replicate our analysis across the department, we should store all of the raw data needed to create aggregate statistics in a managed Microsoft SQL Server or in the Databricks platform. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process using SQL queries. 
+
+As far as meeting the requirement to have all source data in a database, databases other than SQL or Databricks may be acceptable, though we can't support them in the same way.
+
+
+**Why do it?**
+
+The principle is that this source data will remain stable and is the point you can go back to and re-run the processes from if necessary. If for any reason the source data needs to change, your processes will be set up in a way that you can easily re-run them to get updated outputs based on the amended source data with minimal effort.
+
+SQL is a fantastic language for large scale data joining and manipulation; it allows us to replicate end-to-end from raw data to final aggregate statistics output. Having all the data in one place and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results. You can run SQL queries against data in SQL Server or in Databricks, although SQL Server makes use of T-SQL and Databricks makes use of Spark SQL. 
+
+
+**How to get started**
+
+For a collection of relevant resources to use when learning SQL, see our [learning resources](../learning-development/learning-development.html) page, and for guidance on best practice when writing SQL queries, see the [writing code](#writing-code) and [documentation](#documentation) sections on this page, as well as the guides immediately below on how to set up and use a SQL database. 
+
+For resources to help you learn about Databricks and how to migrate your data into the Unity Catalog, please see our [ADA and Databricks documentation](../ADA/ada.html). Legacy servers will be decommissioned in 2026, and all data will be migrated into the Databricks Unity Catalog instead. 
+
+---
+
+#### How to set up a SQL working area
+
+---
+
+There are a few different options, depending on where you want your new area to exist. Visit our [SQL learning page](../learning-development/sql.html#Setting_up_a_SQL_area) for details.
+
+---
+
+#### Moving data to different areas
+
+---
+
+If your data is already in SQL Server, you can use this snippet of R code to move tables from one area (e.g. the iStore) to another (e.g. your team's modelling area) to ensure all data are stored in a database.
+
+``` {r connection_example, eval=FALSE}
+library(odbc)
+library(dplyr)
+library(dbplyr)
+library(DBI)
+
+# Step 1.1.: Connect to source server -------------------------------------------
+con_source <- dbConnect(odbc(),
+                     Driver = "SQL Server Native Client 11.0",
+                     Server = "Name_of_source_server",
+                     Database = "Source_database",
+                     Trusted_Connection = "yes"
+)
+
+# Step 1.2.: Connect to target server
+con_target <- dbConnect(odbc(),
+                        Driver = "SQL Server Native Client 11.0",
+                        Server = "Name_of_target_server",
+                        Database = "Your_target_database",
+                        Trusted_Connection = "yes"
+)
+
+# Step 2.1.: Pull the table from the source database
+table_for_transfer <- tbl(con_source,in_schema("schema_name", "table_name")) %>% collect()
+
+# Step 2.2.: Copy table into target database 
+dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfer)
+
+```
+
+---
+
+#### Importing data to SQL Server
+
+---
+
+There's lots of guidance online of how to import flat files from shared areas into Microsoft SQL Server on the internet, including [this guide](https://docs.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard?view=sql-server-2017){target="_blank" rel="noopener noreferrer"}.
+
+
+Remember that it is important to import them with consistent, thought-through [naming conventions](#naming-conventions). You will thank yourself later.
+
+---
+
+#### How to grant access to your area
+
+---
+
+Much like setting up a SQL area, there are different ways to do this depending on the server your database is in. Visit our [SQL learning page](../learning-development/sql.html#Givinggetting_access) for details.
+
+---

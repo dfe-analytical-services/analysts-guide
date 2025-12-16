@@ -102,109 +102,18 @@ Within each of these principles are separate elements of RAP. Each of these is d
 
 Preparing data is our first core RAP principle, which contains the following elements:
 
-* [All source data stored in a database](#all-source-data-stored-in-a-database) 
+* [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly) 
 * [Files meet data standards](#files-meet-data-standards)
 * [Sensible file and folder structure](#sensible-folder-and-file-structure)
 
 Your team should store the raw data you use to create underlying data in a Microsoft SQL Server database or in the Databricks platform. These are similar to a Sharepoint area or a shared folder, but offer dedicated data storage areas and allow multiple users to use the same file at once. This means that you can also run code against a single source of data, further reducing the risk of error.
 
----
 
-### All source data stored in a database 
+### Source data is acquired and stored sensibly
 
----
+{{< include common-rap-principles/source-data-acquired-sensibly.qmd >}}
 
-
-![](../images/good.svg)
-
-**What does this mean?** 
-
-When we refer to 'source data', we take this to mean the data you use at the start of your process to create the underlying data files. Any cleaning at the end of a collection will happen before this. 
-
-In order for us to be able to have an end-to-end data pipeline where we can replicate our analysis across the department, we should store all of the raw data needed to create aggregate statistics in a managed Microsoft SQL Server or in the Databricks platform. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process using SQL queries. 
-
-As far as meeting the requirement to have all source data in a database, databases other than SQL or Databricks may be acceptable, though we can't support them in the same way.
-
-
-**Why do it?**
-
-The principle is that this source data will remain stable and is the point you can go back to and re-run the processes from if necessary. If for any reason the source data needs to change, your processes will be set up in a way that you can easily re-run them to get updated outputs based on the amended source data with minimal effort.
-
-SQL is a fantastic language for large scale data joining and manipulation; it allows us to replicate end-to-end from raw data to final aggregate statistics output. Having all the data in one place and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results. You can run SQL queries against data in SQL Server or in Databricks, although SQL Server makes use of T-SQL and Databricks makes use of Spark SQL. 
-
-
-**How to get started**
-
-For a collection of relevant resources to use when learning SQL, see our [learning resources](../learning-development/learning-development.html) page, and for guidance on best practice when writing SQL queries, see the [writing code](#writing-code) and [documentation](#documentation) sections on this page, as well as the guides immediately below on how to set up and use a SQL database. 
-
-For resources to help you learn about Databricks and how to migrate your data into the Unity Catalog, please see our [ADA and Databricks documentation](../ADA/ada.html). Legacy servers will be decommissioned in 2026, and all data will be migrated into the Databricks Unity Catalog instead. 
-
----
-
-#### How to set up a SQL working area
-
----
-
-There are a few different options, depending on where you want your new area to exist. Visit our [SQL learning page](../learning-development/sql.html#Setting_up_a_SQL_area) for details.
-
----
-
-#### Moving data to different areas
-
----
-
-If your data is already in SQL Server, you can use this snippet of R code to move tables from one area (e.g. the iStore) to another (e.g. your team's modelling area) to ensure all data are stored in a database.
-
-``` {r connection_example, eval=FALSE}
-library(odbc)
-library(dplyr)
-library(dbplyr)
-library(DBI)
-
-# Step 1.1.: Connect to source server -------------------------------------------
-con_source <- dbConnect(odbc(),
-                     Driver = "SQL Server Native Client 11.0",
-                     Server = "Name_of_source_server",
-                     Database = "Source_database",
-                     Trusted_Connection = "yes"
-)
-
-# Step 1.2.: Connect to target server
-con_target <- dbConnect(odbc(),
-                        Driver = "SQL Server Native Client 11.0",
-                        Server = "Name_of_target_server",
-                        Database = "Your_target_database",
-                        Trusted_Connection = "yes"
-)
-
-# Step 2.1.: Pull the table from the source database
-table_for_transfer <- tbl(con_source,in_schema("schema_name", "table_name")) %>% collect()
-
-# Step 2.2.: Copy table into target database 
-dbWriteTable(con_target,"whatever_you_want_to_call_new_table", table_for_transfer)
-
-```
-
----
-
-#### Importing data to SQL Server
-
----
-
-There's lots of guidance online of how to import flat files from shared areas into Microsoft SQL Server on the internet, including [this guide](https://docs.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard?view=sql-server-2017){target="_blank" rel="noopener noreferrer"}.
-
-
-Remember that it is important to import them with consistent, thought-through [naming conventions](#naming-conventions). You will thank yourself later.
-
----
-
-#### How to grant access to your area
-
----
-
-Much like setting up a SQL area, there are different ways to do this depending on the server your database is in. Visit our [SQL learning page](../learning-development/sql.html#Givinggetting_access) for details.
-
----
+------------------------------------------------------------------------
 
 ### Files meet data standards
 
@@ -250,65 +159,11 @@ The above code snippet will load in the data as it would with any other CSV, how
 
 ---
 
-### Sensible folder and file structure 
+### Sensible file and folder structure
 
----
+{{< include common-rap-principles/sensible-folder-and-file-structure.qmd >}}
 
-![](../images/good.svg)
-
-**What does this mean?**
-
-As a minimum you should have a folder that includes all of the final versions of documents produced and published, per release, within a folder for the wider publication. Ask yourself if it would be easy for someone who isn't in the team to find specific files, and if not, is there a better way that you could name and structure your folders to make them more intuitive to navigate? 
-
-
-**Why do it?**
-
-How you organize and name your files will have a big impact on your ability to find those files later and to understand what they contain. You should be consistent and descriptive in naming and organizing files so that it is obvious where to find specific data and what the files contain.
-
-
-**How to get started**
-
-Some questions to help you consider whether your folder structure is sensible are:
-
-- Are all documentation, code and outputs for the publication saved in one folder area?
-- Is simple version control clearly applied (e.g. having all final files in a folder named "final"?
-- Are there sub-folders like 'code', 'documentation'', 'outputs' and 'final' to save the relevant working files in? 
-- Are you keeping a version log up to date with any changes made to files in this final folder?
-
-You could also consider using the [create_project() function](https://dfe-analytical-services.github.io/dfeR/reference/index.html#pre-populated-project) from the dfeR package to create a pre-populated folder structure for use with an R project
-
----
-
-#### Naming conventions
-
----
-
-Having a **clear** and **consistent** naming convention for your files is critical. Remember that file names should:
-
-
-**Be machine readable** 
-
-- Avoid spaces.
-- Avoid special characters such as: ~ ! @ # $ % ^ & * ( ) ` ; < > ? , [ ] { } ‘ “.
-- Be as short as practicable; overly long names do not work well with all types of software.
-
-
-**Be human readable** 
-
-- Be easy to understand the contents from the name.
-
-
-**Play well with default ordering**
-
-- Often (though not always!) you should have numbers first, particularly if your file names include dates.
-- Follow the [ISO 8601 date standard](https://www.iso.org/iso-8601-date-and-time-format.html) (YYYYMMDD) to ensure that all of your files stay in chronological order.
-- Use leading zeros to left pad numbers and ensure files sort properly, e.g. using 01, 02, 03 to avoid 1, 10, 2, 3.
-
-
-If in doubt, take a look at this [presentation](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank" rel="noopener noreferrer"}, or this [naming convention guide by Stanford](https://drive.google.com/file/d/12A4qZNwmL4s2NH8Ex161jgiJ9HrA06ZZ/view?pli=1){target="_blank" rel="noopener noreferrer"}, for examples reinforcing the above.
-
----
-
+------------------------------------------------------------------------
 
 ## Writing code
 
@@ -924,126 +779,8 @@ As we work with code to process our data more and more, we can begin to utilise 
 
 ---
 
-### Documentation
 
----
-
-
-![](../images/good.svg)
-
-**What does this mean?**
-
-- You should be annotating as you go, ensuring that every process and decision made is written down. Processes are ideally written with code, and decisions in comments. 
-
-- There should be a [README](#writing-a-readme-file) notes file, that clearly details the steps in the process, any dependencies (such as places where access needs to be requested to) and how to carry out the process. 
-
-- Any specialist terms should also be defined if required (e.g. The NFTYPE lookup can be found in xxxxx. "NFTYPE" means school type).
-
-**Why do it?**
-
-When documenting your processes you should leave nothing to chance, we all have wasted time in the past trying to work out what it was that we had done before, and that time increases even more when we are picking up someone else's work. Thorough documentation saves us time, and provides a clear audit trail of what we do. This is key for the 'Reproducible' part of RAP, our processes must be easily reproducible and clear documentation is fundamental to that.
-
-**How to get started**
-
-Take a look at your processes and be critical - could another analyst pick them up without you there to help them? If the answer is no (don't feel ashamed, it will be for many teams) then go through and note down areas that require improvement, so that you can revise them with your team.
-
-Take a look at the sections below for further guidance on improving your documentation.
-
----
-
-#### Commenting in code
-
----
-
-When writing code, whether that is SQL, R, or something else, make sure you're commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this: 
-
-```{r comments_example, eval=FALSE}
-----------------------------------------------------------------------------------------
--- Script Name:		Section 251 Table A 2019 - s251_tA_2019.sql
--- Description:		Extraction of data from IStore and production of underlying data file
--- Author:		    Cam Race
--- Creation Date:   15/11/2019
-----------------------------------------------------------------------------------------
-
-----------------------------------------------------------------------------------------
---//  Process
--- 1. Extract the data for each available year
--- 2. Match in extra geographical information
--- 3. Create aggregations - both categorical and geographical totals
--- 4. Tidy up and output results
--- 5. Metadata creation
-----------------------------------------------------------------------------------------
-```
-
-Commented lines should begin with -- (SQL) or # (R), followed by one space and your comment. Remember that **comments should explain the why, not the what.** 
-
-In SQL you can also use `/**` and `**/` to bookend comments over multiple lines. 
-
-In rmarkdown documents you can bookend comments by using `<!--` and `-->`.
-
-Use commented lines of - to break up your files into scannable chunks based upon the structure and subheadings, like the R example below:
-
-
-``` {r comments_example_2, eval=FALSE}
-# Importing the data -------------------------------------------------------------------
-
-```
-
-Doing this can visually break up your code into sections that are easy to navigate around. It will also add that section to your outline, which can be used in RStudio using Ctrl-Shift-O. More details on the possibilities for this can be found in the [RStudio guidance on folding and sectioning code](https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections){target="_blank" rel="noopener noreferrer"}.
-
-You might be thinking that it would be nice if there was software that could help you with documentation, if so, read on, as Git is an incredibly powerful tool that can help us easily and thoroughly document versions of our files. If you're at the stage where you are developing your own functions and packages in R, then take a look at [roxygen2](https://roxygen2.r-lib.org/){target="_blank" rel="noopener noreferrer"} as well.
-
----
-
-#### Writing a README file
-
----
-
-**What does this mean?**
-
-A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure DevOps, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the [Markdown Guide](https://www.markdownguide.org/basic-syntax/){target="_blank" rel="noopener noreferrer"}. 
-
-**Why do it?**
-
-It's an easy way to answer questions that your audience will likely have regarding how to install and use your project and also how to collaborate with you.
-
-**How to get started**
-
-For new projects, you can use the create_project function in dfeR. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a README template. You can find more information on this in the [dfeR reference](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html).
-
-If you are creating your own README for existing projects, you should include all of the sections listed below:
-
-**Introduction**
-
-- Purpose: briefly explain the purpose of the code.
-- Overview: Provide a high-level summary of the contents and structure of the repository. 
-
-**Requirements**
-
-- Access: Detail any permissions or access needed to use the repository at the top of this section, e.g. access to specific SQL databases. This is crucial for enabling new users to use the repository.
-- Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R, or SQL.
-- Version control/Renv: State how version control is managed and whether Renv is being used. 
-
-**Getting started**
-
-- Setup instructions: Provide step-by-step instructions on how to set up the environment, including installing dependencies. 
-- Data input/output: Describe the expected input data and where it can be found, as well as what output should be expected from the code. 
-
-**How to run and update**
-
-- Running the code: Explain how users can best run the code, for example by running a run all script. 
-- Updating guidelines: Outline the process for updating and contributing to the repository, including specific scripts and lines where updates are frequently needed. Describe how to get changes reviewed. 
-- Issue reporting: Explain how to report issues or suggest improvements. This could be through issues if using GitHub, boards in Azure DevOps or by emailing the team.  
-
-**Contact details**
-
-- Main contacts: List the names and contact information of people who maintain the repository. 
-- Support channels: Provide any information on how to get support, such as email addresses or teams channels. 
-
-The [Self-assessment tool](https://github.com/dfe-analytical-services/publication-self-assessment-copy){target="_blank" rel="noopener noreferrer"} and the [QA app](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"} give two examples of readme files structured like this.
-
-
----
+{{< include common-rap-principles/documentation.qmd >}}
 
 ### Version controlled final code scripts 
 

@@ -1,0 +1,118 @@
+### title 3 
+---
+Documentation
+
+---
+
+![](../images/good.svg)
+
+**What does this mean?**
+
+- You should be annotating as you go, ensuring that every process and decision made is written down. Processes are ideally written with code, and decisions in comments. 
+
+- There should be a [README](#writing-a-readme-file) notes file, that clearly details the steps in the process, any dependencies (such as places where access needs to be requested to) and how to carry out the process. 
+
+- Any specialist terms should also be defined if required (e.g. The NFTYPE lookup can be found in xxxxx. "NFTYPE" means school type).
+
+**Why do it?**
+
+When documenting your processes you should leave nothing to chance, we all have wasted time in the past trying to work out what it was that we had done before, and that time increases even more when we are picking up someone else's work. Thorough documentation saves us time, and provides a clear audit trail of what we do. This is key for the 'Reproducible' part of RAP, our processes must be easily reproducible and clear documentation is fundamental to that.
+
+**How to get started**
+
+Take a look at your processes and be critical - could another analyst pick them up without you there to help them? If the answer is no (don't feel ashamed, it will be for many teams) then go through and note down areas that require improvement, so that you can revise them with your team.
+
+Take a look at the sections below for further guidance on improving your documentation.
+
+---
+
+#### Commenting in code
+
+---
+
+When writing code, whether that is SQL, R, or something else, make sure you're commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this: 
+
+```{r comments_example, eval=FALSE}
+----------------------------------------------------------------------------------------
+-- Script Name:		Section 251 Table A 2019 - s251_tA_2019.sql
+-- Description:		Extraction of data from IStore and production of underlying data file
+-- Author:		    Cam Race
+-- Creation Date:   15/11/2019
+----------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------
+--//  Process
+-- 1. Extract the data for each available year
+-- 2. Match in extra geographical information
+-- 3. Create aggregations - both categorical and geographical totals
+-- 4. Tidy up and output results
+-- 5. Metadata creation
+----------------------------------------------------------------------------------------
+```
+
+Commented lines should begin with -- (SQL) or # (R), followed by one space and your comment. Remember that **comments should explain the why, not the what.** 
+
+In SQL you can also use `/**` and `**/` to bookend comments over multiple lines. 
+
+In rmarkdown documents you can bookend comments by using `<!--` and `-->`.
+
+Use commented lines of - to break up your files into scannable chunks based upon the structure and subheadings, like the R example below:
+
+
+``` {r comments_example_2, eval=FALSE}
+# Importing the data -------------------------------------------------------------------
+
+```
+
+Doing this can visually break up your code into sections that are easy to navigate around. It will also add that section to your outline, which can be used in RStudio using Ctrl-Shift-O. More details on the possibilities for this can be found in the [RStudio guidance on folding and sectioning code](https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections){target="_blank" rel="noopener noreferrer"}.
+
+You might be thinking that it would be nice if there was software that could help you with documentation, if so, read on, as Git is an incredibly powerful tool that can help us easily and thoroughly document versions of our files. If you're at the stage where you are developing your own functions and packages in R, then take a look at [roxygen2](https://roxygen2.r-lib.org/){target="_blank" rel="noopener noreferrer"} as well.
+
+---
+
+#### Writing a README file
+
+---
+
+**What does this mean?**
+
+A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure DevOps, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the [Markdown Guide](https://www.markdownguide.org/basic-syntax/){target="_blank" rel="noopener noreferrer"}. 
+
+**Why do it?**
+
+It's an easy way to answer questions that your audience will likely have regarding how to install and use your project and also how to collaborate with you.
+
+**How to get started**
+
+For new projects, you can use the create_project function in dfeR. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a README template. You can find more information on this in the [dfeR reference](https://dfe-analytical-services.github.io/dfeR/reference/create_project.html).
+
+If you are creating your own README for existing projects, you should include all of the sections listed below:
+
+**Introduction**
+
+- Purpose: briefly explain the purpose of the code.
+- Overview: Provide a high-level summary of the contents and structure of the repository. 
+
+**Requirements**
+
+- Access: Detail any permissions or access needed to use the repository at the top of this section, e.g. access to specific SQL databases. This is crucial for enabling new users to use the repository.
+- Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R, or SQL.
+- Version control/Renv: State how version control is managed and whether Renv is being used. 
+
+**Getting started**
+
+- Setup instructions: Provide step-by-step instructions on how to set up the environment, including installing dependencies. 
+- Data input/output: Describe the expected input data and where it can be found, as well as what output should be expected from the code. 
+
+**How to run and update**
+
+- Running the code: Explain how users can best run the code, for example by running a run all script. 
+- Updating guidelines: Outline the process for updating and contributing to the repository, including specific scripts and lines where updates are frequently needed. Describe how to get changes reviewed. 
+- Issue reporting: Explain how to report issues or suggest improvements. This could be through issues if using GitHub, boards in Azure DevOps or by emailing the team.  
+
+**Contact details**
+
+- Main contacts: List the names and contact information of people who maintain the repository. 
+- Support channels: Provide any information on how to get support, such as email addresses or teams channels. 
+
+The [Self-assessment tool](https://github.com/dfe-analytical-services/publication-self-assessment-copy){target="_blank" rel="noopener noreferrer"} and the [QA app](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"} give two examples of readme files structured like this.

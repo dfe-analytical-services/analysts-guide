@@ -1,0 +1,58 @@
+Sensible folder and file structure 
+
+---
+
+![](../images/good.svg)
+
+**What does this mean?**
+
+As a minimum you should have a folder that includes all of the final versions of documents produced and published, per release, within a folder for the wider publication. Ask yourself if it would be easy for someone who isn't in the team to find specific files, and if not, is there a better way that you could name and structure your folders to make them more intuitive to navigate? 
+
+
+**Why do it?**
+
+How you organize and name your files will have a big impact on your ability to find those files later and to understand what they contain. You should be consistent and descriptive in naming and organizing files so that it is obvious where to find specific data and what the files contain.
+
+
+**How to get started**
+
+Some questions to help you consider whether your folder structure is sensible are:
+
+- Are all documentation, code and outputs for the publication saved in one folder area?
+- Is simple version control clearly applied (e.g. having all final files in a folder named "final"?
+- Are there sub-folders like 'code', 'documentation'', 'outputs' and 'final' to save the relevant working files in? 
+- Are you keeping a version log up to date with any changes made to files in this final folder?
+
+You could also consider using the [create_project() function](https://dfe-analytical-services.github.io/dfeR/reference/index.html#pre-populated-project) from the dfeR package to create a pre-populated folder structure for use with an R project
+
+---
+
+#### Naming conventions
+
+---
+
+Having a **clear** and **consistent** naming convention for your files is critical. Remember that file names should:
+
+
+**Be machine readable** 
+
+- Avoid spaces.
+- Avoid special characters such as: ~ ! @ # $ % ^ & * ( ) ` ; < > ? , [ ] { } ‘ “.
+- Be as short as practicable; overly long names do not work well with all types of software.
+
+
+**Be human readable** 
+
+- Be easy to understand the contents from the name.
+
+
+**Play well with default ordering**
+
+- Often (though not always!) you should have numbers first, particularly if your file names include dates.
+- Follow the [ISO 8601 date standard](https://www.iso.org/iso-8601-date-and-time-format.html) (YYYYMMDD) to ensure that all of your files stay in chronological order.
+- Use leading zeros to left pad numbers and ensure files sort properly, e.g. using 01, 02, 03 to avoid 1, 10, 2, 3.
+
+
+If in doubt, take a look at this [presentation](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank" rel="noopener noreferrer"}, or this [naming convention guide by Stanford](https://drive.google.com/file/d/12A4qZNwmL4s2NH8Ex161jgiJ9HrA06ZZ/view?pli=1){target="_blank" rel="noopener noreferrer"}, for examples reinforcing the above.
+
+---
