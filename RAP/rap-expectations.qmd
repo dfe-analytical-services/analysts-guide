@@ -8,9 +8,9 @@ title: "RAP expectations"
 
 ## RAP Expectations
 
-As government analysts working with statistics, we are required to ensure that our analysis is reproducible, transparent, and robust, using coding and code management best practices (source [GSG competency framework](https://analysisfunction.civilservice.gov.uk/policy-store/competency-framework-for-the-government-statistician-group-gsg/)). Reproducible Analytical Pipelines (RAP) are a cross-government requirement to help analysts adopt best practices.
+Government analysts working with statistics are required to ensure that analysis is reproducible, transparent, and robust, using coding and code management best practices (source [GSG competency framework](https://analysisfunction.civilservice.gov.uk/policy-store/competency-framework-for-the-government-statistician-group-gsg/)). Reproducible Analytical Pipelines (RAP) are a cross-government requirement to help analysts adopt best practices.
 
-We expect any analyst to know and be able to implement RAP principles, using the recommended tools to meet at least good and great practice. You can see examples of good, great and best practice on our [RAP for statistics principles](../RAP/rap-statistics.html) and [RAP for general analysis principles] pages. 
+We expect any analyst to know and be able to implement RAP principles, using the recommended tools to meet at least good and great practice. You can see examples of good, great and best practice on our [RAP for statistics principles](../RAP/rap-statistics.html) and [RAP for general analysis principles](../RAP/rap-analysis.html) pages. 
 
 We expect managers of analysts working in statistics production to support and prioritise the development required to build the skills needed to implement RAP using the recommended tools. Managers should ensure that the processes for any publications they own meet at least good and great practice.
 
@@ -57,7 +57,7 @@ Roughly equivalent to Team Leaders and G7, analyst managers will:
 
 Analysts working on analysis in government will:
 
-- use open-source tools wherever whenever appropriate
+- use open-source tools wherever appropriate
 - open source their code
 - work with data engineers and architects to make sure that source data are versioned and stored so that analysis can be reproduced
 - learn the skills they need to implement RAP principles
