@@ -16,6 +16,7 @@ If you're unfamiliar with RAP, or want a refresher on what RAP is and why it mat
 ### Getting started with RAP for analysis
 
 ------------------------------------------------------------------------
+
 To get started with RAP for analysis, start by exploring the RAP principles in the diagram below, which outline what good, great and best practice looks like.
 
 Once you are familiar with the principles, take a look at the different types of analysis commonly carried out across the department. This will help you understand which RAP principles are recommended for your type of analysis.
