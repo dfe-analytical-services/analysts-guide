@@ -6,9 +6,10 @@
 /.quarto/
 *_cache/
 _site/
+site_libs/
 
 .DS_Store
 
 README.html
-README_files/
 
+**/*.quarto_ipynb

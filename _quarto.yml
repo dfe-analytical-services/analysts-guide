@@ -4,7 +4,7 @@ project:
 website: 
   page-navigation: true
   back-to-top-navigation: true
-  title: "Analysts' Guide" 
+  title: "Analysts' Guide"
   site-url: "https://dfe-analytical-services.github.io/analysts-guide"
   repo-url: https://github.com/dfe-analytical-services/analysts-guide
   repo-actions: [edit, issue]
@@ -20,9 +20,9 @@ website:
   search:
     location: navbar
     type: textbox
-          
+    
   sidebar:
-    logo: "images/duck_guidance.png"
+    logo: "images/duck_guidance.png" 
     pinned: true
     align: center
     tools:
@@ -70,7 +70,7 @@ website:
             target: _blank
             text: "Suggest changes"
             
-    style: "floating"
+    style: floating
     search: true
     collapse-level: 1
     contents:
@@ -83,6 +83,11 @@ website:
           - learning-development/r.qmd
           - learning-development/git.qmd
           - learning-development/python.qmd
+          - learning-development/datacamp-tracks.qmd
+          - ADA/ada.qmd
+          - ADA/databricks_fundamentals.qmd
+          - ADA/databricks_notebooks.qmd
+          - ADA/databricks_workflows.qmd
           - learning-development/accessibility.qmd
       - section: "Statistics production"
         contents:
@@ -110,21 +115,15 @@ website:
           - RAP/rap-analysis.qmd
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
+          - RAP/rap-statistics.qmd
+          - RAP/rap-start-guide.qmd
+      - section: "Databricks Setup Guides"
 
       - section: "ADA and Databricks"
         contents:
-          - text: "---"
-          - text: "Understanding Databricks"
-          - text: "---"
-          - ADA/ada.qmd
-          - ADA/databricks_fundamentals.qmd
-          - ADA/databricks_notebooks.qmd
-          - ADA/databricks_workflows.qmd
-          - text: "---"
-          - text: "How to..."
-          - text: "---"
           - ADA/databricks_rstudio_sql_warehouse.qmd
           - ADA/databricks_rstudio_personal_cluster.qmd
+          - ADA/databricks_rstudio_personal_cluster_sparklyr_archive.qmd
           - ADA/git_databricks.qmd
           - ADA/databricks_workflow_script_databricks.qmd
           - ADA/databricks_workflow_script_rstudio.qmd
@@ -132,10 +131,17 @@ website:
 format:
   html:
     theme:
-      light: [cyborg, theme-dark.scss]
-      dark: [united, theme-light.scss]
+      dark:  [cyborg,theme-dark.scss]
+      light: [united,theme-light.scss]
     code-copy: true
-    highlight-style: printing
+    css: styles.css
+    grid: 
+      sidebar-width: 370px
+      body-width: 770px
+      gutter-width:	2em
+    highlight-style: 
+      dark: printing-dark.theme
+      light: printing-light.theme
     code-overflow: wrap
     toc: true
 
@@ -143,4 +149,5 @@ filters:
   - include-files.lua
   - newpagelink.lua
   - quarto
+  
 

@@ -4,6 +4,10 @@ title: "Databricks fundamentals"
 
 ------------------------------------------------------------------------
 
+::: callout-important
+Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development\@education.gov.uk](mailto:statistics.development@education.gov.uk).
+:::
+
 ## What is Databricks?
 
 Databricks is a web based platform for large scale data manipulation and analysis using code to create reproducible data pipelines. Primarily it takes the form of a website which you can create data pipelines and perform analysis in. It currently supports the languages R, SQL, Python and Scala, and integrates well with Git based version control systems such as GitHub or Azure DevOps.
@@ -20,7 +24,7 @@ In addition, it also provides new tools within the platform to construct and aut
 
 Underpinning the technology are some key differences in how computers we're familiar with, and Databricks (and distributed computing in general) are structured.
 
----
+------------------------------------------------------------------------
 
 ### Traditional computing
 
@@ -39,7 +43,7 @@ Any traditional computer is limited by its hardware meaning there is an upper li
 
 In order to increase the amount of data a computer can process, you would have to switch out the physical hardware of the machine for something more powerful.
 
----
+------------------------------------------------------------------------
 
 ### On Databricks
 
@@ -75,17 +79,33 @@ The auditing, and automation facilities provide a lot of benefits when building 
 
 ## Key concepts
 
-
-
 ### Storage
 
 There are a few different ways of storing files and data on Databricks. Your data, and modelling areas will reside in the 'unity catalog', whereas your scripts and code will live on your 'workspace'.
 
----
+------------------------------------------------------------------------
 
 ### Unity catalog
 
 ------------------------------------------------------------------------
+
+::: callout-caution
+## Data changes during migration to Databricks
+
+Please note that if you have had data migrated from SQL Server to the Unity Catalog, some changes may have been made to table and / or column names. Databricks does not support spaces in table or column names, and will automatically replace spaces with underscores (\_).
+
+The following special characters are also unsupported:
+
+-   full stop (.)
+-   forward slash (/)
+-   All ASCII control characters
+
+If column or table names contain hyphens, you will need to use [backticks](https://dictionary.cambridge.org/dictionary/english/backtick) around the column or table name when referencing them in your code, e.g.:
+
+`` SELECT * FROM `table-name` WHERE `column-name` = 1 ``
+
+You can find more information on Databricks object names in the [Databricks SQL reference manual](https://docs.databricks.com/gcp/en/sql/language-manual/sql-ref-names), and more information on how special characters will be re-mapped in the [special characters list](https://educationgovuk-my.sharepoint.com/:x:/g/personal/ruwanika_weerakkody_education_gov_uk/EQxT1U-AbLFCmjTU-fYuK9EBkdYMyHjVrYeBUTWy2q9mFw?e=c4TLDX).
+:::
 
 The majority of data and files on Databricks should be stored in the 'unity catalog'. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.
 
@@ -93,7 +113,7 @@ The unity catalog can be accessed through the 'Catalog' option in the Databricks
 
 ![](/images/ada-unity-catalog-sidebar.png)
 
----
+------------------------------------------------------------------------
 
 #### Structure of the unity catalog
 
@@ -107,7 +127,7 @@ A schema can contain any number of tables, views and volumes.
 
 ![](/images/ada-unity-catalog.jpg)
 
----
+------------------------------------------------------------------------
 
 #### Catalogs not databases
 
@@ -115,7 +135,7 @@ A schema can contain any number of tables, views and volumes.
 
 The 'unity catalog' is a single catalog that contains all the other catalogs of data in the Department. Catalogs are very similar in concept to a SQL database in that they they contain schemas, tables of data and views of data.
 
----
+------------------------------------------------------------------------
 
 #### Schemas, tables and views
 
@@ -131,7 +151,7 @@ Views look and act the same as tables, however instead of storing the data as it
 
 Tables and views sit within a schema and these are where you would store your core datasets and pick up data to analyse from.
 
----
+------------------------------------------------------------------------
 
 #### Volumes
 
@@ -143,7 +163,7 @@ Volumes are stored under a schema within a catalog. Files in here can be accesse
 
 Examples of files suitable to be stored in a volume include CSVs, JSON and other formats of data files, or supporting files / images for applications you develop through the platform. You can also upload files to a volume through the user interface.
 
----
+------------------------------------------------------------------------
 
 ### Workspaces - Databricks file system (DBFS)
 
@@ -151,7 +171,7 @@ Examples of files suitable to be stored in a volume include CSVs, JSON and other
 
 Each user has their own workspace which serves as a personal document and code storage area. It contains a user folder which is only accessible to that user by default, along with any Git repositories that you have cloned or created within Databricks.
 
-Your workspace can be accessed through the 'Catalog' option in the Databricks sidebar.
+Your workspace can be accessed in the Databricks sidebar.
 
 ![](/images/ada-workspace-repos.png){fig-align="center"}
 
@@ -162,10 +182,32 @@ Everything in your workspace is only accessible to you unless you share it with 
 
 Sharing code this way can be useful but has it's risks. If you allow other users to edit and run your workbooks it's possible that they can make changes or run it simultaneously resulting in unexpected results.
 
+**DO NOT** share with "all workspace users" as as this shares your personal workspace or folder or notebook with over 700+ users on the platform and could result in a data breach.
+
 For collaboration on code you should use a GitHub/DevOps repository which each user can clone and work on independently.
 :::
 
----
+------------------------------------------------------------------------
+
+### Workspaces dropdown guide
+
+------------------------------------------------------------------------
+
+In addition to your personal workspace, Databricks provides access to several shared environments, each designed for a specific purpose. You can see environments you have access to in the dropdown menu, normally at the top right of the Databricks interface. 
+
+![](/images/databricks-dropdown.png)
+
+Here's a brief overview of each option:
+
+| Environment ID prefix | Environment Name | Purpose / Description |
+|------------------------|------------------------|------------------------|
+| S101**d01** | Development | Contains example notebooks and test data |
+| S101**d02** | Training | Used for training courses. Contains sample data and course material |
+| S101**t02** | Test | Used for ADA testing |
+| S101**p02** | Preproduction | Contains some PDR data but not kept up-to-date |
+| S101**p01** | Production | Contains real data |
+
+------------------------------------------------------------------------
 
 ### Repositories for version control
 
@@ -183,15 +225,16 @@ In order to access data and run code you need to set up a compute resource. A co
 
 ![](/images/ada-compute.png)
 
-There are several types of compute available and you will need to make the most appropriate choice for the kind of processing you're wanting to do. The types are:
+There are several types of compute available and you will need to make the most appropriate choice for the kind of processing you're wanting to do. The table below summarises the compute types and their differences.
 
--   SQL Warehouse - multiple users, SQL only; best to use if you're only querying data from Databricks using SQL
+| **Compute type** | **Configuration** | **Code language support** | **Availability** | **To note** | **Use cases** |
+|------------|------------|------------|------------|------------|------------|
+| Serverless | Handled by Databricks | SQL <br> Python | All workspace users | No query can run longer than 48 hours <br> <br> Minimal warm-up time | Quick start to query in SQL / Python |
+| SQL Warehouse | Created by ADA team for each catalog | SQL | Only other users of same warehouse (typically your team) | This is the recommended compute for any SQL activities <br> <br> Shared resource so more efficient <br> <br> Relatively short boot up time | Query data optimised for SQL only <br> <br> Only compute option for SQL Editor |
+| Personal Cluster | Set up by you with choice of standard (roughly same power as DfE laptop device) or large (roughly double power of standard) | SQL <br> Python <br> R <br> Scala | Only you | Shut down after being unused for an hour <br> <br> Least cost effective so only use if needed <br> <br> Compute power has been limited to the two options but this can be raised if really necessary <br> <br> Takes a few minutes to boot up | Need specific versions / libraries <br> <br> Only option for R coding |
+| Shared Cluster | Created by ADA team for specific projects | SQL <br> Python <br> Scala | Other users on same project | Shared resource so more efficient <br> <br> Takes a few minutes to boot up | Shared resource to be more cost effective - where using Python or Scala please use this or Serverless |
 
--   Personal cluster - single user, supports R, SQL, python and scala; best to use if you require languages other than SQL
-
--   Shared cluster - multiple users, supports SQL, python and scala;
-
-You are able to create a personal cluster yourself, whereas shared clusters and SQL warehouses have to be requested through the [ADA team](mailto:adaptteam@education.gov.uk).
+Note that shared clusters and SQL warehouses have to be requested through the [ADA team](mailto:adaptteam@education.gov.uk).
 
 In most cases a personal cluster will be the most versatile and easily accessible option. However your team may want to request a shared SQL warehouse if you have a lot of processing heavy SQL queries and do not need to use any other language in the Databricks platform itself.
 

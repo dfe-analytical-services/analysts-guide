@@ -12,11 +12,15 @@ The primary route for publishing official statistics is using the [explore educa
 
 It is important that all dashboards should have a clear use case and reasoning for why they are required. If you are considering developing and publishing a dashboard, please get in touch with the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) who can advise and assist with the process, and make use of the [R Shiny statistics dashboards Microsoft Teams channel](https://teams.microsoft.com/l/channel/19%3a35fa27cbced34928a3609e41510057e5%40thread.skype/R-Shiny%2520Statistics%2520Dashboards?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9) to ask questions and share what you're working on with other teams.
 
-This guidance is aimed primarily at dashboards published to supplement Official Statistics to the wider public. See the [how to publish an R shiny dashboard](#how-to-publish-an-r-shiny-dashboard) section below for more information on the guidance for internal only R Shiny dashboards, or public facing R Shiny dashboards via shinyapps.io.
+This guidance is aimed primarily at dashboards published to supplement Official Statistics to the wider public. See the [how to publish an R Shiny dashboard](#how-to-publish-an-r-shiny-dashboard) section below for more information on the guidance for internal only R Shiny dashboards, or public facing R Shiny dashboards via shinyapps.io.
 
 This page includes specific guidance for R Shiny dashboards, for teams using PowerBI, the department has a set of PowerBI dashboard standards that can be found on the [DfE's analytical services GitHub area](https://dfe-analytical-services.github.io/powerbi_dashboardstandards/).
 
 There is also a dashboards version of the content design checklist. This checklist runs through a number of things to think about when developing dashboards to compliment official statistics and is worth using to design and also review any dashboards you own - [Dashboards checklist (.xlsx)](../resources/Content_Design_Logbook_Dashboards.xlsx). We also have a [dashboard procedure checklist](#dashboard-procedure-checklist) in this guidance page that outlines the steps required to set up an R Shiny dashboard.
+
+::: callout-tip
+Given that DfE policy is to use dashboards as supplementary tools to Official Statistics releases on EES, dashboards themselves should *not* display the Official Statistics logo. This should be reserved purely for the primary release of the data via EES.
+:::
 
 ---
 
@@ -28,7 +32,9 @@ These standards are constantly evolving, and all feedback and contributions are 
 
 All dashboards should have a clear use case and reasoning for why they are required. They also need to meet the [latest accessibility regulations](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag) for public sector services.
 
-Dashboards, along with the Official Statistics that they supplement, are a digital service that we provide, and we should ensure we follow the [Service Standard](https://www.gov.uk/service-manual/service-standard). The standard covers a number of aspects that all producers should be considering when developing a dashboard, and strongly influence the guidance on this page.
+Dashboards, along with the Official Statistics that they supplement, are a digital service that we provide, and we should ensure we follow the [Service Standard](https://www.gov.uk/service-manual/service-standard), and the [Office for Statistics Regulation (OSR) regulatory guidance on dashboards](https://osr.statisticsauthority.gov.uk/publication/regulatory-guidance-dashboards/).
+
+The standards and regulatory guidance cover a number of aspects that all producers should be considering when developing a dashboard, and strongly influence the guidance on this page.
 
 All data must be published on EES as open CSV files so that it is accessible in one place and we are not publishing anything new via dashboards.
 

@@ -2,28 +2,28 @@
 # the repo. Unless a later match takes precedence,
 # these will always be requested as reviewer when someone
 # opens a pull request.
-* @jen-machin
+* @cjrace
 
 # The workflow and website setup files are jointly owned
-_quarto.yml @jen-machin @cjrace
-.github @jen-machin @cjrace
+_quarto.yml  @cjrace @rmbielby
+.github  @cjrace @rmbielby
 
 # The following files and folders are owned by the SDT team
-/ADA/ @jen-machin @chfoster @Lsnaathorst1 @mzayeddfe
-/RAP/ @jen-machin @chfoster @Lsnaathorst1 @mzayeddfe
-/resources/ @jen-machin @chfoster @Lsnaathorst1 @mzayeddfe
-/learning-development/ @jen-machin @chfoster @Lsnaathorst1 @mzayeddfe
+/ADA/ @laragarbett @Lsnaathorst1 @mzayeddfe 
+/RAP/ @laragarbett @Lsnaathorst1 @mzayeddfe
+/resources/ @laragarbett @Lsnaathorst1 @mzayeddfe
+/learning-development/ @laragarbett @Lsnaathorst1 @mzayeddfe
 
 # The following files and folders are owned by the EESP team
-/statistics-production/api-data-standards.qmd @cjrace @rmbielby
-/statistics-production/ees.qmd @cjrace @rmbielby
-/statistics-production/embedded-charts.qmd @cjrace @rmbielby
-/statistics-production/examples.qmd @cjrace @rmbielby
-/statistics-production/ud.qmd @cjrace @rmbielby
-/data_examples/ @cjrace @rmbielby
-/writing-visualising/dashboards_rshiny.qmd @cjrace @rmbielby
-/writing-visualising/dashboards.qmd @cjrace @rmbielby
-/resources/Methodology_template_EES.docx @cjrace @rmbielby
+/statistics-production/api-data-standards.qmd @rmbielby
+/statistics-production/ees.qmd @rmbielby
+/statistics-production/embedded-charts.qmd @rmbielby
+/statistics-production/examples.qmd @rmbielby
+/statistics-production/ud.qmd @rmbielby
+/data_examples/ @rmbielby
+/writing-visualising/dashboards_rshiny.qmd @rmbielby
+/writing-visualising/dashboards.qmd @rmbielby
+/resources/Methodology_template_EES.docx @rmbielby
 
 # The following files relate to publication scrums
 /resources/Content_Design_Logbook_Dashboards.xlsx @rmbielby
@@ -33,5 +33,5 @@ _quarto.yml @jen-machin @cjrace
 /statistics-production/scrums.qmd @rmbielby
 
 # The following files cover our take on the analysis function best practice
-/writing-visualising/visualising.qmd @cjrace @jen-machin
-/writing-visualising/writing.qmd @cjrace @jen-machin
+/writing-visualising/visualising.qmd @rmbielby
+/writing-visualising/writing.qmd @rmbielby 

@@ -35,7 +35,7 @@ If you can't find the option in the software centre, then you may need to raise 
 Andy Brook's excellent Introduction to SQL session, giving a visual overview of the basics of querying with SQL:
 
 <div align="center">
-<iframe width="640" height="360" align="middle" src="https://web.microsoftstream.com/embed/video/2a42789f-5183-4a79-b159-ec4a46e530d7?autoplay=false&amp;showinfo=false" allowfullscreen style="border:none;"></iframe>
+<iframe src="https://educationgovuk.sharepoint.com/sites/itops/_layouts/15/embed.aspx?UniqueId=09204bd9-ecee-5999-6b77-d9b7921c264a&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="SQL Introduction Bitesize-20200409_125431-Meeting Recording.mp4"></iframe>
 </div>
 
 ---
@@ -51,7 +51,7 @@ Here are some tips to follow best practice in your SQL code, making it easier to
 * Try to only comment on things that aren't obvious about the query (e.g. why hardcoded filters are used, how to update them)
 * Where possible, use [Common Table Expressions (CTEs)](https://www.essentialsql.com/introduction-common-table-expressions-ctes/){target="_blank" rel="noopener noreferrer"} early and often, and name them descriptively (e.g. "pupil_age_table" rather than "p")
 
-[GitLab](https://about.gitlab.com/) have produced a full [SQL style guide](https://about.gitlab.com/handbook/business-technology/data-team/platform/sql-style-guide/), which we recommend following where possible.
+[GitLab](https://about.gitlab.com/) have produced a full [SQL style guide](https://handbook.gitlab.com/handbook/enterprise-data/platform/sql-style-guide/), which we recommend following where possible.
 
 ---
 
@@ -86,7 +86,7 @@ Once you have saved SQL scripts or are more familiar with writing SQL queries on
 Andy's follow up intermediate SQL session, covering more advanced features of SQL:
 
 <div align="center">
-<iframe width="640" height="360" align="middle" src="https://web.microsoftstream.com/embed/video/0b96598e-1d4c-4c5e-807a-4efc264bc1cc?autoplay=false&amp;showinfo=false" allowfullscreen style="border:none;"></iframe>
+<iframe src="https://educationgovuk.sharepoint.com/sites/itops/_layouts/15/embed.aspx?UniqueId=ecbbe8e9-339a-544b-00aa-00f24759be11&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="SQL Intermediate Bitesize-20200820_123955-Meeting Recording.mp4"></iframe>
 </div>
 
 
@@ -138,7 +138,7 @@ If the area is in any other server, raise a request through the central IT servi
 
 ---
 
-Information on how to do this in R can be found in our [RAP for Statistics page](../RAP/rap-statistics.html#moving-data-to-different-areas)
+Information on how to do this in R can be found in our [RAP start guide page](../RAP/rap-start-guide.html#moving-data-to-different-areas)
 
 ---
 

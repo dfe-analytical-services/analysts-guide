@@ -4,12 +4,16 @@ title: "Databricks workflows"
 
 ------------------------------------------------------------------------
 
-## Workflows user interface
+::: callout-important
+Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
 
+:::
+
+## Workflows user interface
 
 Workflows allow you to build complex data pipelines by chaining together multiple scripts, queries, notebooks and logic. They can be used to build Reproducible Analytical Pipelines (RAP) that can be re-run with different parameters and have all inputs and outputs audited automatically. Other recommended uses of workflows are any data modelling tasks such as cleaning your source data and collating it into a more analytically friendly format in your modelling area.
 
-Each step in a workflow is referred to as a task and each task has dependencies. They are accessible through the 'Workflows' link on the left hand menu of the DataBricks UI.
+Each step in a workflow is referred to as a task and each task has dependencies. They are accessible through the 'Workflows' link on the left hand menu of the Databricks UI.
 
 ![](/images/ada-workflow-menu.png)
 

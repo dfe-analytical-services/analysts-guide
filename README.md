@@ -34,7 +34,13 @@ The guidance website is deployed to https://dfe-analytical-services.github.io/an
 
 ## How to use
 
-Each page of the site is a single quarto document, with index.qmd as the homepage. When the project is opened locally in RStudio you will be able to preview the website by typing the command `quarto preview` into the terminal or using `quarto::quarto_preview()` in the R console.
+Each page of the site is a single quarto document, with index.qmd as the homepage. When the project is opened locally in RStudio you will be able to preview the whole website using one of the following options:
+
+1. (In R Studio) clicking 'build site' in the build pane
+
+2. Run `quarto preview` in the terminal, adding `--render all` at the end if you want to pre-render the whole site like the R Studio option does (slower initially, but faster to navigate through multiple pages)
+
+3. Using `quarto::quarto_preview()` if in an R console with the quarto R package installed, `render = "All"` gives the equivalent behaviour to `--render all` in the terminal
 
 ### Tests
 
@@ -54,6 +60,10 @@ PRA - https://app.diagrams.net/#G1x1VLZghqCCnmDWHqgjpdU6fSSehms4FL
 
 ADA diagram - https://app.diagrams.net/?libs=general;flowchart#G1oL9XauLLcVVbF5O_qzZhtcqQbPW9myJk
 
+The diagrams are amended on the links above. Once you have finished amending a diagram, go to 
+file > Embed > HTML. Leave the option of 'Include a copy of my diagram selected', change the 
+boarder colour to none and untick the rest of the options. Press create and copy and paste the HTML 
+code over the top of the existing code in the .qmd file.
 ---
 
 ## Contribution
