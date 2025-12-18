@@ -263,7 +263,6 @@ Within each of these principles are separate elements of RAP. Each of these is d
 
 ## Preparing data {#preparing-data}
 
-------------------------------------------------------------------------
 
 Preparing data is our first core RAP principle, which contains the following elements:
 
@@ -307,203 +306,19 @@ The key thing to remember is that we should be automating everything we can, and
 
 ------------------------------------------------------------------------
 
-### Processing is done with code {#processing-is-done-with-code}
+{{< include common-rap-principles/processing-done-with-code.qmd >}}
 
 ------------------------------------------------------------------------
 
-![](../images/good.svg)
-
-**What does this mean?**
-
-All extraction, and processing of data should be done using code, avoiding any manual steps and moving away from a reliance on Excel, SPSS, and other manual processing. In order to carry out our jobs to the best of our ability it is imperative that we use the [appropriate tools](#appropriate-tools) for the work that we do.
-
-Even steps such as copy and pasting data, or pointing and clicking, are fraught with danger, and these risks should be minimised by using code to document and execute these processes instead.
-
-**Why do it?**
-
-Using code brings numerous benefits. Computers are far quicker, more accurate, and far more reliable than humans in many of the tasks that we do. Writing out these instructions saves us significant amounts of time, particularly when code can be reused in future years, or even next week when one specific number in the source file suddenly changes. Code scripts also provide us with editable documentation for our production processes, saving the need for writing down information in extra documents.
-
-Reliability is a huge benefit of the automation that RAP brings - when your data has to be amended a week before publication, it's a life saver to know that you can re-run your process in minutes, and reassuring to know that it will give you the result you want. You can run the same code 100 times, and be confident that it will follow the same steps in the same order every single time.
-
-**How to get started**
-
-See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on SQL and R to learn the skills required to translate your process into code.
-
-There are also two sections below with examples of tidying data in SQL and R to get you started.
-
-Ensure that any last-minute fixes to the process are written in the code and not done with manual changes.
+{{< include common-rap-principles/use-appropriate-tools.qmd >}}
 
 ------------------------------------------------------------------------
 
-#### Producing tidy underlying data in SQL
+{{< include common-rap-principles/whole-pipeline-run-scripts.qmd >}}
 
 ------------------------------------------------------------------------
 
-To get started, here is a [SQL query](https://github.com/TomFranklin/sql-applied-data-tidying/blob/master/data_tidying_l_and_d.sql){target="_blank" rel="noopener noreferrer"} that you can run on your own machine and walks you through the basics of tidying a simple example dataset in SQL.
-
-------------------------------------------------------------------------
-
-#### Tidying and processing data in R
-
-------------------------------------------------------------------------
-
-[Here is a video](https://vimeo.com/33727555){target="_blank" rel="noopener noreferrer"} of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at [applied data tidying in R, by RStudio](https://www.youtube.com/watch?v=1ELALQlO-yM){target="_blank" rel="noopener noreferrer"}.
-
-Using the `%>%` pipe in R can be incredibly powerful, and make your code much easier to follow, as well as more efficient. If you aren't yet familiar with this, have a look at [this article](https://seananderson.ca/2014/09/13/dplyr-intro/){target="_blank" rel="noopener noreferrer"} that provides a useful beginners guide to piping and the kinds of functions you can use it for. The possibilities stretch about as far as your imagination, and if you have a function or task you want to do within a pipe, googling 'how do I do X in dplyr r' will usually start to point you in the right direction, alternatively you can [contact us](mailto:statistics.development@education.gov.uk), and we'll be happy to help you figure out how to do what you need.
-
-A quick example of how powerful this is is below. The pipe operator passes the outcome of each line of code onto the next, so you can complete multiple steps of data manipulation in one section of code instead of writing separate steps for each one. In this code, we:
-
--   start with my_data
--   calculate a percentage column using mutate
--   rename the percentage column we created to "newPercentageColumn", rename "number" to "numberColumn", and rename "population" to "totalPopulationColumn"
--   use the `clean_names()` function from the [janitor](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) package to ensure that columns have consistent naming standards
--   use the `remove_empty()` function from the janitor package to remove any rows and columns that are composed entirely of NA values
--   filter the dataframe to only include Regional geographic level data
--   order the dataframe by time period and region name
-
-```{r example, eval=FALSE, style="background-color: #f7fdfa"}
-processed_regional_data <- my_data %>% 
-  mutate(newPercentageColumn = (numberColumn / totalPopulationColumn) * 100) %>% 
-  rename(newPercentageColumn = percentageRate,
-         numberColumn = number,
-         totalPopulationColumn = population) %>% 
-  clean_names() %>% 
-  remove_empty() %>% 
-  filter(geographic_level == "Regional") %>% 
-  arrange(time_period, region_name)
-```
-
-[Helpful new functions](https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da){target="_blank" rel="noopener noreferrer"} in the tidyverse packages can help you to easily transform data from wide to long format (see tip 2 in the linked article for this, as it is often required for tidy data), as well as providing you with tools to allow you quickly and efficiently change the structure of your variables.
-
-For further resources on learning R so that you're able to apply it to your everyday work, have a look at the [learning resources](../learning-development/learning-development.html) page.
-
-------------------------------------------------------------------------
-
-### Use appropriate tools {#use-appropriate-tools}
-
-------------------------------------------------------------------------
-
-![](../images/good.svg)
-
-**What does this mean?**
-
-Using the recommended tools on our [learning](../learning-development/learning-support.html) page ([SQL](../learning-development/sql.html), [R](../learning-development/r.html) and [Git](../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.
-
-Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this [explanation of open-source](https://opensource.com/resources/what-open-source){target="_blank" rel="noopener noreferrer"}, as well as this guide to [working in an open-source way](https://opensource.com/open-source-way){target="_blank" rel="noopener noreferrer"}. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with git, and hosted in a publicly accessible repository.
-
-**Why do it?**
-
-There are many reasons why we have recommended the tools that we have, the recommended tools are:
-
--   already in use at the department and easy for us to access
--   easy and **free** to learn
--   designed for the work that we do
--   used widely across data science in both the public and private sector
--   allow us to meet best practice when applying RAP to our processes
-
-**How to get started**
-
-Go to our [learning](../learning-development/learning-development.html) page to read more about the recommended tools for the jobs we do, as well as looking at the resources available there for how to [build capability](../learning-development/learning-support.html#general_resources) in them. Always feel free to contact us if you have any specific questions or would like help in understanding how to use those tools in your work.
-
-By following [our guidance](#version-controlled-final-code-scripts) in saving versions of code in an Azure DevOps, we will then be able to mirror those repositories in a publicly available GitHub area.
-
-------------------------------------------------------------------------
-
-### Whole pipeline run script {#whole-pipeline-run-script}
-
-------------------------------------------------------------------------
-
-![](../images/best.svg)
-
-**What does this mean?**
-
-We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a super short, simple piece of analysis, this might not be needed, however, it's always good to embed these best-practices into our default ways of working!
-
-The ultimate aim is to utilise a single script to document and run off everything for a project, the data files, any QA, any summary reports. This script should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script. All quality assurance for a file is also included in the single script that can be used to create a file from source data.
-
-**Why do it?**
-
-This carries all of the same benefits as having a single 'run' script for a file, but at a project level, effectively documenting the entire process in one place. This makes it easier for new analysts to pick up the process, as well as making it quicker and easier to rerun as all reports relating to that file are immediately available if you ever make changes.
-
-**How to get started**
-
-The Education, Health and Care Plans production cycle is a good example of a single project 'run' script. They have kept their actual data processing in SQL, but all the running and manipulation of the data happens in R.
-
-The cycle originally consisted of multiple SQL scripts, manual QA and generation of final files.
-
-![](../images/Old%20process.jpg)
-
-The team now have their end-to-end process fully documented, which can be run off of one single R script. The 'run' script points at the SQL scripts to run them all in one go, and also creates a QA report and corresponding metadata files that pass the data screener. Each data file can still be run in isolation from this script.
-
-![](../images/New%20process.jpg)
-
-------------------------------------------------------------------------
-
-#### Using 'run' scripts
-
-
-Utilising a single 'run' script to execute processes written in other scripts brings a number of benefits. It isn't just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past.
-
-------------------------------------------------------------------------
-
-#### Connecting R to SQL
-
-------------------------------------------------------------------------
-
-In order to create a single script to run all processes from, it is likely that you will need to use R to run SQL queries. If you are unsure of how to do this, take a look the guide on the [dfeR connecting to SQL documentation](https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html).
-
-If you prefer a video, [Chris Mason-Thom did a coffee and coding session on this](https://web.microsoftstream.com/embed/video/c9b7fd97-c854-4a1a-9074-cd80d2ea285e).
-
-------------------------------------------------------------------------
-
-### Recyclable code for future use {#recyclable-code-for-future-use}
-
-------------------------------------------------------------------------
-
-![](../images/great.svg)
-
-**What does this mean?**
-
-It's good practice when writing code to always write it with your future-self in mind. Alongside writing neat & well documented/commented code, this also means writing code that can be easily re-used in future, i.e. writing functions with *arguments* for variables that are likely to change (like year) rather than hard-coding them.
-
-Even if you are working on a one-off project or piece of analysis, you might want to re-use chunks or sections, or others might want to run iterations in the future. This is also applicable to common questions your team receives (I.e. PQs and FOIs - can you create some re-usable code with interchangeable arguments for these?)
-
-We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a super short, simple piece of analysis, this might not be needed, however, it's always good to embed these best-practices into our default ways of working!
-
-**Why do it?**
-
-One huge benefit that comes with using code in our processes, is that we can pick them up in future and reuse with minimum effort, saving us huge amounts of resource. To be able to do this, we need to be conscious of how we write our code, and write it in a way that makes it easy to use in future.
-
-**How to get started**
-
-Review your code and consider the following:
-
--   What steps might need re-editing or could become irrelevant?
--   Can you move all variables that require manual input (e.g. table names, years) to be assigned at the top of the code, so it's easy to edit in one place with each iteration?
--   Are there any fixed variables that are prone to changing such as geographic boundaries, that you could start preparing for changes now by making it easy to adapt in future?
-
-For example, if you refer to the year in your code a lot, consider replacing every instance with a named variable, which you only need to change once at the start of your code. In the example below, the year is set at the top of the code, and is used to define "prev_year", both of which are used further down the code to filter the data based on year.
-
-```{r this_last_year, eval=FALSE, style="background-color: #f7fdfa"}
-
-this_year <- 2020
-prev_year <- this_year - 1
-
-data_filtered <- data %>% 
-  filter(year == this_year)
-
-data_filtered_last_year <- data %>% 
-  filter(year == prev_year)
-
-```
-
-------------------------------------------------------------------------
-
-#### Standards for coding
-
-------------------------------------------------------------------------
-
-Code can be written in many different ways, and in languages such as R, there are often many different functions and routes that you can take to get to the same end result. On top of that, there are even more possibilities for how you can format the code. This section will take you through some widely used standards for coding to help bring standardisation to this area and make it easier to both write and use our code.
+{{< include common-rap-principles/recyclable-code-for-future-use.qmd >}}
 
 ------------------------------------------------------------------------
 

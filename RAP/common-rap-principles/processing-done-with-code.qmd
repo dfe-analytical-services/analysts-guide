@@ -1,0 +1,69 @@
+### Processing is done with code
+
+---
+
+![](../images/good.svg)
+
+**What does this mean?**
+
+All extraction, and processing of data should be done using code, avoiding any manual steps and moving away from a reliance on Excel, SPSS, and other manual processing. In order to carry out our jobs to the best of our ability it is imperative that we use the [appropriate tools](#appropriate-tools) for the work that we do.
+
+Even steps such as copy and pasting data, or pointing and clicking, are fraught with danger, and these risks should be minimised by using code to document and execute these processes instead.
+
+**Why do it?**
+
+Using code brings numerous benefits. Computers are far quicker, more accurate, and far more reliable than humans in many of the tasks that we do. Writing out these instructions saves us significant amounts of time, particularly when code can be reused in future years, or even next week when one specific number in the source file suddenly changes. Code scripts also provide us with editable documentation for our production processes, saving the need for writing down information in extra documents.
+
+Reliability is a huge benefit of the automation that RAP brings - when your data has to be amended a week before publication, it's a life saver to know that you can re-run your process in minutes, and reassuring to know that it will give you the result you want. You can run the same code 100 times, and be confident that it will follow the same steps in the same order every single time.
+
+**How to get started**
+
+See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on SQL and R to learn the skills required to translate your process into code.
+
+There are also two sections below with examples of tidying data in SQL and R to get you started.
+
+Ensure that any last-minute fixes to the process are written in the code and not done with manual changes.
+
+------------------------------------------------------------------------
+
+#### Producing tidy underlying data in SQL
+
+------------------------------------------------------------------------
+
+To get started, here is a [SQL query](https://github.com/TomFranklin/sql-applied-data-tidying/blob/master/data_tidying_l_and_d.sql){target="_blank" rel="noopener noreferrer"} that you can run on your own machine and walks you through the basics of tidying a simple example dataset in SQL.
+
+------------------------------------------------------------------------
+
+#### Tidying and processing data in R
+
+------------------------------------------------------------------------
+
+[Here is a video](https://vimeo.com/33727555){target="_blank" rel="noopener noreferrer"} of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at [applied data tidying in R, by RStudio](https://www.youtube.com/watch?v=1ELALQlO-yM){target="_blank" rel="noopener noreferrer"}.
+
+Using the `%>%` pipe in R can be incredibly powerful, and make your code much easier to follow, as well as more efficient. If you aren't yet familiar with this, have a look at [this article](https://seananderson.ca/2014/09/13/dplyr-intro/){target="_blank" rel="noopener noreferrer"} that provides a useful beginners guide to piping and the kinds of functions you can use it for. The possibilities stretch about as far as your imagination, and if you have a function or task you want to do within a pipe, googling 'how do I do X in dplyr r' will usually start to point you in the right direction, alternatively you can [contact us](mailto:statistics.development@education.gov.uk), and we'll be happy to help you figure out how to do what you need.
+
+A quick example of how powerful this is is below. The pipe operator passes the outcome of each line of code onto the next, so you can complete multiple steps of data manipulation in one section of code instead of writing separate steps for each one. In this code, we:
+
+-   start with my_data
+-   calculate a percentage column using mutate
+-   rename the percentage column we created to "newPercentageColumn", rename "number" to "numberColumn", and rename "population" to "totalPopulationColumn"
+-   use the `clean_names()` function from the [janitor](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) package to ensure that columns have consistent naming standards
+-   use the `remove_empty()` function from the janitor package to remove any rows and columns that are composed entirely of NA values
+-   filter the dataframe to only include Regional geographic level data
+-   order the dataframe by time period and region name
+
+```{r example, eval=FALSE, style="background-color: #f7fdfa"}
+processed_regional_data <- my_data %>% 
+  mutate(newPercentageColumn = (numberColumn / totalPopulationColumn) * 100) %>% 
+  rename(newPercentageColumn = percentageRate,
+         numberColumn = number,
+         totalPopulationColumn = population) %>% 
+  clean_names() %>% 
+  remove_empty() %>% 
+  filter(geographic_level == "Regional") %>% 
+  arrange(time_period, region_name)
+```
+
+[Helpful new functions](https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da){target="_blank" rel="noopener noreferrer"} in the tidyverse packages can help you to easily transform data from wide to long format (see tip 2 in the linked article for this, as it is often required for tidy data), as well as providing you with tools to allow you quickly and efficiently change the structure of your variables.
+
+For further resources on learning R so that you're able to apply it to your everyday work, have a look at the [learning resources](../learning-development/learning-development.html) page.

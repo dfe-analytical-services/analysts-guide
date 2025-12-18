@@ -1,0 +1,30 @@
+### Use appropriate tools
+
+---
+
+![](../images/good.svg)
+
+**What does this mean?**
+
+Using the recommended tools on our [learning](../learning-development/learning-support.html) page ([SQL](../learning-development/sql.html), [R](../learning-development/r.html) and [Git](../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). Ideally any tools used would be open source, Python is a good example of a tool that would also be well suited, though is less widely used in DfE and has a steeper learning curve than R.
+
+Open-source refers to something people can modify and share because its design is publicly accessible. For more information, take a look at this [explanation of open-source](https://opensource.com/resources/what-open-source){target="_blank" rel="noopener noreferrer"}, as well as this guide to [working in an open-source way](https://opensource.com/open-source-way){target="_blank" rel="noopener noreferrer"}. In practical terms, this means moving away from the likes of SPSS, SAS and Excel VBA, and utilising the likes of R or Python, version controlled with Git, and hosted in a publicly accessible repository. 
+
+**Why do it?**
+
+There are many reasons why we have recommended the tools that we have, the recommended tools are:
+
+- already in use at the department and easy for us to access
+- easy and **free** to learn
+- designed for the work that we do
+- used widely across data science in both the public and private sector
+- allow us to meet best practice when applying RAP to our processes
+
+
+**How to get started**
+
+Go to our [learning](../learning-development/learning-development.html) page to read more about the recommended tools for the jobs we do, as well as looking at the resources available there for how to [build capability](../learning-development/learning-support.html#general_resources) in them. Always feel free to contact us if you have any specific questions or would like help in understanding how to use those tools in your work.
+
+By following [our guidance](#version-controlled-final-code-scripts) in saving versions of code in an Azure DevOps, we will then be able to mirror those repositories in a publicly available GitHub area.
+
+---

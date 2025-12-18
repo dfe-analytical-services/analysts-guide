@@ -1,0 +1,48 @@
+### Recyclable code for future use
+
+![](../images/great.svg)
+
+**What does this mean?**
+
+It's good practice when writing code to always write it with your future-self in mind. Alongside writing neat & well documented/commented code, this also means writing code that can be easily re-used in future, i.e. writing functions with *arguments* for variables that are likely to change (like year) rather than hard-coding them.
+
+Even if you are working on a one-off project or piece of analysis, you might want to re-use chunks or sections, or others might want to run iterations in the future. This is also applicable to common questions your team receives (I.e. PQs and FOIs - can you create some re-usable code with interchangeable arguments for these?)
+
+We have already stated that [RAP should be proportional](#rap-proportional), and this is also true here. If you have a really tight deadline or it's a super short, simple piece of analysis, this might not be needed, however, it's always good to embed these best-practices into our default ways of working!
+
+**Why do it?**
+
+One huge benefit that comes with using code in our processes, is that we can pick them up in future and reuse with minimum effort, saving us huge amounts of resource. To be able to do this, we need to be conscious of how we write our code, and write it in a way that makes it easy to use in future.
+
+**How to get started**
+
+Review your code and consider the following:
+
+-   What steps might need re-editing or could become irrelevant?
+-   Can you move all variables that require manual input (e.g. table names, years) to be assigned at the top of the code, so it's easy to edit in one place with each iteration?
+-   Are there any fixed variables that are prone to changing such as geographic boundaries, that you could start preparing for changes now by making it easy to adapt in future?
+
+For example, if you refer to the year in your code a lot, consider replacing every instance with a named variable, which you only need to change once at the start of your code. In the example below, the year is set at the top of the code, and is used to define "prev_year", both of which are used further down the code to filter the data based on year.
+
+```{r this_last_year, eval=FALSE, style="background-color: #f7fdfa"}
+
+this_year <- 2020
+prev_year <- this_year - 1
+
+data_filtered <- data %>% 
+  filter(year == this_year)
+
+data_filtered_last_year <- data %>% 
+  filter(year == prev_year)
+
+```
+
+------------------------------------------------------------------------
+
+#### Standards for coding
+
+------------------------------------------------------------------------
+
+Code can be written in many different ways, and in languages such as R, there are often many different functions and routes that you can take to get to the same end result. On top of that, there are even more possibilities for how you can format the code. This section will take you through some widely used standards for coding to help bring standardisation to this area and make it easier to both write and use our code.
+
+------------------------------------------------------------------------
