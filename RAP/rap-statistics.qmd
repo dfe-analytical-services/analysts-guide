@@ -169,15 +169,15 @@ Writing code is our second core RAP principle, and is made up of the following e
 
 * [Processing is done with code](#processing-is-done-with-code)
 * [Use appropriate tools](#use-appropriate-tools)
-* [Whole publication production scripts](#whole-publication-production-scripts)
+* [Whole pipeline can be run from a single script or              workflow](#whole-pipeline-can-be-run-from-single-script-or-workflow)
 * [Dataset production scripts](#dataset-production-scripts)
 * [Recyclable code for future use](#recyclable-code-for-future-use)
 * [Clean final code](#clean-final-code)
 * [Peer code review](#peer-code-review)
 * [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
-* [Basic automated QA](#basic-automated-qa)
+* [Automated high level checks](#automated-high-level-checks)
 * [Publication specific automated QA](#publication-specific-automated-qa)
-* [Automated summaries](#automated-summaries)
+* [Automated reproducible reports](#automated-reproducible-reports)
 * [Publication specific automated summaries](#publication-specific-automated-summaries)
 
 
@@ -244,7 +244,7 @@ You should automate any manual steps such as the example above. If it makes sens
 
 ------------------------------------------------------------------------
 
-{{include common-rap-principles/automated-high-level-checks.qmd}}
+{{< include common-rap-principles/automated-high-level-checks.qmd >}}
 
 ------------------------------------------------------------------------
 

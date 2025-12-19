@@ -1,5 +1,5 @@
 
-### Whole publication production scripts
+### Whole pipeline can be run from a single script or workflow
 
 ---
 
