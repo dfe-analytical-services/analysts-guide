@@ -1,0 +1,37 @@
+### Automated reproducible reports
+
+---
+
+![](../images/great.svg)
+
+**What does this mean?**
+
+As a part of automating QA, we should also be looking to automate the production of summary statistics alongside the tidy underlying data files, this then provides us with instant insight into the stories underneath the numbers.
+
+Summary outputs are automated and used to explore the stories of the data. 
+
+The Statistics Development Team have developed [the QA app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} to include some of these automated summaries, including minimum, maximum and average summaries for each indicator.
+
+
+At a basic level we want teams to make use of the QA app to explore their data:
+
+- Have you used the outputs of the automated QA from the screener to understand the data?
+
+- Run automated QA, ensure that all interesting outputs/trends are reflected in the accompanying text
+
+**Why do it?**
+
+Value is one of the three pillars of our [code of practice](https://code.statisticsauthority.gov.uk/the-code/value/){target="_blank" rel="noopener noreferrer"}. Even more specifically it states that __'Statistics and data should be presented clearly, explained meaningfully and provide authoritative insights that serve the public good.'__.
+
+As a result, we should be developing automated summaries to help us to better understand the story of the data and be authoritative and rigorous in our telling of it.
+
+**How to get started**
+
+Consider:
+
+- Use the additional tabs available after a data file passes the [data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} as a starting point to explore trends across breakdowns and years.
+
+- Running your publication-specific automated QA, ensuring that all interesting outputs/trends are reflected in the accompanying text
+
+
+---

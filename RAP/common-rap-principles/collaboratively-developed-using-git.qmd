@@ -1,0 +1,82 @@
+### Collaboratively develop code using Git {#collaboratively-develop-code-using-git}
+
+------------------------------------------------------------------------
+
+![](../images/best.svg)
+
+**What does this mean?**
+
+-   Has code development taken place in Git, collaboratively across the team?
+
+-   Are you making use of pull requests for team members to review and comment on code updates?
+
+-   Is there a clear paper trail of changes to code (commits)?
+
+**Why do it?**
+
+Using Git allows multiple people to simultaneously develop the same code using branches, all with a crystal clear audit trail showing what changes were made when using commits. It makes it easy for team members to review changes via pull requests.
+
+**How to get started**
+
+To get started you should:
+
+------------------------------------------------------------------------
+
+#### Get your code into a Git controlled folder {#get-your-code-into-a-git-controlled-folder}
+
+------------------------------------------------------------------------
+
+Get code into a Git controlled folder in whatever version it is currently in. Use the following steps to do so:
+
+1.  Open the folder where your project is saved, right click anywhere in that window, and click "Git Bash Here".
+
+2.  This will open a black box (the terminal). Type in the following and hit enter
+
+```{r git_init, eval=FALSE}
+git init
+```
+
+3.  After hitting enter, type in the following and hit enter again after each line. You will need the URL of your Azure DevOps repository to complete this step. Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) if you are not sure what this is or do not have one.
+
+```{r git_steps, eval=FALSE}
+git add .
+
+git commit -m "first commit"
+
+git remote add origin YOUR_URL_HERE
+
+git push -f origin --all
+```
+
+-   You may be prompted for either your Windows or Git credentials at this stage.
+
+    -   If prompted for your **Windows** credentials, enter the username and password combination you use to log into your DfE device.
+
+    -   If prompted for your **Git** credentials, visit your online repository, click on the blue "clone" box, and click "generate Git credentials". This will generate a username and password for you to enter.
+
+4.  Visit your repository online, and check that all the files have uploaded. Other members of your team will now be able to work from your code.
+
+------------------------------------------------------------------------
+
+#### Build capability within the team
+
+------------------------------------------------------------------------
+
+-   Ensure all team members have access to your repository. Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) if there are any issues.
+
+-   Get team members to clone your repository in to their personal area, so everyone is able to work on code at the same time.
+
+To clone code, they will need to do the following:
+
+1.  Run through steps 1 - 2a of [getting a file into a Git controlled folder](#get-your-code-into-a-git-controlled-folder)
+
+2.  After running those lines, type in the following with your repository URL in the "YOUR_URL_HERE" space. This will clone the online repository to your local area.
+
+```{r git_team_steps, eval=FALSE}
+git clone YOUR_URL_HERE
+```
+
+-   Make use of Git and version control in your team projects regularly. Like learning anything new, putting it into practice regularly is the best way to become confident in using it.
+
+-   Please refer to the other links on the [Git learning resources](../learning-development/git.html#other-resources) page to learn more about how to use Git in practice.
+

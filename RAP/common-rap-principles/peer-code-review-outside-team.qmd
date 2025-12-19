@@ -1,0 +1,21 @@
+### Peer review of code from outside the team
+
+---
+
+![](../images/best.svg)
+
+**What does this mean?**
+
+- Has someone from outside of the team and publication area reviewed the code and given feedback? 
+
+- Have you taken on their feedback and improved the code?
+
+**Why do it?**
+
+All of the benefits you get from peer reviewing within your own team, multiple times over. Having someone external offers new perspectives, holds you to account by breaking down assumptions, and offers far greater opportunity for building capability through knowledge sharing.
+
+**How to get started**
+
+While peer reviewing code within the team is often practical, having external analysts peer review your code can bring a fresh perspective. If you're interested in this, please contact us, and we can help you to arrange someone external to your team to review your processes. For this to work smoothly, we recommend that your code is easily accessible for other analysts, such as hosted in an Azure DevOps repo and mirrored to GitHub.
+
+---

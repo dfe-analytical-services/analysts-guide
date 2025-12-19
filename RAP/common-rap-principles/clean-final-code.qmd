@@ -1,0 +1,71 @@
+### Clean final code 
+
+---
+
+![](../images/best.svg)
+
+**What does this mean?**
+
+- This code should meet the best practice standards below (for SQL and R). If you are using a different language, such as Python, then contact us for advice on the best standards to use when writing code. 
+
+- There should be no redundant or duplicated code, even if this has been commented out. It should be removed from the files to prevent confusion further down the line.
+
+- The only comments left in the code should be those describing the decisions you have made to help other analysts (and future you) to understand your code. More guidance on [commenting in code](#commenting-in-code) can be found later on this page.
+
+
+**Why do it?**
+
+Clean code is efficient, easy to write, easy to review, and easy to amend for future use. Below are some recommended standards to follow when writing code in SQL and R. 
+
+
+**How to get started**
+
+Watch [this coffee and coding session](https://web.microsoftstream.com/embed/video/624e3442-aa66-44e7-bb4f-717a6508b056) introducing good code practice, which covers:
+
+* key principles of good code practice
+* writing and refining code to make it easier to understand and modify
+* a real-life example of code improvement from within DfE
+
+Then you should also watch [the follow up intermediate session](https://web.microsoftstream.com/embed/video/92d4ba05-d304-4009-b543-e5f4563f1d30), which covers:
+
+* version control
+* improving code structure with functions
+* documentation and Markdown
+* interactive notebooks 
+
+Clean code should include comments. Comment why you've made decisions, don't comment what you are doing unless it is particularly complex as the code itself describes what you are doing. If in doubt, more comments are better than too few though. Ideally any specific comments or documentation should be alongside the code itself, rather than in separate documents.
+
+---
+
+#### SQL
+
+---
+
+For best practice on writing T-SQL code used in SQL Server, here is a particularly useful [Word document](../resources/TSQL_Coding_Standards.docx){target="_blank" rel="noopener noreferrer"} produced by our Data Hub. This outlines a variety of best practices, ranging from naming conventions, to formatting your SQL code so that it is easy to follow visually.
+
+---
+
+#### R
+
+---
+
+When using R, it is generally best practice to use [R projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects){target="_blank" rel="noopener noreferrer"} as directories for your work.
+
+The recommended standard for styling your code in R is the [tidyverse styling](https://style.tidyverse.org/){target="_blank" rel="noopener noreferrer"}, which is fast becoming the global standard. What is even better is that you can automate this using the [styler](https://styler.r-lib.org/){target="_blank" rel="noopener noreferrer"} package, which will literally style your code for you at the click of a button, and is well worth a look.
+
+
+![](../images/styler.gif)
+
+There is also plenty of guidance around the internet for [best practice](https://waterdata.usgs.gov/blog/intro-best-practices/){target="_blank" rel="noopener noreferrer"} when writing [efficient R code](https://waterdata.usgs.gov/blog/intro-best-practices/){target="_blank" rel="noopener noreferrer"}.
+
+To help you standardise your code further, you can make use of the functions contained within our [dfeR package](https://dfe-analytical-services.github.io/dfeR/index.html). The package includes functions to standardise formatting and rounding, to pull the latest ONS geography lookups, and to create a pre-populated folder structure, amongst many other things. 
+
+---
+
+#### HTML
+
+---
+
+If you ever find yourself writing HTML, or creating it through RMarkdown, you can check your HTML using [W3's validator](https://validator.w3.org/){target="_blank" rel="noopener noreferrer"}.
+
+---

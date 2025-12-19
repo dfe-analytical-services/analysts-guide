@@ -173,7 +173,7 @@ Writing code is our second core RAP principle, and is made up of the following e
 * [Dataset production scripts](#dataset-production-scripts)
 * [Recyclable code for future use](#recyclable-code-for-future-use)
 * [Clean final code](#clean-final-code)
-* [Peer review of code within team](#peer-review-of-code-within-team)
+* [Peer code review](#peer-code-review)
 * [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
 * [Basic automated QA](#basic-automated-qa)
 * [Publication specific automated QA](#publication-specific-automated-qa)
@@ -232,253 +232,21 @@ You should automate any manual steps such as the example above. If it makes sens
 
 ------------------------------------------------------------------------
 
+{{< include common-rap-principles/clean-final-code.qmd >}}
 
-### Clean final code 
+------------------------------------------------------------------------
 
----
+{{< include common-rap-principles/peer-code-review.qmd >}}
 
-![](../images/best.svg)
+------------------------------------------------------------------------
 
-**What does this mean?**
+{{< include common-rap-principles/peer-code-review-outside-team.qmd >}}
 
-- This code should meet the best practice standards below (for SQL and R). If you are using a different language, such as Python, then contact us for advice on the best standards to use when writing code. 
+------------------------------------------------------------------------
 
-- There should be no redundant or duplicated code, even if this has been commented out. It should be removed from the files to prevent confusion further down the line.
+{{include common-rap-principles/automated-high-level-checks.qmd}}
 
-- The only comments left in the code should be those describing the decisions you have made to help other analysts (and future you) to understand your code. More guidance on [commenting in code](#commenting-in-code) can be found later on this page.
-
-
-**Why do it?**
-
-Clean code is efficient, easy to write, easy to review, and easy to amend for future use. Below are some recommended standards to follow when writing code in SQL and R. 
-
-
-**How to get started**
-
-Watch [this coffee and coding session](https://web.microsoftstream.com/embed/video/624e3442-aa66-44e7-bb4f-717a6508b056) introducing good code practice, which covers:
-
-* key principles of good code practice
-* writing and refining code to make it easier to understand and modify
-* a real-life example of code improvement from within DfE
-
-Then you should also watch [the follow up intermediate session](https://web.microsoftstream.com/embed/video/92d4ba05-d304-4009-b543-e5f4563f1d30), which covers:
-
-* version control
-* improving code structure with functions
-* documentation and Markdown
-* interactive notebooks 
-
-Clean code should include comments. Comment why you've made decisions, don't comment what you are doing unless it is particularly complex as the code itself describes what you are doing. If in doubt, more comments are better than too few though. Ideally any specific comments or documentation should be alongside the code itself, rather than in separate documents.
-
----
-
-#### SQL
-
----
-
-For best practice on writing T-SQL code used in SQL Server, here is a particularly useful [Word document](../resources/TSQL_Coding_Standards.docx){target="_blank" rel="noopener noreferrer"} produced by our Data Hub. This outlines a variety of best practices, ranging from naming conventions, to formatting your SQL code so that it is easy to follow visually.
-
----
-
-#### R
-
----
-
-When using R, it is generally best practice to use [R projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects){target="_blank" rel="noopener noreferrer"} as directories for your work.
-
-The recommended standard for styling your code in R is the [tidyverse styling](https://style.tidyverse.org/){target="_blank" rel="noopener noreferrer"}, which is fast becoming the global standard. What is even better is that you can automate this using the [styler](https://styler.r-lib.org/){target="_blank" rel="noopener noreferrer"} package, which will literally style your code for you at the click of a button, and is well worth a look.
-
-
-![](../images/styler.gif)
-
-There is also plenty of guidance around the internet for [best practice](https://waterdata.usgs.gov/blog/intro-best-practices/){target="_blank" rel="noopener noreferrer"} when writing [efficient R code](https://waterdata.usgs.gov/blog/intro-best-practices/){target="_blank" rel="noopener noreferrer"}.
-
-To help you standardise your code further, you can make use of the functions contained within our [dfeR package](https://dfe-analytical-services.github.io/dfeR/index.html). The package includes functions to standardise formatting and rounding, to pull the latest ONS geography lookups, and to create a pre-populated folder structure, amongst many other things. 
-
----
-
-#### HTML
-
----
-
-If you ever find yourself writing HTML, or creating it through RMarkdown, you can check your HTML using [W3's validator](https://validator.w3.org/){target="_blank" rel="noopener noreferrer"}.
-
----
-
-### Peer review of code within team
-
----
-
-![](../images/great.svg)
-
-**What does this mean?**
-
-Peer review is an important element of quality assuring our work. We often do it without realising by bouncing ideas off of one another and by getting others to 'idiot check' our work. When writing code, ensuring that we get our work formally peer reviewed is particularly important for ensuring it's quality and value. The [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html) and [Tidyteam](https://code-review.tidyverse.org/) contain detailed guidance on peer review, but we have summarised some of the information here for you as well. 
-
-Prior to receiving code for peer review, the author should ensure that all code files are clean, commented appropriately and for larger projects should be held in a repo with an appropriate [README](#writing-a-readme-file) file.
-
-You should check:
-
-- Is someone else in the team able to generate the same outputs?
-
-- Has someone else in the team reviewed the code and given feedback? 
-
-- Have you taken on their feedback and improved the code?
-
-
-**Why do it?**
-
-There are many benefits to this, for example:
-
-- Ensuring consistency across the team
-
-- Minimizing mistakes and their impact
-
-- Ensuring the requirements are met
-
-- Improving code performance
-
-- Sharing of techniques and knowledge
-
-
-**How to get started**
-
-When peer reviewing code you should consider the following questions - 
-
-* Do you understand what the code does? If not, is there supporting documentation or code comments that allow you to understand it? 
-* Does the code do what the author intended?
-* Have any dependencies (either on separate pieces of code, data files, or packages) been documented? 
-* Are there any tests / checks that could be added into the code that would help to give greater confidence that it is doing what it is intended to?
-* Are there comments explaining why any decisions have been made?
-* Is the code written and structured sensibly?
-* Are there any ways to make the code more efficient (either in number of lines or raw speed)? Is there duplication that could be simplified using functions?
-* Does the code follow best practice for styling and structure?
-* Are there any other teams/bits of code you're aware of that do similar things and would be useful to point the authors towards?
-* At the end of the review, was there any information you needed to ask about that should be made more apparent in the code or documentation?
-
-Depending on your access you may or may not be able to run the code yourself, but there should be enough information within the code and documentation to be able to respond to the questions above. If you are able to run the code, you could also check - 
-
-* Does the code run without errors? If warnings are displayed, are they explained? 
-* If the project has unit/integration tests, do they pass?
-* Can you replicate previous output using the same code and input data? 
-
-If you would like a more thorough list of questions to follow, then the Duck Book has checklists available for three levels of peer review, based on risk:
-
-* [Lower](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_lower.html)
-* [Moderate](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_moderate.html)
-* [Higher](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_higher.html)
-
-If you're unfamiliar with giving feedback on someone's code then it can be daunting at first. Feedback should always be constructive and practical. It is recommended that you use the CEDAR model to structure your comments:
-
-* Context - describe the issue and the potential impact
-* Examples - give specific examples of when and where the issue has been present (specifying the line numbers of the code where the issue can be found can be useful here)
-* Diagnosis - use the example to discuss why this approach was taken, what could have been done differently and why alternatives could be an improvement
-* Actions - ask the person receiving feedback to suggest actions that they could follow to avoid this issue in future
-* Review - if you have time, revisit the discussion to look for progress following on from the feedback
-
-- Other tips for getting started with peer review can be found in the [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/peer_review.html){target="_blank" rel="noopener noreferrer"} 
-
-- The Duck Book also contains some helpful [code QA checklists](https://best-practice-and-impact.github.io/qa-of-code-guidance/checklists.html){target="_blank" rel="noopener noreferrer"} to help get you thinking about what to check
-
----
-
-#### Improving code performance
-
----
-
-Peer reviewing code and not sure where to start? Improving code performance can be a great quick-win for many production teams. There will be cases where code you are reviewing does things in a slightly different way to how you would: profiling the R code with the microbenchmark package is a way to objectively figure out which method is more efficient.
-
-For example below, we are testing out case_when, if_else and ifelse.
-
-``` {r microbenchmark, eval=FALSE}
-microbenchmark::microbenchmark( 
-   case_when(1:1000 < 3 ~ "low", TRUE ~ "high"), 
-   if_else(1:1000 < 3, "low", "high"),
-   ifelse(1:1000 < 3, "low", "high") 
-)
-```
-
-Running the code outputs a table in the R console, giving profile stats for each expression. Here, it is clear that on average, if_else() is the fastest function for the job.
-
-``` {r code_outputs, eval=FALSE}
-Unit: microseconds
-                                         expr     min       lq     mean   median       uq      max neval
- case_when(1:1000 < 3 ~ "low", TRUE ~ "high") 167.901 206.2510 372.7321 300.2515 420.1005 4187.001   100
-           if_else(1:1000 < 3, "low", "high")  55.301  74.0010 125.8741 103.7015 138.3010  538.201   100
-            ifelse(1:1000 < 3, "low", "high") 266.200 339.4505 466.7650 399.7010 637.6010  851.502   100
-
-```
-
-
----
-
-### Peer review of code from outside the team
-
----
-
-![](../images/best.svg)
-
-**What does this mean?**
-
-- Has someone from outside of the team and publication area reviewed the code and given feedback? 
-
-- Have you taken on their feedback and improved the code?
-
-**Why do it?**
-
-All of the benefits you get from peer reviewing within your own team, multiple times over. Having someone external offers new perspectives, holds you to account by breaking down assumptions, and offers far greater opportunity for building capability through knowledge sharing.
-
-**How to get started**
-
-While peer reviewing code within the team is often practical, having external analysts peer review your code can bring a fresh perspective. If you're interested in this, please contact us, and we can help you to arrange someone external to your team to review your processes. For this to work smoothly, we recommend that your code is easily accessible for other analysts, such as hosted in an Azure DevOps repo and mirrored to GitHub.
-
----
-
-### Basic automated QA
-
----
-
-![](../images/good.svg)
-
-**What does this mean?**
-
-Any data files that have been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability.
-
-Some teams are already making great progress with automated QA and realising the benefits of it. The Statistics Development Team are working with these to provide generalised code that teams can use as a starting point for automated QA. The intention is that teams can then run this as a minimum, before then looking to develop more area specific checks to the script and/or continue with current checking processes in tandem. If your team already use, or are working towards using, automated QA then get in touch as we'd be keen to see what you have.
-
-It is assumed that when using R, automated scripts will output .html reports that the team can read through to understand their data and identify any issues, and save as a part of their process documentation.
-
-For more information on general quality assurance best practice in DfE, see the [How to QA guide](https://dfe-analytical-services.github.io/how-to-qa/index.html).
-
-Cam and Sarah ran a session introducing how to get started with automated QA in relation to RAP, slides are available on [GitHub](https://sarahmwong.github.io/intro-to-automating-QA/#1){target="_blank" rel="noopener noreferrer"} or you can [watch the recording of the session](https://web.microsoftstream.com/embed/video/57eab29d-afeb-4651-a9f5-687098b84d13).
-
-The list of basic automated QA checks, with code examples can be found below and in our [GitHub repository](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}:
-
-* Checking for [minimum](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_minimum_values.R){target="_blank" rel="noopener noreferrer"}, [maximum](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_maximum_values.R){target="_blank" rel="noopener noreferrer"}, and [average](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_average_values.R){target="_blank" rel="noopener noreferrer"} values across your data
-
-* Checking for [extreme values and outliers](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_extreme_values.R){target="_blank" rel="noopener noreferrer"}
-
-* Ensuring there are no [duplicate rows](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_duplicate_rows.R){target="_blank" rel="noopener noreferrer"} or [duplicate columns](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_duplicate_columns.R){target="_blank" rel="noopener noreferrer"}
-
-* Checking that where appropriate, [geographical subtotals add up to totals](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/check_LA_subtotals_vs_region.R){target="_blank" rel="noopener noreferrer"} (e.g. all the numeric values for LAs in Yorkshire and The Humber add up to the regional total)
-
-* Basic [trend analysis using scatter plots](https://github.com/dfe-analytical-services/automated-data-qa/blob/main/R/create_scatter_plot.R){target="_blank" rel="noopener noreferrer"}, to help you spot outliers and help tell the story of your data.
-
-
-The Statistics Development Team have developed [the QA app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} to include some of these basic QA outputs.
-
-
-**Why do it?**
-
-Quality is one of the three pillars that our [code of practice](https://code.statisticsauthority.gov.uk/the-code/quality/){target="_blank" rel="noopener noreferrer"} is built upon. These basic level checks allow us to have confidence that we are accurately processing the data.
-
-Automating these checks ensures their accuracy and reliability, as well as being dramatically quicker than doing these manually.
-
-**How to get started**
-
-Try using our [template code snippets](https://github.com/dfe-analytical-services/automated-data-qa) to get an idea of how you could automate QA of your own publication files. A recording of our introduction to automated QA is also available at the top of the page.
-
----
+------------------------------------------------------------------------
 
 ### Publication specific automated QA
 
@@ -502,46 +270,13 @@ For those who are interested in starting writing their own QA scripts, it's wort
 
 The [janitor](https://garthtarr.github.io/meatR/janitor.html){target="_blank" rel="noopener noreferrer"} package in R also has some particularly useful functions, such as `clean_names()` to automatically clean up your variable names, `remove_empty()` to remove any completely empty rows and columns, and `get_dupes()` which retrieves any duplicate rows in your data - this last one is particularly powerful as you can feed it specific columns and see if there's any duplicate instances of values across those columns.
 
+------------------------------------------------------------------------
 
----
+{{< include common-rap-principles/automated-reproducible-reports.qmd >}}
 
-### Automated summaries 
-
----
-
-![](../images/great.svg)
-
-**What does this mean?**
-
-As a part of automating QA, we should also be looking to automate the production of summary statistics alongside the tidy underlying data files, this then provides us with instant insight into the stories underneath the numbers.
-
-Summary outputs are automated and used to explore the stories of the data. 
-
-The Statistics Development Team have developed [the QA app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} to include some of these automated summaries, including minimum, maximum and average summaries for each indicator.
+------------------------------------------------------------------------
 
 
-At a basic level we want teams to make use of the QA app to explore their data:
-
-- Have you used the outputs of the automated QA from the screener to understand the data?
-
-- Run automated QA, ensure that all interesting outputs/trends are reflected in the accompanying text
-
-**Why do it?**
-
-Value is one of the three pillars of our [code of practice](https://code.statisticsauthority.gov.uk/the-code/value/){target="_blank" rel="noopener noreferrer"}. Even more specifically it states that __'Statistics and data should be presented clearly, explained meaningfully and provide authoritative insights that serve the public good.'__.
-
-As a result, we should be developing automated summaries to help us to better understand the story of the data and be authoritative and rigorous in our telling of it.
-
-**How to get started**
-
-Consider:
-
-- Use the additional tabs available after a data file passes the [data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} as a starting point to explore trends across breakdowns and years.
-
-- Running your publication-specific automated QA, ensuring that all interesting outputs/trends are reflected in the accompanying text
-
-
----
 
 ### Publication specific automated summaries 
 
@@ -587,55 +322,16 @@ The aim should be to leave your work in a state that others (including future yo
 
 As we work with code to process our data more and more, we can begin to utilise version control software to make this process much easier, allowing simultaneous collaboration on files.
 
----
-
+------------------------------------------------------------------------
 
 {{< include common-rap-principles/documentation.qmd >}}
 
-### Version controlled final code scripts 
+------------------------------------------------------------------------
 
----
+{{< include common-rap-principles/version-controlled-final-scripts.qmd >}}
 
-![](../images/great.svg)
+------------------------------------------------------------------------
 
-**What does this mean?**
-
-This means having the final copies of code and documentation saved in a Git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available. 
-
-If you do not already have Git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
-
-For now, take a look at the [resources for learning Git](../learning-development/git.html) in the learning resources section.
-
-**Why do it?**
-
-Having the final copy of the scripts version controlled gives assurance around how the data was created. It also allows teams to easily record any last minute changes to the code after the initial final version by using the version control to log this. 
-
-**How to get started**
-
-The first step is to get your final versions of code and documentation together in a single folder.
-
-We have a specific area set up for you to host your publication code in on the dfe-gov-uk instance of Azure DevOps, entitled official-statistics-production.
-
-To gain access to this area, please raise a request on service desk by navigating through the pages detailed in the animation below.
-
-
-![](../images/servicedesk_request.gif)
-
-Once you have navigated to this page, fill out the form with the following details and send your request off.
-
-![](../images/devops_request_details.PNG)
-
-Access is usually granted within a few working days. Alert the [Statistics Development Team](mailto:statistics.development@education.gov.uk) when this is confirmed, and we will set up your repository and give your team access.
-
----
-
-#### renv
-
----
-
-We recommend the use of the [renv package](https://rstudio.github.io/renv/articles/renv.html) to help maintain consistent versions of packages within your work. You can learn more about how to use renv [on our R page](../learning-development/r.html#renv). 
-
----
 
 ### Use open source repositories
 
@@ -688,92 +384,8 @@ Here are some general best practice tips:
 
 You can find out more in the Duck Book's [guidance on using Git](https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories). 
 
----
+------------------------------------------------------------------------
 
-### Collaboratively develop code using Git 
+{{< include common-rap-principles/collaboratively-developed-using-git.qmd >}}
 
----
-
-![](../images/best.svg)
-
-**What does this mean?**
-
-- Has code development taken place in Git, collaboratively across the team? 
-
-- Are you making use of pull requests for team members to review and comment on code updates?
-
-- Is there a clear paper trail of changes to code (commits)?
-
-
-**Why do it?**
-
-Using Git allows multiple people to simultaneously develop the same code using branches, all with a crystal clear audit trail showing what changes were made when using commits. It makes it easy for team members to review changes via pull requests.
-
-**How to get started**
-
-To get started you should:
-
----
-
-#### Get your code into a Git controlled folder
-
----
-
-Get code into a Git controlled folder in whatever version it is currently in. Use the following steps to do so:
-
-1. Open the folder where your project is saved, right click anywhere in that window, and click "Git Bash Here".
-
-2. This will open a black box (the terminal). Type in the following and hit enter
-
-``` {r git_init, eval=FALSE}
-git init
-```
-
-3. After hitting enter, type in the following and hit enter again after each line. You will need the URL of your Azure DevOps repository to complete this step. Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) if you are not sure what this is or do not have one.
-
-``` {r git_steps, eval=FALSE}
-git add .
-
-git commit -m "first commit"
-
-git remote add origin YOUR_URL_HERE
-
-git push -f origin --all
-```
-
-* You may be prompted for either your Windows or Git credentials at this stage. 
-
-  + If prompted for your **Windows** credentials, enter the username and password combination you use to log into your DfE device.
-
-  + If prompted for your **Git** credentials, visit your online repository, click on the blue "clone" box, and click "generate Git credentials". This will generate a username and password for you to enter.
-
-4. Visit your repository online, and check that all the files have uploaded. Other members of your team will now be able to work from your code.  
-
----
-
-#### Build capability within the team 
-
----
-
-
-- Ensure all team members have access to your project in the Azure DevOps official-statistics-production area. Contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk) if there are any issues.
-
-- Get team members to clone your repository in to their personal area, so everyone is able to work on code at the same time.
-
-To clone code, they will need to do the following:
-
-1. Run through steps 1 - 2a of [getting a file into a Git controlled folder](#get-your-code-into-a-git-controlled-folder)
-
-3. After running those lines, type in the following with your repository URL in the "YOUR_URL_HERE" space. This will clone the online repository to your local area.
-
-``` {r git_team_steps, eval=FALSE} 
-git clone YOUR_URL_HERE
-```
-
-- Make use of Git and version control in your team projects regularly. Like learning anything new, putting it into practice regularly is the best way to become confident in using it.  
-
-Please refer to the other links on the [Git learning resources](../learning-development/git.html#other-resources) page to learn more about how to use Git in practice.
-
----
-
-
+------------------------------------------------------------------------
