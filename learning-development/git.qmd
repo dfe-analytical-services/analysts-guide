@@ -83,6 +83,12 @@ However, you can still run the full suite of Git commands by simply typing them 
 
 - GitHub have created a [cheat sheet for Git commands](https://education.github.com/git-cheat-sheet-education.pdf){target="_blank" rel="noopener noreferrer"}.
 
+## Understanding Git flow
+
+Understanding Git normally comes from the 3 stages model, and how code is pushed and pulled between the working area, staging area and the local/remote repositories. Below is a diagram depicting how different commands move code between different areas.
+
+![](../images/git_command_diagram.svg){fig-alt="Diagram illustrating four Git file locations: working directory (current folder), staging area (files prepared for commit), local repository (version-controlled code on your machine), and remote repository (version-controlled code on a server). Arrows show commands: git clone copies from remote to local; git checkout moves code from local to staging and working directory; git add moves files from working directory to staging; git commit moves from staging to local; git push sends to remote; git pull retrieves from remote to local, staging, and working directory, combining git fetch and git merge."}
+
 ---
 
 ## Other resources
