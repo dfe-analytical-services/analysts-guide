@@ -2070,6 +2070,17 @@
     ]
   },
   {
+    "objectID": "learning-development/git.html#understanding-git-flow",
+    "href": "learning-development/git.html#understanding-git-flow",
+    "title": "Git",
+    "section": "Understanding Git flow",
+    "text": "Understanding Git flow\nUnderstanding Git normally comes from the 3 stages model, and how code is pushed and pulled between the working area, staging area and the local/remote repositories. Below is a diagram depicting how different commands move code between different areas.",
+    "crumbs": [
+      "Learning resources",
+      "Git"
+    ]
+  },
+  {
     "objectID": "learning-development/git.html#other-resources",
     "href": "learning-development/git.html#other-resources",
     "title": "Git",
