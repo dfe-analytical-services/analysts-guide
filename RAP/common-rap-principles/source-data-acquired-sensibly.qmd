@@ -91,4 +91,3 @@ Remember that it is important to import them with consistent, thought-through [n
 
 Much like setting up a SQL area, there are different ways to do this depending on the server your database is in. Visit our [SQL learning page](../learning-development/sql.html#Givinggetting_access) for details.
 
----

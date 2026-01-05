@@ -54,5 +54,3 @@ Having a **clear** and **consistent** naming convention for your files is critic
 
 
 If in doubt, take a look at this [presentation](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank" rel="noopener noreferrer"}, or this [naming convention guide by Stanford](https://drive.google.com/file/d/12A4qZNwmL4s2NH8Ex161jgiJ9HrA06ZZ/view?pli=1){target="_blank" rel="noopener noreferrer"}, for examples reinforcing the above.
-
----

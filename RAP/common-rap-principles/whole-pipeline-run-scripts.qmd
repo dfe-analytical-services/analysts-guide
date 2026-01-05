@@ -42,5 +42,3 @@ Utilising a single 'run' script to execute processes written in other scripts br
 In order to create a single script to run all processes from, it is likely that you will need to use R to run SQL queries. If you are unsure of how to do this, take a look the guide on the [dfeR connecting to SQL documentation](https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html).
 
 If you prefer a video, [Chris Mason-Thom did a coffee and coding session on this](https://web.microsoftstream.com/embed/video/c9b7fd97-c854-4a1a-9074-cd80d2ea285e).
-
----

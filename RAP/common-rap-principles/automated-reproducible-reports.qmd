@@ -32,6 +32,3 @@ Consider:
 - Use the additional tabs available after a data file passes the [data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} as a starting point to explore trends across breakdowns and years.
 
 - Running your publication-specific automated QA, ensuring that all interesting outputs/trends are reflected in the accompanying text
-
-
----

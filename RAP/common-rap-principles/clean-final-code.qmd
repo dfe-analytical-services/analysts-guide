@@ -67,5 +67,3 @@ To help you standardise your code further, you can make use of the functions con
 ---
 
 If you ever find yourself writing HTML, or creating it through RMarkdown, you can check your HTML using [W3's validator](https://validator.w3.org/){target="_blank" rel="noopener noreferrer"}.
-
----

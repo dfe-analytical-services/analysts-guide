@@ -42,5 +42,3 @@ Automating these checks ensures their accuracy and reliability, as well as being
 **How to get started**
 
 Try using our [template code snippets](https://github.com/dfe-analytical-services/automated-data-qa) to get an idea of how you could automate QA of your own publication files. A recording of our introduction to automated QA is also available at the top of the page.
-
----

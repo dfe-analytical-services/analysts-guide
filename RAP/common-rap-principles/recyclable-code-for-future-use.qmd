@@ -1,5 +1,7 @@
 ### Recyclable code for future use
 
+---
+
 ![](../images/great.svg)
 
 **What does this mean?**
@@ -45,4 +47,3 @@ data_filtered_last_year <- data %>%
 
 Code can be written in many different ways, and in languages such as R, there are often many different functions and routes that you can take to get to the same end result. On top of that, there are even more possibilities for how you can format the code. This section will take you through some widely used standards for coding to help bring standardisation to this area and make it easier to both write and use our code.
 
-------------------------------------------------------------------------

@@ -26,5 +26,3 @@ There are many reasons why we have recommended the tools that we have, the recom
 Go to our [learning](../learning-development/learning-development.html) page to read more about the recommended tools for the jobs we do, as well as looking at the resources available there for how to [build capability](../learning-development/learning-support.html#general_resources) in them. Always feel free to contact us if you have any specific questions or would like help in understanding how to use those tools in your work.
 
 By following [our guidance](#version-controlled-final-code-scripts) in saving versions of code in an Azure DevOps, we will then be able to mirror those repositories in a publicly available GitHub area.
-
----
