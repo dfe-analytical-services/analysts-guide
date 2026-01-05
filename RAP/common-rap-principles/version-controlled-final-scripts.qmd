@@ -42,8 +42,6 @@ Access is usually granted within a few working days. Alert the [Statistics Devel
 
 We recommend the use of the [renv package](https://rstudio.github.io/renv/articles/renv.html) to help maintain consistent versions of packages within your work. You can learn more about how to use renv [on our R page](../learning-development/r.html#renv). 
 
----
-
 ------------------------------------------------------------------------
 
 #### Avoid revealing sensitive information
