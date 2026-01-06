@@ -117,8 +117,6 @@ website:
           - RAP/rap-faq.qmd
           - RAP/rap-case-studies.qmd
       - section: "Databricks Setup Guides"
-
-      - section: "ADA and Databricks"
         contents:
           - ADA/databricks_rstudio_sql_warehouse.qmd
           - ADA/databricks_rstudio_personal_cluster.qmd
