@@ -17,7 +17,7 @@ In order for us to be able to have an end-to-end data pipeline where we can repl
 
 The principle is that this source data will remain stable and is the point you can go back to and re-run the processes from if necessary. If for any reason the source data needs to change, your processes will be set up in a way that you can easily re-run them to get updated outputs based on the amended source data with minimal effort.
 
-Having all the data in one place and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results.
+Having all the data and processing it in one place makes our lives easier, and also helps us when auditing our work and ensuring reproducibility of results.
 
 **How to get started**
 

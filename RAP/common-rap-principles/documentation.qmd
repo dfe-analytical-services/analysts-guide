@@ -28,7 +28,7 @@ Take a look at the sections below for further guidance on improving your documen
 
 ---
 
-When writing code, whether that is SQL, R, or something else, make sure you're commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this: 
+When writing code, whether that is R or something else, make sure you're commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this: 
 
 ```{r comments_example, eval=FALSE}
 ----------------------------------------------------------------------------------------
@@ -48,7 +48,7 @@ When writing code, whether that is SQL, R, or something else, make sure you're c
 ----------------------------------------------------------------------------------------
 ```
 
-Commented lines should begin with -- (SQL) or # (R), followed by one space and your comment. Remember that **comments should explain the why, not the what.** 
+Commented lines should begin with # (R) or -- (SQL) followed by one space and your comment. Remember that **comments should explain the why, not the what.** 
 
 In SQL you can also use `/**` and `**/` to bookend comments over multiple lines. 
 
@@ -93,8 +93,8 @@ If you are creating your own README for existing projects, you should include al
 
 **Requirements**
 
-- Access: Detail any permissions or access needed to use the repository at the top of this section, e.g. access to specific SQL databases. This is crucial for enabling new users to use the repository.
-- Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R, or SQL.
+- Access: Detail any permissions or access needed to use the repository at the top of this section, e.g. access to specific databases. This is crucial for enabling new users to use the repository.
+- Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R.
 - Version control/Renv: State how version control is managed and whether Renv is being used. 
 
 **Getting started**

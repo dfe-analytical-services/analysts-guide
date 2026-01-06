@@ -7,7 +7,7 @@ title: "RAP for statistics"
 
 ---
 
-If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, start with our [What is RAP? page](../rap/what-is-rap.html). It covers the background and benefits of RAP, as well as an introduction RAP principles. 
+If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../rap/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
 
 ---
 
@@ -22,9 +22,9 @@ We want to focus on the parts of the production process that we have ownership a
 
 In Official Statistics production we are using RAP as a framework for best practice when producing our published data files, as these are the foundations of our publications moving forward. Following this framework will help us to improve and standardise our current production processes and provide a clear 'pipeline' for analysts to follow.  To get started with RAP, we first need to be able to understand what it actually means in practice, and be able to [assess our own work against the principles of RAP](#what-is-expected). From there, we can work out what training is needed, if any, and where additional support can help teams to meet the baseline. 
 
-In other areas of analysis, we recommend that RAP principles are applied proportionately. Whilst you wouldn't create a full RAP process for an ad-hoc, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results. 
+For other areas of analysis, we have the [RAP for analysis](../RAP/rap-for-analysis.html) guidance which covers how RAP can be applied to analysis work outside of Official Statistics production.
 
-Implementing RAP for us will involve combining the use of SQL, R, and clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
+Implementing RAP may involve combining the use of Databricks, R, and clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
 
 The collection of, and routine checking of data as it is coming into the department is also an area that RAP can be applied to. We have kept this out of scope at the moment as the levels of control in this area vary wildly from team to team. If you would like advice and help to automate any particular processes, feel free to [contact the Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
@@ -35,15 +35,15 @@ The collection of, and routine checking of data as it is coming into the departm
 RAP has three core principles:
 
 
-[Preparing data](../RAP/rap-start-guide.html#preparing-data): Data sources for a publication are stored in the same database
+[Preparing data](#preparing-data): Data sources for a publication are stored in the same database
 
 
-[Writing code](../RAP/rap-start-guide.html#writing-code): Underlying data files are produced using code, with no manual steps
+[Writing code](#writing-code): Underlying data files are produced using code, with no manual steps
 
 
-[Version control](../RAP/rap-start-guide.html#version-control): Files and scripts should be appropriately version controlled
+[Version control](#version-control): Files and scripts should be appropriately version controlled
 
-Within each of these principles are separate elements of RAP, which are shown in the diagram below. You can find further information on each of the elements by clicking on the links in the diagram or visiting the [RAP start guide page](../RAP/rap-start-guide.html). 
+Within each of these principles are separate elements of RAP, which are shown in the diagram below. You can find further information on each of the elements by clicking on the links in the diagram.
 
  
 ---
@@ -84,13 +84,13 @@ The checklist provided in the [publication self-assessment tool](https://rsconne
 
 Some teams will already be looking at best practice, while others will still have work to do to achieve the department's baseline of good and great practice. We know that all teams are starting this from different points, and are here to support all teams from their respective starting positions.
 
-For guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes and where to start, see the [RAP start guide page](../RAP/rap-start-guide.html).
+For guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes and where to start, see the [getting started with RAP page](../RAP/getting-started-with-rap.html).
 
 ---
 
 ## Apply the principles
 
-Now that you’ve prioritised the area of your workflow to focus on, the next step is to apply the relevant RAP (Reproducible Analytical Pipeline) principles to that part of your process.
+Now that you’ve prioritised the area of your workflow to focus on, the next step is to apply the relevant RAP principles to that part of your process.
 
 This section below is split by the three core principles, [preparing data](#preparing-data), [writing code](#writing-code) and [version control](version-control).
 
@@ -106,7 +106,7 @@ Preparing data is our first core RAP principle, which contains the following ele
 * [Files meet data standards](#files-meet-data-standards)
 * [Sensible file and folder structure](#sensible-folder-and-file-structure)
 
-Your team should store the raw data you use to create underlying data in a Microsoft SQL Server database or in the Databricks platform. These are similar to a Sharepoint area or a shared folder, but offer dedicated data storage areas and allow multiple users to use the same file at once. This means that you can also run code against a single source of data, further reducing the risk of error.
+Your team should store the internal raw data in the Databricks platform. This means that you can run code against a single source of data, reducing the risk of error. Legacy SQL servers will be decommissioned in 2026, by which point, all data will have been migrated into the Databricks Unity Catalog instead. 
 
 
 ------------------------------------------------------------------------

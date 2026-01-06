@@ -115,6 +115,7 @@ website:
           - RAP/rap-analysis.qmd
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
+          - RAP/rap-case-studies.qmd
       - section: "Databricks Setup Guides"
 
       - section: "ADA and Databricks"

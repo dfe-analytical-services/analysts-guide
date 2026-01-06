@@ -1,0 +1,38 @@
+---
+title: "RAP case studies"
+format: html
+---
+
+## RAP case studies
+
+This section contains a number of case studies that illustrate how RAP principles have been applied in practice. Each case study provides an overview of the project, the context and background, and how the RAP principles were implemented.
+
+These case studies serve as practical examples to help you understand how to apply RAP principles in your own work. They demonstrate the benefits of following these principles, such as improved data quality, enhanced reproducibility, and more efficient workflows.
+
+### Case Study 1: Function to group any variable in our data set
+
+#### Analysis Type
+
+Ad-hoc analysis, likely to be repeated e.g., different breakdowns
+
+#### Context and Background 
+
+We collect data on the FE workforce. Each row of data is a person. We collect data on their characteristics, pay, subjects taught and roles. For our publication and ad-hoc analysis, we frequently need to know the number of staff split by various characteristics.
+
+#### Process and principles applied 
+
+I created a function called “create grouped totals and rates”. This function groups by the inputs input. It creates totals at the provider level, LA level, regional level and national level. It allows staff to be summed by their headcount or the FTE. The function was QA-d at length to ensure that the output was correct. The function is now used to produce any total for the publication, as well as any totals that are needed for internal ad-hoc analysis.
+
+Some measures e.g. disability status, have a prefer not to say option. However, for some of these measures, we show percentages only for staff who have chosen to disclose. E.g. the percentage of staff who have answer “Yes”, “No” should sum to 100%. This function takes this into account. If a measure should include/not include the “prefer not to say” option in the percentages, the function is dynamic like this.
+
+#### Outcome/results 
+
+This function improved quality. We have QA-d the function and the raw data entering the function. This means that the output produced from the function for ad-hoc analysis only needs a smaller QA, since it has come from a repeatable process.
+
+This function has saved time for our team. It has meant that almost any question asked about total number of staff that fit a certain criteria and geography can be quickly created.
+
+E.g. if I want to know the total number of staff in each role and each provider type with each gender, I would use the function like this:
+
+![](/images/rap-case-study-1.png){fig-alt="Screenshot of R code showing the use of the create_grouped_totals_and_rates function to create the workforce by provider type, role and gender."}
+
+It would create an output across all the geographies specified above. It would show the % of each staff by role and provider type, who have each gender. 

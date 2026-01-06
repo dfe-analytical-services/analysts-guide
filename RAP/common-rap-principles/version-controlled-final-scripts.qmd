@@ -7,11 +7,11 @@
 
 **What does this mean?**
 
-This means having the final copies of code and documentation saved in a Git-controlled Azure DevOps repo in the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available. 
+This means having the final copies of code and documentation saved in a Git-controlled Azure DevOps repo. For statistics publications, repos should be held within the official-statistics-production area. Access to DevOps is restricted only to people in DfE with specific account permissions. This is different to GitHub, which makes code publicly available. 
 
 If you do not already have Git downloaded, you can [download the latest version from their website](https://git-scm.com/downloads).
 
-For now, take a look at the [resources for learning Git](../learning-development/git.html) in the learning resources section.
+Take a look at the [resources for learning Git](../learning-development/git.html) in the learning resources section.
 
 **Why do it?**
 
@@ -21,7 +21,7 @@ Having the final copy of the scripts version controlled gives assurance around h
 
 The first step is to get your final versions of code and documentation together in a single folder.
 
-We have a specific area set up for you to host your publication code in on the dfe-gov-uk instance of Azure DevOps, entitled official-statistics-production.
+For statistics publications, we have a specific area set up for you to host your code in on the dfe-gov-uk instance of Azure DevOps, entitled official-statistics-production.
 
 To gain access to this area, please raise a request on service desk by navigating through the pages detailed in the animation below.
 
@@ -33,6 +33,8 @@ Once you have navigated to this page, fill out the form with the following detai
 ![](../images/devops_request_details.PNG)
 
 Access is usually granted within a few working days. Alert the [Statistics Development Team](mailto:statistics.development@education.gov.uk) when this is confirmed, and we will set up your repository and give your team access.
+
+For other areas, you will need to seek access from the relevant DevOps project administrator.
 
 ---
 

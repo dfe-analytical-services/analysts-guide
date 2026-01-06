@@ -6,14 +6,13 @@
 
 **What does this mean?**
 
-As a part of automating QA, we should also be looking to automate the production of summary statistics alongside the tidy underlying data files, this then provides us with instant insight into the stories underneath the numbers.
+As a part of automating QA, we should also be looking to automate the production of summary statistics alongside the tidy underlying data files or analysis where applicable, this then provides us with instant insight into the stories underneath the numbers.
 
 Summary outputs are automated and used to explore the stories of the data. 
 
-The Statistics Development Team have developed [the QA app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} to include some of these automated summaries, including minimum, maximum and average summaries for each indicator.
+For data that is to be published on EES, the Statistics Development Team have developed [the QA app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} to include some of these automated summaries, including minimum, maximum and average summaries for each indicator.
 
-
-At a basic level we want teams to make use of the QA app to explore their data:
+At a basic level we want teams to make use of the QA app explore their data:
 
 - Have you used the outputs of the automated QA from the screener to understand the data?
 
@@ -31,4 +30,4 @@ Consider:
 
 - Use the additional tabs available after a data file passes the [data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} as a starting point to explore trends across breakdowns and years.
 
-- Running your publication-specific automated QA, ensuring that all interesting outputs/trends are reflected in the accompanying text
+- Running your publication or analysis specific automated QA, ensuring that all interesting outputs/trends are reflected in any accompanying text

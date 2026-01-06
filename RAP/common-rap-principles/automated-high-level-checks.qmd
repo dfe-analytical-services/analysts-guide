@@ -7,15 +7,13 @@
 
 **What does this mean?**
 
-Any data files that have been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability.
-
-Some teams are already making great progress with automated QA and realising the benefits of it. The Statistics Development Team are working with these to provide generalised code that teams can use as a starting point for automated QA. The intention is that teams can then run this as a minimum, before then looking to develop more area specific checks to the script and/or continue with current checking processes in tandem. If your team already use, or are working towards using, automated QA then get in touch as we'd be keen to see what you have.
+Any data files or analysis that has been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability.
 
 It is assumed that when using R, automated scripts will output .html reports that the team can read through to understand their data and identify any issues, and save as a part of their process documentation.
 
 For more information on general quality assurance best practice in DfE, see the [How to QA guide](https://dfe-analytical-services.github.io/how-to-qa/index.html).
 
-Cam and Sarah ran a session introducing how to get started with automated QA in relation to RAP, slides are available on [GitHub](https://sarahmwong.github.io/intro-to-automating-QA/#1){target="_blank" rel="noopener noreferrer"} or you can [watch the recording of the session](https://web.microsoftstream.com/embed/video/57eab29d-afeb-4651-a9f5-687098b84d13).
+Cam and Sarah from the Statistics Services Unit  ran a session introducing how to get started with automated QA in relation to RAP, slides are available on [GitHub](https://sarahmwong.github.io/intro-to-automating-QA/#1){target="_blank" rel="noopener noreferrer"} or you can [watch the recording of the session](https://web.microsoftstream.com/embed/video/57eab29d-afeb-4651-a9f5-687098b84d13).
 
 The list of basic automated QA checks, with code examples can be found below and in our [GitHub repository](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}:
 
