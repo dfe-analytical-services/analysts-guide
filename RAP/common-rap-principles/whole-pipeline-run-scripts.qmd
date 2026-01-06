@@ -7,38 +7,23 @@
 
 **What does this mean?**
 
-The ultimate aim is to utilise a single script to document and run off everything for a publication, the data files, any QA, any summary reports. This script should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script.
+The ultimate aim is to utilise a single script or workflow to document and run off everything for a publication or piece of analysis including the data files, any QA and any summary reports. This script or workflow should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script.
 All quality assurance for a file is also included in the single script that can be used to create a file from source data (see the [dataset production scripts section](#dataset-production-scripts))
 
 **Why do it?**
 
-This carries all of the same benefits as having a single 'run' script for a file, but at a wider publication level, effectively documenting the entire publication process in one place. This makes it easier for new analysts to pick up the process, as well as making it quicker and easier to rerun as all reports relating to that file are immediately available if you ever make changes file.
+This carries all of the same benefits as having a single 'run' script for a file, but at a wider publication or analysis level, effectively documenting the entire process in one place. This makes it easier for new analysts to pick up the process, as well as making it quicker and easier to rerun as all reports relating to that file are immediately available if you ever make changes file.
 
-**How to get started**
 
-The Education, Health and Care Plans production cycle is a good example of a single publication 'run' script. They have kept their actual data processing in SQL, but all the running and manipulation of the data happens in R.
+#### Using 'run' scripts and workflows
 
-The cycle originally consisted of multiple SQL scripts, manual QA and generation of final files.
 
-![](../images/Old process.jpg)
-
-The team now have their end-to-end process fully documented, which can be run off of one single R script. The 'run' script points at the SQL scripts to run them all in one go, and also creates a QA report and corresponding metadata files that pass the data screener. Each data file can still be run in isolation from this script.
-
-![](../images/New process.jpg)
+Utilising a single 'run' script or workflow to execute processes written in other scripts brings a number of benefits. It isn't just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past. 
 
 ---
 
-#### Using 'run' scripts
-
-
-Utilising a single 'run' script to execute processes written in other scripts brings a number of benefits. It isn't just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past. 
+#### Connecting R to Databricks
 
 ---
 
-#### Connecting R to SQL
-
----
-
-In order to create a single script to run all processes from, it is likely that you will need to use R to run SQL queries. If you are unsure of how to do this, take a look the guide on the [dfeR connecting to SQL documentation](https://dfe-analytical-services.github.io/dfeR/articles/connecting_to_sql.html).
-
-If you prefer a video, [Chris Mason-Thom did a coffee and coding session on this](https://web.microsoftstream.com/embed/video/c9b7fd97-c854-4a1a-9074-cd80d2ea285e).
+In order to create a single script to run all processes from, you may need to connect to Databricks from RStudio. If you are unsure how to do this, take a look at the guidance on creating a [personal cluster with RStudio and ODBC / DBI ](../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 

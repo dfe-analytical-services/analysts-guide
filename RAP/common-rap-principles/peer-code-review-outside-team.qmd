@@ -6,7 +6,7 @@
 
 **What does this mean?**
 
-- Has someone from outside of the team and publication area reviewed the code and given feedback? 
+- Has someone from outside of the team and publication or analysis area reviewed the code and given feedback? 
 
 - Have you taken on their feedback and improved the code?
 

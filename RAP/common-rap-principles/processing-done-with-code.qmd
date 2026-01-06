@@ -21,13 +21,14 @@ Reliability is a huge benefit of the automation that RAP brings - when your data
 See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on Databricks and R to learn the skills required to translate your process into code.
 
 Your data should be stored in Databricks, and you can do a lot of your data processing there using different coding languages, including Spark SQL, Python, and R. You may however find it easier to do some or all of your data processing in RStudio, particularly if you are more familiar with R than other coding languages. If you want to do your data processing in RStudio, you can connect to Databricks using a [personal cluster with RStudio and ODBC / DBI ](../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 
+
 ------------------------------------------------------------------------
 
 #### Processing data in Databricks
 
 ------------------------------------------------------------------------
 
-To get started in Databricks, take a look at the [ADA](../ADA/ada.html) and ([Databricks fundamentals](../ADA/databricks_fundamentals.html) pages. These pages contains links to a variety of resources to help you get started with Databricks, including sections on working with data and code. 
+To get started in Databricks, take a look at the [ADA](../ADA/ada.html) and [Databricks fundamentals](../ADA/databricks_fundamentals.html) pages. These pages contains links to a variety of resources to help you get started with Databricks, including sections on working with data and code. 
 
 ------------------------------------------------------------------------
 

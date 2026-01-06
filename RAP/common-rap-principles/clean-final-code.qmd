@@ -37,12 +37,15 @@ Clean code should include comments. Comment why you've made decisions, don't com
 
 ---
 
-#### SQL
+#### SQL in Databricks
 
 ---
 
-For best practice on writing T-SQL code used in SQL Server, here is a particularly useful [Word document](../resources/TSQL_Coding_Standards.docx){target="_blank" rel="noopener noreferrer"} produced by our Data Hub. This outlines a variety of best practices, ranging from naming conventions, to formatting your SQL code so that it is easy to follow visually.
+For guidance on writing Spark SQL code in Databricks, take a look at the [ADA guidance site](https://analytical-data-access.education.gov.uk/get-support/using-sql-in-databricks-sql-editor). This walks you through how to create a construct a SQL query in the SQL editor in the Databricks platform. 
 
+You may choose to use Notebooks to write your SQL code in Databricks. If so, take a look at the [ADA using R, Python and SQL in Databricks](https://analytical-data-access.education.gov.uk/get-support/using-r-python-and-sql-in-databricks) guidance. 
+
+If you have code that was written in T-SQL (for example in SSMS), you may need to make some adjustments to the code to get it to run in Spark SQL. Take a look at the [what this means for exisitng code section on the ADA page](../ADA/ada.html#what-this-means-for-existing-code) for help with this.
 ---
 
 #### R
