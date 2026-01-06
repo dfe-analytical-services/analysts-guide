@@ -10,7 +10,7 @@ When we refer to 'source data', we take this to mean the data you use at the sta
 
 Legacy SQL servers will be decommissioned in 2026, and all data will be migrated into the Databricks Unity Catalog instead. As far as meeting the requirement to have all source data in a database, databases other than Databricks may be acceptable, though we can't support them in the same way.
 
-In order for us to be able to have an end-to-end data pipeline where we can replicate our analysis across the department, we should store all of the raw data needed to create aggregate statistics in the Databricks platform. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process using SQL queries. 
+In order for us to be able to have an end-to-end data pipeline where we can replicate our analysis across the department, we should store all of the raw data needed to create aggregate statistics in the Databricks platform. This includes any lookup tables and all administrative data from collections prior to any manual processing. This allows us to then match and join the data together in an end-to-end process. 
 
 
 **Why do it?**

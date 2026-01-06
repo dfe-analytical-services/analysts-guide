@@ -14,29 +14,28 @@ Even steps such as copy and pasting data, or pointing and clicking, are fraught 
 
 Using code brings numerous benefits. Computers are far quicker, more accurate, and far more reliable than humans in many of the tasks that we do. Writing out these instructions saves us significant amounts of time, particularly when code can be reused in future years, or even next week when one specific number in the source file suddenly changes. Code scripts also provide us with editable documentation for our production processes, saving the need for writing down information in extra documents.
 
-Reliability is a huge benefit of the automation that RAP brings - when your data has to be amended a week before publication, it's a life saver to know that you can re-run your process in minutes, and reassuring to know that it will give you the result you want. You can run the same code 100 times, and be confident that it will follow the same steps in the same order every single time.
+Reliability is a huge benefit of the automation that RAP brings - when your data has to be amended a week before publication, it's a life saver to know that you can re-run your process in minutes, and reassuring to know that it will give you the result you want.  You can run the same code 100 times, and be confident that it will follow the same steps in the same order every single time. You should ensure that any last-minute fixes to the process are written in the code and not done with manual changes.
 
 **How to get started**
 
-See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on SQL and R to learn the skills required to translate your process into code.
+See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on Databricks and R to learn the skills required to translate your process into code.
 
-There are also two sections below with examples of tidying data in SQL and R to get you started.
+Your data should be stored in Databricks, and you can do a lot of your data processing there using different coding languages, including Spark SQL, Python, and R. You may however find it easier to do some or all of your data processing in RStudio, particularly if you are more familiar with R than other coding languages. If you want to do your data processing in RStudio, you can connect to Databricks using a [personal cluster with RStudio and ODBC / DBI ](../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 
+------------------------------------------------------------------------
 
-Ensure that any last-minute fixes to the process are written in the code and not done with manual changes.
+#### Processing data in Databricks
 
 ------------------------------------------------------------------------
 
-#### Producing tidy underlying data in SQL
-
-------------------------------------------------------------------------
-
-To get started, here is a [SQL query](https://github.com/TomFranklin/sql-applied-data-tidying/blob/master/data_tidying_l_and_d.sql){target="_blank" rel="noopener noreferrer"} that you can run on your own machine and walks you through the basics of tidying a simple example dataset in SQL.
+To get started in Databricks, take a look at the [ADA](../ADA/ada.html) and ([Databricks fundamentals](../ADA/databricks_fundamentals.html) pages. These pages contains links to a variety of resources to help you get started with Databricks, including sections on working with data and code. 
 
 ------------------------------------------------------------------------
 
 #### Tidying and processing data in R
 
 ------------------------------------------------------------------------
+
+If you want to do your data processing in R, you can connect to Databricks using a [personal cluster with RStudio and ODBC / DBI ](../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into R and process it there. 
 
 [Here is a video](https://vimeo.com/33727555){target="_blank" rel="noopener noreferrer"} of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at [applied data tidying in R, by RStudio](https://www.youtube.com/watch?v=1ELALQlO-yM){target="_blank" rel="noopener noreferrer"}.
 
