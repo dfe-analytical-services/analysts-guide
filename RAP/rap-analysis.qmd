@@ -9,7 +9,7 @@ format: html
 
 ---
 
-If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, start with our [What is RAP? page](../rap/what-is-rap.html). It covers the background and benefits of RAP, as well as an introduction RAP principles. 
+If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../rap/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
 
 ------------------------------------------------------------------------
 
@@ -17,11 +17,11 @@ If you're unfamiliar with RAP, or want a refresher on what RAP is and why it mat
 
 ------------------------------------------------------------------------
 
-To get started with RAP for analysis, start by exploring the RAP principles in the diagram below, which outline what good, great and best practice looks like.
+To get started with RAP for analysis, explore the RAP principles in the diagram below, which outlines what good, great and best practice looks like.
 
 Once you are familiar with the principles, take a look at the different types of analysis commonly carried out across the department. This will help you understand which RAP principles are recommended for your type of analysis.
 
-Implementing RAP may involve combining the use of SQL, R and using clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
+Implementing RAP may involve combining the use of Databricks, R and using clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
 
 ------------------------------------------------------------------------
 
@@ -31,14 +31,14 @@ Implementing RAP may involve combining the use of SQL, R and using clear, consis
 
 RAP should be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx).
 
-Applying RAP pinciples proportionately means tailoring your approach to the scale, complexity and potential impact of the analysis, just as you would with QA. Not every piece of work will require a fully automated pipeline. but all analysis should aim to be reproducible where possible. 
+Applying RAP pinciples proportionately means tailoring your approach to the scale, complexity and potential impact of the analysis, just as you would with QA. Not every piece of work will require a fully automated pipeline, but all analysis should aim to be reproducible where possible. 
 
 When deciding what RAP principles to apply, consider factors like who will use the analysis, how it will be used, the level of public or ministerial interest and the potential risks involved. Use the guidance below as a starting point, but apply judgement based on the specific context of your work, as you would when determining proportionate QA. 
 
 
-For example, you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
+For example, whilst you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
 
-Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP in Statistics page](RAP/rap-statistics.html) for more information).
+Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP for Statistics page](RAP/rap-statistics.html) for more information).
 
 ------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ The diagram below highlights what RAP means for us, and the varying levels at wh
 
 ## Choosing the right RAP principles for your analysis
 
-Whilst all RAP principles can be applied to any type of analysis, we recognise that different types of analysis conducted across the department may benefit from a tailored approach. To support this, we’ve outlined a selection of common analysis types below, along with the RAP principles we suggest as essential and recommended for each. This guidance is intended to help teams prioritise their efforts and embed RAP in a way that is both practical and impactful.
+Whilst all RAP principles can be applied to any type of analysis, we recognise that different types of analysis conducted across the department may benefit from a tailored approach. To support this, we’ve outlined a selection of common analysis types below, along with the RAP principles we suggest as recommended for each. This guidance is intended to help teams prioritise their efforts and embed RAP in a way that is both practical and impactful.
 
 ::: {.callout-tip collapse="true"}
 ## Ad-hoc analysis (unlikely to be repeated)
@@ -148,7 +148,7 @@ We recommend the following principles for this type of analysis. Analysts should
 ::: {.callout-tip collapse="true"}
 ## Analysis at pace
 
-Analysis which must be quickly conducted and often not pre-planned, aimed at delivering timely insights to support fast decision making.
+Analysis which must be quickly conducted and is often not pre-planned, aimed at delivering timely insights to support fast decision making.
 
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
@@ -262,7 +262,7 @@ Preparing data is our first core RAP principle, which contains the following ele
 -   [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly)
 -   [Sensible file and folder structure](#sensible-folder-and-file-structure)
 
-Your team should store the internal raw data in a Microsoft SQL Server database or in the Databricks platform. These are similar to a Sharepoint area or a shared folder, but offer dedicated data storage areas and allow multiple users to use the same file at once. This means that you can also run code against a single source of data, further reducing the risk of error.
+Your team should store the internal raw data in the Databricks platform. This means that you can run code against a single source of data, reducing the risk of error. Legacy SQL servers will be decommissioned in 2026, by which point, all data will have been migrated into the Databricks Unity Catalog instead. 
 
 Where external data is used, the process of acquiring and storing the data should be well documented. The data should be stored appropriately in areas with the correct levels of security.
 
