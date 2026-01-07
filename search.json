@@ -913,6 +913,17 @@
     ]
   },
   {
+    "objectID": "statistics-production/api-data-standards.html#api-publishing-checklist",
+    "href": "statistics-production/api-data-standards.html#api-publishing-checklist",
+    "title": "Statistics API Data Standards",
+    "section": "API publishing checklist",
+    "text": "API publishing checklist\nThe following are steps to follow when planning on publishing a data set via the API:\n\nAt least a few weeks / month before publication\n\nCheck column names and filter items against the data dictionary\nReview data structure and confirm (new) column names with the Explore education statistics team\nAlert key known end users / stakeholders of any changes to existing API data sets or new data API data sets (e.g. Opportunity Mission dashboard team, Compare school and college performance)\n\n\n\nPrior to approval of the release on EES\n\nScreen data files\n\nScreen using the standard screener and resolve warnings as well as errors\nFor any column names or filter items that are reported as not being present in the data dictionary, contact explore.statistics@education.gov.uk to discuss standardisation and options for new data dictionary entries\n\nUpload data files to your release as normal\n\nThis will run a second screening check which must be passed before data sets can be activated for the public API service\n\nSubmit a request to explore.statistics@education.gov.uk to activate the files as API data sets\nOnce activated, follow normal sign-off process",
+    "crumbs": [
+      "Statistics production",
+      "Statistics API Data Standards"
+    ]
+  },
+  {
     "objectID": "statistics-production/api-data-standards.html#character-limits-for-col_names-and-filter-items",
     "href": "statistics-production/api-data-standards.html#character-limits-for-col_names-and-filter-items",
     "title": "Statistics API Data Standards",

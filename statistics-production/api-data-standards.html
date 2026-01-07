@@ -652,6 +652,11 @@ cookieconsent.run({
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#api-publishing-checklist" id="toc-api-publishing-checklist" class="nav-link" data-scroll-target="#api-publishing-checklist">API publishing checklist</a>
+  <ul class="collapse">
+  <li><a href="#at-least-a-few-weeks-month-before-publication" id="toc-at-least-a-few-weeks-month-before-publication" class="nav-link" data-scroll-target="#at-least-a-few-weeks-month-before-publication">At least a few weeks / month before publication</a></li>
+  <li><a href="#prior-to-approval-of-the-release-on-ees" id="toc-prior-to-approval-of-the-release-on-ees" class="nav-link" data-scroll-target="#prior-to-approval-of-the-release-on-ees">Prior to approval of the release on EES</a></li>
+  </ul></li>
   <li><a href="#character-limits-for-col_names-and-filter-items" id="toc-character-limits-for-col_names-and-filter-items" class="nav-link" data-scroll-target="#character-limits-for-col_names-and-filter-items">Character limits for col_names and filter items</a></li>
   <li><a href="#tidy-data-structure" id="toc-tidy-data-structure" class="nav-link" data-scroll-target="#tidy-data-structure">Tidy data structure</a>
   <ul class="collapse">
@@ -708,6 +713,34 @@ Guidance on how to structure data files specifically for the EES API
 <li>Character limits for col_names and filter items.</li>
 </ul>
 <p>Examples of these that do and don’t meet the API data standards are provided in the following sections.</p>
+</section>
+<section id="api-publishing-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="api-publishing-checklist">API publishing checklist</h2>
+<p>The following are steps to follow when planning on publishing a data set via the API:</p>
+<section id="at-least-a-few-weeks-month-before-publication" class="level3">
+<h3 class="anchored" data-anchor-id="at-least-a-few-weeks-month-before-publication">At least a few weeks / month before publication</h3>
+<ul>
+<li>Check column names and filter items against the data dictionary</li>
+<li>Review data structure and confirm (new) column names with the Explore education statistics team</li>
+<li>Alert key known end users / stakeholders of any changes to existing API data sets or new data API data sets (e.g.&nbsp;Opportunity Mission dashboard team, Compare school and college performance)</li>
+</ul>
+</section>
+<section id="prior-to-approval-of-the-release-on-ees" class="level3">
+<h3 class="anchored" data-anchor-id="prior-to-approval-of-the-release-on-ees">Prior to approval of the release on EES</h3>
+<ul>
+<li>Screen data files
+<ul>
+<li>Screen using the <a href="https://rsconnect/rsc/dfe-published-data-qa/" target="_blank">standard screener</a> and resolve <strong>warnings</strong> as well as errors</li>
+<li>For any column names or filter items that are reported as not being present in the data dictionary, contact <a href="mailto:explore.statistics@education.gov.uk">explore.statistics@education.gov.uk</a> to discuss standardisation and options for new data dictionary entries</li>
+</ul></li>
+<li>Upload data files to your release as normal
+<ul>
+<li>This will run a second screening check which must be passed before data sets can be activated for the public API service</li>
+</ul></li>
+<li>Submit a request to <a href="mailto:explore.statistics@education.gov.uk">explore.statistics@education.gov.uk</a> to activate the files as API data sets</li>
+<li>Once activated, follow normal sign-off process</li>
+</ul>
+</section>
 </section>
 <section id="character-limits-for-col_names-and-filter-items" class="level2">
 <h2 class="anchored" data-anchor-id="character-limits-for-col_names-and-filter-items">Character limits for col_names and filter items</h2>
