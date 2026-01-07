@@ -1,0 +1,23 @@
+## Publication/project specific automated sense checks
+
+
+![](../images/great.svg)
+
+**What does this mean?**
+
+The QA team have put together a [flowchart to help you identify the QA needed in different scenarios](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx#%E2%80%8Bwhat-qa-tasks-do-i-need-to-carry-out). When it's proportional to the work, QA should go further than the most basic/generic checks above. In these cases, it is expected that teams develop their own automated QA checks to QA specificities of their analysis not covered by the basic checks.
+
+As a part of automating QA, we should also be looking to automate the production of summary statistics. This provides us with instant insight into the stories underneath the numbers. Summary outputs are automated and used to explore the stories of the data.
+
+**Why do it?**
+
+Quality is one of the three pillars that our [code of practice](https://code.statisticsauthority.gov.uk/the-code/quality/){target="_blank" rel="noopener noreferrer"} is built upon. By building upon the basic checks to develop bespoke QA for our publications, we can increase our confidence in the quality of the processes and outputs that they produce.
+
+
+**How to get started**
+
+We expect that the basic level of automated QA will cover most generic needs. However, we also expect that each analytical project will have it's own quirks that require a more bespoke approach. Try to consider what things you'd usually check as flags that something hasn't gone right with your data. What are the unique aspects of your project's data, and how can you automate checks against them to give you confidence in it's accuracy and reliability?
+
+For those who are interested in starting writing their own QA scripts, it's worth looking at packages in R such as [testthat](https://testthat.r-lib.org/){target="_blank" rel="noopener noreferrer"}, including the [coffee and coding resources](https://educationgovuk.sharepoint.com/:f:/r/sites/sarpi/g/WorkplaceDocuments/Induction%20learning%20and%20career%20development/Coffee%20and%20Coding/190306_peter_autotesting?csf=1&web=1&e=F945Xq){target="_blank" rel="noopener noreferrer"} on it by Peter Curtis, as well as this [guide on testing](http://r-pkgs.had.co.nz/tests.html){target="_blank" rel="noopener noreferrer"} by Hadley Wickham.
+
+The [janitor](https://garthtarr.github.io/meatR/janitor.html){target="_blank" rel="noopener noreferrer"} package in R also has some particularly useful functions, such as `clean_names()` to automatically clean up your variable names, `remove_empty()` to remove any completely empty rows and columns, and `get_dupes()` which retrieves any duplicate rows in your data - this last one is particularly powerful as you can feed it specific columns and see if there's any duplicate instances of values across those columns.
