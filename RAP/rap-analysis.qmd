@@ -31,7 +31,7 @@ Implementing RAP may involve combining the use of Databricks, R and using clear,
 
 RAP should be **proportional** to the analysis in the same way that [QA is proportional](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx).
 
-Applying RAP pinciples proportionately means tailoring your approach to the scale, complexity and potential impact of the analysis, just as you would with QA. Not every piece of work will require a fully automated pipeline, but all analysis should aim to be reproducible where possible. 
+Applying RAP principles proportionately means tailoring your approach to the scale, complexity and potential impact of the analysis, just as you would with QA. Not every piece of work will require a fully automated pipeline, but all analysis should aim to be reproducible where possible. 
 
 When deciding what RAP principles to apply, consider factors like who will use the analysis, how it will be used, the level of public or ministerial interest and the potential risks involved. Use the guidance below as a starting point, but apply judgement based on the specific context of your work, as you would when determining proportionate QA. 
 
@@ -290,7 +290,7 @@ Writing code is our second core RAP principle, and is made up of the following e
 -   [Peer review of code](#peer-review-of-code)
 -   [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
 -   [Automated high level checks](#automated-high-level-checks)
--   [Project specific automted sense checks](#project-specific-automated-sense-checks)
+-   [Project specific automated sense checks](#project-specific-automated-sense-checks)
 -   [Automated reproducible reports](#automated-reproducible-reports)
 
 ::: callout-tip
