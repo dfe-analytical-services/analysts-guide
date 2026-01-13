@@ -150,9 +150,11 @@ RAP principles represent best practice in analytical work and should be our defa
 
 Cross-government RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md) to aim for. In DfE, we have used these to develop two sets of RAP principles to reflect the different needs of statistics production processes and general analysis. 
 
+We have two sets of RAP principles to reflect the different needs of statistics production processes and general analysis. There are 15 core principles, which apply to both statistics and general analysis, and an additional four principles specific to statistics production processes.
+
 The [RAP for statistics principles](../RAP/rap-statistics.html) reflect where processes are often repeated and structured, allowing for more automation and standardisation.
 
-The [RAP for general analysis principles](../RAP/rap-analysis.html) reflect that general analysis can be more varied, but still benefits from applying RAP principles proportionally.
+The [RAP for general analysis principles](../RAP/rap-analysis.html) reflect that general analysis can be more varied, but still benefits from applying RAP principles proportionally. The RAP for analysis page has recommendations for how to apply RAP principles to different types of analysis.
 
 Always applicable RAP principles include:
 
