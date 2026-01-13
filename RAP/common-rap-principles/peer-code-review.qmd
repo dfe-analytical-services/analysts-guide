@@ -1,4 +1,4 @@
-### Peer code review
+### Peer review of code
 
 ---
 

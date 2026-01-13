@@ -42,7 +42,7 @@ Expectations for statistics production are clearer because these outputs are pub
 
 ------------------------------------------------------------------------
 
-## RAP for analysis principles
+## RAP for general analysis principles
 
 The diagram below highlights what RAP means for us, and the varying levels at which it can be applied across all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice.
 
@@ -72,16 +72,16 @@ We recommend the following principles for this type of analysis. Analysts should
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
 -   Processing is done with code, where possible
--   Use of appropriate tools e.g., R, SQL, Python
+-   Use appropriate tools e.g., R, SQL, Python
 -   Documentation
 
 ![](../images/great.svg)
 
--   Peer code review
+-   Peer review of code
 
 ![](../images/best.svg)
 
--   'Clean' final code
+-   Clean final code
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -100,20 +100,20 @@ You can see an example case study of RAP principles being applied to this type o
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
 -   Processing is done with code, where possible
--   Use of appropriate tools e.g., R, SQL, Python
--   Automated high level checks
+-   Use appropriate tools e.g., R, SQL, Python
+-   Automated high-level checks
 -   Documentation
 
 ![](../images/great.svg)
 
 -   Recyclable code for future use
--   Peer code review
+-   Peer review of code
 -   Project specific automated sense checks
--   Version controlled final scripts
+-   Version controlled final code scripts
 
 ![](../images/best.svg)
 
--   'Clean' final code
+-   Clean final code
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -130,22 +130,22 @@ We recommend the following principles for this type of analysis. Analysts should
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
 -   Processing is done with code, where possible
--   Use of appropriate tools e.g., R, SQL, Python
--   Automated high level checks
+-   Use appropriate tools e.g., R, SQL, Python
+-   Automated high-level checks
 -   Documentation
 
 ![](../images/great.svg)
 
 -   Recyclable code for future use
--   Peer code review
+-   Peer review of code
 -   Project specific automated sense checks
--   Version controlled final scripts
+-   Version controlled final code scripts
 
 ![](../images/best.svg)
 -   Whole pipeline can be run from a single script or workflow
--   'Clean' final code
+-   Clean final code
 -   Automated reproducible reports
--   Code collaboratively developed using Git
+-   Collaboratively develop code using Git
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -162,12 +162,12 @@ We recommend the following principles for this type of analysis. Analysts should
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
 -   Processing is done with code, where possible
--   Use of appropriate tools e.g., R, SQL, Python
+-   Use appropriate tools e.g., R, SQL, Python
 -   Documentation
 
 ![](../images/great.svg)
 
--   Peer code review
+-   Peer review of code
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -184,22 +184,22 @@ We recommend the following principles for this type of analysis. Analysts should
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
 -   Processing is done with code, where possible
--   Use of appropriate tools e.g., R, SQL, Python
--   Automated high level checks
+-   Use appropriate tools e.g., R, SQL, Python
+-   Automated high-level checks
 -   Documentation
 
 ![](../images/great.svg)
 
 -   Recyclable code for future use
--   Peer code review
+-   Peer review of code
 -   Project specific automated sense checks
--   Version controlled final scripts
+-   Version controlled final code scripts
 
 ![](../images/best.svg)
 
 -   Whole pipeline can be run from a single script or workflow
--   'Clean' final code
--   Code collaboratively developed using Git
+-   Clean final code
+-   Collaboratively develop code using Git
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -216,20 +216,20 @@ We recommend the following principles for this type of analysis. Analysts should
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
 -   Processing is done with code, where possible
--   Use of appropriate tools e.g., R, SQL, Python
--   Automated high level checks
+-   Use appropriate tools e.g., R, SQL, Python
+-   Automated high-level checks
 -   Documentation
 
 ![](../images/great.svg)
 
 -   Recyclable code for future use
--   Peer code review
--   Version controlled final scripts
+-   Peer review of code
+-   Version controlled final code scripts
 
 ![](../images/best.svg)
 
--   'Clean' final code
--   Code collaboratively developed using Git
+-   Clean final code
+-   Collaboratively develop code using Git
 :::
 
 <!-- Use DfT checklist to recreate one here!!! -->
@@ -263,7 +263,7 @@ Within each of these principles are separate elements of RAP. Each of these is d
 Preparing data is our first core RAP principle, which contains the following elements:
 
 -   [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly)
--   [Sensible file and folder structure](#sensible-folder-and-file-structure)
+-   [Sensible folder and file structure](#sensible-folder-and-file-structure)
 
 Your team should store the internal raw data in the Databricks platform. This means that you can run code against a single source of data, reducing the risk of error. Legacy SQL servers will be decommissioned in 2026, by which point, all data will have been migrated into the Databricks Unity Catalog instead. 
 
@@ -290,7 +290,7 @@ Writing code is our second core RAP principle, and is made up of the following e
 -   [Clean final code](#clean-final-code)
 -   [Peer review of code](#peer-review-of-code)
 -   [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
--   [Automated high level checks](#automated-high-level-checks)
+-   [Automated high-level checks](#automated-high-level-checks)
 -   [Project specific automated sense checks](#project-specific-automated-sense-checks)
 -   [Automated reproducible reports](#automated-reproducible-reports)
 
@@ -388,7 +388,7 @@ Spreadsheets can incorporate several RAP-aligned practices:
 
 **Sensible folder and file structure**: Keep raw data, calculations, and outputs clearly separated and consistently organised.
 
-**Automated high level checks**: Include high-level checks such as totals, flags, or conditional formatting to catch errors early.
+**Automated high-level checks**: Include high-level checks such as totals, flags, or conditional formatting to catch errors early.
 
 **Documentation** : Use cell comments, notes and separate README files to explain the purpose, logic, and structure of the spreadsheet.
 
