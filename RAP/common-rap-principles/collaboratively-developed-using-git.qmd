@@ -1,4 +1,4 @@
-### Collaboratively develop code using Git {#collaboratively-developed-code-using-git}
+### Collaboratively develop code using Git {#collaboratively-develop-code-using-git}
 
 ------------------------------------------------------------------------
 

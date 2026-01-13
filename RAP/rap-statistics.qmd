@@ -22,7 +22,7 @@ We want to focus on the parts of the production process that we have ownership a
 
 In Official Statistics production we are using RAP as a framework for best practice when producing our published data files, as these are the foundations of our publications moving forward. Following this framework will help us to improve and standardise our current production processes and provide a clear 'pipeline' for analysts to follow.  To get started with RAP, we first need to be able to understand what it actually means in practice, and be able to [assess our own work against the principles of RAP](#what-is-expected). From there, we can work out what training is needed, if any, and where additional support can help teams to meet the baseline. 
 
-For other areas of analysis, we have the [RAP for analysis](../RAP/rap-for-analysis.html) guidance which covers how RAP can be applied to analysis work outside of Official Statistics production.
+For other areas of analysis, we have the [RAP for general analysis](../RAP/rap-analysis.html) guidance which covers how RAP can be applied to analysis work outside of Official Statistics production.
 
 Implementing RAP may involve combining the use of Databricks, R, and clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
 
@@ -168,14 +168,14 @@ Writing code is our second core RAP principle, and is made up of the following e
 
 * [Processing is done with code](#processing-is-done-with-code)
 * [Use appropriate tools](#use-appropriate-tools)
-* [Whole pipeline can be run from a single script or workflow](#whole-pipeline-can-be-run-from-single-script-or-workflow)
+* [Whole pipeline can be run from a single script or workflow](#whole-pipeline-can-be-run-from-a-single-script-or-workflow)
 * [Dataset production scripts](#dataset-production-scripts)
 * [Recyclable code for future use](#recyclable-code-for-future-use)
 * [Clean final code](#clean-final-code)
-* [Peer review of code](#peer-code-review)
+* [Peer review of code](#peer-review-of-code)
 * [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
 * [Automated high-level checks](#automated-high-level-checks)
-* [Publication specific automated QA](#publication-specific-automated-qa)
+* [Publication specific automated sense checks](#publicationproject-specific-automated-sense-checks)
 * [Automated reproducible reports](#automated-reproducible-reports)
 * [Publication specific automated summaries](#publication-specific-automated-summaries)
 

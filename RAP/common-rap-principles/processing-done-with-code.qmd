@@ -6,7 +6,7 @@
 
 **What does this mean?**
 
-All extraction, and processing of data should be done using code, avoiding any manual steps and moving away from a reliance on Excel, SPSS, and other manual processing. In order to carry out our jobs to the best of our ability it is imperative that we use the [appropriate tools](#appropriate-tools) for the work that we do.
+All extraction, and processing of data should be done using code, avoiding any manual steps and moving away from a reliance on Excel, SPSS, and other manual processing. In order to carry out our jobs to the best of our ability it is imperative that we use the [appropriate tools](#use-appropriate-tools) for the work that we do.
 
 Even steps such as copy and pasting data, or pointing and clicking, are fraught with danger, and these risks should be minimised by using code to document and execute these processes instead.
 
@@ -40,7 +40,7 @@ If you want to do your data processing in R, you can connect to Databricks using
 
 [Here is a video](https://vimeo.com/33727555){target="_blank" rel="noopener noreferrer"} of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at [applied data tidying in R, by RStudio](https://www.youtube.com/watch?v=1ELALQlO-yM){target="_blank" rel="noopener noreferrer"}.
 
-Using the `%>%` pipe in R can be incredibly powerful, and make your code much easier to follow, as well as more efficient. If you aren't yet familiar with this, have a look at [this article](https://seananderson.ca/2014/09/13/dplyr-intro/){target="_blank" rel="noopener noreferrer"} that provides a useful beginners guide to piping and the kinds of functions you can use it for. The possibilities stretch about as far as your imagination, and if you have a function or task you want to do within a pipe, googling 'how do I do X in dplyr r' will usually start to point you in the right direction, alternatively you can [contact us](mailto:statistics.development@education.gov.uk), and we'll be happy to help you figure out how to do what you need.
+Using the `%>%` pipe in R can be incredibly powerful, and make your code much easier to follow, as well as more efficient. If you aren't yet familiar with this, have a look at [this article](https://cran.stat.sfu.ca/web/packages/dplyr/vignettes/dplyr.html) that provides a useful beginners guide to piping and the kinds of functions you can use it for. The possibilities stretch about as far as your imagination, and if you have a function or task you want to do within a pipe, googling 'how do I do X in dplyr r' will usually start to point you in the right direction, alternatively you can [contact us](mailto:statistics.development@education.gov.uk), and we'll be happy to help you figure out how to do what you need.
 
 A quick example of how powerful this is is below. The pipe operator passes the outcome of each line of code onto the next, so you can complete multiple steps of data manipulation in one section of code instead of writing separate steps for each one. In this code, we:
 
@@ -64,6 +64,6 @@ processed_regional_data <- my_data %>%
   arrange(time_period, region_name)
 ```
 
-[Helpful new functions](https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da){target="_blank" rel="noopener noreferrer"} in the tidyverse packages can help you to easily transform data from wide to long format (see tip 2 in the linked article for this, as it is often required for tidy data), as well as providing you with tools to allow you quickly and efficiently change the structure of your variables.
+[Helpful new functions](https://www.statology.org/pivoting-to-insights-unlocking-the-power-of-pivot_longer-in-r/) in the tidyverse packages can help you to easily transform data from wide to long format, as well as providing you with tools to allow you quickly and efficiently change the structure of your variables.
 
-For further resources on learning R so that you're able to apply it to your everyday work, have a look at the [learning resources](../learning-development/learning-development.html) page.
+For further resources on learning R so that you're able to apply it to your everyday work, have a look at the [learning resources](../learning-development/learning-support.html) page.

@@ -9,7 +9,7 @@ format: html
 
 ---
 
-If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../rap/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
+If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../RAP/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
 
 ------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ Implementing RAP may involve combining the use of Databricks, R and using clear,
 
 ------------------------------------------------------------------------
 
-### Applying RAP principles proportionally
+### Applying RAP principles proportionally {#rap-proportional}
 
 ------------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ When deciding what RAP principles to apply, consider factors like who will use t
 
 For example, whilst you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
 
-Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP for Statistics page](RAP/rap-statistics.html) for more information).
+Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP for statistics page](../RAP/rap-statistics.html) for more information).
 
 ------------------------------------------------------------------------
 
@@ -283,13 +283,13 @@ Writing code is our second core RAP principle, and is made up of the following e
 
 -   [Processing is done with code](#processing-is-done-with-code)
 -   [Use appropriate tools](#use-appropriate-tools)
--   [Whole pipeline can be run from a single script or workflow](#whole-pipeline-run-script)
+-   [Whole pipeline can be run from a single script or workflow](#whole-pipeline-can-be-run-from-a-single-script-or-workflow)
 -   [Recyclable code for future use](#recyclable-code-for-future-use)
 -   [Clean final code](#clean-final-code)
 -   [Peer review of code](#peer-review-of-code)
 -   [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
 -   [Automated high-level checks](#automated-high-level-checks)
--   [Project specific automated sense checks](#project-specific-automated-sense-checks)
+-   [Project specific automated sense checks](#publicationproject-specific-automated-sense-checks)
 -   [Automated reproducible reports](#automated-reproducible-reports)
 
 ::: callout-tip

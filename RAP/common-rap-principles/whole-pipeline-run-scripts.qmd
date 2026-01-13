@@ -1,4 +1,3 @@
-
 ### Whole pipeline can be run from a single script or workflow
 
 ---
@@ -8,7 +7,7 @@
 **What does this mean?**
 
 The ultimate aim is to utilise a single script or workflow to document and run off everything for a publication or piece of analysis including the data files, any QA and any summary reports. This script or workflow should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script.
-All quality assurance for a file is also included in the single script that can be used to create a file from source data (see the [dataset production scripts section](#dataset-production-scripts))
+All quality assurance for a file is also included in the single script that can be used to create a file from source data (see the [dataset production scripts section for RAP for statistics.](#dataset-production-scripts))
 
 **Why do it?**
 

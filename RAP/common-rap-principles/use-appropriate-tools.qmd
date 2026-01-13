@@ -6,7 +6,7 @@
 
 **What does this mean?**
 
-Using the recommended tools on our [learning](../learning-development/learning-support.html) page ([SQL](../learning-development/sql.html), [R](../learning-development/r.html) and [Git](../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). 
+Using the recommended tools on our [learning](../learning-development/learning-support.html) page ([Databricks](../ADA/databricks_fundamentals.html), [R](../learning-development/r.html) and [Git](../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). 
 
 With the department moving to Databricks for data storage, you can now write your code directly within the Databricks platform (in any available language, including Spark SQL, R and Python). If you prefer to write code in RStudio, you can connect to Databricks using a [personal cluster with RStudio and ODBC / DBI ](../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 
 
@@ -27,6 +27,6 @@ There are many reasons why we have recommended the tools that we have, the recom
 
 **How to get started**
 
-Go to our [learning](../learning-development/learning-development.html) page to read more about the recommended tools for the jobs we do, as well as looking at the resources available there for how to [build capability](../learning-development/learning-support.html#general_resources) in them. Always feel free to contact us if you have any specific questions or would like help in understanding how to use those tools in your work.
+Go to our [learning](../learning-development/learning-support.html) page to read more about the recommended tools for the jobs we do, as well as looking at the resources available there for how to [build capability](../learning-development/learning-support.html#general_resources) in them. Always feel free to contact us if you have any specific questions or would like help in understanding how to use those tools in your work.
 
 By following [our guidance](#version-controlled-final-code-scripts) in saving versions of code in an Azure DevOps, we will then be able to mirror those repositories in a publicly available GitHub area.
