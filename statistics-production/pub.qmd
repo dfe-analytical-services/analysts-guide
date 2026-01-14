@@ -35,6 +35,8 @@ The following table outlines the key differences between publishing via EES and 
 If you are unsure which route to use for publication please contact the [HoP Office](mailto:Hop.STATISTICS@education.gov.uk).
 :::
 
+Further information on publishing statistics in DfE can be found via the [HOP HUB pages on Publishing](https://rsconnect/rsc/hop-guidance/publishing.html){target="_blank" rel="noopener noreferrer"}. The [HOP HUB](https://rsconnect/rsc/hop-guidance/){target="_blank" rel="noopener noreferrer"} is a resource maintained by the Head of Profession for Statistics office with up to date guidance and advice on statistical topics.
+
 ---
 
 ## EES
