@@ -5,33 +5,33 @@ format: html
 
 ------------------------------------------------------------------------
 
-<p class="text-muted">Case studies which illustrate how RAP principles have been applied in practice.</p>
+<p class="text-muted"> Case studies which illustrate how RAP principles have been applied in practice.</p>
 
----
-
+------------------------------------------------------------------------
 ## RAP case studies
 
 Each case study provides an overview of the project, the context and background, and how the RAP principles were implemented.
 
 These case studies serve as practical examples to help you understand how to apply RAP principles in your own work. They demonstrate the benefits of following these principles, such as improved data quality, enhanced reproducibility, and more efficient workflows. We would like to thank the RAP Champions Network for providing these case studies. 
 
-### Case Study 1: Function to group any variable in a data set
+::: {.callout-tip collapse="true"}
+## Case Study 1: Function to group any variable in a data set
 
-#### Analysis Type
+### Analysis Type
 
 Ad-hoc analysis, likely to be repeated e.g., different breakdowns
 
-#### Context and Background 
+### Context and Background 
 
 We collect data on the FE workforce. Each row of data is a person. We collect data on their characteristics, pay, subjects taught and roles. For our publication and ad-hoc analysis, we frequently need to know the number of staff split by various characteristics.
 
-#### Process and principles applied 
+### Process and principles applied 
 
 I created a function called “create grouped totals and rates”. This function groups by the inputs input. It creates totals at the provider level, LA level, regional level and national level. It allows staff to be summed by their headcount or the FTE. The function was QA-d at length to ensure that the output was correct. The function is now used to produce any total for the publication, as well as any totals that are needed for internal ad-hoc analysis.
 
 Some measures e.g. disability status, have a prefer not to say option. However, for some of these measures, we show percentages only for staff who have chosen to disclose. E.g. the percentage of staff who have answer “Yes”, “No” should sum to 100%. This function takes this into account. If a measure should include/not include the “prefer not to say” option in the percentages, the function is dynamic like this.
 
-#### Outcome/results 
+### Outcome/results 
 
 This function improved quality. We have QA-d the function and the raw data entering the function. This means that the output produced from the function for ad-hoc analysis only needs a smaller QA, since it has come from a repeatable process.
 
@@ -42,8 +42,96 @@ E.g. if I want to know the total number of staff in each role and each provider 
 ![](/images/rap-case-study-1.png){fig-alt="Screenshot of R code showing the use of the create_grouped_totals_and_rates function to create the workforce by provider type, role and gender."}
 
 It would create an output across all the geographies specified above. It would show the % of each staff by role and provider type, who have each gender.
+:::
 
-### Case Study 2: High Needs National Funding Formula 
+::: {.callout-tip collapse="true"}
+### Case study 2: UCAS cycle reporting 
+
+#### Analysis Type
+
+Internal regular reporting 
+
+#### Context and Background
+
+UCAS share data at regular intervals throughout the university application cycle (some of which is published and some of which is unpublished) which provides early information on the current state of the HE sector. Within DfE, this data needs to be analysed quickly once it arrives so that internal policy colleagues have an accurate understanding of the current picture, and can be prepared to respond to any issues that arise.
+
+#### Process and principles applied
+The team have developed a standard structure which is used across all timepoints which UCAS report on, with the relevant R code being stored as part of a team Azure DevOps repository for collaborative code development. Each timepoint in the UCAS application cycle has its own folder within the repo, and there are individual scripts which align to the standard structure (generally as follows)
+
+a.	Packages and filters – sets up library calls, global objects such as dates, recyclable functions and any required Databricks or SQL connections
+
+b.	Read in csv files or query Databricks/SQL – for data that UCAS publish, this is supplied to us as csv files (and stored in a standard location) which can be read into R as required. For more detailed unpublished data, this is uploaded to Databricks and queried using a SQL script
+
+c.	Calculations – any further manipulation or summarisation of the data from step 2, usually done with the recyclable functions created in step 1
+
+d.	Quarto output – sources steps 1-3 and produces summary visualisations, tables or narrative lines based on the outputs from step 3
+
+e.	Run all scripts used, e.g. when there are two timepoints with the exact same data structure and therefore the timepoint the data relates to is the only thing that is changed
+
+Each timepoint folder has its own section as part of the readme document in the repo, which details how it needs to be updated when it gets run, plus whether it’s based on published or unpublished data.
+
+![](/images/rap-case-study-ucas-b.png){fig-alt="A screenshot of example scripts for January and June deadline analysis, showing standard code structure."}
+
+RAP principles
+•	Source data acquired and stored sensibly – published UCAS data is stored in a standard location as csv files and unpublished data is uploaded to Databricks for secure access
+
+•	Sensible folder and file structure - each timepoint has its own folder within the Azure DevOps repo, following a consistent structure for scripts and documentation.
+
+![](/images/rap-case-study-ucas-a.png){fig-alt="A screenshot of Azure Devops folder with folders for individual timepoints."}
+
+•	Processing is done with code where possible – all data analysis and manipulation is carried out through R and SQL
+
+•	Use of appropriate tools e.g. R, SQL, Python – R is used for most of the analysis, with SQL being included for any Databricks queries
+
+•	Documentation – README documentation clarifies what scripts each of the folders in the repo includes and how to update
+
+•	Recyclable code for future use – common functions (such as summarisation and charting) are included in the first stage of the code, and are fairly flexible for use across timepoints
+
+•	Peer code review – code changes are committed to Azure DevOps and reviewed via pull requests
+
+•	Version controlled final scripts – scripts are stored in Azure DevOps for full version history
+
+•	Whole pipeline can be run from a single script or workflow – run all scripts included to source all scripts for a given timepoint
+
+•	Clean final code – scripts follow a standard structure with comments to facilitate understanding, functions used where possible
+
+•	Automated high level checks/Project specific automated sense checks/Automated reproducible reports – quarto reports produced for each individual timepoint with specific checks and summaries to align with policy interests
+
+•	Code collaboratively developed using Git – scripts are stored in Azure DevOps for full version history
+
+#### Outcome/results
+As a result of these changes, the team are able to share summary details about the key timepoints in the UCAS application cycle quickly, with human errors reduced. Policy feedback on html outputs has been very positive, and they have reflected that these have made it easier to self-serve.
+:::
+
+::: {.callout-tip collapse="true"}
+### Case Study 3: Forecasting changing policy ideas
+
+#### Analysis Type
+
+Ad hoc analysis (likely to be repeated)
+
+#### Context and Background
+
+Investigations into various options for maintenance loan, maintenance grant, and fee loans for higher education borrowers, with many requests coming at short notice with tight deadlines. This model is constantly being improved on to meet more of the RAP principles thanks to the work of many people both in the team and former colleagues. 
+
+#### Process and principles applied
+
+•	Collaborative development using Git and open-source repos (using DevOps to each tackle different requests simultaneously, all based off the same model).
+
+•	Recyclable code (code/model re-used for multiple model runs and adapted to make it appropriate for each model run, further recyclable by using functions for repeated processes)
+
+•	Automated summaries (output xlsx file generated automatically at the end of a model run that collates the key outputs from the model run and those from a designated comparison model run, then calculates the changes)
+
+•	Peer review within the team (standardised QA processes to make QA checks consistent and easy to follow, along with ensuring someone that understands the model and its outputs can give a professional opinion on whether the outputs are appropriate and fit for purpose)
+
+•	Consistent file/folder structure (established folder naming system to clearly identify model runs, store them in chronological order, and to easily gather information such as what approved version of the model the model run is based off)
+
+#### Outcome/results
+Outputs from model runs are easier to generate and compare, allowing for more consistent QA and more reliable outputs. Further work also allowed for faster turnaround times for requests resulting in positive feedback from policy colleagues.
+:::
+
+::: {.callout-tip collapse="true"}
+### Case Study 4: High Needs National Funding Formula 
 
 #### Analysis Type
 
@@ -99,4 +187,4 @@ Each year, the High Needs NFF is used to allocate funding for children with spec
 •	Automated QA checks is a huge time saver and gives us extra security that there are no mistakes.
 
 •	The Schools National Funding Formula undergoes a similar process – but the model is built in R instead. One of the reasons for this is that the Schools NFF calculations are done at school level rather than LA level, so there is a lot more data. If the High Needs NFF were to change to allocate at school level instead, then this would be an appropriate time to replatform the model to R.
-
+:::
