@@ -205,7 +205,7 @@ We recommend the following principles for this type of analysis. Analysts should
 ::: {.callout-tip collapse="true"}
 ## Data collection and preparation
 
-The collection of, and routine checking of data as it is coming into the department is an area that RAP can be applied to. However, the levels of control in this area vary wildly from team to team. If you would like advice and help to automate any particular processes, feel free to [contact the Statistics Development Team](mailto:statistics.development@education.gov.uk).
+The collection and routine checking of data as it is coming into the department is an area that RAP can be applied to. However, the levels of control in this area vary drastically from team to team. If you would like advice and help to automate any particular processes, feel free to [contact the Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
@@ -228,6 +228,7 @@ We recommend the following principles for this type of analysis. Analysts should
 
 ![](../images/best.svg)
 
+-   Whole pipeline can be run from a single script or workflow
 -   Clean final code
 -   Collaboratively develop code using Git
 :::

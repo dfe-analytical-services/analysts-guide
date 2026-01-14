@@ -8,7 +8,7 @@
 
 All extraction, and processing of data should be done using code, avoiding any manual steps and moving away from a reliance on Excel, SPSS, and other manual processing. In order to carry out our jobs to the best of our ability it is imperative that we use the [appropriate tools](#use-appropriate-tools) for the work that we do.
 
-Even steps such as copy and pasting data, or pointing and clicking, are fraught with danger, and these risks should be minimised by using code to document and execute these processes instead.
+Even steps such as copy and pasting data, or pointing and clicking can introduce risks of manual error, and these risks should be minimised by using code to document and execute these processes instead.
 
 **Why do it?**
 
