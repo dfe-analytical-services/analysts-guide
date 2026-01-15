@@ -73,31 +73,31 @@ Each timepoint folder has its own section as part of the readme document in the 
 ![](/images/rap-case-study-ucas-b.png){fig-alt="A screenshot of example scripts for January and June deadline analysis, showing standard code structure."}
 
 RAP principles
-•	Source data acquired and stored sensibly – published UCAS data is stored in a standard location as csv files and unpublished data is uploaded to Databricks for secure access
+-	Source data acquired and stored sensibly – published UCAS data is stored in a standard location as csv files and unpublished data is uploaded to Databricks for secure access
 
-•	Sensible folder and file structure - each timepoint has its own folder within the Azure DevOps repo, following a consistent structure for scripts and documentation.
+-	Sensible folder and file structure - each timepoint has its own folder within the Azure DevOps repo, following a consistent structure for scripts and documentation.
 
 ![](/images/rap-case-study-ucas-a.png){fig-alt="A screenshot of Azure Devops folder with folders for individual timepoints."}
 
-•	Processing is done with code where possible – all data analysis and manipulation is carried out through R and SQL
+-	Processing is done with code where possible – all data analysis and manipulation is carried out through R and SQL
 
-•	Use of appropriate tools e.g. R, SQL, Python – R is used for most of the analysis, with SQL being included for any Databricks queries
+-	Use of appropriate tools e.g. R, SQL, Python – R is used for most of the analysis, with SQL being included for any Databricks queries
 
-•	Documentation – README documentation clarifies what scripts each of the folders in the repo includes and how to update
+-   Documentation – README documentation clarifies what scripts each of the folders in the repo includes and how to update
 
-•	Recyclable code for future use – common functions (such as summarisation and charting) are included in the first stage of the code, and are fairly flexible for use across timepoints
+-	Recyclable code for future use – common functions (such as summarisation and charting) are included in the first stage of the code, and are fairly flexible for use across timepoints
 
-•	Peer code review – code changes are committed to Azure DevOps and reviewed via pull requests
+-	Peer code review – code changes are committed to Azure DevOps and reviewed via pull requests
 
-•	Version controlled final scripts – scripts are stored in Azure DevOps for full version history
+-	Version controlled final scripts – scripts are stored in Azure DevOps for full version history
 
-•	Whole pipeline can be run from a single script or workflow – run all scripts included to source all scripts for a given timepoint
+-	Whole pipeline can be run from a single script or workflow – run all scripts included to source all scripts for a given timepoint
 
-•	Clean final code – scripts follow a standard structure with comments to facilitate understanding, functions used where possible
+-	Clean final code – scripts follow a standard structure with comments to facilitate understanding, functions used where possible
 
-•	Automated high level checks/Project specific automated sense checks/Automated reproducible reports – quarto reports produced for each individual timepoint with specific checks and summaries to align with policy interests
+-	Automated high level checks/Project specific automated sense checks/Automated reproducible reports – quarto reports produced for each individual timepoint with specific checks and summaries to align with policy interests
 
-•	Code collaboratively developed using Git – scripts are stored in Azure DevOps for full version history
+-	Code collaboratively developed using Git – scripts are stored in Azure DevOps for full version history
 
 #### Outcome/results
 As a result of these changes, the team are able to share summary details about the key timepoints in the UCAS application cycle quickly, with human errors reduced. Policy feedback on html outputs has been very positive, and they have reflected that these have made it easier to self-serve.
@@ -116,15 +116,15 @@ Investigations into various options for maintenance loan, maintenance grant, and
 
 #### Process and principles applied
 
-•	Collaborative development using Git and open-source repos (using DevOps to each tackle different requests simultaneously, all based off the same model).
+-	Collaborative development using Git and open-source repos (using DevOps to each tackle different requests simultaneously, all based off the same model).
 
-•	Recyclable code (code/model re-used for multiple model runs and adapted to make it appropriate for each model run, further recyclable by using functions for repeated processes)
+-	Recyclable code (code/model re-used for multiple model runs and adapted to make it appropriate for each model run, further recyclable by using functions for repeated processes)
 
-•	Automated summaries (output xlsx file generated automatically at the end of a model run that collates the key outputs from the model run and those from a designated comparison model run, then calculates the changes)
+-	Automated summaries (output xlsx file generated automatically at the end of a model run that collates the key outputs from the model run and those from a designated comparison model run, then calculates the changes)
 
-•	Peer review within the team (standardised QA processes to make QA checks consistent and easy to follow, along with ensuring someone that understands the model and its outputs can give a professional opinion on whether the outputs are appropriate and fit for purpose)
+-	Peer review within the team (standardised QA processes to make QA checks consistent and easy to follow, along with ensuring someone that understands the model and its outputs can give a professional opinion on whether the outputs are appropriate and fit for purpose)
 
-•	Consistent file/folder structure (established folder naming system to clearly identify model runs, store them in chronological order, and to easily gather information such as what approved version of the model the model run is based off)
+-	Consistent file/folder structure (established folder naming system to clearly identify model runs, store them in chronological order, and to easily gather information such as what approved version of the model the model run is based off)
 
 #### Outcome/results
 Outputs from model runs are easier to generate and compare, allowing for more consistent QA and more reliable outputs. Further work also allowed for faster turnaround times for requests resulting in positive feedback from policy colleagues.
@@ -167,7 +167,7 @@ A reproducible pipeline that reliably produced the same output. Better confidenc
 :::
 
 ::: {.callout-tip collapse="true"}
-### Case Study 5: High Needs National Funding Formula 
+### Case Study 5: High Needs National Funding Formula (HNNFF)
 
 #### Analysis Type
 Spreadsheet based analysis, analysis repeated on different datasets
@@ -179,47 +179,48 @@ Each year, the High Needs NFF is used to allocate funding for children with spec
 
 #### Process and principles applied 
 
-**Preparing data**
+##### Preparing data
 
-•	Data is either sourced from published files, or requested from other teams in DfE.
+-	Data is either sourced from published files, or requested from other teams in DfE.
 
-•	Data is stored in a suitable file system. We have a different folder for each dataset, where we store the data, and also carry out some sense checks before inputting the data into the model.
+-	Data is stored in a suitable file system. We have a different folder for each dataset, where we store the data, and also carry out some sense checks before inputting the data into the model.
 
-•	A data log is kept up to date to keep track of what has been sourced and what is still to be updated.
+-	A data log is kept up to date to keep track of what has been sourced and what is still to be updated.
 
-•	Data updates are done one at a time, so that the impact of each data update can be properly assessed.
+-	Data updates are done one at a time, so that the impact of each data update can be properly assessed.
 
-**Writing code** 
+##### Writing code
 
-•	The publication includes a step-by-step of the calculation, so using Excel allows us to very clearly set out each step of the process.
+-	The publication includes a step-by-step of the calculation, so using Excel allows us to very clearly set out each step of the process.
 
-•	Within the model, every dataset is referenced using links to where the data is stored or where it is sourced from.
+-	Within the model, every dataset is referenced using links to where the data is stored or where it is sourced from.
 
-•	The model is dual built by a third party (an analyst outside of our team who has no prior experience of High Needs allocations). They follow our technical note, source the data themselves, and reproduce our outputs, which we make sure reconcile to at least 5 decimal places at all stages of the calculation. This dual build not only QAs our outputs, but QAs our technical note as well.
+-	The model is dual built by a third party (an analyst outside of our team who has no prior experience of High Needs allocations). They follow our technical note, source the data themselves, and reproduce our outputs, which we make sure reconcile to at least 5 decimal places at all stages of the calculation. This dual build not only QAs our outputs, but QAs our technical note as well.
 
-•	Automated checks are built in to make sure that totals are as we would expect, as shown below, and other checks ensure there are no zeros in the data.
+-	Automated checks are built in to make sure that totals are as we would expect, as shown below, and other checks ensure there are no zeros in the data.
 
 ![](/images/rap-case-study-hnnff-b.png){fig-alt="A screenshot of the QA dashboard, which checks that allocations match funding quantum."}
 
-•	We have thorough documentation, including a technical note which is published, a data specification, and a user guide.
+-	We have thorough documentation, including a technical note which is published, a data specification, and a user guide.
 
-•	There is a complete model map as shown below, which details how each sheet of the Excel model links together.
+-	There is a complete model map as shown below, which details how each sheet of the Excel model links together.
 
 ![](/images/rap-case-study-hnnff-c.png){fig-alt="A screenshot of the model map which helps to demonstrate how each Excel sheet feeds into the next."}
 
-**Version Control** 
+##### Version Control
 
-•	A weekly plan is kept up to date with our progress, to help us in tracking back any errors.
+-	A weekly plan is kept up to date with our progress, to help us in tracking back any errors.
 
 #### Outcome/results 
 
-•	The clear file structure means that updates can be carried out quickly and smoothly, easily passed between different team members depending on who is available.
+-	The clear file structure means that updates can be carried out quickly and smoothly, easily passed between different team members depending on who is available.
 
-•	The version control is thorough yet concise, so easy to follow if we need to roll back to an earlier version.
+-	The version control is thorough yet concise, so easy to follow if we need to roll back to an earlier version.
 
-•	The fact that the model is successfully dual built means that the model is reproducible. This is due to our extensive documentation, as well as a great deal of planning to ensure the model is dual built in time.
+-	The fact that the model is successfully dual built means that the model is reproducible. This is due to our extensive documentation, as well as a great deal of planning to ensure the model is dual built in time.
 
-•	Automated QA checks is a huge time saver and gives us extra security that there are no mistakes.
+-	Automated QA checks is a huge time saver and gives us extra security that there are no mistakes.
 
-•	The Schools National Funding Formula undergoes a similar process – but the model is built in R instead. One of the reasons for this is that the Schools NFF calculations are done at school level rather than LA level, so there is a lot more data. If the High Needs NFF were to change to allocate at school level instead, then this would be an appropriate time to replatform the model to R.
+-	The Schools National Funding Formula undergoes a similar process – but the model is built in R instead. One of the reasons for this is that the Schools NFF calculations are done at school level rather than LA level, so there is a lot more data. If the High Needs NFF were to change to allocate at school level instead, then this would be an appropriate time to replatform the model to R.
+
 :::

@@ -123,6 +123,8 @@ Recurring analysis produced within the department to support ongoing operational
 
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
+You can see an example case study of RAP principles being applied to this type of analysis on the [RAP case studies](../RAP/rap-case-studies.html) page.
+
 ### Recommended principles
 
 ![](../images/good.svg)
@@ -154,6 +156,8 @@ We recommend the following principles for this type of analysis. Analysts should
 Analysis which must be quickly conducted and is often not pre-planned, aimed at delivering timely insights to support fast decision making.
 
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
+
+You can see an example case study of RAP principles being applied to this type of analysis on the [RAP case studies](../RAP/rap-case-studies.html) page.
 
 ### Recommended principles
 
