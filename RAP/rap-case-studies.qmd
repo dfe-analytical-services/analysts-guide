@@ -15,23 +15,23 @@ Each case study provides an overview of the project, the context and background,
 These case studies serve as practical examples to help you understand how to apply RAP principles in your own work. They demonstrate the benefits of following these principles, such as improved data quality, enhanced reproducibility, and more efficient workflows. We would like to thank the RAP Champions Network for providing these case studies. 
 
 ::: {.callout-tip collapse="true"}
-## Case Study 1: Function to group any variable in a data set
+### Case Study 1: Function to group any variable in a data set
 
-### Analysis Type
+#### Analysis Type
 
 Ad-hoc analysis, likely to be repeated e.g., different breakdowns
 
-### Context and Background 
+#### Context and Background 
 
 We collect data on the FE workforce. Each row of data is a person. We collect data on their characteristics, pay, subjects taught and roles. For our publication and ad-hoc analysis, we frequently need to know the number of staff split by various characteristics.
 
-### Process and principles applied 
+#### Process and principles applied 
 
 I created a function called “create grouped totals and rates”. This function groups by the inputs input. It creates totals at the provider level, LA level, regional level and national level. It allows staff to be summed by their headcount or the FTE. The function was QA-d at length to ensure that the output was correct. The function is now used to produce any total for the publication, as well as any totals that are needed for internal ad-hoc analysis.
 
 Some measures e.g. disability status, have a prefer not to say option. However, for some of these measures, we show percentages only for staff who have chosen to disclose. E.g. the percentage of staff who have answer “Yes”, “No” should sum to 100%. This function takes this into account. If a measure should include/not include the “prefer not to say” option in the percentages, the function is dynamic like this.
 
-### Outcome/results 
+#### Outcome/results 
 
 This function improved quality. We have QA-d the function and the raw data entering the function. This means that the output produced from the function for ad-hoc analysis only needs a smaller QA, since it has come from a repeatable process.
 
@@ -131,10 +131,44 @@ Outputs from model runs are easier to generate and compare, allowing for more co
 :::
 
 ::: {.callout-tip collapse="true"}
-### Case Study 4: High Needs National Funding Formula 
+### Case Study 4: Good Level of Development (GLD) model 
 
 #### Analysis Type
+Analysis at pace
 
+#### Context and Background
+As part of the Best Start in Life strategy, the government set a target for 75% of children by 2028 to meet a ‘good level of development’ (GLD) in the Early Years Foundation Stage Profile (EYFSP) assessment in Reception. The task was to develop a statistical model that would estimate a school’s ‘contextual GLD score’ (i.e. the proportion of children meeting a GLD with cohort characteristics taken into account). The estimates from this model were included in data reports that were provided to schools and responsible bodies in Autumn term 2025.
+
+#### Process and principles applied
+a.	The whole analysis pipeline was coded in R, with processing and data wrangling carried out primarily with tidyverse packages. [Processing is done with code where possible / Use of appropriate tools e.g. R, SQL, Python]
+
+b.	The team coded collaboratively using Git / Azure DevOps. The team developed a protocol for collaborative coding that set out a system of branching, pull requests, and peer review. [Version controlled final scripts / Code collaboratively developed using Git / Peer code review] 
+
+![](/images/rap-case-study-gld-a.png){fig-alt="A screenshot of the collaborative coding protocol from the project README."}
+
+c.	There were two scripts in the pipeline: one for data preparation and the other for the modelling. We set up a config.yml (YAML file) to allow users to change parameters in a single place. We also included a README with instructions for running the pipeline, information about the files and repository structure, and the protocol for collaborative coding. [Sensible folder and file structure]
+
+![](/images/rap-case-study-gld-b.png){fig-alt="A screenshot of the config file that allows the user to change pipeline parameters in one place."}
+
+d.	Data was loaded from source for reproducibility – from an internal SQL database, Explore Education Statistics (EES), and Get Information About Schools (GIAS). These datasets were then processed, combined, and aggregated to school level. [Source data is acquired and sourced sensibly]
+
+e.	We used a linear regression model to examine the relationship between Reception cohort characteristics (e.g. % eligible for free school meals, % special educational needs) and the percentage of the cohort meeting a GLD. We used a model selection approach (using Akaike’s Information Criterion, AIC) to refine predictors to be included in the final model. The final model was used to make predictions for the ‘contextual GLD’ of each school, which was saved as an output to a SQL database.
+
+f.	We included automated checks (written in code) within the scripts to ensure that the code was working as expected. With more time we would have refactored the code into functions and written unit tests. [Project specific automated sense checks]
+
+g.	The code was written to be readable and easy to navigate. For example, we used a consistent style (e.g. spacing, descriptive naming, snake case style, lines limited to 80 characters) and tidyverse packages. [‘Clean’ final code]
+
+h.	‘Contextual GLD’ scores were loaded into another pipeline and included alongside other measures in data reports for schools and responsible bodies. This pipeline used RMarkdown to automate the production of the reports for each individual school / responsible body [Automated reproducible reports]
+
+i.	The first reports (which used EYFSP data up to 2023/24) were sent to schools and responsible bodies in September 2025. As a result of the logical file structure and clear documentation, team members that had not developed the original pipeline were able to quickly update and QA the model with 2024/25 data (received in October) and send updated reports to schools and responsible bodies by the end of November (~5-week turnaround).  
+
+#### Outcome/results
+A reproducible pipeline that reliably produced the same output. Better confidence in the quality and reliability of the outputs. An analysis pipeline that could be quickly understood and adapted by new users.
+
+::: {.callout-tip collapse="true"}
+### Case Study 5: High Needs National Funding Formula 
+
+#### Analysis Type
 Spreadsheet based analysis, analysis repeated on different datasets
 
 #### Context and Background 
