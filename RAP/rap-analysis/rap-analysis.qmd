@@ -42,6 +42,21 @@ Expectations for statistics production are clearer because these outputs are pub
 
 ------------------------------------------------------------------------
 
+## Core principles {#core-principles}
+
+
+RAP has three core principles:
+
+[Preparing data](../rap-analysis/rap-analysis-preparing-data.qmd): Data sources for a publication are stored in the same database
+
+[Writing code](../rap-analysis/rap-analysis-writing-code.qmd): Underlying data files are produced using code, with no manual steps
+
+[Version control](../rap-analysis/rap-analysis-version-control.qmd): Files and scripts should be appropriately version controlled
+
+Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst.
+
+------------------------------------------------------------------------
+
 ## RAP for general analysis principles
 
 The diagram below highlights what RAP means for us, and the varying levels at which it can be applied across all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice.
@@ -67,7 +82,7 @@ We recommend the following principles for this type of analysis. Analysts should
 
 ### Recommended principles
 
-![](../images/good.svg)
+![](../../images/good.svg)
 
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
@@ -75,11 +90,11 @@ We recommend the following principles for this type of analysis. Analysts should
 -   Use appropriate tools e.g., R, SQL, Python
 -   Documentation
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 -   Peer review of code
 
-![](../images/best.svg)
+![](../../images/best.svg)
 
 -   Clean final code
 :::
@@ -91,11 +106,11 @@ Analysis that is performed outside of regular reporting processes, often to answ
 
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
-You can see an example case study of RAP principles being applied to this type of analysis on the [RAP case studies](../RAP/rap-case-studies.html) page.
+You can see an example case study of RAP principles being applied to this type of analysis on the [RAP case studies](../../RAP/rap-case-studies.qmd) page.
 
 ### Recommended principles
 
-![](../images/good.svg)
+![](../../images/good.svg)
 
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
@@ -104,14 +119,14 @@ You can see an example case study of RAP principles being applied to this type o
 -   Automated high-level checks
 -   Documentation
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 -   Recyclable code for future use
 -   Peer review of code
 -   Project specific automated sense checks
 -   Version controlled final code scripts
 
-![](../images/best.svg)
+![](../../images/best.svg)
 
 -   Clean final code
 :::
@@ -123,11 +138,11 @@ Recurring analysis produced within the department to support ongoing operational
 
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
-You can see an example case study of RAP principles being applied to this type of analysis on the [RAP case studies](../RAP/rap-case-studies.html) page.
+You can see an example case study of RAP principles being applied to this type of analysis on the [RAP case studies](../../RAP/rap-case-studies.qmd) page.
 
 ### Recommended principles
 
-![](../images/good.svg)
+![](../../images/good.svg)
 
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
@@ -136,14 +151,14 @@ You can see an example case study of RAP principles being applied to this type o
 -   Automated high-level checks
 -   Documentation
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 -   Recyclable code for future use
 -   Peer review of code
 -   Project specific automated sense checks
 -   Version controlled final code scripts
 
-![](../images/best.svg)
+![](../../images/best.svg)
 -   Whole pipeline can be run from a single script or workflow
 -   Clean final code
 -   Automated reproducible reports
@@ -157,11 +172,11 @@ Analysis which must be quickly conducted and is often not pre-planned, aimed at 
 
 We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.
 
-You can see an example case study of RAP principles being applied to this type of analysis on the [RAP case studies](../RAP/rap-case-studies.html) page.
+You can see an example case study of RAP principles being applied to this type of analysis on the [RAP case studies](../../RAP/rap-case-studies.html) page.
 
 ### Recommended principles
 
-![](../images/good.svg)
+![](../../images/good.svg)
 
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
@@ -169,7 +184,7 @@ You can see an example case study of RAP principles being applied to this type o
 -   Use appropriate tools e.g., R, SQL, Python
 -   Documentation
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 -   Peer review of code
 :::
@@ -183,7 +198,7 @@ We recommend the following principles for this type of analysis. Analysts should
 
 ### Recommended principles
 
-![](../images/good.svg)
+![](../../images/good.svg)
 
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
@@ -192,14 +207,14 @@ We recommend the following principles for this type of analysis. Analysts should
 -   Automated high-level checks
 -   Documentation
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 -   Recyclable code for future use
 -   Peer review of code
 -   Project specific automated sense checks
 -   Version controlled final code scripts
 
-![](../images/best.svg)
+![](../../images/best.svg)
 
 -   Whole pipeline can be run from a single script or workflow
 -   Clean final code
@@ -215,7 +230,7 @@ We recommend the following principles for this type of analysis. Analysts should
 
 ### Recommended principles
 
-![](../images/good.svg)
+![](../../images/good.svg)
 
 -   Source data is acquired and stored sensibly
 -   Sensible folder and file structure
@@ -224,13 +239,13 @@ We recommend the following principles for this type of analysis. Analysts should
 -   Automated high-level checks
 -   Documentation
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 -   Recyclable code for future use
 -   Peer review of code
 -   Version controlled final code scripts
 
-![](../images/best.svg)
+![](../../images/best.svg)
 
 -   Whole pipeline can be run from a single script or workflow
 -   Clean final code
@@ -244,144 +259,11 @@ We recommend the following principles for this type of analysis. Analysts should
 ## How does RAP fit into ADA / Databricks
 
 
-Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the [ADA guidance on statistics publications](../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your work.
+Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the [ADA guidance on statistics publications](../../ADA/ada.html#what-ada-means-for-statistics-publications) to see how migrating to ADA and Databricks will affect your work.
+
 
 ------------------------------------------------------------------------
 
-## Core principles {#core-principles}
-
-
-RAP has three core principles:
-
-[Preparing data](#preparing-data): Data sources for a publication are stored in the same database
-
-[Writing code](#writing-code): Underlying data files are produced using code, with no manual steps
-
-[Version control](#version-control): Files and scripts should be appropriately version controlled
-
-Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst.
-
-------------------------------------------------------------------------
-
-## Preparing data {#preparing-data}
-
-Preparing data is our first core RAP principle, which contains the following elements:
-
--   [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly)
--   [Sensible folder and file structure](#sensible-folder-and-file-structure)
-
-Your team should store the internal raw data in the Databricks platform. This means that you can run code against a single source of data, reducing the risk of error. Legacy SQL servers will be decommissioned in 2026, by which point, all data will have been migrated into the Databricks Unity Catalog instead. 
-
-Where external data is used, the process of acquiring and storing the data should be well documented. The data should be stored appropriately in areas with the correct levels of security.
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/source-data-acquired-sensibly.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/sensible-folder-and-file-structure.qmd >}}
-
-------------------------------------------------------------------------
-
-## Writing code {#writing-code}
-
-Writing code is our second core RAP principle, and is made up of the following elements:
-
--   [Processing is done with code](#processing-is-done-with-code)
--   [Use appropriate tools](#use-appropriate-tools)
--   [Whole pipeline can be run from a single script or workflow](#whole-pipeline-can-be-run-from-a-single-script-or-workflow)
--   [Recyclable code for future use](#recyclable-code-for-future-use)
--   [Clean final code](#clean-final-code)
--   [Peer review of code](#peer-review-of-code)
--   [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
--   [Automated high-level checks](#automated-high-level-checks)
--   [Project specific automated sense checks](#publicationproject-specific-automated-sense-checks)
--   [Automated reproducible reports](#automated-reproducible-reports)
-
-::: callout-tip
-The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html).
-:::
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/processing-done-with-code.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/use-appropriate-tools.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/whole-pipeline-run-scripts.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/recyclable-code-for-future-use.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/clean-final-code.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/peer-code-review.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/peer-code-review-outside-team.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/automated-high-level-checks.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/publication-project-specific-automated-sense-checks.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/automated-reproducible-reports.qmd >}}
-
-------------------------------------------------------------------------
-
-## Version control {#version-control}
-
-Version control is our third core RAP principle, and is made up of the following elements:
-
--   [Documentation](#documentation)
--   [Version controlled final code scripts](#version-controlled-final-code-scripts)
--   [Collaboratively develop code using Git](#collaboratively-develop-code-using-git)
-
-Version control is just a way to track changes to files. Using proper version control can avoid lots of potential problems, including running old scripts by accident, losing files, or ending up with a folder full of documents with suffixes like "final_final_FINAL". It also makes it much easier for new people to pick up your processes.
-
-*When you assume you make an 'ass' out of 'u' and 'me'*. Everyone knows this saying, yet few of us heed its warning.
-
-The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.
-
-As we work with code to process our data more and more, we can begin to utilise version control software to make this process much easier, allowing simultaneous collaboration on files.
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/documentation.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/version-controlled-final-scripts.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/collaboratively-developed-using-git.qmd >}}
-
-------------------------------------------------------------------------
-
-## Integrating RAP principles into spreadsheets
-
-In some cases, spreadsheet tools like Microsoft Excel are still used for some types of analysis, particularly ad hoc, exploratory, or early-stage work. While the long-term aim is to move towards fully  (RAP) processes using code, this section outlines how RAP principles can be applied to spreadsheet work to improve quality, transparency, and maintainability, even before moving fully into code.
-
-You can see an example case study of RAP principles being applied to spreadsheet based analysis on the [RAP case studies](../RAP/rap-case-studies.html) page.
-
----
 
 ### RAP Principles adaptable to spreadsheets
 

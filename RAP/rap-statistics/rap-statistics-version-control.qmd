@@ -1,0 +1,85 @@
+
+## Version control
+
+Version control is our third core RAP principle, and is made up of the following elements:
+
+* [Documentation](#documentation)
+* [Version controlled final code scripts](#version-controlled-final-code-scripts)
+* [Use open source repositories](#use-open-source-repositories)
+* [Collaboratively develop code using Git](#collaboratively-develop-code-using-git)
+
+Version control is just a way to track changes to files. Using proper version control can avoid lots of potential problems, including running old scripts by accident, losing files, or ending up with a folder full of documents with suffixes like "final_final_FINAL". It also makes it much easier for new people to pick up your processes. 
+
+_When you assume you make an 'ass' out of 'u' and 'me'_. Everyone knows this saying, yet few of us heed its warning.
+
+The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.
+
+As we work with code to process our data more and more, we can begin to utilise version control software to make this process much easier, allowing simultaneous collaboration on files.
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/documentation.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/version-controlled-final-scripts.qmd >}}
+
+------------------------------------------------------------------------
+
+
+### Use open source repositories
+
+---
+
+![](../../images/best.svg)
+
+**What does this mean?**
+
+Saving or cloning your work into a repository that is visible to the public. We currently have brilliant examples of this in our [DfE analytical services GitHub area](https://github.com/dfe-analytical-services), in which all of the code used to create public dashboards is publicly available. 
+
+For statistics publications we expect teams to be able to mirror their proccess code on GitHub after publication, which will help open up their code for other analysts to learn from.
+
+We are currently working on ways to mirror private repos (i.e. AzureDevOps) to public repos on publication of your data. If you are interested in this please contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
+
+**Why do it?**
+
+It's a key part of the [technology code of practice](https://www.gov.uk/government/publications/technology-code-of-practice/technology-code-of-practice#be-open-and-use-open-source){target="_blank" rel="noopener noreferrer"} as an agreed standard for [digital services across government](https://www.gov.uk/guidance/be-open-and-use-open-source){target="_blank" rel="noopener noreferrer"}.
+
+**How to get started?**
+
+Contact us to get a repository set up in Azure DevOps, to set up a mirroring process to GitHub or to set up a repository on our dfe-analytical-services area on GitHub.
+
+You should consider the following principles making an Official Statistics production repository public (some examples are R specific though can be applied to other languages):
+
+- Follow the guidance on [writing a readme file](#writing-a-readme-file), and add context in about what Official/National statistics are
+- Ensure no data (either input or output) is included in the repository
+- Have a clear and organised folder structure (such as having R scripts in an 'R' folder)
+- Check your code is styled according the [tidyverse styling](#clean-final-code)
+- Use [renv](https://rstudio.github.io/renv/articles/renv.html){target="_blank" rel="noopener noreferrer"} for package management
+- Use an [R project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects){target="_blank" rel="noopener noreferrer"}
+
+When naming your publication's repository you should use the publication name fully written out, in lower case, and with dashes for spaces – ‘graduate-labour-market-statistics’. 
+
+A single repository should be used for all releases of your publication, there's no need to have multiple as all the history is saved within previous commits. You can make use of [tagging releases in Git](../learning-development/git.html#Tagging_release_versions) to help differentiate between each cycle.
+
+---
+
+#### Avoid revealing sensitive information
+
+---
+
+Here are some general best practice tips:
+
+- Using .gitignore to ignore files and folders to prevent committing anything sensitive
+- Never committing outputs unless they’ve been checked over, even aggregates. We suggest only outputting to an output folder which is in the .gitignore file, to ensure this doesn’t happen by mistake
+- Keeping datasets and secrets (e.g. API keys) outside the repository as much as possible, make use of secure variables
+- Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the Git history and start the public repo without it
+- You can [remove a file from the entire commit history](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) if you did commit anything sensitive, although you still need to follow the usual procedures if this was a data breach
+
+You can find out more in the Duck Book's [guidance on using Git](https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories). 
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/collaboratively-developed-using-git.qmd >}}
+
+------------------------------------------------------------------------

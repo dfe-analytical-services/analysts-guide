@@ -2,7 +2,7 @@
 
 ---
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 ::: callout-note
 'Testing by a second analyst' is part of the [DfE Mandatory QA checklist](https://educationgovuk.sharepoint.com/:w:/r/sites/sarpi/g/_layouts/15/Doc.aspx?sourcedoc=%7BEE1AF5FD-C4DA-4191-8E5E-285196D8237E%7D&file=mandatory_checklist.docx&action=default&mobileredirect=true).

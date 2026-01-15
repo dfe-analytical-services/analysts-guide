@@ -7,7 +7,7 @@ title: "RAP for statistics"
 
 ---
 
-If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../rap/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
+If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../../rap/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
 
 ---
 
@@ -18,13 +18,13 @@ If you're unfamiliar with RAP, or want a refresher on what RAP is and why it mat
 
 We want to focus on the parts of the production process that we have ownership and control over – so for statistics production we are focusing on the process from data sources to publishable data files. This is the part of the process where RAP can currently add the most value - automating the production and quality assurance of our outputs currently takes up huge amount of analytical resource, which could be better spent providing insight and other value adding activity. 
 
-![](../images/RAP-Scope-Arrow.png)
+![](../../images/RAP-Scope-Arrow.png)
 
 In Official Statistics production we are using RAP as a framework for best practice when producing our published data files, as these are the foundations of our publications moving forward. Following this framework will help us to improve and standardise our current production processes and provide a clear 'pipeline' for analysts to follow.  To get started with RAP, we first need to be able to understand what it actually means in practice, and be able to [assess our own work against the principles of RAP](#what-is-expected). From there, we can work out what training is needed, if any, and where additional support can help teams to meet the baseline. 
 
-For other areas of analysis, we have the [RAP for general analysis](../RAP/rap-analysis.html) guidance which covers how RAP can be applied to analysis work outside of Official Statistics production.
+For other areas of analysis, we have the [RAP for general analysis](../../RAP/rap-analysis.html) guidance which covers how RAP can be applied to analysis work outside of Official Statistics production.
 
-Implementing RAP may involve combining the use of Databricks, R, and clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
+Implementing RAP may involve combining the use of Databricks, R, and clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../../learning-development/learning-support.html) page.
 
 The collection of, and routine checking of data as it is coming into the department is also an area that RAP can be applied to. We have kept this out of scope at the moment as the levels of control in this area vary wildly from team to team. If you would like advice and help to automate any particular processes, feel free to [contact the Statistics Development Team](mailto:statistics.development@education.gov.uk).
 
@@ -35,20 +35,18 @@ The collection of, and routine checking of data as it is coming into the departm
 RAP has three core principles:
 
 
-[Preparing data](#preparing-data): Data sources for a publication are stored in the same database
+[Preparing data](../rap-statistics-preparing-data.qmd): Data sources for a publication are stored in the same database
 
+[Writing code](../rap-statistics-writing-code.qmd): Underlying data files are produced using code, with no manual steps
 
-[Writing code](#writing-code): Underlying data files are produced using code, with no manual steps
-
-
-[Version control](#version-control): Files and scripts should be appropriately version controlled
+[Version control](../rap-statistics-version-control.qmd): Files and scripts should be appropriately version controlled
 
 Within each of these principles are separate elements of RAP, which are shown in the diagram below. You can find further information on each of the elements by clicking on the links in the diagram.
 
  
 ---
 
-## RAP in practice
+## RAP for statistics principles
 
 
 The diagram below highlights what RAP means for us, and the varying levels in which it can be applied in all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice. 
@@ -78,12 +76,12 @@ While working to reach our baseline expectation of good and great practice, you 
 
 The checklist provided in the [publication self-assessment tool](https://rsconnect/rsc/publication-self-assessment){target="_blank" rel="noopener noreferrer"}, shown below, is designed to make reviewing our processes against our RAP levels easier, giving a straightforward list of questions to check your work against. This will flag potential areas of improvement, and you can then use the links on the right hand side to go to the specific section of this page to find more detail and guidance on how to develop your current processes in line with best practice. 
 
-![](../images/self-assessment.png)
+![](../../images/self-assessment.png)
 
 
 Some teams will already be looking at best practice, while others will still have work to do to achieve the department's baseline of good and great practice. We know that all teams are starting this from different points, and are here to support all teams from their respective starting positions.
 
-For guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes and where to start, see the [getting started with RAP page](../RAP/getting-started-with-rap.html).
+For guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into statistics production processes and where to start, see the [getting started with RAP page](../../RAP/getting-started-with-rap.html).
 
 ---
 
@@ -91,282 +89,8 @@ For guidance for how to implement the principles of Reproducible Analytical Pipe
 
 Now that you’ve prioritised the area of your workflow to focus on, the next step is to apply the relevant RAP principles to that part of your process.
 
-This section below is split by the three core principles, [preparing data](#preparing-data), [writing code](#writing-code) and [version control](version-control).
+The next section is split by the three core principles, [preparing data](../rap-statistics-preparing-data.qmd), [writing code](../rap-statistics-writing-code.qmd) and [version control](../rap-statistics-version-control.qmd).
 
 Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst.
 
 ---
-
-## Preparing data
-
-Preparing data is our first core RAP principle, which contains the following elements:
-
-* [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly) 
-* [Files meet data standards](#files-meet-data-standards)
-* [Sensible folder and file structure](#sensible-folder-and-file-structure)
-
-Your team should store the internal raw data in the Databricks platform. This means that you can run code against a single source of data, reducing the risk of error. Legacy SQL servers will be decommissioned in 2026, by which point, all data will have been migrated into the Databricks Unity Catalog instead. 
-
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/source-data-acquired-sensibly.qmd >}}
-
-------------------------------------------------------------------------
-
-### Files meet data standards
-
----
-
-![](../images/good.svg)
-
-#### Open Data Standards
-
----
-
-You can find information on our standards for Open Data, including how to assess your data against these standards, on our [Open Data standards page](/statistics-production/ud.html#how-to-check-against-these-standards).
-
----
-
-#### Standardised reference data
-
----
-
-There will of course be cases where some of the data you use is reference data not owned by the DfE, or is available online for you to download rather than in an internal server. There are ways of incorporating this into a reproducible analytical pipeline nicely, sometimes you can even use links/URLs in your code that will always pull the latest data such that you will never need to change the link to reflect updates to the data!
-
----
-
-#### Raw files on GitHub
-
----
-
-If you want to use reference data from GitHub, you can use the URL to the raw file. A common example of when you might want to use this would be to use geographic lookup tables that contain names and codes of different geographic levels for EES files (which are available in our [data screener repository](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}). 
-
-If you find the data you're interested in within a repository, rather than copying, cloning or downloading the data, you should click the 'raw' button (see the below screenshot).
-
-![](../images/Github-raw-button.png)
-
-This should take you to a new window which contains the raw data from the CSV file. Copy the URL from this page, as this is what we can use to pull the latest data into our code. 
-
-You can now use this URL as you would use a file path in a `read.csv()` query. For example;
-
-```{r devolved_lookup, eval=FALSE}
-devolved_area_lookup <- read.csv("https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/master/data/english_devolved_areas.csv")
-```
-
-The above code snippet will load in the data as it would with any other CSV, however the benefit is if that data file is updated on GitHub, when you run the code it will always pull the latest version. This is especially useful for lookup tables and reference data, and is best RAP practice as it removed the need for any manual steps (like downloading, copying & pasting or manually updating the data/code!)
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/sensible-folder-and-file-structure.qmd >}}
-
-------------------------------------------------------------------------
-
-## Writing code
-
-Writing code is our second core RAP principle, and is made up of the following elements:
-
-* [Processing is done with code](#processing-is-done-with-code)
-* [Use appropriate tools](#use-appropriate-tools)
-* [Whole pipeline can be run from a single script or workflow](#whole-pipeline-can-be-run-from-a-single-script-or-workflow)
-* [Dataset production scripts](#dataset-production-scripts)
-* [Recyclable code for future use](#recyclable-code-for-future-use)
-* [Clean final code](#clean-final-code)
-* [Peer review of code](#peer-review-of-code)
-* [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
-* [Automated high-level checks](#automated-high-level-checks)
-* [Publication specific automated sense checks](#publicationproject-specific-automated-sense-checks)
-* [Automated reproducible reports](#automated-reproducible-reports)
-* [Publication specific automated summaries](#publication-specific-automated-summaries)
-
-
-
-::: callout-tip
-The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html). 
-:::
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/processing-done-with-code.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/use-appropriate-tools.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/whole-pipeline-run-scripts.qmd >}}
-
-------------------------------------------------------------------------
-
-
-### Dataset production scripts 
-
----
-
-![](../images/great.svg)
-
-**What does this mean?**
-
-Each dataset can be created by running a single script, which may 'source' multiple scripts within it. This **does not** mean that all of the code to create a file must be written in a single script, but instead that there is a single 'create file' or 'run' script that sources every step in the correct order such that every step from beginning to end will be executed if you run that single 'run' script.
-
-This 'run' script should take the source data right through to final output at the push of a button, including any manipulation, aggregation, suppression etc.
-
-
-**Why do it?**
-
-Having a script that documents the whole process for this saves time when needing to rerun processes, and provides a clear documentation of how a file is produced.
-
-
-**How to get started**
-
-Review your current process - how many file scripts does it take to get from source data to final output, why are they separated, and what order should they be run in? Do you still have manual steps that could introduce human error (for example, manually moving column orders around in excel)?
-
-You should automate any manual steps such as the example above. If it makes sense to, you could combine certain scripts to reduce the number. You can then write code in [R](../learning-development/r.html) to execute your scripts in order, so you are still only running one script to get the final output.
-
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/recyclable-code-for-future-use.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/clean-final-code.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/peer-code-review.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/peer-code-review-outside-team.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/automated-high-level-checks.qmd >}}
-
-------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/publication-project-specific-automated-sense-checks.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/automated-reproducible-reports.qmd >}}
-
-------------------------------------------------------------------------
-
-
-
-### Publication specific automated summaries 
-
----
-
-![](../images/best.svg)
-
-**What does this mean?**
-
-- Have you gone beyond the outputs of the QA app to consider automating further insights for your publication specifically? E.g. year on year changes for specific measures, comparisons of different characteristics that are of interest to the general public 
-
-- Are you using these outputs to write your commentary?
-
-
-**Why do it?**
-
-All publications are different, and therefore it is important that for each publication, teams go beyond the basics and produce automated summaries specific to their area.
-
-**How to get started**
-
-Consider:
-
-- Integrating extra publication-specific QA into the production process
- 
-- Consider outputs specific to your publication that would help you to write commentary/draw out interesting analysis
-
----
-
-## Version control
-
-Version control is our third core RAP principle, and is made up of the following elements:
-
-* [Documentation](#documentation)
-* [Version controlled final code scripts](#version-controlled-final-code-scripts)
-* [Use open source repositories](#use-open-source-repositories)
-* [Collaboratively develop code using Git](#collaboratively-develop-code-using-git)
-
-Version control is just a way to track changes to files. Using proper version control can avoid lots of potential problems, including running old scripts by accident, losing files, or ending up with a folder full of documents with suffixes like "final_final_FINAL". It also makes it much easier for new people to pick up your processes. 
-
-_When you assume you make an 'ass' out of 'u' and 'me'_. Everyone knows this saying, yet few of us heed its warning.
-
-The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.
-
-As we work with code to process our data more and more, we can begin to utilise version control software to make this process much easier, allowing simultaneous collaboration on files.
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/documentation.qmd >}}
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/version-controlled-final-scripts.qmd >}}
-
-------------------------------------------------------------------------
-
-
-### Use open source repositories
-
----
-
-![](../images/best.svg)
-
-**What does this mean?**
-
-Saving or cloning your work into a repository that is visible to the public. We currently have brilliant examples of this in our [DfE analytical services GitHub area](https://github.com/dfe-analytical-services), in which all of the code used to create public dashboards is publicly available. 
-
-For statistics publications we expect teams to be able to mirror their proccess code on GitHub after publication, which will help open up their code for other analysts to learn from.
-
-We are currently working on ways to mirror private repos (i.e. AzureDevOps) to public repos on publication of your data. If you are interested in this please contact the [Statistics Development Team](mailto:statistics.development@education.gov.uk).
-
-**Why do it?**
-
-It's a key part of the [technology code of practice](https://www.gov.uk/government/publications/technology-code-of-practice/technology-code-of-practice#be-open-and-use-open-source){target="_blank" rel="noopener noreferrer"} as an agreed standard for [digital services across government](https://www.gov.uk/guidance/be-open-and-use-open-source){target="_blank" rel="noopener noreferrer"}.
-
-**How to get started?**
-
-Contact us to get a repository set up in Azure DevOps, to set up a mirroring process to GitHub or to set up a repository on our dfe-analytical-services area on GitHub.
-
-You should consider the following principles making an Official Statistics production repository public (some examples are R specific though can be applied to other languages):
-
-- Follow the guidance on [writing a readme file](#writing-a-readme-file), and add context in about what Official/National statistics are
-- Ensure no data (either input or output) is included in the repository
-- Have a clear and organised folder structure (such as having R scripts in an 'R' folder)
-- Check your code is styled according the [tidyverse styling](#clean-final-code)
-- Use [renv](https://rstudio.github.io/renv/articles/renv.html){target="_blank" rel="noopener noreferrer"} for package management
-- Use an [R project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects){target="_blank" rel="noopener noreferrer"}
-
-When naming your publication's repository you should use the publication name fully written out, in lower case, and with dashes for spaces – ‘graduate-labour-market-statistics’. 
-
-A single repository should be used for all releases of your publication, there's no need to have multiple as all the history is saved within previous commits. You can make use of [tagging releases in Git](../learning-development/git.html#Tagging_release_versions) to help differentiate between each cycle.
-
----
-
-#### Avoid revealing sensitive information
-
----
-
-Here are some general best practice tips:
-
-- Using .gitignore to ignore files and folders to prevent committing anything sensitive
-- Never committing outputs unless they’ve been checked over, even aggregates. We suggest only outputting to an output folder which is in the .gitignore file, to ensure this doesn’t happen by mistake
-- Keeping datasets and secrets (e.g. API keys) outside the repository as much as possible, make use of secure variables
-- Checking Git histories: if someone is planning on open-sourcing code that has previously been in a private repository or only version-controlled locally, you want to be careful not to have anything sensitive in the commit history. You can do this by following the above rules. When in doubt, you can remove the Git history and start the public repo without it
-- You can [remove a file from the entire commit history](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) if you did commit anything sensitive, although you still need to follow the usual procedures if this was a data breach
-
-You can find out more in the Duck Book's [guidance on using Git](https://best-practice-and-impact.github.io/qa-of-code-guidance/version_control.html#avoid-commiting-sensitive-information-to-git-repositories). 
-
-------------------------------------------------------------------------
-
-{{< include common-rap-principles/collaboratively-developed-using-git.qmd >}}
-
-------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 ## Publication/project specific automated sense checks
 
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 **What does this mean?**
 

@@ -1,0 +1,38 @@
+
+
+## Version control {#version-control}
+
+Version control is our third core RAP principle, and is made up of the following elements:
+
+-   [Documentation](#documentation)
+-   [Version controlled final code scripts](#version-controlled-final-code-scripts)
+-   [Collaboratively develop code using Git](#collaboratively-develop-code-using-git)
+
+Version control is just a way to track changes to files. Using proper version control can avoid lots of potential problems, including running old scripts by accident, losing files, or ending up with a folder full of documents with suffixes like "final_final_FINAL". It also makes it much easier for new people to pick up your processes.
+
+*When you assume you make an 'ass' out of 'u' and 'me'*. Everyone knows this saying, yet few of us heed its warning.
+
+The aim should be to leave your work in a state that others (including future you!), can pick it up and immediately find what they need, understanding the processes that have happened previously. Changes to files should be documented, and published versions should be clearly named and stored in their own folder.
+
+As we work with code to process our data more and more, we can begin to utilise version control software to make this process much easier, allowing simultaneous collaboration on files.
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/documentation.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/version-controlled-final-scripts.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/collaboratively-developed-using-git.qmd >}}
+
+------------------------------------------------------------------------
+
+## Integrating RAP principles into spreadsheets
+
+In some cases, spreadsheet tools like Microsoft Excel are still used for some types of analysis, particularly ad hoc, exploratory, or early-stage work. While the long-term aim is to move towards fully  (RAP) processes using code, this section outlines how RAP principles can be applied to spreadsheet work to improve quality, transparency, and maintainability, even before moving fully into code.
+
+You can see an example case study of RAP principles being applied to spreadsheet based analysis on the [RAP case studies](../RAP/rap-case-studies.html) page.
+

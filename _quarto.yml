@@ -111,8 +111,16 @@ website:
         contents: 
           - RAP/getting-started-with-rap.qmd
           - RAP/rap-expectations.qmd
-          - RAP/rap-statistics.qmd
-          - RAP/rap-analysis.qmd
+          - href: RAP/rap-statistics/rap-statistics.qmd
+            contents:
+              - RAP/rap-statistics/rap-statistics-preparing-data.qmd
+              - RAP/rap-statistics/rap-statistics-writing-code.qmd
+              - RAP/rap-statistics/rap-statistics-version-control.qmd
+          - href: RAP/rap-analysis/rap-analysis.qmd
+            contents:
+              - RAP/rap-analysis/rap-analysis-preparing-data.qmd
+              - RAP/rap-analysis/rap-analysis-writing-code.qmd
+              - RAP/rap-analysis/rap-analysis-version-control.qmd
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
           - RAP/rap-case-studies.qmd

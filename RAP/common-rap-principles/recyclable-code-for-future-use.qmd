@@ -2,7 +2,7 @@
 
 ---
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 **What does this mean?**
 

@@ -26,7 +26,7 @@ For statistics publications, we have a specific area set up for you to host your
 To gain access to this area, please raise a request on service desk by navigating through the pages detailed in the animation below.
 
 
-![](../images/servicedesk_request.gif)
+![](../../images/servicedesk_request.gif)
 
 Once you have navigated to this page, fill out the form with the following details and send your request off.
 

@@ -1,0 +1,123 @@
+
+## Writing code
+
+Writing code is our second core RAP principle, and is made up of the following elements:
+
+* [Processing is done with code](#processing-is-done-with-code)
+* [Use appropriate tools](#use-appropriate-tools)
+* [Whole pipeline can be run from a single script or workflow](#whole-pipeline-can-be-run-from-a-single-script-or-workflow)
+* [Dataset production scripts](#dataset-production-scripts)
+* [Recyclable code for future use](#recyclable-code-for-future-use)
+* [Clean final code](#clean-final-code)
+* [Peer review of code](#peer-review-of-code)
+* [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
+* [Automated high-level checks](#automated-high-level-checks)
+* [Publication specific automated sense checks](#publicationproject-specific-automated-sense-checks)
+* [Automated reproducible reports](#automated-reproducible-reports)
+* [Publication specific automated summaries](#publication-specific-automated-summaries)
+
+
+
+::: callout-tip
+The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html). 
+:::
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/processing-done-with-code.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/use-appropriate-tools.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/whole-pipeline-run-scripts.qmd >}}
+
+------------------------------------------------------------------------
+
+
+### Dataset production scripts 
+
+---
+
+![](../images/great.svg)
+
+**What does this mean?**
+
+Each dataset can be created by running a single script, which may 'source' multiple scripts within it. This **does not** mean that all of the code to create a file must be written in a single script, but instead that there is a single 'create file' or 'run' script that sources every step in the correct order such that every step from beginning to end will be executed if you run that single 'run' script.
+
+This 'run' script should take the source data right through to final output at the push of a button, including any manipulation, aggregation, suppression etc.
+
+
+**Why do it?**
+
+Having a script that documents the whole process for this saves time when needing to rerun processes, and provides a clear documentation of how a file is produced.
+
+
+**How to get started**
+
+Review your current process - how many file scripts does it take to get from source data to final output, why are they separated, and what order should they be run in? Do you still have manual steps that could introduce human error (for example, manually moving column orders around in excel)?
+
+You should automate any manual steps such as the example above. If it makes sense to, you could combine certain scripts to reduce the number. You can then write code in [R](../learning-development/r.html) to execute your scripts in order, so you are still only running one script to get the final output.
+
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/recyclable-code-for-future-use.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/clean-final-code.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/peer-code-review.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/peer-code-review-outside-team.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/automated-high-level-checks.qmd >}}
+
+------------------------------------------------------------------------
+
+
+{{< include ../common-rap-principles/publication-project-specific-automated-sense-checks.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/automated-reproducible-reports.qmd >}}
+
+------------------------------------------------------------------------
+
+
+
+### Publication specific automated summaries 
+
+---
+
+![](../images/best.svg)
+
+**What does this mean?**
+
+- Have you gone beyond the outputs of the QA app to consider automating further insights for your publication specifically? E.g. year on year changes for specific measures, comparisons of different characteristics that are of interest to the general public 
+
+- Are you using these outputs to write your commentary?
+
+
+**Why do it?**
+
+All publications are different, and therefore it is important that for each publication, teams go beyond the basics and produce automated summaries specific to their area.
+
+**How to get started**
+
+Consider:
+
+- Integrating extra publication-specific QA into the production process
+ 
+- Consider outputs specific to your publication that would help you to write commentary/draw out interesting analysis
+
+---

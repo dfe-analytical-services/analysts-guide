@@ -39,7 +39,7 @@ This function has saved time for our team. It has meant that almost any question
 
 E.g. if I want to know the total number of staff in each role and each provider type with each gender, I would use the function like this:
 
-![](/images/rap-case-study-1.png){fig-alt="Screenshot of R code showing the use of the create_grouped_totals_and_rates function to create the workforce by provider type, role and gender."}
+![](../images/rap-case-study-1.png){fig-alt="Screenshot of R code showing the use of the create_grouped_totals_and_rates function to create the workforce by provider type, role and gender."}
 
 It would create an output across all the geographies specified above. It would show the % of each staff by role and provider type, who have each gender.
 :::
@@ -70,14 +70,14 @@ e.	Run all scripts used, e.g. when there are two timepoints with the exact same 
 
 Each timepoint folder has its own section as part of the readme document in the repo, which details how it needs to be updated when it gets run, plus whether it’s based on published or unpublished data.
 
-![](/images/rap-case-study-ucas-b.png){fig-alt="A screenshot of example scripts for January and June deadline analysis, showing standard code structure."}
+![](../images/rap-case-study-ucas-b.png){fig-alt="A screenshot of example scripts for January and June deadline analysis, showing standard code structure."}
 
 RAP principles
 -	Source data acquired and stored sensibly – published UCAS data is stored in a standard location as csv files and unpublished data is uploaded to Databricks for secure access
 
 -	Sensible folder and file structure - each timepoint has its own folder within the Azure DevOps repo, following a consistent structure for scripts and documentation.
 
-![](/images/rap-case-study-ucas-a.png){fig-alt="A screenshot of Azure Devops folder with folders for individual timepoints."}
+![](../images/rap-case-study-ucas-a.png){fig-alt="A screenshot of Azure Devops folder with folders for individual timepoints."}
 
 -	Processing is done with code where possible – all data analysis and manipulation is carried out through R and SQL
 
@@ -144,11 +144,11 @@ a.	The whole analysis pipeline was coded in R, with processing and data wranglin
 
 b.	The team coded collaboratively using Git / Azure DevOps. The team developed a protocol for collaborative coding that set out a system of branching, pull requests, and peer review. [Version controlled final scripts / Code collaboratively developed using Git / Peer code review] 
 
-![](/images/rap-case-study-gld-a.png){fig-alt="A screenshot of the collaborative coding protocol from the project README."}
+![](../images/rap-case-study-gld-a.png){fig-alt="A screenshot of the collaborative coding protocol from the project README."}
 
 c.	There were two scripts in the pipeline: one for data preparation and the other for the modelling. We set up a config.yml (YAML file) to allow users to change parameters in a single place. We also included a README with instructions for running the pipeline, information about the files and repository structure, and the protocol for collaborative coding. [Sensible folder and file structure]
 
-![](/images/rap-case-study-gld-b.png){fig-alt="A screenshot of the config file that allows the user to change pipeline parameters in one place."}
+![](../images/rap-case-study-gld-b.png){fig-alt="A screenshot of the config file that allows the user to change pipeline parameters in one place."}
 
 d.	Data was loaded from source for reproducibility – from an internal SQL database, Explore Education Statistics (EES), and Get Information About Schools (GIAS). These datasets were then processed, combined, and aggregated to school level. [Source data is acquired and sourced sensibly]
 
@@ -199,13 +199,13 @@ Each year, the High Needs NFF is used to allocate funding for children with spec
 
 -	Automated checks are built in to make sure that totals are as we would expect, as shown below, and other checks ensure there are no zeros in the data.
 
-![](/images/rap-case-study-hnnff-b.png){fig-alt="A screenshot of the QA dashboard, which checks that allocations match funding quantum."}
+![](../images/rap-case-study-hnnff-b.png){fig-alt="A screenshot of the QA dashboard, which checks that allocations match funding quantum."}
 
 -	We have thorough documentation, including a technical note which is published, a data specification, and a user guide.
 
 -	There is a complete model map as shown below, which details how each sheet of the Excel model links together.
 
-![](/images/rap-case-study-hnnff-c.png){fig-alt="A screenshot of the model map which helps to demonstrate how each Excel sheet feeds into the next."}
+![](../images/rap-case-study-hnnff-c.png){fig-alt="A screenshot of the model map which helps to demonstrate how each Excel sheet feeds into the next."}
 
 ##### Version Control
 

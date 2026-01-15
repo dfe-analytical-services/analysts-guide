@@ -1,0 +1,21 @@
+
+## Preparing data {#preparing-data}
+
+Preparing data is our first core RAP principle, which contains the following elements:
+
+-   [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly)
+-   [Sensible folder and file structure](#sensible-folder-and-file-structure)
+
+Your team should store the internal raw data in the Databricks platform. This means that you can run code against a single source of data, reducing the risk of error. Legacy SQL servers will be decommissioned in 2026, by which point, all data will have been migrated into the Databricks Unity Catalog instead. 
+
+Where external data is used, the process of acquiring and storing the data should be well documented. The data should be stored appropriately in areas with the correct levels of security.
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/source-data-acquired-sensibly.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/sensible-folder-and-file-structure.qmd >}}
+
+------------------------------------------------------------------------
