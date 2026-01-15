@@ -164,6 +164,7 @@ i.	The first reports (which used EYFSP data up to 2023/24) were sent to schools 
 
 #### Outcome/results
 A reproducible pipeline that reliably produced the same output. Better confidence in the quality and reliability of the outputs. An analysis pipeline that could be quickly understood and adapted by new users.
+:::
 
 ::: {.callout-tip collapse="true"}
 ### Case Study 5: High Needs National Funding Formula 
