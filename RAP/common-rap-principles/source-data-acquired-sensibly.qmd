@@ -21,4 +21,4 @@ Having all the data and processing it in one place makes our lives easier, and a
 
 **How to get started**
 
-For resources to help you learn about Databricks and how to migrate your data into the Unity Catalog, please see our [ADA and Databricks documentation](../ADA/ada.html).
+For resources to help you learn about Databricks and how to migrate your data into the Unity Catalog, please see our [ADA and Databricks documentation](../../ADA/ada.html).

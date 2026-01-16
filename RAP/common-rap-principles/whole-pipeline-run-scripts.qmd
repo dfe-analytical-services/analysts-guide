@@ -25,4 +25,4 @@ Utilising a single 'run' script or workflow to execute processes written in othe
 
 ---
 
-In order to create a single script to run all processes from, you may need to connect to Databricks from RStudio. If you are unsure how to do this, take a look at the guidance on creating a [personal cluster with RStudio and ODBC / DBI ](../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 
+In order to create a single script to run all processes from, you may need to connect to Databricks from RStudio. If you are unsure how to do this, take a look at the guidance on creating a [personal cluster with RStudio and ODBC / DBI ](../../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 

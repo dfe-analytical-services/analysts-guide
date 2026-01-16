@@ -92,7 +92,7 @@ website:
       - section: "Statistics production"
         contents:
           - statistics-production/pub.qmd
-          - RAP/rap-statistics.qmd
+          - RAP/rap-statistics/rap-statistics.qmd
           - statistics-production/ud.qmd
           - statistics-production/api-data-standards.qmd
           - statistics-production/ees.qmd

@@ -9,7 +9,7 @@ format: html
 
 ---
 
-If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../RAP/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
+If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../../RAP/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
 
 ------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ To get started with RAP for analysis, explore the RAP principles in the diagram 
 
 Once you are familiar with the principles, take a look at the different types of analysis commonly carried out across the department. This will help you understand which RAP principles are recommended for your type of analysis.
 
-Implementing RAP may involve combining the use of Databricks, R and using clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../learning-development/learning-support.html) page.
+Implementing RAP may involve combining the use of Databricks, R and using clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../../learning-development/learning-support.html) page.
 
 ------------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ When deciding what RAP principles to apply, consider factors like who will use t
 
 For example, whilst you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
 
-Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP for statistics page](../RAP/rap-statistics.html) for more information).
+Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP for statistics page](../../RAP/rap-statistics.html) for more information).
 
 ------------------------------------------------------------------------
 

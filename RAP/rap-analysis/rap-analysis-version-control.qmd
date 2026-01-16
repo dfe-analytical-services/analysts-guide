@@ -34,5 +34,5 @@ As we work with code to process our data more and more, we can begin to utilise 
 
 In some cases, spreadsheet tools like Microsoft Excel are still used for some types of analysis, particularly ad hoc, exploratory, or early-stage work. While the long-term aim is to move towards fully  (RAP) processes using code, this section outlines how RAP principles can be applied to spreadsheet work to improve quality, transparency, and maintainability, even before moving fully into code.
 
-You can see an example case study of RAP principles being applied to spreadsheet based analysis on the [RAP case studies](../RAP/rap-case-studies.html) page.
+You can see an example case study of RAP principles being applied to spreadsheet based analysis on the [RAP case studies](../../RAP/rap-case-studies.html) page.
 

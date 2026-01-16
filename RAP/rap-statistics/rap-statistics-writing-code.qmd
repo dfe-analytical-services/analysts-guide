@@ -19,7 +19,7 @@ Writing code is our second core RAP principle, and is made up of the following e
 
 
 ::: callout-tip
-The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html). 
+The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](../../learning-development/learning-support.html). 
 :::
 
 ------------------------------------------------------------------------
@@ -59,7 +59,7 @@ Having a script that documents the whole process for this saves time when needin
 
 Review your current process - how many file scripts does it take to get from source data to final output, why are they separated, and what order should they be run in? Do you still have manual steps that could introduce human error (for example, manually moving column orders around in excel)?
 
-You should automate any manual steps such as the example above. If it makes sense to, you could combine certain scripts to reduce the number. You can then write code in [R](../learning-development/r.html) to execute your scripts in order, so you are still only running one script to get the final output.
+You should automate any manual steps such as the example above. If it makes sense to, you could combine certain scripts to reduce the number. You can then write code in [R](../../learning-development/r.html) to execute your scripts in order, so you are still only running one script to get the final output.
 
 
 ------------------------------------------------------------------------

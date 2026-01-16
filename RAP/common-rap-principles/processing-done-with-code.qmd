@@ -18,9 +18,9 @@ Reliability is a huge benefit of the automation that RAP brings - when your data
 
 **How to get started**
 
-See our [learning resources](../learning-development/learning-support.html) for a wealth of resources on Databricks and R to learn the skills required to translate your process into code.
+See our [learning resources](../../learning-development/learning-support.html) for a wealth of resources on Databricks and R to learn the skills required to translate your process into code.
 
-Your data should be stored in Databricks, and you can do a lot of your data processing there using different coding languages, including Spark SQL, Python, and R. You may however find it easier to do some or all of your data processing in RStudio, particularly if you are more familiar with R than other coding languages. If you want to do your data processing in RStudio, you can connect to Databricks using a [personal cluster with RStudio and ODBC / DBI ](../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 
+Your data should be stored in Databricks, and you can do a lot of your data processing there using different coding languages, including Spark SQL, Python, and R. You may however find it easier to do some or all of your data processing in RStudio, particularly if you are more familiar with R than other coding languages. If you want to do your data processing in RStudio, you can connect to Databricks using a [personal cluster with RStudio and ODBC / DBI ](../../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 
 
 ------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ Your data should be stored in Databricks, and you can do a lot of your data proc
 
 ------------------------------------------------------------------------
 
-To get started in Databricks, take a look at the [ADA](../ADA/ada.html) and [Databricks fundamentals](../ADA/databricks_fundamentals.html) pages. These pages contains links to a variety of resources to help you get started with Databricks, including sections on working with data and code. 
+To get started in Databricks, take a look at the [ADA](../../ADA/ada.html) and [Databricks fundamentals](../../ADA/databricks_fundamentals.html) pages. These pages contains links to a variety of resources to help you get started with Databricks, including sections on working with data and code. 
 
 ------------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ To get started in Databricks, take a look at the [ADA](../ADA/ada.html) and [Dat
 
 ------------------------------------------------------------------------
 
-If you want to do your data processing in R, you can connect to Databricks using a [personal cluster with RStudio and ODBC / DBI ](../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into R and process it there. 
+If you want to do your data processing in R, you can connect to Databricks using a [personal cluster with RStudio and ODBC / DBI ](../../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into R and process it there. 
 
 [Here is a video](https://vimeo.com/33727555){target="_blank" rel="noopener noreferrer"} of Hadley Wickham talking about how to tidy your data to these principles in R. This covers useful functions and how to complete common data tidying tasks in R. Also worth taking a look at [applied data tidying in R, by RStudio](https://www.youtube.com/watch?v=1ELALQlO-yM){target="_blank" rel="noopener noreferrer"}.
 
@@ -66,4 +66,4 @@ processed_regional_data <- my_data %>%
 
 [Helpful new functions](https://www.statology.org/pivoting-to-insights-unlocking-the-power-of-pivot_longer-in-r/) in the tidyverse packages can help you to easily transform data from wide to long format, as well as providing you with tools to allow you quickly and efficiently change the structure of your variables.
 
-For further resources on learning R so that you're able to apply it to your everyday work, have a look at the [learning resources](../learning-development/learning-support.html) page.
+For further resources on learning R so that you're able to apply it to your everyday work, have a look at the [learning resources](../../learning-development/learning-support.html) page.
