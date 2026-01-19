@@ -22,7 +22,7 @@ We want to focus on the parts of the production process that we have ownership a
 
 In Official Statistics production we are using RAP as a framework for best practice when producing our published data files, as these are the foundations of our publications moving forward. Following this framework will help us to improve and standardise our current production processes and provide a clear 'pipeline' for analysts to follow.  To get started with RAP, we first need to be able to understand what it actually means in practice, and be able to [assess our own work against the principles of RAP](#what-is-expected). From there, we can work out what training is needed, if any, and where additional support can help teams to meet the baseline. 
 
-For other areas of analysis, we have the [RAP for general analysis](../../RAP/rap-analysis.html) guidance which covers how RAP can be applied to analysis work outside of Official Statistics production.
+For other areas of analysis, we have the [RAP for general analysis](../../RAP/rap-analysis.html) guidance which covers how RAP can be applied to analysis work outside of Official Statistics production. The core principles across both RAP for statistics and RAP for general analysis are the same, with four additional principles specific to statistics production.
 
 Implementing RAP may involve combining the use of Databricks, R, and clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../../learning-development/learning-support.html) page.
 

@@ -23,6 +23,8 @@ Once you are familiar with the principles, take a look at the different types of
 
 Implementing RAP may involve combining the use of Databricks, R and using clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../../learning-development/learning-support.html) page.
 
+For statistics, we have the [RAP for statistics page](../../RAP/rap-statistics.html) guidance which covers how RAP can be applied to Official Statistics production. The core principles across both RAP for statistics and RAP for general analysis are the same, with four additional principles specific to statistics production.
+
 ------------------------------------------------------------------------
 
 ### Applying RAP principles proportionally {#rap-proportional}
@@ -35,10 +37,7 @@ Applying RAP principles proportionately means tailoring your approach to the sca
 
 When deciding what RAP principles to apply, consider factors like who will use the analysis, how it will be used, the level of public or ministerial interest and the potential risks involved. Use the guidance below as a starting point, but apply judgement based on the specific context of your work, as you would when determining proportionate QA. 
 
-
 For example, whilst you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.
-
-Expectations for statistics production are clearer because these outputs are published regularly and follow consistent processes (see the [RAP for statistics page](../../RAP/rap-statistics.html) for more information).
 
 ------------------------------------------------------------------------
 

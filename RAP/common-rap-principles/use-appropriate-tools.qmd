@@ -6,7 +6,7 @@
 
 **What does this mean?**
 
-Using the recommended tools on our [learning](../../learning-development/learning-support.html) page ([Databricks](../../ADA/databricks_fundamentals.html), [R](../../learning-development/r.html) and [Git](../../learning-development/git.html)), or other suitable alternatives that allow you to meet the [core principles](#core-principles). 
+Using the recommended tools on our [learning](../../learning-development/learning-support.html) page ([Databricks](../../ADA/databricks_fundamentals.html), [R](../../learning-development/r.html) and [Git](../../learning-development/git.html)), or other suitable alternatives that allow you to meet the [RAP for statistics](../../RAP/rap-statistics/rap-statistics.html) or [RAP for analysis](../../RAP/rap-analysis/rap-analysis.html) principles. 
 
 With the department moving to Databricks for data storage, you can now write your code directly within the Databricks platform (in any available language, including Spark SQL, R and Python). If you prefer to write code in RStudio, you can connect to Databricks using a [personal cluster with RStudio and ODBC / DBI ](../../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 
 

@@ -35,6 +35,35 @@ According to the [Analysis Function](https://analysisfunction.civilservice.gov.u
 
 In DfE, we have worked with ‘analytical pipelines’ for many years. RAP aims to automate these pipelines wherever possible, to increase efficiency and accuracy, while creating a clear audit trail to allow analyses to be re-run easily. This allows us to focus on where human input can really add value. RAP reduces human error, removing the need to copy and paste between documents or make manual edits to code each time it's re-run. Ultimately, RAP can reduce the burden on us by removing the boring stuff; what’s not to like?!
 
+------------------------------------------------------------------------
+
+### RAP principles
+
+------------------------------------------------------------------------
+
+RAP principles represent best practice in analytical work and should be our default approach wherever possible. While not every principle will apply to every situation, many are universally beneficial and can be adopted even in ad-hoc or one-off pieces of work.
+
+Cross-government RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md) to aim for. In DfE, we have used these to develop two sets of RAP principles to reflect the different needs of statistics production processes and general analysis. 
+
+We have two sets of RAP principles to reflect the different needs of statistics production processes and general analysis. There are 15 core principles, which apply to both statistics and general analysis, and an additional four principles specific to statistics production processes.
+
+The [RAP for statistics principles](../RAP/rap-statistics.html) reflect where processes are often repeated and structured, allowing for more automation and standardisation.
+
+The [RAP for general analysis principles](../RAP/rap-analysis.html) reflect that general analysis can be more varied, but still benefits from applying RAP principles proportionally. The RAP for analysis page has recommendations for how to apply RAP principles to different types of analysis.
+
+Always applicable RAP principles include:
+
+-   Documentation
+
+-   Sensible folder and file structure
+
+-   Clean final code
+
+Principles applicable in more specific situations include:
+
+-   Recyclable code for future use
+
+-   Project specific automated sense checks
 
 ------------------------------------------------------------------------
 
@@ -140,35 +169,6 @@ When deciding where to begin, consider the following:
 
 -   Is the current method causing problems, or is it relatively robust?
 
-------------------------------------------------------------------------
-
-### RAP principles
-
-------------------------------------------------------------------------
-
-RAP principles represent best practice in analytical work and should be our default approach wherever possible. While not every principle will apply to every situation, many are universally beneficial and can be adopted even in ad-hoc or one-off pieces of work.
-
-Cross-government RAP champions have laid out a [minimum level of RAP](https://github.com/best-practice-and-impact/rap_mvp_maturity_guidance/blob/master/Reproducible-Analytical-Pipelines-MVP.md) to aim for. In DfE, we have used these to develop two sets of RAP principles to reflect the different needs of statistics production processes and general analysis. 
-
-We have two sets of RAP principles to reflect the different needs of statistics production processes and general analysis. There are 15 core principles, which apply to both statistics and general analysis, and an additional four principles specific to statistics production processes.
-
-The [RAP for statistics principles](../RAP/rap-statistics.html) reflect where processes are often repeated and structured, allowing for more automation and standardisation.
-
-The [RAP for general analysis principles](../RAP/rap-analysis.html) reflect that general analysis can be more varied, but still benefits from applying RAP principles proportionally. The RAP for analysis page has recommendations for how to apply RAP principles to different types of analysis.
-
-Always applicable RAP principles include:
-
--   Documentation
-
--   Sensible folder and file structure
-
--   Clean final code
-
-Principles applicable in more specific situations include:
-
--   Recyclable code for future use
-
--   Project specific automated sense checks
 
 ------------------------------------------------------------------------
 
