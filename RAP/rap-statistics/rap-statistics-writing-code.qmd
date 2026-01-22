@@ -41,7 +41,7 @@ The key thing to remember is that we should be automating everything we can, and
 
 ---
 
-![](../images/great.svg)
+![](../../images/great.svg)
 
 **What does this mean?**
 
@@ -99,7 +99,7 @@ You should automate any manual steps such as the example above. If it makes sens
 
 ---
 
-![](../images/best.svg)
+![](../../images/best.svg)
 
 **What does this mean?**
 
