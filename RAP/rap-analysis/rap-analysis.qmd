@@ -9,22 +9,9 @@ format: html
 
 ---
 
-
 This page sets out the RAP for general analysis principles. For Official Statistics, we have the [RAP for statistics](../../RAP/rap-statistics/rap-statistics.html) guidance which covers how RAP can be applied to Official Statistics production. The same 15 core principles apply across both RAP for statistics and RAP for general analysis, with four additional principles specific to statistics production.
 
 If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../../RAP/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
-
-------------------------------------------------------------------------
-
-### Getting started with RAP for analysis
-
-------------------------------------------------------------------------
-
-To get started with RAP for analysis, explore the RAP principles in the diagram below, which outlines what good, great and best practice looks like.
-
-Once you are familiar with the principles, take a look at the different types of analysis commonly carried out across the department. This will help you understand which RAP principles are recommended for your type of analysis.
-
-Implementing RAP may involve combining the use of Databricks, R and using clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../../learning-development/learning-support.html) page.
 
 ------------------------------------------------------------------------
 
@@ -42,8 +29,21 @@ For example, whilst you might not create a full RAP process for an ad hoc piece 
 
 ------------------------------------------------------------------------
 
+### Getting started with RAP for analysis
+
+------------------------------------------------------------------------
+
+To get started with RAP for analysis, explore the RAP principles in the diagram below, which outlines what good, great and best practice looks like.
+
+Once you are familiar with the principles, take a look at the different types of analysis commonly carried out across the department. This will help you understand which RAP principles are recommended for your type of analysis.
+
+Implementing RAP may involve combining the use of Databricks, R and using clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our [learning resources](../../learning-development/learning-support.html) page.
+
+------------------------------------------------------------------------
+
 ## Core principles {#core-principles}
 
+------------------------------------------------------------------------
 
 RAP has three core principles:
 
@@ -252,7 +252,6 @@ We recommend the following principles for this type of analysis. Analysts should
 
 ------------------------------------------------------------------------
 
----
 
 ## Apply the principles
 

@@ -197,6 +197,8 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 - [David Sands' Boons of R and Git](https://psysandsy.github.io/boons-r-git.html){target="_blank" rel="noopener noreferrer"} - a helpful guide on why R and Git are worth your time.
 
+- [HoP Hub L&D Resources](https://rsconnect/rsc/hop-guidance/pages_4_careers/resources.html){target="_blank" rel="noopener noreferrer"} - a collection of resources specific to statistical learning, provided by the Head of Profession for Statistic's Office.
+
 ---
 
 ## Further information

@@ -28,6 +28,26 @@ that only return warnings, plus manual inspection by the platform gatekeepers. T
 
 Examples of these that do and don't meet the API data standards are provided in the following sections.
 
+## API publishing checklist
+
+The following are steps to follow when planning on publishing a data set via the API:
+
+### At least a few weeks / month before publication
+
+- Check column names and filter items against the data dictionary
+- Review data structure and confirm (new) column names with the Explore education statistics team
+- Alert key known end users / stakeholders of any changes to existing API data sets or new data API data sets (e.g. Opportunity Mission dashboard team, Compare school and college performance)
+
+### Prior to approval of the release on EES
+
+- Screen data files
+    - Screen using the [standard screener](https://rsconnect/rsc/dfe-published-data-qa/) and resolve **warnings** as well as errors
+    - For any column names or filter items that are reported as not being present in the data dictionary, contact [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk) to discuss standardisation and options for new data dictionary entries
+- Upload data files to your release as normal
+    - This will run a second screening check which must be passed before data sets can be activated for the public API service
+- Submit a request to [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk) to activate the files as API data sets
+- Once activated, follow normal sign-off process
+
 ## Character limits for col_names and filter items
 
 Character limits for fields in data uploaded to the API are:
