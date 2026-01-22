@@ -1,4 +1,4 @@
-## Publication/project specific automated sense checks
+### Publication/project specific automated sense checks
 
 
 ![](../../images/great.svg)

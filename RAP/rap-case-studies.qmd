@@ -21,7 +21,6 @@ These case studies serve as practical examples to help you understand how to app
 
 Workforce and Finance Statistics Team, Data Insight and Statistics Division 
 
-
 #### Analysis Type
 
 Ad-hoc analysis, likely to be repeated e.g., different breakdowns
@@ -54,7 +53,7 @@ It would create an output across all the geographies specified above. It would s
 
 #### Provided by
 
-Higher Education Analysis Division
+HE admissions and Widening Participation Statistics Team, Higher Education Analysis Division
 
 #### Analysis Type
 
@@ -117,7 +116,7 @@ As a result of these changes, the team are able to share summary details about t
 
 #### Provided by
 
-
+Outlay Team, Higher Education Analysis Division
 
 #### Analysis Type
 
@@ -148,7 +147,7 @@ Outputs from model runs are easier to generate and compare, allowing for more co
 
 #### Provided by
 
-
+Families Analysis Division 
 
 #### Analysis Type
 Analysis at pace
@@ -188,7 +187,7 @@ A reproducible pipeline that reliably produced the same output. Better confidenc
 
 #### Provided by 
 
-
+Revenue Funding and Demographic Analysis Division 
 
 #### Analysis Type
 Spreadsheet based analysis, analysis repeated on different datasets

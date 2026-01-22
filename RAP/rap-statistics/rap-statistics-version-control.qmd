@@ -51,16 +51,16 @@ Contact us to get a repository set up in Azure DevOps, to set up a mirroring pro
 
 You should consider the following principles making an Official Statistics production repository public (some examples are R specific though can be applied to other languages):
 
-- Follow the guidance on [writing a readme file](#writing-a-readme-file), and add context in about what Official/National statistics are
+- Follow the guidance on [writing a readme file](../../RAP/common-rap-principles/documentation.qmd#writing-a-readme-file), and add context in about what Official/National statistics are
 - Ensure no data (either input or output) is included in the repository
 - Have a clear and organised folder structure (such as having R scripts in an 'R' folder)
-- Check your code is styled according the [tidyverse styling](#clean-final-code)
+- Check your code is styled according the [tidyverse styling](../../RAP/common-rap-principles/clean-final-code.qmd)
 - Use [renv](https://rstudio.github.io/renv/articles/renv.html){target="_blank" rel="noopener noreferrer"} for package management
 - Use an [R project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects){target="_blank" rel="noopener noreferrer"}
 
 When naming your publication's repository you should use the publication name fully written out, in lower case, and with dashes for spaces – ‘graduate-labour-market-statistics’. 
 
-A single repository should be used for all releases of your publication, there's no need to have multiple as all the history is saved within previous commits. You can make use of [tagging releases in Git](../learning-development/git.html#Tagging_release_versions) to help differentiate between each cycle.
+A single repository should be used for all releases of your publication, there's no need to have multiple as all the history is saved within previous commits. You can make use of [tagging releases in Git](../../learning-development/git.qmd#tagging-release-versions) to help differentiate between each cycle.
 
 ---
 
