@@ -187,7 +187,7 @@ A reproducible pipeline that reliably produced the same output. Better confidenc
 
 #### Provided by 
 
-Revenue Funding and Demographic Analysis Division 
+High Needs Revenue Funding Team, Revenue Funding and Demographic Analysis Division 
 
 #### Analysis Type
 Spreadsheet based analysis, analysis repeated on different datasets
