@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>RAP for general analysis – Analysts’ Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../RAP/rap-analysis/rap-analysis-preparing-data.html" rel="next">
+<link href="../../RAP/rap-statistics/rap-statistics-version-control.html" rel="prev">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-98f0596202bf5830f1c4733d0a5ea8e4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-abe1edcb13fb14038fd57cf35773afad.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6790b518375e9643e8089ff0043da231.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-0296ceb873e49b3e4725ea1b389b2b78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KBJCBD114T"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KBJCBD114T', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"headline",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../RAP/getting-started-with-rap.html">Reproducible Analytical Pipelines (RAP)</a></li><li class="breadcrumb-item"><a href="../../RAP/rap-analysis/rap-analysis.html">RAP for general analysis</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-microsoft-teams"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a50f82a2718184a0e98ba86c3d411a02f%40thread.skype/conversations?groupId=6572094f-43a3-4537-bcf0-fc27dc6557ed&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">
+            DfE analysts network
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3ae3c8551e86094e259a60848fcff4dbc1%40thread.skype/conversations?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">
+            Statistics production
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">
+            DfE R community
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-camera-reels"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Statistician%27s%20Guide%20to%20the%20Galaxy?csf=1&amp;web=1&amp;e=owScaj" target="_blank">
+            Guide to the Galaxy sessions
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Explore%20Education%20Statistics?csf=1&amp;web=1&amp;e=HVpi0D" target="_blank">
+            EES show and tells
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series?csf=1&amp;web=1&amp;e=H0pcSH" target="_blank">
+            RAP knowledge share series
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/sites/sarpi/g/AC/Coffee%20and%20Coding.aspx?xsdata=MDV8MDF8fGU5YTkwYWU1OTNiNjQzZTIyZTM2MDhkYjVhY2MxN2JlfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2MzgyMDM2MDQ4MjEyMjUwMTR8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPbTFsWlhScGJtZGZXVlJuZUUxRVVUTlphbGwwVGpKUk1FNTVNREJhYW1zMVRGUnJNbHBYV1hSTmVtTjZXbXBCTWxwdFZUQlBWMVV3UUhSb2NtVmhaQzUyTWk5dFpYTnpZV2RsY3k4eE5qZzBOell6TmpneE5qRXh8YjdlZWE0MGYzNDg5NGYxYzJlMzYwOGRiNWFjYzE3YmV8MmE3NzU1YzRmOWMyNDZlOTkwYWVmMjlkZjY5NjczZWE%3D&amp;sdata=ajlKYUZuNHFyNU9XSm5WR3ZZaUZHZDB4bjVJYkJzRFZNc0U1Uit5V1Q5cz0%3D&amp;ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CTess%2EWILLIAMS%40EDUCATION%2EGOV%2EUK&amp;OR=Teams%2DHL&amp;CT=1684763684990&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA0MDIwMjcwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D" target="_blank">
+            Coffee and coding sessions
+            </a>
+          </li>
+      </ul>
+    </div>
+    <a href="https://explore-education-statistics.service.gov.uk/" title="Explore education statistics" class="quarto-navigation-tool px-1" aria-label="Explore education statistics" target="_blank"><i class="bi bi-graph-up"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-2" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-2">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide" target="_blank">
+            Source code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" target="_blank">
+            Suggest changes
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Learning resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../learning-development/sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../learning-development/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../learning-development/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../learning-development/python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../learning-development/datacamp-tracks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DataCamp learning tracks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/ada.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analytical Data Access (ADA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/databricks_fundamentals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/databricks_notebooks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/databricks_workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks workflows</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessibility</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Statistics production</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Routes for publishing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open Data Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../statistics-production/api-data-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics API Data Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Explore education statistics (EES)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good examples in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Embedded visualisations in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publication scrums</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">User engagement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EES analytics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Writing and visualising</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Public dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating R Shiny dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualising data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing about data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/getting-started-with-rap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting started with RAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP expectations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../RAP/rap-statistics/rap-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-statistics/rap-statistics-preparing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-statistics/rap-statistics-writing-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-statistics/rap-statistics-version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Version control</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../RAP/rap-analysis/rap-analysis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">RAP for general analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-analysis/rap-analysis-preparing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-analysis/rap-analysis-writing-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-analysis/rap-analysis-version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Version control</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP FAQs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../RAP/rap-case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP case studies</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Databricks Setup Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL Warehouse with RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personal cluster with RStudio and <code>odbc</code> / <code>DBI</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/databricks_rstudio_personal_cluster_sparklyr_archive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personal cluster with RStudio and <code>sparklyr</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Databricks with Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/databricks_workflow_script_databricks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Script workflows in Databricks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ADA/databricks_workflow_script_rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Script workflows in RStudio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#rap-proportional" id="toc-rap-proportional" class="nav-link active" data-scroll-target="#rap-proportional">Applying RAP principles proportionally</a></li>
+  <li><a href="#getting-started-with-rap-for-analysis" id="toc-getting-started-with-rap-for-analysis" class="nav-link" data-scroll-target="#getting-started-with-rap-for-analysis">Getting started with RAP for analysis</a></li>
+  <li><a href="#core-principles" id="toc-core-principles" class="nav-link" data-scroll-target="#core-principles">Core principles</a></li>
+  <li><a href="#rap-for-general-analysis-principles" id="toc-rap-for-general-analysis-principles" class="nav-link" data-scroll-target="#rap-for-general-analysis-principles">RAP for general analysis principles</a></li>
+  <li><a href="#choosing-the-right-rap-principles-for-your-analysis" id="toc-choosing-the-right-rap-principles-for-your-analysis" class="nav-link" data-scroll-target="#choosing-the-right-rap-principles-for-your-analysis">Choosing the right RAP principles for your analysis</a></li>
+  <li><a href="#apply-the-principles" id="toc-apply-the-principles" class="nav-link" data-scroll-target="#apply-the-principles">Apply the principles</a></li>
+  <li><a href="#how-does-rap-fit-into-ada-databricks" id="toc-how-does-rap-fit-into-ada-databricks" class="nav-link" data-scroll-target="#how-does-rap-fit-into-ada-databricks">How does RAP fit into ADA / Databricks</a>
+  <ul class="collapse">
+  <li><a href="#rap-principles-adaptable-to-spreadsheets" id="toc-rap-principles-adaptable-to-spreadsheets" class="nav-link" data-scroll-target="#rap-principles-adaptable-to-spreadsheets">RAP Principles adaptable to spreadsheets</a></li>
+  <li><a href="#supporting-the-transition-to-rap" id="toc-supporting-the-transition-to-rap" class="nav-link" data-scroll-target="#supporting-the-transition-to-rap">Supporting the transition to RAP</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/rap-analysis/rap-analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../RAP/getting-started-with-rap.html">Reproducible Analytical Pipelines (RAP)</a></li><li class="breadcrumb-item"><a href="../../RAP/rap-analysis/rap-analysis.html">RAP for general analysis</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">RAP for general analysis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<hr>
+<p class="text-muted">
+Guidance for how to implement the principles of Reproducible Analytical Pipelines (RAP) into general analysis processes
+</p>
+<hr>
+<p>This page sets out the RAP for general analysis principles. For Official Statistics, we have the <a href="../../RAP/rap-statistics/rap-statistics.html">RAP for statistics</a> guidance which covers how RAP can be applied to Official Statistics production. The same 15 core principles apply across both RAP for statistics and RAP for general analysis, with four additional principles specific to statistics production.</p>
+<p>If you’re unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our <a href="../../RAP/getting-started-with-rap.html">getting started with RAP page</a>. It covers the background and benefits of RAP, as well as an introduction to the RAP principles.</p>
+<hr>
+<section id="rap-proportional" class="level3">
+<h3 class="anchored" data-anchor-id="rap-proportional">Applying RAP principles proportionally</h3>
+<hr>
+<p>RAP should be <strong>proportional</strong> to the analysis in the same way that <a href="https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Clearance-of-analysis.aspx" target="_blank">QA is proportional</a>.</p>
+<p>Applying RAP principles proportionately means tailoring your approach to the scale, complexity and potential impact of the analysis, just as you would with QA. Not every piece of work will require a fully automated pipeline, but all analysis should aim to be reproducible where possible.</p>
+<p>When deciding what RAP principles to apply, consider factors like who will use the analysis, how it will be used, the level of public or ministerial interest and the potential risks involved. Use the guidance below as a starting point, but apply judgement based on the specific context of your work, as you would when determining proportionate QA.</p>
+<p>For example, whilst you might not create a full RAP process for an ad hoc piece of work, you could still version control your code so that it could be reused if similar requests came in, and you should get your code peer reviewed by someone before sending out any results.</p>
+<hr>
+</section>
+<section id="getting-started-with-rap-for-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="getting-started-with-rap-for-analysis">Getting started with RAP for analysis</h3>
+<hr>
+<p>To get started with RAP for analysis, explore the RAP principles in the diagram below, which outlines what good, great and best practice looks like.</p>
+<p>Once you are familiar with the principles, take a look at the different types of analysis commonly carried out across the department. This will help you understand which RAP principles are recommended for your type of analysis.</p>
+<p>Implementing RAP may involve combining the use of Databricks, R and using clear, consistent version control to increase efficiency and accuracy in our work. For more information on what these tools are, why we are using them, and resources to help upskill in those areas, see our <a href="../../learning-development/learning-support.html">learning resources</a> page.</p>
+<hr>
+</section>
+<section id="core-principles" class="level2">
+<h2 class="anchored" data-anchor-id="core-principles">Core principles</h2>
+<hr>
+<p>RAP has three core principles:</p>
+<p><a href="../../RAP/rap-analysis/rap-analysis-preparing-data.html">Preparing data</a>: Data sources for a publication are stored in the same database</p>
+<p><a href="../../RAP/rap-analysis/rap-analysis-writing-code.html">Writing code</a>: Underlying data files are produced using code, with no manual steps</p>
+<p><a href="../../RAP/rap-analysis/rap-analysis-version-control.html">Version control</a>: Files and scripts should be appropriately version controlled</p>
+<p>Within each of these principles are separate elements of RAP. Each of these is discussed in detail below so that you know what is expected of you as an analyst.</p>
+<hr>
+</section>
+<section id="rap-for-general-analysis-principles" class="level2">
+<h2 class="anchored" data-anchor-id="rap-for-general-analysis-principles">RAP for general analysis principles</h2>
+<p>The diagram below highlights what RAP means for us, and the varying levels at which it can be applied across all types of analysis. You can click on each of the hexagons in the diagram to learn more about each of the RAP principles and how to use them in practice.</p>
+<!-- draw.io diagram -->
+<div class="mxgraph" style="max-width:100%;" data-mxgraph="{&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;dark-mode&quot;:&quot;auto&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;<mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0\&quot; version=\&quot;29.3.4\&quot;>\n  <diagram id=\&quot;_ltWYIdbVKAG_Xyvna0Y\&quot; name=\&quot;Page-1\&quot;>\n    <mxGraphModel dx=\&quot;1418\&quot; dy=\&quot;756\&quot; grid=\&quot;0\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;0\&quot; fold=\&quot;1\&quot; page=\&quot;0\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; background=\&quot;none\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;>\n      <root>\n        <mxCell id=\&quot;0\&quot; />\n        <mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; />\n        <UserObject label=\&quot;Sensible folder and file structure\&quot; link=\&quot;../rap-analysis/rap-analysis-preparing-data.html#sensible-folder-and-file-structure\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-79\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;fontSize=14;locked=0;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;229\&quot; y=\&quot;440\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Use appropriate tools\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#use-appropriate-tools\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-80\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;fillColor=#4472C4;spacingLeft=7;spacingRight=7;rounded=0;shadow=0;sketch=0;backgroundOutline=0;gradientDirection=north;strokeColor=none;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;105\&quot; y=\&quot;440\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Processing is done with code\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#processing-is-done-with-code\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-81\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;167\&quot; y=\&quot;534\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Automated high- level checks\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#automated-high-level-checks\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-82\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;292\&quot; y=\&quot;534\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Source data is acquired and stored sensibly\&quot; link=\&quot;../rap-analysis/rap-analysis-preparing-data.html#source-data-is-acquired-and-stored-sensibly\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-83\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;105\&quot; y=\&quot;628\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Documentation\&quot; link=\&quot;../rap-analysis/rap-analysis-version-control.html#documentation\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-85\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fontColor=#FFFFFF;strokeColor=none;fillColor=#4472C4;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;229\&quot; y=\&quot;628\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Version controlled final code scripts\&quot; link=\&quot;../rap-analysis/rap-analysis-version-control.html#version-controlled-final-code-scripts\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-86\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;480\&quot; y=\&quot;441\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Recyclable code for future use\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#recyclable-code-for-future-use\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-87\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;355\&quot; y=\&quot;440\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Project specific automated sense checks\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#publicationproject-specific-automated-sense-checks\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-89\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;416\&quot; y=\&quot;534\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Automated reproducible reports\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#automated-reproducible-reports\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-90\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;354\&quot; y=\&quot;629\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Peer review of code\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#peer-review-of-code\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-91\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#70AD47;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;479\&quot; y=\&quot;629\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Collaboratively develop code using Git\&quot; link=\&quot;../rap-analysis/rap-analysis-version-control.html#collaboratively-develop-code-using-git\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-92\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;834\&quot; y=\&quot;440\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Clean final code\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#clean-final-code\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-93\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;710\&quot; y=\&quot;440\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;&amp;lt;div style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;Whole pipeline can be run from a single script or workflow&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#whole-pipeline-can-be-run-from-a-single-script-or-workflow\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-94\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;align=center;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;772\&quot; y=\&quot;534\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\&quot;Peer review of code from outside the team\&quot; link=\&quot;../rap-analysis/rap-analysis-writing-code.html#peer-review-of-code-from-outside-the-team\&quot; id=\&quot;5oxWpRq_RZFyfarNT9nA-97\&quot;>\n          <mxCell parent=\&quot;1\&quot; style=\&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;size=30;direction=east;horizontal=0;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;spacingLeft=7;spacingRight=7;fontSize=14;\&quot; vertex=\&quot;1\&quot;>\n            <mxGeometry height=\&quot;120\&quot; width=\&quot;120\&quot; x=\&quot;896\&quot; y=\&quot;534\&quot; as=\&quot;geometry\&quot; />\n          </mxCell>\n        </UserObject>\n        <mxCell id=\&quot;5oxWpRq_RZFyfarNT9nA-98\&quot; parent=\&quot;1\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#4472c4&amp;quot;&amp;gt;Good practice&amp;lt;/font&amp;gt;\&quot; vertex=\&quot;1\&quot;>\n          <mxGeometry height=\&quot;30\&quot; width=\&quot;210\&quot; x=\&quot;122\&quot; y=\&quot;766\&quot; as=\&quot;geometry\&quot; />\n        </mxCell>\n        <mxCell id=\&quot;5oxWpRq_RZFyfarNT9nA-99\&quot; parent=\&quot;1\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#70ad47&amp;quot;&amp;gt;Great practice&amp;lt;/font&amp;gt;\&quot; vertex=\&quot;1\&quot;>\n          <mxGeometry height=\&quot;30\&quot; width=\&quot;220\&quot; x=\&quot;366\&quot; y=\&quot;766\&quot; as=\&quot;geometry\&quot; />\n        </mxCell>\n        <mxCell id=\&quot;5oxWpRq_RZFyfarNT9nA-100\&quot; parent=\&quot;1\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#ed7d31&amp;quot;&amp;gt;Best practice&amp;lt;/font&amp;gt;\&quot; vertex=\&quot;1\&quot;>\n          <mxGeometry height=\&quot;30\&quot; width=\&quot;200\&quot; x=\&quot;732\&quot; y=\&quot;766\&quot; as=\&quot;geometry\&quot; />\n        </mxCell>\n        <mxCell id=\&quot;5oxWpRq_RZFyfarNT9nA-101\&quot; parent=\&quot;1\&quot; style=\&quot;shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#4472c4;gradientColor=none;\&quot; value=\&quot;\&quot; vertex=\&quot;1\&quot;>\n          <mxGeometry height=\&quot;538\&quot; width=\&quot;47\&quot; x=\&quot;328.5\&quot; y=\&quot;140\&quot; as=\&quot;geometry\&quot; />\n        </mxCell>\n        <mxCell id=\&quot;5oxWpRq_RZFyfarNT9nA-102\&quot; parent=\&quot;1\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 32px&amp;quot; color=&amp;quot;#4472c4&amp;quot;&amp;gt;Baseline expectation&amp;lt;/font&amp;gt;\&quot; vertex=\&quot;1\&quot;>\n          <mxGeometry height=\&quot;50\&quot; width=\&quot;313\&quot; x=\&quot;195.5\&quot; y=\&quot;330\&quot; as=\&quot;geometry\&quot; />\n        </mxCell>\n        <mxCell id=\&quot;5oxWpRq_RZFyfarNT9nA-103\&quot; parent=\&quot;1\&quot; style=\&quot;shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontSize=13;rotation=90;strokeWidth=2;strokeColor=#ed7d31;gradientColor=none;\&quot; value=\&quot;\&quot; vertex=\&quot;1\&quot;>\n          <mxGeometry height=\&quot;292\&quot; width=\&quot;47\&quot; x=\&quot;819\&quot; y=\&quot;259\&quot; as=\&quot;geometry\&quot; />\n        </mxCell>\n        <mxCell id=\&quot;5oxWpRq_RZFyfarNT9nA-104\&quot; parent=\&quot;1\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FFFFFF;\&quot; value=\&quot;&amp;lt;font color=&amp;quot;#ed7d31&amp;quot; style=&amp;quot;font-size: 32px&amp;quot;&amp;gt;Ambition&amp;lt;/font&amp;gt;\&quot; vertex=\&quot;1\&quot;>\n          <mxGeometry height=\&quot;50\&quot; width=\&quot;143\&quot; x=\&quot;772\&quot; y=\&quot;330\&quot; as=\&quot;geometry\&quot; />\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>\n&quot;}">
+
+</div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+<hr>
+</section>
+<section id="choosing-the-right-rap-principles-for-your-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="choosing-the-right-rap-principles-for-your-analysis">Choosing the right RAP principles for your analysis</h2>
+<p>Whilst all RAP principles can be applied to any type of analysis, we recognise that different types of analysis conducted across the department may benefit from a tailored approach. To support this, we’ve outlined a selection of common analysis types below, along with the RAP principles we suggest as recommended for each. This guidance is intended to help teams prioritise their efforts and embed RAP in a way that is both practical and impactful.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Ad-hoc analysis (unlikely to be repeated)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Analysis that is performed outside of regular reporting processes, often to answer a specific need or question, but is unlikely to be requested again in any form.</p>
+<p>We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.</p>
+<section id="recommended-principles" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-principles">Recommended principles</h3>
+<p><img src="../../images/good.svg" class="img-fluid"></p>
+<ul>
+<li>Source data is acquired and stored sensibly</li>
+<li>Sensible folder and file structure</li>
+<li>Processing is done with code, where possible</li>
+<li>Use appropriate tools e.g., R, SQL, Python</li>
+<li>Documentation</li>
+</ul>
+<p><img src="../../images/great.svg" class="img-fluid"></p>
+<ul>
+<li>Peer review of code</li>
+</ul>
+<p><img src="../../images/best.svg" class="img-fluid"></p>
+<ul>
+<li>Clean final code</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Ad-hoc analysis (likely to be repeated e.g., different breakdowns)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Analysis that is performed outside of regular reporting processes, often to answer a specific need or question and is likely to be requested again in the same or a similar form.</p>
+<p>We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.</p>
+<p>You can see an example case study of RAP principles being applied to this type of analysis on the <a href="../../RAP/rap-case-studies.html">RAP case studies</a> page.</p>
+<section id="recommended-principles-1" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-principles-1">Recommended principles</h3>
+<p><img src="../../images/good.svg" class="img-fluid"></p>
+<ul>
+<li>Source data is acquired and stored sensibly</li>
+<li>Sensible folder and file structure</li>
+<li>Processing is done with code, where possible</li>
+<li>Use appropriate tools e.g., R, SQL, Python</li>
+<li>Automated high-level checks</li>
+<li>Documentation</li>
+</ul>
+<p><img src="../../images/great.svg" class="img-fluid"></p>
+<ul>
+<li>Recyclable code for future use</li>
+<li>Peer review of code</li>
+<li>Project specific automated sense checks</li>
+<li>Version controlled final code scripts</li>
+</ul>
+<p><img src="../../images/best.svg" class="img-fluid"></p>
+<ul>
+<li>Clean final code</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Internal regular reporting
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Recurring analysis produced within the department to support ongoing operational needs. It often follows a consistent format and schedule, and is used to monitor key internal activities.</p>
+<p>We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.</p>
+<p>You can see an example case study of RAP principles being applied to this type of analysis on the <a href="../../RAP/rap-case-studies.html">RAP case studies</a> page.</p>
+<section id="recommended-principles-2" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-principles-2">Recommended principles</h3>
+<p><img src="../../images/good.svg" class="img-fluid"></p>
+<ul>
+<li>Source data is acquired and stored sensibly</li>
+<li>Sensible folder and file structure</li>
+<li>Processing is done with code, where possible</li>
+<li>Use appropriate tools e.g., R, SQL, Python</li>
+<li>Automated high-level checks</li>
+<li>Documentation</li>
+</ul>
+<p><img src="../../images/great.svg" class="img-fluid"></p>
+<ul>
+<li>Recyclable code for future use</li>
+<li>Peer review of code</li>
+<li>Project specific automated sense checks</li>
+<li>Version controlled final code scripts</li>
+</ul>
+<p><img src="../../images/best.svg" class="img-fluid"> - Whole pipeline can be run from a single script or workflow - Clean final code - Automated reproducible reports - Collaboratively develop code using Git</p>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Analysis at pace
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Analysis which must be quickly conducted and is often not pre-planned, aimed at delivering timely insights to support fast decision making.</p>
+<p>We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.</p>
+<p>You can see an example case study of RAP principles being applied to this type of analysis on the <a href="../../RAP/rap-case-studies.html">RAP case studies</a> page.</p>
+<section id="recommended-principles-3" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-principles-3">Recommended principles</h3>
+<p><img src="../../images/good.svg" class="img-fluid"></p>
+<ul>
+<li>Source data is acquired and stored sensibly</li>
+<li>Sensible folder and file structure</li>
+<li>Processing is done with code, where possible</li>
+<li>Use appropriate tools e.g., R, SQL, Python</li>
+<li>Documentation</li>
+</ul>
+<p><img src="../../images/great.svg" class="img-fluid"></p>
+<ul>
+<li>Peer review of code</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Analysis repeated on different datasets
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This refers to the use of a consistent analytical approach applied to multiple datasets. Although the method remains the same, the data inputs vary e.g., by time period, breakdown or variable.</p>
+<p>We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.</p>
+<section id="recommended-principles-4" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-principles-4">Recommended principles</h3>
+<p><img src="../../images/good.svg" class="img-fluid"></p>
+<ul>
+<li>Source data is acquired and stored sensibly</li>
+<li>Sensible folder and file structure</li>
+<li>Processing is done with code, where possible</li>
+<li>Use appropriate tools e.g., R, SQL, Python</li>
+<li>Automated high-level checks</li>
+<li>Documentation</li>
+</ul>
+<p><img src="../../images/great.svg" class="img-fluid"></p>
+<ul>
+<li>Recyclable code for future use</li>
+<li>Peer review of code</li>
+<li>Project specific automated sense checks</li>
+<li>Version controlled final code scripts</li>
+</ul>
+<p><img src="../../images/best.svg" class="img-fluid"></p>
+<ul>
+<li>Whole pipeline can be run from a single script or workflow</li>
+<li>Clean final code</li>
+<li>Collaboratively develop code using Git</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Data collection and preparation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The collection and routine checking of data as it is coming into the department is an area that RAP can be applied to. However, the levels of control in this area vary drastically from team to team. If you would like advice and help to automate any particular processes, feel free to <a href="mailto:statistics.development@education.gov.uk">contact the Statistics Development Team</a>.</p>
+<p>We recommend the following principles for this type of analysis. Analysts should also consider the full set of principles for analysis and apply any others that are appropriate, useful, and proportionate to their project.</p>
+<section id="recommended-principles-5" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-principles-5">Recommended principles</h3>
+<p><img src="../../images/good.svg" class="img-fluid"></p>
+<ul>
+<li>Source data is acquired and stored sensibly</li>
+<li>Sensible folder and file structure</li>
+<li>Processing is done with code, where possible</li>
+<li>Use appropriate tools e.g., R, SQL, Python</li>
+<li>Automated high-level checks</li>
+<li>Documentation</li>
+</ul>
+<p><img src="../../images/great.svg" class="img-fluid"></p>
+<ul>
+<li>Recyclable code for future use</li>
+<li>Peer review of code</li>
+<li>Version controlled final code scripts</li>
+</ul>
+<p><img src="../../images/best.svg" class="img-fluid"></p>
+<ul>
+<li>Whole pipeline can be run from a single script or workflow</li>
+<li>Clean final code</li>
+<li>Collaboratively develop code using Git</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="apply-the-principles" class="level2">
+<h2 class="anchored" data-anchor-id="apply-the-principles">Apply the principles</h2>
+<p>Now that you’ve prioritised the area of your workflow to focus on, the next step is to apply the relevant RAP principles to that part of your process.</p>
+<p>The next section is split by the three core principles, <a href="../../RAP/rap-analysis/rap-analysis-preparing-data.html">preparing data</a>, <a href="../../RAP/rap-analysis/rap-analysis-writing-code.html">writing code</a> and <a href="../../RAP/rap-analysis/rap-analysis-version-control.html">version control</a>.</p>
+<p>Within each of these principles are separate elements of RAP. Each of these is discussed in detail so that you know what is expected of you as an analyst.</p>
+<hr>
+</section>
+<section id="how-does-rap-fit-into-ada-databricks" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-rap-fit-into-ada-databricks">How does RAP fit into ADA / Databricks</h2>
+<p>Teams can use data held on the Databricks platform to implement RAP principles like version control, automated QA and automated pipelines. If you have an existing pipeline, please see the <a href="../../ADA/ada.html#what-ada-means-for-statistics-publications">ADA guidance on statistics publications</a> to see how migrating to ADA and Databricks will affect your work.</p>
+<hr>
+<section id="rap-principles-adaptable-to-spreadsheets" class="level3">
+<h3 class="anchored" data-anchor-id="rap-principles-adaptable-to-spreadsheets">RAP Principles adaptable to spreadsheets</h3>
+<hr>
+<p>Spreadsheets can incorporate several RAP-aligned practices:</p>
+<p><strong>Source data is acquired and stored sensibly</strong>: Ensure input data is stored securely and referenced clearly, ideally in a separate tab or file.</p>
+<p><strong>Sensible folder and file structure</strong>: Keep raw data, calculations, and outputs clearly separated and consistently organised.</p>
+<p><strong>Automated high-level checks</strong>: Include high-level checks such as totals, flags, or conditional formatting to catch errors early.</p>
+<p><strong>Documentation</strong> : Use cell comments, notes and separate README files to explain the purpose, logic, and structure of the spreadsheet.</p>
+<p><strong>Peer review</strong>: Ask a colleague to review the spreadsheet’s logic, formulas, and outputs—especially for repeated or high-impact analysis.</p>
+<hr>
+</section>
+<section id="supporting-the-transition-to-rap" class="level3">
+<h3 class="anchored" data-anchor-id="supporting-the-transition-to-rap">Supporting the transition to RAP</h3>
+<hr>
+<p>For repeatable, cross-departmental, or high-risk analysis, spreadsheets should ideally be replaced with code-based RAP workflows. Hybrid approaches such as using code to generate inputs or to perform calculations further into the process can be a useful stepping stone.</p>
+<hr>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dfe-analytical-services\.github\.io\/analysts-guide");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../RAP/rap-statistics/rap-statistics-version-control.html" class="pagination-link" aria-label="Version control">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Version control</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../RAP/rap-analysis/rap-analysis-preparing-data.html" class="pagination-link" aria-label="Preparing data">
+        <span class="nav-page-text">Preparing data</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Department for Education, 2024</p>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/rap-analysis/rap-analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+<p>This page is maintained by statistics.development@education.gov.uk</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
