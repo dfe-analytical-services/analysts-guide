@@ -92,7 +92,6 @@ website:
       - section: "Statistics production"
         contents:
           - statistics-production/pub.qmd
-          - RAP/rap-statistics.qmd
           - statistics-production/ud.qmd
           - statistics-production/api-data-standards.qmd
           - statistics-production/ees.qmd
@@ -109,11 +108,21 @@ website:
           - writing-visualising/writing.qmd
       - section: "Reproducible Analytical Pipelines (RAP)"
         contents: 
+          - RAP/getting-started-with-rap.qmd
           - RAP/rap-expectations.qmd
+          - href: RAP/rap-statistics/rap-statistics.qmd
+            contents:
+              - RAP/rap-statistics/rap-statistics-preparing-data.qmd
+              - RAP/rap-statistics/rap-statistics-writing-code.qmd
+              - RAP/rap-statistics/rap-statistics-version-control.qmd
+          - href: RAP/rap-analysis/rap-analysis.qmd
+            contents:
+              - RAP/rap-analysis/rap-analysis-preparing-data.qmd
+              - RAP/rap-analysis/rap-analysis-writing-code.qmd
+              - RAP/rap-analysis/rap-analysis-version-control.qmd
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
-          - RAP/rap-statistics.qmd
-          - RAP/rap-start-guide.qmd
+          - RAP/rap-case-studies.qmd
       - section: "Databricks Setup Guides"
         contents:
           - ADA/databricks_rstudio_sql_warehouse.qmd

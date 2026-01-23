@@ -1,0 +1,24 @@
+
+### Automated high level checks
+
+---
+
+![](../../images/good.svg)
+
+**What does this mean?**
+
+Any data files or analysis that has been created will need to be quality assured. These checks should be automated where possible, so the computer is doing the hard work - saving us time, and to ensure their reliability. It is assumed that when using R, automated scripts will output .html reports that the team can read through to understand their data and identify any issues, and save as a part of their process documentation.
+
+For more information on general quality assurance best practice in DfE, see the [How to QA guide](https://dfe-analytical-services.github.io/how-to-qa/index.html). The list of basic automated QA checks, with code examples can be found below and in our [GitHub repository](https://github.com/dfe-analytical-services/automated-data-qa){target="_blank" rel="noopener noreferrer"}, including checking for minimum, maximum and average values, extreme values and outliers, duplicate rows and columns, geographical subtotal checks, and basic trend analysis using scatter plots.
+
+The Statistics Development Team have developed [the QA app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} to include some of these basic QA outputs.
+
+**Why do it?**
+
+Quality is one of the three pillars that our [code of practice](https://code.statisticsauthority.gov.uk/the-code/quality/){target="_blank" rel="noopener noreferrer"} is built upon. These basic level checks allow us to have confidence that we are accurately processing the data.
+
+Automating these checks ensures their accuracy and reliability, as well as being dramatically quicker than doing these manually.
+
+**How to get started**
+
+Try using our [template code snippets](https://github.com/dfe-analytical-services/automated-data-qa) to get an idea of how you could automate QA of your own publication files. A recording of our introduction to automated QA is also available at the top of the page.

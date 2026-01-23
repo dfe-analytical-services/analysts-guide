@@ -1,0 +1,28 @@
+### Whole pipeline can be run from a single script or workflow
+
+---
+
+![](../../images/best.svg)
+
+**What does this mean?**
+
+The ultimate aim is to utilise a single script or workflow to document and run off everything for a publication or piece of analysis including the data files, any QA and any summary reports. This script or workflow should allow you to run individual outputs by themselves as well, so make sure that each data file can be run in isolation by running single lines of this script.
+All quality assurance for a file is also included in the single script that can be used to create a file from source data (see the [dataset production scripts section for RAP for statistics.](#dataset-production-scripts))
+
+**Why do it?**
+
+This carries all of the same benefits as having a single 'run' script for a file, but at a wider publication or analysis level, effectively documenting the entire process in one place. This makes it easier for new analysts to pick up the process, as well as making it quicker and easier to rerun as all reports relating to that file are immediately available if you ever make changes file.
+
+
+#### Using 'run' scripts and workflows
+
+
+Utilising a single 'run' script or workflow to execute processes written in other scripts brings a number of benefits. It isn't just about removing the need to manually trigger different code scripts to get the outputs, but it means the entire process, from start to finish, is fully documented in one place. This has a huge number of benefits, particularly for enabling new team members to pick up existing work quickly, without wasting time struggling to understand what has been done in the past. 
+
+---
+
+#### Connecting R to Databricks
+
+---
+
+In order to create a single script to run all processes from, you may need to connect to Databricks from RStudio. If you are unsure how to do this, take a look at the guidance on creating a [personal cluster with RStudio and ODBC / DBI ](../../ADA/databricks_rstudio_personal_cluster.html). This allows you to read data directly from Databricks into RStudio and process it there. 

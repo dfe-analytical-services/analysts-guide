@@ -1,0 +1,65 @@
+
+## Preparing data
+
+Preparing data is our first core RAP principle, which contains the following elements:
+
+* [Source data is acquired and stored sensibly](#source-data-is-acquired-and-stored-sensibly) 
+* [Files meet data standards](#files-meet-data-standards)
+* [Sensible folder and file structure](#sensible-folder-and-file-structure)
+
+Your team should store the internal raw data in the Databricks platform. This means that you can run code against a single source of data, reducing the risk of error. Legacy SQL servers will be decommissioned in 2026, by which point, all data will have been migrated into the Databricks Unity Catalog instead. 
+
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/source-data-acquired-sensibly.qmd >}}
+
+------------------------------------------------------------------------
+
+### Files meet data standards
+
+---
+
+![](../../images/good.svg)
+
+#### Open Data Standards
+
+---
+
+You can find information on our standards for Open Data, including how to assess your data against these standards, on our [Open Data standards page](/statistics-production/ud.html#how-to-check-against-these-standards).
+
+---
+
+#### Standardised reference data
+
+---
+
+There will of course be cases where some of the data you use is reference data not owned by the DfE, or is available online for you to download rather than in an internal server. There are ways of incorporating this into a reproducible analytical pipeline nicely, sometimes you can even use links/URLs in your code that will always pull the latest data such that you will never need to change the link to reflect updates to the data!
+
+---
+
+#### Raw files on GitHub
+
+---
+
+If you want to use reference data from GitHub, you can use the URL to the raw file. A common example of when you might want to use this would be to use geographic lookup tables that contain names and codes of different geographic levels for EES files (which are available in our [data screener repository](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}). 
+
+If you find the data you're interested in within a repository, rather than copying, cloning or downloading the data, you should click the 'raw' button (see the below screenshot).
+
+![](../../images/Github-raw-button.png)
+
+This should take you to a new window which contains the raw data from the CSV file. Copy the URL from this page, as this is what we can use to pull the latest data into our code. 
+
+You can now use this URL as you would use a file path in a `read.csv()` query. For example;
+
+```{r devolved_lookup, eval=FALSE}
+devolved_area_lookup <- read.csv("https://raw.githubusercontent.com/dfe-analytical-services/dfe-published-data-qa/master/data/english_devolved_areas.csv")
+```
+
+The above code snippet will load in the data as it would with any other CSV, however the benefit is if that data file is updated on GitHub, when you run the code it will always pull the latest version. This is especially useful for lookup tables and reference data, and is best RAP practice as it removed the need for any manual steps (like downloading, copying & pasting or manually updating the data/code!)
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/sensible-folder-and-file-structure.qmd >}}
+
+------------------------------------------------------------------------

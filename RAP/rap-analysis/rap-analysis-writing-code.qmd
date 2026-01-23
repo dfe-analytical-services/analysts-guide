@@ -1,0 +1,62 @@
+## Writing code {#writing-code}
+
+Writing code is our second core RAP principle, and is made up of the following elements:
+
+-   [Processing is done with code](#processing-is-done-with-code)
+-   [Use appropriate tools](#use-appropriate-tools)
+-   [Whole pipeline can be run from a single script or workflow](#whole-pipeline-can-be-run-from-a-single-script-or-workflow)
+-   [Recyclable code for future use](#recyclable-code-for-future-use)
+-   [Clean final code](#clean-final-code)
+-   [Peer review of code](#peer-review-of-code)
+-   [Peer review of code from outside the team](#peer-review-of-code-from-outside-the-team)
+-   [Automated high-level checks](#automated-high-level-checks)
+-   [Project specific automated sense checks](#publicationproject-specific-automated-sense-checks)
+-   [Automated reproducible reports](#automated-reproducible-reports)
+
+::: callout-tip
+The key thing to remember is that we should be automating everything we can, and the key to automation is writing code. Using code is as simple as telling your computer what to do. Code is just a list of instructions in a language that your computer can understand. We have links to many resources to help you learn to code on our [learning support page](/learning-development/learning-support.html).
+:::
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/processing-done-with-code.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/use-appropriate-tools.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/whole-pipeline-run-scripts.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/recyclable-code-for-future-use.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/clean-final-code.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/peer-code-review.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/peer-code-review-outside-team.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/automated-high-level-checks.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/publication-project-specific-automated-sense-checks.qmd >}}
+
+------------------------------------------------------------------------
+
+{{< include ../common-rap-principles/automated-reproducible-reports.qmd >}}
+
+------------------------------------------------------------------------
+
+
