@@ -157,6 +157,7 @@ You can see an example case study of RAP principles being applied to this type o
 -   Version controlled final code scripts
 
 ![](../../images/best.svg)
+
 -   Whole pipeline can be run from a single script or workflow
 -   Clean final code
 -   Automated reproducible reports
