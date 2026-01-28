@@ -9,7 +9,7 @@ title: "RAP for statistics"
 
 This page sets out the RAP for statistics principles. For other areas of analysis, we have the [RAP for general analysis](../../RAP/rap-analysis/rap-analysis.html) guidance which covers how RAP can be applied to analysis work outside of Official Statistics production. The same 15 core principles apply across both RAP for statistics and RAP for general analysis, with four additional principles specific to statistics production.
 
-If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../../rap/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
+If you're unfamiliar with RAP, or want a refresher on what RAP is and why it matters, take a look at our [getting started with RAP page](../../RAP/getting-started-with-rap.html). It covers the background and benefits of RAP, as well as an introduction to the RAP principles. 
 
 ---
 
