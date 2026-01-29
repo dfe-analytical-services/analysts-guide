@@ -47,9 +47,9 @@ Cross-government RAP champions have laid out a [minimum level of RAP](https://gi
 
 In DfE, we have used these to develop two sets of RAP principles to reflect the different needs of statistics production processes and general analysis. There are 15 core principles, which apply to both statistics and general analysis, and an additional four principles specific to statistics production processes. You should look at the page that is most relevant to your work when applying RAP principles.
 
-The [RAP for statistics principles](../RAP/rap-statistics.html) reflect where processes are often repeated and structured, allowing for more automation and standardisation.
+The [RAP for statistics principles](../RAP/rap-statistics/rap-statistics.html) reflect where processes are often repeated and structured, allowing for more automation and standardisation.
 
-The [RAP for general analysis principles](../RAP/rap-analysis.html) reflect that general analysis can be more varied, but still benefits from applying RAP principles proportionally. The RAP for analysis page has recommendations for how to apply RAP principles to different types of analysis.
+The [RAP for general analysis principles](../RAP/rap-analysis/rap-analysis.html) reflect that general analysis can be more varied, but still benefits from applying RAP principles proportionally. The RAP for analysis page has recommendations for how to apply RAP principles to different types of analysis.
 
 ------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ RAP is now the default approach to analysis in DfE. All analysts are expected to
 
 <p class="text-muted">
 
-You can find guidance on how to implement the principles of Reproducible Analytical Pipelines into statistics production processes on the [RAP for statistics page](../RAP/rap-statistics.html). You can find guidance on how to implement RAP principles into general analysis on the [RAP for analysis page](../RAP/rap-analysis.html). 
+You can find guidance on how to implement the principles of Reproducible Analytical Pipelines into statistics production processes on the [RAP for statistics page](../RAP/rap-statistics/rap-statistics.html). You can find guidance on how to implement RAP principles into general analysis on the [RAP for analysis page](../RAP/rap-analysis/rap-analysis.html). 
 
 </p>
 
@@ -87,7 +87,7 @@ Once you've completed these steps, see the guidance below to help you get starte
 
 1. Splitting your process into [logical chunks](#splitting-your-project-into-chunks), [estimating the effort and complexity](#estimating-effort-and-complexity) and [prioritising](#prioritise). 
 
-2. Apply the relevant RAP principles from the [RAP for statistics page](../RAP/rap-statistics.html) or [RAP for analysis page](../RAP/rap-analysis.html). 
+2. Apply the relevant RAP principles from the [RAP for statistics page](../RAP/rap-statistics/rap-statistics.html) or [RAP for analysis page](../RAP/rap-analysis/rap-analysis.html). 
 
 
 ::: callout-tip
