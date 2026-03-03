@@ -37,12 +37,6 @@ This uses a rhetorical question to introduce the context (where and when) and th
 **Best**: “Was the substantial rise and fall in the number of homicides in the 2000s in England (Figure 1) observed across all age groups and types of weapons (Figure 2)?”
 There have been no numbers presented yet, just a statement that establishes the purpose of the statistics. Introducing your topic is important especially when presenting a series of charts or tables.
 
-Below is a session by Robert Cuffe from the BBC talking to DfE statisticians about writing our publications and highlighting key messages in a way they can be used by journalists and the media.
-
-<div align=center>
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/b44d821a-9b5c-437a-b321-673c4304c350?autoplay=false&amp;showinfo=false" allowfullscreen style="border:none;"></iframe>
-</div>
-
 ---
 
 ### Headline sections
