@@ -199,6 +199,8 @@ We also have specific learning resources and materials for [SQL](../learning-dev
 
 - [HoP Hub L&D Resources](https://rsconnect/rsc/hop-guidance/pages_4_careers/resources.html){target="_blank" rel="noopener noreferrer"} - a collection of resources specific to statistical learning, provided by the Head of Profession for Statistic's Office.
 
+- [Administrative Data Research (ADR) UK Learning Hub](https://www.adruk.org/learning-hub/skills-and-resources-to-use-administrative-data/code/) - a range of information on coding skills, writing and sharing code, code quality, and good code citation.
+
 ---
 
 ## Further information
