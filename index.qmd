@@ -58,7 +58,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Routes for publishing](statistics-production/pub.html)
 - Guidance for how to publish different types of statistics
 
-[RAP in statistics](RAP/rap-statistics.html)
+[RAP in statistics](RAP/rap-statistics/rap-statistics.html)
 - Detailed RAP guidance for statistics publications
 
 [Open data standards](statistics-production/ud.html)
@@ -101,7 +101,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 ## Reproducible Analytical Pipelines (RAP)
 
-[Getting started with RAP](RAP/getting-started-with-RAP.html)
+[Getting started with RAP](RAP/getting-started-with-rap.html)
 - Detailed guidance on how to get started with RAP for statistics publications
 
 [RAP in statistics](RAP/rap-statistics/rap-statistics.html)
@@ -113,7 +113,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [RAP expectations](RAP/rap-expectations.html)
 - Guidance for all analysts on expectations of RAP
 
-[RAP support](RAP/rap-managers.html)
+[RAP support](RAP/rap-support.html)
 - Details on support available for RAP in DfE
 
 [RAP Case studies](RAP/rap-case-studies.html)
