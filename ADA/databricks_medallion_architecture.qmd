@@ -52,6 +52,7 @@ This layered approach gives you **reproducibility** (you always keep the raw dat
 | **Schema** | Enforced and consistent; data types are correct |
 
 **Key principles:**
+
 - **Deduplication** — remove exact duplicates and apply business logic to resolve conflicts.
 - **Data quality checks** — filter or flag records that fail validation rules (nulls in required fields, values out of range, etc.).
 - **Conformance** — standardise naming conventions, date formats, code lookups, and units of measure.
