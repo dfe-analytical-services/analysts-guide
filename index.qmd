@@ -50,6 +50,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Databricks workflows](ADA/databricks_workflows.qmd)
 - Guidance on Workflows in Databricks
 
+[Databricks medallion architecture (Bronze, Silver, Gold, Copper)](ADA/databricks_medallion_architecture.qmd)
+- De-mystifying the 'medallion architecture' pattern and what the bronze, silver, gold and copper catalogs mean.
+
 [Accessibility](learning-development/accessibility.html)
 - Tools and resources for digital accessibility
 
