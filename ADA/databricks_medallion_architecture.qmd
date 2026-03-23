@@ -1,0 +1,144 @@
+---
+title: "Medallion architecture (Bronze, Silver, Gold, Copper)"
+format: html
+---
+
+::: callout-important
+This article is primarily for **informational purposes**. As a downstream consumer of data you will mostly work with tables in the **Gold** (and sometimes **Bronze**) layers, so you don't need to understand the architecture in great detail. The goal here is simply to familiarise you with the terminology — *Bronze*, *Silver*, *Gold*, *Copper* — so that when these terms come up in conversations, documentation, or table names, you have a clear mental model of what they mean and where your data will sit in the pipeline.
+:::
+
+Medallion architecture is a **data design pattern** used to organise data in a lakehouse. It structures your data into three progressive layers — **Bronze**, **Silver**, and **Gold** — each representing a higher level of quality and refinement.
+
+::: callout-note
+Note that *Copper* is not mentioned above. This is because the *Copper* layer is Department for Education specific. Further details are provided in the section below **Copper Layer – Migrated Analytical Modelling Areas (DfE-Specific)**.
+:::
+
+The core idea is simple: **raw data flows in at one end and clean, business-ready data comes out the other**.
+
+```
+  Source Systems  ──▶  Bronze (Raw)  ──▶  Silver (Cleaned)  ──▶  Gold (Business)
+```
+
+This layered approach gives you **reproducibility** (you always keep the raw data), **traceability** (you can track how data was transformed), and **flexibility** (different teams can work at different layers).
+
+---
+
+## Bronze Layer – Raw Ingestion
+
+| Aspect | Detail |
+| --- | --- |
+| **Purpose** | Land data exactly as it arrives from source systems |
+| **Format** | Raw, unvalidated, append-only |
+| **Typical content** | JSON payloads, CSV dumps, CDC streams, API responses |
+| **Schema** | Matches the source; may include metadata columns (ingestion timestamp, source file name) |
+
+**Key principles:**
+
+- **No transformations** — store the data as-is so you have a complete audit trail.
+- **Append-only** — never overwrite; this protects you if upstream schemas change or bad data arrives.
+- **Metadata enrichment** — add columns like `_ingested_at`, `_source_file`, or `_batch_id` to aid debugging.
+
+**Example use case:** A daily extract from a school attendance records system lands as CSV files. The Bronze table stores every row from every file, including duplicates, with a timestamp of when each batch was loaded.
+
+---
+
+## Silver Layer – Cleaned & Conformed
+
+| Aspect | Detail |
+| --- | --- |
+| **Purpose** | Clean, deduplicate, validate, and conform the data |
+| **Format** | Structured, typed, quality-checked |
+| **Typical content** | Deduplicated records, joined reference data, standardised column names |
+| **Schema** | Enforced and consistent; data types are correct |
+
+**Key principles:**
+
+- **Deduplication** — remove exact duplicates and apply business logic to resolve conflicts.
+- **Data quality checks** — filter or flag records that fail validation rules (nulls in required fields, values out of range, etc.).
+- **Conformance** — standardise naming conventions, date formats, code lookups, and units of measure.
+- **Joins** — enrich records by joining with reference/dimension tables (e.g. mapping provider codes to provider names).
+
+**Example use case:** The raw student records from Bronze are deduplicated on student ID + academic year, date columns are cast to proper `DATE` types, and provider codes are joined to a reference table to add provider names.
+
+---
+
+## Gold Layer – Business-Ready
+
+| Aspect | Detail |
+| --- | --- |
+| **Purpose** | Serve curated, aggregated / derived, business-level datasets |
+| **Format** | Aggregated, or with additional derived fields, modelled, optimised for consumption |
+| **Typical content** | KPI tables, summary statistics, dimensional models, feature stores, analytical layer datasets |
+| **Schema** | Tailored to specific business questions or reporting needs |
+
+**Key principles:**
+
+- **Business logic lives here** — aggregations, calculated metrics, and business rules are applied at this layer.
+- **Consumption-optimised** — tables are structured for statistical analysis, dashboards, reports, ML models, or APIs.
+- **Multiple Gold tables from one Silver table** — different teams may create different Gold views of the same underlying data.
+
+**Example use case:** A Gold table aggregates student completions by provider, qualification level, and academic year — ready to power a dashboard or feed into a statistical publication.
+
+---
+
+## Copper Layer – Migrated Analytical Modelling Areas (DfE-Specific)
+
+> **This layer is specific to the Department for Education and is not part of the standard medallion architecture.**
+
+| Aspect | Detail |
+| --- | --- |
+| **Purpose** | Host pre-existing analytical modelling areas that have been migrated to Databricks during onboarding |
+| **Format** | As-is from the original source environment; structure and conventions vary |
+| **Typical content** | Legacy analytical models, derived datasets, and reporting tables migrated from previous platforms |
+| **Schema** | Inherited from the original modelling area; not yet conformed to medallion standards |
+
+**Why does Copper exist?**
+
+When the Department onboarded analytical teams to Databricks, there was a practical need to make existing data and processes available **quickly** — without waiting for everything to be fully remodelled into the Bronze → Silver → Gold pipeline. The Copper layer serves this transitional purpose.
+
+**Key principles:**
+
+- **Continuity** — analysts can continue working with familiar datasets and models while the migration to Databricks is underway.
+- **Transitional by design** — Copper is not intended to be a permanent layer. The longer-term Departmental goal is to remodel the data within Copper into the standard medallion architecture.
+- **Pragmatic onboarding** — getting teams onto the platform quickly provides immediate benefits (collaboration, compute, governance) even before full data remodelling is complete.
+
+**What does this mean for analysts?**
+
+If you are working with tables in a Copper schema, you are using data that has been migrated from a legacy environment. It will work as expected, but over time these tables will be progressively replaced by properly modelled Bronze → Silver → Gold equivalents. 
+
+The first example of this is the *Longitudinal ILR* which takes 20+ years of further education learner and aims data and creates a 'Learners' and 'Aims' table which are specifically designed to enable easy analysis of the data across time and with standardised output-ready labels for fields ready to be dropped into files for *Explore education statistics*. 
+
+When the data you're working with is transitioned to medallion architecture, you may need to update your queries to point to the new Gold layer tables. This is a long term and incremental project and you as analysts will be heavily involved in the process due to your subject matter expertise when your datasets are re-modelled.
+
+---
+
+## Putting It All Together
+
+| | Bronze | Silver | Gold | Copper |
+| --- | --- | --- | --- | --- |
+| **Data quality** | Raw / as-is | Cleaned / validated | Business-ready | Varies (as migrated) |
+| **Audience** | Data engineers | Data engineers / analysts | Analysts / stakeholders | Analysts (transitional) |
+| **Update pattern** | Append-only | Merge / upsert | Rebuild / incremental | Inherited from source |
+| **Longevity** | Permanent | Permanent | Permanent | Transitional |
+
+### Why use it?
+
+- **Recoverability** — if a transformation has a bug, you still have the raw Bronze data to reprocess from.
+- **Modularity** — each layer has a clear responsibility, making pipelines easier to maintain and debug.
+- **Governance** — you can apply different access controls at each layer (e.g. restrict Bronze to engineers, open Gold to analysts).
+- **Incremental processing** — each layer can process only new/changed data rather than reprocessing everything.
+
+### In Databricks
+
+Medallion architecture maps naturally onto **Delta Lake** tables organised into Unity Catalog schemas:
+
+```
+  catalog.bronze.raw_student_records
+  catalog.silver.cleaned_student_records
+  catalog.gold.student_completions_summary
+  catalog.copper.legacy_modelling_area        ← migrated, transitional
+```
+
+---
+
+*This pattern is a guideline, not a rigid rule. Some organisations add additional layers (e.g. a "landing" zone before Bronze, or a "platinum" layer for ML features). The important thing is the principle: progressively refine your data from raw to business-ready.*
