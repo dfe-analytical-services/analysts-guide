@@ -206,6 +206,7 @@ library(DBI)
 
 con <- DBI::dbConnect(
   odbc::databricks(),
+  driver = "Databricks ODBC Driver",
   httpPath = Sys.getenv("DATABRICKS_SQL_PATH"),
   useNativeQuery = FALSE #required for dbWriteTable to work
 )
@@ -228,6 +229,9 @@ dbGetQuery(con, "SELECT * FROM games_description;")
 #using the three-level namespace
 dbGetQuery(con, "SELECT * FROM catalog_40_copper_analyst_training.steam.games_description;")
 ```
+::: callout-note
+Databricks have recently [renamed their ODBC driver](https://docs.databricks.com/aws/en/integrations/odbc/migration) which may cause issues with the `odbc` R package while it catches up. We've added a line to the code above to specify the driver, which provides a fix in the meantime.
+:::
 
 ------------------------------------------------------------------------
 
