@@ -8,7 +8,7 @@ site: "_site.yml"
 ```{r include=FALSE}
 library(fontawesome)
 library(quarto)
-
+library(readxl)
 ```
 
 ---
