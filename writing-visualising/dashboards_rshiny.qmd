@@ -95,7 +95,7 @@ For more advanced Shiny knowledge it's worth taking a look at the guide to [engi
 
 You should seek to make use of the community that is already out there, see what others are doing, ask them questions and for advice on any decisions or problems that you're facing, and share what it is that you're doing.
 
-- The [Statistics Development Team](mailto:statistics.development@education.gov.uk) are experienced with R Shiny and happy to help or offer advice;
+- The [Explore Education Statistics Platforms Team](mailto:explore.statistics@education.gov.uk) are experienced with R Shiny and happy to help or offer advice;
 - The [DfE R community](https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9) on Teams is a place where you can post things you've learned or to ask for help;
 - Going beyond DfE there's a wealth of resources and communities online, including [Stack Overflow](https://stackoverflow.com/) discussions, cross government slack channels (e.g. #R and #Shiny on govdatascience.slack.com) and even tweets about [R Shiny on twitter](https://twitter.com/search?q=rshiny&src=spelling_expansion_revert_click).
 
@@ -103,7 +103,7 @@ You should seek to make use of the community that is already out there, see what
 
 ## DfE styling and the DfE R Shiny template
 
-Our [template shiny app repository](https://github.com/dfe-analytical-services/shiny-template) should be used a starting point for all public facing dashboards as it gives a consistent set up for publishing and provides template code for common parts. You can start your own repository using the 'Use this template' green button on the template repository. You will need a GitHub account to do this. If you are unsure or need help, contact the Statistics Development team who will be able to walk you through this.
+Our [template shiny app repository](https://github.com/dfe-analytical-services/shiny-template) should be used a starting point for all public facing dashboards as it gives a consistent set up for publishing and provides template code for common parts. You can start your own repository using the 'Use this template' green button on the template repository. You will need a GitHub account to do this. If you are unsure or need help, contact the explore education statistics platforms team who will be able to walk you through this.
 
 ---
 
@@ -256,8 +256,7 @@ You need to alert the [explore education statistics platforms team](mailto:explo
 
 If you are publishing a new dashboard, or adding major updates to an existing one, you must:
 
-- Obtain authorisation via email from the relevant G6 or DD and the [statistics development team](mailto:statistics.development@education.gov.uk) \
-- Forward authorisation emails to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk)
+- Obtain authorisation via email from the relevant G6 or DD and the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk)
 
 ::: {.callout-important}
 ## Updating existing dashboards
@@ -300,7 +299,7 @@ Once you're set up, there are certain parts of the code you need to update:
 * Update the README.md file (you can do this easily directly in GitHub). This is the file that renders below your repo in GitHub for users to see.
 * Begin adding your own dashboard content. If you copy and paste any parts of the code (i.e. to create new tabs) you must change all of the IDs so there are no repeated IDs in the UI, otherwise the app will run with no UI elements. You should add UI and unit tests as you develop your code as a form of automated QA (see our [guidance on UI tests](#ui-tests) and [guidance on unit tests](#unit-tests)).
 
-You must contact the Statistics Development Team for the following:
+You must contact the explore education statistics platforms team for the following:
 
 * To add the shinyapps.io secret and token to your GitHub repo, therefore enabling the app to be hosted on shinyapps.io.
 * To create an area for your team in Google Analytics, to track the user analytics of your dashboard.
@@ -596,7 +595,7 @@ if(FALSE){
 
 If you're planning to publish a dashboard, or to set up Google Analytics for a published dashboard, please contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
 
-The template has a google_analytics.html file which is set up to track all basic metrics, plus the inputs from both drop-downs. To set this up with your own app you will need a new tracking tag (the long number in the gtag()) which the Statistics Development Team can provide you with. Please contact us in order to set this up.
+The template has a google_analytics.html file which is set up to track all basic metrics, plus the inputs from both drop-downs. To set this up with your own app you will need a new tracking tag (the long number in the gtag()) which the explore education statistics platforms team can provide you with. Please contact us in order to set this up.
 
 If you are hosting your dashboard at multiple URLs (i.e. to cope with expected high traffic) then all URLs will be tracked using one tracking tag and analytics for all URLs will all appear as one in the same report.
 
