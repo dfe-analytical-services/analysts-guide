@@ -88,6 +88,7 @@ website:
           - ADA/databricks_fundamentals.qmd
           - ADA/databricks_notebooks.qmd
           - ADA/databricks_workflows.qmd
+          - ADA/databricks_medallion_architecture.qmd
           - learning-development/accessibility.qmd
       - section: "Statistics production"
         contents:
