@@ -77,7 +77,7 @@ In March 2020 we were given the green light via a GDS service assessment to move
 There are a number of ongoing feedback routes open to users during the public beta phase of the service:
 
 * Beta banner (service focus)
-Users can submit feedback through the beta banner from any EES page, and responses are managed by the statistics development team. Feedback so far has mostly been aimed at the service functionality more generally but we do regularly get publication specific feedback which we share with the relevant teams. 
+Users can submit feedback through the beta banner from any EES page, and responses are managed by the Explore Education Statistics Platforms team. Feedback so far has mostly been aimed at the service functionality more generally but we do regularly get publication specific feedback which we share with the relevant teams. 
 
 * Formal user testing (service focus)
 Our EES team will speak to users via user testing sessions to help inform future iterations to functionality.
