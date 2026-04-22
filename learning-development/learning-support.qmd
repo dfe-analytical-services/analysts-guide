@@ -170,6 +170,17 @@ If you are interested in a one off / bespoke workshop or team meeting, please co
 
 We also have specific learning resources and materials for [SQL](../learning-development/sql.html), [R](../learning-development/r.html), and [Git](../learning-development/git.html)
 
+## Databricks resources
+
+There are various learning resources available to help you with upskilling in Databricks.
+
+- [ADA's Analytics Workbench](https://analytical-data-access.azurewebsites.net/workbench): an overview of using Databricks with various analytical tools
+- [Databricks Code & Learn GitHub repository](https://github.com/dfe-analytical-services/databricks_code_learn): a repository of training materials and exercises created by Nick Treece (DISD)
+- YouTube videos:
+    - [What is Databricks SQL?](https://www.youtube.com/watch?v=0XWf1V40SdI&list=PLTPXxbhUt-YXXXlfUPTmlpJ7jvw9KTGAv): a quick intro to using Databricks SQL editor
+    - [Genie Code: Your autonomous AI partner](https://www.youtube.com/watch?v=UO0wvGYu5QQ): Using the Genie Code AI assistant within Databricks
+    - [Getting Started on Databricks SQL for Users](https://www.youtube.com/watch?v=xOxASzUHg_s&list=PLTPXxbhUt-YXXXlfUPTmlpJ7jvw9KTGAv&index=13): walkthrough of the SQL editor, SQL warehouses, Catalog Explorer, writing SQL queries, creating dashboards and workflows
+    - [Learn Databricks in Under 2 Hours](https://www.youtube.com/watch?v=CoqZTt528ew): a longer video showing many different areas of Databricks
 
 ---
 
