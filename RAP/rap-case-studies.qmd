@@ -8,7 +8,7 @@ format: html
 <p class="text-muted"> Case studies which illustrate how RAP principles have been applied in practice.</p>
 
 ------------------------------------------------------------------------
-## RAP case studies  sf
+## RAP case studies
 
 Each case study provides an overview of the project, the context and background, and how the RAP principles were implemented.
 
