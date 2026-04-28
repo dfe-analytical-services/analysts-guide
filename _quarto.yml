@@ -126,6 +126,7 @@ website:
           - RAP/rap-case-studies.qmd
       - section: "Databricks Setup Guides"
         contents:
+          - ADA/databricks_existing_processes.qmd
           - ADA/databricks_rstudio_sql_warehouse.qmd
           - ADA/databricks_rstudio_personal_cluster.qmd
           - ADA/databricks_rstudio_personal_cluster_sparklyr_archive.qmd

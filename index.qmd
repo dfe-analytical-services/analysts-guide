@@ -127,6 +127,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 ## Databricks setup guides
 
+[Databricks - migrating existing processes](ADA/databricks_existing_processes.html)
+- Guidance for analysts on how to migrate existing processes to Databricks
+
 [SQL Warehouse with RStudio](ADA/databricks_rstudio_sql_warehouse.html)
 - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio
 
