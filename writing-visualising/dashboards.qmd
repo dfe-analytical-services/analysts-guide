@@ -52,7 +52,7 @@ The following sections cover the considerations in more detail, though when deve
 
 ## Governance
 
-All teams developing dashboards to accompany Official Statistics should contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) for advice on the level of approval required as there may be times when HoP approval is needed in addition to team / unit leader approval. Approvals should be sent to the Statistics Development Team when asking for a new dashboard to be hosted on shinyapps.io.
+All teams developing dashboards to accompany Official Statistics should contact the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk) for advice on the level of approval required as there may be times when HoP approval is needed in addition to team / unit leader approval. Approvals should be sent to the Explore Education Statistics Platforms Team when asking for a new dashboard to be hosted on shinyapps.io.
 
 The standards for dashboards, and department strategy are maintained by the Central Statistics Standards Unit and governed by the Statistics Leadership Group, which is made up of all senior statisticians owning Official Statistics publications in the department.
 
