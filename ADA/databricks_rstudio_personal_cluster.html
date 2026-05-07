@@ -927,6 +927,7 @@ If you require a larger personal cluster this can be requested by the ADA team.<
 <br>
 <img src="../images/ada-compute-personal-create.png" class="img-fluid"></li>
 </ul></li>
+<li><p>Open the ‘Advanced’ drop-down and ensure Access mode is set to ‘Manual’ and choose ‘Dedicated’.</p></li>
 <li><p>Click the ‘Create compute’ button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes<br>
 <br>
 <img src="../images/ada-compute-personal-create-button.png" class="img-fluid"></p></li>
@@ -1133,6 +1134,15 @@ Note
 <hr>
 <p>The sqlQuery function is part of the <code>RODBC</code> package, which is different to the <code>odbc</code> package that we have recommended in this guidance.</p>
 <p>If you wish to keep using sqlQuery(), you will need to follow the instructions detailed in the Databricks <a href="https://learn.microsoft.com/en-us/azure/databricks/integrations/odbc/connect-databricks-excel-python-r" target="_blank">Connect to Azure Databricks from Python or R</a> page.</p>
+<hr>
+</section>
+<section id="your-administrator-has-only-allowed-sql-and-python-and-scala-commands-on-this-cluster.-this-execution-contained-at-least-one-disallowed-language." class="level4">
+<h4 class="anchored" data-anchor-id="your-administrator-has-only-allowed-sql-and-python-and-scala-commands-on-this-cluster.-this-execution-contained-at-least-one-disallowed-language.">Your administrator has only allowed sql and python and scala commands on this cluster. This execution contained at least one disallowed language.</h4>
+<hr>
+<p>In the case of this error, check that your personal compute has been set up correctly. Click on the advanced drop-down within your personal compute configuration page and ensure that ‘Access Mode’ is set to ‘Manual’ and select ‘Dedicated’.</p>
+<div data-align="center">
+<p><img src="../images/ada-compute-personal-advanced.png" class="img-fluid"></p>
+</div>
 
 
 </section>
