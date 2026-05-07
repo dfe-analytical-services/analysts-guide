@@ -25,7 +25,7 @@ jobs:
       - name: Restore renv
         uses: r-lib/actions/setup-renv@v2
         with:
-          cache-version: 1
+          cache-version: 2
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
