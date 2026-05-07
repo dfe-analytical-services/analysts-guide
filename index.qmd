@@ -26,6 +26,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [SQL](learning-development/sql.html)
 - Guidance and tips for accessing data via databases with SQL
 
+[Databricks](learning-development/databricks.html)
+- Guidance and tips for using Databricks
+
 [R](learning-development/r.html)
 - Guidance and tips for using R
 

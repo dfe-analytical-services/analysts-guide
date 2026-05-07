@@ -80,6 +80,7 @@ website:
         contents:
           - learning-development/learning-support.qmd
           - learning-development/sql.qmd
+          - learning-development/databricks.qmd
           - learning-development/r.qmd
           - learning-development/git.qmd
           - learning-development/python.qmd

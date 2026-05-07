@@ -410,56 +410,6 @@ In the diagram below, we have outlined the potential differences in pipelines be
 </body>
 </html>
 
----
-
-## Useful links
-
-### ADA support page
-
----
-
-See the [ADA support page on how Databricks works](https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works).
-
----
-
-### Databricks jargon buster
-
-The core concepts of Databricks and any related acronyms are explained in the [jargon buster](https://analytical-data-access.education.gov.uk/get-support/jargon)
-
----
-
-### Differences between IDEs and Notebooks
-
----
-
-RStudio is an IDE (Integrated Development Environment) whereas Databricks makes use of Notebooks, where you write your code in blocks contained in individual cells. There are advantages and disadvantages to both methods, and [this NHS-R article](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/notebooks_versus_ide_development/#what-is-this-guide-for) outlines some of the differences you might come across when switching from using IDEs to Notebooks. 
-
----
-
-### Walkthrough a simple analysis
-
----
-
-See the [ADA support page on using R, python and SQL in Databricks](https://analytical-data-access.azurewebsites.net/get-support/using-r-python-and-sql-in-databricks).
-
----
-
-### Helpful getting started videos
-
----
-
-See the collection of [getting started videos](https://educationgovuk.sharepoint.com/:f:/r/sites/ADA-SuperUserForum/Shared%20Documents/General/Getting%20started%20videos?csf=1&web=1&e=RCFSib) covering the basics of Databricks and using notebooks. 
-
----
-
-### Databricks code templates
-
----
-
-See examples and code snippets in R, SQL and Python in these [Databricks code template notebooks](https://adb-6882499576863257.17.azuredatabricks.net/browse/folders/3070168888967919?o=6882499576863257#).
-
----
-
 
 
 ## Databricks FAQs
