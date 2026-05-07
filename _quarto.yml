@@ -84,11 +84,6 @@ website:
           - learning-development/git.qmd
           - learning-development/python.qmd
           - learning-development/datacamp-tracks.qmd
-          - ADA/ada.qmd
-          - ADA/databricks_fundamentals.qmd
-          - ADA/databricks_notebooks.qmd
-          - ADA/databricks_workflows.qmd
-          - ADA/databricks_medallion_architecture.qmd
           - learning-development/accessibility.qmd
       - section: "Statistics production"
         contents:
@@ -124,9 +119,13 @@ website:
           - RAP/rap-support.qmd
           - RAP/rap-faq.qmd
           - RAP/rap-case-studies.qmd
-      - section: "Databricks Setup Guides"
+      - section: "Databricks and ADA"
         contents:
-          - ADA/databricks_existing_processes.qmd
+          - ADA/ada.qmd
+          - ADA/databricks_fundamentals.qmd
+          - ADA/databricks_notebooks.qmd
+          - ADA/databricks_workflows.qmd
+          - ADA/databricks_medallion_architecture.qmd
           - ADA/databricks_rstudio_sql_warehouse.qmd
           - ADA/databricks_rstudio_personal_cluster.qmd
           - ADA/databricks_rstudio_personal_cluster_sparklyr_archive.qmd
