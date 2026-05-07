@@ -101,7 +101,7 @@ If you are in the wrong Workspace (e.g., one starting with `s101d01` for develop
 
 1.  To create your own personal compute resource click the 'Create with DfE Personal Compute' button on the compute page\
 
-![](/images/ada-compute-personal.png)
+![](../images/ada-compute-personal.png)
 
 2.  You'll then be presented with a screen to configure the cluster. There are 2 options here under the performance section which you will want to pay attention to; Databricks runtime version, and Node type\
     \
@@ -116,13 +116,15 @@ If you are in the wrong Workspace (e.g., one starting with `s101d01` for develop
         \
         ![](/images/ada-compute-personal-create.png)
 
-3.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes\
-    \
-    ![](/images/ada-compute-personal-create-button.png)
+3. Open the 'Advanced' drop-down and ensure Access mode is set to 'Manual' and choose 'Dedicated'. 
 
-4.  Once the cluster is up and running the icon under the 'State' header on the 'Compute' page will appear as a green tick\
+4.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes\
     \
-    ![](/images/ada-compute-ready.png)
+    ![](../images/ada-compute-personal-create-button.png)
+
+5.  Once the cluster is up and running the icon under the 'State' header on the 'Compute' page will appear as a green tick\
+    \
+    ![](../images/ada-compute-ready.png)
 
 ------------------------------------------------------------------------
 
@@ -286,3 +288,17 @@ Databricks have recently [renamed their ODBC driver](https://docs.databricks.com
 The sqlQuery function is part of the `RODBC` package, which is different to the `odbc` package that we have recommended in this guidance.
 
 If you wish to keep using sqlQuery(), you will need to follow the instructions detailed in the Databricks [Connect to Azure Databricks from Python or R](https://learn.microsoft.com/en-us/azure/databricks/integrations/odbc/connect-databricks-excel-python-r) page. 
+
+------------------------------------------------------------------------
+
+#### Your administrator has only allowed sql and python and scala commands on this cluster. This execution contained at least one disallowed language.
+
+------------------------------------------------------------------------
+
+In the case of this error, check that your personal compute has been set up correctly. Click on the advanced drop-down within your personal compute configuration page and ensure that 'Access Mode' is set to 'Manual' and select 'Dedicated'. 
+
+::: {align="center"}
+![](../images/ada-compute-personal-advanced.png)
+:::
+
+
