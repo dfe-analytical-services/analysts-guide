@@ -17,7 +17,7 @@ The [Analytical Data Access (ADA) service](https://analytical-data-access.azurew
 It brings together:
 
 *	a searchable data catalogue - the Data Discovery Platform (DDP)
-*	a workbench of tools for analysing data - including [Databricks](/ADA/databricks-fundamentals.html)
+*	a workbench of tools for analysing data - including [Databricks](../ADA/databricks_fundamentals.html)
 *	a form for requesting access to data
 *	a support section - with walkthrough instructions
 *	a collection of data reports and dashboards
@@ -103,14 +103,14 @@ The earlier your data is migrated, the more time you will have to dual run code 
 
 In order to take advantage of the benefits listed above, we recommend that you and your team:
 
-* Arrange data migration and access to Databricks. Onboarding is currently voluntary, so it's a great opportunity to move early and have more time to get familiar with the system and undertake training. Get in touch with [the ADA team](mailto:ADAPTTeam@education.gov.uk) to discuss onboarding with them. 
+* Arrange data migration and access to Databricks.The earlier you move, the more time you will have to get familiar with the system and undertake training. Get in touch with [the ADA team](mailto:ADAPTTeam@education.gov.uk) to discuss onboarding with them. 
 
 * Take part in Databricks training for R and / or SQL. R training is currently offered by the ADA team on a monthly basis and SQL training is in the process of being developed. Upcoming training is advertised on the [ADA user group Teams channel](https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9).
 
 * Be proactive in determining whether any changes will be necessary for your existing code and set time aside to make these changes - see the guidance in the [what this means for existing code](/ADA/ada.html#what-this-means-for-existing-code) section below. 
 
 ::: {.callout-important}
-For teams that have invested in RAP principles and already have existing code pipelines, it is possible to take advantage of cloud computing and use of data in the Databricks platform with minimal changes. This is covered in more detail in the [what this means for existing code](/ADA/ada.html#what-this-means-for-existing-code) section below. 
+For teams that have invested in RAP principles and already have existing code pipelines, it is possible to take advantage of cloud computing and use of data in the Databricks platform with minimal changes. This is covered in more detail in the [what this means for existing code](../ADA/databricks_fundamentals.html#what-databricks-means-for-existing-code) on the [Databricks Fundamentals Page](../ADA/databricks_fundamentals.html). 
 :::
 
 ---
