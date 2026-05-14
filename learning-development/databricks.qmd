@@ -52,11 +52,3 @@ See the [ADA support page on using R, python and SQL in Databricks](https://anal
 See the collection of [getting started videos](https://educationgovuk.sharepoint.com/:f:/r/sites/ADA-SuperUserForum/Shared%20Documents/General/Getting%20started%20videos?csf=1&web=1&e=RCFSib) covering the basics of Databricks and using notebooks. 
 
 ---
-
-### Databricks code templates
-
----
-
-See examples and code snippets in R, SQL and Python in these [Databricks code template notebooks](https://adb-6882499576863257.17.azuredatabricks.net/browse/folders/3070168888967919?o=6882499576863257#).
-
----
