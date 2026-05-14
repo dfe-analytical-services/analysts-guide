@@ -56,7 +56,7 @@ The table below, taken from [NHS-R guidance](https://nhsdigital.github.io/rap-co
 \*\* auto-formatting is available for SQL and Python in Databricks, but not R  
 \*\*\* external users must have software that would allow them to open notebooks
 
-You can read more about the differences between IDEs and notebooks and where each might be useful [on the NHS-R website](/ADA/ada.html#differences-between-ides-and-notebooks).
+You can read more about the differences between IDEs and notebooks and where each might be useful [on the NHS-R website](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/workflow/notebooks_versus_ide_development/#what-is-this-guide-for).
 
 ---
 

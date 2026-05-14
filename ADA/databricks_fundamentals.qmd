@@ -298,7 +298,7 @@ Notebooks might be something you've not come across before. Notebooks are made u
 
 ---
 
-Databricks has inbuilt Git functionality, and you can save your notebooks and scripts inside Git repositories as with any other file formats. There is guidance on using Databricks with Azure DevOps on our [Databricks and version control page](ADA/git_databricks.html). 
+Databricks has inbuilt Git functionality, and you can save your notebooks and scripts inside Git repositories as with any other file formats. There is guidance on using Databricks with Azure DevOps on our [Databricks and version control page](../ADA/git_databricks.html). 
 
 ---
 
