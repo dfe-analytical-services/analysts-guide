@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>documentation – Analysts' Guide</title>
+<title>Databricks – Analysts’ Guide</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,64 +23,31 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2c90660ccd9ed875bed4d9d3efe2ebdb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8e79a31a652f881e3331707867e6901b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-117422bf383bab26db0edd9efa25677e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-894feb28fd72da7d943fb260ef1d0300.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../learning-development/r.html" rel="next">
+<link href="../learning-development/sql.html" rel="prev">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2c90660ccd9ed875bed4d9d3efe2ebdb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8e79a31a652f881e3331707867e6901b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-117422bf383bab26db0edd9efa25677e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-894feb28fd72da7d943fb260ef1d0300.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -136,7 +103,7 @@ cookieconsent.run({
   
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -308,7 +275,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../learning-development/learning-support.html">Learning resources</a></li><li class="breadcrumb-item"><a href="../learning-development/databricks.html">Databricks</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -322,9 +289,9 @@ cookieconsent.run({
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -401,64 +368,64 @@ cookieconsent.run({
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Learning resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Learning support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/sql.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/databricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/databricks.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Databricks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/r.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/git.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/datacamp-tracks.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/datacamp-tracks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DataCamp learning tracks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessibility</span></a>
   </div>
 </li>
@@ -475,55 +442,55 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Routes for publishing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open Data Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/api-data-standards.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/api-data-standards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistics API Data Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore education statistics (EES)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Good examples in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Embedded visualisations in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Publication scrums</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">User engagement</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EES analytics</span></a>
   </div>
 </li>
@@ -540,25 +507,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Public dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating R Shiny dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualising data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing about data</span></a>
   </div>
 </li>
@@ -575,19 +542,19 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/getting-started-with-rap.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/getting-started-with-rap.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started with RAP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP expectations</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../RAP/rap-statistics/rap-statistics.html" class="sidebar-item-text sidebar-link">
+            <a href="../RAP/rap-statistics/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for statistics</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -596,19 +563,19 @@ cookieconsent.run({
       <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-statistics/rap-statistics-preparing-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics/rap-statistics-preparing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preparing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-statistics/rap-statistics-writing-code.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics/rap-statistics-writing-code.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-statistics/rap-statistics-version-control.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics/rap-statistics-version-control.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Version control</span></a>
   </div>
 </li>
@@ -616,7 +583,7 @@ cookieconsent.run({
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../RAP/rap-analysis/rap-analysis.html" class="sidebar-item-text sidebar-link">
+            <a href="../RAP/rap-analysis/rap-analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for general analysis</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -625,19 +592,19 @@ cookieconsent.run({
       <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-analysis/rap-analysis-preparing-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-analysis/rap-analysis-preparing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preparing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-analysis/rap-analysis-writing-code.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-analysis/rap-analysis-writing-code.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-analysis/rap-analysis-version-control.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-analysis/rap-analysis-version-control.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Version control</span></a>
   </div>
 </li>
@@ -645,19 +612,19 @@ cookieconsent.run({
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP FAQs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-case-studies.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-case-studies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP case studies</span></a>
   </div>
 </li>
@@ -674,67 +641,67 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/ada.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analytical Data Access (ADA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_fundamentals.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_fundamentals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks fundamentals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_notebooks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_notebooks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks notebooks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_workflows.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_workflows.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks workflows</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_medallion_architecture.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_medallion_architecture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Medallion architecture (Bronze, Silver, Gold, Copper)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL Warehouse with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Personal cluster with RStudio and <code>odbc</code> / <code>DBI</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_rstudio_personal_cluster_sparklyr_archive.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_personal_cluster_sparklyr_archive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Personal cluster with RStudio and <code>sparklyr</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use Databricks with Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_workflow_script_databricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_workflow_script_databricks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Script workflows in Databricks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_workflow_script_rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_workflow_script_rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Script workflows in RStudio</span></a>
   </div>
 </li>
@@ -750,103 +717,84 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#documentation" id="toc-documentation" class="nav-link active" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#databricks-resources" id="toc-databricks-resources" class="nav-link active" data-scroll-target="#databricks-resources">Databricks resources</a></li>
+  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a>
+  <ul class="collapse">
+  <li><a href="#ada-support-page" id="toc-ada-support-page" class="nav-link" data-scroll-target="#ada-support-page">ADA support page</a></li>
+  <li><a href="#databricks-jargon-buster" id="toc-databricks-jargon-buster" class="nav-link" data-scroll-target="#databricks-jargon-buster">Databricks jargon buster</a></li>
+  <li><a href="#walkthrough-a-simple-analysis" id="toc-walkthrough-a-simple-analysis" class="nav-link" data-scroll-target="#walkthrough-a-simple-analysis">Walkthrough a simple analysis</a></li>
+  <li><a href="#helpful-getting-started-videos" id="toc-helpful-getting-started-videos" class="nav-link" data-scroll-target="#helpful-getting-started-videos">Helpful getting started videos</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/common-rap-principles/documentation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/learning-development/databricks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../learning-development/learning-support.html">Learning resources</a></li><li class="breadcrumb-item"><a href="../learning-development/databricks.html">Databricks</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Databricks</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="documentation" class="level3">
-<h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
+</header>
+
+
+<p class="text-muted">
+A collection of useful learning resources, and information on support and resources to get you started
+</p>
 <hr>
-<p><img src="../../images/good.svg" class="img-fluid"></p>
-<p><strong>What does this mean?</strong></p>
+<section id="databricks-resources" class="level2">
+<h2 class="anchored" data-anchor-id="databricks-resources">Databricks resources</h2>
+<p>There are various learning resources available to help you with upskilling in Databricks.</p>
 <ul>
-<li><p>You should be annotating as you go, ensuring that every process and decision made is written down. Processes are ideally written with code, and decisions in comments.</p></li>
-<li><p>There should be a <a href="#writing-a-readme-file">README</a> notes file, that clearly details the steps in the process, any dependencies (such as places where access needs to be requested to) and how to carry out the process.</p></li>
-<li><p>Any specialist terms should also be defined if required (e.g.&nbsp;The NFTYPE lookup can be found in xxxxx. “NFTYPE” means school type).</p></li>
+<li><a href="https://analytical-data-access.azurewebsites.net/workbench" target="_blank">ADA’s Analytics Workbench</a>: an overview of using Databricks with various analytical tools</li>
+<li><a href="https://github.com/dfe-analytical-services/databricks_code_learn" target="_blank">Databricks Code &amp; Learn GitHub repository</a>: a repository of training materials and exercises created by Nick Treece (DISD)</li>
+<li>YouTube videos:
+<ul>
+<li><a href="https://www.youtube.com/watch?v=0XWf1V40SdI&amp;list=PLTPXxbhUt-YXXXlfUPTmlpJ7jvw9KTGAv" target="_blank">What is Databricks SQL?</a>: a quick intro to using Databricks SQL editor</li>
+<li><a href="https://www.youtube.com/watch?v=UO0wvGYu5QQ" target="_blank">Genie Code: Your autonomous AI partner</a>: Using the Genie Code AI assistant within Databricks</li>
+<li><a href="https://www.youtube.com/watch?v=xOxASzUHg_s&amp;list=PLTPXxbhUt-YXXXlfUPTmlpJ7jvw9KTGAv&amp;index=13" target="_blank">Getting Started on Databricks SQL for Users</a>: walkthrough of the SQL editor, SQL warehouses, Catalog Explorer, writing SQL queries, creating dashboards and workflows</li>
+<li><a href="https://www.youtube.com/watch?v=CoqZTt528ew" target="_blank">Learn Databricks in Under 2 Hours</a>: a longer video showing many different areas of Databricks</li>
+</ul></li>
 </ul>
-<p><strong>Why do it?</strong></p>
-<p>When documenting your processes you should leave nothing to chance, we all have wasted time in the past trying to work out what it was that we had done before, and that time increases even more when we are picking up someone else’s work. Thorough documentation saves us time, and provides a clear audit trail of what we do. This is key for the ‘Reproducible’ part of RAP, our processes must be easily reproducible and clear documentation is fundamental to that.</p>
-<p><strong>How to get started</strong></p>
-<p>Take a look at your processes and be critical - could another analyst pick them up without you there to help them? If the answer is no (don’t feel ashamed, it will be for many teams) then go through and note down areas that require improvement, so that you can revise them with your team.</p>
-<p>Take a look at the sections below for further guidance on improving your documentation.</p>
-<hr>
-<section id="commenting-in-code" class="level4">
-<h4 class="anchored" data-anchor-id="commenting-in-code">Commenting in code</h4>
-<hr>
-<p>When writing code, whether that is R or something else, make sure you’re commenting as you go. Start off every file by outlining the date, author, purpose, and if applicable, the structure of the file, like this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Script Name<span class="sc">:</span>     Section <span class="dv">251</span> Table A <span class="dv">2019</span> <span class="sc">-</span> s251_tA_2019.sql</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Description<span class="sc">:</span>     Extraction of data from IStore and production of underlying data file</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Author<span class="sc">:</span>          Cam Race</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Creation Date<span class="sc">:</span>   <span class="dv">15</span><span class="sc">/</span><span class="dv">11</span><span class="sc">/</span><span class="dv">2019</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span><span class="er">//</span>  Process</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">1.</span> Extract the data <span class="cf">for</span> each available year</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">2.</span> Match <span class="cf">in</span> extra geographical information</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">3.</span> Create aggregations <span class="sc">-</span> both categorical and geographical totals</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">4.</span> Tidy up and output results</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> <span class="fl">5.</span> Metadata creation</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="sc">----------------------------------------------------------------------------------------</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Commented lines should begin with # (R) or – (SQL) followed by one space and your comment. Remember that <strong>comments should explain the why, not the what.</strong></p>
-<p>In SQL you can also use <code>/**</code> and <code>**/</code> to bookend comments over multiple lines.</p>
-<p>In rmarkdown documents you can bookend comments by using <code>&lt;!--</code> and <code>--&gt;</code>.</p>
-<p>Use commented lines of - to break up your files into scannable chunks based upon the structure and subheadings, like the R example below:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the data -------------------------------------------------------------------</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Doing this can visually break up your code into sections that are easy to navigate around. It will also add that section to your outline, which can be used in RStudio using Ctrl-Shift-O. More details on the possibilities for this can be found in the <a href="https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections" target="_blank" rel="noopener noreferrer">RStudio guidance on folding and sectioning code</a>.</p>
-<p>You might be thinking that it would be nice if there was software that could help you with documentation, if so, read on, as Git is an incredibly powerful tool that can help us easily and thoroughly document versions of our files. If you’re at the stage where you are developing your own functions and packages in R, then take a look at <a href="https://roxygen2.r-lib.org/" target="_blank" rel="noopener noreferrer">roxygen2</a> as well.</p>
 <hr>
 </section>
-<section id="writing-a-readme-file" class="level4">
-<h4 class="anchored" data-anchor-id="writing-a-readme-file">Writing a README file</h4>
+<section id="useful-links" class="level2">
+<h2 class="anchored" data-anchor-id="useful-links">Useful links</h2>
+<section id="ada-support-page" class="level3">
+<h3 class="anchored" data-anchor-id="ada-support-page">ADA support page</h3>
 <hr>
-<p><strong>What does this mean?</strong></p>
-<p>A README is a markdown file (.md) that introduces and explains a project. It contains information that is required to understand what the project is about and how to use it. Markdown (.md) files are used for READMEs because they support formatting and render nicely on platforms like GitHub and Azure DevOps, meaning that users can see them on the main page of the repository. You can find guidance on basic markdown syntax on the <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" rel="noopener noreferrer">Markdown Guide</a>.</p>
-<p><strong>Why do it?</strong></p>
-<p>It’s an easy way to answer questions that your audience will likely have regarding how to install and use your project and also how to collaborate with you.</p>
-<p><strong>How to get started</strong></p>
-<p>For new projects, you can use the create_project function in dfeR. Set create_publication_proj to TRUE to create a pre-populated project with a custom folder structure, including a README template. You can find more information on this in the <a href="https://dfe-analytical-services.github.io/dfeR/reference/create_project.html" target="_blank">dfeR reference</a>.</p>
-<p>If you are creating your own README for existing projects, you should include all of the sections listed below:</p>
-<p><strong>Introduction</strong></p>
-<ul>
-<li>Purpose: briefly explain the purpose of the code.</li>
-<li>Overview: Provide a high-level summary of the contents and structure of the repository.</li>
-</ul>
-<p><strong>Requirements</strong></p>
-<ul>
-<li>Access: Detail any permissions or access needed to use the repository at the top of this section, e.g.&nbsp;access to specific databases. This is crucial for enabling new users to use the repository.</li>
-<li>Skills/knowledge: Outline the required skills or knowledge, such as familiarity with specific packages in R.</li>
-<li>Version control/Renv: State how version control is managed and whether Renv is being used.</li>
-</ul>
-<p><strong>Getting started</strong></p>
-<ul>
-<li>Setup instructions: Provide step-by-step instructions on how to set up the environment, including installing dependencies.</li>
-<li>Data input/output: Describe the expected input data and where it can be found, as well as what output should be expected from the code.</li>
-</ul>
-<p><strong>How to run and update</strong></p>
-<ul>
-<li>Running the code: Explain how users can best run the code, for example by running a run all script.</li>
-<li>Updating guidelines: Outline the process for updating and contributing to the repository, including specific scripts and lines where updates are frequently needed. Describe how to get changes reviewed.</li>
-<li>Issue reporting: Explain how to report issues or suggest improvements. This could be through issues if using GitHub, boards in Azure DevOps or by emailing the team.</li>
-</ul>
-<p><strong>Contact details</strong></p>
-<ul>
-<li>Main contacts: List the names and contact information of people who maintain the repository.</li>
-<li>Support channels: Provide any information on how to get support, such as email addresses or teams channels.</li>
-</ul>
-<p>The <a href="https://github.com/dfe-analytical-services/publication-self-assessment-copy" target="_blank" rel="noopener noreferrer">Self-assessment tool</a> and the <a href="https://github.com/dfe-analytical-services/dfe-published-data-qa" target="_blank" rel="noopener noreferrer">QA app</a> give two examples of readme files structured like this.</p>
+<p>See the <a href="https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works" target="_blank">ADA support page on how Databricks works</a>.</p>
+<hr>
+</section>
+<section id="databricks-jargon-buster" class="level3">
+<h3 class="anchored" data-anchor-id="databricks-jargon-buster">Databricks jargon buster</h3>
+<p>The core concepts of Databricks and any related acronyms are explained in the <a href="https://analytical-data-access.education.gov.uk/get-support/jargon" target="_blank">jargon buster</a></p>
+<hr>
+</section>
+<section id="walkthrough-a-simple-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="walkthrough-a-simple-analysis">Walkthrough a simple analysis</h3>
+<hr>
+<p>See the <a href="https://analytical-data-access.azurewebsites.net/get-support/using-r-python-and-sql-in-databricks" target="_blank">ADA support page on using R, python and SQL in Databricks</a>.</p>
+<hr>
+</section>
+<section id="helpful-getting-started-videos" class="level3">
+<h3 class="anchored" data-anchor-id="helpful-getting-started-videos">Helpful getting started videos</h3>
+<hr>
+<p>See the collection of <a href="https://educationgovuk.sharepoint.com/:f:/r/sites/ADA-SuperUserForum/Shared%20Documents/General/Getting%20started%20videos?csf=1&amp;web=1&amp;e=RCFSib" target="_blank">getting started videos</a> covering the basics of Databricks and using notebooks.</p>
+<hr>
 
 
 </section>
@@ -1266,6 +1214,18 @@ cookieconsent.run({
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../learning-development/sql.html" class="pagination-link" aria-label="SQL">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SQL</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../learning-development/r.html" class="pagination-link" aria-label="R">
+        <span class="nav-page-text">R</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1274,7 +1234,7 @@ cookieconsent.run({
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/common-rap-principles/documentation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/learning-development/databricks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>
