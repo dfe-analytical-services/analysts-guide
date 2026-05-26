@@ -20,6 +20,12 @@ In addition, it also provides new tools within the platform to construct and aut
 
 ------------------------------------------------------------------------
 
+::: callout-tip
+If you are looking to connect to Databricks with RStudio, take a look at the [guide to Databricks RStudio personal cluster page.](../ADA/databricks_rstudio_personal_cluster.html)
+:::
+
+------------------------------------------------------------------------
+
 ## Key differences
 
 Underpinning the technology are some key differences in how computers we're familiar with, and Databricks (and distributed computing in general) are structured.
