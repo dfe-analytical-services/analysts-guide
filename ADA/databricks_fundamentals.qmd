@@ -63,6 +63,8 @@ The storage and computation are separated into different components rather than 
 
 ![](/images/ada-cloud-computing.jpg){width="515"}
 
+------------------------------------------------------------------------
+
 ### Benefits of cloud compute
 
 ------------------------------------------------------------------------
