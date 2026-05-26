@@ -255,11 +255,11 @@ Once you have a compute resource you can begin using Databricks. You can do this
 
 In the Databricks interface, you have the choice to use notebooks, scripts or the Databricks SQL Editor. You can also connect Databricks to other IDEs, such as RStudio. 
 
----
+------------------------------------------------------------------------
 
 ### Getting access to your data
 
----
+------------------------------------------------------------------------
 
 Data in Databricks is held in catalogs in the Delta Lake, which is centrally governed by the ADA team. Catalogs provide different levels of access control and security. In Databricks, databases are referred to as "schemas", with tables sitting below them. You can find out more information about this on the [ADA guidance site](https://analytical-data-access.azurewebsites.net/get-support/how-databricks-works) and on our [Databricks fundamentals](/ADA/databricks_fundamentals.html) page.  
 
