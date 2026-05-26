@@ -26,6 +26,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [SQL](learning-development/sql.html)
 - Guidance and tips for accessing data via databases with SQL
 
+[Databricks](learning-development/databricks.html)
+- Guidance and tips for using Databricks
+
 [R](learning-development/r.html)
 - Guidance and tips for using R
 
@@ -37,21 +40,6 @@ We hope it can prove a useful community driven resource for everyone from the mo
 
 [DataCamp learning tracks](learning-development/datacamp-tracks.html)
 - Recommended DataCamp learning tracks for analysts 
-
-[Analytical Data Access (ADA)](ADA/ada.html)
-- Information on the ADA project and guidance for analysts on how to interact with and use data stored in ADA using Databricks
-
-[Databricks fundamentals](ADA/databricks_fundamentals.qmd)
-- Fundamental concepts in Databricks that will help  you navigate and understand the platform
-
-[Databricks notebooks](ADA/databricks_notebooks.qmd)
-- Guidance on Notebooks in Databricks
-
-[Databricks workflows](ADA/databricks_workflows.qmd)
-- Guidance on Workflows in Databricks
-
-[Databricks medallion architecture (Bronze, Silver, Gold, Copper)](ADA/databricks_medallion_architecture.qmd)
-- De-mystifying the 'medallion architecture' pattern and what the bronze, silver, gold and copper catalogs mean.
 
 [Accessibility](learning-development/accessibility.html)
 - Tools and resources for digital accessibility
@@ -125,7 +113,22 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [RAP FAQs](RAP/rap-faq.html)
 - Frequently asked questions about RAP
 
-## Databricks setup guides
+## Databricks and ADA
+
+[Analytical Data Access (ADA)](ADA/ada.html)
+- Information on the ADA project and guidance for analysts on how to interact with and use data stored in ADA using Databricks
+
+[Databricks fundamentals](ADA/databricks_fundamentals.qmd)
+- Fundamental concepts in Databricks that will help  you navigate and understand the platform
+
+[Databricks notebooks](ADA/databricks_notebooks.qmd)
+- Guidance on Notebooks in Databricks
+
+[Databricks workflows](ADA/databricks_workflows.qmd)
+- Guidance on Workflows in Databricks
+
+[Databricks medallion architecture (Bronze, Silver, Gold, Copper)](ADA/databricks_medallion_architecture.qmd)
+- De-mystifying the 'medallion architecture' pattern and what the bronze, silver, gold and copper catalogs mean.
 
 [SQL Warehouse with RStudio](ADA/databricks_rstudio_sql_warehouse.html)
 - Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio
