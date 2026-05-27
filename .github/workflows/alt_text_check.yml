@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
 
-name: test-coverage.yaml
+name: alt-text-check.yaml
 
 permissions: read-all
 
