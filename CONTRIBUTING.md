@@ -84,6 +84,8 @@ formatting, it saves everything in plain Markdown. You can easily switch
 between the visual and source editors to view and edit your content in
 either format.
 
+Note to add an image you can do so the following way: !\[Image Name\] `(path to image)`{fig-alt = "alt text for user"}
+
 #### Adding links (within page, within site, external to site)\]
 
 In Quarto, you can add links using the following Markdown syntax:
