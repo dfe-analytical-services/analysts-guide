@@ -1,15 +1,17 @@
+# Pulls in the content of the file, line by line, each line being a string
 get_file_content <- function(file_name){
   
   # Try fetching the content
   tryCatch({
     # Read the file using readLines()
-    file_content <- readLines(file_name)
+    file_content <- readLines(file_name, warn = FALSE)
   })
   
   return(file_content)
   
 }
 
+# Checks that any grouping ![](){} has either alt-text or fig-alt in the brackets
 check_all_have_alt_text <- function(v) {
   if(length(v) >4){
     boolean_1 <- v == "a"
@@ -30,7 +32,7 @@ check_all_have_alt_text <- function(v) {
   return(result)
 }
 
-
+# Checks a line for positions of ![ := a, ]( := b, ){ := c, alt-text or fig-alt := d, and } := e, then arranges them in terms of position in the line
 check_line_for_alt_text <- function(line){
   
   exclamation_open_bracket_loc <- gregexpr("\\!+(\\s*\\[|\\[)",line)[[1]]
@@ -47,7 +49,7 @@ check_line_for_alt_text <- function(line){
                             data.frame(character = rep("c",length(close_rd_bracket_open_cly_loc)),
                                        position = close_rd_bracket_open_cly_loc))
   
-  alt_text_loc <- gregexpr("alt-text",line)[[1]]
+  alt_text_loc <- gregexpr("alt-text|fig-alt",line)[[1]]
   string_dataframe <- rbind(string_dataframe,
                             data.frame(character = rep("d",length(alt_text_loc)),
                                        position = alt_text_loc))
@@ -63,10 +65,11 @@ check_line_for_alt_text <- function(line){
   
   string_vector <- string_dataframe$character
   
-  return(check_all_have_alt_text(string_vector))
+  return(suppressWarnings(check_all_have_alt_text(string_vector)))
     
 }
 
+# For each line checks if there's a picture without alt text and spits out the lines where this is the case
 check_file_for_alt_text <- function(the_file){
   
   file_content <- get_file_content(the_file)
@@ -80,6 +83,7 @@ check_file_for_alt_text <- function(the_file){
   return(errors)
 }
 
+# For each qmd file in the project checks them for lines where there is a picture without alt-text
 check_project_for_alt_text <- function(){
   errors <- list()
   markdown_files <- list.files(pattern = "\\.qmd$", full.names = TRUE, recursive = TRUE)
@@ -91,4 +95,5 @@ check_project_for_alt_text <- function(){
   print(errors)
 }
 
+# Runs the above to print out the errors
 check_project_for_alt_text()
