@@ -139,11 +139,8 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Use Databricks with Git](ADA/git_databricks.html)
 - Guidance for connecting Databricks to Git repositories
 
-[Script workflows in Databricks](ADA/databricks_workflow_script_databricks.html)
+[Scripting Databricks workflows](ADA/scripting_databricks_workflows.html)
 - Guidance for scripting workflows in the Databricks interface
-
-[Script workflows in RStudio](ADA/databricks_workflow_script_rstudio.html)
-- Guidance for scripting workflows in RStudio
 
 ## Contact us
 

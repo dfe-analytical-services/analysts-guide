@@ -1,5 +1,5 @@
 ---
-title: "Script workflows in RStudio"
+title: "Scripting Databricks workflows"
 ---
 
 ::: callout-important
