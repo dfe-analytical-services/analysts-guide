@@ -124,6 +124,7 @@ website:
         contents:
           - ADA/ada.qmd
           - ADA/databricks_fundamentals.qmd
+          - ADA/migrating_to_databricks.qmd
           - ADA/databricks_notebooks.qmd
           - ADA/databricks_workflows.qmd
           - ADA/databricks_medallion_architecture.qmd
