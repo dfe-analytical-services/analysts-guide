@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Databricks Common Questions – Analysts’ Guide</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ADA/databricks_workflow_script_rstudio.html" rel="prev">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-44059fe882f45d386572b8533fdd8741.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-9dd657073d305c25142773c3c61db55b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f59831fb5da3bec3d57a3862e0cdbb98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-c29f4eb43400fd2a5df4989da13da37e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KBJCBD114T"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KBJCBD114T', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"headline",
+  "consent_type":"express",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">Databricks and ADA</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_common_questions.html">Databricks Common Questions</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-microsoft-teams"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a50f82a2718184a0e98ba86c3d411a02f%40thread.skype/conversations?groupId=6572094f-43a3-4537-bcf0-fc27dc6557ed&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">
+            DfE analysts network
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3ae3c8551e86094e259a60848fcff4dbc1%40thread.skype/conversations?groupId=679b2376-8c8c-4062-a1c9-0744ce5ac88f&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">
+            Statistics production
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://teams.microsoft.com/l/team/19%3a311ec2e4d46b4dd38f0d61f05fb93383%40thread.skype/conversations?groupId=b95c605d-8fbc-4e4d-9a76-2f7d1c55e70a&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">
+            DfE R community
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-camera-reels"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Statistician%27s%20Guide%20to%20the%20Galaxy?csf=1&amp;web=1&amp;e=owScaj" target="_blank">
+            Guide to the Galaxy sessions
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Explore%20Education%20Statistics?csf=1&amp;web=1&amp;e=HVpi0D" target="_blank">
+            EES show and tells
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/:f:/r/sites/lvewp00086/SSU%20%20open%20sharing/Reproducible%20Analytical%20Pipeline%20(RAP)%20resources/Knowledge-share%20series?csf=1&amp;web=1&amp;e=H0pcSH" target="_blank">
+            RAP knowledge share series
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://educationgovuk.sharepoint.com/sites/sarpi/g/AC/Coffee%20and%20Coding.aspx?xsdata=MDV8MDF8fGU5YTkwYWU1OTNiNjQzZTIyZTM2MDhkYjVhY2MxN2JlfGZhZDI3N2M5YzYwYTRkYTFiNWYzYjNiOGIzNGE4MmY5fDB8MHw2MzgyMDM2MDQ4MjEyMjUwMTR8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPbTFsWlhScGJtZGZXVlJuZUUxRVVUTlphbGwwVGpKUk1FNTVNREJhYW1zMVRGUnJNbHBYV1hSTmVtTjZXbXBCTWxwdFZUQlBWMVV3UUhSb2NtVmhaQzUyTWk5dFpYTnpZV2RsY3k4eE5qZzBOell6TmpneE5qRXh8YjdlZWE0MGYzNDg5NGYxYzJlMzYwOGRiNWFjYzE3YmV8MmE3NzU1YzRmOWMyNDZlOTkwYWVmMjlkZjY5NjczZWE%3D&amp;sdata=ajlKYUZuNHFyNU9XSm5WR3ZZaUZHZDB4bjVJYkJzRFZNc0U1Uit5V1Q5cz0%3D&amp;ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CTess%2EWILLIAMS%40EDUCATION%2EGOV%2EUK&amp;OR=Teams%2DHL&amp;CT=1684763684990&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA0MDIwMjcwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D" target="_blank">
+            Coffee and coding sessions
+            </a>
+          </li>
+      </ul>
+    </div>
+    <a href="https://explore-education-statistics.service.gov.uk/" title="Explore education statistics" class="quarto-navigation-tool px-1" aria-label="Explore education statistics" target="_blank"><i class="bi bi-graph-up"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-2" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-2">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide" target="_blank">
+            Source code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" target="_blank">
+            Suggest changes
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Learning resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/databricks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/datacamp-tracks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DataCamp learning tracks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessibility</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Statistics production</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Routes for publishing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open Data Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/api-data-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics API Data Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Explore education statistics (EES)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good examples in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Embedded visualisations in EES</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publication scrums</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">User engagement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EES analytics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Writing and visualising</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Public dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating R Shiny dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualising data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing about data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/getting-started-with-rap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting started with RAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP expectations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../RAP/rap-statistics/rap-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics/rap-statistics-preparing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics/rap-statistics-writing-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-statistics/rap-statistics-version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Version control</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../RAP/rap-analysis/rap-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP for general analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-analysis/rap-analysis-preparing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-analysis/rap-analysis-writing-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-analysis/rap-analysis-version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Version control</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP FAQs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../RAP/rap-case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP case studies</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Databricks and ADA</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analytical Data Access (ADA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_fundamentals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_notebooks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databricks workflows</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_medallion_architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Medallion architecture (Bronze, Silver, Gold, Copper)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL Warehouse with RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personal cluster with RStudio and <code>odbc</code> / <code>DBI</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_rstudio_personal_cluster_sparklyr_archive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personal cluster with RStudio and <code>sparklyr</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Databricks with Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_workflow_script_databricks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Script workflows in Databricks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_workflow_script_rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Script workflows in RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ADA/databricks_common_questions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Databricks Common Questions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">Databricks and ADA</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_common_questions.html">Databricks Common Questions</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Databricks Common Questions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<hr>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Current Issues:</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Installing Databricks
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="no-simba-spark-odbc-driver" class="level4">
+<h4 class="anchored" data-anchor-id="no-simba-spark-odbc-driver">No Simba Spark ODBC Driver</h4>
+<p>When you download Simba Spark it doesn’t necessarily download the data driver, to do this raise an I.T. ticket explaining that you have installed “Simba Spark” but the driver is missing, they will download it from the internet.</p>
+</section>
+<section id="spark" class="level4">
+<h4 class="anchored" data-anchor-id="spark">Spark</h4>
+<section id="virtual-environments" class="level5">
+<h5 class="anchored" data-anchor-id="virtual-environments">Virtual environments</h5>
+<p>Sometimes R will tell you to install pysparklyr and rerun, then when doing that it sets up a Python venv r-sparklyr-databricks-15.4 on your Onedrive, then it tries to install databricks-connect in the venv but exits with an error distutils.errors.DistutilsPlatformError: Microsoft Visual C++ 14.0 or greater is required. Get it with “Microsoft C++ Build Tools”: https://visualstudio.microsoft.com/visual-cpp-build-tools/</p>
+<p>First step: how to get pysparklyr to not install its new virtual environment on Onedrive. You can specify the default folder for new virtual environments in the .Renvironfile by using the variable WORKON_HOME (e.g.&nbsp;WORKON_HOME = “C:/users/myusername” ) So first edit the file to do that, using usethis::edit_r_environ() (unless you want to use OneDrive, but it looks likely to induce lots of unnecessary syncing), and restart R.</p>
+<p>Next step: follow the instructions at Set up Databricks personal compute cluster with RStudio – Analysts’ Guide and get to the point of connecting with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| sc &lt;- spark_connect(</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|  cluster_id = Sys.getenv("DATABRICKS_CLUSTER_PATH"),</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|  method = "databricks_connect",</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#|)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Install pysparklyr if it tells you to do that and try again. Eventually you will probably get a message saying it needs to install a new virtual environment with databricks-connect, and it will now make this in the new folder you specified in WORKON_HOME. If that goes without a hitch, then great, you’re done.</p>
+<p>But if the installation fails with an error about C++ libraries, you can just install in binary mode yourself. Go (in Windows explorer) to the Scripts subfolder in the new virtual environment folder it made (probably something like C:\Users\myusername\r-sparklyr-databricks-15.4\Scripts). Right-click in the files pane and do “Open in terminal” which will open up Powershell, and in Powershell do .\python -m pip install databricks-connect. That should work to install, after which the spark-connect command should now work in R.</p>
+</section>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Navigating Databricks
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<section id="i-cant-find-my-catalog" class="level4 callout-body-container callout-body">
+<h4 class="anchored" data-anchor-id="i-cant-find-my-catalog">I can’t find my catalog?</h4>
+<p>If you can’t find your data, there can be many different reasons but first it’s important to check you are in the right space</p>
+<ol type="1">
+<li>First click on the dropdown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\images/ADA/databricks_common_questions/workspace_dropdown_1.png" class="img-fluid figure-img"></p>
+<figcaption>Workspace location</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Navigating the dropdown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\images/ADA/databricks_common_questions/workspace_dropdown_2.png" class="img-fluid figure-img"></p>
+<figcaption>Workspace swapping between workspaces</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>When you click on a different workspace, it appears at the top the next time you click-on the dropdown, the rest are alphabetical:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\images/ADA/databricks_common_questions/workspace_dropdown_3.png" class="img-fluid figure-img"></p>
+<figcaption>Workspace swapping between workspaces</figcaption>
+</figure>
+</div>
+<p>You can find a full list of dropdowns here: <a href="https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_fundamentals.html#workspaces-dropdown-guide" target="_blank">Analysts’ Guide Workspace list</a></p>
+<p>and you can find information about workspaces here: <a href="https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_fundamentals.html#workspaces-dropdown-guide" target="_blank">Analysts’ Guide Workspace guidance</a> or <a href="https://docs.databricks.com/aws/en/workspace/" target="_blank">Databricks’ Workspace guidance</a>.</p>
+<ul>
+<li>Then check you can find the catalog in the catalog dropdown found here:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\images/ADA/databricks_common_questions/catalog_dropdown_1.png" class="img-fluid figure-img"></p>
+<figcaption>Catalog location</figcaption>
+</figure>
+</div>
+<ul>
+<li>and it should look like this:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\images/ADA/databricks_common_questions/catalog_dropdown_2.png" class="img-fluid figure-img"></p>
+<figcaption>Catalog viewpoints</figcaption>
+</figure>
+</div>
+</section>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Connecting to Databricks
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="account-removed-or-gone-inactive" class="level4">
+<h4 class="anchored" data-anchor-id="account-removed-or-gone-inactive">Account removed or gone inactive</h4>
+<p>Go to the <a href="https://dfe.service-now.com/mydfe?id=sc_cat_item&amp;sys_id=51b0b9c5db1ff7809402e1aa4b96197d&amp;referrer=recent_items" target="_blank">CIP request form</a></p>
+<p>Click: Request type = “Select Azure Portal and DevOps User Account Request”</p>
+<p>If you have never requested an account before click add details and fill out the form.</p>
+<p>Otherwise click modify and explain that the account has gone dormant.</p>
+</section>
+<section id="personal-access-tokens" class="level4">
+<h4 class="anchored" data-anchor-id="personal-access-tokens">Personal Access Tokens</h4>
+<p>You can find guidance on personal access tokens in the <a href="https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_personal_cluster.html#setting-up-the-odbc-driver" target="_blank">Analysts’ Guide</a> and in the <a href="https://docs.databricks.com/aws/en/security/auth/api-access-permissions" target="_blank">Databricks’ guidance</a>.</p>
+<ol type="1">
+<li><p>Find settings button: <img src="..\images/ADA/databricks_common_questions/pat_token_1.png" class="img-fluid" alt="Settings button"></p></li>
+<li><p>Navigate to settings: <img src="..\images/ADA/databricks_common_questions/pat_token_2.png" class="img-fluid" alt="Workspace swapping between workspaces"></p></li>
+<li><p>Click developer: <img src="..\images/ADA/databricks_common_questions/pat_token_3.png" class="img-fluid" alt="Workspace swapping between workspaces"></p></li>
+<li><p>Set-up token: <img src="..\images/ADA/databricks_common_questions/pat_token_4.png" class="img-fluid" alt="Workspace swapping between workspaces"></p></li>
+</ol>
+<p>Make sure that the personal access token has the “API scope” to do what you want.</p>
+<p>The PAT token expiring is commonly the cause for the following error:</p>
+<p>Error in <code>DBI::dbConnect()</code>: ! ODBC failed with error 28000 from [Simba][ThriftExtension]. ✖ (8) Authentication/authorization error occurred. Error details: Bad status with no error message: Unauthorized/Forbidden</p>
+<p>Other reasons for this error could be either that you do not currently have permission to do what you want with the Catalog, or sometimes a typo in the catalog, databricks host, or warehouse id, guidance can be found in the (Analysts’ Guide Databricks connection guidance)[https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_sql_warehouse.html#establishing-an-rstudio-connection-using-environment-variables].</p>
+</section>
+<section id="powerbi-connection-issue" class="level4">
+<h4 class="anchored" data-anchor-id="powerbi-connection-issue">PowerBI connection issue</h4>
+<p>Make sure you are on an up-to-date version of PowerBI or it can struggle to connect.</p>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Using Databricks
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="computes" class="level4">
+<h4 class="anchored" data-anchor-id="computes">Computes</h4>
+<p>Databricks compute – what compute should I be using? You can find our guidance here <a href="https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_fundamentals.html#compute" target="_blank">Analysts’ Guide Computes</a> and <a href="https://docs.databricks.com/aws/en/compute/" target="_blank">Databricks’ guidance: compute</a></p>
+<p>Quick guide to using R in notebooks:</p>
+<ol type="1">
+<li>First you should be getting something like the following error: <img src="..\images/ADA/databricks_common_questions/personal_compute_1.png" class="img-fluid" alt="Catalog viewpoints"></li>
+<li>Create a new personal compute instance: <img src="..\images/ADA/databricks_common_questions/personal_compute_1.png" class="img-fluid" alt="Catalog viewpoints"></li>
+<li>Make sure to set the access mode to a form that includes R as a language: <img src="..\images/ADA/databricks_common_questions/personal_compute_1.png" class="img-fluid" alt="Catalog viewpoints"></li>
+<li>Swap to your personal compute: <img src="..\images/ADA/databricks_common_questions/personal_compute_1.png" class="img-fluid" alt="Catalog viewpoints"></li>
+<li>Click through: <img src="..\images/ADA/databricks_common_questions/personal_compute_1.png" class="img-fluid" alt="Catalog viewpoints"></li>
+<li>It should run: <img src="..\images/ADA/databricks_common_questions/personal_compute_1.png" class="img-fluid" alt="Catalog viewpoints"></li>
+</ol>
+</section>
+<section id="temporary-tables" class="level4">
+<h4 class="anchored" data-anchor-id="temporary-tables">Temporary tables</h4>
+<p>Temporary tables do not work for Databricks runtimes before 18.1, Databricks <a href="https://docs.databricks.com/gcp/en/tables/temporary-tables" target="_blank">temporary table guidance</a></p>
+</section>
+<section id="tables-vs-volumes" class="level4">
+<h4 class="anchored" data-anchor-id="tables-vs-volumes">Tables vs Volumes</h4>
+<p>It is common to confuse volumes and tables, you can find guidance on the differences in the <a href="https://docs.databricks.com/aws/en/volumes/" target="_blank">Databricks’ guidance: volumes</a>, importantly Volumes are more “blobby” storage so SQL works for reading tables but not for accessing volumes, which you have to do through a slightly different path <a href="https://docs.databricks.com/aws/en/volumes/#path-for-accessing-files-in-a-volume" target="_blank">Databricks’ guidance: volume paths</a></p>
+</section>
+<section id="using-r-in-notebooks" class="level4">
+<h4 class="anchored" data-anchor-id="using-r-in-notebooks">Using R in notebooks</h4>
+<p>Your administrator has only allowed sql and python and scala commands on this cluster. This execution contained at least one disallowed language.</p>
+</section>
+<section id="retriable-errors" class="level4">
+<h4 class="anchored" data-anchor-id="retriable-errors">Retriable errors</h4>
+<p>Error: nanodbc/nanodbc.cpp:3648: HY000</p>
+<p>[Databricks][Hardy] (35) Error from server: error code: ‘0’ error message: ‘[Databricks][Hardy] (134) File d6217fa8-e93e-49f6-9a7c-25a12d523025: A retriable error occurred while attempting to download a result file from the cloud store but the retry limit had been exceeded. Error Detail: File d6217fa8-e93e-49f6-9a7c-25a12d523025: An error had occurred while attempting to download the result file.The error is: Could not connect to server. Since the connection has been configured to consider all result file download as retriable errors, we will attempt to retry the download.’.</p>
+<p>The way to fix this error is to set MaxErrorRetry = 0, often setting native query and enabling query result downloads helps.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|con &lt;- DBI::dbConnect( </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| odbc::databricks(), </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| httpPath = Sys.getenv("DATABRICKS_CLUSTER_PATH"), </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| useNativeQuery = FALSE, </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| EnableQueryResultDownload=TRUE, </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| MaxErrorRetry=0 </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#|) </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="splink" class="level4">
+<h4 class="anchored" data-anchor-id="splink">Splink</h4>
+<p>Some data manipulation with PySpark dataframes don’t work, for example you may encounter difficulty using Splink, here is an example of how to get around that using PySpark: <a href="https://moj-analytical-services.github.io/splink/demos/examples/spark/deduplicate_1k_synthetic.html" target="_blank">Splint in PySpark</a>.</p>
+</section>
+<section id="using-packages-requiring-system-packages" class="level4">
+<h4 class="anchored" data-anchor-id="using-packages-requiring-system-packages">Using packages requiring system packages</h4>
+<p>If you want to use a package that requires system packages, we recommend doing using a notebook and following the <a href="https://learn.microsoft.com/en-us/azure/databricks/libraries/notebooks-r-libraries" target="_blank">Databricks’ guidance on using libraries in r</a>.</p>
+<p>In general you might want to either convert the PySpark dataframe to a more manageable object: <a href="https://docs.databricks.com/aws/en/pandas/pyspark-pandas-conversion" target="_blank">Pandas</a> In spark and R you can use the collect() function.</p>
+</section>
+<section id="i-hate-mondays" class="level4">
+<h4 class="anchored" data-anchor-id="i-hate-mondays">I hate Mondays</h4>
+<p>You can’t change the starting day of the week away from Sunday.</p>
+<section id="package-issues" class="level5">
+<h5 class="anchored" data-anchor-id="package-issues">Package issues</h5>
+<p>Sometimes Spark updates its packages causing our pipelines to break, there’s not much to be done in this case but to roll back the version.</p>
+</section>
+</section>
+<section id="timezones" class="level4">
+<h4 class="anchored" data-anchor-id="timezones">Timezones</h4>
+<p>You can change timezones following this guidance: <a href="https://learn.microsoft.com/en-gb/azure/databricks/sql/language-manual/parameters/timezone" target="_blank">Databricks timezones</a>.</p>
+</section>
+<section id="pushing-up-csvs" class="level4">
+<h4 class="anchored" data-anchor-id="pushing-up-csvs">Pushing up csv’s</h4>
+<p>Special characters in CSV files can cause an issue, if so saving the csv file in UTF-8 encoding (Databricks uses this) should solve the issue.</p>
+</section>
+<section id="memory-issues" class="level4">
+<h4 class="anchored" data-anchor-id="memory-issues">Memory issues</h4>
+<p>Large dataframes can cause issues with Spark, to get around this you can:</p>
+<ol type="1">
+<li>use rm() and gc() to clear up as much memory as you can, removing objects you no longer need</li>
+<li>use a double-size cluster (you can set which cluster type if you’re using a personal cluster)</li>
+<li>use smaller objects (e.g.&nbsp;not copying all columns of a data table if you don’t need them all, or selecting a subset before you collect)</li>
+</ol>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>SQL
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="cant-write-table-to-databricks-when-you-can-connect" class="level4">
+<h4 class="anchored" data-anchor-id="cant-write-table-to-databricks-when-you-can-connect">Can’t write table to Databricks when you can connect</h4>
+<p>We recommend using the dfer package and the write_df_to_delta function.</p>
+<p>There are a few different kinds of errors that might prevent a table from writing to a database.</p>
+<section id="nan-error" class="level5">
+<h5 class="anchored" data-anchor-id="nan-error">NAN error</h5>
+<p>If your table contains NANs, Databricks won’t know how to process this.</p>
+</section>
+</section>
+<section id="old-code-not-working" class="level4">
+<h4 class="anchored" data-anchor-id="old-code-not-working">Old code not working</h4>
+<section id="cases" class="level5">
+<h5 class="anchored" data-anchor-id="cases">Cases</h5>
+<p>SQL in Databricks is case sensitive, whereas mySQL is not, consider using upper / lower to test.</p>
+</section>
+<section id="spaces" class="level5">
+<h5 class="anchored" data-anchor-id="spaces">Spaces</h5>
+<p>SQL in Databricks doesn’t automatically trim spaces.</p>
+</section>
+</section>
+<section id="dynamic-sql" class="level4">
+<h4 class="anchored" data-anchor-id="dynamic-sql">Dynamic SQl</h4>
+<p>Here we can find some guidance on using <a href="https://www.w3tutorials.net/blog/assign-a-variable-a-dynamic-value-in-sql-in-databricks-spark/" target="_blank">Dynamic SQL</a></p>
+</section>
+</div>
+</div>
+</div>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dfe-analytical-services\.github\.io\/analysts-guide");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../ADA/databricks_workflow_script_rstudio.html" class="pagination-link" aria-label="Script workflows in RStudio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Script workflows in RStudio</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Department for Education, 2024</p>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_common_questions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+<p>This page is maintained by statistics.development@education.gov.uk</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
