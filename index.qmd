@@ -122,7 +122,7 @@ We hope it can prove a useful community driven resource for everyone from the mo
 - Fundamental concepts in Databricks that will help  you navigate and understand the platform
 
 [Migrating to Datarbricks](ADA/migrating_to_databricks.qmd)
-- Guidance on different options for migrating to Databricks from SSMS 
+- Guidance on different options for migrating processes to Databricks from SSMS 
 
 [Databricks notebooks](ADA/databricks_notebooks.qmd)
 - Guidance on Notebooks in Databricks

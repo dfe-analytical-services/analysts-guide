@@ -213,14 +213,6 @@ Here's a brief overview of each option:
 | S101**p02** | Preproduction | Contains some PDR data but not kept up-to-date |
 | S101**p01** | Production | Contains real data |
 
-#### Workflows
-
----
-
-If you'd like to make use of automated workflows to run scheduled code, then your SQL code will need to be moved into Databricks, using Spark SQL syntax. Workflows can make use of code from notebooks or R or SQL scripts stored in either a Databricks workspace or a Git repository. You can read more about workflows on our [Databricks workflows](/ADA/databricks_workflows.html) page. 
-
-In addition to setting up workflows using the point and click interface in Databricks, you can also script them yourself. To learn more about this, see our [script workflows in Databricks](/ADA/databricks_workflow_script_databricks.html) and [script workflows in RStudio](/ADA/databricks_workflow_script_rstudio.html) user guides.
-
 
 ------------------------------------------------------------------------
 
@@ -298,7 +290,11 @@ You can also run code from RStudio or other IDEs locally and execute it against 
 
 Workflows are a Databricks feature that allow you to schedule and automatically run your code at specified times and in the order you suggest. 
 
-Workflows allow you to automate the running of single or multiple scripts, so if you have large amounts of data processing to do on a regular basis, you can set up a workflow to complete this overnight. Your laptop does not need to be switched on for this to work. You can read more about workflows on our [Databricks workflows](/ADA/databricks_workflows.html) guidance page. 
+Workflows allow you to automate the running of single or multiple scripts, so if you have large amounts of data processing to do on a regular basis, you can set up a workflow to complete this overnight. Your laptop does not need to be switched on for this to work. 
+
+If you'd like to make use of automated workflows to run scheduled code, then your SQL code will need to be moved into Databricks, using Spark SQL syntax. Workflows can make use of code from notebooks or R or SQL scripts stored in either a Databricks workspace or a Git repository.
+
+You can read more about workflows on our [Databricks workflows](/ADA/databricks_workflows.html) guidance page. 
 
 ---
 
