@@ -6,9 +6,9 @@ title: "Scripting Databricks workflows"
 Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
 :::
 
-Workflows can be constructed through the Databricks workflows user interface (UI), however for large or complex workflows the UI can be a time-consuming way to build a workflow. In these scenarios it is quicker and more in-line with RAP principles to script your workflow.
+Workflows can be constructed through the Databricks workflows user interface (UI), however for large or complex workflows the UI can be a time-consuming way to build a workflow. In these scenarios it is quicker and more in-line with RAP principles to script your workflow. Scripting a workflow means using code to define, control and automate the sequence of data processing steps, rather than configuring those steps manually using the UI.
 
-For a pipeline to be built there must be scripts, queries or notebooks available to read by Databricks either in your workspace or in a remote Git repository.
+For a workflow to be built there must be scripts, queries or notebooks available to read by Databricks either in your workspace or in a remote Git repository.
 
 This page presents how to script a workflow to run notebooks saved in your Databricks workspace, both using RStudio and by creating another Databricks notebook, and how to set it up to send email notifications when the workflow successfully completes.
 
@@ -138,7 +138,7 @@ We can then use the `databricks::clustersList()` function to fetch a list of the
     )
     ```
 
-9.  Now we have both of our tasks defined we can create the job using the `databricks::jobCreate()` function. We pass it the `client` as the first argument, then the job `name` we defined. The `tasks` are passed as a list which contains each of the task lists we built above.\
+9.  Now we have both of our tasks defined we can create the job using the `databricks::jobsCreate()` function. We pass it the `client` as the first argument, then the job `name` we defined. The `tasks` are passed as a list which contains each of the task lists we built above.\
 We'll also tell it to send us `email_notifications` by passing a list with an `on_success` value of email addresses.\
 \
 The function returns the ID of the job we just created, so we will want to store the response in a variable called `workflow` so we can refer to it later.
@@ -326,7 +326,7 @@ We can then use the `databricks::clustersList()` function to fetch a list of the
     )
     ```
 
-9.  Now we have both of our tasks defined we can create the job using the `databricks::jobCreate()` function. We pass it the `client` as the first argument, then the job `name` we defined. The `tasks` are passed as a list which contains each of the task lists we built above.\
+9.  Now we have both of our tasks defined we can create the job using the `databricks::jobsCreate()` function. We pass it the `client` as the first argument, then the job `name` we defined. The `tasks` are passed as a list which contains each of the task lists we built above.\
 We'll also tell it to send us `email_notifications` by passing a list with an `on_success` value of email addresses.\
 \
 The function returns the ID of the job we just created, so we will want to store the response in a variable called `workflow` so we can refer to it later.
