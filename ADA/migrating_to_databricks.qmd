@@ -4,7 +4,7 @@
 
 <p class="text-muted">
 
-Guidance for analysts on different options for migrating existing processes to use data stored in Databricks from using data stored in SQL Server Management Studio (SSMS)
+Guidance for analysts on different options for migrating existing processes to use data stored in Databricks from using data stored in SQL Server Management Studio (SSMS).
 
 </p>
 
