@@ -6,15 +6,17 @@ title: "Scripting Databricks workflows"
 Please be aware that the Databricks platform is regularly updated and may look different from the guidance included on this site. If you notice any discrepancies between the content on this site and the Databricks platform, please let us know by contacting [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
 :::
 
-Workflows can be constructed through the Databricks workflows user interface (UI), however for large or complex workflows the UI can be a time-consuming way to build a workflow. In these scenarios it is quicker and more in-line with RAP principles to script your workflow. Scripting a workflow means using code to define, control and automate the sequence of data processing steps, rather than configuring those steps manually using the UI.
+Workflows can be constructed through the Databricks workflows user interface (UI), however for large or complex workflows the UI can be a time-consuming way to build a workflow. In these scenarios it is quicker and more in-line with RAP principles to script your workflow. 
+
+Scripting a workflow means using code to define, control and automate the sequence of data processing steps, rather than configuring those steps manually using the UI.
 
 For a workflow to be built there must be scripts, queries or notebooks available to read by Databricks either in your workspace or in a remote Git repository.
 
-This page presents how to script a workflow to run notebooks saved in your Databricks workspace, both using RStudio and by creating another Databricks notebook, and how to set it up to send email notifications when the workflow successfully completes.
+This page presents how to script a workflow to run notebooks saved in your Databricks workspace, both using an R script in an IDE (e.g. RStudio, Positron) and by creating another Databricks notebook, and how to set it up to send email notifications when the workflow successfully completes.
 
 ::: {.callout-tip collapse="true"}
 
-# Scripting a workflow using RStudio
+# Scripting a workflow using an IDE
 
 1.  Create a folder in your Databricks workspace to store your workflow notebooks. First click 'Workspace' in the sidebar (1), then navigate to your user folder (2). Then click the blue 'Create' button (3) and select 'Folder'. Give the folder a name (4) such as 'Test workflow' and then click the blue 'Create' button (5).\
 \
@@ -23,10 +25,10 @@ This page presents how to script a workflow to run notebooks saved in your Datab
 2.  In your new folder click the blue 'Create' button again, this time choosing 'Notebook'. Rename your new notebook's title to 'Test task 1' (1), and set the default language to R (2). Then in the first code chunk write `print("This is a test task")` (3).\
 ![](/images/ada-workflow-notebook-test1.png)
 
-3.  Create a second workbook in the same folder titled 'Test task 2', and in the first code chunk write `print("This is another test task")` .\
+3.  Create a second notebook in the same folder titled 'Test task 2', and in the first code chunk write `print("This is another test task")` .\
 ![](/images/ada-workflow-notebook-test-2.png)
 
-4.  Create a new script in RStudio and load the `tidyverse` package. Install the `devtools` package if it isn't already installed and use the `devtools::install_github()` function to install the `databricks` package. Load the newly installed `databricks` package.
+4.  Create a new R script in your IDE and load the `tidyverse` package. Install the `devtools` package if it isn't already installed and use the `devtools::install_github()` function to install the `databricks` package. Load the newly installed `databricks` package.
 
     ``` r
     library(tidyverse) 
