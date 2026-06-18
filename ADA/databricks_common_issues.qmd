@@ -1,0 +1,396 @@
+---
+title: "Databricks common issues"
+format: html
+---
+
+------------------------------------------------------------------------
+# About
+
+## Purpose
+This page is a list of common errors that have been encountered while using Databricks, known issues, and any fixes we have for them. If you come across an issue that does not feature here please consider emailing the Statistics Development Team: [statistics.development@education.gov.uk](mailto:statistics.development@education.gov.uk).
+
+## Layout
+
+At the top of the page you will find the most current issue, this is used when we get a lot of users all reporting the same issue at the same time.
+
+There are also several other drop-downs partitioning issues into the following categories:
+- Installing
+- Navigating
+- Connecting
+- Using
+- SQL migration
+
+::: {.callout-important collapse = "true"}
+Current Issues: No known current issues.
+:::
+
+::: {.callout-note appearance="minimal" collapse="true"}
+# Installing Databricks
+
+## No Simba Spark ODBC Driver
+
+#### Issue
+
+When you download Simba Spark it doesn’t necessarily download the data driver.
+
+#### Resolution
+
+Raise an I.T. ticket explaining that you have installed "Simba Spark" but the driver is missing, they will download it from the internet.
+
+## Spark
+
+### Virtual environments
+
+#### Issue
+
+Sometimes R will tell you to install pysparklyr and rerun, then when doing that it sets up a Python venv r-sparklyr-databricks-15.4 on your Onedrive, then it tries to install databricks-connect in the venv but exits with an error distutils.errors.DistutilsPlatformError: Microsoft Visual C++ 14.0 or greater is required. Get it with “Microsoft C++ Build Tools”: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+#### Resolution
+
+First step: how to get pysparklyr to not install its new virtual environment on Onedrive. You can specify the default folder for new virtual environments in the .Renvironfile by using the variable WORKON_HOME (e.g. WORKON_HOME = “C:/users/myusername” ) So first edit the file to do that, using usethis::edit_r_environ() (unless you want to use OneDrive, but it looks likely to induce lots of unnecessary syncing), and restart R.
+
+Next step: follow the instructions at Set up Databricks personal compute cluster with RStudio – Analysts’ Guide and get to the point of connecting with:
+
+```
+#| sc <- spark_connect(
+#|  cluster_id = Sys.getenv("DATABRICKS_CLUSTER_PATH"),
+#|  method = "databricks_connect",
+#|)
+```
+
+Install pysparklyr if it tells you to do that and try again. Eventually you will probably get a message saying it needs to install a new virtual environment with databricks-connect, and it will now make this in the new folder you specified in WORKON_HOME. If that goes without a hitch, then great, you’re done.
+
+But if the installation fails with an error about C++ libraries, you can just install in binary mode yourself. Go (in Windows explorer) to the Scripts subfolder in the new virtual environment folder it made (probably something like C:\Users\myusername\r-sparklyr-databricks-15.4\Scripts). Right-click in the files pane and do “Open in terminal” which will open up Powershell, and in Powershell do .\python -m pip install databricks-connect. That should work to install, after which the spark-connect command should now work in R.
+
+:::
+
+
+::: {.callout-tip appearance="minimal" collapse="true"}
+# Navigating Databricks
+
+## I can’t find my catalog?
+
+#### Issue
+
+Data appears to be missing when you search around Databricks for it.
+
+#### Resolution
+
+There can be many different reasons but first it’s important to check you are in the right space
+
+1. First click on the dropdown:
+
+![Workspace location](/images/ADA/databricks_common_questions/workspace_dropdown_1.png)
+
+2. Navigating the dropdown:
+
+![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/workspace_dropdown_2.png)
+
+3. When you click on a different workspace, it appears at the top the next time you click-on the dropdown, the rest are alphabetical:
+
+![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/workspace_dropdown_3.png)
+
+You can find a full list of dropdowns here: [Analysts' Guide Workspace list](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_fundamentals.html#workspaces-dropdown-guide)
+
+and you can find information about workspaces here: [Analysts' Guide Workspace guidance](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_fundamentals.html#workspaces-dropdown-guide) or [Databricks' Workspace guidance](https://docs.databricks.com/aws/en/workspace/).
+
+- Then check you can find the catalog in the catalog dropdown found here:
+
+![Catalog location](/images/ADA/databricks_common_questions/catalog_dropdown_1.png)
+
+- and it should look like this:
+
+![Catalog viewpoints](/images/ADA/databricks_common_questions/catalog_dropdown_2.png)
+
+:::
+
+::: {.callout-note appearance="minimal" collapse="true"}
+# Connecting to Databricks
+
+## Account removed or gone inactive
+
+#### Issue
+
+You no longer have access to Databricks due to either your account being removed or having gone inactive.
+
+#### Resolution
+
+Go to the [CIP request form](https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=51b0b9c5db1ff7809402e1aa4b96197d&referrer=recent_items)
+
+Click: Request type  = "Select Azure Portal and DevOps User Account Request"
+
+If you have never requested an account before click add details and fill out the form.
+
+Otherwise click modify and explain that the account has gone dormant.
+
+## Personal Access Tokens
+
+### Creating a personal access token
+
+#### Issue
+
+You want to connect to Databricks through the use of a personal access token but don’t know how.
+
+#### Resolution
+
+You can find guidance on personal access tokens in the [Analysts’ Guide](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_personal_cluster.html#setting-up-the-odbc-driver) and in the [Databricks’ guidance](https://docs.databricks.com/aws/en/security/auth/api-access-permissions).
+
+1. Find settings button:
+![Settings button](/images/ADA/databricks_common_questions/pat_token_1.png)
+
+2. Navigate to settings:
+![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/pat_token_2.png)
+
+3. Click developer:
+![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/pat_token_3.png)
+
+4. Set-up token:
+![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/pat_token_4.png)
+
+Make sure that the personal access token has the "API scope" to do what you want.
+
+### ODBC failed to connect with authentication error
+
+#### Issue
+
+You are getting the following error:
+
+Error in `DBI::dbConnect()`:
+! ODBC failed with error 28000 from \[Simba\]\[ThriftExtension\].
+✖  (8) Authentication/authorization error occurred. Error details: Bad status with no error message: Unauthorized/Forbidden
+
+#### Resolution
+
+Often this is dueto your PAT token not having the right permissions or having expired in which case follow the guidance in [Creating a personal access token](#creating-a-personal-access-token)
+
+Other reasons for this error could be either that you do not currently have permission to do what you want with the Catalog, or sometimes a typo in the catalog, databricks host, or warehouse id, guidance can be found in the (Analysts' Guide Databricks connection guidance)[https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_sql_warehouse.html#establishing-an-rstudio-connection-using-environment-variables].
+
+## PowerBI connection issue
+
+#### Issue
+
+PowerBI is not connecting to Databricks
+
+#### Resolution
+
+Make sure you are on an up-to-date version of PowerBI or it can struggle to connect.
+:::
+
+
+::: {.callout-tip appearance="minimal" collapse="true"}
+# Using Databricks
+
+## Computes
+
+#### Issue
+
+I don’t know what to do with Computes?
+
+#### Resolution
+
+Databricks compute – what compute should I be using?  You can find our guidance here [Analysts' Guide Computes](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_fundamentals.html#compute) and [Databricks' guidance: compute](https://docs.databricks.com/aws/en/compute/)
+
+
+### Using R in notebooks
+
+#### Issue
+
+R isn’t working in my notebook Or I am getting the following error: Your administrator has only allowed sql and python and scala commands on this cluster. This execution contained at least one disallowed language.
+
+#### Resolution
+
+Quick guide to using R in notebooks:
+
+1. First you should be getting something like the following error: 
+![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_1.png)
+2. Create a new personal compute instance: 
+![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_2.png)
+3. Make sure to set the access mode to a form that includes R as a language: 
+![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_3.png)
+4. Swap to your personal compute: 
+![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_4.png)
+5. Click through: 
+![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_5.png)
+6. It should run: 
+![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_6.png)
+
+## Temporary tables
+
+#### Issue
+
+I can’t use a temporary table
+
+#### Resolution
+
+Temporary tables do not work for Databricks runtimes before 18.1, Databricks [temporary table guidance](https://docs.databricks.com/gcp/en/tables/temporary-tables).
+
+## Tables vs Volumes
+
+#### Issue
+
+It is common to confuse volumes and tables when working in Databricks. If you try to refer to a volume in the same way you would a table, you may see SQL queries fail, or you may find you are unable to query files in a volume in the way you expect.
+
+#### Resolution
+
+Tables store structured data and can be queried directly through SQL. Volumes, however, are designed for file-based (unstuctured or semi-structured) storage and are not directly accessible via standard SQL queries.
+
+To access data in a volume, you must use the appropriate file path rather than SQL table references. You can find guidance on the differences on the [Databricks’ guidance: volumes](https://docs.databricks.com/aws/en/volumes/) and [Databricks’ guidance: volume paths](https://docs.databricks.com/aws/en/volumes/#path-for-accessing-files-in-a-volume).
+
+#### Issue
+
+I am getting the following error:
+
+Error: nanodbc/nanodbc.cpp:3648: HY000
+
+\[Databricks\]\[Hardy\] (35) Error from server: error code: '0' error message: '\[Databricks\]\[Hardy\] (134) File d6217fa8-e93e-49f6-9a7c-25a12d523025: A retriable error occurred while attempting to download a result file from the cloud store but the retry limit had been exceeded. Error Detail: File d6217fa8-e93e-49f6-9a7c-25a12d523025: An error had occurred while attempting to download the result file.The error is: Could not connect to server. Since the connection has been configured to consider all result file download as retriable errors, we will attempt to retry the download.'. 
+
+#### Resolution
+
+The way to fix this error is to set MaxErrorRetry = 0, often setting native query and enabling query result downloads helps.
+
+```r
+#|con <- DBI::dbConnect( 
+#|
+#| odbc::databricks(), 
+#| 
+#| httpPath = Sys.getenv("DATABRICKS_CLUSTER_PATH"), 
+#|
+#| useNativeQuery = FALSE, 
+#|
+#| EnableQueryResultDownload=TRUE, 
+#|
+#| MaxErrorRetry=0 
+#|
+#|) 
+```
+
+## Splink
+
+#### Issue
+
+Some data manipulation with PySpark dataframes don't work, for example you may encounter difficulty using Splink.
+
+#### Resolution
+Here is an example of how to get around that using PySpark:
+[Splint in PySpark](https://moj-analytical-services.github.io/splink/demos/examples/spark/deduplicate_1k_synthetic.html).
+
+
+## Using packages requiring system packages
+
+#### Issue
+
+You want to use a package that requires system packages.
+
+#### Resolution 
+We recommend doing this by using a notebook and following the [Databricks' guidance on using libraries in r](https://learn.microsoft.com/en-us/azure/databricks/libraries/notebooks-r-libraries).
+
+In general you might want to either convert the PySpark dataframe to a more manageable object:
+[Pandas](https://docs.databricks.com/aws/en/pandas/pyspark-pandas-conversion)
+In spark and R you can use the collect() function.
+
+## I hate Mondays
+
+#### Issue
+You can’t change the starting day of the week away from Sunday. 
+#### Resolution
+You can’t change the starting day of the week away from Sunday.
+
+## Package issues
+
+#### Issue
+
+Spark updates its packages causing our pipelines to break. 
+#### Resolution
+Roll back the version.
+
+## Timezones
+
+#### Issue
+
+You want to use a different timezone.
+
+#### Resolution
+
+Follow this guidance: [Databricks timezones](https://learn.microsoft.com/en-gb/azure/databricks/sql/language-manual/parameters/timezone).
+
+## Pushing up csv’s
+
+#### Issue
+
+Special characters in CSV files can cause issues on upload. 
+
+#### Resolution
+Saving the csv file in UTF-8 encoding (Databricks uses this) should solve the issue.
+
+## Memory issues
+
+#### Issue
+
+Large dataframes can cause issues with Spark.
+
+#### Resolution
+
+To get around this you can:
+
+1. use rm() and gc() to clear up as much memory as you can, removing objects you no longer need
+2. use a double-size cluster (you can set which cluster type if you're using a personal cluster)
+3. use smaller objects (e.g. not copying all columns of a data table if you don't need them all, or selecting a subset before you collect)
+
+:::
+
+::: {.callout-note appearance="minimal" collapse="true"}
+# SQL
+
+## Can’t write table to Databricks when you can connect
+
+#### Issue
+
+Sometimes writing a table to Databricks fails.
+
+#### Resolution
+
+We recommend using the dfer package and the write_df_to_delta function.
+
+If this does not work there are a few different kinds of errors that might prevent a table from writing to a database.
+
+### NAN error
+
+If your table contains NANs, Databricks won’t know how to process this.
+
+## Old code not working
+
+#### Issue
+
+Your SQL code that was working pre-migration is no longer working.
+
+#### Resolution
+
+There’s a few different reasons why your code might no longer work.
+
+### Cases
+
+SQL in Databricks is case sensitive, whereas mySQL is not, consider using upper / lower to test.
+
+### Spaces
+
+SQL in Databricks doesn’t automatically trim spaces.
+
+### Terminology
+
+Databricks doesn’t use the same commands as SQL server for example select TOP 1 … becomes select … limit 1.
+
+## Dynamic SQl
+
+#### Issue
+
+I want to use dynamic SQL
+
+#### Resolution
+
+Here we can find some guidance on using [Dynamic SQL](https://www.w3tutorials.net/blog/assign-a-variable-a-dynamic-value-in-sql-in-databricks-spark/)
+
+:::
+ 
+
+
+ 
