@@ -133,6 +133,7 @@ website:
           - ADA/git_databricks.qmd
           - ADA/databricks_workflow_script_databricks.qmd
           - ADA/databricks_workflow_script_rstudio.qmd
+          - ADA/databricks_common_issues.qmd
 
 format:
   html:
