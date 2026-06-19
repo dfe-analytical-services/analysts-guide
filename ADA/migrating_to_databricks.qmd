@@ -134,6 +134,6 @@ This approach is a useful short-term or transitional approach when you want to r
 
 ------------------------------------------------------------------------
 
-**For all processes that run SQL code or read from / write to the Databricks catalog from outside Databricks, you’ll need to manually set up a connection to a Databricks compute resource. The best compute option for this is an SQL Warehouse. You can find more information about setting up a connection to an SQL Warehouse on our Databricks SQL Warehouse with RStudio page.*
+*\*For all processes that run SQL code or read from / write to the Databricks catalog from outside Databricks, you’ll need to manually set up a connection to a Databricks compute resource. The best compute option for this is an SQL Warehouse. You can find more information about setting up a connection to an SQL Warehouse on our Databricks SQL Warehouse with RStudio page.*
 
 
