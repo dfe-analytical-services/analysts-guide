@@ -61,6 +61,8 @@ When moving code to Databricks, you have a couple of options for how you develop
 -  Use standard code scripts
 -  Use the Databricks SQL Editor to create standalone SQL queries
 
+SQL Editor is recommended for short, ad-hoc SQL queries. For longer or more complex SQL analysis, consider using notebooks.
+
 ------------------------------------------------------------------------
 
 ### Pros
@@ -82,17 +84,12 @@ When moving code to Databricks, you have a couple of options for how you develop
 
 ------------------------------------------------------------------------
 
-## Guidance on SQL code
-
-The Databricks SQL Editor is very similar to SSMS. We recommend using the SQL Editor for short, ad-hoc SQL queries, such as those required to answer PQs. For longer or more complex SQL analysis we recommend using standalone scripts run in RStudio, Positron or another IDE as in approach 1, or using [Databricks notebooks](../ADA/databricks_notebooks.html). 
-
-------------------------------------------------------------------------
-
+::: callout-note
 ### Translating T-SQL to Spark SQL 
 
-------------------------------------------------------------------------
-
 Any SQL code, whether in standalone SQL scripts or embedded in R scripts, will need to be rewritten from T-SQL to Spark SQL syntax. This applies regardless of whether you are following Approach 1 or Approach 2, as either way the code is executed by Databricks which uses Spark SQL syntax. Databricks' in-built AI assistant "Genie" can help with translating your code.
+
+:::
 
 ------------------------------------------------------------------------
 
