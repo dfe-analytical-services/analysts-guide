@@ -213,7 +213,7 @@ We can then output the `job_link` as text.
 2.  In your new folder click the blue 'Create' button again, this time choosing 'Notebook'. Rename your new notebook's title to 'Test task 1' (1), and set the default language to R (2). Then in the first code chunk write `print("This is a test task")` (3).\
 ![](/images/ada-workflow-notebook-test1.png)
 
-3.  Create a second workbook in the same folder titled 'Test task 2', and in the first code chunk write `print("This is another test task")` .\
+3.  Create a second notebook in the same folder titled 'Test task 2', and in the first code chunk write `print("This is another test task")` .\
     ![](/images/ada-workflow-notebook-test-2.png)
 
 4.  Create a third notebook and title it 'Create and run job'. Create a cell in this notebook to load the `tidyverse` package. Install the `devtools` package and load it, then use its `install_github()` function to install the `databricks` package. Load the newly installed `databricks` package.\

@@ -100,14 +100,11 @@ Workflows that fail also allow you to repair the workflow once you have found an
 
 ------------------------------------------------------------------------
 
-## Coded workflows
+## Scripted workflows
 
 
-Another useful aspect of workflows is that they can be defined and ran using code through the [DataBricks Jobs API](https://docs.databricks.com/api/workspace/jobs).
+Another useful aspect of workflows is that they can be defined and ran using code through the [Databricks Jobs API](https://docs.databricks.com/api/workspace/jobs).
 
-There is an R library which has been created to interface with the DataBricks API, meaning that you can script jobs in R using the [DataBricks SDK for R package](https://docs.databricks.com/en/dev-tools/sdk-r.html) using lists instead of JSON.
+There is an R library which has been created to interface with the Databricks API, meaning that you can script jobs in R using the [Databricks SDK for R package](https://docs.databricks.com/en/dev-tools/sdk-r.html) using lists instead of JSON.
 
-For instructions on how to use the Databricks SDK for R package to script workflows see the articles below:
-
--   [Scripting workflows in Databricks](databricks_workflow_script_databricks.qmd)
--   [Scripting workflows in RStudio](databricks_workflow_script_rstudio.qmd)
+For instructions on how to use the Databricks SDK for R package to script workflows see the [Scripting Databricks workflows](scripting_databricks_workflows.qmd) page.
