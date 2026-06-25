@@ -127,13 +127,12 @@ website:
           - ADA/migrating_to_databricks.qmd
           - ADA/databricks_notebooks.qmd
           - ADA/databricks_workflows.qmd
+          - ADA/scripting_databricks_workflows.qmd
           - ADA/databricks_medallion_architecture.qmd
           - ADA/databricks_rstudio_sql_warehouse.qmd
           - ADA/databricks_rstudio_personal_cluster.qmd
           - ADA/databricks_rstudio_personal_cluster_sparklyr_archive.qmd
           - ADA/git_databricks.qmd
-          - ADA/databricks_workflow_script_databricks.qmd
-          - ADA/databricks_workflow_script_rstudio.qmd
 
 format:
   html:
