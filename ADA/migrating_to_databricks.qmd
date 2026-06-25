@@ -129,8 +129,10 @@ This approach is appropriate when your team primarily works in R and your SQL lo
 
 This approach is a useful short-term or transitional approach when you want to reuse existing SQL code with minimal changes. It keeps SQL and R closely linked by embedding SQL queries within an R workflow. Any SQL code would first need updating from T-SQL to Spark SQL, where it could then be passed via R code using wrapper functions to run in Databricks, whilst R controls execution. You can run SQL from R by creating a reusable wrapper function that uses a Databricks connection (e.g., via the `DBI` and `odbc` packages) and executes queries with a function like `dbGetQuery()`*.
 
+An example of this approach is provided in the [Databricks SQL Warehouse with RStudio page](../ADA/databricks_rstudio_sql_warehouse.html#pulling-data-into-rstudio-from-databricks).
+
 ------------------------------------------------------------------------
 
-*\*For all processes that run SQL code or read from / write to the Databricks catalog from outside Databricks, you’ll need to manually set up a connection to a Databricks compute resource. The best compute option for this is an SQL Warehouse. You can find more information about setting up a connection to an SQL Warehouse on our Databricks SQL Warehouse with RStudio page.*
+*\*For all processes that run SQL code or read from / write to the Databricks catalog from outside Databricks, you’ll need to manually set up a connection to a Databricks compute resource. The best compute option for this is an SQL Warehouse. You can find more information about setting up a connection to an SQL Warehouse on our [Databricks SQL Warehouse with RStudio page](../ADA/databricks_rstudio_sql_warehouse.html).*
 
 
