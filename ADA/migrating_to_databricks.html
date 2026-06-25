@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>publication-project-specific-automated-sense-checks – Analysts' Guide</title>
+<title>Migrating to Databricks – Analysts’ Guide</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +26,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2c90660ccd9ed875bed4d9d3efe2ebdb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8e79a31a652f881e3331707867e6901b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5e80a2501ba6c305bc136e94ebcbb7b6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-01401a9c5f44910d62e21c24e8b18e51.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ADA/databricks_notebooks.html" rel="next">
+<link href="../ADA/databricks_fundamentals.html" rel="prev">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2c90660ccd9ed875bed4d9d3efe2ebdb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8e79a31a652f881e3331707867e6901b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5e80a2501ba6c305bc136e94ebcbb7b6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-01401a9c5f44910d62e21c24e8b18e51.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,7 +103,7 @@ cookieconsent.run({
   
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -273,7 +275,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">Databricks and ADA</a></li><li class="breadcrumb-item"><a href="../ADA/migrating_to_databricks.html">Migrating to Databricks</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -287,9 +289,9 @@ cookieconsent.run({
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/duck_guidance.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="mailto:statistics.development@education.gov.uk" title="Email us" class="quarto-navigation-tool px-1" aria-label="Email us"><i class="bi bi-envelope"></i></a>
@@ -366,7 +368,7 @@ cookieconsent.run({
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -381,49 +383,49 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/learning-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Learning support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/sql.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/sql.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/databricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/databricks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/r.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/git.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/datacamp-tracks.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/datacamp-tracks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DataCamp learning tracks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
+  <a href="../learning-development/accessibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessibility</span></a>
   </div>
 </li>
@@ -440,55 +442,55 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/pub.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Routes for publishing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ud.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open Data Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/api-data-standards.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/api-data-standards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistics API Data Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/ees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore education statistics (EES)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Good examples in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/embedded-charts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Embedded visualisations in EES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/scrums.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Publication scrums</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-eng.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">User engagement</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
+  <a href="../statistics-production/user-analytics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EES analytics</span></a>
   </div>
 </li>
@@ -505,25 +507,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Public dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/dashboards_rshiny.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating R Shiny dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/visualising.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualising data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
+  <a href="../writing-visualising/writing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing about data</span></a>
   </div>
 </li>
@@ -540,19 +542,19 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/getting-started-with-rap.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/getting-started-with-rap.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started with RAP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-expectations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP expectations</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../RAP/rap-statistics/rap-statistics.html" class="sidebar-item-text sidebar-link">
+            <a href="../RAP/rap-statistics/rap-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for statistics</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -561,19 +563,19 @@ cookieconsent.run({
       <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-statistics/rap-statistics-preparing-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics/rap-statistics-preparing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preparing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-statistics/rap-statistics-writing-code.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics/rap-statistics-writing-code.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-statistics/rap-statistics-version-control.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-statistics/rap-statistics-version-control.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Version control</span></a>
   </div>
 </li>
@@ -581,7 +583,7 @@ cookieconsent.run({
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../RAP/rap-analysis/rap-analysis.html" class="sidebar-item-text sidebar-link">
+            <a href="../RAP/rap-analysis/rap-analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP for general analysis</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -590,19 +592,19 @@ cookieconsent.run({
       <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-analysis/rap-analysis-preparing-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-analysis/rap-analysis-preparing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preparing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-analysis/rap-analysis-writing-code.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-analysis/rap-analysis-writing-code.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-analysis/rap-analysis-version-control.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-analysis/rap-analysis-version-control.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Version control</span></a>
   </div>
 </li>
@@ -610,19 +612,19 @@ cookieconsent.run({
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP FAQs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../RAP/rap-case-studies.html" class="sidebar-item-text sidebar-link">
+  <a href="../RAP/rap-case-studies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RAP case studies</span></a>
   </div>
 </li>
@@ -630,76 +632,76 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Databricks and ADA</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/ada.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/ada.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analytical Data Access (ADA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_fundamentals.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_fundamentals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks fundamentals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/migrating_to_databricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/migrating_to_databricks.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Migrating to Databricks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_notebooks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_notebooks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks notebooks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_workflows.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_workflows.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databricks workflows</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/scripting_databricks_workflows.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/scripting_databricks_workflows.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Scripting Databricks workflows</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_medallion_architecture.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_medallion_architecture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Medallion architecture (Bronze, Silver, Gold, Copper)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_sql_warehouse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL Warehouse with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_personal_cluster.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Personal cluster with RStudio and <code>odbc</code> / <code>DBI</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/databricks_rstudio_personal_cluster_sparklyr_archive.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/databricks_rstudio_personal_cluster_sparklyr_archive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Personal cluster with RStudio and <code>sparklyr</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ADA/git_databricks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use Databricks with Git</span></a>
   </div>
 </li>
@@ -715,31 +717,179 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#publicationproject-specific-automated-sense-checks" id="toc-publicationproject-specific-automated-sense-checks" class="nav-link active" data-scroll-target="#publicationproject-specific-automated-sense-checks">Publication/project specific automated sense checks</a></li>
+  <li><a href="#migration-approaches" id="toc-migration-approaches" class="nav-link active" data-scroll-target="#migration-approaches">Migration approaches</a></li>
+  <li><a href="#what-if-i-have-both-r-and-sql-code-in-my-current-process" id="toc-what-if-i-have-both-r-and-sql-code-in-my-current-process" class="nav-link" data-scroll-target="#what-if-i-have-both-r-and-sql-code-in-my-current-process">What if I have both R and SQL code in my current process?</a>
+  <ul class="collapse">
+  <li><a href="#move-any-sql-code-into-databricks-and-run-r-code-from-rstudio-positron-other-ide" id="toc-move-any-sql-code-into-databricks-and-run-r-code-from-rstudio-positron-other-ide" class="nav-link" data-scroll-target="#move-any-sql-code-into-databricks-and-run-r-code-from-rstudio-positron-other-ide">Move any SQL code into Databricks and run R code from RStudio / Positron / other IDE</a></li>
+  <li><a href="#move-all-r-and-sql-code-into-databricks" id="toc-move-all-r-and-sql-code-into-databricks" class="nav-link" data-scroll-target="#move-all-r-and-sql-code-into-databricks">Move all R and SQL code into Databricks</a></li>
+  <li><a href="#translate-any-sql-code-to-r-and-run-all-code-from-rstudio-positron-other-ide" id="toc-translate-any-sql-code-to-r-and-run-all-code-from-rstudio-positron-other-ide" class="nav-link" data-scroll-target="#translate-any-sql-code-to-r-and-run-all-code-from-rstudio-positron-other-ide">Translate any SQL code to R and run all code from RStudio / Positron / other IDE</a></li>
+  <li><a href="#use-an-r-wrapper-function-for-sql-code-and-run-all-code-from-rstudio-positron-other-ide" id="toc-use-an-r-wrapper-function-for-sql-code-and-run-all-code-from-rstudio-positron-other-ide" class="nav-link" data-scroll-target="#use-an-r-wrapper-function-for-sql-code-and-run-all-code-from-rstudio-positron-other-ide">Use an R wrapper function for SQL code and run all code from RStudio / Positron / other IDE</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/common-rap-principles/publication-project-specific-automated-sense-checks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/migrating_to_databricks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">Databricks and ADA</a></li><li class="breadcrumb-item"><a href="../ADA/migrating_to_databricks.html">Migrating to Databricks</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Migrating to Databricks</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="publicationproject-specific-automated-sense-checks" class="level3">
-<h3 class="anchored" data-anchor-id="publicationproject-specific-automated-sense-checks">Publication/project specific automated sense checks</h3>
-<p><img src="../../images/great.svg" class="img-fluid"></p>
-<p><strong>What does this mean?</strong></p>
-<p>The QA team have put together a <a href="https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx#%E2%80%8Bwhat-qa-tasks-do-i-need-to-carry-out" target="_blank">flowchart to help you identify the QA needed in different scenarios</a>. When it’s proportional to the work, QA should go further than the most basic/generic checks above. In these cases, it is expected that teams develop their own automated QA checks to QA specificities of their analysis not covered by the basic checks.</p>
-<p>As a part of automating QA, we should also be looking to automate the production of summary statistics. This provides us with instant insight into the stories underneath the numbers. Summary outputs are automated and used to explore the stories of the data.</p>
-<p><strong>Why do it?</strong></p>
-<p>Quality is one of the three pillars that our <a href="https://code.statisticsauthority.gov.uk/the-code/quality/" target="_blank" rel="noopener noreferrer">code of practice</a> is built upon. By building upon the basic checks to develop bespoke QA for our publications, we can increase our confidence in the quality of the processes and outputs that they produce.</p>
-<p><strong>How to get started</strong></p>
-<p>We expect that the basic level of automated QA will cover most generic needs. However, we also expect that each analytical project will have it’s own quirks that require a more bespoke approach. Try to consider what things you’d usually check as flags that something hasn’t gone right with your data. What are the unique aspects of your project’s data, and how can you automate checks against them to give you confidence in it’s accuracy and reliability?</p>
-<p>For those who are interested in starting writing their own QA scripts, it’s worth looking at packages in R such as <a href="https://testthat.r-lib.org/" target="_blank" rel="noopener noreferrer">testthat</a>, including the <a href="https://educationgovuk.sharepoint.com/:f:/r/sites/sarpi/g/WorkplaceDocuments/Induction%20learning%20and%20career%20development/Coffee%20and%20Coding/190306_peter_autotesting?csf=1&amp;web=1&amp;e=F945Xq" target="_blank" rel="noopener noreferrer">coffee and coding resources</a> on it by Peter Curtis, as well as this <a href="http://r-pkgs.had.co.nz/tests.html" target="_blank" rel="noopener noreferrer">guide on testing</a> by Hadley Wickham.</p>
-<p>The <a href="https://www.rdocumentation.org/packages/janitor/versions/2.2.1/topics/clean_names" target="_blank">janitor</a> package in R also has some particularly useful functions, such as <code>clean_names()</code> to automatically clean up your variable names, <code>remove_empty()</code> to remove any completely empty rows and columns, and <code>get_dupes()</code> which retrieves any duplicate rows in your data - this last one is particularly powerful as you can feed it specific columns and see if there’s any duplicate instances of values across those columns.</p>
+</header>
 
 
+<p class="text-muted">
+</p><p>Guidance for analysts on different options for migrating existing processes to use data stored in Databricks from using data stored in SQL Server Management Studio (SSMS).</p>
+<p></p>
+<hr>
+<section id="migration-approaches" class="level2">
+<h2 class="anchored" data-anchor-id="migration-approaches">Migration approaches</h2>
+<p>There are multiple approaches to migrating your processes to Databricks. The right approach will depend on your existing code, your team’s skills and your long-term goals.</p>
+<p>There is no single correct method. Each approach has advantages and trade-offs, and analysts should choose the option that best fits their use case.</p>
+<p>Our general recommendation is:</p>
+<ul>
+<li>For existing R code, change the database connection from SSMS to Databricks and continue to use RStudio, Positron or your preferred IDE for any coding.</li>
+<li>For SQL scripts, or where building new pipelines or workflows, consider migrating to code entirely in Databricks.</li>
+</ul>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Approach 1: Connecting to Databricks from RStudio / Positron / other preferred IDE
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This approach uses Databricks primarily for data storage, while you continue to run your code locally. Your R code can remain in RStudio / Positron / your preferred IDE and all existing R processes can still be run there.</p>
+<p>This approach is most suitable where your code is written primarily in R and supports a quick and low-disruption migration. If you have an existing pipeline set up using RStudio / Positron / another IDE, there is no expectation that you must migrate your existing code or scripts into the Databricks platform (although there’s no reason you shouldn’t if you’d like to!).</p>
+<p>Code that reads or writes data from or to SSMS databases will need to be redirected to your Databricks catalog*.</p>
+<section id="pros" class="level3">
+<h3 class="anchored" data-anchor-id="pros">Pros</h3>
+<ul>
+<li><strong>Minimal code changes</strong> You can keep your existing R scripts largely unchanged, only updating any embedded SQL code (from T-SQL to Spark SQL) and any SSMS connections to point to your Databricks catalog instead</li>
+<li><strong>Quick to implement</strong> This is often the fastest route to migrating to Databricks</li>
+<li><strong>Platform flexibility</strong> Your code remains portable and can be more easily migrated to other environments</li>
+<li><strong>Greater control over your environment</strong> You retain more flexibility over local packages and configurations compared to managed environments</li>
+</ul>
+</section>
+<section id="cons" class="level3">
+<h3 class="anchored" data-anchor-id="cons">Cons</h3>
+<ul>
+<li><strong>Connection set up can take time</strong> Initial set up (authentication, drivers, permissions) may require troubleshooting</li>
+<li><strong>Mixed language workflows need extra handling</strong> If your process requires both SQL and R, you will need to consider how to migrate your SQL code</li>
+<li><strong>Performance limitations</strong> Computation runs on your local machine, which may be slower than the cloud-based processing Databricks offers</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Approach 2: Coding within Databricks
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This approach moves all your code to the Databricks platform, so it sits alongside your data in the same environment. It is most suitable when: your code is primarily in SQL language, you want to fully utilise Databricks features and / or cloud compute, or you are building new pipelines.</p>
+<p>When moving code to Databricks, you have a couple of options for how you develop and run it. You can:</p>
+<ul>
+<li>Use <a href="../ADA/databricks_notebooks.html">Databricks notebooks</a></li>
+<li>Use standard code scripts</li>
+<li>Use the Databricks SQL Editor to create standalone SQL queries</li>
+</ul>
+<p>SQL Editor is recommended for short, ad-hoc SQL queries. For longer or more complex SQL analysis, consider using notebooks.</p>
+<hr>
+<section id="pros-1" class="level3">
+<h3 class="anchored" data-anchor-id="pros-1">Pros</h3>
+<hr>
+<ul>
+<li><strong>Code and data in one place</strong> All processing happens within Databricks, reducing complexity and improving integration</li>
+<li><strong>Typically faster to run processes</strong> Takes advantage of cloud computing (see <a href="../ADA/databricks_fundamentals.html">Databricks fundamentals for more info</a>)</li>
+<li><strong>Well suited to workflows and automation</strong> Databricks has built in tools for scheduling and running pipelines (see <a href="../ADA/databricks_workflows.html">Databricks workflows for more info</a>)</li>
+<li><strong>Flexible development options</strong> Use notebooks for interactive development and documentation, or scripts for more structured pipelines</li>
+</ul>
+</section>
+<section id="cons-1" class="level3">
+<h3 class="anchored" data-anchor-id="cons-1">Cons</h3>
+<ul>
+<li><strong>Security considerations</strong> Care is needed when sharing notebooks, as some users may see code outputs even if they don’t have access to underlying data</li>
+<li><strong>Learning and development time</strong> It may take more time to upskill in the Databricks platform</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Translating T-SQL to Spark SQL
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Any SQL code, whether in standalone SQL scripts or embedded in R scripts, will need to be rewritten from T-SQL to Spark SQL syntax. This applies regardless of whether you are following Approach 1 or Approach 2, as either way the code is executed by Databricks which uses Spark SQL syntax. Databricks’ in-built AI assistant “Genie” can help with translating your code.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="what-if-i-have-both-r-and-sql-code-in-my-current-process" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-i-have-both-r-and-sql-code-in-my-current-process">What if I have both R and SQL code in my current process?</h2>
+<p>While we recommend Approach 1 for primarily R-based processes, and Approach 2 for SQL processes, it may be that your processes use a combination of these languages. If your workflow uses both R and SQL, you will likely need to use a blended approach to migration. You should weigh up your options and decide what is best for your process and team; this will depend on the context of your process, and your team skills and capacity. Options include:</p>
+<hr>
+<section id="move-any-sql-code-into-databricks-and-run-r-code-from-rstudio-positron-other-ide" class="level3">
+<h3 class="anchored" data-anchor-id="move-any-sql-code-into-databricks-and-run-r-code-from-rstudio-positron-other-ide">Move any SQL code into Databricks and run R code from RStudio / Positron / other IDE</h3>
+<hr>
+<p>This approach is suitable when your existing SQL code is complex, well-tested or often reused and you want to keep it as SQL code. It involves running the SQL code directly in Databricks to create intermediate or final tables, which are then written to the Databricks catalog. The SQL processing happens entirely in Databricks, after which you connect to the Databricks catalog from RStudio, Positron or another IDE to read in the created tables and continue the process with R code*.</p>
+<hr>
+</section>
+<section id="move-all-r-and-sql-code-into-databricks" class="level3">
+<h3 class="anchored" data-anchor-id="move-all-r-and-sql-code-into-databricks">Move all R and SQL code into Databricks</h3>
+<hr>
+<p>This approach is best suited to processes you plan to automate using Databricks workflows or where keeping all processing in a single environment improves performance and reproducibility. It involves migrating all of your SQL and R code into the Databricks platform, executing it using notebooks or jobs.</p>
+<hr>
+</section>
+<section id="translate-any-sql-code-to-r-and-run-all-code-from-rstudio-positron-other-ide" class="level3">
+<h3 class="anchored" data-anchor-id="translate-any-sql-code-to-r-and-run-all-code-from-rstudio-positron-other-ide">Translate any SQL code to R and run all code from RStudio / Positron / other IDE</h3>
+<hr>
+<p>This approach is appropriate when your team primarily works in R and your SQL logic is not particularly complex or lengthy. It involves translating all existing SQL logic into R so that all your code is in the same language. The R code would then be run from RStudio / Positron / another IDE and would connect to the Databricks catalog to access the data as in Approach 1 above*.</p>
+<hr>
+</section>
+<section id="use-an-r-wrapper-function-for-sql-code-and-run-all-code-from-rstudio-positron-other-ide" class="level3">
+<h3 class="anchored" data-anchor-id="use-an-r-wrapper-function-for-sql-code-and-run-all-code-from-rstudio-positron-other-ide">Use an R wrapper function for SQL code and run all code from RStudio / Positron / other IDE</h3>
+<hr>
+<p>This approach is a useful short-term or transitional approach when you want to reuse existing SQL code with minimal changes. It keeps SQL and R closely linked by embedding SQL queries within an R workflow. Any SQL code would first need updating from T-SQL to Spark SQL, where it could then be passed via R code using wrapper functions to run in Databricks, whilst R controls execution. You can run SQL from R by creating a reusable wrapper function that uses a Databricks connection (e.g., via the <code>DBI</code> and <code>odbc</code> packages) and executes queries with a function like <code>dbGetQuery()</code>*.</p>
+<p>An example of setting up the connection and running queries can be found on the <a href="../ADA/databricks_rstudio_sql_warehouse.html#pulling-data-into-rstudio-from-databricks">Databricks SQL Warehouse with RStudio page</a>. This could then be wrapped in a reusable function to standardise connection handling and query execution.</p>
+<hr>
+<p><em>*For all processes that run SQL code or read from / write to the Databricks catalog from outside Databricks, you’ll need to manually set up a connection to a Databricks compute resource. The best compute option for this is an SQL Warehouse, you can find more information on setting this up on our <a href="../ADA/databricks_rstudio_sql_warehouse.html">Databricks SQL Warehouse with RStudio page</a>.</em></p>
+
+
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1156,6 +1306,18 @@ cookieconsent.run({
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../ADA/databricks_fundamentals.html" class="pagination-link" aria-label="Databricks fundamentals">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Databricks fundamentals</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../ADA/databricks_notebooks.html" class="pagination-link" aria-label="Databricks notebooks">
+        <span class="nav-page-text">Databricks notebooks</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1164,7 +1326,7 @@ cookieconsent.run({
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/RAP/common-rap-principles/publication-project-specific-automated-sense-checks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/migrating_to_databricks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>This page is maintained by statistics.development@education.gov.uk</p>
 </div>
