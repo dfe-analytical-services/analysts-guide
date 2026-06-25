@@ -32,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ADA/databricks_medallion_architecture.html" rel="next">
+<link href="../ADA/scripting_databricks_workflows.html" rel="next">
 <link href="../ADA/databricks_notebooks.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -665,6 +665,12 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../ADA/scripting_databricks_workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Scripting Databricks workflows</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../ADA/databricks_medallion_architecture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Medallion architecture (Bronze, Silver, Gold, Copper)</span></a>
   </div>
@@ -693,18 +699,6 @@ cookieconsent.run({
  <span class="menu-text">Use Databricks with Git</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../ADA/databricks_workflow_script_databricks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Script workflows in Databricks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../ADA/databricks_workflow_script_rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Script workflows in RStudio</span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -722,7 +716,7 @@ cookieconsent.run({
   <li><a href="#setting-up-a-workflow" id="toc-setting-up-a-workflow" class="nav-link" data-scroll-target="#setting-up-a-workflow">Setting up a workflow</a></li>
   <li><a href="#auditing" id="toc-auditing" class="nav-link" data-scroll-target="#auditing">Auditing</a></li>
   </ul></li>
-  <li><a href="#coded-workflows" id="toc-coded-workflows" class="nav-link" data-scroll-target="#coded-workflows">Coded workflows</a></li>
+  <li><a href="#scripted-workflows" id="toc-scripted-workflows" class="nav-link" data-scroll-target="#scripted-workflows">Scripted workflows</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_workflows.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -871,15 +865,11 @@ Here you can also setup notifications for the specific task. In addition you can
 <hr>
 </section>
 </section>
-<section id="coded-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="coded-workflows">Coded workflows</h2>
-<p>Another useful aspect of workflows is that they can be defined and ran using code through the <a href="https://docs.databricks.com/api/workspace/jobs" target="_blank">DataBricks Jobs API</a>.</p>
-<p>There is an R library which has been created to interface with the DataBricks API, meaning that you can script jobs in R using the <a href="https://docs.databricks.com/en/dev-tools/sdk-r.html" target="_blank">DataBricks SDK for R package</a> using lists instead of JSON.</p>
-<p>For instructions on how to use the Databricks SDK for R package to script workflows see the articles below:</p>
-<ul>
-<li><a href="../ADA/databricks_workflow_script_databricks.html">Scripting workflows in Databricks</a></li>
-<li><a href="../ADA/databricks_workflow_script_rstudio.html">Scripting workflows in RStudio</a></li>
-</ul>
+<section id="scripted-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="scripted-workflows">Scripted workflows</h2>
+<p>Another useful aspect of workflows is that they can be defined and ran using code through the <a href="https://docs.databricks.com/api/workspace/jobs" target="_blank">Databricks Jobs API</a>.</p>
+<p>There is an R library which has been created to interface with the Databricks API, meaning that you can script jobs in R using the <a href="https://docs.databricks.com/en/dev-tools/sdk-r.html" target="_blank">Databricks SDK for R package</a> using lists instead of JSON.</p>
+<p>For instructions on how to use the Databricks SDK for R package to script workflows see the <a href="../ADA/scripting_databricks_workflows.html">Scripting Databricks workflows</a> page.</p>
 
 
 </section>
@@ -1305,8 +1295,8 @@ Here you can also setup notifications for the specific task. In addition you can
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ADA/databricks_medallion_architecture.html" class="pagination-link" aria-label="Medallion architecture (Bronze, Silver, Gold, Copper)">
-        <span class="nav-page-text">Medallion architecture (Bronze, Silver, Gold, Copper)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ADA/scripting_databricks_workflows.html" class="pagination-link" aria-label="Scripting Databricks workflows">
+        <span class="nav-page-text">Scripting Databricks workflows</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
