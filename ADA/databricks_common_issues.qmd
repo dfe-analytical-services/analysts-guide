@@ -14,10 +14,15 @@ This page is a list of common errors that have been encountered while using Data
 At the top of the page you will find the most current issue, this is used when we get a lot of users all reporting the same issue at the same time.
 
 There are also several other drop-downs partitioning issues into the following categories:
+
 - Installing
+
 - Navigating
+
 - Connecting
+
 - Using
+
 - SQL migration
 
 ::: {.callout-important collapse = "true"}
@@ -31,11 +36,13 @@ Current Issues: No known current issues.
 
 #### Issue
 
-When you download Simba Spark it doesn’t necessarily download the data driver.
+When you download Simba Spark it doesn’t necessarily download the data driver. This sometimes occurs silently or you can get the following error:
+
+Error in `DBI::dbConnect()`:! Failed to automatically find the Databricks/Spark ODBC driver.ℹ Set `driver` to known driver name or path.Run `rlang::last_trace()` to see where the error occurred.
 
 #### Resolution
 
-Raise an I.T. ticket explaining that you have installed "Simba Spark" but the driver is missing, they will download it from the internet.
+Raise an [I.T. ticket](https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=327e8eb01b6e4c502fe864606e4bcb26) explaining that you have installed "Simba Spark" but the driver is missing, they will download it from the internet.
 
 ## Spark
 
@@ -47,9 +54,20 @@ Sometimes R will tell you to install pysparklyr and rerun, then when doing that 
 
 #### Resolution
 
-First step: how to get pysparklyr to not install its new virtual environment on Onedrive. You can specify the default folder for new virtual environments in the .Renvironfile by using the variable WORKON_HOME (e.g. WORKON_HOME = “C:/users/myusername” ) So first edit the file to do that, using usethis::edit_r_environ() (unless you want to use OneDrive, but it looks likely to induce lots of unnecessary syncing), and restart R.
+Step 1: You can change the default location for virtual environments using the WORKON_HOME setting.
 
-Next step: follow the instructions at Set up Databricks personal compute cluster with RStudio – Analysts’ Guide and get to the point of connecting with:
+You can specify the default folder for new virtual environments in the .Renvironfile by using the variable WORKON_HOME (e.g. WORKON_HOME = “C:/users/myusername” ) to do this:
+1. Open your .Renviron file
+``` 
+#| usethis::edit_r_environ()
+```
+
+2. Add or update the line:
+`WORKON_HOME = "C:/users/myusername"`
+
+3. Save the file and restart R
+
+Step 2: Set-up your databricks  follow the instructions at Set up Databricks personal compute cluster with RStudio – Analysts’ Guide and get to the point of connecting with:
 
 ```
 #| sc <- spark_connect(
@@ -60,7 +78,15 @@ Next step: follow the instructions at Set up Databricks personal compute cluster
 
 Install pysparklyr if it tells you to do that and try again. Eventually you will probably get a message saying it needs to install a new virtual environment with databricks-connect, and it will now make this in the new folder you specified in WORKON_HOME. If that goes without a hitch, then great, you’re done.
 
-But if the installation fails with an error about C++ libraries, you can just install in binary mode yourself. Go (in Windows explorer) to the Scripts subfolder in the new virtual environment folder it made (probably something like C:\Users\myusername\r-sparklyr-databricks-15.4\Scripts). Right-click in the files pane and do “Open in terminal” which will open up Powershell, and in Powershell do .\python -m pip install databricks-connect. That should work to install, after which the spark-connect command should now work in R.
+Step 3: Fix C++ build error
+
+If you still get a Microsoft C++ build tools error, you can install databricks-connect manually in binary mode.
+
+Go (in windows explorer) to the Scripts subfolder in the new virtual environment folder you just made(probably something like C:sparklyr-databricks-15.4)
+
+Right-click in the files pane and do “Open in terminal” which will open up Powershell, and in Powershell do .-m pip install databricks-connect.
+
+This should work to install, after which the spark-connect command should work in R.
 
 :::
 
@@ -161,9 +187,9 @@ Error in `DBI::dbConnect()`:
 
 #### Resolution
 
-Often this is dueto your PAT token not having the right permissions or having expired in which case follow the guidance in [Creating a personal access token](#creating-a-personal-access-token)
+Often this is due to your PAT token not having the right permissions or having expired in which case follow the guidance in [Creating a personal access token](#creating-a-personal-access-token)
 
-Other reasons for this error could be either that you do not currently have permission to do what you want with the Catalog, or sometimes a typo in the catalog, databricks host, or warehouse id, guidance can be found in the (Analysts' Guide Databricks connection guidance)[https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_sql_warehouse.html#establishing-an-rstudio-connection-using-environment-variables].
+Other reasons for this error could be either that you do not currently have permission to do what you want with the Catalog, or sometimes a typo in the catalog, databricks host, or warehouse id, guidance can be found in the [Analysts' Guide Databricks connection guidance](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_sql_warehouse.html#establishing-an-rstudio-connection-using-environment-variables).
 
 ## PowerBI connection issue
 
@@ -282,6 +308,7 @@ Here is an example of how to get around that using PySpark:
 You want to use a package that requires system packages.
 
 #### Resolution 
+
 We recommend doing this by using a notebook and following the [Databricks' guidance on using libraries in r](https://learn.microsoft.com/en-us/azure/databricks/libraries/notebooks-r-libraries).
 
 In general you might want to either convert the PySpark dataframe to a more manageable object:
@@ -291,16 +318,21 @@ In spark and R you can use the collect() function.
 ## I hate Mondays
 
 #### Issue
-You can’t change the starting day of the week away from Sunday. 
+
+Databricks's weeks start on a Sunday, often you'd rather they'd start on a Monday, this issue is where you can’t change the starting day of the week away from Sunday. 
+
 #### Resolution
-You can’t change the starting day of the week away from Sunday.
+
+You can’t change the starting day of the week away from Sunday, there is not resolution, Databricks hates starting the week on anyday but Sunday.
 
 ## Package issues
 
 #### Issue
 
 Spark updates its packages causing our pipelines to break. 
+
 #### Resolution
+
 Roll back the version.
 
 ## Timezones
@@ -320,6 +352,7 @@ Follow this guidance: [Databricks timezones](https://learn.microsoft.com/en-gb/a
 Special characters in CSV files can cause issues on upload. 
 
 #### Resolution
+
 Saving the csv file in UTF-8 encoding (Databricks uses this) should solve the issue.
 
 ## Memory issues
