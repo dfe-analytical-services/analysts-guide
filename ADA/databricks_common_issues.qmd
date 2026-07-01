@@ -25,7 +25,7 @@ There are also several other drop-downs partitioning issues into the following c
 
 - SQL migration
 
-::: {.callout-important collapse = "true"}
+::: {.callout-important collapse = "false"}
 Current Issues: No known current issues.
 :::
 
@@ -102,7 +102,7 @@ Data appears to be missing when you search around Databricks for it.
 
 #### Resolution
 
-There can be many different reasons but first it’s important to check you are in the right space
+There can be many different reasons but first it’s important to check you are in the right space.
 
 1. First click on the dropdown:
 
@@ -334,6 +334,38 @@ Spark updates its packages causing our pipelines to break.
 #### Resolution
 
 Roll back the version.
+
+You can check the package version using:
+
+```r
+#| installed.packages()["sparkR", "Version"]
+```
+
+or
+
+```r
+#| packageVersion("sparkR")
+```
+
+Rolling back a version requires first:
+
+1. Removing the package.
+
+```r
+#| remove.packages("package_name")
+```
+
+
+
+2. Re-installing the package specifying the version using your installation method of preference.
+
+Normally this would be:
+
+```r
+#| library(remotes) or library(devtools)
+#| install_version("package_name", version = "version_number"
+```
+
 
 ## Timezones
 
