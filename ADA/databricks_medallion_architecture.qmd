@@ -40,6 +40,14 @@ This layered approach gives you **reproducibility** (you always keep the raw dat
 
 **Example use case:** A daily extract from a school attendance records system lands as CSV files. The Bronze table stores every row from every file, including duplicates, with a timestamp of when each batch was loaded.
 
+### ONS geography data - National Statistics Postcode Lookup (NSPL) dataset
+
+The NSPL data is an example of a dataset used widely across the Department's analytical community. The raw dataset, as published by ONS, has been uploaded to the bronze catalog on Databricks and is available for analysts to access and use. This dataset will be updated quarterly, in sync with regular NSPL releases.
+
+It is recommended that analysts source NSPL data from this table, and subsequently apply any required processing to manipulate the data as needed for their analysis, rather than uploading their own cut of the data into another modelling area. This will ensure analysts are working from the same single source of NSPL data at any point, and will avoid unnecessary duplication of tables within and across catalogs in Databricks.
+
+The raw NSPL data can be found in the `catalog_30_bronze.ons_geography.vw_nspl_[month]_[year]` table in Databricks, where `month` and `year` are the month and year of publication of the dataset in the table.
+
 ---
 
 ## Silver Layer – Cleaned & Conformed
