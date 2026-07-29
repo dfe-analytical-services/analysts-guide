@@ -1,0 +1,16 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/.quarto/
+*_cache/
+_site/
+site_libs/
+
+.DS_Store
+
+README.html
+
+**/*.quarto_ipynb
+.positai

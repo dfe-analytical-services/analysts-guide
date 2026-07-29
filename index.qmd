@@ -9,6 +9,9 @@ site: "_site.yml"
 library(fontawesome)
 library(quarto)
 library(readxl)
+if(FALSE){
+    library("rsconnect")
+}
 ```
 
 ---
