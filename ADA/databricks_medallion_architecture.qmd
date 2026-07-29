@@ -46,7 +46,7 @@ The NSPL data is an example of a dataset used widely across the Department's ana
 
 It is recommended that analysts source NSPL data from this table, and subsequently apply any required processing to manipulate the data as needed for their analysis, rather than uploading their own cut of the data into another modelling area. This will ensure analysts are working from the same single source of NSPL data at any point, and will avoid unnecessary duplication of tables within and across catalogs in Databricks.
 
-The raw NSPL data can be found in the `catalog_30_bronze.ons_geography.vw_nspl_[month]_[year]` table in Databricks, where `month` and `year` are the month and year of publication of the dataset in the table.
+The raw NSPL data can be found in the `catalog_30_bronze.ons_geography.vw_nspl_[month]_[year]` table in the `s101p01-dbr-edap-02` workspace on Databricks, where `month` and `year` are the first three letters of the month, and the year, of publication of the dataset in the table.
 
 ---
 
