@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -42,12 +45,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2c90660ccd9ed875bed4d9d3efe2ebdb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8e79a31a652f881e3331707867e6901b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8c450af0e90ef59b22746d2ceb940a03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4816e79be40edb22001378da1f801405.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5e80a2501ba6c305bc136e94ebcbb7b6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-01401a9c5f44910d62e21c24e8b18e51.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-62b168a05ced389d7d5754f541f1480b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-452f95f753c177c261719e7ecd50be2d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -717,7 +720,10 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bronze-layer-raw-ingestion" id="toc-bronze-layer-raw-ingestion" class="nav-link active" data-scroll-target="#bronze-layer-raw-ingestion">Bronze Layer – Raw Ingestion</a></li>
+  <li><a href="#bronze-layer-raw-ingestion" id="toc-bronze-layer-raw-ingestion" class="nav-link active" data-scroll-target="#bronze-layer-raw-ingestion">Bronze Layer – Raw Ingestion</a>
+  <ul class="collapse">
+  <li><a href="#ons-geography-data---national-statistics-postcode-lookup-nspl-dataset" id="toc-ons-geography-data---national-statistics-postcode-lookup-nspl-dataset" class="nav-link" data-scroll-target="#ons-geography-data---national-statistics-postcode-lookup-nspl-dataset">ONS geography data - National Statistics Postcode Lookup (NSPL) dataset</a></li>
+  </ul></li>
   <li><a href="#silver-layer-cleaned-conformed" id="toc-silver-layer-cleaned-conformed" class="nav-link" data-scroll-target="#silver-layer-cleaned-conformed">Silver Layer – Cleaned &amp; Conformed</a></li>
   <li><a href="#gold-layer-business-ready" id="toc-gold-layer-business-ready" class="nav-link" data-scroll-target="#gold-layer-business-ready">Gold Layer – Business-Ready</a></li>
   <li><a href="#copper-layer-migrated-analytical-modelling-areas-dfe-specific" id="toc-copper-layer-migrated-analytical-modelling-areas-dfe-specific" class="nav-link" data-scroll-target="#copper-layer-migrated-analytical-modelling-areas-dfe-specific">Copper Layer – Migrated Analytical Modelling Areas (DfE-Specific)</a></li>
@@ -822,7 +828,13 @@ Note
 <li><strong>Metadata enrichment</strong> — add columns like <code>_ingested_at</code>, <code>_source_file</code>, or <code>_batch_id</code> to aid debugging.</li>
 </ul>
 <p><strong>Example use case:</strong> A daily extract from a school attendance records system lands as CSV files. The Bronze table stores every row from every file, including duplicates, with a timestamp of when each batch was loaded.</p>
+<section id="ons-geography-data---national-statistics-postcode-lookup-nspl-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="ons-geography-data---national-statistics-postcode-lookup-nspl-dataset">ONS geography data - National Statistics Postcode Lookup (NSPL) dataset</h3>
+<p>The NSPL data is an example of a dataset used widely across the Department’s analytical community. The raw dataset, as published by ONS, has been uploaded to the bronze catalog on Databricks and is available for analysts to access and use. This dataset will be updated quarterly, in sync with regular NSPL releases.</p>
+<p>It is recommended that analysts source NSPL data from this table, and subsequently apply any required processing to manipulate the data as needed for their analysis, rather than uploading their own cut of the data into another modelling area. This will ensure analysts are working from the same single source of NSPL data at any point, and will avoid unnecessary duplication of tables within and across catalogs in Databricks.</p>
+<p>The raw NSPL data can be found in the <code>catalog_30_bronze.ons_geography.vw_nspl_[month]_[year]</code> table in the <code>s101p01-dbr-edap-02</code> workspace on Databricks, where <code>month</code> and <code>year</code> are the first three letters of the month, and the year, of publication of the dataset in the table.</p>
 <hr>
+</section>
 </section>
 <section id="silver-layer-cleaned-conformed" class="level2">
 <h2 class="anchored" data-anchor-id="silver-layer-cleaned-conformed">Silver Layer – Cleaned &amp; Conformed</h2>
