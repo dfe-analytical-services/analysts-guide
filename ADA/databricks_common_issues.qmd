@@ -54,7 +54,8 @@ Sometimes R will tell you to install pysparklyr and rerun, then when doing that 
 
 #### Resolution
 
-Step 1: You can change the default location for virtual environments using the WORKON_HOME setting.
+###### Step 1
+You can change the default location for virtual environments using the WORKON_HOME setting.
 
 You can specify the default folder for new virtual environments in the .Renvironfile by using the variable WORKON_HOME (e.g. WORKON_HOME = “C:/users/myusername” ) to do this:
 1. Open your .Renviron file
@@ -67,7 +68,8 @@ You can specify the default folder for new virtual environments in the .Renviron
 
 3. Save the file and restart R
 
-Step 2: Set-up your databricks  follow the instructions at Set up Databricks personal compute cluster with RStudio – Analysts’ Guide and get to the point of connecting with:
+###### Step 2
+Set-up your databricks  follow the instructions at Set up Databricks personal compute cluster with RStudio – Analysts’ Guide and get to the point of connecting with:
 
 ```
 #| sc <- spark_connect(
@@ -78,7 +80,8 @@ Step 2: Set-up your databricks  follow the instructions at Set up Databricks per
 
 Install pysparklyr if it tells you to do that and try again. Eventually you will probably get a message saying it needs to install a new virtual environment with databricks-connect, and it will now make this in the new folder you specified in WORKON_HOME. If that goes without a hitch, then great, you’re done.
 
-Step 3: Fix C++ build error
+###### Step 3
+Fix C++ build error
 
 If you still get a Microsoft C++ build tools error, you can install databricks-connect manually in binary mode.
 
