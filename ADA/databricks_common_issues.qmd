@@ -433,7 +433,7 @@ Your SQL code that was working pre-migration is no longer working.
 
 #### Resolution
 
-Databricks and SQL Server use different versions of SQL (Spark SQL compared MSSQL, respectively), which function slightly differently. There are several different reasons why your SQL Server code might not work on Databricks.
+Databricks and SQL Server use different versions of SQL (Databricks uses Spark SQL), which function slightly differently. There are several different reasons why your SQL Server code might not work on Databricks.
 
 ### Case-sensitivity
 
@@ -445,7 +445,7 @@ SQL in Databricks doesn’t automatically trim spaces.
 
 ### Terminology
 
-Databricks doesn’t use the same commands as SQL Server, for example ```select top 1 …``` becomes ```select … limit 1```.
+Databricks doesn’t use the same commands as SQL Server, for example ```SELECT TOP 1 …``` becomes ```SELECT … LIMIT 1```, and ```SELECT DISTINCT Variable ...``` becomes ```SELECT DISTINCT(Variable) ...```
 
 ## Dynamic SQl
 
