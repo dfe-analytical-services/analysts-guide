@@ -445,7 +445,7 @@ SQL in Databricks doesn’t automatically trim spaces.
 
 ### Terminology
 
-Databricks doesn’t use the same commands as SQL Server, for example ```select TOP 1 …``` becomes ```select … limit 1```.
+Databricks doesn’t use the same commands as SQL Server, for example ```select top 1 …``` becomes ```select … limit 1```.
 
 ## Dynamic SQl
 
