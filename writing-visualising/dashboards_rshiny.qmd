@@ -140,9 +140,9 @@ chart_iris <- ggplot(iris) +
     )
 ```
 
-Which produces the following chart with tooltips appearing when the user hovers over any given data point:
+Which produces the following chart with tooltips appearing when the user hovers over any given data point (disabled temporarily whilst working on server updates):
 
-``` {r ggiraph_run, echo=FALSE, eval=TRUE}
+``` {r ggiraph_run, echo=FALSE, eval=FALSE}
 # Just running the code within the quarto doc to show that it works!
 chart_iris <- ggplot(iris) +
   geom_point_interactive(

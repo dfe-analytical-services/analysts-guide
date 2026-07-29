@@ -2435,7 +2435,7 @@
       "checksum": "32fac933930706394dc9153e7aead49a"
     },
     ".Rprofile": {
-      "checksum": "2b914a171b67cfc317b2936e32261449"
+      "checksum": "4695474bc47ed2aaff81818ef3c24cbc"
     },
     "_quarto.yml": {
       "checksum": "78f76193237c776550ceb2ae28b031d8"
@@ -4202,7 +4202,7 @@
       "checksum": "b1196d5c5fc2c03ef07222537eab35a9"
     },
     "writing-visualising/dashboards_rshiny.qmd": {
-      "checksum": "c3aa2a1fd717ebca631e70916082f93c"
+      "checksum": "35a78573ef3c3fa385da26399b526f69"
     },
     "writing-visualising/visualising.qmd": {
       "checksum": "2ded6bf929fa463a5902b50ccd2b8c37"
