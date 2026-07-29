@@ -129,9 +129,6 @@ We recommend producing interactive charts using the `ggplot2` package to create 
 
 ``` {r ggiraph, eval=FALSE}
 # Creat an interactive chart that we can output in an R Shiny application
-library(ggplot2)
-library(ggiraph)
-
 chart_iris <- ggplot(iris) +
   geom_point_interactive(
     aes(
@@ -147,8 +144,6 @@ Which produces the following chart with tooltips appearing when the user hovers 
 
 ``` {r ggiraph_run, echo=FALSE, eval=TRUE}
 # Just running the code within the quarto doc to show that it works!
-library(ggplot2)
-library(ggiraph)
 chart_iris <- ggplot(iris) +
   geom_point_interactive(
     aes(
