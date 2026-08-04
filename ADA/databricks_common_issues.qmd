@@ -40,6 +40,8 @@ When you download Simba Spark it doesn’t necessarily download the data driver.
 
 Error in `DBI::dbConnect()`:! Failed to automatically find the Databricks/Spark ODBC driver.ℹ Set `driver` to known driver name or path.Run `rlang::last_trace()` to see where the error occurred.
 
+Note the Simba Spark ODBC Driver has been replaced by the Databricks ODBC Driver, this may have resolved the above issue.
+
 #### Resolution
 
 Raise an [I.T. ticket](https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=327e8eb01b6e4c502fe864606e4bcb26) explaining that you have installed "Simba Spark" but the driver is missing, they will download it from the internet.
@@ -104,17 +106,17 @@ Data appears to be missing when you search around Databricks for it.
 
 There can be many different reasons but first it’s important to check you are in the right space.
 
-1. First click on the dropdown:
+1. First click on the dropdown (open image in new tab if too small):
 
-![Workspace location](/images/ADA/databricks_common_questions/workspace_dropdown_1.png)
+<img src="/images/ADA/databricks_common_questions/workspace_dropdown_1.png" alt = "Workspace location" style = "width:75%;">
 
 2. Navigating the dropdown:
 
-![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/workspace_dropdown_2.png)
+<img src="/images/ADA/databricks_common_questions/workspace_dropdown_2.png" alt = "Workspace swapping between workspaces" style = "width:75%;">
 
 3. When you click on a different workspace, it appears at the top the next time you click-on the dropdown, the rest are alphabetical:
 
-![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/workspace_dropdown_3.png)
+<img src="/images/ADA/databricks_common_questions/workspace_dropdown_3.png" alt = "Workspace swapping between workspaces" style = "width:75%;">
 
 You can find a full list of dropdowns here: [Analysts' Guide Workspace list](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_fundamentals.html#workspaces-dropdown-guide)
 
@@ -122,11 +124,11 @@ and you can find information about workspaces here: [Analysts' Guide Workspace g
 
 - Then check you can find the catalog in the catalog dropdown found here:
 
-![Catalog location](/images/ADA/databricks_common_questions/catalog_dropdown_1.png)
+<img src="/images/ADA/databricks_common_questions/catalog_dropdown_1.png" alt = "Catalog location" style = "width:75%;">
 
 - and it should look like this:
 
-![Catalog viewpoints](/images/ADA/databricks_common_questions/catalog_dropdown_2.png)
+<img src="/images/ADA/databricks_common_questions/catalog_dropdown_2.png" alt = "Catalog viewpoints" style = "width:75%;">
 
 :::
 
@@ -161,17 +163,17 @@ You want to connect to Databricks through the use of a personal access token but
 
 You can find guidance on personal access tokens in the [Analysts’ Guide](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_personal_cluster.html#setting-up-the-odbc-driver) and in the [Databricks’ guidance](https://docs.databricks.com/aws/en/security/auth/api-access-permissions).
 
-1. Find settings button:
-![Settings button](/images/ADA/databricks_common_questions/pat_token_1.png)
+1. Find settings button after clicking your profile icon:
+<img src="/images/ADA/databricks_common_questions/pat_token_1.png" alt = "Settings button" style = "width:75%;">
 
 2. Navigate to settings:
-![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/pat_token_2.png)
+<img src="/images/ADA/databricks_common_questions/pat_token_2.png" alt = "Workspace swapping between workspaces" style = "width:75%;">
 
 3. Click developer:
-![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/pat_token_3.png)
+<img src="/images/ADA/databricks_common_questions/pat_token_3.png" alt = "Workspace swapping between workspaces" style = "width:75%;">
 
 4. Set-up token:
-![Workspace swapping between workspaces](/images/ADA/databricks_common_questions/pat_token_4.png)
+<img src="/images/ADA/databricks_common_questions/pat_token_4.png" alt = "Workspace swapping between workspaces" style = "width:75%;">
 
 Make sure that the personal access token has the "API scope" to do what you want.
 
@@ -228,17 +230,17 @@ R isn’t working in my notebook Or I am getting the following error: Your admin
 Quick guide to using R in notebooks:
 
 1. First you should be getting something like the following error: 
-![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_1.png)
+<img src="/images/ADA/databricks_common_questions/personal_compute_1.png" alt = "Catalog viewpoints" style = "width:75%;">
 2. Create a new personal compute instance: 
-![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_2.png)
+<img src="/images/ADA/databricks_common_questions/personal_compute_2.png" alt = "Catalog viewpoints" style = "width:75%;">
 3. Make sure to set the access mode to a form that includes R as a language: 
-![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_3.png)
+<img src="/images/ADA/databricks_common_questions/personal_compute_3.png" alt = "Catalog viewpoints" style = "width:75%;">
 4. Swap to your personal compute: 
-![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_4.png)
+<img src="/images/ADA/databricks_common_questions/personal_compute_4.png" alt = "Catalog viewpoints" style = "width:75%;">
 5. Click through: 
-![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_5.png)
+<img src="/images/ADA/databricks_common_questions/personal_compute_5.png" alt = "Catalog viewpoints" style = "width:75%;">
 6. It should run: 
-![Catalog viewpoints](/images/ADA/databricks_common_questions/personal_compute_6.png)
+<img src="/images/ADA/databricks_common_questions/personal_compute_6.png" alt = "Catalog viewpoints" style = "width:75%;">
 
 ## Temporary tables
 
@@ -418,39 +420,81 @@ We recommend using the dfer package and the write_df_to_delta function.
 
 If this does not work there are a few different kinds of errors that might prevent a table from writing to a database.
 
-### NAN error
+##### NAN error
 
 If your table contains NANs, Databricks won’t know how to process this.
 
 ## Old code not working
 
-#### Issue
+### Issue
 
 Your SQL code that was working pre-migration is no longer working.
 
-#### Resolution
+### Resolution
 
 There’s a few different reasons why your code might no longer work.
 
-### Cases
+#### Cases
 
 SQL in Databricks is case sensitive, whereas mySQL is not, consider using upper / lower to test.
 
-### Spaces
+#### Spaces
 
 SQL in Databricks doesn’t automatically trim spaces.
 
-### Terminology
+#### Terminology
 
 Databricks doesn’t use the same commands as SQL server for example select TOP 1 … becomes select … limit 1.
 
+#### Databrick's commentary
+
+Data type differences:
+
+- NVARCHAR, VARCHAR(MAX), INT → Spark uses STRING, INT, BIGINT, DOUBLE
+- BIT → doesn't exist; use BOOLEAN
+- DATETIME → use TIMESTAMP
+
+Syntax changes:
+
+- ISNULL(x, y) → COALESCE(x, y)
+- TOP N → LIMIT N (at end of query)
+- CAST(x AS NVARCHAR) → CAST(x AS STRING)
+- Square bracket identifiers [column] → backticks `column`
+- + for string concatenation → CONCAT() or ||
+- GETDATE() → CURRENT_TIMESTAMP()
+DATEADD, DATEDIFF → DATE_ADD, DATEDIFF
+
+Procedural code:
+
+- IF...ELSE, WHILE, BEGIN...END blocks → not supported in Spark SQL
+- DECLARE @variable → use widgets (:parameter) or CTEs
+- Stored procedures behave differently — need SQL SECURITY INVOKER on DBR 17.3+
+- Temp tables #temp → use CTEs or CREATE OR REPLACE TEMPORARY VIEW
+
+Schema/object references:
+
+- database.schema.table → catalog.schema.table (Unity Catalog three-part naming)
+- dbo schema exists but isn't the automatic default
+
+Behavioural differences:
+
+- Integer division: MSSQL truncates (5/2 = 2), Spark returns double (5/2 = 2.5) — use CAST(x AS INT) or FLOOR() if you need truncation
+- NULL handling can differ in sorts and comparisons
+- GROUP BY / ORDER BY column aliases — Spark is more permissive but positioning rules differ
+
+Missing features:
+
+- MERGE → supported from DBR 14+ on Delta tables only
+- OUTPUT INSERTED.* → not supported
+- Cursors → not supported; use set-based operations
+
 ## Dynamic SQl
 
-#### Issue
+### Issue
 
 I want to use dynamic SQL
 
-#### Resolution
+### Resolution
 
 Here we can find some guidance on using [Dynamic SQL](https://www.w3tutorials.net/blog/assign-a-variable-a-dynamic-value-in-sql-in-databricks-spark/)
 
