@@ -56,7 +56,8 @@ Sometimes R will tell you to install pysparklyr and rerun, then when doing that 
 
 #### Resolution
 
-Step 1: You can change the default location for virtual environments using the WORKON_HOME setting.
+###### Step 1
+You can change the default location for virtual environments using the WORKON_HOME setting.
 
 You can specify the default folder for new virtual environments in the .Renvironfile by using the variable WORKON_HOME (e.g. WORKON_HOME = “C:/users/myusername” ) to do this:
 1. Open your .Renviron file
@@ -69,7 +70,8 @@ You can specify the default folder for new virtual environments in the .Renviron
 
 3. Save the file and restart R
 
-Step 2: Set-up your databricks  follow the instructions at Set up Databricks personal compute cluster with RStudio – Analysts’ Guide and get to the point of connecting with:
+###### Step 2
+Set-up your databricks  follow the instructions at Set up Databricks personal compute cluster with RStudio – Analysts’ Guide and get to the point of connecting with:
 
 ```
 #| sc <- spark_connect(
@@ -80,7 +82,8 @@ Step 2: Set-up your databricks  follow the instructions at Set up Databricks per
 
 Install pysparklyr if it tells you to do that and try again. Eventually you will probably get a message saying it needs to install a new virtual environment with databricks-connect, and it will now make this in the new folder you specified in WORKON_HOME. If that goes without a hitch, then great, you’re done.
 
-Step 3: Fix C++ build error
+###### Step 3
+Fix C++ build error
 
 If you still get a Microsoft C++ build tools error, you can install databricks-connect manually in binary mode.
 
@@ -432,9 +435,9 @@ Your SQL code that was working pre-migration is no longer working.
 
 ### Resolution
 
-There’s a few different reasons why your code might no longer work.
+Databricks and SQL Server use different versions of SQL (Databricks uses Spark SQL), which function slightly differently. There are several different reasons why your SQL Server code might not work on Databricks.
 
-#### Cases
+#### Case-sensitivity
 
 SQL in Databricks is case sensitive, whereas mySQL is not, consider using upper / lower to test.
 
@@ -444,7 +447,7 @@ SQL in Databricks doesn’t automatically trim spaces.
 
 #### Terminology
 
-Databricks doesn’t use the same commands as SQL server for example select TOP 1 … becomes select … limit 1.
+Databricks doesn’t use the same commands as SQL Server, for example ```SELECT TOP 1 …``` becomes ```SELECT … LIMIT 1```, and ```SELECT DISTINCT Variable ...``` becomes ```SELECT DISTINCT(Variable) ...```
 
 #### Databrick's commentary
 
