@@ -6,6 +6,19 @@ title: "R"
 
 ---
 
+::: {.callout-important collapse = "false"}
+## Posit AI
+Posit have recently added Posit Assistant/AI to Rstudio and Positron.
+
+This makes calls to various LLMs that we are not licensed to use, and do not have an agreement of how the data is used.
+
+They also use up credits for explicit LLM calls that the Department has not agreed the use of.
+
+Currently please do not download and use Posit Assistant / AI, if you want to work with an AI continue doing so through Databricks and Copilot, where we do have licenses and Zero retention policies.
+:::
+
+---
+
 ## What is R
 
 
