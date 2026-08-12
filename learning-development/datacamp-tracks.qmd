@@ -42,7 +42,7 @@ Below is a summary of the available tracks to help you choose the most appropria
 | GSS Track 6b: experienced – intermediate technical skill (Python Focus) | Experienced, intermediate technical skill | \~16 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-6b-experienced-intermediate-technical-skill-python-focus) |
 | GSS Track 7a: experienced – high technical skill (R Focus) | Experienced, high technical skill | \~36 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-7a-experienced-high-technical-skill-r-focus) |
 | GSS Track 7b: experienced – high technical skill (Python Focus) | Experienced, high technical skill | \~28 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-7b-experienced-high-technical-skill-python-focus) |
-| GSS Track 8: Familiarising with R | Anyone wanting to brush up on R | \~22 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-8-familiarising-with-r) |
+| GSS Track 8: Familiarising with R | Anyone, for R skills development | \~22 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-8-familiarising-with-r) |
 
 ## DataCamp learning tracks
 
