@@ -11,8 +11,6 @@ format: html
 
 Our analytical L&D offer includes full enterprise access to [Datacamp](https://www.datacamp.com/), an online learning platform focused on data and analytics skills. It offers hundreds of interactive courses across Python, R, SQL, Power BI, Tableau, machine learning, data engineering, and more. The platform is designed to be hands-on: less theory, more doing. You code directly in the browser, get instant feedback, and can apply your learning through real-world projects and assessments. More information on this can be found on the [DfE intranet](https://educationgovuk.sharepoint.com/sites/lvewp00199/SitePages/DDT-Learning-%26-Development-Opportunities-For-All.aspx#datacamp).
 
-This page contains a tailored set of DataCamp learning paths designed to support your development as an analyst in the Department for Education (DfE). The first of these paths is AI for all, which has been developed in alignment with the [One Big Thing 2025 ](https://educationgovuk.sharepoint.com/sites/dfe-home/SitePages/One-Big-Thing-2025.aspx) initiative, which aims to build foundational understanding of artificial intelligence across the Civil Service.
-
 ## How do I get access to DataCamp? 
 
 If you’d like a license, please email datacamp.requests@education.gov.uk copying your line manager. We expect everyone requesting access to have a development conversation with their manager, outlining how they plan to use - and are using - the platform to support their learning and development, making sure this is captured in their personal L&D plan.
@@ -29,7 +27,7 @@ Below is a summary of the available tracks to help you choose the most appropria
 
 | Track Name | Target Persona | Estimated Duration | Link |
 |-------------------|------------------------|-----------------------------|------|
-| GSS Track 1: One Big Thing – AI for all: a headstart! | Anyone, introductory AI awareness | \~7 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-1-one-big-thing-ai-for-all-a-headstart) |
+| GSS Track 1: One Big Thing – AI for all: a headstart! | Anyone, for introductory AI awareness | \~7 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-1-one-big-thing-ai-for-all-a-headstart) |
 | GSS Track 2a: new to role – intro level (R Focus) | New to role, low technical skill | \~13 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-2a-new-to-role-intro-level-r-focus) |
 | GSS Track 2b: new to role – intro level (Python Focus) | New to role, low technical skill | \~13 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-2b-new-to-role-intro-level-python-focus) |
 | GSS Track 3a: new to role – intermediate level (R Focus) | New to role, intermediate technical skill | \~18 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-3a-new-to-role-intermediate-level-r-focus) |
@@ -58,8 +56,7 @@ These tracks take you from using basic objects in R, such as vectors and matrice
 
 ### GSS Track 2-7 b (Python Focus)
 
-These tracks mirror the R tracks, but you encounter functions earlier, cover different use cases with more of a focus on deep learning with sci-kit learn and torch. Tracks 2-4 mirror 5-7 for new users and experienced users respectively, as with R.
-
+These tracks mirror the R focus tracks above, but the basic & intermediate coding, data analysis, machine learning, feature engineering and dashboard aspects are taught using Python rather than R.
 
 ### GSS Track 8: Familiarising with R
 
@@ -70,4 +67,4 @@ It covers the following:
 - Basic data types
 - Loops and functions
 - Statistics in R
-- Tidyverse (a suite of data science tools)
+- Data wrangling & visualisation with tidyverse (a suite of data science tools)
