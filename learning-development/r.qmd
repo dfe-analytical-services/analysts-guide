@@ -6,6 +6,17 @@ title: "R"
 
 ---
 
+::: {.callout-important collapse = "false"}
+## Posit Assistant
+Posit have recently added Posit Assistant/AI to RStudio and Positron. Posit Assistant is an AI assistant that can be used to help with writing code, resolving errors and exploring data. To do this, it makes calls to various large language models (LLMs) that are not licensed for use in DfE, and have not been approved for using with our data.
+
+The only LLM provider that is currently approved and available for DfE to use with Posit Assistant is GitHub Copilot, for which a small number of analysts have licenses. While it isn't possible to grant more licenses at this time, the Department is looking into extending GitHub Copilot wider across the analytical community. Alternatively, Databricks LLMs will also provide an approved option in the future but this is still in the process of being set up.
+
+As such, analysts should *not* use Posit Assistant with any LLM provider other than GitHub Copilot. To use AI assistance in the meantime, continue doing so through Databricks and Copilot, outside Positron / RStudio.
+:::
+
+---
+
 ## What is R
 
 
