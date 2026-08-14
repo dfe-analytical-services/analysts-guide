@@ -36,28 +36,6 @@ When you have a full script in an IDE, the script will provide the same output c
 When using Databricks notebooks with Git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the `Clear all cell outputs` option in the Databricks "Run" menu to avoid inadvertently sharing data that only you and your team should have access to. 
 :::
 
-### Differences between IDEs and notebooks
-
-The table below, taken from [NHS-R guidance](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/notebooks_versus_ide_development/), shows a comparison of the features of notebooks and IDEs to help you decide where each would be most appropriately used:
-
-| Feature | Notebooks | IDEs |
-| --------|--------|---------|
-| Interactive outputs (tables, plots, etc) | Yes | No* |
-| Storytelling and sharing results | Yes | No |
-| Benefits out-of-the-box (minimal configuration) | Yes | No |
-| Deterministic outputs (i.e. same result every run) | No | Yes |
-| Supports modular code structure & packages | No | Yes |
-| Supports unit testing frameworks | No | Yes |
-| Nice version control (e.g. readable Git diffs) | No | Yes |
-| Autocomplete / auto-formatting & syntax highlighting | Yes** | Yes |
-| Compatible with sharing code externally | Yes*** | Yes |
-  
-\* whilst you can still make and preview tables and plots in RStudio and other IDEs, they're not interactive in the same way as those in notebooks  
-\*\* auto-formatting is available for SQL and Python in Databricks, but not R  
-\*\*\* external users must have software that would allow them to open notebooks
-
-You can read more about the differences between IDEs and notebooks and where each might be useful [on the NHS-R website](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/workflow/notebooks_versus_ide_development/#what-is-this-guide-for).
-
 ---
 
 ::: callout-tip
