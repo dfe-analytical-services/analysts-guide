@@ -166,16 +166,20 @@ You want to connect to Databricks through the use of a personal access token but
 
 You can find guidance on personal access tokens in the [Analysts’ Guide](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_personal_cluster.html#setting-up-the-odbc-driver) and in the [Databricks’ guidance](https://docs.databricks.com/aws/en/security/auth/api-access-permissions).
 
-1. Find settings button after clicking your profile icon:
+1. Find settings button after clicking your profile icon: 
+
 <img src="/images/ADA/databricks_common_questions/pat_token_1.png" alt = "Settings button" style = "width:75%;">
 
-2. Navigate to settings:
+2. Navigate to settings: 
+
 <img src="/images/ADA/databricks_common_questions/pat_token_2.png" alt = "Workspace swapping between workspaces" style = "width:75%;">
 
-3. Click developer:
+3. Click developer: 
+
 <img src="/images/ADA/databricks_common_questions/pat_token_3.png" alt = "Workspace swapping between workspaces" style = "width:75%;">
 
-4. Set-up token:
+4. Set-up token: 
+
 <img src="/images/ADA/databricks_common_questions/pat_token_4.png" alt = "Workspace swapping between workspaces" style = "width:75%;">
 
 Make sure that the personal access token has the "API scope" to do what you want.
@@ -233,16 +237,27 @@ R isn’t working in my notebook Or I am getting the following error: Your admin
 Quick guide to using R in notebooks:
 
 1. First you should be getting something like the following error: 
+
 <img src="/images/ADA/databricks_common_questions/personal_compute_1.png" alt = "Catalog viewpoints" style = "width:75%;">
+
 2. Create a new personal compute instance: 
+
 <img src="/images/ADA/databricks_common_questions/personal_compute_2.png" alt = "Catalog viewpoints" style = "width:75%;">
+
 3. Make sure to set the access mode to a form that includes R as a language: 
+
 <img src="/images/ADA/databricks_common_questions/personal_compute_3.png" alt = "Catalog viewpoints" style = "width:75%;">
+
 4. Swap to your personal compute: 
+
 <img src="/images/ADA/databricks_common_questions/personal_compute_4.png" alt = "Catalog viewpoints" style = "width:75%;">
+
 5. Click through: 
+
 <img src="/images/ADA/databricks_common_questions/personal_compute_5.png" alt = "Catalog viewpoints" style = "width:75%;">
+
 6. It should run: 
+
 <img src="/images/ADA/databricks_common_questions/personal_compute_6.png" alt = "Catalog viewpoints" style = "width:75%;">
 
 ## Temporary tables
@@ -419,7 +434,7 @@ Sometimes writing a table to Databricks fails.
 
 #### Resolution
 
-We recommend using the dfer package and the write_df_to_delta function.
+We recommend using the dfeR package and the write_df_to_delta() function.
 
 If this does not work there are a few different kinds of errors that might prevent a table from writing to a database.
 
@@ -429,27 +444,27 @@ If your table contains NANs, Databricks won’t know how to process this.
 
 ## Old code not working
 
-### Issue
+#### Issue
 
 Your SQL code that was working pre-migration is no longer working.
 
-### Resolution
+#### Resolution
 
 Databricks and SQL Server use different versions of SQL (Databricks uses Spark SQL), which function slightly differently. There are several different reasons why your SQL Server code might not work on Databricks.
 
-#### Case-sensitivity
+###### Case-sensitivity
 
 SQL in Databricks is case sensitive, whereas mySQL is not, consider using upper / lower to test.
 
-#### Spaces
+###### Spaces
 
 SQL in Databricks doesn’t automatically trim spaces.
 
-#### Terminology
+###### Terminology
 
 Databricks doesn’t use the same commands as SQL Server, for example ```SELECT TOP 1 …``` becomes ```SELECT … LIMIT 1```, and ```SELECT DISTINCT Variable ...``` becomes ```SELECT DISTINCT(Variable) ...```
 
-#### Databrick's commentary
+###### Databrick's commentary
 
 Data type differences:
 
@@ -493,11 +508,11 @@ Missing features:
 
 ## Dynamic SQl
 
-### Issue
+#### Issue
 
 I want to use dynamic SQL
 
-### Resolution
+#### Resolution
 
 Here we can find some guidance on using [Dynamic SQL](https://www.w3tutorials.net/blog/assign-a-variable-a-dynamic-value-in-sql-in-databricks-spark/)
 
