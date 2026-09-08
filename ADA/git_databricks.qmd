@@ -88,7 +88,7 @@ The following window should appear:
 ![](../images/devops-create-token.png)
 
 - Give the token a sensible name so that you can identify it in your list of tokens.
-- The organisation field should be pre-populated for you, this can be left alone. 
+- The organisation field should be pre-populated for you, this can be left alone.
 - You can modify the expiration date. Every time the token expires, you will have to follow this guidance again to set up a new token and reconnect to Git, so choose something sensible. 
 - You should make sure that "Full access" is selected under the Scopes heading. 
 

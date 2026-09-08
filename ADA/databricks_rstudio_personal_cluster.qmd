@@ -218,7 +218,15 @@ A personal access token is is a security measure that acts as an identifier to l
 
 -   Click the 'Generate new token' button
 
--   Name the token, then click 'Generate'
+The following window should appear: 
+
+![](../images/databricks-create-token.png)
+
+- Give the token a sensible name so that you can identify it in your list of tokens.
+- Increase the Lifetime to something reasonable (90 days is industry standard), every time the token expires, you will have to follow this guidance again to set up a new token and reconnect to Git, so choose something sensible. 
+- You should make sure that "all-apis" is selected under the API scope(s) heading. 
+
+When you have entered all of the required information, click "Generate" at the bottom of the window. 
 
 ::: callout-note
 Note that access tokens will only last as long as the value for the 'Lifetime (days)' field. After this period the token will expire, and you will need to create a new one to re-authenticate. Access tokens also expire if they are unused after 90 days. For this reason, we recommend setting the Lifetime value to be 90 days or less.

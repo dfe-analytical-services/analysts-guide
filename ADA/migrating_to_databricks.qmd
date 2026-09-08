@@ -1,0 +1,138 @@
+---
+  title: "Migrating to Databricks"
+---
+
+<p class="text-muted">
+
+Guidance for analysts on different options for migrating existing processes to use data stored in Databricks from using data stored in SQL Server Management Studio (SSMS).
+
+</p>
+
+
+------------------------------------------------------------------------
+
+## Migration approaches
+
+There are multiple approaches to migrating your processes to Databricks. The right approach will depend on your existing code, your team's skills and your long-term goals. 
+
+There is no single correct method. Each approach has advantages and trade-offs, and analysts should choose the option that best fits their use case. 
+
+Our general recommendation is: 
+
+-   For existing R code, change the database connection from SSMS to Databricks and continue to use RStudio, Positron or your preferred IDE for any coding. 
+-  For SQL scripts, or where building new pipelines or workflows, consider migrating to code entirely in Databricks. 
+
+------------------------------------------------------------------------
+
+::: {.callout-tip collapse="true"}
+## Approach 1: Connecting to Databricks from RStudio / Positron / other preferred IDE 
+
+This approach uses Databricks primarily for data storage, while you continue to run your code locally. Your R code can remain in RStudio / Positron / your preferred IDE and all existing R processes can still be run there.
+
+This approach is most suitable where your code is written primarily in R and supports a quick and low-disruption migration. If you have an existing pipeline set up using RStudio / Positron / another IDE, there is no expectation that you must migrate your existing code or scripts into the Databricks platform (although there's no reason you shouldn't if you'd like to!).
+
+Code that reads or writes data from or to SSMS databases will need to be redirected to your Databricks catalog*.
+
+### Pros
+
+-  **Minimal code changes** You can keep your existing R scripts largely unchanged, only updating any embedded SQL code (from T-SQL to Spark SQL) and any SSMS connections to point to your Databricks catalog instead
+-  **Quick to implement** This is often the fastest route to migrating to Databricks 
+-  **Platform flexibility** Your code remains portable and can be more easily migrated to other environments 
+-  **Greater control over your environment** You retain more flexibility over local packages and configurations compared to managed environments 
+
+### Cons 
+
+-  **Connection set up can take time** Initial set up (authentication, drivers, permissions) may require troubleshooting 
+-  **Mixed language workflows need extra handling** If your process requires both SQL and R, you will need to consider how to migrate your SQL code 
+-  **Performance limitations** Computation runs on your local machine, which may be slower than the cloud-based processing Databricks offers
+
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-tip collapse="true"}
+## Approach 2: Coding within Databricks
+
+This approach moves all your code to the Databricks platform, so it sits alongside your data in the same environment. It is most suitable when: your code is primarily in SQL language, you want to fully utilise Databricks features and / or cloud compute, or you are building new pipelines.
+
+When moving code to Databricks, you have a couple of options for how you develop and run it. You can: 
+
+-  Use [Databricks notebooks](../ADA/databricks_notebooks.html)
+-  Use standard code scripts
+-  Use the Databricks SQL Editor to create standalone SQL queries
+
+SQL Editor is recommended for short, ad-hoc SQL queries. For longer or more complex SQL analysis, consider using notebooks.
+
+------------------------------------------------------------------------
+
+### Pros
+
+------------------------------------------------------------------------
+
+-  **Code and data in one place** All processing happens within Databricks, reducing complexity and improving integration 
+-  **Typically faster to run processes** Takes advantage of cloud computing (see [Databricks fundamentals for more info](../ADA/databricks_fundamentals.html))
+-  **Well suited to workflows and automation** Databricks has built in tools for scheduling and running pipelines (see [Databricks workflows for more info](../ADA/databricks_workflows.html))
+-  **Flexible development options** Use notebooks for interactive development and documentation, or scripts for more structured pipelines 
+
+
+### Cons 
+
+-  **Security considerations** Care is needed when sharing notebooks, as some users may see code outputs even if they don't have access to underlying data 
+-  **Learning and development time** It may take more time to upskill in the Databricks platform 
+
+:::
+
+------------------------------------------------------------------------
+
+::: callout-note
+### Translating T-SQL to Spark SQL 
+
+Any SQL code, whether in standalone SQL scripts or embedded in R scripts, will need to be rewritten from T-SQL to Spark SQL syntax. This applies regardless of whether you are following Approach 1 or Approach 2, as either way the code is executed by Databricks which uses Spark SQL syntax. Databricks' in-built AI assistant "Genie" can help with translating your code.
+
+:::
+
+------------------------------------------------------------------------
+
+## What if I have both R and SQL code in my current process? 
+
+While we recommend Approach 1 for primarily R-based processes, and Approach 2 for SQL processes, it may be that your processes use a combination of these languages. If your workflow uses both R and SQL, you will likely need to use a blended approach to migration. You should weigh up your options and decide what is best for your process and team; this will depend on the context of your process, and your team skills and capacity. Options include:
+
+------------------------------------------------------------------------
+
+### Move any SQL code into Databricks and run R code from RStudio / Positron / other IDE 
+
+------------------------------------------------------------------------
+
+This approach is suitable when your existing SQL code is complex, well-tested or often reused and you want to keep it as SQL code. It involves running the SQL code directly in Databricks to create intermediate or final tables, which are then written to the Databricks catalog. The SQL processing happens entirely in Databricks, after which you connect to the Databricks catalog from RStudio, Positron or another IDE to read in the created tables and continue the process with R code*. 
+
+------------------------------------------------------------------------
+
+### Move all R and SQL code into Databricks
+
+------------------------------------------------------------------------
+
+This approach is best suited to processes you plan to automate using Databricks workflows or where keeping all processing in a single environment improves performance and reproducibility. It involves migrating all of your SQL and R code into the Databricks platform, executing it using notebooks or jobs. 
+
+------------------------------------------------------------------------
+
+### Translate any SQL code to R and run all code from RStudio / Positron / other IDE
+
+------------------------------------------------------------------------
+
+This approach is appropriate when your team primarily works in R and your SQL logic is not particularly complex or lengthy. It involves translating all existing SQL logic into R so that all your code is in the same language. The R code would then be run from RStudio / Positron / another IDE and would connect to the Databricks catalog to access the data as in Approach 1 above*.
+
+------------------------------------------------------------------------
+
+### Use an R wrapper function for SQL code and run all code from RStudio / Positron / other IDE
+
+------------------------------------------------------------------------
+
+This approach is a useful short-term or transitional approach when you want to reuse existing SQL code with minimal changes. It keeps SQL and R closely linked by embedding SQL queries within an R workflow. Any SQL code would first need updating from T-SQL to Spark SQL, where it could then be passed via R code using wrapper functions to run in Databricks, whilst R controls execution. You can run SQL from R by creating a reusable wrapper function that uses a Databricks connection (e.g., via the `DBI` and `odbc` packages) and executes queries with a function like `dbGetQuery()`*.
+
+An example of setting up the connection and running queries can be found on the [Databricks SQL Warehouse with RStudio page](../ADA/databricks_rstudio_sql_warehouse.html#pulling-data-into-rstudio-from-databricks). This could then be wrapped in a reusable function to standardise connection handling and query execution. 
+
+------------------------------------------------------------------------
+
+*\*For all processes that run SQL code or read from / write to the Databricks catalog from outside Databricks, you’ll need to manually set up a connection to a Databricks compute resource. The best compute option for this is an SQL Warehouse, you can find more information on setting this up on our [Databricks SQL Warehouse with RStudio page](../ADA/databricks_rstudio_sql_warehouse.html).*
+
+

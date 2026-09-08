@@ -13,3 +13,4 @@ site_libs/
 README.html
 
 **/*.quarto_ipynb
+.positai
