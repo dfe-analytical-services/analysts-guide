@@ -27,7 +27,8 @@ Below is a summary of the available tracks to help you choose the most appropria
 
 | Track Name | Target Persona | Estimated Duration | Link |
 |-------------------|------------------------|-----------------------------|------|
-| GSS Track 1: One Big Thing – AI for all: a headstart! | Anyone, for introductory AI awareness | \~7 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-1-one-big-thing-ai-for-all-a-headstart) |
+| GSS Track 1a: One Big Thing – AI for all: a headstart! | Anyone, for introductory AI awareness | \~7 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-1a-one-big-thing-ai-for-all-a-headstart) |
+| GSS Track 1b: Intermediate AI and Machine Learning | For those that have completed 1a and want more (no coding) | \~10 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-1b-intermediate-ai-and-machine-learning) |
 | GSS Track 2a: new to role – intro level (R Focus) | New to role, low technical skill | \~13 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-2a-new-to-role-intro-level-r-focus) |
 | GSS Track 2b: new to role – intro level (Python Focus) | New to role, low technical skill | \~13 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-2b-new-to-role-intro-level-python-focus) |
 | GSS Track 3a: new to role – intermediate level (R Focus) | New to role, intermediate technical skill | \~18 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-3a-new-to-role-intermediate-level-r-focus) |
@@ -41,14 +42,18 @@ Below is a summary of the available tracks to help you choose the most appropria
 | GSS Track 7a: experienced – high technical skill (R Focus) | Experienced, high technical skill | \~36 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-7a-experienced-high-technical-skill-r-focus) |
 | GSS Track 7b: experienced – high technical skill (Python Focus) | Experienced, high technical skill | \~28 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-7b-experienced-high-technical-skill-python-focus) |
 | GSS Track 8: Familiarising with R | Anyone, for R skills development | \~22 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-8-familiarising-with-r) |
+| GSS Track 9a: Databricks Foundations (Beginer) | beginer, low technical skill | \~11 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-9a-databricks-foundations-beginner) |
+| GSS Track 9b: Databricks for Intermediate Practitioners | intermediate, some technical skill | \~11 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-9b-databricks-for-intermediate-practitioners) |
 
 ## DataCamp learning tracks
 
-### GSS Track 1: One Big Thing – AI for all: a headstart!
+### GSS Track 1a: One Big Thing – AI for all: a headstart!
 
 This track gives a general introduction to AI, and some basic machine learning concepts such as supervised vs. unsupervised learning and model evaluation. It then moves onto prompt engineering and ChatGPT, the ethics around AI use, and its use in decision making.
 
-GSS Track 1 was developed in alignment with the [2025 One Big Thing initiative](https://educationgovuk.sharepoint.com/sites/dfe-home/SitePages/One-Big-Thing-2025.aspx), which aimed to build foundational understanding of artificial intelligence across the Civil Service.
+### GSS Track 1b: Intermediate AI and Machine Learning
+
+This track gives a general introduction to LLMs, goes over some key concepts and ethical considerations building on GSS Track 1a: One Big Thing – AI for all: a headstart!. In particular it focuses on LLMOps.
 
 ### GSS Track 2-7 a (R Focus)
 
@@ -68,3 +73,29 @@ It covers the following:
 - Loops and functions
 - Statistics in R
 - Data wrangling & visualisation with tidyverse (a suite of data science tools)
+
+You can think of this as speedrunning general concepts in R, or a quick refresher course.
+
+### GSS Track 9a: Databricks Foundations (Beginer)
+
+An introductory course to get you using Databricks.
+
+It covers:
+
+- Lakehouses
+- Medallion architecture
+- Clusters
+- Administration
+- Genie 
+
+### GSS Track 9b: Databricks for Intermediate Practitioners
+
+A course for users trying to use the more powerful features in Databricks.
+
+It covers:
+
+- SQL
+- python
+- Jobs and Pipelines
+
+
