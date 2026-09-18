@@ -32,7 +32,9 @@ Current Issues: No known current issues.
 ::: {.callout-note appearance="minimal" collapse="true"}
 # Installing Databricks
 
-## No Simba Spark ODBC Driver
+## Installation
+
+### No Simba Spark ODBC Driver
 
 #### Issue
 
@@ -46,8 +48,6 @@ Note the Simba Spark ODBC Driver has been replaced by the Databricks ODBC Driver
 
 Raise an [I.T. ticket](https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=327e8eb01b6e4c502fe864606e4bcb26) explaining that you have installed "Simba Spark" but the driver is missing, they will download it from the internet.
 
-## Spark
-
 ### Virtual environments
 
 #### Issue
@@ -56,7 +56,7 @@ Sometimes R will tell you to install pysparklyr and rerun, then when doing that 
 
 #### Resolution
 
-###### Step 1
+##### Step 1
 You can change the default location for virtual environments using the WORKON_HOME setting.
 
 You can specify the default folder for new virtual environments in the .Renvironfile by using the variable WORKON_HOME (e.g. WORKON_HOME = “C:/users/myusername” ) to do this:
@@ -70,7 +70,7 @@ You can specify the default folder for new virtual environments in the .Renviron
 
 3. Save the file and restart R
 
-###### Step 2
+##### Step 2
 Set-up your databricks  follow the instructions at Set up Databricks personal compute cluster with RStudio – Analysts’ Guide and get to the point of connecting with:
 
 ```
@@ -82,7 +82,7 @@ Set-up your databricks  follow the instructions at Set up Databricks personal co
 
 Install pysparklyr if it tells you to do that and try again. Eventually you will probably get a message saying it needs to install a new virtual environment with databricks-connect, and it will now make this in the new folder you specified in WORKON_HOME. If that goes without a hitch, then great, you’re done.
 
-###### Step 3
+##### Step 3
 Fix C++ build error
 
 If you still get a Microsoft C++ build tools error, you can install databricks-connect manually in binary mode.
@@ -99,7 +99,9 @@ This should work to install, after which the spark-connect command should work i
 ::: {.callout-tip appearance="minimal" collapse="true"}
 # Navigating Databricks
 
-## I can’t find my catalog?
+## User interface
+
+### I can’t find my catalog?
 
 #### Issue
 
@@ -138,7 +140,9 @@ and you can find information about workspaces here: [Analysts' Guide Workspace g
 ::: {.callout-note appearance="minimal" collapse="true"}
 # Connecting to Databricks
 
-## Account removed or gone inactive
+## Databricks account
+
+### Account removed or gone inactive
 
 #### Issue
 
@@ -200,7 +204,9 @@ Often this is due to your PAT token not having the right permissions or having e
 
 Other reasons for this error could be either that you do not currently have permission to do what you want with the Catalog, or sometimes a typo in the catalog, databricks host, or warehouse id, guidance can be found in the [Analysts' Guide Databricks connection guidance](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_sql_warehouse.html#establishing-an-rstudio-connection-using-environment-variables).
 
-## PowerBI connection issue
+## Other applications
+
+### PowerBI connection issue
 
 #### Issue
 
@@ -215,7 +221,9 @@ Make sure you are on an up-to-date version of PowerBI or it can struggle to conn
 ::: {.callout-tip appearance="minimal" collapse="true"}
 # Using Databricks
 
-## Computes
+## Common issues using the databricks platform
+
+### Databricks computes
 
 #### Issue
 
@@ -260,7 +268,7 @@ Quick guide to using R in notebooks:
 
 <img src="/images/ADA/databricks_common_questions/personal_compute_6.png" alt = "Catalog viewpoints" style = "width:75%;">
 
-## Temporary tables
+### Issues with temporary tables
 
 #### Issue
 
@@ -270,7 +278,7 @@ I can’t use a temporary table
 
 Temporary tables do not work for Databricks runtimes before 18.1, Databricks [temporary table guidance](https://docs.databricks.com/gcp/en/tables/temporary-tables).
 
-## Tables vs Volumes
+### Understanding Tables vs Volumes
 
 #### Issue
 
@@ -310,7 +318,7 @@ The way to fix this error is to set MaxErrorRetry = 0, often setting native quer
 #|) 
 ```
 
-## Splink
+### Splink
 
 #### Issue
 
@@ -321,7 +329,7 @@ Here is an example of how to get around that using PySpark:
 [Splint in PySpark](https://moj-analytical-services.github.io/splink/demos/examples/spark/deduplicate_1k_synthetic.html).
 
 
-## Using packages requiring system packages
+### Using packages requiring system packages
 
 #### Issue
 
@@ -335,7 +343,7 @@ In general you might want to either convert the PySpark dataframe to a more mana
 [Pandas](https://docs.databricks.com/aws/en/pandas/pyspark-pandas-conversion)
 In spark and R you can use the collect() function.
 
-## I hate Mondays
+### I hate Mondays
 
 #### Issue
 
@@ -345,7 +353,7 @@ Databricks's weeks start on a Sunday, often you'd rather they'd start on a Monda
 
 You can’t change the starting day of the week away from Sunday, there is not resolution, Databricks hates starting the week on anyday but Sunday.
 
-## Package issues
+### Package issues
 
 #### Issue
 
@@ -387,7 +395,7 @@ Normally this would be:
 ```
 
 
-## Timezones
+### Timezones
 
 #### Issue
 
@@ -397,7 +405,7 @@ You want to use a different timezone.
 
 Follow this guidance: [Databricks timezones](https://learn.microsoft.com/en-gb/azure/databricks/sql/language-manual/parameters/timezone).
 
-## Pushing up csv’s
+### Pushing up CSV files
 
 #### Issue
 
@@ -407,7 +415,7 @@ Special characters in CSV files can cause issues on upload.
 
 Saving the csv file in UTF-8 encoding (Databricks uses this) should solve the issue.
 
-## Memory issues
+### Memory issues
 
 #### Issue
 
@@ -426,7 +434,9 @@ To get around this you can:
 ::: {.callout-note appearance="minimal" collapse="true"}
 # SQL
 
-## Can’t write table to Databricks when you can connect
+## Common issues with SQL code
+
+### Can’t write table to Databricks when you can connect
 
 #### Issue
 
@@ -442,7 +452,7 @@ If this does not work there are a few different kinds of errors that might preve
 
 If your table contains NANs, Databricks won’t know how to process this.
 
-## Old code not working
+### Old code not working
 
 #### Issue
 
@@ -452,19 +462,19 @@ Your SQL code that was working pre-migration is no longer working.
 
 Databricks and SQL Server use different versions of SQL (Databricks uses Spark SQL), which function slightly differently. There are several different reasons why your SQL Server code might not work on Databricks.
 
-###### Case-sensitivity
+##### Case-sensitivity
 
 SQL in Databricks is case sensitive, whereas mySQL is not, consider using upper / lower to test.
 
-###### Spaces
+##### Spaces
 
 SQL in Databricks doesn’t automatically trim spaces.
 
-###### Terminology
+##### Terminology
 
 Databricks doesn’t use the same commands as SQL Server, for example ```SELECT TOP 1 …``` becomes ```SELECT … LIMIT 1```, and ```SELECT DISTINCT Variable ...``` becomes ```SELECT DISTINCT(Variable) ...```
 
-###### Databrick's commentary
+##### Databrick's commentary
 
 Data type differences:
 
@@ -506,7 +516,7 @@ Missing features:
 - OUTPUT INSERTED.* → not supported
 - Cursors → not supported; use set-based operations
 
-## Dynamic SQl
+### Dynamic SQl
 
 #### Issue
 
