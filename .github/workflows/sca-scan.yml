@@ -38,17 +38,6 @@ jobs:
       - name: Install OSV Scanner
         run: |
           brew install osv-scanner
-      - name: Debug installation
-        run: |
-          echo "PATH=$PATH"
-          echo "Searching HOME..."
-          find "$HOME" -name "osv-scanner*" 2>/dev/null
-          echo "Searching system..."
-          sudo find /usr/local /opt -name "osv-scanner*" 2>/dev/null || true
-      - name: Add discovered binary to PATH
-        run: |
-          OSV_DIR=$(dirname "$(find "$HOME" -name osv-scanner -type f | head -1)")
-          echo "$OSV_DIR" >> "$GITHUB_PATH"
       - name: Verify installation
         run: |
           which osv-scanner
