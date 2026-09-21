@@ -9,13 +9,12 @@
 # For more examples and options, including how to ignore specific vulnerabilities,
 # see https://google.github.io/osv-scanner/github-action/
 
-name: SCA-scan
-
 on:
-  pull_request:
-    branches: [ "main" ]
   push:
-    branches: [ "main" ]
+    branches: [main]
+  pull_request:
+
+name: SCA-scan
 
 permissions:
   # Require writing security events to upload SARIF file to security tab
