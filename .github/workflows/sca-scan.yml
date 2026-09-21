@@ -23,12 +23,28 @@ permissions:
   contents: read
 
 jobs:
-  scan-pr:
-    if: ${{ github.event_name == 'push' }}
-    uses: "google/osv-scanner-action/.github/workflows/osv-scanner-reusable-pr.yml@1f1242919d8a60496dd1874b24b62b2370ed4c78" # v1.7.1
-    with:
-      # Example of specifying custom arguments
-      scan-args: |-
-        -r
-        --skip-git
-        ./
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install osv-scanner
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/google/osv-scanner/main/scripts/install.sh | sh
+
+      - bash: |
+          jq '{
+            results: [
+              {
+                packages: [
+                  .Packages | to_entries[] | {
+                    package: {
+                      name: .key,
+                      version: .value.Version,
+                      ecosystem: "CRAN"
+                    }
+                  }
+                ]
+              }
+            ]
+          }' renv.lock > osv-renv-lock.json"
