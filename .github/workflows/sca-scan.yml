@@ -50,4 +50,9 @@ jobs:
               }
             ]
           }' renv.lock > osv-renv-lock.json
-          osv-scanner --lockfile osv-scanner:./osv-renv-lock.json
+
+          - name: Run OSV Scanner
+      - uses: google/osv-scanner-action@v2
+        with:
+          scan-args: |
+            --recursive .
