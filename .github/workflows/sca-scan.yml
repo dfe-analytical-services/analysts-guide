@@ -31,6 +31,18 @@ jobs:
       - name: Install osv-scanner
         run: |
           curl -sSfL https://raw.githubusercontent.com/google/osv-scanner/main/scripts/install.sh | sh
+          find $HOME -name osv-scanner -type f 2>/dev/null
+      
+      - name: Add discovered binary to PATH
+        run: |
+          OSV_DIR=$(dirname "$(find $HOME -name osv-scanner -type f | head -1)")
+          echo "$OSV_DIR" >> $GITHUB_PATH
+      - name: Verify installation
+        run: |
+          which osv-scanner
+          osv-scanner --version
+      - name: Create osv json file
+        run: |    
           jq '{
             results: [
               {
@@ -46,4 +58,6 @@ jobs:
               }
             ]
           }' renv.lock > osv-renv-lock.json
+      - name: Perform scan
+        run: |   
           osv-scanner --lockfile osv-scanner:./osv-renv-lock.json
