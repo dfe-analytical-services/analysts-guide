@@ -32,7 +32,9 @@ jobs:
         run: |
           curl -sSfL https://raw.githubusercontent.com/google/osv-scanner/main/scripts/install.sh | sh
 
-      - bash: |
+      - name: Convert renv.lock to OSV format
+        shell: bash
+        run: |
           jq '{
             results: [
               {
@@ -48,3 +50,4 @@ jobs:
               }
             ]
           }' renv.lock > osv-renv-lock.json"
+          osv-scanner --lockfile osv-scanner:./osv-renv-lock.json
