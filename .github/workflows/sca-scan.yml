@@ -49,5 +49,5 @@ jobs:
                 ]
               }
             ]
-          }' renv.lock > osv-renv-lock.json"
+          }' renv.lock > osv-renv-lock.json
           osv-scanner --lockfile osv-scanner:./osv-renv-lock.json
