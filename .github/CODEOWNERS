@@ -9,17 +9,17 @@ _quarto.yml  @lauraselby @laragarbett @rmbielby
 .github  @lauraselby @laragarbett @rmbielby 
 
 # The following files and folders are owned by the SDT team
-/ADA/ @laragarbett @Lsnaathorst1
-/RAP/ @laragarbett @Lsnaathorst1
-/resources/ @laragarbett @Lsnaathorst1
-/learning-development/ @laragarbett @Lsnaathorst1
+/ADA/ @laragarbett @Lsnaathorst1 @kimberley-hoskins @robert-tarrant @matthewrobinson
+/RAP/ @laragarbett @Lsnaathorst1 @kimberley-hoskins @robert-tarrant @matthewrobinson
+/resources/ @laragarbett @Lsnaathorst1 @kimberley-hoskins @robert-tarrant @matthewrobinson
+/learning-development/ @laragarbett @Lsnaathorst1 @kimberley-hoskins @robert-tarrant @matthewrobinson
 
 # The following files and folders are owned by the EESP team
-/statistics-production/ @rmbielby
-/data_examples/ @rmbielby
-/writing-visualising/dashboards_rshiny.qmd @rmbielby
-/writing-visualising/dashboards.qmd @rmbielby
-/resources/Methodology_template_EES.docx @rmbielby
+/statistics-production/ @rmbielby @dying-478 @matthewrobinson
+/data_examples/ @rmbielby @dying-478 @matthewrobinson
+/writing-visualising/dashboards_rshiny.qmd @rmbielby @dying-478 @matthewrobinson
+/writing-visualising/dashboards.qmd @rmbielby @dying-478 @matthewrobinson
+/resources/Methodology_template_EES.docx @rmbielby @dying-478 @matthewrobinson
 
 # The following files relate to publication scrums
 /resources/Content_Design_Logbook_Dashboards.xlsx @rmbielby
