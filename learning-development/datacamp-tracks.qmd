@@ -19,7 +19,7 @@ If you’d like a license, please email datacamp.requests@education.gov.uk copyi
 
 ## What are learning tracks? 
 
-Learning tracks are combinations of courses designed to focus on particular skills or areas. Within DataCamp, DfE analysts can find organisation-specific learning tracks that have been designed to support their learning & development. They cover a range of skills, including AI & machine learning, using R, SQL and Python, and presenting & visualising data.
+Learning tracks are combinations of courses designed to focus on particular skills or areas. Within DataCamp, DfE analysts can find organisation-specific learning tracks that have been designed to support their learning & development. They cover a range of skills, including AI & machine learning, using R, SQL and Python, presenting & visualising data, and using Databricks.
 
 Below is a summary of the available tracks to help you choose the most appropriate ones for you. The tracks are tailored to skill and experience levels and you'll find estimated duration per course and track to help you plan your time.
 
@@ -42,7 +42,7 @@ Below is a summary of the available tracks to help you choose the most appropria
 | GSS Track 7a: experienced – high technical skill (R Focus) | Experienced, high technical skill | \~36 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-7a-experienced-high-technical-skill-r-focus) |
 | GSS Track 7b: experienced – high technical skill (Python Focus) | Experienced, high technical skill | \~28 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-7b-experienced-high-technical-skill-python-focus) |
 | GSS Track 8: Familiarising with R | Anyone, for R skills development | \~22 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-8-familiarising-with-r) |
-| GSS Track 9a: Databricks Foundations (Beginer) | beginer, low technical skill | \~11 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-9a-databricks-foundations-beginner) |
+| GSS Track 9a: Databricks Foundations (Beginner) | beginner, low technical skill | \~11 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-9a-databricks-foundations-beginner) |
 | GSS Track 9b: Databricks for Intermediate Practitioners | intermediate, some technical skill | \~11 hours | [link](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-9b-databricks-for-intermediate-practitioners) |
 
 ## DataCamp learning tracks
@@ -76,9 +76,9 @@ It covers the following:
 
 You can think of this as speedrunning general concepts in R, or a quick refresher course.
 
-### GSS Track 9a: Databricks Foundations (Beginer)
+### GSS Track 9a: Databricks Foundations (Beginner)
 
-An introductory course to get you using Databricks.
+This track is for anyone new to Databricks who needs to understand the Lakehouse platform, manage data reliably, learn how to use Genie, and visualize results. It covers Databricks Lakehouse architecture (medallion architecture, clusters, workspace administration, governance and sharing); how to manage data reliably with Delta Lake; how to use Databricks Genie (refining prompts, creating Genie Spaces); and how to build charts and dashboards to communicate insights.
 
 It covers:
 
@@ -90,7 +90,7 @@ It covers:
 
 ### GSS Track 9b: Databricks for Intermediate Practitioners
 
-A course for users trying to use the more powerful features in Databricks.
+This track is for learners who already know Databricks basics and want to build production pipelines, run SQL analytics at scale, and automate Databricks with Python/AI tooling. It covers using Databricks SQL for warehousing, BI, and real-time workflows; how to build and orchestrate end-to-end ETL/ELT pipelines with Spark SQL; and how to automate Databricks operations and query AI/foundation models programmatically via the Python SDK.
 
 It covers:
 
