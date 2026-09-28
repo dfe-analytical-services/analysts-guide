@@ -884,6 +884,6 @@ Now you should be able to run `shinytest2::test_app()` as normal.
 
 ## Using R with ADA / Databricks
 
-See our [guidance on how to connect to Databricks SQL Warehouse from R Studio](../ADA/databricks_rstudio_sql_warehouse.html), and [how to connect to Databricks personal cluster from R studio](../ADA/databricks_rstudio_personal_cluster.html)
+See our [guidance on how to connect to Databricks SQL Warehouse from R Studio and how to connect to Databricks personal cluster from R studio](../ADA/databricks_sparklyr_and_sql_warehouses.html)
 
 You can also view example R code using the [Databricks code template notebooks](../ADA/ada.html#databricks-code-templates)

@@ -1,0 +1,65 @@
+---
+title: "Reports and Dashboards"
+format: html
+---
+
+
+Databicks is updating their dashboard capability on a **monthly** basis, do not be perturbed if things do not look exactly the same.
+
+## ADA guidance
+
+Currently the ADA team do not manage their own guidance but do point you to one of three sources:
+
+-[Microsoft's guidance](https://learn.microsoft.com/en-gb/azure/databricks/dashboards/tutorials/)
+-[Databrick's guidance on creating a dashboard](https://docs.databricks.com/aws/en/dashboards/tutorials/create-dashboard)
+-[Databrick's guidance on AI/BI dashboards](https://docs.databricks.com/aws/en/dashboards/manage/visualizations/custom-visualizations)
+
+## Creating a Dashboard in Databricks
+
+You can find the option to create a new dashboard in the side bar under the SQL area.
+
+![Location of Dashboards in Databricks](/images/ada-databricks-dashboards-location.png)
+
+Upon navigating to the Dashboard page, you can find you previously created dashboards and the option to create a dashboard in the top right corner.
+
+![Location of Create Dashboard](/images/ada-databricks-dashboards-create-dashboard.png)
+
+## Dashboard first page
+
+When you click "Create Dashboard", you are navigated to the opening page for creating a dashboard where you can either use Genie, or manually create a dashboard.
+
+![Opening Dashboard page](/images/ada-databricks-dashboards-opening-page.png)
+
+## Using Genie
+
+As with other areas of databricks, Genie can create new dashboards for you and find data within your data catalog with which to create them. 
+
+![Using Genie](/images/ada-databricks-dashboards-using-genie.png)
+
+It covers a lot quickly but needs guidance to narrow down on the purpose of the dashboard.
+
+![Genie Output](/images/ada-databricks-dashboards-using-genie-output.png)
+
+## Manually adding data
+
+You can manually add data by clicking on the data tab in the opening page.
+
+![Manually adding data](/images/ada-databricks-dashboards-manually-adding-data-1.png)
+
+Then you can either select to manually add data using Unity Catalog that has a normal folder structure.
+
+![Manually adding data by Unity Catalog](/images/ada-databricks-dashboards-manually-adding-data-unity-catalog.png)
+
+You can also use standard SQL to import data.
+
+![Manually adding data by SQL](/images/ada-databricks-dashboards-manually-adding-data-sql.png)
+
+## Manually adding a visualisation
+
+You can add a visualisation using the bottom bar.
+
+![Adding a visualisation](/images/ada-databricks-dashboards-adding-visualisation.png)
+
+Then just as with PowerBI you can change the chart type and set options.
+
+![Options for a visualisation](/images/ada-databricks-dashboards-powerbi-options.png)
