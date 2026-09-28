@@ -84,8 +84,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4816e79be40edb22001378da1f801405.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e287550a1b75c4f9cf5baeec44b28675.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-774b70398106470c1924af7a3f293303.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7ac20825898ca999b008bb6157c20e9f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-de0ef11515eef6b658be62b54ffe8c88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -902,8 +902,7 @@ Warning
 <section id="getting-access-to-admin" class="level4">
 <h4 class="anchored" data-anchor-id="getting-access-to-admin">Getting access to admin</h4>
 <hr>
-<p>Access to both the production and pre-production admin services is limited to DfE AD accounts only and users have to have been invited to the service by either the explore education statistics platforms team (for full access) or an existing user (for pre-release access). Invites to the service are sent out via email using GOV.UK Notify.</p>
-<p>To be invited to the service for full access teams need to email the <a href="mailto:explore.statistics@education.gov.uk">explore education statistics platforms team</a>, stating who needs access, what permissions they require (analyst or approver), and for which publications these apply. This email should be sent by the Team Leader, or accompanied with the relevant Team Leader’s approval. Once access has been granted you will receive an email inviting you to use the platform.</p>
+<p>Access to both the production and pre-production admin services is limited to DfE Entra ID accounts only and users have to have been invited to the service by either the Explore education statistics platforms team or an existing user. Invites to the service are sent out via email using GOV.UK Notify.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -914,7 +913,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Jobshare emails can not be used to access EES. Specific personal emails should be used instead, in the same way as you sign in to windows on your machine.</p>
+<p>Job-share emails can not be used to access EES. Specific personal emails should be used instead, in the same way as you sign in to windows on your machine.</p>
 </div>
 </div>
 <hr>
@@ -923,8 +922,43 @@ Note
 <section id="roles-and-permissions" class="level3">
 <h3 class="anchored" data-anchor-id="roles-and-permissions">Roles and permissions</h3>
 <hr>
-<p>The <a href="mailto:explore.statistics@education.gov.uk">explore education statistics platforms team</a> are responsible for setting up and maintaining user permissions on the service.</p>
-<p>The following roles exist within EES admin and are assigned to a specific release:</p>
+<section id="publication-level-roles" class="level4">
+<h4 class="anchored" data-anchor-id="publication-level-roles">Publication level roles</h4>
+<hr>
+<p>The following roles exist within EES admin and are assigned to a specific publication:</p>
+<ul>
+<li><p><strong>Analyst - drafter</strong></p>
+<p>Any analyst working on a release within EES admin will have the drafter role. They can:</p>
+<ul>
+<li>Edit release details</li>
+<li>Upload data and other files</li>
+<li>Create footnotes, datablocks and charts</li>
+<li>Edit and comment on release content</li>
+<li>Invite PRA users and other drafters</li>
+<li>Move the release status between draft and ready for higher review</li>
+<li>Manage publication level details</li>
+<li>Create new releases within a publication</li>
+<li>Create an amendment of the latest published release within a publication</li>
+<li>Cancel an amendment before it is published</li>
+</ul></li>
+<li><p><strong>Analyst - approver</strong></p>
+<p>The responsible statistician for a statistics release will have the approver role, allowing them to sign off releases for publication. This will usually be the responsible DD or G6 for the statistics publication. They can do everything a drafter can, as well as:</p>
+<ul>
+<li>Move the release status between draft, ready for review and approved</li>
+<li>Schedule the release for publication (either immediately or for a specific date)</li>
+</ul></li>
+</ul>
+<p>Approvers can only be added by the explore education statistics platforms team. If you need a new approver on your publication, email the Explore education statistics platforms team including the following:</p>
+<ul>
+<li>cc both the new approver and existing approver. If the existing approver has left the relevant unit, cc the responsible DD.</li>
+<li>cc the relavent G7</li>
+<li>Provide the publication name and clearly outline the names of approvers who need to be added and / or removed</li>
+</ul>
+<hr>
+</section>
+<section id="release-level-roles" class="level4">
+<h4 class="anchored" data-anchor-id="release-level-roles">Release level roles</h4>
+<hr>
 <ul>
 <li><p><strong>Pre-release</strong></p>
 <p>Any user invited for pre-release is given a pre-release user role. During the hours of pre-release they can:</p>
@@ -933,63 +967,31 @@ Note
 <li>Preview the table tool page for that release</li>
 </ul></li>
 </ul>
-<p><br></p>
+<p>Pre-release users can be added to a publication via the pre-release access tab and can be added by any drafter or approver of the publication. Standard statistics practices should be applied whereby a PRA declaration form should be completed by all PRA users and sent to <a href="mailto:hop.statistics@education.gov.uk">hop.statistics@education.gov.uk</a> for their records.</p>
+<hr>
+</section>
+<section id="site-level-roles" class="level4">
+<h4 class="anchored" data-anchor-id="site-level-roles">Site level roles</h4>
+<hr>
 <ul>
-<li><p><strong>Analyst - contributor</strong></p>
-<p>Any analyst working on a release within EES admin will have the contributor role. They can:</p>
-<ul>
-<li>Edit release details</li>
-<li>Upload data and other files</li>
-<li>Create footnotes, datablocks and charts</li>
-<li>Edit and comment on release content</li>
-<li>Invite PRA users</li>
-<li>Move the release status between draft and ready for higher review</li>
-</ul></li>
-</ul>
-<p><br></p>
-<ul>
-<li><p><strong>Analyst - approver</strong></p>
-<p>The responsible statistician for a statistics release will have the approver role, allowing them to sign off releases for publication. This will usually be the responsible G5 or G6 for the statistics publication. They can do everything a contributor can, as well as:</p>
-<ul>
-<li>Move the release status between draft, ready for review and approved</li>
-<li>Schedule the release for publication (either immediately or for a specific date)</li>
-</ul></li>
-</ul>
-<p><br></p>
-<p>There is also a publication owner role, which is assigned at publication level to a users account:</p>
-<ul>
-<li><p><strong>Publication owner</strong></p>
-<p>This permissions level gives publication owners control over their publications. They can do anything a contributor can for all releases within the publication. On top of this the publication owner also has access to:</p>
-<ul>
-<li>Manage publication level details</li>
-<li>Create new releases within a publication</li>
-<li>Create an amendment of the latest published release within a publication</li>
-<li>Cancel an amendment before it is published</li>
-</ul></li>
-</ul>
-<p><br></p>
-<ul>
-<li><p><strong>BAU</strong></p>
+<li><p><strong>Super / BAU user</strong></p>
 <p>The administrative role:</p>
 <ul>
 <li>This role is assigned to a user and gives full access including administrative tools, typically only used by the Statistics Services Unit, Head of Profession for Statistics, and EES developers.</li>
 </ul></li>
 </ul>
-<p>See below for a diagram of the responsibilities of each role as part of the publication process in EES:</p>
-<p><img src="../images/EES_roles.svg" class="img-fluid"></p>
 <hr>
+</section>
 </section>
 <section id="managing-permissions" class="level3">
 <h3 class="anchored" data-anchor-id="managing-permissions">Managing permissions</h3>
 <hr>
-<p>If you are a <a href="#roles-and-permissions">publication owner</a> then you can add other analysts in your team to specific releases to allow them to edit and contribute to the release.</p>
-<p>To do this, select your publication from the admin dashboard.</p>
-<p><img src="../images/EES-admin-dashboard.PNG" class="img-fluid"></p>
-<p>Then go to the ‘Team access’ tab.</p>
+<p>If you are a <a href="#roles-and-permissions">drafter or approver</a> of a publciation, then you can add other analysts in your team to your publication to allow them to edit and contribute to releases.</p>
+<p>To do this, select your publication from the admin dashboard and then go to the ‘Team access’ tab.</p>
 <p><img src="../images/ees_team_access.png" class="img-fluid"></p>
-<p>In here you can see everyone who currently has access, and invite your team to contribute to the release, as well as manage and remove access. To give access the release must already exist, and you’ll need to give individual access for each new release you do in the publication.</p>
+<p>In here you can see everyone who currently has access, and invite your team to contribute to the publication, as well as manage and remove access.</p>
 <p>If you are inviting someone who hasn’t used EES before, make sure to add their DfE email. Jobshare email addresses and mailboxes will not work, each user must be given access with their individual DfE account. The <a href="#external-user-access">external user access</a> section has more details on how to give access to external contributors.</p>
-<p>To change Publication Owners, or Approvers, contact the <a href="mailto:explore.statistics@education.gov.uk">explore education statistics mailbox</a>.</p>
+<p>To change Publication approvers, contact the <a href="mailto:explore.statistics@education.gov.uk">explore education statistics mailbox</a> with the relevant details and cc existing approvers.</p>
 <hr>
 </section>
 <section id="requesting-a-new-publication" class="level3">
