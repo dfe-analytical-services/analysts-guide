@@ -6,6 +6,7 @@ site: "_site.yml"
 ---
 
 ```{r include=FALSE}
+library(rsconnect)
 library(fontawesome)
 library(quarto)
 library(readxl)

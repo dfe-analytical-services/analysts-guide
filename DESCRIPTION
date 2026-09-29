@@ -1,0 +1,53 @@
+Type: Package
+Package: analsts-guide
+Title: Analysts Guide
+Version: 0.0.1
+Authors@R: c(
+    person("Cam", "Race", , "cameron.race@education.gov.uk", role = c("aut", "cre")),
+    person("Rich", "Bielby", , "richard.bielby@education.gov.uk", role = "aut",
+           comment = c(ORCID = "0000-0001-9070-9969")),
+    person("Charlotte", "Foster", , "charlotte.foster@education.gov.uk", role = "ctb"),
+    person("Lara", "Garbett", , "lara.garbett@education.gov.uk", role = "ctb"),
+    person("Pauline", "Potts", , "pauline.potts@education.gov.uk", role = "ctb"),
+    person("Matthew", "Robinson", , "matthew3.robinson@education.gov.uk", role = "ctb"),
+    person("Ethan", "Roy", , "ethan.roy@education.gov.uk", role = "ctb"),
+    person("Lauren", "Snaathorst", , "lauren.snaathorst@education.gov.uk", role = "ctb"),
+    person("Bob", "Tarrant", , "robert.tarrant@education.gov.uk", role = "ctb"),
+    person("Chris", "Hall", , "christopher.hall@education.gov.uk", role = "ctb"),
+    person("Department for Education, England", , , "explore.statistics@education.gov.uk", role = "cph")
+  )
+Description: A guide for DfE Analysts.
+License: GPL (>= 3)
+URL: https://dfe-analytical-services.github.io/analysts-guide/,
+    https://github.com/dfe-analytical-services/analysts-guide
+BugReports: https://github.com/dfe-analytical-services/analysts-guide/issues
+Depends: 
+    R (>= 4.2.0)
+Imports:
+    cli,
+    dplyr,
+    duckplyr,
+    jsonlite,
+    mime,
+    rlang,
+    stats,
+    stringr,
+    tidyr,
+    utils
+Suggests:
+    dfeR,
+    knitr,
+    readr,
+    rmarkdown,
+    spelling,
+    testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
+Remotes: 
+    dfe-analytical-services/dfeR
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-GB
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.0.0
