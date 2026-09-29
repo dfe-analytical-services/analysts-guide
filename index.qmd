@@ -137,11 +137,8 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [Databricks medallion architecture (Bronze, Silver, Gold, Copper)](ADA/databricks_medallion_architecture.qmd)
 - De-mystifying the 'medallion architecture' pattern and what the bronze, silver, gold and copper catalogs mean.
 
-[SQL Warehouse with RStudio](ADA/databricks_rstudio_sql_warehouse.html)
-- Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio
-
-[Personal cluster with RStudio and `odbc` / `DBI`](ADA/databricks_rstudio_personal_cluster.html)
-- Guidance for analysts on how to connect to a Databricks personal cluster from RStudio using the odbc / DBI method
+[SQL Warehouse with RStudio or Personal cluster with RStudio and `odbc` / `DBI`](ADA/databricks_sparklyr_and_sql_warehouses.html)
+- Guidance for analysts on how to connect to a Databricks SQL Warehouse from RStudio or how to connect to a Databricks cluster from RStudio using the odbc / DBI method.
 
 [Use Databricks with Git](ADA/git_databricks.html)
 - Guidance for connecting Databricks to Git repositories

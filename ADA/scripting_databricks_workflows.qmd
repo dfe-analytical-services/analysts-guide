@@ -53,7 +53,7 @@ This page presents how to script a workflow to run notebooks saved in your Datab
     
     A Personal Authentication Token (PAT) is a unique code that is generated to let Databricks know who is accessing it. It functions as a password and so **must not be shared with anyone**.
     
-    If you haven't already generated a Databricks token you can find instructions on how to do so in the [Setup Databricks personal compute cluster with RStudio](databricks_rstudio_personal_cluster.qmd) article.
+    If you haven't already generated a Databricks token you can find instructions on how to do so in the [Setup Databricks personal compute cluster with RStudio](databricks_sparklyr_and_sql_warehouses.qmd) article.
     :::
     
     ::: callout-important
@@ -239,7 +239,7 @@ We can then output the `job_link` as text.
     
     A Personal Authentication Token (PAT) is a unique code that is generated to let Databricks know who is accessing it. It functions as a password and so **must not be shared with anyone**.
     
-    If you haven't already generated a Databricks token you can find instructions on how to do so in the [Setup Databricks personal compute cluster with RStudio](databricks_rstudio_personal_cluster.qmd) article.
+    If you haven't already generated a Databricks token you can find instructions on how to do so in the [Setup Databricks personal compute cluster with RStudio](databricks_sparklyr_and_sql_warehouses.qmd) article.
     :::
     
     ::: callout-important
