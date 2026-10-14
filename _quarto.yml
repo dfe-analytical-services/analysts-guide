@@ -129,9 +129,8 @@ website:
           - ADA/databricks_workflows.qmd
           - ADA/scripting_databricks_workflows.qmd
           - ADA/databricks_medallion_architecture.qmd
-          - ADA/databricks_rstudio_sql_warehouse.qmd
-          - ADA/databricks_rstudio_personal_cluster.qmd
-          - ADA/databricks_rstudio_personal_cluster_sparklyr_archive.qmd
+          - ADA/databricks_sparklyr_and_sql_warehouses.qmd
+          - ADA/databricks_reports_and_dashboards.qmd
           - ADA/git_databricks.qmd
 
 format:

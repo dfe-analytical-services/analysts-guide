@@ -20,7 +20,7 @@ It brings together:
 *	a workbench of tools for analysing data - including [Databricks](../ADA/databricks_fundamentals.html)
 *	a form for requesting access to data
 *	a support section - with walkthrough instructions
-*	a collection of data reports and dashboards
+*	a collection of data reports and dashboards - for guidance see [Databricks Reports and Dashboards](../ADA/databricks_reports_and_dashboards.html)
 *	a news and updates area
 
 As long as you're connected to the network - it's available to anyone who works for the Department of Education. 

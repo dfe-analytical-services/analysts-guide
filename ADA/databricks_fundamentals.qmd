@@ -21,7 +21,7 @@ In addition, it also provides new tools within the platform to construct and aut
 ------------------------------------------------------------------------
 
 ::: callout-tip
-If you are looking to connect to Databricks with RStudio, take a look at the [guide to Databricks RStudio personal cluster page.](../ADA/databricks_rstudio_personal_cluster.html)
+If you are looking to connect to Databricks with RStudio, take a look at the [guide to Databricks RStudio personal cluster page.](../ADA/databricks_sparklyr_and_sql_warehouses.html)
 :::
 
 ------------------------------------------------------------------------
@@ -245,10 +245,9 @@ Note that shared clusters and SQL warehouses have to be requested through the [A
 
 In most cases a personal cluster will be the most versatile and easily accessible option. However your team may want to request a shared SQL warehouse if you have a lot of processing heavy SQL queries and do not need to use any other language in the Databricks platform itself.
 
-All compute options can be used both within the Databricks platform and be connected to through other applications. Instructions on how to connect R / RStudio to a SQL Warehouse, or a personal cluster can be found on the following pages:
+All compute options can be used both within the Databricks platform and be connected to through other applications. Instructions on how to connect R / RStudio to a SQL Warehouse, or a personal cluster can be found on the following page:
 
--   [Setup Databricks SQL Warehouse with RStudio](/ADA/databricks_rstudio_sql_warehouse.html)
--   [Setup Databricks Personal Compute cluster with RStudio](/ADA/databricks_rstudio_personal_cluster.html)
+-   [Setup Databricks SQL Warehouse with RStudio or Personal Compute cluster with RStudio](/ADA/databricks_sparklyr_and_sql_warehouses.html)
 
 Once you have a compute resource you can begin using Databricks. You can do this either through connecting to Databricks through RStudio, or you can begin coding in the Databricks platforms using scripts, or [Notebooks](/ADA/databricks_notebooks.html).
 
