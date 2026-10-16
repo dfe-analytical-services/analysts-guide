@@ -107,7 +107,6 @@ Another useful aspect of workflows is that they can be defined and ran using cod
 
 There is an R library which has been created to interface with the Databricks API, meaning that you can script jobs in R using the [Databricks SDK for R package](https://docs.databricks.com/en/dev-tools/sdk-r.html) using lists instead of JSON.
 
-For instructions on how to use the Databricks SDK for R package to script workflows see the [Scripting Databricks workflows](scripting_databricks_workflows.qmd) page.
 
 ## How to create a Databricks Job
 
