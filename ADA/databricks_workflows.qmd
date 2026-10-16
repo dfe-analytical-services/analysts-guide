@@ -103,7 +103,7 @@ Workflows that fail also allow you to repair the workflow once you have found an
 ## Scripted workflows
 
 
-Another useful aspect of workflows is that they can be defined and ran using code through the [Databricks Jobs API](https://docs.databricks.com/api/workspace/jobs).
+Another useful aspect of workflows is that they can be defined and run using code through the [Databricks Jobs API](https://docs.databricks.com/api/workspace/jobs).
 
 There is an R library which has been created to interface with the Databricks API, meaning that you can script jobs in R using the [Databricks SDK for R package](https://docs.databricks.com/en/dev-tools/sdk-r.html) using lists instead of JSON.
 
@@ -116,7 +116,7 @@ Scripting a workflow means using code to define, control and automate the sequen
 
 For a workflow to be built there must be scripts, queries or notebooks available to read by Databricks either in your workspace or in a remote Git repository.
 
-This page presents how to script a workflow to run notebooks saved in your Databricks workspace, both using an R script in an IDE (e.g. RStudio, Positron) and by creating another Databricks notebook, and how to set it up to send email notifications when the workflow successfully completes.
+This section presents how to script a workflow to run notebooks saved in your Databricks workspace, both using an R script in an IDE (e.g. RStudio, Positron) and by creating another Databricks notebook, and how to set it up to send email notifications when the workflow successfully completes.
 
 ::: {.callout-tip collapse="true"}
 
