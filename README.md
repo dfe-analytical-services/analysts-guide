@@ -44,11 +44,7 @@ Each page of the site is a single quarto document, with index.qmd as the homepag
 
 ### Tests
 
-Before proposing guidance changes, render the site with `quarto render` and
-check affected pages, links and downloads in the browser. The repository also
-has security scanning and a manually triggered image alt-text check. For
-changes to the Open Data Standards examples, see the
-[contributing guidance](CONTRIBUTING.md#checking-open-data-standards-examples).
+There are currently no automated tests on this project.
 
 ### Diagrams
 

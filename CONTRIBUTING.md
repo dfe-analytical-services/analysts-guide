@@ -189,14 +189,17 @@ guide to check for broken links:
 1.  **Change Headings**: Update your headings in the relevant
     `.qmd files`.
 
-2.  **Find links to the changed headings**: Search the source files for
-    the old anchors. After rendering, check links in the generated pages,
-    including links from other pages and the navigation.
+2.  **Run Quarto's Built-in Link Checker**: Quarto has a built in
+    feauture to check for broken links.
 
-`quarto check` diagnoses the Quarto installation; it does not scan the site
-for broken links.
+Run the following command in your project directory:
 
-3.  **Manually Update Links**: If you find broken links, update
+`quarto check`
+
+This command will scan your project for broken links and report any
+issues.
+
+3.  **Manually Update Links**: If any broken links are reported, update
     them to match the new headings. Use the correct anchors, which
     typically follow the format `#new-heading-text`.
 
@@ -236,9 +239,8 @@ before raising a pull request (from the terminal):
 5.  **Preview the Project**: Open the generated files in a browser to
     ensure everything looks correct. `quarto preview`
 
-6.  **Check links and downloads**: Open the changed pages in the preview,
-    follow their links and download any changed example files. Verify that
-    cross-page links reach the intended headings.
+6.  **Check for Broken Links**: Use Quarto’s link checker to find and
+    fix broken links. `quarto check`
 
 7.  **Commit Your Changes**: Add and commit your changes to your local
     repository. `git add . git commit -m "Describe your changes"`
@@ -328,20 +330,6 @@ Scan through our [existing
 issues](https://github.com/dfe-analytical-services/analysts-guide/issues)
 to find one that interests you. If you find an issue to work on, you are
 welcome to open a PR with a fix.
-
-### Checking Open Data Standards examples
-
-If you change an example CSV, check that its data and metadata columns match
-and that its totals and percentages are correct. The beginner page and demo
-tables read the downloadable CSVs, so render the affected pages too.
-
-If you change the worked example, run the R and Python preparation scripts in
-separate folders and compare both sets of output files with the downloads.
-The R script needs the source CSV; the Python script needs the source and
-region lookup CSVs. Both scripts replace their output files. Export the
-region lookup from `dfeR::fetch_regions()` and keep only the nine codes
-beginning `E12`.
-
 
 ### Make Changes
 
