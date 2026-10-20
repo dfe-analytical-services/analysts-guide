@@ -26,7 +26,14 @@ that only return warnings, plus manual inspection by the platform gatekeepers. T
 - Standardised indicator col_names meeting the naming standards.
 - Character limits for col_names and filter items.
 
-Examples of these that do and don't meet the API data standards are provided in the following sections.
+The tables below show how to arrange filters and indicators. They leave out time,
+geography and metadata, so they cannot be uploaded as they stand. For complete
+data and metadata files, see the [worked example](open-data-getting-started.qmd#worked-example).
+Even the examples labelled "good practice" still need screening and API approval.
+
+Keep filter and indicator labels within **80 characters**, as specified below,
+even if a screening tool accepts a longer label. Screening results do not
+replace the published requirements or platform team approval.
 
 ## API publishing checklist
 
@@ -96,11 +103,11 @@ The following give examples of how different examples of data structures could b
 
 | sex                | school_count  | pupil_count  | pupil_percent  |
 |--------------------|---------------|--------------|----------------|
-| Male               | 2             | 30           | 60             |          
-| Female             | 2             | 40           | 80             |         
-| Total              | 2             | 50           | 100            |                  
+| Male               | 2             | 120          | 48             |
+| Female             | 2             | 130          | 52             |
+| Total              | 2             | 250          | 100            |
 
-: Pupil counts and percentages in tidy format
+: Pupil counts and percentages in tidy format. Both schools contain male and female pupils; the school count repeats and must not be summed across sex.
 
 :::
 
@@ -122,7 +129,7 @@ The following would not be accepted for publication via the API.
 
 #### Example of good practice
 
-The following would be accepted for publication via the API. In this case, creating a hierarchical filter combination allows a clear representation of the data.
+A grouped filter makes the attendance categories clear:
 
 ::: {.table-responsive}
 
@@ -141,17 +148,17 @@ The following would be accepted for publication via the API. In this case, creat
 
 #### Example of bad practice
 
-In the example below, the different metrics contain different types of values that are split 
-by very different filters. Specifically pupil counts and pupil percents are split into 
-grade thresholds, whereas the score based metrics are not. 
-
-The following would not be accepted for publication via the API.
+These measures need different filters. The grade counts and percentages use
+overlapping thresholds, while the scores use sex. The example assumes equal
+numbers of male and female pupils, so each total score is the mean of their
+scores. Do not add the overlapping grade counts together. This structure would
+not be accepted for API publication.
 
 ::: {.table-responsive}
 
 | pupil_count_grade9to5 | pupil_count_grade9to4 | pupil_count_grade9to1 | pupil_percent_grade9to5 | pupil_percent_grade9to4 | pupil_percent_grade9to1 | progress8_score_male | progress8_score_female | progress8_score |attainment8_score_male | attainment8_score_female | attainment8_score |
 |------------------------|------------------------|------------------------|--------------------------|--------------------------|-------------------------|----------------------|------------------------|-----------------|----------------------|------------------------|-----------------|
-| 30                     | 40                     | 50                     | 60                       | 80                       | 100                      | 0.2                  | 0.21                   | 0.21            |0.09                  | 0.08                   | 0.10            |
+| 30                     | 40                     | 50                     | 60                       | 80                       | 100                      | 0.2                  | 0.4                    | 0.3             |45                    | 55                     | 50              |
 
 : Attainment grade rates and scores in non-tidy format
 
@@ -159,11 +166,10 @@ The following would not be accepted for publication via the API.
 
 #### Example of pivoting leading to excessive duplications and not applicable characters
 
-If we were to try and pivot 
-the above data as one file, it would lead to an unreasonably large number of cells with no 
-valid entries (i.e. large numbers of z's). For example, pivoting might create something 
-like the following table, which suffers from both a large number of not applicable 
-columns and duplication of data unnecessarily.
+Putting everything in one file creates many cells where a measure does not
+apply (`z`). It can also repeat values that do not belong to a breakdown. The
+count of 50 repeated on the score rows below is an example of that mistake; it
+is not a count for each sex.
 
 ::: {.table-responsive}
 
@@ -172,12 +178,12 @@ columns and duplication of data unnecessarily.
 | Total  | Grades 9-5         | z                     | 30           | 60             | z             |
 | Total  | Grades 9-4         | z                     | 40           | 80             | z             |
 | Total  | Grades 9-1         | z                     | 50           | 100            | z             |
-| Total  | z                  | Attainment 8          | 50           | 100            | 0.21          |
-| Female | z                  | Attainment 8          | 50           | 100            | 0.21          |
-| Male   | z                  | Attainment 8          | 50           | 100            | 0.20          |
-| Total  | z                  | Progress 8            | 50           | 100            | 0.08          |
-| Female | z                  | Progress 8            | 50           | 100            | 0.08          |
-| Male   | z                  | Progress 8            | 50           | 100            | 0.09          |
+| Total  | z                  | Attainment 8          | 50           | 100            | 50 |
+| Female | z                  | Attainment 8          | 50           | 100            | 55 |
+| Male   | z                  | Attainment 8          | 50           | 100            | 45 |
+| Total  | z                  | Progress 8            | 50           | 100            | 0.3 |
+| Female | z                  | Progress 8            | 50           | 100            | 0.4 |
+| Male   | z                  | Progress 8            | 50           | 100            | 0.2 |
 
 : Example of pivoted data showing excessive duplicated and not applicable fields.
 
@@ -185,7 +191,7 @@ columns and duplication of data unnecessarily.
 
 #### Example of good practice
 
-The following would be accepted for publication via the API. In this case, splitting the data into separate data files is required in order to create tidy data structures.
+Use separate files so each measure has only the filters that apply to it:
 
 ::: {.table-responsive}
 
@@ -203,12 +209,12 @@ The following would be accepted for publication via the API. In this case, split
 
 | sex    | accountability_measure | score_average  |
 |--------|------------------------|----------------|
-| Female | Progress 8             | 0.21           |          
-| Male   | Progress 8             | 0.20           |         
-| Total  | Progress 8             | 0.21           |                  
-| Female | Attainment 8           | 0.08           |          
-| Male   | Attainment 8           | 0.09           |         
-| Total  | Attainment 8           | 0.08           |                  
+| Female | Progress 8             | 0.4           |
+| Male   | Progress 8             | 0.2           |
+| Total  | Progress 8             | 0.3           |
+| Female | Attainment 8           | 55           |
+| Male   | Attainment 8           | 45           |
+| Total  | Attainment 8           | 50           |
 
 : Attainment scores in tidy format
 
@@ -218,7 +224,7 @@ The following would be accepted for publication via the API. In this case, split
 
 The explore education and statistics platforms team alongside the data harmonisation champions group and publication teams are developing a series of [standardised filters](../statistics-production/ud.html#common-harmonised-variables) that teams are required to use when creating data for the API. These are being built iteratively as more data is put forward for the API, so if the current standards don't cater to your data set, you can contribute to building the harmonised standards for others to follow.
 
-The standards can be used to create individual filter columns or combined filters (i.e. breakdown_topic / breakdown_topic).
+The standards can be used to create individual filter columns or combined filters (i.e. breakdown_topic / breakdown).
 
 Areas for which harmonised standards are currently available are:
 
@@ -274,4 +280,3 @@ Indicators should be named in line with the [indicator naming conventions set ou
 : Example non-standard indicator col_names and their potential equivalents in the standardised framework.
 
 :::
-

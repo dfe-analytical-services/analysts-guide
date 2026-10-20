@@ -44,7 +44,17 @@ Each page of the site is a single quarto document, with index.qmd as the homepag
 
 ### Tests
 
-There are currently no automated tests on this project.
+Run `Rscript --vanilla scripts/check-open-data-examples.R` from the repository
+root. It uses base R to check that the Open Data Standards examples agree with
+their metadata and source figures. It also checks the R transformation when `dfeR`,
+`dplyr` and `tidyr` are installed. Set `EXAMPLE_PYTHON` to a Python executable
+to check the Python transformation.
+
+The example check runs on pull requests and before publication. The repository
+also has security scanning and a manually triggered image alt-text check.
+Before proposing guidance changes, render the site with `quarto render` and
+check affected pages, links and downloads in the browser. See
+[contributing guidance](CONTRIBUTING.md#checking-open-data-standards-examples).
 
 ### Diagrams
 

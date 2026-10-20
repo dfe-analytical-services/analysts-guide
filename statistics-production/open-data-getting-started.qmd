@@ -1,0 +1,275 @@
+---
+title: "Getting started with Open Data Standards"
+---
+
+Use this guide to prepare data and metadata for Explore Education Statistics
+(EES). It follows a straightforward dataset with time, geography, filters and
+indicators. You can work in a spreadsheet, R, Python or another tool.
+
+The [Open Data Standards](ud.qmd) are the full reference, including exceptions
+and accepted values. Requirements for the
+[EES API](api-data-standards.qmd) apply in addition to those standards.
+
+## 1. Know what you need to produce
+
+Prepare these together:
+
+::: {.table-responsive tabindex="0" role="region" aria-label="Required outputs"}
+
+| Output | Purpose |
+|---|---|
+| Data CSV, for example `pupil-enrolments.csv` | Contains publishable observations. EES uses it for tables and charts, and users can download it. |
+| EES metadata CSV, `pupil-enrolments.meta.csv` | Describes the filters and indicators, including the labels, units and precision shown to users. The filename matches the data file with `.meta` added. |
+| Public data guidance and methodology | Explain coverage, definitions, denominators, limitations and methods. These are separate from the metadata CSV. Follow the [public data guidance instructions](ees.qmd#public-data-guidance). |
+
+:::
+
+Everything in the downloadable data must be suitable for publication. Apply
+your disclosure control policy to the data itself; changing display precision
+in metadata does not hide the underlying values.
+
+If you intend to publish through the API, start the
+[API publishing checklist](api-data-standards.qmd#api-publishing-checklist)
+early. Passing automated checks alone does not grant API approval.
+
+## 2. Identify what one row represents {#worked-example}
+
+Before changing the data, describe one row: **[measures] for [group] in [place]
+during [period].**
+
+In this example, each row gives a pupil count and percentage for one education
+phase, sex, location and academic year.
+
+The figures are **synthetic**, not official statistics. They cover primary and
+secondary pupils, classified as male or female, in all nine English regions.
+Each pupil belongs to one region and one phase. Real data may have other
+categories, different coverage or suppressed values. Keep those differences
+when adapting the example.
+
+Download the [wide source CSV](../resources/open-data-standards/pupil-source.csv).
+It has 18 rows: two years and nine regions. Four columns hold counts for male
+primary, male secondary, female primary and female secondary pupils. The source
+has region names but no region codes. Here is an extract:
+
+::: {.table-responsive tabindex="0" role="region" aria-label="Source data extract"}
+
+```{r echo=FALSE}
+#| output: asis
+source_data <- read.csv("../resources/open-data-standards/pupil-source.csv",
+                        colClasses = "character", check.names = FALSE)
+example_data <- read.csv("../resources/open-data-standards/pupil-enrolments.csv",
+                         colClasses = "character", check.names = FALSE)
+example_meta <- read.csv("../resources/open-data-standards/pupil-enrolments.meta.csv",
+                         colClasses = "character", check.names = FALSE)
+knitr::kable(head(source_data, 2), row.names = FALSE, caption = "Source extract: North East, 2022/23.")
+```
+
+:::
+
+Identify the role of each column before transforming it:
+
+::: {.table-responsive tabindex="0" role="region" aria-label="Column roles"}
+
+| Role | Example | Decision |
+|---|---|---|
+| Time | Academic year 2022/23 | Use `time_period` of `202223` and `time_identifier` of `Academic year`. |
+| Geography | North East | Match the name to a standard region code, then add `geographic_level`, country code and country name. |
+| Filters | Primary/secondary; male/female | Take education phase and sex from the four source column names and give each its own column. |
+| Indicators | Pupil count; pupil percentage | Put the four source counts into one `pupil_count` column. Calculate `pupil_percent` after adding totals. |
+
+:::
+
+## 3. Choose a structure that supports your users
+
+Move the four count columns into one `pupil_count` column. Add separate `sex`
+and `education_phase` filters so users can select, for example, female primary
+pupils. A combined “Female primary” category would prevent users from selecting
+sex and phase independently.
+
+Keep counts and percentages in the same file because they describe the same
+groups and users may want them in one table. EES tables draw from one data
+file. For incompatible measures or filters, use the
+[dataset design decisions](ud.qmd#dataset-design-decisions).
+
+Calculate totals from groups that do not overlap. In this example:
+
+- Add male and female counts to obtain `sex = Total` for each phase.
+- Add primary and secondary counts to obtain `education_phase = All education phases`.
+- Add the nine equivalent regional counts to obtain national counts.
+
+Do not add a total to the rows that make it up, or add national rows to regional
+rows. Overlapping categories, rates and averages may need other methods. Do not
+add percentages to produce totals.
+
+Here `pupil_percent` means the percentage of pupils of the selected sex
+**within the same year, geography and education phase**. Divide that row's
+count by the corresponding `sex = Total` count and multiply by 100. For
+North East primary pupils in 2022/23, this is 13,100 / 25,000 × 100 = 52.4
+for males. Explain the denominator in public data guidance.
+
+## 4. Prepare the data CSV
+
+Use the exact [mandatory time and geography columns](ud.qmd#time-and-geography):
+`time_period`, `time_identifier`, `geographic_level`, `country_code` and
+`country_name`. Add the [columns needed for your geography levels](ud.qmd#allowable-geographic-levels).
+This example also needs `region_code` and `region_name`; those cells are
+empty on national rows because a region is not applicable to them. The R script
+matches each source region name to a code using
+[dfeR's `fetch_regions()` lookup](https://dfe-analytical-services.github.io/dfeR/reference/fetch_regions.html).
+Check every name matched before producing the file. The Python script uses a
+[CSV copy of those nine lookup entries](../resources/open-data-standards/pupil-region-lookup.csv)
+exported from dfeR.
+
+Use [harmonised names and categories](ud.qmd#common-harmonised-variables),
+including `sex` and `education_phase`. The harmonised phase total is
+`All education phases`. Follow [variable naming](ud.qmd#variable-names)
+and [indicator naming](ud.qmd#indicator-names) guidance for other columns.
+
+The [finished data CSV](../resources/open-data-standards/pupil-enrolments.csv)
+has 180 rows: two years × ten locations (nine regions and England) × three
+phase categories × three sex categories. This extract omits the time and
+geography columns to show the reshaping:
+
+::: {.table-responsive tabindex="0" role="region" aria-label="Finished data extract"}
+
+```{r echo=FALSE}
+#| output: asis
+extract <- example_data[example_data$time_period == "202223" &
+                        example_data$region_code == "E12000001", ]
+knitr::kable(extract[, c("education_phase", "sex", "pupil_count", "pupil_percent")],
+             row.names = FALSE, caption = "Finished data extract: North East, 2022/23.")
+```
+
+:::
+
+Save as [UTF-8 CSV](ud.qmd#how-to-export-data-with-utf-8-encoding) with one
+header row, no title rows and no row-number column. Preserve geography codes
+as text. Reopen the exported CSV to check its contents, including leading
+zeros where relevant. Store a percentage such as 52.4% as `52.4`, with `%`
+in metadata, not `0.524` or the text `52.4%`.
+
+This example has no missing or suppressed observations. In real data use the
+[specified symbols](ud.qmd#data-symbols): for example, `c` for a confidential
+count, `x` for an unavailable observation and `z` for a measure that does not
+apply. Do not substitute zero for these. If a suppressed count can be
+recovered from a percentage or total, apply your publication's disclosure
+control policy to those values too. The example's calculation code assumes
+complete numeric counts and is not a disclosure control routine.
+
+## 5. Create the metadata {#create-the-metadata}
+
+Download the [matching metadata CSV](../resources/open-data-standards/pupil-enrolments.meta.csv).
+It contains one row for each of the two filters and two indicators. These are
+the settings which affect this example's display:
+
+::: {.table-responsive tabindex="0" role="region" aria-label="Metadata settings"}
+
+```{r echo=FALSE}
+#| output: asis
+knitr::kable(example_meta[, c("col_name", "col_type", "label", "indicator_unit",
+                              "indicator_dp", "filter_default")],
+             row.names = FALSE, caption = "Selected metadata columns; the download contains every required header.")
+```
+
+:::
+
+Include **all eight [mandatory metadata headers](ud.qmd#mandatory-ees-metadata-columns)**,
+even when cells are empty. Copy each `col_name` exactly from the data header.
+Set `col_type` to `Filter` or `Indicator` and give every row a readable `label`.
+
+For this example:
+
+- Counts leave `indicator_unit` empty and set `indicator_dp = 0`. Percentages
+  use `%` and `indicator_dp = 1`. The downloaded values are rounded to at most
+  three decimal places; EES displays one.
+- The filter rows leave indicator settings empty. The indicator rows leave
+  filter settings empty. `indicator_grouping` and `filter_grouping_column`
+  are empty because this example does not use grouping.
+- The optional `filter_default` column selects `All education phases` for the
+  phase filter and `Total` for sex. See [defaults and their hierarchy restriction](ud.qmd#aggregates-and-default-filters).
+- Standard time and geography columns have no metadata rows. A filter with
+  only one value also has no metadata row. A column used only to group another
+  filter is referenced in `filter_grouping_column`, not given a separate row.
+
+### Reproduce the example in R or Python
+
+Put the source CSV and either the [R script](../resources/open-data-standards/prepare-pupil-example.R)
+or [Python script](../resources/open-data-standards/prepare-pupil-example.py)
+in one folder. The R script needs `dfeR`, `dplyr` and `tidyr` installed. For
+Python, also download the [region lookup CSV](../resources/open-data-standards/pupil-region-lookup.csv);
+the script uses only Python's standard library. Run your chosen script from
+that folder. It writes `pupil-enrolments.csv` and `pupil-enrolments.meta.csv`,
+replacing files with those names.
+
+```bash
+Rscript --vanilla prepare-pupil-example.R
+```
+
+Or:
+
+```bash
+python prepare-pupil-example.py
+```
+
+Read the comments before adapting the scripts. They assume the source's
+coverage and categories, and do not handle missing or suppressed values.
+
+## 6. Validate the pair and resolve problems
+
+Run **both files** through the [EES screening app](https://rsconnect/rsc/dfe-published-data-qa/)
+before upload. This requires access from DfE kit. Keep the results with your
+publication's quality assurance record. Fix reported problems in the source
+or preparation code, regenerate both files as needed, and screen again.
+
+Use the [validation and troubleshooting guide](ud.qmd#validation-and-troubleshooting)
+to distinguish formatting errors from structural and statistical problems.
+Investigate warnings as well as failures. A successful screen does not prove
+that the figures, disclosure control or user experience are correct.
+
+Reconcile counts with the source, check that totals use the right populations,
+and recalculate a sample of percentages. The existing
+[publication-specific automated sense checks](../RAP/common-rap-principles/publication-project-specific-automated-sense-checks.qmd)
+guidance explains how to build these into your production process.
+
+## 7. Check the experience in EES
+
+After [uploading the screened files](ees.qmd#uploading-files), preview the
+release and try the questions your users will ask. For this example:
+
+- Make a table comparing male and female primary pupils across regions.
+- Show a national time series without adding national and regional totals.
+- Make a chart of percentages and check its labels, units and precision.
+- Check the default selections and explain what each percentage measures.
+- Download the data and check that the guidance explains how to avoid double counting.
+
+For an existing publication, also check [replacing data](ees.qmd#replacing-data)
+before changing column names or structures used by existing data blocks.
+
+For API publication, complete the [additional checks and manual approval](api-data-standards.qmd#api-publishing-checklist).
+Keep filter and indicator labels within **80 characters**, even if a tool
+accepts longer labels. Check harmonised dictionary entries and tell affected
+users about changes to existing API datasets.
+
+## First-publication checklist {#first-publication-checklist}
+
+Use this checklist with your publication files. “Required” marks a standard or
+publishing step; “Recommended” marks a useful check. Record what you checked in
+your quality assurance record, including checks the screener cannot do.
+
+::: {.table-responsive tabindex="0" role="region" aria-label="First-publication checklist"}
+
+| Done | Check and reference | Status | How to check |
+|---|---|---|---|
+| ☐ | All downloadable values meet disclosure control policy; [symbols](ud.qmd#data-symbols) distinguish missing, suppressed and zero values. | Required | Analyst judgement; screening can check recognised formats. |
+| ☐ | Data and matching `.meta.csv` use [UTF-8 CSV and suitable filenames](ud.qmd#data-format). | Required | Inspect exports and screen the pair. |
+| ☐ | Exact [mandatory fields and geography-specific columns](ud.qmd#time-and-geography) are present with appropriate values. | Required | Screening and a check of geographic coverage. |
+| ☐ | Each row has a clear meaning; filters and indicators follow [tidy data principles](ud.qmd#tidy-data-structure). | Required | Analyst judgement; screening alone cannot decide the design. |
+| ☐ | Names and categories follow [naming](ud.qmd#variable-names) and applicable [harmonisation](ud.qmd#common-harmonised-variables) guidance. | Required where specified | Screening and reference review. |
+| ☐ | Metadata has [all required headers](ud.qmd#mandatory-ees-metadata-columns), exact matching names and appropriate rows. | Required | Screening and inspection. |
+| ☐ | Counts reconcile; denominators, totals and [display precision](ud.qmd#indicators) are correct. | Recommended QA checks | Recalculate from source; inspect tables and downloads. |
+| ☐ | The final pair has been [screened](ud.qmd#how-to-check-against-these-standards) and reported problems addressed. | Required | Run the app again after corrections; retain results. |
+| ☐ | Intended tables, charts, defaults and downloads are understandable. | Recommended | Try representative user questions in EES. |
+| ☐ | [Public data guidance](ees.qmd#public-data-guidance), methodology and normal sign-off are complete. | Required publishing steps | Analyst and approver review. |
+| ☐ | [API limits](api-data-standards.qmd#character-limits-for-col_names-and-filter-items), dictionary entries, warnings, upload checks and manual activation have been addressed. | Required for API only | Automated checks plus platform team approval. |
+
+:::

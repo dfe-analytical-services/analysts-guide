@@ -187,7 +187,7 @@ If you want to request a new publication, please be prepared to provide us with 
 * If the methodology already exists elsewhere and you have a URL for it, or if you want to [create one](#methodology)
 * Team name and email address
 * Lead statistician name and contact number (contact number is optional)
-* [Time periods](../statistics-production/ud.html#list_of_allowable_time_values) of the releases you’re creating
+* [Time periods](../statistics-production/ud.html#list-of-allowable-time-values) of the releases you’re creating
 * Badging (whether they are National statistics, an ad-hoc publication, or official statistics)
 * Who needs access to the publication (list of email addresses of analysts who need access to the release and at what [permission levels](#roles-and-permissions))
 
@@ -367,7 +367,7 @@ You need to contact us **at least two weeks** in advance of requiring access, bu
 
 New releases can be [created by publication owners](#create-new-release). To create a new release in a publication series, navigate to the relevant publication and click 'Create new release', you will then need to enter the following information:
 
-* [Time identifier](../statistics-production/ud.html#list_of_allowable_time_values) for the release
+* [Time identifier](../statistics-production/ud.html#list-of-allowable-time-values) for the release
 * Time period for the release
 * Type of release (National, Official, Ad-hoc etc)
 
@@ -393,6 +393,9 @@ If you are experiencing issues or need help with creating a new release, you can
 ---
 
 ### Data and files
+
+Preparing your first dataset? Follow [Getting started with Open Data Standards](open-data-getting-started.qmd)
+for the data structure, matching metadata and validation steps before uploading.
 
 ---
 
@@ -853,7 +856,7 @@ You can change the colour scale of the chart in the "legend" tab.
 
 ---
 
-We recommend including any missing data from breaks in a time series in your data file using the appropriate [GSS symbol](../creating-statistics/ud.html#data-symbols), such as in this example table:
+We recommend including any missing data from breaks in a time series in your data file using the appropriate [GSS symbol](ud.qmd#data-symbols), such as in this example table:
 
 | | 2013/14 | 2014/15 | 2015/16 | 2016/17 | 2017/18 |
 | - | ------| --------| --------| --------| --------|
@@ -892,7 +895,7 @@ Infographic alternatives should be .svg format and you can use the sizing option
 Accessibility matters for infographics too, consider the following if you do need to upload an image -
 
 * Keep them simple
-* Use colours that are available in EES - see our [visualisation guidance](../creating-statistics/cd.html#Charts-in-EES) for more details
+* Use colours that are available in EES - see our [visualisation guidance](../writing-visualising/visualising.qmd#colours) for more details
 * Don't put borders around images
 * Read the [GSS guidance on the use of colour in visualisations](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) and follow the steps provided to check your visualisations
 * Try to avoid adding text to your images other than axis labels and limited annotations. Titles and headings can be added in the "chart configuration" tab instead
@@ -1136,7 +1139,7 @@ For the official names of ethnicity filters to use in data files, please see our
 
 **Ethnic minorities and not BAME**
 
-Grouping ethnicity at a higher level than the 5 major ethnic groups should be avoided. In cases where this is not possible, the group 'ethnic minorities' should be used exclusively to refer to all ethnic groups except the White British group. For further information see our [guidance on reporting on broad ethnic minorities categories](../statistics-production/ud.html#reporting-on-broad-ethnic-minorities-categories-e.g.,-bame).
+Grouping ethnicity at a higher level than the 5 major ethnic groups should be avoided. In cases where this is not possible, the group 'ethnic minorities' should be used exclusively to refer to all ethnic groups except the White British group. For further information see our [guidance on reporting on broad ethnic minorities categories](../statistics-production/ud.html#reporting-on-broad-ethnic-minority-categories-e.g.-bame).
 
 
 **Ordering of ethnic groups**
