@@ -24,6 +24,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+      - name: Install Python example package
+        run: python -m pip install pandas
       - name: Check examples and both transformations
         run: Rscript --vanilla scripts/check-open-data-examples.R
         env:

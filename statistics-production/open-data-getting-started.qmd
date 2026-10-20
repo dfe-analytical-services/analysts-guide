@@ -197,7 +197,7 @@ Put the source CSV and either the [R script](../resources/open-data-standards/pr
 or [Python script](../resources/open-data-standards/prepare-pupil-example.py)
 in one folder. The R script needs `dfeR`, `dplyr` and `tidyr` installed. For
 Python, also download the [region lookup CSV](../resources/open-data-standards/pupil-region-lookup.csv);
-the script uses only Python's standard library. Run your chosen script from
+the script needs `pandas` installed. Run your chosen script from
 that folder. It writes `pupil-enrolments.csv` and `pupil-enrolments.meta.csv`,
 replacing files with those names.
 
@@ -208,6 +208,7 @@ Rscript --vanilla prepare-pupil-example.R
 Or:
 
 ```bash
+python -m pip install pandas
 python prepare-pupil-example.py
 ```
 
