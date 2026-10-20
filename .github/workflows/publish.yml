@@ -30,6 +30,9 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Check Open Data Standards examples
+        run: Rscript --vanilla scripts/check-open-data-examples.R
+
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
         env:

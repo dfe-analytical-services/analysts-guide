@@ -1,0 +1,28 @@
+name: Check Open Data Standards examples
+
+on:
+  pull_request:
+    paths:
+      - 'statistics-production/**'
+      - 'data_examples/**'
+      - 'resources/open-data-standards/**'
+      - 'scripts/check-open-data-examples.R'
+      - '.github/workflows/open-data-examples.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Check examples and both transformations
+        run: Rscript --vanilla scripts/check-open-data-examples.R
+        env:
+          EXAMPLE_PYTHON: python

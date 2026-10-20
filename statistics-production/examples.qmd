@@ -49,7 +49,7 @@ These titles are not cluttered with geographies and time periods, which automati
 
 ---
 
-[Full guidance for using supporting files in EES](ees.html#ancillary-file-uploads).
+[Full guidance for using supporting files in EES](ees.qmd#supporting-file-uploads).
 
 [The Initial Teacher Training performance profiles](https://explore-education-statistics.service.gov.uk/find-statistics/initial-teacher-training-performance-profiles/2019-20) publication is one example of needing to upload a file outside of the regular data/metadata structure. Their provider-level tables also contain national and regional data, which is not supported in EES at the time of writing. The file has a clear title, and data guidance clearly explains what is in the file.
 
@@ -60,7 +60,7 @@ These titles are not cluttered with geographies and time periods, which automati
 ## Data guidance
 
 
-The public data guidance is a key element of your release, to help direct users to the right file to download or build tables with. It is frequently highlighted by users of our stats as a really helpful element of EES. You will be prompted to fill in data guidance in the release checklist. Any release that does not have a complete public data guidance will not be blocked from approval and publishing.
+The public data guidance is a key element of your release, to help direct users to the right file to download or build tables with. It is frequently highlighted by users of our stats as a really helpful element of EES. You will be prompted to fill in data guidance in the release checklist. Complete the [public data guidance and release checklist](ees.qmd#public-data-guidance) before seeking approval.
 
 ---
 
@@ -206,7 +206,7 @@ The summary of the [CIN / CLA outcomes release](https://explore-education-statis
 
 [Full guidance on creating a methodology in EES](ees.html#methodology).
 
-Good methodologies will broadly cover topics in our recommended [methodology template](../resources/Methodology template EES.docx). The [Graduate outcomes (LEO)](https://explore-education-statistics.service.gov.uk/methodology/graduate-outcomes-leo-methodology) methodology broadly follows this outline, making use of effective formatting in EES to help users navigate through accordions, although definitions can be moved to the EES glossary.
+Good methodologies will broadly cover topics in our recommended [methodology template](../resources/Methodology_template_EES.docx). The [Graduate outcomes (LEO)](https://explore-education-statistics.service.gov.uk/methodology/graduate-outcomes-leo-methodology) methodology broadly follows this outline, making use of effective formatting in EES to help users navigate through accordions, although definitions can be moved to the EES glossary.
 
 The [Key stage 4 destinations](https://explore-education-statistics.service.gov.uk/methodology/key-stage-4-destination-measures-methodology) methodology makes good use of annexes to show changes to their methodology over time.
 
