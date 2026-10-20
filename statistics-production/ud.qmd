@@ -113,7 +113,7 @@ For data to be used with the table tool and charts in EES, it needs to meet the 
 * The data should use the [appropriate GSS codes](#data-symbols) for suppressed, low, not available and not applicable entries.
 * The data field IDs, labels and items should conform to [DfE harmonised variables](#common-harmonised-variables) where available.
 
-An example pair of data and metadata files is illustrated below. These synthetic figures are extracts, not a complete publication dataset. Percentages use the total for the same year, geography and school phase as their denominator. See the [complete worked example](open-data-getting-started.qmd#worked-example) for a full set of combinations.
+An example pair of data and metadata files is illustrated below. These synthetic figures are extracts, not a complete publication dataset. Percentages use the total for the same year, geography and education phase as their denominator. See the [complete worked example](open-data-getting-started.qmd#worked-example) for a full set of combinations.
 
 ---
 
