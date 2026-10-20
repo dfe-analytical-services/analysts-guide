@@ -26,14 +26,8 @@ that only return warnings, plus manual inspection by the platform gatekeepers. T
 - Standardised indicator col_names meeting the naming standards.
 - Character limits for col_names and filter items.
 
-The tables below show how to arrange filters and indicators. They leave out time,
-geography and metadata, so they cannot be uploaded as they stand. For complete
+The tables below show how to arrange filters and indicators. For complete
 data and metadata files, see the [worked example](open-data-getting-started.qmd#worked-example).
-Even the examples labelled "good practice" still need screening and API approval.
-
-Keep filter and indicator labels within **80 characters**, as specified below,
-even if a screening tool accepts a longer label. Screening results do not
-replace the published requirements or platform team approval.
 
 ## API publishing checklist
 
@@ -107,7 +101,7 @@ The following give examples of how different examples of data structures could b
 | Female             | 2             | 130          | 52             |
 | Total              | 2             | 250          | 100            |
 
-: Pupil counts and percentages in tidy format. Both schools contain male and female pupils; the school count repeats and must not be summed across sex.
+: Pupil counts and percentages in tidy format.
 
 :::
 
@@ -151,8 +145,9 @@ A grouped filter makes the attendance categories clear:
 These measures need different filters. The grade counts and percentages use
 overlapping thresholds, while the scores use sex. The example assumes equal
 numbers of male and female pupils, so each total score is the mean of their
-scores. Do not add the overlapping grade counts together. This structure would
-not be accepted for API publication.
+scores.
+
+This structure would not be accepted for API publication.
 
 ::: {.table-responsive}
 
@@ -166,10 +161,8 @@ not be accepted for API publication.
 
 #### Example of pivoting leading to excessive duplications and not applicable characters
 
-Putting everything in one file creates many cells where a measure does not
-apply (`z`). It can also repeat values that do not belong to a breakdown. The
-count of 50 repeated on the score rows below is an example of that mistake; it
-is not a count for each sex.
+Putting everything in one file can create many cells where a measure does not
+apply (`z`). It can also repeat values that do not belong to a breakdown such as the repeated 50 below.
 
 ::: {.table-responsive}
 

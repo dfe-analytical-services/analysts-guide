@@ -53,6 +53,9 @@ We hope it can prove a useful community driven resource for everyone from the mo
 [RAP in statistics](RAP/rap-statistics/rap-statistics.html)
 - Detailed RAP guidance for statistics publications
 
+[Getting started with tidy data](statistics-production/open-data-getting-started.qmd)
+- An introduction to how to structure your data as tidy data
+
 [Open data standards](statistics-production/ud.html)
 - Guidance on how to structure data files
 

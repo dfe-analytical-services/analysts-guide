@@ -188,7 +188,7 @@ If you want to request a new publication, please be prepared to provide us with 
 * Team name and email address
 * Lead statistician name and contact number (contact number is optional)
 * [Time periods](../statistics-production/ud.html#list-of-allowable-time-values) of the releases you’re creating
-* Badging (whether they are National statistics, an ad-hoc publication, or official statistics)
+* Badging (whether they are accredited official statistics, official statistics, an ad-hoc publication, or official statistics in development)
 * Who needs access to the publication (list of email addresses of analysts who need access to the release and at what [permission levels](#roles-and-permissions))
 
 Publication details can be [managed by publication owners](#managing-publications) or via requests to the [explore education statistics platforms team](mailto:explore.statistics@education.gov.uk).
@@ -369,7 +369,7 @@ New releases can be [created by publication owners](#create-new-release). To cre
 
 * [Time identifier](../statistics-production/ud.html#list-of-allowable-time-values) for the release
 * Time period for the release
-* Type of release (National, Official, Ad-hoc etc)
+* Type of release (Accredited Official, Official, Ad-hoc etc)
 
 Once you have created your release you will see the dashboard to edit your release, here you need to work through the following tabs to create your release:
 

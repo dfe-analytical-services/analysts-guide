@@ -4,11 +4,12 @@ title: "Getting started with Open Data Standards"
 
 Use this guide to prepare data and metadata for Explore Education Statistics
 (EES). It follows a straightforward dataset with time, geography, filters and
-indicators. You can work in a spreadsheet, R, Python or another tool.
+indicators as an example, including example R and Python code.
 
 The [Open Data Standards](ud.qmd) are the full reference, including exceptions
 and accepted values. Requirements for the
-[EES API](api-data-standards.qmd) apply in addition to those standards.
+[EES API](api-data-standards.qmd) apply in addition to those standards where you 
+want to make files available through an API.
 
 ## 1. Know what you need to produce
 

@@ -24,6 +24,8 @@ approval process for API publication.
 
 With open data standards, our aim is to apply a consistent, logical structure to all data files so that they are easier to use and analyse, minimising the time spent deciphering and cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using our data, as well as opening up further opportunities for linking data.
 
+> “Tidy datasets are all alike but every messy dataset is messy in its own way.” – Hadley Wickham
+
 The guidance and standards here explicitly apply to all data files prepared for and uploaded to the explore education statistics service, but much of the content below equally applies to any data being prepared and disseminated both within the department and externally. 
 
 Data published via EES is released under the terms of the [Open Government License](http://www.nationalarchives.gov.uk/doc/open-government-licence/){target="_blank" rel="noopener noreferrer"} and by following the data standards provided here, published (or any other) data meets at least 3 stars for [Open Data](https://www.gov.uk/government/policies/improving-the-transparency-and-accountability-of-government-and-its-services/supporting-pages/releasing-data-in-open-formats){target="_blank" rel="noopener noreferrer"}.
@@ -39,15 +41,12 @@ An [interactive data screener](https://rsconnect/rsc/dfe-published-data-qa/){tar
 The app requires a data CSV and its associated [EES metadata CSV](#ees-metadata).
 It runs on Posit Connect and is only available when using DfE kit. Screen the
 pair, investigate the results, correct the source or preparation code, then
-regenerate and screen the final files again. Keep the results with your normal
-quality assurance records. For help, contact
+regenerate and screen the final files again. For help, contact
 [explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk).
 
 ::: {.callout-important}
   All data and EES metadata files must be run through the [screening app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} before uploading to EES.
 :::
-
-### Validation and troubleshooting {#validation-and-troubleshooting}
 
 Screening identifies many formatting and consistency problems. It cannot decide
 whether your figures are correct, your disclosure control is sufficient or your
@@ -55,42 +54,9 @@ dataset answers users' questions. Combine it with
 [publication-specific sense checks](../RAP/common-rap-principles/publication-project-specific-automated-sense-checks.qmd)
 and a preview of tables and charts in EES.
 
-These are common problems to investigate, **not exact screener messages**.
-Start with file and column problems before checking the figures.
-
-::: {.table-responsive tabindex="0" role="region" aria-label="Validation and troubleshooting"}
-
-| Problem | What to check and change | Type of check |
-|---|---|---|
-| File cannot be read as expected | Export as UTF-8 CSV with one header row; quote values containing commas. Remove title rows and accidental row numbers. See [data format](#data-format). | File format; automated checks and inspection |
-| Missing or unexpected columns | Use the exact mandatory names, including `geographic_level`. Check spelling and trailing spaces in data headers and metadata `col_name`. | Syntax; automated checks |
-| Metadata is incomplete | Include all eight headers. Fill `col_name`, `col_type` and `label`; leave inapplicable cells blank. Check [metadata exceptions](#ees-metadata) before adding a row for every data column. | Metadata; automated checks and inspection |
-| Indicator precision is unset | Set a suitable non-negative integer `indicator_dp` for each indicator. Blank values default to two decimal places; filter rows should leave it blank. | Metadata; tool warnings and analyst judgement |
-| A percentage displays at the wrong scale | Store 52.4 for 52.4%, with `%` in metadata. Check the denominator and ensure counts and percentages are separate indicators. | Data quality and display; manual or publication-specific checks |
-| Totals disagree or rows repeat | Compare the source and output using time, geography and all filters as the row identity. Check for duplicate observations, overlapping categories and totals added to detail. | Statistical quality; publication-specific checks |
-| Users get empty or confusing selections | Review which filter combinations exist, which measures share a population, and whether missing observations need [symbols](#data-symbols). See [dataset design decisions](#dataset-design-decisions). | Structure; analyst judgement and EES preview |
-| A grouping filter appears as another selectable filter | Reference the grouping column in `filter_grouping_column` on the grouped filter's metadata row; do not give the grouping column its own row. | Metadata; automated checks and EES preview |
-| Geography codes are rejected | Check names, codes, levels and the relevant year's boundaries against maintained [reference data](../RAP/rap-statistics/rap-statistics-preparing-data.qmd#standardised-reference-data). Do not invent replacement codes. | Consistency; automated checks and reference review |
-| A field or item is absent from the API dictionary | Discuss standardisation or a new entry with the platform team. Do not rename a valid concept merely to make a warning disappear. | API; warning investigation and manual agreement |
-
-:::
-
-Resolve failures before upload and investigate warnings. Some warnings affect
-API suitability even if the basic upload can proceed. For API publication,
-[resolve warnings and errors, pass upload checks and request activation](api-data-standards.qmd#api-publishing-checklist).
-An automated result does not grant manual approval. Keep API labels within
-**80 characters**, even if a tool allows more.
-
 The [Shiny app source](https://github.com/dfe-analytical-services/dfe-published-data-qa)
 and [eesyscreener package source](https://github.com/dfe-analytical-services/eesyscreener)
-are available for reference. The version of the internal app may differ. If
-tools give different results, record their versions where available, the check
-and the affected fields, then ask the platform team to investigate.
-
-
----
-
-> “Tidy datasets are all alike but every messy dataset is messy in its own way.” – Hadley Wickham
+are available for reference.
 
 ---
 
@@ -113,7 +79,7 @@ For data to be used with the table tool and charts in EES, it needs to meet the 
 * The data should use the [appropriate GSS codes](#data-symbols) for suppressed, low, not available and not applicable entries.
 * The data field IDs, labels and items should conform to [DfE harmonised variables](#common-harmonised-variables) where available.
 
-An example pair of data and metadata files is illustrated below. These synthetic figures are extracts, not a complete publication dataset. Percentages use the total for the same year, geography and education phase as their denominator. See the [complete worked example](open-data-getting-started.qmd#worked-example) for a full set of combinations.
+An example pair of data and metadata files is illustrated below. There are usually multiple pairs of files within a single publication.
 
 ---
 
@@ -442,7 +408,7 @@ If you are not providing a full timeseries for any reason, you must link to the 
 
 Explore education statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.
 
-The first key consideration is that the table tool will only create tables from a single a data file, and cannot use multiple files as sources. Therefore any data that you want to compare within a single table must in the same data file. The table tool itself is there to allow users to narrow down the amount of data they have to absorb and to be able to efficiently take away key statistics.
+The first key consideration is that the table tool will only create tables from a single a data file, and cannot use multiple files as sources. Therefore any data that you want to compare within a single table must be published within the same data file. The table tool itself is there to allow users to narrow down the amount of data they have to absorb and to be able to efficiently take away key statistics.
 
 A useful way to judge how to break up data files is to consider whether all of the data in the file is appropriate to show side-by-side in the same table. If there are data that are conceptually different or may be confusing to compare side by side, then these should be in separate data files. Any data file uploaded to EES is usable by all users in the table tool, and users will be able to download the exact same files as you upload.
 
@@ -650,7 +616,7 @@ You also cannot mix yearly breakdowns (e.g. full year, quarters, months, or term
 | 2017        |	Calendar year   | July  |
 
 
-If your row of data spans multiple years (e.g. is a cumulative sum between 2010 and 2018), the starting year should be made clear in the name of the indicator, with the year of the end of the time period listed in `time_period`. For example if you had been recording the number of enrolments in a Local authority since from the start of the 2010/11 Academic year to the end of the 2017/18 Academic year, your data would look like the example on the right.
+If your row of data spans multiple years (e.g. is a cumulative sum between 2010 and 2018), the starting year should be made clear in the name of the indicator, with the year of the end of the time period listed in `time_period`. For example if you had been recording the number of enrolments in a Local authority since from the start of the 2010/11 Academic year to the end of the 2017/18 Academic year, your data would look like the example below.
 
 
 | time_period | time_identifier | starts_since_201011 |
@@ -874,7 +840,7 @@ This approach will work for basic filtering of providers and schools but it may 
 - You do not have to publish at every level in the guide, publish the selection of levels you feel appropriate.
 - You should regularly check that you are using the most up to date geography names and codes.
 - Aside from blanks, no two geographic locations should have the same code.
-- You can usually mix geography levels in one file. Follow the [School, Provider, Planning area and Institution exceptions](#allowable-geographic-levels) above when deciding which levels to combine.
+- You should usually mix multiple geography levels in one file. Follow the [School, Provider, Planning area and Institution exceptions](#allowable-geographic-levels) above when deciding which levels to combine.
 
 ---
 
