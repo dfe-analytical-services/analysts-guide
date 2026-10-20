@@ -331,19 +331,16 @@ welcome to open a PR with a fix.
 
 ### Checking Open Data Standards examples
 
-Run `Rscript --vanilla scripts/check-open-data-examples.R` from the repository
-root when changing the standards pages, example CSVs or preparation scripts.
-It checks that the example data, metadata and selected figures agree. It runs
-on pull requests and before site publication. Install `dfeR`, `dplyr` and `tidyr` to check the R transformation.
-Set `EXAMPLE_PYTHON` to a Python executable to check the Python transformation.
-The pull request workflow installs the R packages and runs both scripts.
+If you change an example CSV, check that its data and metadata columns match
+and that its totals and percentages are correct. The beginner page and demo
+tables read the downloadable CSVs, so render the affected pages too.
 
-The beginner page and demo tables read the downloadable CSVs. If the worked
-example changes, update the source and output CSVs. Run the R script beside
-the source CSV and the Python script beside the source and region lookup CSV.
-Use separate folders because both scripts replace their output files. Check
-that both produce the downloads. Export the region lookup from
-`dfeR::fetch_regions()` and keep only the nine codes beginning `E12`.
+If you change the worked example, run the R and Python preparation scripts in
+separate folders and compare both sets of output files with the downloads.
+The R script needs the source CSV; the Python script needs the source and
+region lookup CSVs. Both scripts replace their output files. Export the
+region lookup from `dfeR::fetch_regions()` and keep only the nine codes
+beginning `E12`.
 
 
 ### Make Changes
