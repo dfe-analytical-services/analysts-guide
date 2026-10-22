@@ -1,0 +1,5 @@
+# Example scripts for readers to download, not dependencies of the site
+resources/open-data-standards/
+
+# Images only, skipped to speed up dependency discovery
+images/
