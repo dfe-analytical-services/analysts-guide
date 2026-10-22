@@ -1,4 +1,4 @@
-"""Prepare synthetic EES data from the wide source and region lookup CSVs."""
+"""Prepare illustrative EES data from the wide source and region lookup CSVs."""
 
 import pandas as pd
 

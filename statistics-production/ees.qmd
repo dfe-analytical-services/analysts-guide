@@ -394,12 +394,12 @@ If you are experiencing issues or need help with creating a new release, you can
 
 ### Data and files
 
-Preparing your first dataset? Follow [Getting started with Open Data Standards](open-data-getting-started.qmd)
-for the data structure, matching metadata and validation steps before uploading.
+Moving existing tables into tidy data files? Follow [Getting started with tidy data](tidy-data-getting-started.qmd)
+for how to structure your data files and metadata before uploading.
 
 ---
 
-You need to make sure that the data files and accompanying [metadata](../statistics-production/ud.html#ees-metadata) have passed through our [data screener checks](https://rsconnect/rsc/dfe-published-data-qa/) before trying to upload it.
+Data files and their accompanying [metadata](../statistics-production/ud.html#ees-metadata) are checked against the data standards automatically when you upload them. You can run the same checks before uploading using the [data screener app](https://rsconnect/rsc/dfe-published-data-qa/) or the [eesyscreener](https://github.com/dfe-analytical-services/eesyscreener) R package.
 
 All data files uploaded will be available to download for users to explore (this will be in the same format as they are uploaded).
 

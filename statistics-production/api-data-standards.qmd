@@ -27,7 +27,7 @@ that only return warnings, plus manual inspection by the platform gatekeepers. T
 - Character limits for col_names and filter items.
 
 The tables below show how to arrange filters and indicators. For complete
-data and metadata files, see the [worked example](open-data-getting-started.qmd#worked-example).
+data and metadata files, see the [worked example](tidy-data-getting-started.qmd#worked-example).
 
 ## API publishing checklist
 

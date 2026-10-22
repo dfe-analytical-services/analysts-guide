@@ -1,7 +1,7 @@
 library(dplyr)
 library(tidyr)
 
-# Run from the folder containing pupil-source.csv. Counts are synthetic and complete.
+# Run from the folder containing pupil-source.csv. Counts are for illustration only and have no missing values.
 source_data <- read.csv("pupil-source.csv")
 
 # Add codes from dfeR's maintained region lookup. Reject unmatched names.
