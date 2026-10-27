@@ -187,6 +187,8 @@ This is surprisingly neat to do. Let's say you wanted to roll back to version 1.
 
 - Here is another free introduction to R course by [Quantargo](https://www.quantargo.com/courses/course-r-introduction/){target="_blank" rel="noopener noreferrer"}.
 
+- [Posit academy](https://academy.posit.co/page/all-courses){target="_blank" rel="noopener noreferrer"} offers a range of on-demand courses on topics including R, renv, R Shiny, Git and Positron.
+
 - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/){target="_blank" rel="noopener noreferrer"}, hopefully this one should be relatively self-explanatory!
 
 - [Data science in education](https://datascienceineducation.com/){target="_blank" rel="noopener noreferrer"} provides a heavily detailed guide for beginners in R learning to process data, with some well written out sections that may be of interest.
