@@ -2,36 +2,28 @@
 # the repo. Unless a later match takes precedence,
 # these will always be requested as reviewer when someone
 # opens a pull request.
-* @cjrace
+* @lauraselby @laragarbett @rmbielby
 
 # The workflow and website setup files are jointly owned
-_quarto.yml  @cjrace @rmbielby
-.github  @cjrace @rmbielby
+_quarto.yml  @lauraselby @laragarbett @rmbielby
+.github  @lauraselby @laragarbett @rmbielby 
 
 # The following files and folders are owned by the SDT team
-/ADA/ @laragarbett @Lsnaathorst1 @mzayeddfe 
-/RAP/ @laragarbett @Lsnaathorst1 @mzayeddfe
-/resources/ @laragarbett @Lsnaathorst1 @mzayeddfe
-/learning-development/ @laragarbett @Lsnaathorst1 @mzayeddfe
+/ADA/ @laragarbett @Lsnaathorst1 @kimberley-hoskins @robert-tarrant @matthewrobinson
+/RAP/ @laragarbett @Lsnaathorst1 @kimberley-hoskins @robert-tarrant @matthewrobinson
+/resources/ @laragarbett @Lsnaathorst1 @kimberley-hoskins @robert-tarrant @matthewrobinson
+/learning-development/ @laragarbett @Lsnaathorst1 @kimberley-hoskins @robert-tarrant @matthewrobinson
 
 # The following files and folders are owned by the EESP team
-/statistics-production/api-data-standards.qmd @rmbielby
-/statistics-production/ees.qmd @rmbielby
-/statistics-production/embedded-charts.qmd @rmbielby
-/statistics-production/examples.qmd @rmbielby
-/statistics-production/ud.qmd @rmbielby
-/data_examples/ @rmbielby
-/writing-visualising/dashboards_rshiny.qmd @rmbielby
-/writing-visualising/dashboards.qmd @rmbielby
-/resources/Methodology_template_EES.docx @rmbielby
+/statistics-production/ @rmbielby @dying-478 @matthewrobinson
+/data_examples/ @rmbielby @dying-478 @matthewrobinson
+/writing-visualising/dashboards_rshiny.qmd @rmbielby @dying-478 @matthewrobinson
+/writing-visualising/dashboards.qmd @rmbielby @dying-478 @matthewrobinson
+/resources/Methodology_template_EES.docx @rmbielby @dying-478 @matthewrobinson
 
 # The following files relate to publication scrums
 /resources/Content_Design_Logbook_Dashboards.xlsx @rmbielby
 /resources/Content_Design_Logbook.xlsx @rmbielby
 /resources/Content_Design_Scrum_Progression.pptx @rmbielby
 /resources/Content_Design_Scrums_Insights_final.docx @rmbielby
-/statistics-production/scrums.qmd @rmbielby
 
-# The following files cover our take on the analysis function best practice
-/writing-visualising/visualising.qmd @rmbielby
-/writing-visualising/writing.qmd @rmbielby 

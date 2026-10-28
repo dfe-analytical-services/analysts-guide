@@ -41,7 +41,7 @@ Databricks autosaves your notebooks as you're working on them, making version co
 ## GitHub or Azure DevOps?
 
 
-Either GitHub or Azure DevOps repos can be used in connection with Databricks, but we advise you to follow the guidance relating to public and private repos in our [What is Git for?](https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html#what-is-git-for) section.
+Both GitHub and Azure DevOps repos can be used with Databricks, and you can connect to both providers using multiple tokens if you work across both platforms. When choosing where to host your repo, follow the guidance on public and private repos in our [What is Git for?](https://dfe-analytical-services.github.io/analysts-guide/learning-development/git.html#what-is-git-for) section.
 
 ------------------------------------------------------------------------
 
