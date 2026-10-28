@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Databricks fundamentals – Analysts’ Guide</title>
+<title>Getting started with Databricks – Analysts’ Guide</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -49,8 +49,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4db7c5bf089470a15bfb113b0147cd32.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-375154715c2011e11697135fb069d9f1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-4a70437f6746959cc3cb7a1c6b881b6e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b89f3f33d37c4b9088f1c724a4e450ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-4f0361b35719df648055142ed98ae8b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -278,7 +278,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">Databricks and ADA</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_fundamentals.html">Databricks fundamentals</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">Databricks and ADA</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_fundamentals.html">Getting started with Databricks</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -651,7 +651,7 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ADA/databricks_fundamentals.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Databricks fundamentals</span></a>
+ <span class="menu-text">Getting started with Databricks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -715,13 +715,8 @@ cookieconsent.run({
    
   <ul>
   <li><a href="#what-is-databricks" id="toc-what-is-databricks" class="nav-link active" data-scroll-target="#what-is-databricks">What is Databricks?</a></li>
-  <li><a href="#key-differences" id="toc-key-differences" class="nav-link" data-scroll-target="#key-differences">Key differences</a>
-  <ul class="collapse">
-  <li><a href="#traditional-computing" id="toc-traditional-computing" class="nav-link" data-scroll-target="#traditional-computing">Traditional computing</a></li>
-  <li><a href="#on-databricks" id="toc-on-databricks" class="nav-link" data-scroll-target="#on-databricks">On Databricks</a></li>
-  <li><a href="#benefits-of-cloud-compute" id="toc-benefits-of-cloud-compute" class="nav-link" data-scroll-target="#benefits-of-cloud-compute">Benefits of cloud compute</a></li>
-  </ul></li>
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a>
+  <li><a href="#benefits-of-moving-to-databricks" id="toc-benefits-of-moving-to-databricks" class="nav-link" data-scroll-target="#benefits-of-moving-to-databricks">Benefits of moving to Databricks</a></li>
+  <li><a href="#key-elements-of-databricks" id="toc-key-elements-of-databricks" class="nav-link" data-scroll-target="#key-elements-of-databricks">Key elements of Databricks</a>
   <ul class="collapse">
   <li><a href="#storage" id="toc-storage" class="nav-link" data-scroll-target="#storage">Storage</a></li>
   <li><a href="#unity-catalog" id="toc-unity-catalog" class="nav-link" data-scroll-target="#unity-catalog">Unity catalog</a></li>
@@ -738,6 +733,7 @@ cookieconsent.run({
   <li><a href="#writing-and-running-code-notebooks" id="toc-writing-and-running-code-notebooks" class="nav-link" data-scroll-target="#writing-and-running-code-notebooks">Writing and running code: notebooks</a></li>
   <li><a href="#accessing-code-from-a-git-repository" id="toc-accessing-code-from-a-git-repository" class="nav-link" data-scroll-target="#accessing-code-from-a-git-repository">Accessing code from a Git repository</a></li>
   </ul></li>
+  <li><a href="#skilling-up-on-databricks" id="toc-skilling-up-on-databricks" class="nav-link" data-scroll-target="#skilling-up-on-databricks">Skilling up on Databricks</a></li>
   <li><a href="#databricks-faqs" id="toc-databricks-faqs" class="nav-link" data-scroll-target="#databricks-faqs">Databricks FAQs</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_fundamentals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -746,9 +742,9 @@ cookieconsent.run({
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">Databricks and ADA</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_fundamentals.html">Databricks fundamentals</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ADA/ada.html">Databricks and ADA</a></li><li class="breadcrumb-item"><a href="../ADA/databricks_fundamentals.html">Getting started with Databricks</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Databricks fundamentals</h1>
+<h1 class="title">Getting started with Databricks</h1>
 </div>
 
 
@@ -799,54 +795,25 @@ Tip
 <p>If you are looking to connect to Databricks with RStudio, take a look at the <a href="../ADA/databricks_rstudio_personal_cluster.html">guide to Databricks RStudio personal cluster page.</a></p>
 </div>
 </div>
-<hr>
 </section>
-<section id="key-differences" class="level2">
-<h2 class="anchored" data-anchor-id="key-differences">Key differences</h2>
-<p>Underpinning the technology are some key differences in how computers we’re familiar with, and Databricks (and distributed computing in general) are structured.</p>
+<section id="benefits-of-moving-to-databricks" class="level2">
+<h2 class="anchored" data-anchor-id="benefits-of-moving-to-databricks">Benefits of moving to Databricks</h2>
 <hr>
-<section id="traditional-computing" class="level3">
-<h3 class="anchored" data-anchor-id="traditional-computing">Traditional computing</h3>
-<hr>
-<p>Currently, we are used to using a PC or laptop to do our data processing. A traditional computer has all of the components it needs to function:</p>
+<p>Migration to Databricks offers a lot of potential benefits to analysts. These include:</p>
 <ul>
-<li>A processor and memory to do calculations</li>
-<li>A hard drive to store data permanently on</li>
-<li>A keyboard and mouse to capture user input</li>
-<li>A screen to provide outputs to the user</li>
+<li><strong>Data Access</strong> - All data, scripts and processes are available in a single place, reducing the need to work across multiple systems and tools.</li>
+<li><strong>Scalability</strong> - Computing resources can be increased when needed, allowing larger datasets and more complex analyses to be processed without being limited by local hardware.</li>
+<li><strong>Automation</strong> - Workflows can be scheduled to run automatically, reducing manual effort and supporting repeatable analytical processes.</li>
+<li><strong>Collaboration</strong> - Notebooks, reports and analytical assets can be shared across teams, improving transparency and reducing duplication of work.</li>
+<li><strong>Governance</strong> - Data and analytical assets are managed within a controlled environment, supporting secure access and compliance with departmental standards.</li>
+<li><strong>Auditability</strong> - Changes to data, code and outputs are recorded, making it easier to reproduce analyses, investigate issues and understand how results were produced.</li>
+<li><strong>Standardisation</strong> - Common datasets and shared resources can be maintained centrally, helping to improve consistency across analyses and publications.</li>
+<li><strong>Efficiency</strong> - Less time is spent managing infrastructure and technical limitations, allowing analysts to focus on generating insights and delivering value.</li>
 </ul>
-<p><img src="../images/ada-traditional-computer.jpg" class="img-fluid" width="273"></p>
-<p>Any traditional computer is limited by its hardware meaning there is an upper limit on the size and complexity of data it can process.</p>
-<p>In order to increase the amount of data a computer can process, you would have to switch out the physical hardware of the machine for something more powerful.</p>
 <hr>
 </section>
-<section id="on-databricks" class="level3">
-<h3 class="anchored" data-anchor-id="on-databricks">On Databricks</h3>
-<hr>
-<p>In Databricks you can scale the components of your machine up (CPU cores, RAM) without having to build a physical machine to house them, essentially temporarily ‘borrowing’ processor power, memory and storage from a super computer.</p>
-<p>This means you can perform very heavy analyses that your laptop wouldn’t be able to cope with. The Databricks platform provides a way for you to interface with the cloud computer in place of the keyboard/mouse and screen, taking your inputs and providing the resulting outputs back to you.</p>
-<p>The storage and computation are separated into different components rather than being within the same ‘machine’. Processing (processor and memory) is handled by a ‘compute’ resource, and storage (hard drive) is centralised in the ‘unity catalog’.</p>
-<p><img src="../images/ada-cloud-computing.jpg" class="img-fluid" width="515"></p>
-</section>
-<section id="benefits-of-cloud-compute" class="level3">
-<h3 class="anchored" data-anchor-id="benefits-of-cloud-compute">Benefits of cloud compute</h3>
-<hr>
-<ul>
-<li><strong>Scalable</strong> - if you need more computing power, you can increase your computing power and only pay for what you use rather than having to build an expensive new machine</li>
-<li><strong>Centralised</strong> - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required</li>
-<li><strong>Data Governance</strong> - The Department is able to ‘see’ all of its data and organisational knowledge. This enables it to ensure it is access controlled and align with GDPR and data protection legislation and guidelines</li>
-<li><strong>Auditing and version control</strong> - The Platform itself generates a lot of metadata which enables it to keep versioned history of its data, outputs, etc</li>
-<li><strong>Automation</strong> - Complex data processing pipelines can be set up using Databricks workflows and set to automatically run, either on a timer or a specific trigger allowing for a fully automated production process</li>
-</ul>
-<p>Each of these aspects bring benefits to the wider Department and for analysts within it.</p>
-<p>Due to the scalability of compute resources you can request a more powerful processing cluster allowing you to deal with larger datasets more simply, focussing on the analytical logic of it rather than having to build processes around technical limitations such as storage space and processing power.</p>
-<p>The centralised nature of the data storage makes navigation of the Department’s data estate much simpler with everything existing in a single environment. Combined with stronger data governance this makes discovery of supplementary or related data the Department holds much easier. In addition, it allows for datasets that are commonly used across the Department - such as ONS geography datasets - to be standardised and made available to all teams, ensuring consistency of data and it’s formatting across the Departments publications.</p>
-<p>The auditing, and automation facilities provide a lot of benefits when building data pipelines. These can be set up to run as required with little manual effort from analysts, and can build automated quality assurance into the pipeline so that analysts can be confident in the outputs. In addition, the auditing keeps a record of all inputs and outputs each time a process is run. Combining this with robust documentation stored in <a href="../ADA/databricks_notebooks.html">Notebooks</a> allows you debug issues retrospectively without having to repeatedly step through the process to see where unexpected issues have occurred.</p>
-<hr>
-</section>
-</section>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key concepts</h2>
+<section id="key-elements-of-databricks" class="level2">
+<h2 class="anchored" data-anchor-id="key-elements-of-databricks">Key elements of Databricks</h2>
 <section id="storage" class="level3">
 <h3 class="anchored" data-anchor-id="storage">Storage</h3>
 <p>There are a few different ways of storing files and data on Databricks. Your data, and modelling areas will reside in the ‘unity catalog’, whereas your scripts and code will live on your ‘workspace’.</p>
@@ -877,7 +844,7 @@ Tip
 <p>You can find more information on Databricks object names in the <a href="https://docs.databricks.com/gcp/en/sql/language-manual/sql-ref-names" target="_blank">Databricks SQL reference manual</a>, and more information on how special characters will be re-mapped in the <a href="https://educationgovuk-my.sharepoint.com/:x:/g/personal/ruwanika_weerakkody_education_gov_uk/EQxT1U-AbLFCmjTU-fYuK9EBkdYMyHjVrYeBUTWy2q9mFw?e=c4TLDX" target="_blank">special characters list</a>.</p>
 </div>
 </div>
-<p>The majority of data and files on Databricks should be stored in the ‘unity catalog’. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.</p>
+<p>The majority of data and files on Databricks should be stored in the ‘unity catalog’. This is a governance layer that sits above workspaces to centrally manage data access, security, and metadata across them. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.</p>
 <p>The unity catalog can be accessed through the ‘Catalog’ option in the Databricks sidebar.</p>
 <p><img src="../images/ada-unity-catalog-sidebar.png" class="img-fluid"></p>
 <hr>
@@ -1086,7 +1053,7 @@ Tip
 <p>Writing scripts in SSMS and using IDEs such as RStudio are the way in which we currently write and run the majority of our code in DfE. You can learn more about how existing code will be affected by the introduction of Databricks in the <a href="../ADA/ada.html#what-this-means-for-existing-code">what this means for existing code</a> section below.</p>
 <p>Scripts (e.g.&nbsp;R scripts) can be created and saved in your Workspace (the equivalent of your personal folder) and run via the Databricks interface.</p>
 <p>There is detailed guidance on using the Databricks SQL editor, which is similar to SSMS, on the <a href="https://analytical-data-access.education.gov.uk/get-support/using-sql-in-databricks-sql-editor" target="_blank">ADA guidance site</a>.</p>
-<p>You can also run code from RStudio or other IDEs locally and execute it against the data held in Databricks. To do this, you will need to set up a connection between RStudio and the Databricks SQL Warehouse. This is explained in the <a href="../ADA/ada.html#r-scripts-in-rstudio">R scripts in RStudio section</a> below.</p>
+<p>You can also run code from RStudio or other IDEs locally and execute it against the data held in Databricks. To do this, you will need to set up a connection between RStudio and the Databricks SQL Warehouse. This is explained in the <a href="https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_sql_warehouse.html" target="_blank">R scripts in RStudio section</a> below.</p>
 <hr>
 </section>
 <section id="writing-and-running-code-workflows" class="level3">
@@ -1110,13 +1077,21 @@ Tip
 <hr>
 </section>
 </section>
+<section id="skilling-up-on-databricks" class="level2">
+<h2 class="anchored" data-anchor-id="skilling-up-on-databricks">Skilling up on Databricks</h2>
+<p>There are many different learning resources available to develop your understanding of Databricks.</p>
+<p>DataCamp has a number of courses that cover different aspects of Databricks. The <a href="https://app.datacamp.com/learn/custom-tracks/custom-gss-track-9a-databricks-foundations-beginner" target="_blank">GSS Databricks Foundations</a> track is designed for new users, while the <a href="https://app.datacamp.com/learn/custom-tracks/custom-gss-track-9b-databricks-for-intermediate-practitioners" target="_blank">GSS Databricks for Intermediate Practitioners</a> track is designed to build on users’ understanding of the basics. DataCamp requires a licence - if you’d like a licence, please email datacamp.requests@education.gov.uk and copy in your line manager.</p>
+<p>Databricks provides their own resources, including the <a href="https://www.databricks.com/training/catalog/databricks-fundamentals-2206" target="_blank">Databricks Fundamentals Course</a> to introduce you to some of the key concepts.</p>
+<p>There are monthly training workshops run by the ADA team. These are advertised on the <a href="https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">ADA user group Teams channel</a>.</p>
+<hr>
+</section>
 <section id="databricks-faqs" class="level2">
 <h2 class="anchored" data-anchor-id="databricks-faqs">Databricks FAQs</h2>
 <hr>
 <p><strong>Is Databricks different to RAP?</strong></p>
 <p>Yes - Databricks is a tool that you can use to create code and pipelines for reproducible analysis, similarly to how you’d currently use RStudio or SQL Server Management Studio.</p>
 <p><strong>How much time will it take me to learn the basics?</strong></p>
-<p>We recommend that you and your team engage with the platform as soon as possible so that you can learn at your own pace before you fully migrate. There are plenty of training resources available, including monthly training workshops run by the ADA team. These are advertised on the <a href="https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&amp;tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9" target="_blank">ADA user group Teams channel</a>.</p>
+<p>We recommend that you and your team engage with the platform as soon as possible so that you can learn at your own pace before you fully migrate</p>
 <p><strong>Can I still use SQL?</strong></p>
 <p>Eventually all teams will migrate away from using SQL Server Management Studio. However, you can still write SQL code inside Databricks, and you can still run SQL scripts from RStudio against data held in the Databricks unity catalog.</p>
 <p><strong>Do I have to move all my existing code over to Databricks?</strong></p>
