@@ -3,12 +3,10 @@ title: "Open Data Standards"
 ---
 
 ```{r include=FALSE}
-require(knitr)
-require(readxl)
-
-apprenticeship <- readxl::read_excel("../data_examples/apprenticeship_example.xlsx")
-metadata_data_example <- readxl::read_excel("../data_examples/metadata_data_example.xlsx")
-
+demo_data <- read.csv("../data_examples/ees_demo_datafile.csv",
+                      colClasses = "character", check.names = FALSE)
+demo_meta <- read.csv("../data_examples/ees_demo_datafile.meta.csv",
+                      colClasses = "character", check.names = FALSE)
 ```
 
 <p class="text-muted">Guidance on how to structure data files</p>
@@ -17,7 +15,16 @@ metadata_data_example <- readxl::read_excel("../data_examples/metadata_data_exam
 
 ## Introduction
 
+New to EES? Follow [Getting started with tidy data](tidy-data-getting-started.qmd)
+for how to move existing tables into tidy data files, with a worked example and
+[checklists](tidy-data-getting-started.qmd#checklists).
+Use this page for the complete requirements, accepted values and exceptions.
+[Statistics API Data Standards](api-data-standards.qmd) adds requirements and an
+approval process for API publication.
+
 With open data standards, our aim is to apply a consistent, logical structure to all data files so that they are easier to use and analyse, minimising the time spent deciphering and cleaning the data. Adopting these principles will give us more power to serve the needs of the users, saving both us and them time when producing and using our data, as well as opening up further opportunities for linking data.
+
+> “Tidy datasets are all alike but every messy dataset is messy in its own way.” – Hadley Wickham
 
 The guidance and standards here explicitly apply to all data files prepared for and uploaded to the explore education statistics service, but much of the content below equally applies to any data being prepared and disseminated both within the department and externally. 
 
@@ -29,18 +36,22 @@ Data published via EES is released under the terms of the [Open Government Licen
 
 ---
 
-An [interactive data screener](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} has been developed in R Shiny to automate checks against the standards as a final stage of automated quality assurance before upload to EES.
+EES checks every data file and its [EES metadata file](#ees-metadata) against these standards when you upload them, and will flag any problems.
 
-This can be run on any data file, though requires an associated [EES metadata file](#ees-metadata) to be able to process the file. The app runs on our Posit Connect (formerly RSConnect) servers, and is only available when using DfE kit. The app is mostly self-explanatory, though if you have any questions about it, or are curious to know more about how it works, the code is available on [GitHub](https://github.com/dfe-analytical-services/dfe-published-data-qa){target="_blank" rel="noopener noreferrer"}, and you can get in touch with us at explore.statistics@education.gov.uk.
+You can run the same checks earlier in your own process using either:
 
-::: {.callout-important}
-  All data and EES metadata files must be run through the [screening app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"} before uploading to EES.
-:::
+- the [data screener app](https://rsconnect/rsc/dfe-published-data-qa/){target="_blank" rel="noopener noreferrer"}, which runs on Posit Connect and is only available when using DfE kit
+- the [eesyscreener](https://github.com/dfe-analytical-services/eesyscreener){target="_blank" rel="noopener noreferrer"} R package, which you can use in your own code or pipeline
 
+Both need a data CSV and its matching metadata CSV. If a check fails, fix the
+source data or code that produces the files, then check them again.
 
----
+The screening checks cover formatting and consistency. They do not replace your
+own quality assurance or checking how your tables and charts look in EES.
 
-> “Tidy datasets are all alike but every messy dataset is messy in its own way.” – Hadley Wickham
+The [screener app source code](https://github.com/dfe-analytical-services/dfe-published-data-qa)
+is also available. For help, contact
+[explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk).
 
 ---
 
@@ -52,18 +63,18 @@ For data to be used with the table tool and charts in EES, it needs to meet the 
 
 * The data should be formatted as a [comma separated values (CSV) file](#data-format).
 * The first row of the data file should contain [machine readable column names](#variable-names) in [snake case](https://en.wikipedia.org/wiki/Snake_case){target="_blank" rel="noopener noreferrer"}.
-* The data should be layed out in line with [tidy data principles](#tidy-data-structure), consisting of filters (category fields) and indicators (value fields).
-* The file should contain the [necessary mandatory columns](#time-and-geography) (i.e. time_period, time_identifier, geographical_level, country_code and country_name);
+* The data should be laid out in line with [tidy data principles](#tidy-data-structure), consisting of filters (category fields) and indicators (value fields).
+* The file should contain the [necessary mandatory columns](#time-and-geography) (i.e. time_period, time_identifier, geographic_level, country_code and country_name);
 * The data file should have an accompanying [metadata CSV file](#ees-metadata), which contains information on the nature of the columns in the data file:
   * whether a given column is a filter or indicator;
   * human readable name for use in tables and charts on EES;
   * filter grouping information;
-  * number of decimal places to display for indicator fields (i.e. allowing a lower precision to be presented in the dervied tables than the underlying data - useful for minimising rounding errors in aggregates);
+  * number of decimal places to display for indicator fields (i.e. allowing a lower precision to be presented in the derived tables than the underlying data - useful for minimising rounding errors in aggregates);
   * units for indicator fields (e.g. £, %);
 * The data should use the [appropriate GSS codes](#data-symbols) for suppressed, low, not available and not applicable entries.
 * The data field IDs, labels and items should conform to [DfE harmonised variables](#common-harmonised-variables) where available.
 
-An example pair of data and metadata files are illustrated in the files and tables below.
+An example pair of data and metadata files is shown below. The numbers in these examples have been created for illustration only. There are usually multiple pairs of files within a single publication.
 
 ---
 
@@ -72,28 +83,17 @@ An example pair of data and metadata files are illustrated in the files and tabl
 ---
 
 ::: {.callout-note}
-The mandatory columns time_identifier, geographic_level and country_code are abridged in the table below to help with displaying in a web page, but are shown in the example file at the link above.
+The mandatory columns time_identifier, geographic_level and country_code are omitted from the table below to help with displaying in a web page, but are shown in the example file at the link above.
 :::
 
 ::: {.table-responsive}
 
-| time_period | ... | country_name | region_code | region_name | sex | school_phase | children_count  | children_percent |
-|-------------|-----|--------------|-------------|-------------|--------|--------------|-----------------|------------------|
-| 202021      | ... | England      |             |             | Total  | Total        | 1000            | 100.000          |
-| 202021      | ... | England      |             |             | Male   | Total        | 490             | 49.000           |
-| 202021      | ... | England      |             |             | Female | Total        | 510             | 51.000           |
-| 202021      | ... | England      |             |             | Total  | Primary      | 250             | 100.000          |
-| 202021      | ... | England      |             |             | Male   | Primary      | 131             | 52.400           |
-| 202021      | ... | England      |             |             | Female | Primary      | 119             | 47.600           |
-| 202021      | ... | England      | E12000001   | North East  | Total  | Total        | 100             | 100.000          |
-| 202021      | ... | England      | E12000001   | North East  | Male   | Total        | 32              | 32.000           |
-| 202021      | ... | England      | E12000001   | North East  | Female | Total        | 64              | 64.000           |
-| 202021      | ... | England      | E12000001   | North East  | Total  | Primary      | 43              | 100.000          |
-| 202021      | ... | England      | E12000001   | North East  | Male   | Primary      | 12              | 27.907           |
-| 202021      | ... | England      | E12000001   | North East  | Female | Primary      | 31              | 72.093           |
-| 201920      | ... | England      |             |             | Total  | Total        | 956             | 100.000          |
-| 201920      | ... | England      |             |             | Male   | Total        | 444             | 46.444           |
-| 201920      | ... | England      |             |             | Female | Total        | 512             | 53.556           |
+```{r echo=FALSE}
+#| output: asis
+knitr::kable(demo_data[, !names(demo_data) %in%
+                        c("time_identifier", "geographic_level", "country_code")],
+             row.names = FALSE)
+```
 
 :::
 
@@ -103,14 +103,14 @@ The mandatory columns time_identifier, geographic_level and country_code are abr
 
 ---
 
+[]{#example-metadata-file}
+
 ::: {.table-responsive}
 
-| col_name         | col_type  | label        | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
-|------------------|-----------|--------------|--------------------|----------------|--------------|-------------|------------------------|
-| sex          | Filter    | Sex       |                    |                |              | Filter by pupil sex |             |
-| school_phase     | Filter    | School phase |                    |                |              | Filter by the phase of the school |  |
-| children_count  | Indicator | Number of children |              |                |              |             |                        |
-| children_percent | Indicator | Percentage of children |          | %              | 1            |             |                        |
+```{r echo=FALSE}
+#| output: asis
+knitr::kable(demo_meta, row.names = FALSE)
+```
 
 :::
 
@@ -171,7 +171,7 @@ The variables (columns) in each of the uploaded data files will fall in to the f
 
 ---
 
-Indicators are the measureables in any data set. They should be grouped based on the type of measurement, with a column for each different type of measurement. For example, Number of pupils and Percentage of pupils would be two disticnt indicator columns in a data file.
+Indicators are the measurable values in any data set. They should be grouped based on the type of measurement, with a column for each different type of measurement. For example, Number of pupils and Percentage of pupils would be two distinct indicator columns in a data file.
 
 More details on indicators in the EES context are provided in the **[Indicators section](#indicators)** below.
 
@@ -181,7 +181,7 @@ More details on indicators in the EES context are provided in the **[Indicators 
 
 ---
 
-A single filter column should contain all the possible filter values for a single data-sub-aggregation. For example, many publications would have an ethnicity_major column containing all the major ethnic breakdowns contained in the data or an fsm column containing the entries FSM and non-FSM.
+A single filter column should contain all the possible filter values for one characteristic or breakdown. For example, many publications would have an ethnicity_major column containing all the major ethnic breakdowns contained in the data or an fsm column containing the entries FSM and non-FSM.
 
 In general, analysts should use a separate column for each filter in accordance with tidy data principles. This is especially the case where data are presented for combinations of filters (i.e. cross tabulations). User testing has shown this to be the most effective way to structure data for the best user experience with the table tool.
 
@@ -209,7 +209,7 @@ A possible exception to the above structure is where no filter combinations/cros
 | ... | FSM status      | FSM       | 406           |
 | ... | FSM status      | non-FSM   | 803           |
 
-With the above structure, breakdown_topic should be added as the fitler_grouping_column for breakdown in the associated meta data file (and therefore should not have its own row in the meta data).
+With the above structure, breakdown_topic should be added as the filter_grouping_column for breakdown in the associated meta data file (and therefore should not have its own row in the meta data).
 
 To re-iterate, teams should not use the above format when filter combinations/cross-tabulations are present in the data file they are producing, so breakdown_topic and breakdown should not contain entries such as "Sex and FSM" or "Female and FSM" respectively.
 
@@ -355,7 +355,7 @@ The table below summarises these guidelines.
 
 :::
 
-Through the above guidance, we aim to develop the DfE data catalogue into a consistent and predictable collection of data entries that anyone switching between different data files within the same publication or across different publications would more easily be able to navigate. As part of this, publication teams should regularly review their data files against this guidance and as outlined in the [Reviewing indicator and filter field naming](#reviewing-indicator-and-filter-field-naming) section
+Through the above guidance, we aim to develop the DfE data catalogue into a consistent and predictable collection of data entries that anyone switching between different data files within the same publication or across different publications would more easily be able to navigate. As part of this, publication teams should regularly review their data files against this guidance and as outlined in the [Reviewing indicator and filter field naming](#how-to-name-columns-fields) section
 
 ---
 
@@ -380,7 +380,7 @@ For saving results out of SQL as a CSV file there isn't an option to specify the
 When writing CSV files out of R, you'll mostly likely be using either `write.csv()` from base R, or `write_csv()` from the readr package. For the first one, you can specify encoding using `fileEncoding = ` like the following example:
 
 
-`write.csv(my_data, file = "my_data_file.csv", fileEncoding = "UTF-8")`
+`write.csv(my_data, file = "my_data_file.csv", row.names = FALSE, fileEncoding = "UTF-8")`
 
 
 For `write_csv()`, which some of you may be using for increased processing speed, the function automatically encodes as UTF-8 format, meaning that you don't have to do anything different!
@@ -403,11 +403,103 @@ If you are not providing a full timeseries for any reason, you must link to the 
 
 Explore education statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.
 
-The first key consideration is that the table tool will only create tables from a single a data file, and cannot use multiple files as sources. Therefore any data that you want to compare within a single table must in the same data file. The table tool itself is there to allow users to narrow down the amount of data they have to absorb and to be able to efficiently take away key statistics.
+The first key consideration is that the table tool will only create tables from a single a data file, and cannot use multiple files as sources. Therefore any data that you want to compare within a single table must be published within the same data file. The table tool itself is there to allow users to narrow down the amount of data they have to absorb and to be able to efficiently take away key statistics.
 
 A useful way to judge how to break up data files is to consider whether all of the data in the file is appropriate to show side-by-side in the same table. If there are data that are conceptually different or may be confusing to compare side by side, then these should be in separate data files. Any data file uploaded to EES is usable by all users in the table tool, and users will be able to download the exact same files as you upload.
 
 We generally recommend fewer large files over a larger number of smaller files. **If you think you are having issues with file size please tell us** so that we can investigate and work towards a solution with you.
+
+#### Dataset design decisions {#dataset-design-decisions}
+
+Start with the comparisons users will want to make, then work through the
+decisions below. The examples use pupil numbers by sex and education phase.
+
+##### Is it a filter or an indicator?
+
+A filter is something users pick from to choose which rows they see, such as
+sex or education phase. An indicator is a value being measured, such as a count
+or a percentage.
+
+Give each indicator its own column. Do not put counts and percentages in the
+same column, as they need different units and decimal places.
+
+| education_phase | sex | pupil_count | pupil_percent |
+|---|---|---|---|
+| Primary | Male | 13100 | 52.4 |
+| Primary | Female | 11900 | 47.6 |
+
+##### Should these measures go in the same file?
+
+Keep measures in the same file when they describe the same groups and users
+will want to see them together. A count and the percentage worked out from it
+usually belong together, as in the example above.
+
+The table tool builds each table from one data file. If you split measures that
+describe the same groups into different files, users cannot compare them in one
+table.
+
+##### When should data go in separate files?
+
+Split data into separate files when the measures do not share the same
+breakdowns.
+
+For example, you might have pupil numbers by sex and phase, but school numbers
+by phase only, because schools do not have a sex. If you put both in one file,
+every sex row needs a school count. You either repeat the same school count for
+male, female and total, which users may add up by mistake, or fill the cells
+with `z`:
+
+| education_phase | sex | pupil_count | school_count |
+|---|---|---|---|
+| Primary | Male | 13100 | z |
+| Primary | Female | 11900 | z |
+| Primary | Total | 25000 | 120 |
+
+It is clearer to publish two files. One has pupil numbers by phase and sex:
+
+| education_phase | sex | pupil_count |
+|---|---|---|
+| Primary | Male | 13100 |
+| Primary | Female | 11900 |
+| Primary | Total | 25000 |
+
+The other has school numbers by phase:
+
+| education_phase | school_count |
+|---|---|
+| Primary | 120 |
+
+The same applies when measures are based on different populations, for example
+pupils in one file and teachers in another. Before splitting, think about
+whether users will lose a comparison they need. There are more examples in the
+[API data standards](api-data-standards.qmd#tidy-data-structure).
+
+##### What totals and combinations do users need?
+
+Use a separate filter column for each breakdown, so users can combine them, for
+example female pupils in primary schools. Include totals for each filter, such
+as `Total` for sex and `All education phases` for phase.
+
+Fill in every combination you intend to publish, using the
+[standard symbols](#data-symbols) where a value is not available. Only include
+combinations you have the data for. Do not try to work out combinations from
+separate totals.
+
+If your source only has separate breakdowns and no combinations, such as one
+table by sex and another by free school meals status, you can use the
+[breakdown_topic and breakdown](#introduction-to-filters) columns instead.
+
+##### Other things to consider
+
+- Long lists of filter items can be easier to use with a
+  [grouping column](#grouping-filters).
+- You can usually include national, regional and local authority rows in the
+  same file. Check the [rules for each geographic level](#allowable-geographic-levels),
+  including the exceptions for school and provider level data.
+- If you plan to publish through the API, the [API data standards](api-data-standards.qmd)
+  add further requirements.
+- A file can pass the screening checks and still be hard to use. Try building a
+  table and a chart from it in EES before publishing.
 
 ---
 
@@ -454,7 +546,9 @@ If you have any other conventions you've used in previous publications, a scenar
 
 ## EES metadata
 
-Metadata in a machine readable (CSV) format must accompany datasets uploaded to the explore education statistics service to ensure that the files can be processed correctly. This data will not be seen by users and is purely for EES to be able to understand and read your data.
+Each dataset uploaded to Explore Education Statistics needs a matching metadata
+CSV. EES uses it to interpret the data columns. The labels, hints, units and
+display precision affect what users see in tables and charts.
 
 
 This EES metadata is different to any metadata files you may provide alongside your data for your users.
@@ -478,6 +572,17 @@ With some files there may be more than one way to specify the metadata that will
 ### Mandatory EES metadata columns
 
 ---
+
+**Include all eight column headers below, even when some cells are empty.**
+Every metadata row needs `col_name`, `col_type` and `label`. A required column
+does not mean that every cell in that column must contain a value.
+
+For `Filter` rows, leave `indicator_grouping`, `indicator_unit` and
+`indicator_dp` empty. For `Indicator` rows, leave `filter_hint` and
+`filter_grouping_column` empty. The table below explains the optional values
+and defaults. Set `indicator_dp` explicitly for indicators to make the intended
+display clear; leaving it empty defaults to two decimal places.
+
 
 | column                 | details                                                        |
 |------------------------|----------------------------------------------------------------|
@@ -515,23 +620,12 @@ Please contact the [explore education statistics platforms team](mailto:explore.
 
 ---
 
-Each row represents a column in the data file.
-
-::: {.table-responsive}
-
-| col_name | col_type | label | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
-|----------|----------|-------|--------------------|----------------|-------------|------------------------|---|
-| sex | Filter | Sex | | | | Filter by pupil sex | |
-| school_phase | Filter | School phase | | | | Filter by the phase of the school | |
-| children_count | Indicator | Number of children | | | | | |
-| children_percent | Indicator | Percentage of children | | % | 1 | | |
-
-:::
-
----
-
-
-`r knitr::kable(metadata_data_example, caption = "The corresponding data file.")`
+Each metadata row describes one filter or indicator in the data file.
+The [downloadable example pair](#example-metadata-file) above uses matching
+column names. Do not add metadata rows for standard time and geography
+columns, single-entry filters or columns used only to group another filter.
+See the [worked example](tidy-data-getting-started.qmd#create-the-metadata)
+for an explanation of each metadata row.
 
 ---
 
@@ -587,7 +681,7 @@ You also cannot mix yearly breakdowns (e.g. full year, quarters, months, or term
 | 2017        |	Calendar year   | July  |
 
 
-If your row of data spans multiple years (e.g. is a cumulative sum between 2010 and 2018), the starting year should be made clear in the name of the indicator, with the year of the end of the time period listed as the time identifier. For example if you had been recording the number of enrolments in a Local authority since from the start of the 2010/11 Academic year to the end of the 2017/18 Academic year, your data would look like the example on the right.
+If your row of data spans multiple years (e.g. is a cumulative sum between 2010 and 2018), the starting year should be made clear in the name of the indicator, with the year of the end of the time period listed in `time_period`. For example if you had been recording the number of enrolments in a Local authority since from the start of the 2010/11 Academic year to the end of the 2017/18 Academic year, your data would look like the example below.
 
 
 | time_period | time_identifier | starts_since_201011 |
@@ -693,11 +787,11 @@ The geographic_level column should describe the level of data present in that ro
 
 Teams should make sure that they are regularly checking their geography codes if they are not using a lookup from a maintained database (such as in the PDR). ONS have the [Open Geography portal](http://geoportal.statistics.gov.uk/){target="_blank" rel="noopener noreferrer"}, which can be a useful way of checking these. There is a wealth of data on there, though Local authority boundaries can be hard to find, they can be found using the tabs at the top – Boundaries > Administrative Boundaries > Counties and Unitary Authorities.
 
-Teams can also use the lookup tables available via the [data screener GitHub repository data folder](https://github.com/dfe-analytical-services/dfe-published-data-qa/tree/master/data){target="_blank" rel="noopener noreferrer"}. Guidance on how to link directly to the latest data in your code can be seen in the [standardised reference data section](../RAP/rap-statistics.html#standardised-reference-data)
+Teams can also use the lookup tables available via the [data screener GitHub repository data folder](https://github.com/dfe-analytical-services/dfe-published-data-qa/tree/master/data){target="_blank" rel="noopener noreferrer"}. Guidance on how to link directly to the latest data in your code can be seen in the [standardised reference data section](../RAP/rap-statistics/rap-statistics-preparing-data.qmd#standardised-reference-data)
 
 If you have data from an unknown location, the standard is to use 'Not available' as name, and 'x' as the code/s, this clearly marks that the geographical data for that row is unavailable, and does so in a consistent way with the wider GSS. If you have a unique variation of a certain location, e.g. 'Outside of England and unknown', we may be able to add these in as exceptions. Locations like this would have a code of 'z' as no widely used code is applicable, please get in touch with us to discuss it further if you think this might apply to you.
 
-We expect that all geography codes will be based on the Open Geography Portal and run checks against this for various levels in the [data screener](#How-to-check-against-these-standards), please contact us if you have data that doesn't match this.
+We expect that all geography codes will be based on the Open Geography Portal and run checks against this for various levels in the [data screener](#how-to-check-against-these-standards), please contact us if you have data that doesn't match this.
 
 ::: {.callout-note}
 Where you have data for a legacy LA that does not have a 9-digit new code, leave those cells as blank instead.
@@ -811,7 +905,7 @@ This approach will work for basic filtering of providers and schools but it may 
 - You do not have to publish at every level in the guide, publish the selection of levels you feel appropriate.
 - You should regularly check that you are using the most up to date geography names and codes.
 - Aside from blanks, no two geographic locations should have the same code.
-- You can mix geographies in the same file, and should avoid separating files by geography unless size is an issue.
+- You should usually mix multiple geography levels in one file. Follow the [School, Provider, Planning area and Institution exceptions](#allowable-geographic-levels) above when deciding which levels to combine.
 
 ---
 
@@ -1214,7 +1308,7 @@ a single category under phase_type_grouping:
 
 ## Filters
 
-A filter is a variable that we break our data down by, such as school type, pupil characteristics, or NQT status. There are no required standards for these, you can include any filters that you feel benefit the users of your data.
+A filter is a variable that we break our data down by, such as school type, pupil characteristics, or NQT status. Choose filters that help users explore your data, following the [variable naming](#variable-names) requirements and the [harmonised variables](#common-harmonised-variables) guidance where applicable.
 
 Filter names must not include spaces, and ideally be formatted in [snake_case](https://en.wikipedia.org/wiki/Snake_case){target="_blank" rel="noopener noreferrer"} for ease of use. You can use abbreviations to keep the names short and usable, your users will be able to see what each variable name means in the data guidance. **Avoid starting variable names with a numeric character.**
 
@@ -1297,9 +1391,9 @@ Data file.
 
 | time_period | ... | country_name | appr_type        | appr_exact	     | starters | drop_outs | drop_out_rate |
 |-------------|-----|--------------|------------------|------------------|----------|-----------|---------------|
-| 2018        | ... | England      | Hair and beauty  | Hairdressing     | 200      | 10        | 0.05          |
-| 2018        |	... | England      | Hair and beauty  | Beauty therapy   | 100      | 2         | 0.02          |
-| 2018        |	... |	England      | Rail engineering |	Track signalling | 80       | 4         | 0.05          |
+| 2018        | ... | England      | Hair and beauty  | Hairdressing     | 200      | 10        | 5             |
+| 2018        |	... | England      | Hair and beauty  | Beauty therapy   | 100      | 2         | 2             |
+| 2018        |	... |	England      | Rail engineering |	Track signalling | 80       | 4         | 5             |
 
 :::
 
@@ -1309,12 +1403,12 @@ Corresponding EES metadata file.
 
 ::: {.table-responsive}
 
-| col_name | col_type | label | indicator_grouping | indicator_unit | filter_hint | filter_grouping_column |
-|----------|----------|-------|--------------------|----------------|-------------|------------------------|
-| starters | Indicator | Number of learners starting an apprenticeship | Apprentice starts | | | |
-| drop_outs | Indicator | Number of learners not completing an apprenticeship | Apprentice drop-outs | | | |
-| drop_out_rate | Indicator | Percentage of pupils not completing an apprenticeship | Apprentice drop-outs | % | | |
-| **appr_exact** | Filter | Type of apprenticeship | | | Select the apprenticeship types you're interested in | **appr_type** | |
+| col_name | col_type | label | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
+|----------|----------|-------|--------------------|----------------|--------------|-------------|------------------------|
+| starters | Indicator | Number of learners starting an apprenticeship | Apprentice starts | | 0 | | |
+| drop_outs | Indicator | Number of learners not completing an apprenticeship | Apprentice drop-outs | | 0 | | |
+| drop_out_rate | Indicator | Percentage of learners not completing an apprenticeship | Apprentice drop-outs | % | 1 | | |
+| appr_exact | Filter | Type of apprenticeship | | | | Select apprenticeship types | appr_type |
 
 :::
 
@@ -1338,9 +1432,9 @@ It is important to maintain a **yyyy-mm-dd** format as demonstrated below, so th
 
 | time_period | time_identifier | date               | geographic_level | country_code | country_name |absence_band  |
 |-------------|-----------------|--------------------|------------------|--------------|--------------|--------------|
-| 2020        | Week 50         | 2020-05-14         | National         | E92000001    | England      | 67.0 - 67.9  |
-| 2020        |	Week 50         | 2020-05-15         | National         | E92000001    | England      | 62.0 - 62.9  |
-| 2020        |	Week 50         | 2020-05-16         | National         | E92000001    | England      | 16.0 - 16.9  |
+| 2020        | Week 20         | 2020-05-14         | National         | E92000001    | England      | 67.0 - 67.9  |
+| 2020        |	Week 20         | 2020-05-15         | National         | E92000001    | England      | 62.0 - 62.9  |
+| 2020        |	Week 20         | 2020-05-16         | National         | E92000001    | England      | 16.0 - 16.9  |
 
 :::
 
@@ -1387,7 +1481,7 @@ Like filters, indicator names must not include spaces, and ideally be formatted 
 
 In EES, the platform itself will format large numeric values to include commas, so you do not need to have commas for separating large numbers in your data file.
 
-If you are including percentages and want to show 79% in EES, you would have the value 79 in your data file and specify % as the unit for that column in the EES metadata. As best practice we recommend that you include as much detail as possible in your underlying files when it comes to decimal places. As a default EES will round decimals to 2 d.p. in the platform, though if you would prefer to display your data to a different number of d.p. in the platform please use the [indicator_dp](#ees-metadata) column to specify this in the CSV metadata. Likewise with financial data, for don't include £ in the values in the data file, leave those cells as numeric only, include it as an indicator unit instead.
+If you are including percentages and want to show 79% in EES, you would have the value 79 in your data file and specify % as the unit for that column in the EES metadata. Include sufficient precision in the downloadable data for reuse, subject to your disclosure control and rounding policies. Display rounding in metadata does not protect more precise values in the downloadable file. As a default EES will round decimals to 2 d.p. in the platform, though if you would prefer to display your data to a different number of d.p. in the platform please use the [indicator_dp](#ees-metadata) column to specify this in the CSV metadata. Likewise with financial data, for don't include £ in the values in the data file, leave those cells as numeric only, include it as an indicator unit instead.
 
 In line with GSS best practice for communicating uncertainty, when using confidence intervals you should report the upper and lower bounds as separate columns rather than as one confidence interval column:
 
@@ -1411,13 +1505,13 @@ Many of our publications contain a large number of indicators. To improve the ex
 
 ::: {.table-responsive}
 
-| col_name | col_type | label | indicator_grouping | indicator_unit | filter_hint | filter_grouping_column |
-|----------|----------|-------|--------------------|----------------|-------------|------------------------|
-| nc_year | Filter | NC Year | | | Filter by national curriculum year | |
-| admissions_count | Indicator | Number of admissions | **Admissions** | | | |
-| applications_count | Indicator | Number of applications received | **Applications** | | | |
-| applications_online_count | Indicator | Number of online applications | **Applications** | | | |
-| applications_online_percent | Indicator | Percentage of online applications | **Applications** | | | |
+| col_name | col_type | label | indicator_grouping | indicator_unit | indicator_dp | filter_hint | filter_grouping_column |
+|----------|----------|-------|--------------------|----------------|--------------|-------------|------------------------|
+| nc_year | Filter | NC Year | | | | Filter by national curriculum year | |
+| admissions_count | Indicator | Number of admissions | Admissions | | 0 | | |
+| applications_count | Indicator | Number of applications received | Applications | | 0 | | |
+| applications_online_count | Indicator | Number of online applications | Applications | | 0 | | |
+| applications_online_percent | Indicator | Percentage of online applications | Applications | % | 1 | | |
 
 :::
 
