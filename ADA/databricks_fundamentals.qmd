@@ -1,5 +1,5 @@
 ---
-title: "Databricks fundamentals"
+title: "Getting started with Databricks"
 ---
 
 ------------------------------------------------------------------------
@@ -24,66 +24,24 @@ In addition, it also provides new tools within the platform to construct and aut
 If you are looking to connect to Databricks with RStudio, take a look at the [guide to Databricks RStudio personal cluster page.](../ADA/databricks_rstudio_personal_cluster.html)
 :::
 
-------------------------------------------------------------------------
-
-## Key differences
-
-Underpinning the technology are some key differences in how computers we're familiar with, and Databricks (and distributed computing in general) are structured.
+## Benefits of moving to Databricks
 
 ------------------------------------------------------------------------
 
-### Traditional computing
+Migration to Databricks offers a lot of potential benefits to analysts. These include:
+
+- **Data Access** - All data, scripts and processes are available in a single place, reducing the need to work across multiple systems and tools.
+- **Scalability** - Computing resources can be increased when needed, allowing larger datasets and more complex analyses to be processed without being limited by local hardware.
+- **Automation** - Workflows can be scheduled to run automatically, reducing manual effort and supporting repeatable analytical processes.
+- **Collaboration** - Notebooks, reports and analytical assets can be shared across teams, improving transparency and reducing duplication of work.
+- **Governance** - Data and analytical assets are managed within a controlled environment, supporting secure access and compliance with departmental standards.
+- **Auditability** - Changes to data, code and outputs are recorded, making it easier to reproduce analyses, investigate issues and understand how results were produced.
+- **Standardisation** - Common datasets and shared resources can be maintained centrally, helping to improve consistency across analyses and publications.
+- **Efficiency** - Less time is spent managing infrastructure and technical limitations, allowing analysts to focus on generating insights and delivering value.
 
 ------------------------------------------------------------------------
 
-Currently, we are used to using a PC or laptop to do our data processing. A traditional computer has all of the components it needs to function:
-
--   A processor and memory to do calculations
--   A hard drive to store data permanently on
--   A keyboard and mouse to capture user input
--   A screen to provide outputs to the user
-
-![](/images/ada-traditional-computer.jpg){width="273"}
-
-Any traditional computer is limited by its hardware meaning there is an upper limit on the size and complexity of data it can process.
-
-In order to increase the amount of data a computer can process, you would have to switch out the physical hardware of the machine for something more powerful.
-
-------------------------------------------------------------------------
-
-### On Databricks
-
-------------------------------------------------------------------------
-
-In Databricks you can scale the components of your machine up (CPU cores, RAM) without having to build a physical machine to house them, essentially temporarily 'borrowing' processor power, memory and storage from a super computer.
-
-This means you can perform very heavy analyses that your laptop wouldn't be able to cope with. The Databricks platform provides a way for you to interface with the cloud computer in place of the keyboard/mouse and screen, taking your inputs and providing the resulting outputs back to you.
-
-The storage and computation are separated into different components rather than being within the same 'machine'. Processing (processor and memory) is handled by a 'compute' resource, and storage (hard drive) is centralised in the 'unity catalog'.
-
-![](/images/ada-cloud-computing.jpg){width="515"}
-
-### Benefits of cloud compute
-
-------------------------------------------------------------------------
-
--   **Scalable** - if you need more computing power, you can increase your computing power and only pay for what you use rather than having to build an expensive new machine
--   **Centralised** - All data, scripts, and processes are available in a single place and access for any other user can be controlled by their author, or the wider Department as required
--   **Data Governance** - The Department is able to 'see' all of its data and organisational knowledge. This enables it to ensure it is access controlled and align with GDPR and data protection legislation and guidelines
--   **Auditing and version control** - The Platform itself generates a lot of metadata which enables it to keep versioned history of its data, outputs, etc
--   **Automation** - Complex data processing pipelines can be set up using Databricks workflows and set to automatically run, either on a timer or a specific trigger allowing for a fully automated production process
-
-Each of these aspects bring benefits to the wider Department and for analysts within it.
-
-Due to the scalability of compute resources you can request a more powerful processing cluster allowing you to deal with larger datasets more simply, focussing on the analytical logic of it rather than having to build processes around technical limitations such as storage space and processing power.
-
-The centralised nature of the data storage makes navigation of the Department's data estate much simpler with everything existing in a single environment. Combined with stronger data governance this makes discovery of supplementary or related data the Department holds much easier. In addition, it allows for datasets that are commonly used across the Department - such as ONS geography datasets - to be standardised and made available to all teams, ensuring consistency of data and it's formatting across the Departments publications.
-
-The auditing, and automation facilities provide a lot of benefits when building data pipelines. These can be set up to run as required with little manual effort from analysts, and can build automated quality assurance into the pipeline so that analysts can be confident in the outputs. In addition, the auditing keeps a record of all inputs and outputs each time a process is run. Combining this with robust documentation stored in [Notebooks](/ADA/databricks_notebooks.html) allows you debug issues retrospectively without having to repeatedly step through the process to see where unexpected issues have occurred.
-
-------------------------------------------------------------------------
-
-## Key concepts
+## Key elements of Databricks
 
 ### Storage
 
@@ -113,7 +71,7 @@ If column or table names contain hyphens, you will need to use [backticks](https
 You can find more information on Databricks object names in the [Databricks SQL reference manual](https://docs.databricks.com/gcp/en/sql/language-manual/sql-ref-names), and more information on how special characters will be re-mapped in the [special characters list](https://educationgovuk-my.sharepoint.com/:x:/g/personal/ruwanika_weerakkody_education_gov_uk/EQxT1U-AbLFCmjTU-fYuK9EBkdYMyHjVrYeBUTWy2q9mFw?e=c4TLDX).
 :::
 
-The majority of data and files on Databricks should be stored in the 'unity catalog'. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.
+The majority of data and files on Databricks should be stored in the 'unity catalog'. This is a governance layer that sits above workspaces to centrally manage data access, security, and metadata across them. This is similar in concept to a traditional database server, however the unity catalog also contains file storage in the form of volumes.
 
 The unity catalog can be accessed through the 'Catalog' option in the Databricks sidebar.
 
@@ -280,7 +238,7 @@ Scripts (e.g. R scripts) can be created and saved in your Workspace (the equival
 
 There is detailed guidance on using the Databricks SQL editor, which is similar to SSMS, on the [ADA guidance site](https://analytical-data-access.education.gov.uk/get-support/using-sql-in-databricks-sql-editor).
 
-You can also run code from RStudio or other IDEs locally and execute it against the data held in Databricks. To do this, you will need to set up a connection between RStudio and the Databricks SQL Warehouse. This is explained in the [R scripts in RStudio section](/ADA/ada.html#r-scripts-in-rstudio) below.
+You can also run code from RStudio or other IDEs locally and execute it against the data held in Databricks. To do this, you will need to set up a connection between RStudio and the Databricks SQL Warehouse. This is explained in the [R scripts in RStudio section](https://dfe-analytical-services.github.io/analysts-guide/ADA/databricks_rstudio_sql_warehouse.html) below.
 
 ---
 
@@ -313,7 +271,17 @@ Databricks has inbuilt Git functionality, and you can save your notebooks and sc
 
 ---
 
+## Skilling up on Databricks
 
+There are many different learning resources available to develop your understanding of Databricks.
+
+DataCamp has a number of courses that cover different aspects of Databricks. The [GSS Databricks Foundations](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-9a-databricks-foundations-beginner) track is designed for new users, while the [GSS Databricks for Intermediate Practitioners](https://app.datacamp.com/learn/custom-tracks/custom-gss-track-9b-databricks-for-intermediate-practitioners) track is designed to build on users' understanding of the basics. DataCamp requires a licence - if you'd like a licence, please email datacamp.requests@education.gov.uk and copy in your line manager.
+
+Databricks provides their own resources, including the [Databricks Fundamentals Course](https://www.databricks.com/training/catalog/databricks-fundamentals-2206) to introduce you to some of the key concepts.
+
+There are monthly training workshops run by the ADA team. These are advertised on the [ADA user group Teams channel](https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9).
+
+---
 
 ## Databricks FAQs
 
@@ -325,7 +293,7 @@ Yes - Databricks is a tool that you can use to create code and pipelines for rep
 
 **How much time will it take me to learn the basics?**
 
-We recommend that you and your team engage with the platform as soon as possible so that you can learn at your own pace before you fully migrate. There are plenty of training resources available, including monthly training workshops run by the ADA team. These are advertised on the [ADA user group Teams channel](https://teams.microsoft.com/l/team/19%3AGQW24K3V6M873QzUwpBIuyf8KZCxYByRawVsKQvpe-81%40thread.tacv2/conversations?groupId=c70bb59d-c5df-4af5-849f-36196ed14ba3&tenantId=fad277c9-c60a-4da1-b5f3-b3b8b34a82f9).
+We recommend that you and your team engage with the platform as soon as possible so that you can learn at your own pace before you fully migrate
 
 **Can I still use SQL?**
 
