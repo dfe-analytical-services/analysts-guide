@@ -122,6 +122,7 @@ website:
           - RAP/rap-case-studies.qmd
       - section: "Databricks and ADA"
         contents:
+          - ADA/databricks_strategy.qmd
           - ADA/ada.qmd
           - ADA/databricks_fundamentals.qmd
           - ADA/migrating_to_databricks.qmd

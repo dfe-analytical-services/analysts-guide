@@ -1,0 +1,55 @@
+---
+title: "Databricks strategy for analysts"
+---
+
+------------------------------------------------------------------------
+
+<p class="text-muted">
+
+This page sets out the general recommendations for using Databricks as an analyst in the Department for Education. It offers guidance on when and where existing processes should be moved onto Databricks vs. when it is appropriate to continue using existing tools such as RStudio or Positron.
+
+</p>
+
+------------------------------------------------------------------------
+
+## Background
+
+Databricks is now the main place for governed data access, including SQL work that previously used SQL Server Management Studio (SSMS), and all legacy servers have now been decommissioned. Databricks can be used for much more than just data storage however; it offers a comprehensive platform for data engineering, machine learning, and analytics. This leads to questions about if, how and when to leverage the platform for different types of analytical work. 
+
+The Statistics Services Unit spoke to analysts and related teams to understand how Databricks is working in practice and where clearer guidance is needed. Analysts told us Databricks has real potential, but the experience is uneven and teams need more support on when and how to use it.
+
+Following these discussions, we've worked with Databricks contractors to develop a strategy for analysts using the platform, providing structured guidance. The strategy is intended to be practical and flexible, recognising that there are different types of analysis, teams and users. Analysts should look for opportunities to make the most of Databricks, migrating existing processes where it makes sense, but should avoid low-value rewrites. 
+
+------------------------------------------------------------------------
+
+## Key principles
+
+::: callout-note
+### Summary
+
+Analysis should be moved into Databricks where doing so would have value, particularly for big data, repeatable intensive processes or shared governed outputs. 
+
+However, existing tools including RStudio and Positron still have a place where they allow analysis to be efficient, secure, reproducible and maintainable.
+:::
+
+- Analysts should build enough knowledge about Databricks & its functionality to understand how and where it can be useful.
+- Existing processes should be migrated to Databricks where doing so would realise clear benefits. These could include improving speed, governance, repeatability, sharing or reusability.
+- Existing processes do not necessarily need to migrate to Databricks; the benefits of doing so should be considered alongside the analytical context, user needs, competing priorities, and cost. Tools other than Databricks are still appropriate to use where they are suitable for the job.
+- AI assistants including Genie can be used to generate or translate code, but you are still responsible for what is produced and you must be able to understand, test, explain and maintain your processes.
+- Teams should share successes and frustrations arising from working in Databricks to support improvement of existing guidance, and should seek to learn from others. This could be via the [Statistics Development Team](mailto: statistics.development@education.gov.uk), contributing to the Analysts' Guide, or the Databricks knowledge share sessions.
+
+------------------------------------------------------------------------
+
+## Available support
+
+Support and resources are being developed for the analytical community:
+
+- The Databricks guidance on the Analysts' Guide website has been reviewed, with further improvements coming, to set out clear recommended approaches to Databricks migration and guidance on deciding when a process is worth migrating.
+- An exemplar migration for each of: a business critical model, a statistics publication pipeline, and a dashboard, will be published on the Analysts' Guide website to provide easy-to-follow, best practice examples of moving existing processes onto the Databricks platform.
+- A series of monthly [Databricks knowledge shares](https://educationgovuk.sharepoint.com/sites/lveesfa00074/SSU%20%20Open%20sharing/Forms/AllItems.aspx?id=%2Fsites%2Flveesfa00074%2FSSU%20%20Open%20sharing%2FDatabricks%20Knowledge%20Shares&viewid=a3d9f08d%2D4fe8%2D4848%2D9157%2Dd7e09b43f701&csf=1&CID=599e55a1%2Db0fc%2Da000%2D11d9%2Da88159430d0b&cidOR=SPO&FolderCTID=0x012000224A8980D0F5BE42981E5C8C6819EAD3&OR=Teams%2DHL&CT=1761738433238&TeamsCID=a2f8b358%2D5f62%2D4605%2Dabab%2D902c44fcd27e&ovuser=fad277c9%2Dc60a%2D4da1%2Db5f3%2Db3b8b34a82f9%2CKimberly%2EHOSKINS%40education%2Egov%2Euk&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNjA3MTYxNjAxNCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D) has launched to highlight examples of how analysts are using Databricks in their work, and an AC-wide Databricks contest will run in Jan-Feb 2027. 
+- Databricks learning tracks [GSS Tracks 9a & 9b](../learning-development/datacamp-tracks.html) have been published on DataCamp, tailored for DfE analysts. 
+- A brand new, analyst-led Databricks workshop series is in development, with initial pilot planned for December 2026 and full rollout in January 2027.
+- A network of Databricks champions will be established to provide accessible, wide-reaching support across the AC.
+- The [Statistics Development Team](mailto: statistics.development@education.gov.uk) will continue to provide support and guidance on Databricks best practice, and any queries around when and how to migrate analytical processes.
+
+------------------------------------------------------------------------
