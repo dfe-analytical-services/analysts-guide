@@ -27,7 +27,7 @@ Following these discussions, we've worked with Databricks contractors to develop
 ::: callout-note
 ### Summary
 
-Analysis should be moved into Databricks where doing so would have clear value, particularly for big data, repeatable intensive processes or shared governed outputs. 
+Analysis should be moved into Databricks where doing so would have value, particularly for big data, repeatable intensive processes or shared governed outputs. 
 
 However, existing tools including RStudio and Positron still have a place where they allow analysis to be efficient, secure, reproducible and maintainable.
 :::
@@ -35,8 +35,8 @@ However, existing tools including RStudio and Positron still have a place where 
 - Analysts should build enough knowledge about Databricks & its functionality to understand how and where it can be useful.
 - Existing processes should be migrated to Databricks where doing so would realise clear benefits. These could include improving speed, governance, repeatability, sharing or reusability.
 - Existing processes do not necessarily need to migrate to Databricks; the benefits of doing so should be considered alongside the analytical context, user needs, competing priorities, and cost. Tools other than Databricks are still appropriate to use where they are suitable for the job.
-- AI assistants including Genie can be used to generate or translate code, but you must still be able to understand, test, explain and maintain your processes.
-- Teams should share successes and frustrations arising from working in Databricks to support improvement of existing guidance, and should seek to learn from others.
+- AI assistants including Genie can be used to generate or translate code, but you are still responsible for what is produced and you must be able to understand, test, explain and maintain your processes.
+- Teams should share successes and frustrations arising from working in Databricks to support improvement of existing guidance, and should seek to learn from others. This could be via the [Statistics Development Team](mailto: statistics.development@education.gov.uk), contributing to the Analysts' Guide, or the Databricks knowledge share sessions.
 
 ------------------------------------------------------------------------
 
