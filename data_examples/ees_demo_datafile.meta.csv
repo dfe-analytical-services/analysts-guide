@@ -1,5 +1,5 @@
-col_name,col_type,label,indicator_grouping,indicator_unit,indicator_dp,filter_hint,filter_grouping_column
-sex,Filter,Sex,,,,Filterbypupilsex,
-school_phase,Filter,Schoolphase,,,,Filterbythephaseoftheschool,
-number_children,Indicator,Numberofchildren,,,,,
-percent_children,Indicator,Percentageofchildren,,%,1,,
+col_name,col_type,label,indicator_grouping,indicator_unit,indicator_dp,filter_hint,filter_grouping_column,filter_default
+sex,Filter,Sex,,,,Filter by pupil sex,,Total
+education_phase,Filter,Education phase,,,,Select education phases,,All education phases
+children_count,Indicator,Number of children,,,0,,,
+children_percent,Indicator,Percentage of children,,%,1,,,

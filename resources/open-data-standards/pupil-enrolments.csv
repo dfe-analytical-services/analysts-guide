@@ -1,0 +1,181 @@
+time_period,time_identifier,geographic_level,country_code,country_name,region_code,region_name,education_phase,sex,pupil_count,pupil_percent
+202223,Academic year,National,E92000001,England,,,All education phases,Female,462780,48.693
+202223,Academic year,National,E92000001,England,,,All education phases,Male,487620,51.307
+202223,Academic year,National,E92000001,England,,,All education phases,Total,950400,100.0
+202223,Academic year,National,E92000001,England,,,Primary,Female,257100,48.693
+202223,Academic year,National,E92000001,England,,,Primary,Male,270900,51.307
+202223,Academic year,National,E92000001,England,,,Primary,Total,528000,100.0
+202223,Academic year,National,E92000001,England,,,Secondary,Female,205680,48.693
+202223,Academic year,National,E92000001,England,,,Secondary,Male,216720,51.307
+202223,Academic year,National,E92000001,England,,,Secondary,Total,422400,100.0
+202223,Academic year,Regional,E92000001,England,E12000001,North East,All education phases,Female,21420,47.6
+202223,Academic year,Regional,E92000001,England,E12000001,North East,All education phases,Male,23580,52.4
+202223,Academic year,Regional,E92000001,England,E12000001,North East,All education phases,Total,45000,100.0
+202223,Academic year,Regional,E92000001,England,E12000001,North East,Primary,Female,11900,47.6
+202223,Academic year,Regional,E92000001,England,E12000001,North East,Primary,Male,13100,52.4
+202223,Academic year,Regional,E92000001,England,E12000001,North East,Primary,Total,25000,100.0
+202223,Academic year,Regional,E92000001,England,E12000001,North East,Secondary,Female,9520,47.6
+202223,Academic year,Regional,E92000001,England,E12000001,North East,Secondary,Male,10480,52.4
+202223,Academic year,Regional,E92000001,England,E12000001,North East,Secondary,Total,20000,100.0
+202223,Academic year,Regional,E92000001,England,E12000002,North West,All education phases,Female,61020,48.429
+202223,Academic year,Regional,E92000001,England,E12000002,North West,All education phases,Male,64980,51.571
+202223,Academic year,Regional,E92000001,England,E12000002,North West,All education phases,Total,126000,100.0
+202223,Academic year,Regional,E92000001,England,E12000002,North West,Primary,Female,33900,48.429
+202223,Academic year,Regional,E92000001,England,E12000002,North West,Primary,Male,36100,51.571
+202223,Academic year,Regional,E92000001,England,E12000002,North West,Primary,Total,70000,100.0
+202223,Academic year,Regional,E92000001,England,E12000002,North West,Secondary,Female,27120,48.429
+202223,Academic year,Regional,E92000001,England,E12000002,North West,Secondary,Male,28880,51.571
+202223,Academic year,Regional,E92000001,England,E12000002,North West,Secondary,Total,56000,100.0
+202223,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,All education phases,Female,43020,47.8
+202223,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,All education phases,Male,46980,52.2
+202223,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,All education phases,Total,90000,100.0
+202223,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Primary,Female,23900,47.8
+202223,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Primary,Male,26100,52.2
+202223,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Primary,Total,50000,100.0
+202223,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Secondary,Female,19120,47.8
+202223,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Secondary,Male,20880,52.2
+202223,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Secondary,Total,40000,100.0
+202223,Academic year,Regional,E92000001,England,E12000004,East Midlands,All education phases,Female,39420,48.667
+202223,Academic year,Regional,E92000001,England,E12000004,East Midlands,All education phases,Male,41580,51.333
+202223,Academic year,Regional,E92000001,England,E12000004,East Midlands,All education phases,Total,81000,100.0
+202223,Academic year,Regional,E92000001,England,E12000004,East Midlands,Primary,Female,21900,48.667
+202223,Academic year,Regional,E92000001,England,E12000004,East Midlands,Primary,Male,23100,51.333
+202223,Academic year,Regional,E92000001,England,E12000004,East Midlands,Primary,Total,45000,100.0
+202223,Academic year,Regional,E92000001,England,E12000004,East Midlands,Secondary,Female,17520,48.667
+202223,Academic year,Regional,E92000001,England,E12000004,East Midlands,Secondary,Male,18480,51.333
+202223,Academic year,Regional,E92000001,England,E12000004,East Midlands,Secondary,Total,36000,100.0
+202223,Academic year,Regional,E92000001,England,E12000005,West Midlands,All education phases,Female,50220,48.947
+202223,Academic year,Regional,E92000001,England,E12000005,West Midlands,All education phases,Male,52380,51.053
+202223,Academic year,Regional,E92000001,England,E12000005,West Midlands,All education phases,Total,102600,100.0
+202223,Academic year,Regional,E92000001,England,E12000005,West Midlands,Primary,Female,27900,48.947
+202223,Academic year,Regional,E92000001,England,E12000005,West Midlands,Primary,Male,29100,51.053
+202223,Academic year,Regional,E92000001,England,E12000005,West Midlands,Primary,Total,57000,100.0
+202223,Academic year,Regional,E92000001,England,E12000005,West Midlands,Secondary,Female,22320,48.947
+202223,Academic year,Regional,E92000001,England,E12000005,West Midlands,Secondary,Male,23280,51.053
+202223,Academic year,Regional,E92000001,England,E12000005,West Midlands,Secondary,Total,45600,100.0
+202223,Academic year,Regional,E92000001,England,E12000006,East of England,All education phases,Female,53820,49.016
+202223,Academic year,Regional,E92000001,England,E12000006,East of England,All education phases,Male,55980,50.984
+202223,Academic year,Regional,E92000001,England,E12000006,East of England,All education phases,Total,109800,100.0
+202223,Academic year,Regional,E92000001,England,E12000006,East of England,Primary,Female,29900,49.016
+202223,Academic year,Regional,E92000001,England,E12000006,East of England,Primary,Male,31100,50.984
+202223,Academic year,Regional,E92000001,England,E12000006,East of England,Primary,Total,61000,100.0
+202223,Academic year,Regional,E92000001,England,E12000006,East of England,Secondary,Female,23920,49.016
+202223,Academic year,Regional,E92000001,England,E12000006,East of England,Secondary,Male,24880,50.984
+202223,Academic year,Regional,E92000001,England,E12000006,East of England,Secondary,Total,48800,100.0
+202223,Academic year,Regional,E92000001,England,E12000007,London,All education phases,Female,71820,49.259
+202223,Academic year,Regional,E92000001,England,E12000007,London,All education phases,Male,73980,50.741
+202223,Academic year,Regional,E92000001,England,E12000007,London,All education phases,Total,145800,100.0
+202223,Academic year,Regional,E92000001,England,E12000007,London,Primary,Female,39900,49.259
+202223,Academic year,Regional,E92000001,England,E12000007,London,Primary,Male,41100,50.741
+202223,Academic year,Regional,E92000001,England,E12000007,London,Primary,Total,81000,100.0
+202223,Academic year,Regional,E92000001,England,E12000007,London,Secondary,Female,31920,49.259
+202223,Academic year,Regional,E92000001,England,E12000007,London,Secondary,Male,32880,50.741
+202223,Academic year,Regional,E92000001,England,E12000007,London,Secondary,Total,64800,100.0
+202223,Academic year,Regional,E92000001,England,E12000008,South East,All education phases,Female,77220,48.75
+202223,Academic year,Regional,E92000001,England,E12000008,South East,All education phases,Male,81180,51.25
+202223,Academic year,Regional,E92000001,England,E12000008,South East,All education phases,Total,158400,100.0
+202223,Academic year,Regional,E92000001,England,E12000008,South East,Primary,Female,42900,48.75
+202223,Academic year,Regional,E92000001,England,E12000008,South East,Primary,Male,45100,51.25
+202223,Academic year,Regional,E92000001,England,E12000008,South East,Primary,Total,88000,100.0
+202223,Academic year,Regional,E92000001,England,E12000008,South East,Secondary,Female,34320,48.75
+202223,Academic year,Regional,E92000001,England,E12000008,South East,Secondary,Male,36080,51.25
+202223,Academic year,Regional,E92000001,England,E12000008,South East,Secondary,Total,70400,100.0
+202223,Academic year,Regional,E92000001,England,E12000009,South West,All education phases,Female,44820,48.824
+202223,Academic year,Regional,E92000001,England,E12000009,South West,All education phases,Male,46980,51.176
+202223,Academic year,Regional,E92000001,England,E12000009,South West,All education phases,Total,91800,100.0
+202223,Academic year,Regional,E92000001,England,E12000009,South West,Primary,Female,24900,48.824
+202223,Academic year,Regional,E92000001,England,E12000009,South West,Primary,Male,26100,51.176
+202223,Academic year,Regional,E92000001,England,E12000009,South West,Primary,Total,51000,100.0
+202223,Academic year,Regional,E92000001,England,E12000009,South West,Secondary,Female,19920,48.824
+202223,Academic year,Regional,E92000001,England,E12000009,South West,Secondary,Male,20880,51.176
+202223,Academic year,Regional,E92000001,England,E12000009,South West,Secondary,Total,40800,100.0
+202324,Academic year,National,E92000001,England,,,All education phases,Female,466380,48.703
+202324,Academic year,National,E92000001,England,,,All education phases,Male,491220,51.297
+202324,Academic year,National,E92000001,England,,,All education phases,Total,957600,100.0
+202324,Academic year,National,E92000001,England,,,Primary,Female,258900,48.702
+202324,Academic year,National,E92000001,England,,,Primary,Male,272700,51.298
+202324,Academic year,National,E92000001,England,,,Primary,Total,531600,100.0
+202324,Academic year,National,E92000001,England,,,Secondary,Female,207480,48.704
+202324,Academic year,National,E92000001,England,,,Secondary,Male,218520,51.296
+202324,Academic year,National,E92000001,England,,,Secondary,Total,426000,100.0
+202324,Academic year,Regional,E92000001,England,E12000001,North East,All education phases,Female,21820,47.642
+202324,Academic year,Regional,E92000001,England,E12000001,North East,All education phases,Male,23980,52.358
+202324,Academic year,Regional,E92000001,England,E12000001,North East,All education phases,Total,45800,100.0
+202324,Academic year,Regional,E92000001,England,E12000001,North East,Primary,Female,12100,47.638
+202324,Academic year,Regional,E92000001,England,E12000001,North East,Primary,Male,13300,52.362
+202324,Academic year,Regional,E92000001,England,E12000001,North East,Primary,Total,25400,100.0
+202324,Academic year,Regional,E92000001,England,E12000001,North East,Secondary,Female,9720,47.647
+202324,Academic year,Regional,E92000001,England,E12000001,North East,Secondary,Male,10680,52.353
+202324,Academic year,Regional,E92000001,England,E12000001,North East,Secondary,Total,20400,100.0
+202324,Academic year,Regional,E92000001,England,E12000002,North West,All education phases,Female,61420,48.438
+202324,Academic year,Regional,E92000001,England,E12000002,North West,All education phases,Male,65380,51.562
+202324,Academic year,Regional,E92000001,England,E12000002,North West,All education phases,Total,126800,100.0
+202324,Academic year,Regional,E92000001,England,E12000002,North West,Primary,Female,34100,48.438
+202324,Academic year,Regional,E92000001,England,E12000002,North West,Primary,Male,36300,51.562
+202324,Academic year,Regional,E92000001,England,E12000002,North West,Primary,Total,70400,100.0
+202324,Academic year,Regional,E92000001,England,E12000002,North West,Secondary,Female,27320,48.44
+202324,Academic year,Regional,E92000001,England,E12000002,North West,Secondary,Male,29080,51.56
+202324,Academic year,Regional,E92000001,England,E12000002,North West,Secondary,Total,56400,100.0
+202324,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,All education phases,Female,43420,47.819
+202324,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,All education phases,Male,47380,52.181
+202324,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,All education phases,Total,90800,100.0
+202324,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Primary,Female,24100,47.817
+202324,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Primary,Male,26300,52.183
+202324,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Primary,Total,50400,100.0
+202324,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Secondary,Female,19320,47.822
+202324,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Secondary,Male,21080,52.178
+202324,Academic year,Regional,E92000001,England,E12000003,Yorkshire and The Humber,Secondary,Total,40400,100.0
+202324,Academic year,Regional,E92000001,England,E12000004,East Midlands,All education phases,Female,39820,48.68
+202324,Academic year,Regional,E92000001,England,E12000004,East Midlands,All education phases,Male,41980,51.32
+202324,Academic year,Regional,E92000001,England,E12000004,East Midlands,All education phases,Total,81800,100.0
+202324,Academic year,Regional,E92000001,England,E12000004,East Midlands,Primary,Female,22100,48.678
+202324,Academic year,Regional,E92000001,England,E12000004,East Midlands,Primary,Male,23300,51.322
+202324,Academic year,Regional,E92000001,England,E12000004,East Midlands,Primary,Total,45400,100.0
+202324,Academic year,Regional,E92000001,England,E12000004,East Midlands,Secondary,Female,17720,48.681
+202324,Academic year,Regional,E92000001,England,E12000004,East Midlands,Secondary,Male,18680,51.319
+202324,Academic year,Regional,E92000001,England,E12000004,East Midlands,Secondary,Total,36400,100.0
+202324,Academic year,Regional,E92000001,England,E12000005,West Midlands,All education phases,Female,50620,48.956
+202324,Academic year,Regional,E92000001,England,E12000005,West Midlands,All education phases,Male,52780,51.044
+202324,Academic year,Regional,E92000001,England,E12000005,West Midlands,All education phases,Total,103400,100.0
+202324,Academic year,Regional,E92000001,England,E12000005,West Midlands,Primary,Female,28100,48.955
+202324,Academic year,Regional,E92000001,England,E12000005,West Midlands,Primary,Male,29300,51.045
+202324,Academic year,Regional,E92000001,England,E12000005,West Midlands,Primary,Total,57400,100.0
+202324,Academic year,Regional,E92000001,England,E12000005,West Midlands,Secondary,Female,22520,48.957
+202324,Academic year,Regional,E92000001,England,E12000005,West Midlands,Secondary,Male,23480,51.043
+202324,Academic year,Regional,E92000001,England,E12000005,West Midlands,Secondary,Total,46000,100.0
+202324,Academic year,Regional,E92000001,England,E12000006,East of England,All education phases,Female,54220,49.024
+202324,Academic year,Regional,E92000001,England,E12000006,East of England,All education phases,Male,56380,50.976
+202324,Academic year,Regional,E92000001,England,E12000006,East of England,All education phases,Total,110600,100.0
+202324,Academic year,Regional,E92000001,England,E12000006,East of England,Primary,Female,30100,49.023
+202324,Academic year,Regional,E92000001,England,E12000006,East of England,Primary,Male,31300,50.977
+202324,Academic year,Regional,E92000001,England,E12000006,East of England,Primary,Total,61400,100.0
+202324,Academic year,Regional,E92000001,England,E12000006,East of England,Secondary,Female,24120,49.024
+202324,Academic year,Regional,E92000001,England,E12000006,East of England,Secondary,Male,25080,50.976
+202324,Academic year,Regional,E92000001,England,E12000006,East of England,Secondary,Total,49200,100.0
+202324,Academic year,Regional,E92000001,England,E12000007,London,All education phases,Female,72220,49.263
+202324,Academic year,Regional,E92000001,England,E12000007,London,All education phases,Male,74380,50.737
+202324,Academic year,Regional,E92000001,England,E12000007,London,All education phases,Total,146600,100.0
+202324,Academic year,Regional,E92000001,England,E12000007,London,Primary,Female,40100,49.263
+202324,Academic year,Regional,E92000001,England,E12000007,London,Primary,Male,41300,50.737
+202324,Academic year,Regional,E92000001,England,E12000007,London,Primary,Total,81400,100.0
+202324,Academic year,Regional,E92000001,England,E12000007,London,Secondary,Female,32120,49.264
+202324,Academic year,Regional,E92000001,England,E12000007,London,Secondary,Male,33080,50.736
+202324,Academic year,Regional,E92000001,England,E12000007,London,Secondary,Total,65200,100.0
+202324,Academic year,Regional,E92000001,England,E12000008,South East,All education phases,Female,77620,48.756
+202324,Academic year,Regional,E92000001,England,E12000008,South East,All education phases,Male,81580,51.244
+202324,Academic year,Regional,E92000001,England,E12000008,South East,All education phases,Total,159200,100.0
+202324,Academic year,Regional,E92000001,England,E12000008,South East,Primary,Female,43100,48.756
+202324,Academic year,Regional,E92000001,England,E12000008,South East,Primary,Male,45300,51.244
+202324,Academic year,Regional,E92000001,England,E12000008,South East,Primary,Total,88400,100.0
+202324,Academic year,Regional,E92000001,England,E12000008,South East,Secondary,Female,34520,48.757
+202324,Academic year,Regional,E92000001,England,E12000008,South East,Secondary,Male,36280,51.243
+202324,Academic year,Regional,E92000001,England,E12000008,South East,Secondary,Total,70800,100.0
+202324,Academic year,Regional,E92000001,England,E12000009,South West,All education phases,Female,45220,48.834
+202324,Academic year,Regional,E92000001,England,E12000009,South West,All education phases,Male,47380,51.166
+202324,Academic year,Regional,E92000001,England,E12000009,South West,All education phases,Total,92600,100.0
+202324,Academic year,Regional,E92000001,England,E12000009,South West,Primary,Female,25100,48.833
+202324,Academic year,Regional,E92000001,England,E12000009,South West,Primary,Male,26300,51.167
+202324,Academic year,Regional,E92000001,England,E12000009,South West,Primary,Total,51400,100.0
+202324,Academic year,Regional,E92000001,England,E12000009,South West,Secondary,Female,20120,48.835
+202324,Academic year,Regional,E92000001,England,E12000009,South West,Secondary,Male,21080,51.165
+202324,Academic year,Regional,E92000001,England,E12000009,South West,Secondary,Total,41200,100.0

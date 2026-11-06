@@ -89,6 +89,7 @@ website:
       - section: "Statistics production"
         contents:
           - statistics-production/pub.qmd
+          - statistics-production/tidy-data-getting-started.qmd
           - statistics-production/ud.qmd
           - statistics-production/api-data-standards.qmd
           - statistics-production/ees.qmd
