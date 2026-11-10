@@ -2,20 +2,16 @@
 title: "Getting started with tidy data"
 ---
 
-Use this guide if you need to publish statistics on Explore Education
-Statistics (EES) and are new to tidy data. It explains what tidy data is, then
+This guide is for those new to publishing statistics on Explore Education
+Statistics (EES) and new to tidy data. It explains what tidy data is, then
 follows one table through to a finished data file and metadata file, with
 optional R and Python examples.
 
-Start with a copy of one small table. Identify the headings that describe
-groups, then sketch how those groups could become columns. You can work out
-the structure before choosing how to produce the file.
-
-EES is the service DfE uses to publish official statistics. When you publish a
-release, users can read your commentary, build their own tables and charts from
-your data, and download the data files you upload. Those data files need to be
-in a tidy format so that EES, and the people using your data, can work with
-them.
+EES is the service DfE uses to publish official statistics. Tidy data is the 
+core foundation that a statistics release in EES is built on. You start with
+the tidy data files, and then filter those down to build presentation tables 
+and charts for the release commentary, and the tidy data files are what users 
+can download, connect to in the API, and self-serve their own tables from.
 
 The [Open Data Standards](ud.qmd) are the full reference, including exceptions
 and accepted values. If you want to make files available through the API, the
@@ -23,21 +19,18 @@ and accepted values. If you want to make files available through the API, the
 
 ## What is tidy data
 
-The numbers in the examples on this page have been created for illustration only.
+In a tidy data file, each column represents one
+variable.
 
-In a tidy data file, each row is one observation and each column is one
-variable. Tables made for reading on screen often spread a variable across
-several columns instead.
-
-This table of primary pupils puts sex in the column headings:
+As an example, while this table of primary pupils puts sex in the column headings:
 
 | Region | Male | Female |
 |---|---|---|
 | North East | 13100 | 11900 |
 | North West | 36100 | 33900 |
 
-Here is the same data as tidy data, with sex in its own column and the numbers
-in another:
+Here is the same data as tidy data, with sex in its own column and the pupil_count 
+as it's own variable in another:
 
 | region_name | sex | pupil_count |
 |---|---|---|
@@ -47,7 +40,8 @@ in another:
 | North West | Female | 33900 |
 
 The tidy version is longer, but it is much easier for software to filter, sort
-and add up, and it can hold more breakdowns without changing shape.
+and add up, it's more explicit about what is being measures, and it can hold more 
+breakdowns without changing shape.
 
 ## The steps at a glance
 
