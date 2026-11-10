@@ -36,8 +36,6 @@ When you have a full script in an IDE, the script will provide the same output c
 When using Databricks notebooks with Git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the `Clear all cell outputs` option in the Databricks "Run" menu to avoid inadvertently sharing data that only you and your team should have access to. 
 :::
 
----
-
 ::: callout-tip
 Any notebooks used for core business processes should be created in a repository linked to GitHub / DevOps where they can be version controlled.
 :::
