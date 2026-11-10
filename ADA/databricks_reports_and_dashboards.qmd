@@ -42,7 +42,7 @@ It covers a lot quickly but needs guidance to narrow down on the purpose of the 
 
 ## Manually adding data
 
-You can manually add data by clicking on the data tab in the opening page.
+You can manually add data by clicking on the data tab on the opening page.
 
 ![Manually adding data](/images/ada-databricks-dashboards-manually-adding-data-1.png)
 

@@ -105,6 +105,9 @@ Use of compute resources are charged by the hour, and so personal clusters have 
         If you require a larger personal cluster this can be requested by the ADA team.\
         \
         ![](/images/ada-compute-personal-create.png)
+        Make sure to change / request the advanced options:
+        ![](/images/ada-databricks-dashboards-advanced-r-compute.png)
+
 
 3.  Click the 'Create compute' button at the bottom of the page. This will create your personal cluster and begin starting it up. This usually takes around 5 minutes\
     \
