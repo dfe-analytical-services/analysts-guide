@@ -11,9 +11,9 @@ Please be aware that the Databricks platform is regularly updated and may look d
 You can use data from Databricks with R code in two different ways:
 
 -   In scripts or notebooks via the Databricks environment
--   In RStudio via an ODBC/`sparklyr` connection
+-   In Positron/RStudio via an ODBC/`sparklyr` connection
 
-In this guide you may either choose to either set up a connection using `sparklyr` or via a SQL warehouse
+In this guide you may either choose to set up a connection using `sparklyr` or via a SQL warehouse.
 <p class="text-muted">
 
 
@@ -22,20 +22,20 @@ In this guide you may either choose to either set up a connection using `sparkly
 ## sparklyr
 
 
-The following should be followed if you wish to run R scripts from RStudio against data held against tables in Databricks, or if you wish to work with a file held in a Databricks volume. You can read more about volumes on our [Databricks fundamentals page](ADA/databricks_fundamentals.html#volumes)
+The following should be followed if you wish to run R scripts from Positron/RStudio against data held in Databricks tables, or if you wish to work with a file held in a Databricks volume. You can read more about volumes on our [Databricks fundamentals page](ADA/databricks_fundamentals.html)
 
-These instructions set up a `sparklyr` connection between your laptop and your Databricks cluster, which can then be used in RStudio to query data using `tidyverse` syntax.
+These instructions set up a `sparklyr` connection between your laptop and your Databricks cluster, which can then be used in Positron/RStudio to query data using `tidyverse` syntax.
 
-To use `sparklyr` you will need a personal compute cluster set up on Databricks. They can be used within the Databricks environment, or through RStudio. You can set one up yourself if you don't have access to one already.
+To use `sparklyr` you will need a personal compute cluster set up on Databricks. They can be used within the Databricks environment, or through Positron/RStudio. You can set one up yourself if you don't have access to one already.
 
-The guidance for setting up a personal cluster that works with RStudio can be found on our [set up Databricks personal compute cluster with RStudio](/ADA/databricks_sparkly.html) page. You can learn more about compute resources on our [Databricks fundamentals](/ADA/databricks_fundamentals.html) page.
+The guidance for setting up a personal cluster that works with Positron/RStudio can be found on this page. You can learn more about compute resources on our [Databricks fundamentals](/ADA/databricks_fundamentals.html) page.
 
 ## SQL warehouse
 
 
-This guidance should be followed if you wish to run SQL scripts from RStudio against data held in tables in Databricks. If you wish to run R scripts or access data held in a volume instead, you will need a personal compute cluster.
+This guidance should be followed if you wish to run SQL scripts from Positron/RStudio against data held in tables in Databricks. If you wish to run R scripts or access data held in a volume instead, you will need a personal compute cluster.
 
-The guidance for setting up a personal cluster that works with RStudio can be found on our [set up Databricks personal compute cluster with RStudio](/ADA/databricks_sparklyr_and_sql_warehouses.html) page. You can learn more about compute resources on our [Databricks fundamentals](/ADA/databricks_fundamentals.html) page.
+The guidance for setting up a personal cluster that works with Positron/RStudio can be found [here](/ADA/databricks_sparklyr_and_sql_warehouses.html/Personal Clusters). You can learn more about compute resources on our [Databricks fundamentals](/ADA/databricks_fundamentals.html) page.
 :::
 
 
@@ -50,11 +50,11 @@ A compute resource allows you to run your code using cloud computing power inste
 ## Personal Clusters
 
 
-A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python) in the Databricks environment and can be set up to connect to RStudio as well. You can create your own personal cluster within the Databricks interface.
+A personal cluster is a compute resource that supports the use of multiple code languages (R, SQL, Scala and Python) in the Databricks environment and can be set up to connect to Positron/RStudio as well. You can create your own personal cluster within the Databricks interface.
 
 When you set up your personal cluster, you will be asked to select a runtime for that cluster. Different runtimes allow you to use different features and package versions. Certain packages are installed by default on a personal cluster and do not need to be installed manually. The specific packages installed are based on the Databricks Runtime (DBR) version your cluster is set up with. A comprehensive list of packages included in each DBR is available in the [Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/). Generally speaking a higher DBR version number will provide more functionality.
 
-Within the Databricks environment they are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. From RStudio you will be able to use this method to execute queries using R with the performance benefits provided by Databricks.
+Within the Databricks environment they are able to use SQL, R, Python and Scala, and are more flexible than SQL Warehouses. From Positron/RStudio you will be able to use this method to execute queries using R with the performance benefits provided by Databricks.
 
 ## Team Clusters
 
@@ -124,6 +124,7 @@ To create a team cluster please raise an [ADA Service Now ticket](https://dfe.se
 An SQL warehouse should have been created alongside your team and catalog, if not please raise an [ADA Service Now ticket](https://dfe.service-now.com/ithelpcentre?id=sc_cat_item&sys_id=74bc3be81b212d504f999978b04bcb0b) using the other option.
 
 :::
+
 ------------------------------------------------------------------------
 
 ## Pre-requisites
@@ -137,7 +138,7 @@ You must have:
 
 -   Access to Databricks and the data you'll be working with
 -   Access to a personal cluster on Databricks
--   R and RStudio downloaded and installed on your laptop
+-   R and Positron/RStudio downloaded and installed on your laptop
 -   RTools installed on your laptop (available from the Software Centre)
 -   [Git](https://git-scm.com/downloads) installed on your laptop
 -   Membership of the active directory group 'AZURE INTERNET EXCLUDE INSPECTION PA'
@@ -152,13 +153,13 @@ Before you start, you must have:
 
 -   Access to data in a SQL Warehouse on Databricks
 
--   R and RStudio downloaded and installed
+-   R and Positron/RStudio downloaded and installed
 
--   The `odbc`, `DBI` and `usethis` packages installed in RStudio
+-   The `odbc`, `DBI` and `usethis` packages installed in Positron/RStudio
 
 If you do not have access to Databricks or a SQL Warehouse within Databricks, you can request this using [a service request form](https://dfe.service-now.com/serviceportal?id=sc_cat_item&sys_id=74bc3be81b212d504f999978b04bcb0b).
 
-If you do not have R or RStudio, you can find them both in the Software Centre. Note that you need both R **and** RStudio installed.
+If you do not have R or Positron/RStudio, you can find them both in the Software Centre. Note that you need both R **and** Positron/RStudio installed.
 :::
 
 
@@ -172,22 +173,22 @@ There are four steps to complete before your connection can be established. Thes
 
 -   Creating a personal compute resource (if you do not already have one)
 -   Installing the `reticulate`, `pysparklyr` and `sparklyr` packages
--   Modifying your .Renviron file to establish a connection between RStudio and Databricks
--   Adding connection code to your existing scripts in RStudio
+-   Modifying your .Renviron file to establish a connection between Positron/RStudio and Databricks
+-   Adding connection code to your existing scripts in Positron/RStudio
 
 ## SQL warehouse
 
 There are three steps to complete before your connection can be established. These are:
 
 -   Installing an ODBC driver on your laptop to enable a connection between your laptop and Databricks
--   Modifying your .Renviron file to establish a connection between RStudio and Databricks
--   Adding connection code to your existing scripts in RStudio
+-   Modifying your .Renviron file to establish a connection between Positron/RStudio and Databricks
+-   Adding connection code to your existing scripts in Positron/RStudio
 :::
 ------------------------------------------------------------------------
 
 ::: callout-warning
 # Check your Databricks Workspace
-Before following the process, ensure you are on the [correct Databricks Workspace](../ADA/databricks_fundamentals.html#workspaces-dropdown-guide) by clicking on the Workspace drop-down, usually found in the top right of the Databricks interface. Make sure you are in the production Workspace by checking that you are on the Workspace that begins `s101p01`  — the **`p`** indicates production.
+Before following the process, ensure you are on the [correct Databricks Workspace](../ADA/databricks_fundamentals.html) by clicking on the Workspace drop-down, usually found in the top right of the Databricks interface. Make sure you are in the production Workspace by checking that you are on the Workspace that begins `s101p01`  — the **`p`** indicates production.
 
 If you are in the wrong Workspace (e.g., one starting with `s101d01` for development), you will not be able to access the `catalog_40_copper_analyst_training` catalog.
 :::
@@ -210,18 +211,18 @@ An ODBC driver is required for the `odbc` package in R to work - you must instal
 -   Click install
 
 ::: callout-important
-If you have previously set up an ODBC connection, or followed the [set up Databricks SQL Warehouse with RStudio](/ADA/databricks_sparklyr_and_sql_warehouses.html) guidance, then you can skip this step.
+If you have previously set up an ODBC connection, or followed the guidance to set up an SQL Warehouse with Positron/RStudio guidance, then you can skip this step.
 :::
 
 
 
 ------------------------------------------------------------------------
 
-### Establishing an RStudio connection using environment variables
+### Establishing an Positron/RStudio connection using environment variables
 
 ------------------------------------------------------------------------
 
-Both the `sparklyr` and `odbcs` packages in RStudio allows you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.
+Both the `sparklyr` and `odbc` packages in Positron/RStudio allow you to connect to Databricks by creating and modifying three environment variables in your .Renviron file.
 
 To set the environment variables, call `usethis::edit_r_environ()`. You will then need to enter the following information:
 
@@ -265,13 +266,10 @@ Do not include the / at the end of the URL when you add it to the .Renviron file
 :::
 
 ------------------------------------------------------------------------
+
 ::: {.panel-tabset}
 
-## sparklyr
-
-#### Databricks cluster id
-
-------------------------------------------------------------------------
+## Databricks cluster id sparklyr
 
 In Databricks, go to Compute in the left hand menu, and click on the name of your personal cluster:
 
@@ -280,13 +278,9 @@ In Databricks, go to Compute in the left hand menu, and click on the name of you
 :::
 
 On the Configuration tab, take the code between `clusters/` and `?` in the page URL. This is the ID for your personal cluster.
-## SQL warehouse
+## Databricks SQL Warehouse Path
 
-#### Databricks SQL Warehouse Path
-
-------------------------------------------------------------------------
-
-As described in the [SQL Warehouses section](#sql-warehouse), in Databricks, SQL Warehouses are a way to gain access to your data in the Unity Catalog. They run queries and return the results either to the user or to a table. 
+As described on this page, in Databricks, SQL Warehouses are a way to gain access to your data in the Unity Catalog. They run queries and return the results either to the user or to a table. 
 
 To get the Warehouse ID, follow these steps:
 
@@ -294,6 +288,7 @@ To get the Warehouse ID, follow these steps:
 -   click on the warehouse name that you'd like to get the ID for
 -   the warehouse id is the 'HTTP Path' in the 'Connection details' tab
 -   the ID should start with something similar to "/sql/1.0/warehouses/"
+
 :::
 
 ------------------------------------------------------------------------
@@ -334,7 +329,7 @@ Note that access tokens will only last as long as the value for the 'Lifetime (d
 -   Make a note of the 'Databricks access token' it has given you
 
 ::: callout-warning
-It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into RStudio then you must generate a new access token to replace it.
+It is very important that you immediately copy the access token that you are given, as you will not be able to see it through Databricks again. If you lose this access token before pasting it into Positron/RStudio then you must generate a new access token to replace it.
 :::
 
 ------------------------------------------------------------------------
@@ -399,7 +394,7 @@ This installation may take some time, but only needs to be done the first time y
 
 ------------------------------------------------------------------------
 
-Now that you have all the `sparklyr` dependencies set up on your laptop, and your environmental variables setup, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to databases before, this code will look quite familiar to you.
+Now that you have all the `sparklyr` dependencies set up on your laptop, and your environmental variables setup, you can add code to your existing scripts to pull data into Positron/RStudio for analysis. If you have connected to databases before, this code will look quite familiar to you.
 
 #### Connect to Databricks through sparklyr
 
@@ -514,7 +509,7 @@ To resolve this restart your R session (Session \> Restart R) then re-run the `s
 
 ------------------------------------------------------------------------
 
-#### Queries hang when connecting to Databricks from RStudio on Azure Virtual Desktop
+#### Queries hang when connecting to Databricks from Positron/RStudio on Azure Virtual Desktop
 
 ------------------------------------------------------------------------
 
@@ -557,11 +552,11 @@ Once you have the path you can navigate to the `.virtualenvs` folder and manuall
 
 ## SQL warehouse
 
-### Pulling data into RStudio from Databricks
+### Pulling data into Positron/RStudio from Databricks
 
 ------------------------------------------------------------------------
 
-Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and RStudio, you can add code to your existing scripts to pull data into RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you. 
+Now that you have enabled ODBC connections on your laptop, and enabled a connection between Databricks and Positron/RStudio, you can add code to your existing scripts to pull data into Positron/RStudio for analysis. If you have connected to other SQL databases before, this code will look quite familiar to you. 
 
 To access the data, we will make use of the `odbc` package. You can find documentation about this package [on the Posit website](https://solutions.posit.co/connections/db/r-packages/odbc/). You will also need to have the `DBI` package installed.  
 
@@ -614,5 +609,5 @@ Databricks have recently [renamed their ODBC driver](https://docs.databricks.com
 The sqlQuery() function is part of the `RODBC` package, which is different to the `odbc` package that we have recommended in this guidance. You cannot use the `RODBC` package with a SQL warehouse, so you have two options:
 
 - Modify your code to use the `odbc` and `DBI` packages as described in this guidance
-- Set up a personal cluster and use the `RODBC` package with that instead. You can find guidance on how to set up a personal cluster on our [set up Databricks personal compute cluster with RStudio and odbc / DBI](/ADA/databricks_sparklyr_and_sql_warehouses.html) page. Ensure you follow the troubleshooting section to set up a RODBC connection.
+- Set up a personal cluster and use the `RODBC` package with that instead. You can find guidance on how to set up a personal cluster on this page. Ensure you follow the troubleshooting section to set up a RODBC connection.
 :::

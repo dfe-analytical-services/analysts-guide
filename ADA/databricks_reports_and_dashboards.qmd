@@ -4,23 +4,23 @@ format: html
 ---
 
 
-Databicks is updating their dashboard capability on a **monthly** basis, do not be perturbed if things do not look exactly the same.
+Databricks is updating their dashboard capability on a **monthly** basis, do not be perturbed if things do not look exactly the same.
 
 ## ADA guidance
 
 Currently the ADA team do not manage their own guidance but do point you to one of three sources:
 
--[Microsoft's guidance](https://learn.microsoft.com/en-gb/azure/databricks/dashboards/tutorials/)
--[Databrick's guidance on creating a dashboard](https://docs.databricks.com/aws/en/dashboards/tutorials/create-dashboard)
--[Databrick's guidance on AI/BI dashboards](https://docs.databricks.com/aws/en/dashboards/manage/visualizations/custom-visualizations)
+- [Microsoft's guidance](https://learn.microsoft.com/en-gb/azure/databricks/dashboards/tutorials/)
+- [Databricks' guidance on creating a dashboard](https://docs.databricks.com/aws/en/dashboards/tutorials/create-dashboard)
+- [Databricks' guidance on AI/BI dashboards](https://docs.databricks.com/aws/en/dashboards/manage/visualizations/custom-visualizations)
 
 ## Creating a Dashboard in Databricks
 
-You can find the option to create a new dashboard in the side bar under the SQL area.
+You can find the option to create a new dashboard in the sidebar under the SQL area.
 
 ![Location of Dashboards in Databricks](/images/ada-databricks-dashboards-location.png)
 
-Upon navigating to the Dashboard page, you can find you previously created dashboards and the option to create a dashboard in the top right corner.
+Upon navigating to the Dashboard page, you can find your previously created dashboards and the option to create a dashboard in the top right corner.
 
 ![Location of Create Dashboard](/images/ada-databricks-dashboards-create-dashboard.png)
 
@@ -32,7 +32,7 @@ When you click "Create Dashboard", you are navigated to the opening page for cre
 
 ## Using Genie
 
-As with other areas of databricks, Genie can create new dashboards for you and find data within your data catalog with which to create them. 
+As with other areas of Databricks, Genie can create new dashboards for you and find data within your data catalog with which to create them. 
 
 ![Using Genie](/images/ada-databricks-dashboards-using-genie.png)
 
