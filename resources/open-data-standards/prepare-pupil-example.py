@@ -2,9 +2,12 @@
 
 import pandas as pd
 
+# Run from the folder containing pupil-source.csv and pupil-region-lookup.csv.
+# Counts are for illustration only and have no missing values.
 source = pd.read_csv("pupil-source.csv")
 regions = pd.read_csv("pupil-region-lookup.csv", dtype=str)
 
+# Reject region names that do not match the lookup.
 if (
     len(regions) != 9
     or regions["region_name"].duplicated().any()
@@ -73,6 +76,7 @@ data = data[columns].sort_values(
 )
 data.to_csv("pupil-enrolments.csv", index=False, encoding="utf-8")
 
+# One metadata row for each filter and indicator.
 metadata = pd.DataFrame({
     "col_name": ["education_phase", "sex", "pupil_count", "pupil_percent"],
     "col_type": ["Filter", "Filter", "Indicator", "Indicator"],

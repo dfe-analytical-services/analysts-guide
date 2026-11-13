@@ -3,15 +3,12 @@ title: "Getting started with tidy data"
 ---
 
 Explore Education Statistics (EES) is the service DfE uses to publish official
-statistics. This guide is for people new to preparing tidy data for EES.
+statistics. This guide is for people new to preparing tidy data for EES. You
+don't need any experience with tidy data to follow it.
 
-It explains what tidy data is, why we use it, and how to turn a table into a
-tidy data file. It then takes you through preparing that file for EES, creating
-metadata and checking everything before publication.
-
-You don't need experience with tidy data to follow this guide. The examples
-work through the principles step by step, with optional R and Python scripts
-if you want to try them yourself.
+It explains what tidy data is, then works through an example from a table to
+a finished data file and metadata file, with optional R and Python scripts.
+It ends with checklists to use before publication.
 
 Tidy data is the foundation of a statistics release in EES. From the same
 tidy data files, you can:
@@ -97,41 +94,6 @@ columns each time.
 **The key principle is to put categories into columns of their own,
 rather than hiding them in column headings.**
 
-### How do you make the table tidy?
-
-This kind of transformation is often called *pivoting* or *unpivoting*
-data, depending on the software you're using.
-
-For our example, the steps are:
-
-1. Keep the `Region` column, which identifies where the figures relate to.
-2. Turn the four numerical column headings into rows, creating one column
-   for the original heading and another for the pupil count.
-3. Separate the original headings, such as `2024_male`, into two columns:
-   `year` and `sex`.
-4. Rename the columns clearly.
-
-The result is the second table above.
-
-You can do this in R, Python, SQL, SAS or other data-processing software.
-Later in the guide, we provide R and Python scripts demonstrating the
-process with a more complete example.
-
-## The steps to publishing tidy data in EES
-
-The rest of this guide follows an example through to a finished file, then
-explains how to apply the same steps to your own publication:
-
-1. [Work through an example](#worked-example) of turning a table into
-   a tidy data file.
-2. [Start from what you already have](#start-from-what-you-already-have)
-   and decide what belongs in each data file.
-3. [Prepare the data file](#prepare-the-data-file) for EES.
-4. [Create the metadata](#create-the-metadata).
-5. [Check your files](#check-your-files) and
-   [check how they look in EES](#check-how-it-looks-in-ees).
-6. [Use the checklists](#checklists) before publishing.
-
 ## Worked example {#worked-example}
 
 Let's work through a more realistic example of preparing pupil statistics
@@ -172,13 +134,16 @@ read_example <- function(file) {
     check.names = FALSE
   )
 }
-show_table <- function(data, caption, col.names = names(data)) {
+show_table <- function(
+  data, caption, col.names = names(data), big.mark = ",", ...
+) {
   knitr::kable(
     data,
     row.names = FALSE,
     col.names = col.names,
-    format.args = list(big.mark = ","),
-    caption = caption
+    format.args = list(big.mark = big.mark),
+    caption = caption,
+    ...
   )
 }
 
@@ -250,7 +215,8 @@ show_table(
 ```
 
 Nothing has been calculated or changed yet. We have simply moved
-information out of the headings and into columns.
+information out of the headings and into columns. This is often called
+*pivoting* or *unpivoting*, depending on the software you're using.
 
 The region repeats because each row needs to identify which pupils
 the number describes.
@@ -324,13 +290,21 @@ the totals and percentages.
 
 ```{r}
 #| echo: false
+north_east_rounded <- north_east[
+  , c("education_phase", "sex", "pupil_count", "pupil_percent")
+]
+north_east_rounded$pupil_percent <- sprintf(
+  "%.1f", north_east_rounded$pupil_percent
+)
 show_table(
-  north_east[, c("education_phase", "sex", "pupil_count", "pupil_percent")],
+  north_east_rounded,
   col.names = c("Phase", "Sex", "Pupil count", "Pupil percentage"),
   caption = paste(
-    "North East, 2022/23: counts and percentages including",
-    "totals (time and geography columns omitted)."
-  )
+    "North East, 2022/23: counts and percentages including totals,",
+    "with percentages shown to 1 decimal place",
+    "(time and geography columns omitted)."
+  ),
+  align = "llrr"
 )
 ```
 
@@ -453,7 +427,8 @@ show_table(
       "pupil_count", "pupil_percent"
     )
   ],
-  caption = "Selected columns from the finished data file."
+  caption = "Selected columns from the finished data file.",
+  big.mark = ""
 )
 ```
 
@@ -469,6 +444,46 @@ percentages and England-level figures, the finished file has **180 rows**:
 The file is longer, but it gives people far more ways to explore the
 same statistics.
 
+## Try the example code
+
+You can download working R and Python examples that turn the
+original pupil table into the completed data file and its
+[metadata file](#create-the-metadata), which is explained later in this guide.
+
+These are optional. You don't need to run the scripts to understand
+the steps in this guide.
+
+**R example** (needs the dplyr, tidyr and dfeR packages)
+
+- [prepare-pupil-example.R](../resources/open-data-standards/prepare-pupil-example.R)
+- [pupil-source.csv](../resources/open-data-standards/pupil-source.csv)
+
+**Python example** (needs the pandas package)
+
+- [prepare-pupil-example.py](../resources/open-data-standards/prepare-pupil-example.py)
+- [pupil-source.csv](../resources/open-data-standards/pupil-source.csv)
+- [pupil-region-lookup.csv](../resources/open-data-standards/pupil-region-lookup.csv)
+
+You can compare the files produced by the scripts against the:
+
+- [finished data file](../resources/open-data-standards/pupil-enrolments.csv)
+- [finished metadata file](../resources/open-data-standards/pupil-enrolments.meta.csv)
+
+The values will match. The formatting can differ slightly between R and
+Python, for example whether text is wrapped in quotation marks.
+
+The scripts demonstrate the process for this particular example.
+Your own data may have different categories, populations, missing
+values or disclosure requirements that need additional handling.
+
+**Make your data preparation repeatable.** Whether you work in
+R, Python, SQL or SAS, it's good practice to prepare data using a
+reproducible process that you can run again when new figures become
+available.
+
+See the [RAP guidance on preparing data](../RAP/rap-statistics/rap-statistics-preparing-data.qmd)
+for further advice.
+
 ## Start from what you already have {#start-from-what-you-already-have}
 
 Most teams already produce tables for their publications, perhaps
@@ -480,6 +495,10 @@ existing table.
 Instead, start by looking at the data behind those tables.
 
 ### Decide which figures belong together
+
+In EES, users can create their own tables from the data you publish. The
+table tool works with one data file at a time, so figures that people will
+want to compare need to be in the same file.
 
 Tables that describe the same underlying population can often be
 combined into one tidy data file.
@@ -497,26 +516,12 @@ On the other hand, tables about substantially different subjects
 or populations, such as pupil numbers and school finances, will
 often make more sense as separate files.
 
-The aim is to group figures that people would reasonably want to
-compare and explore together, without combining incompatible data
-simply to reduce the number of files.
+Aim for a small number of useful files, without combining incompatible
+data simply to reduce the count. Fewer files are more flexible for users
+and give your team less to maintain and quality assure.
 
 The [dataset design decisions](ud.qmd#dataset-design-decisions)
 guidance explains these choices in more detail.
-
-### Aim for fewer, more useful files
-
-In EES, users can create their own tables from the data you publish.
-Instead of uploading every presentation table as a separate file,
-it's usually better to prepare a smaller number of tidy data files
-that users can explore.
-
-This makes the publication more flexible for users and reduces the
-number of files your team needs to maintain and quality assure.
-
-The EES table tool works with one data file at a time, so think
-about which compatible figures users will need to bring together
-when deciding how to organise your data.
 
 ## Prepare the data file {#prepare-the-data-file}
 
@@ -607,19 +612,11 @@ You need one metadata row for each filter and indicator in your
 data file. You do not need metadata rows for the standard time
 and geography columns.
 
-For our example, we need four rows:
+For our example, we need four rows: two filters and two indicators.
+Each row gives the column's type and display label. Indicator rows also
+set how the figure displays, such as its unit and number of decimal places.
 
-| Column | Type | Display label |
-|---|---|---|
-| `education_phase` | Filter | Education phase |
-| `sex` | Filter | Sex |
-| `pupil_count` | Indicator | Number of pupils |
-| `pupil_percent` | Indicator | Percentage of pupils |
-
-The metadata also controls how each indicator displays, such
-as its unit and number of decimal places.
-
-Here are the relevant settings from the completed example.
+Here are the main settings from the completed example.
 
 ```{r}
 #| echo: false
@@ -679,45 +676,6 @@ For example:
 
 These are the two files you'll upload to EES.
 
-## Try the example code
-
-You can download working R and Python examples that turn the
-original pupil table into the completed data and metadata files.
-
-These are optional. You don't need to run the scripts to understand
-the steps in this guide.
-
-**R example** (needs the dplyr, tidyr and dfeR packages)
-
-- [prepare-pupil-example.R](../resources/open-data-standards/prepare-pupil-example.R)
-- [pupil-source.csv](../resources/open-data-standards/pupil-source.csv)
-
-**Python example** (needs the pandas package)
-
-- [prepare-pupil-example.py](../resources/open-data-standards/prepare-pupil-example.py)
-- [pupil-source.csv](../resources/open-data-standards/pupil-source.csv)
-- [pupil-region-lookup.csv](../resources/open-data-standards/pupil-region-lookup.csv)
-
-You can compare the files produced by the scripts against the:
-
-- [finished data file](../resources/open-data-standards/pupil-enrolments.csv)
-- [finished metadata file](../resources/open-data-standards/pupil-enrolments.meta.csv)
-
-The values will match. The formatting can differ slightly between R and
-Python, for example whether text is wrapped in quotation marks.
-
-The scripts demonstrate the process for this particular example.
-Your own data may have different categories, populations, missing
-values or disclosure requirements that need additional handling.
-
-**Make your data preparation repeatable.** Whether you work in
-R, Python, SQL or SAS, it's good practice to prepare data using a
-reproducible process that you can run again when new figures become
-available.
-
-See the [RAP guidance on preparing data](../RAP/rap-statistics/rap-statistics-preparing-data.qmd)
-for further advice.
-
 ## Check your files {#check-your-files}
 
 Before publishing, make sure both files meet the EES data standards.
@@ -734,15 +692,8 @@ Fix any problems in your source data or code and regenerate the files,
 rather than manually editing the final CSV.
 
 Review warnings as well as errors. Passing the screening checks does
-not replace your own quality assurance of the statistics.
-
-In particular, check that:
-
-- the figures still match the source data
-- calculated totals and percentages are correct
-- there are no unintended duplicate combinations of filters,
-  time and geography
-- suppression and disclosure control have been applied correctly
+not replace your own quality assurance of the statistics, which is
+covered in the [checklists](#checklists) below.
 
 ## Check how it looks in EES {#check-how-it-looks-in-ees}
 
@@ -786,7 +737,9 @@ If you are publishing through the API, also follow the
       [all mandatory columns](ud.qmd#mandatory-ees-metadata-columns),
       matching names and understandable labels.
 - [ ] Both files are [UTF-8 CSVs](ud.qmd#data-format) with matching file names.
-- [ ] The figures and calculations have been checked against their sources.
+- [ ] The figures, totals and percentages have been checked against their
+      sources.
+- [ ] No combination of time, geography and filters appears more than once.
 - [ ] Both files pass the
       [screening checks](ud.qmd#how-to-check-against-these-standards).
 

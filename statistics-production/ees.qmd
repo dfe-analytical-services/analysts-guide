@@ -394,10 +394,10 @@ If you are experiencing issues or need help with creating a new release, you can
 
 ### Data and files
 
+---
+
 Moving existing tables into tidy data files? Follow [Getting started with tidy data](tidy-data-getting-started.qmd)
 for how to structure your data files and metadata before uploading.
-
----
 
 Data files and their accompanying [metadata](../statistics-production/ud.html#ees-metadata) are checked against the data standards automatically when you upload them. You can run the same checks before uploading using the [data screener app](https://rsconnect/rsc/dfe-published-data-qa/) or the [eesyscreener](https://github.com/dfe-analytical-services/eesyscreener) R package.
 

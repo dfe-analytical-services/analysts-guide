@@ -403,18 +403,18 @@ If you are not providing a full timeseries for any reason, you must link to the 
 
 Explore education statistics is designed to give production teams the freedom of controlling what data users can access, and how they access it. It is expected that most releases on the platform will have multiple data files, and teams have control over how they break these files up.
 
-The first key consideration is that the table tool will only create tables from a single a data file, and cannot use multiple files as sources. Therefore any data that you want to compare within a single table must be published within the same data file. The table tool itself is there to allow users to narrow down the amount of data they have to absorb and to be able to efficiently take away key statistics.
+The first key consideration is that the table tool will only create tables from a single data file, and cannot use multiple files as sources. Therefore any data that you want to compare within a single table must be published within the same data file. The table tool itself is there to allow users to narrow down the amount of data they have to absorb and to be able to efficiently take away key statistics.
 
 A useful way to judge how to break up data files is to consider whether all of the data in the file is appropriate to show side-by-side in the same table. If there are data that are conceptually different or may be confusing to compare side by side, then these should be in separate data files. Any data file uploaded to EES is usable by all users in the table tool, and users will be able to download the exact same files as you upload.
 
 We generally recommend fewer large files over a larger number of smaller files. **If you think you are having issues with file size please tell us** so that we can investigate and work towards a solution with you.
 
-#### Dataset design decisions {#dataset-design-decisions}
+[]{#dataset-design-decisions}
 
 Start with the comparisons users will want to make, then work through the
 decisions below. The examples use pupil numbers by sex and education phase.
 
-##### Is it a filter or an indicator?
+#### Is it a filter or an indicator?
 
 A filter is something users pick from to choose which rows they see, such as
 sex or education phase. An indicator is a value being measured, such as a count
@@ -428,17 +428,13 @@ same column, as they need different units and decimal places.
 | Primary | Male | 13100 | 52.4 |
 | Primary | Female | 11900 | 47.6 |
 
-##### Should these measures go in the same file?
+#### Should these measures go in the same file?
 
 Keep measures in the same file when they describe the same groups and users
 will want to see them together. A count and the percentage worked out from it
 usually belong together, as in the example above.
 
-The table tool builds each table from one data file. If you split measures that
-describe the same groups into different files, users cannot compare them in one
-table.
-
-##### When should data go in separate files?
+#### When should data go in separate files?
 
 Split data into separate files when the measures do not share the same
 breakdowns.
@@ -474,7 +470,7 @@ pupils in one file and teachers in another. Before splitting, think about
 whether users will lose a comparison they need. There are more examples in the
 [API data standards](api-data-standards.qmd#tidy-data-structure).
 
-##### What totals and combinations do users need?
+#### What totals and combinations do users need?
 
 Use a separate filter column for each breakdown, so users can combine them, for
 example female pupils in primary schools. Include totals for each filter, such
@@ -489,7 +485,7 @@ If your source only has separate breakdowns and no combinations, such as one
 table by sex and another by free school meals status, you can use the
 [breakdown_topic and breakdown](#introduction-to-filters) columns instead.
 
-##### Other things to consider
+#### Other things to consider
 
 - Long lists of filter items can be easier to use with a
   [grouping column](#grouping-filters).
@@ -681,7 +677,7 @@ You also cannot mix yearly breakdowns (e.g. full year, quarters, months, or term
 | 2017        |	Calendar year   | July  |
 
 
-If your row of data spans multiple years (e.g. is a cumulative sum between 2010 and 2018), the starting year should be made clear in the name of the indicator, with the year of the end of the time period listed in `time_period`. For example if you had been recording the number of enrolments in a Local authority since from the start of the 2010/11 Academic year to the end of the 2017/18 Academic year, your data would look like the example below.
+If your row of data spans multiple years (e.g. is a cumulative sum between 2010 and 2018), the starting year should be made clear in the name of the indicator, with the year of the end of the time period listed in `time_period`. For example if you had been recording the number of enrolments in a Local authority from the start of the 2010/11 Academic year to the end of the 2017/18 Academic year, your data would look like the example below.
 
 
 | time_period | time_identifier | starts_since_201011 |
@@ -1481,7 +1477,7 @@ Like filters, indicator names must not include spaces, and ideally be formatted 
 
 In EES, the platform itself will format large numeric values to include commas, so you do not need to have commas for separating large numbers in your data file.
 
-If you are including percentages and want to show 79% in EES, you would have the value 79 in your data file and specify % as the unit for that column in the EES metadata. Include sufficient precision in the downloadable data for reuse, subject to your disclosure control and rounding policies. Display rounding in metadata does not protect more precise values in the downloadable file. As a default EES will round decimals to 2 d.p. in the platform, though if you would prefer to display your data to a different number of d.p. in the platform please use the [indicator_dp](#ees-metadata) column to specify this in the CSV metadata. Likewise with financial data, for don't include £ in the values in the data file, leave those cells as numeric only, include it as an indicator unit instead.
+If you are including percentages and want to show 79% in EES, you would have the value 79 in your data file and specify % as the unit for that column in the EES metadata. Include sufficient precision in the downloadable data for reuse, subject to your disclosure control and rounding policies. Display rounding in metadata does not protect more precise values in the downloadable file. As a default EES will round decimals to 2 d.p. in the platform, though if you would prefer to display your data to a different number of d.p. in the platform please use the [indicator_dp](#ees-metadata) column to specify this in the CSV metadata. Likewise with financial data, don't include £ in the values in the data file, leave those cells as numeric only, include it as an indicator unit instead.
 
 In line with GSS best practice for communicating uncertainty, when using confidence intervals you should report the upper and lower bounds as separate columns rather than as one confidence interval column:
 

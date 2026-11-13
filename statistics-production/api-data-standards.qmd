@@ -162,7 +162,7 @@ This structure would not be accepted for API publication.
 #### Example of pivoting leading to excessive duplications and not applicable characters
 
 Putting everything in one file can create many cells where a measure does not
-apply (`z`). It can also repeat values that do not belong to a breakdown such as the repeated 50 below.
+apply (`z`). It can also repeat values that do not belong to a breakdown such as the repeated pupil count of 50 below.
 
 ::: {.table-responsive}
 

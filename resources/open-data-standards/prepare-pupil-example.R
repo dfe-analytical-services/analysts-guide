@@ -12,11 +12,8 @@ if (!setequal(source_data$region_name, regions$region_name)) {
   stop("Source region names do not match the nine English regions in dfeR.")
 }
 
-# Labels to use in place of the abbreviations in the source column names.
-sex_labels <- c(male = "Male", female = "Female")
-phase_labels <- c(prim = "Primary", sec = "Secondary")
-
-# Turn the four count columns into two filters and one indicator.
+# Turn the four count columns into two filters and one indicator,
+# replacing the abbreviations in the source column names with full labels.
 detail <- source_data |>
   pivot_longer(
     cols = c(male_prim, male_sec, female_prim, female_sec),
@@ -29,8 +26,8 @@ detail <- source_data |>
     time_period = gsub("/", "", academic_year, fixed = TRUE),
     region_code,
     region_name,
-    education_phase = unname(phase_labels[phase]),
-    sex = unname(sex_labels[sex]),
+    education_phase = if_else(phase == "prim", "Primary", "Secondary"),
+    sex = if_else(sex == "male", "Male", "Female"),
     pupil_count
   )
 
