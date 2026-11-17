@@ -721,10 +721,7 @@ cookieconsent.run({
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#when-to-use-notebooks" id="toc-when-to-use-notebooks" class="nav-link" data-scroll-target="#when-to-use-notebooks">When to use notebooks</a>
-  <ul class="collapse">
-  <li><a href="#differences-between-ides-and-notebooks" id="toc-differences-between-ides-and-notebooks" class="nav-link" data-scroll-target="#differences-between-ides-and-notebooks">Differences between IDEs and notebooks</a></li>
-  </ul></li>
+  <li><a href="#when-to-use-notebooks" id="toc-when-to-use-notebooks" class="nav-link" data-scroll-target="#when-to-use-notebooks">When to use notebooks</a></li>
   <li><a href="#using-notebooks" id="toc-using-notebooks" class="nav-link" data-scroll-target="#using-notebooks">Using notebooks</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dfe-analytical-services/analysts-guide/edit/main/ADA/databricks_notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dfe-analytical-services/analysts-guide/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -816,70 +813,6 @@ Warning
 <p>When using Databricks notebooks with Git, cell outputs are automatically cleared by default when your code is pushed up to a repository. However, if you share a notebook using the Databricks interface, cell outputs remain intact from the last time you ran the code. This risks sharing data that should not be shared with others. Before sharing code with someone outside your team, you must use the <code>Clear all cell outputs</code> option in the Databricks “Run” menu to avoid inadvertently sharing data that only you and your team should have access to.</p>
 </div>
 </div>
-<section id="differences-between-ides-and-notebooks" class="level3">
-<h3 class="anchored" data-anchor-id="differences-between-ides-and-notebooks">Differences between IDEs and notebooks</h3>
-<p>The table below, taken from <a href="https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/notebooks_versus_ide_development/" target="_blank">NHS-R guidance</a>, shows a comparison of the features of notebooks and IDEs to help you decide where each would be most appropriately used:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Notebooks</th>
-<th>IDEs</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Interactive outputs (tables, plots, etc)</td>
-<td>Yes</td>
-<td>No*</td>
-</tr>
-<tr class="even">
-<td>Storytelling and sharing results</td>
-<td>Yes</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>Benefits out-of-the-box (minimal configuration)</td>
-<td>Yes</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>Deterministic outputs (i.e.&nbsp;same result every run)</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>Supports modular code structure &amp; packages</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>Supports unit testing frameworks</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>Nice version control (e.g.&nbsp;readable Git diffs)</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>Autocomplete / auto-formatting &amp; syntax highlighting</td>
-<td>Yes**</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>Compatible with sharing code externally</td>
-<td>Yes***</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
-<p>* whilst you can still make and preview tables and plots in RStudio and other IDEs, they’re not interactive in the same way as those in notebooks<br>
-** auto-formatting is available for SQL and Python in Databricks, but not R<br>
-*** external users must have software that would allow them to open notebooks</p>
-<p>You can read more about the differences between IDEs and notebooks and where each might be useful <a href="https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/workflow/notebooks_versus_ide_development/#what-is-this-guide-for" target="_blank">on the NHS-R website</a>.</p>
-<hr>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -893,7 +826,6 @@ Tip
 <p>Any notebooks used for core business processes should be created in a repository linked to GitHub / DevOps where they can be version controlled.</p>
 </div>
 </div>
-</section>
 </section>
 <section id="using-notebooks" class="level2">
 <h2 class="anchored" data-anchor-id="using-notebooks">Using notebooks</h2>
