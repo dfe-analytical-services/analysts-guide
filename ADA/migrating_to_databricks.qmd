@@ -120,7 +120,7 @@ This approach is best suited to processes you plan to automate using Databricks 
 
 ------------------------------------------------------------------------
 
-This approach is appropriate when your team primarily works in R and your SQL logic is not particularly complex or lengthy. It involves translating all existing SQL logic into R so that all your code is in the same language. The R code would then be run from RStudio / Positron / another IDE and would connect to the Databricks catalog to access the data as in Approach 1 above*.
+This approach is not generally recommended, as Databricks is well suited to SQL workloads, so rewriting your SQL to be Databricks-compatible (see the Translating T-SQL to Spark SQL note above) is usually the easiest option. 
 
 ------------------------------------------------------------------------
 
