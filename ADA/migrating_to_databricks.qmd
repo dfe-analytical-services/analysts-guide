@@ -87,7 +87,8 @@ SQL Editor is recommended for short, ad-hoc SQL queries. For longer or more comp
 ::: callout-note
 ### Translating T-SQL to Spark SQL 
 
-Any SQL code, whether in standalone SQL scripts or embedded in R scripts, will need to be rewritten from T-SQL to Spark SQL syntax. This applies regardless of whether you are following Approach 1 or Approach 2, as either way the code is executed by Databricks which uses Spark SQL syntax. Databricks' in-built AI assistant "Genie" can help with translating your code.
+Any SQL code, whether in standalone SQL scripts or embedded within R scripts, will need to be rewritten from T-SQL to Spark SQL syntax. This applies regardless of whether you are following Approach 1 or Approach 2, as in both cases the code will ultimately be executed in Databricks which uses Spark SQL. 
+Databricks' built-in AI assistant "Genie" can be a helpful tool for translating your code. The ADA team has also developed a [SQL translation tool](https://analytical-data-access.education.gov.uk/sql-migrator) to help with this process.
 
 :::
 
