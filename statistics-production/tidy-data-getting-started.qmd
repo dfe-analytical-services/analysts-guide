@@ -1,0 +1,765 @@
+---
+title: "Getting started with tidy data"
+---
+
+Explore Education Statistics (EES) is the service DfE uses to publish official
+statistics. This guide is for people new to preparing tidy data for EES. You
+don't need any experience with tidy data to follow it.
+
+It explains what tidy data is, then works through an example from a table to
+a finished data file and metadata file, with optional R and Python scripts.
+It ends with checklists to use before publication.
+
+Tidy data is the foundation of a statistics release in EES. From the same
+tidy data files, you can:
+
+- create tables and charts for your release
+- let users build their own tables, selecting the information they need
+- make data available to download or reuse through the API
+
+The [Open Data Standards](ud.qmd) provide the full technical reference,
+including exceptions and accepted values. If you plan to publish through
+the API, you should also follow the
+[API data standards](api-data-standards.qmd).
+
+## What is tidy data?
+
+Tidy data is a way of organising information so that:
+
+1. **Each column represents one variable** — something you are measuring
+   or describing, such as a year, region or number of pupils.
+2. **Each row represents one observation** — one particular combination
+   of those variables.
+3. **Each cell contains one value.**
+
+These principles make data easier to analyse, combine, filter and reuse.
+
+### An example: pupil numbers by year and sex
+
+Imagine you have a table showing the number of pupils in two regions,
+broken down by year and sex.
+
+| Region | 2024_male | 2024_female | 2025_male | 2025_female |
+|---|---:|---:|---:|---:|
+| North East | 24,300 | 22,700 | 24,500 | 22,900 |
+| North West | 67,200 | 63,100 | 67,600 | 63,500 |
+
+*Illustrative figures for explaining tidy data.*
+
+This is a useful table for someone to read. But there are two pieces of
+information hidden inside every numerical column heading: **year** and
+**sex**.
+
+The same information in a tidy structure looks like this:
+
+| region_name | year | sex | pupil_count |
+|---|---|---|---:|
+| North East | 2024 | Male | 24,300 |
+| North East | 2024 | Female | 22,700 |
+| North East | 2025 | Male | 24,500 |
+| North East | 2025 | Female | 22,900 |
+| North West | 2024 | Male | 67,200 |
+| North West | 2024 | Female | 63,100 |
+| North West | 2025 | Male | 67,600 |
+| North West | 2025 | Female | 63,500 |
+
+The figures haven't changed. We've just organised them differently.
+
+Instead of having separate columns for every combination of year and sex,
+we now have:
+
+- a `region_name` column identifying the region
+- a `year` column identifying the year
+- a `sex` column identifying the pupils' sex
+- a `pupil_count` column containing the number of pupils
+
+Each row represents one observation. For example, the first row tells us
+that there were 24,300 male pupils in the North East in 2024.
+
+### Why is this better?
+
+The tidy table is longer, but the structure stays the same when new
+information is added.
+
+For example, if we wanted to include 2026, we would **add more rows,
+rather than more columns**.
+
+We could also filter the data to just female pupils, compare years, or
+combine it with other data using the same variables.
+
+This is particularly useful for software. Rather than writing code that
+handles a different column for every year and sex, we can use the same
+columns each time.
+
+**The key principle is to put categories into columns of their own,
+rather than hiding them in column headings.**
+
+## Worked example {#worked-example}
+
+Let's work through a more realistic example of preparing pupil statistics
+for EES.
+
+We'll start with an Excel-style table containing pupil counts by academic
+year, region, sex and education phase.
+
+You can download the
+[source CSV](../resources/open-data-standards/pupil-source.csv) and follow
+the example using the figures for the North East in 2022/23.
+
+There are three stages:
+
+1. [Rearrange the existing counts](#rearrange-existing-counts).
+2. [Add totals and percentages](#add-totals-and-percentages).
+3. [Add EES time and geography fields](#add-ees-fields).
+
+### 1. Rearrange the existing counts {#rearrange-existing-counts}
+
+The source file has one row for each academic year and region, with
+four numerical columns:
+
+- `male_prim`: male primary pupils
+- `female_prim`: female primary pupils
+- `male_sec`: male secondary pupils
+- `female_sec`: female secondary pupils
+
+Here is the North East row for 2022/23, with descriptive headings
+in place of the source's abbreviations.
+
+```{r}
+#| echo: false
+read_example <- function(file) {
+  read.csv(
+    file.path("../resources/open-data-standards", file),
+    colClasses = "character",
+    check.names = FALSE
+  )
+}
+show_table <- function(
+  data, caption, col.names = names(data), big.mark = ",", ...
+) {
+  knitr::kable(
+    data,
+    row.names = FALSE,
+    col.names = col.names,
+    format.args = list(big.mark = big.mark),
+    caption = caption,
+    ...
+  )
+}
+
+source_data <- read_example("pupil-source.csv")
+example_data <- read_example("pupil-enrolments.csv")
+example_meta <- read_example("pupil-enrolments.meta.csv")
+
+source_counts <- c("male_prim", "female_prim", "male_sec", "female_sec")
+source_data[source_counts] <- lapply(source_data[source_counts], as.integer)
+example_data$pupil_count <- as.integer(example_data$pupil_count)
+example_data$pupil_percent <- as.numeric(example_data$pupil_percent)
+
+# North East rows for 2022/23, in the order they are shown on this page
+north_east <- example_data[
+  example_data$time_period == "202223" &
+    example_data$region_code == "E12000001",
+]
+north_east <- north_east[order(
+  match(
+    north_east$education_phase,
+    c("Primary", "Secondary", "All education phases")
+  ),
+  match(north_east$sex, c("Male", "Female", "Total"))
+), ]
+
+# The four counts that come straight from the source, without totals
+north_east_detail <- north_east[
+  north_east$education_phase != "All education phases" &
+    north_east$sex != "Total",
+]
+```
+
+```{r}
+#| echo: false
+show_table(
+  source_data[
+    source_data$academic_year == "2022/23" &
+      source_data$region_name == "North East",
+    c("region_name", source_counts)
+  ],
+  col.names = c(
+    "Region", "Male primary", "Female primary",
+    "Male secondary", "Female secondary"
+  ),
+  caption = "North East, 2022/23: the starting row (year column omitted)."
+)
+```
+
+We can recognise the same problem as in the earlier example.
+The numerical headings contain two pieces of information: the pupils'
+sex and their education phase.
+
+We want to make both of these into columns.
+
+Here are the same four counts, rearranged into tidy data.
+
+```{r}
+#| echo: false
+show_table(
+  north_east_detail[
+    , c("region_name", "sex", "education_phase", "pupil_count")
+  ],
+  col.names = c("Region", "Sex", "Phase", "Pupil count"),
+  caption = paste(
+    "North East, 2022/23: the same counts rearranged",
+    "(year column omitted)."
+  )
+)
+```
+
+Nothing has been calculated or changed yet. We have simply moved
+information out of the headings and into columns. This is often called
+*pivoting* or *unpivoting*, depending on the software you're using.
+
+The region repeats because each row needs to identify which pupils
+the number describes.
+
+Read the first row as: "In the North East, there are 13,100 male primary
+pupils." Each row describes one combination of region, sex and education
+phase for that year.
+
+The year is still 2022/23 for each row. We'll add the standard EES
+time columns in stage 3.
+
+#### Understanding filters and indicators
+
+EES uses two terms to describe the different types of columns in tidy data.
+
+**Filters** are the categories that users can choose when exploring the data.
+
+In our example, `sex` and `education_phase` are filters. A user can
+choose male pupils, female pupils, primary pupils, secondary pupils
+or combinations of these.
+
+Keeping sex and phase in separate columns means users can select them
+independently. A single category called "Female primary" would not give
+users the same flexibility in the EES table tool.
+
+**Indicators** are the things we measure.
+
+All four numerical columns in our original table contain pupil counts.
+They measure the same thing, so they belong in one indicator column:
+`pupil_count`.
+
+A useful question to ask when preparing your own data is:
+
+- Does this column describe **which group** the figure relates to?
+  It is probably a filter.
+- Does it contain **the figure being measured**?
+  It is probably an indicator.
+
+We'll use these terms again when creating the metadata file.
+
+### 2. Add totals and percentages {#add-totals-and-percentages}
+
+Now that the counts are tidy, we need to decide what other figures
+users will need.
+
+The original source doesn't contain totals, so in this example we calculate:
+
+- male and female pupils combined, using `Total` in the `sex` column
+- primary and secondary pupils combined, using `All education phases`
+  in the `education_phase` column
+- the nine English regions combined, creating national rows for England
+
+We also calculate the percentage of pupils of each sex within each
+year, location and education phase.
+
+For example, in the North East in 2022/23 there were 13,100 male and
+11,900 female primary pupils, giving a total of 25,000.
+
+The percentage of male primary pupils is calculated as:
+
+**13,100 / 25,000 × 100 = 52.4%**
+
+We have introduced another indicator, `pupil_percent`, alongside
+`pupil_count`.
+
+Because the counts and percentages describe the same groups of pupils,
+they belong in the same tidy data file as separate columns.
+
+Here are the complete North East figures for 2022/23, including
+the totals and percentages.
+
+```{r}
+#| echo: false
+north_east_rounded <- north_east[
+  , c("education_phase", "sex", "pupil_count", "pupil_percent")
+]
+north_east_rounded$pupil_percent <- sprintf(
+  "%.1f", north_east_rounded$pupil_percent
+)
+show_table(
+  north_east_rounded,
+  col.names = c("Phase", "Sex", "Pupil count", "Pupil percentage"),
+  caption = paste(
+    "North East, 2022/23: counts and percentages including totals,",
+    "with percentages shown to 1 decimal place",
+    "(time and geography columns omitted)."
+  ),
+  align = "llrr"
+)
+```
+
+There are three choices for sex (`Male`, `Female`, `Total`) and three for
+phase (`Primary`, `Secondary`, `All education phases`), giving nine rows for
+the North East in 2022/23.
+
+#### Be careful when adding totals
+
+Totals are useful, but it's important not to count the same pupils
+more than once.
+
+For example, we can calculate:
+
+13,100 male pupils + 11,900 female pupils = 25,000 pupils.
+
+But adding the `Total` row to the male and female rows would give
+50,000. That would count every pupil twice.
+
+Similarly, we should only combine geographic areas or groups that
+don't overlap, and we should not add percentages together to produce
+a total.
+
+When using the data, filters help users select the relevant groups
+without including their totals as well.
+
+You should also explain what each percentage is a percentage **of**
+in your publication's public data guidance.
+
+### 3. Add EES time and geography fields {#add-ees-fields}
+
+We now have tidy data with the counts, totals and percentages we
+want to publish.
+
+Before uploading it to EES, we need to make sure each row contains
+time and geography information in the standard format.
+
+#### Time
+
+In the source file, the year is recorded as `2022/23` in a column
+called `academic_year`.
+
+EES requires two columns to describe time:
+
+| Column | Value |
+|---|---|
+| `time_period` | `202223` |
+| `time_identifier` | `Academic year` |
+
+These tell EES both the time period and the type of period being used.
+
+Other formats, including calendar years and financial years, are
+described in the [time columns guidance](ud.qmd#time-columns).
+
+#### Geography
+
+Each row also needs information about the geographic area it describes.
+
+For the North East example, we need:
+
+- `geographic_level`, identifying the type of geography
+- `country_code` and `country_name`, identifying England
+- `region_code` and `region_name`, identifying the North East
+
+The North East region code is `E12000001`.
+
+Here are all the standard time and geography values for the North East
+rows in 2022/23.
+
+```{r}
+#| echo: false
+location_columns <- c(
+  "time_period", "time_identifier", "geographic_level",
+  "country_code", "country_name", "region_code", "region_name"
+)
+show_table(
+  data.frame(
+    column = location_columns,
+    value = unlist(north_east[1, location_columns], use.names = FALSE)
+  ),
+  col.names = c("Column in the data file", "Value on each row"),
+  caption = "Time and geography fields for North East pupils in 2022/23."
+)
+```
+
+Use geographic code lookups rather than entering codes manually.
+
+If you work in R, the
+[dfeR package](https://dfe-analytical-services.github.io/dfeR/) includes
+geographic lookups such as
+[`fetch_regions()`](https://dfe-analytical-services.github.io/dfeR/reference/fetch_regions.html).
+
+You can also download the
+[region lookup CSV](../resources/open-data-standards/pupil-region-lookup.csv)
+used in this example.
+
+#### Putting it all together
+
+One row in our finished file describes:
+
+- **When:** academic year 2022/23
+- **Where:** North East
+- **Who:** male primary pupils
+- **How many:** 13,100 pupils
+- **What percentage:** 52.4% of primary pupils in that region and year
+
+All of this information is recorded in columns, so the row can be
+understood independently of the other rows.
+
+Here are some of the columns together, as they appear in the completed
+data file.
+
+```{r}
+#| echo: false
+show_table(
+  north_east_detail[
+    , c(
+      "time_period", "time_identifier", "geographic_level",
+      "region_name", "education_phase", "sex",
+      "pupil_count", "pupil_percent"
+    )
+  ],
+  caption = "Selected columns from the finished data file.",
+  big.mark = ""
+)
+```
+
+The [finished example data file](../resources/open-data-standards/pupil-enrolments.csv)
+shows all the columns together.
+
+The original source has 18 rows: two academic years for each of
+the nine English regions. After rearranging the counts and adding totals,
+percentages and England-level figures, the finished file has **180 rows**:
+
+2 years × 10 locations × 3 phase categories × 3 sex categories.
+
+The file is longer, but it gives people far more ways to explore the
+same statistics.
+
+## Try the example code
+
+You can download working R and Python examples that turn the
+original pupil table into the completed data file and its
+[metadata file](#create-the-metadata), which is explained later in this guide.
+
+These are optional. You don't need to run the scripts to understand
+the steps in this guide.
+
+**R example** (needs the dplyr, tidyr and dfeR packages)
+
+- [prepare-pupil-example.R](../resources/open-data-standards/prepare-pupil-example.R)
+- [pupil-source.csv](../resources/open-data-standards/pupil-source.csv)
+
+**Python example** (needs the pandas package)
+
+- [prepare-pupil-example.py](../resources/open-data-standards/prepare-pupil-example.py)
+- [pupil-source.csv](../resources/open-data-standards/pupil-source.csv)
+- [pupil-region-lookup.csv](../resources/open-data-standards/pupil-region-lookup.csv)
+
+You can compare the files produced by the scripts against the:
+
+- [finished data file](../resources/open-data-standards/pupil-enrolments.csv)
+- [finished metadata file](../resources/open-data-standards/pupil-enrolments.meta.csv)
+
+The values will match. The formatting can differ slightly between R and
+Python, for example whether text is wrapped in quotation marks.
+
+The scripts demonstrate the process for this particular example.
+Your own data may have different categories, populations, missing
+values or disclosure requirements that need additional handling.
+
+**Make your data preparation repeatable.** Whether you work in
+R, Python, SQL or SAS, it's good practice to prepare data using a
+reproducible process that you can run again when new figures become
+available.
+
+See the [RAP guidance on preparing data](../RAP/rap-statistics/rap-statistics-preparing-data.qmd)
+for further advice.
+
+## Start from what you already have {#start-from-what-you-already-have}
+
+Most teams already produce tables for their publications, perhaps
+in Excel, from a database or using R, Python or SAS.
+
+You don't necessarily need to create a tidy data file for every
+existing table.
+
+Instead, start by looking at the data behind those tables.
+
+### Decide which figures belong together
+
+In EES, users can create their own tables from the data you publish. The
+table tool works with one data file at a time, so figures that people will
+want to compare need to be in the same file.
+
+Tables that describe the same underlying population can often be
+combined into one tidy data file.
+
+For example, you might currently publish separate tables for:
+
+- pupil numbers by sex
+- pupil numbers by education phase
+- pupil numbers by sex and education phase
+
+These can usually become one tidy data file, with filters for
+sex and phase.
+
+On the other hand, tables about substantially different subjects
+or populations, such as pupil numbers and school finances, will
+often make more sense as separate files.
+
+Aim for a small number of useful files, without combining incompatible
+data simply to reduce the count. Fewer files are more flexible for users
+and give your team less to maintain and quality assure.
+
+The [dataset design decisions](ud.qmd#dataset-design-decisions)
+guidance explains these choices in more detail.
+
+## Prepare the data file {#prepare-the-data-file}
+
+Once you've decided which data belongs together and arranged it into
+a tidy structure, you can prepare the CSV for EES.
+
+### Use the required time and geography columns
+
+As in [stage 3 of the worked example](#add-ees-fields), every data file
+must contain the
+[mandatory time and geography columns](ud.qmd#time-and-geography):
+`time_period`, `time_identifier`, `geographic_level`, `country_code`
+and `country_name`.
+
+You also need the
+[columns for each geographic level](ud.qmd#allowable-geographic-levels)
+in your data. Our pupil example uses `region_code` and `region_name`.
+These are left empty for the national rows, because those figures
+describe England as a whole.
+
+### Use consistent names and categories
+
+Where standard categories exist, use the
+[harmonised variables](ud.qmd#common-harmonised-variables).
+
+For example, DfE uses `sex` with values such as `Male`, `Female`
+and `Total`.
+
+Using consistent names makes it easier to work with statistics
+from different publications.
+
+For other variables, follow the
+[variable naming](ud.qmd#variable-names) and
+[indicator naming](ud.qmd#indicator-names) guidance.
+
+### Save the data in the correct format
+
+Use a short, descriptive file name, such as `pupil-enrolments.csv`.
+
+File names should be lower case, without spaces or years, so the
+same name can be reused each release.
+
+Save the data as a
+[UTF-8 CSV](ud.qmd#how-to-export-data-with-utf-8-encoding), with:
+
+- one row of column headings
+- no separate title rows or row numbers
+- geography codes stored as text
+- percentages recorded as numbers, such as `52.4`, rather than
+  `52.4%` or `0.524`
+
+### Handle missing and suppressed values
+
+Real datasets often contain missing, unavailable or confidential values.
+
+EES has [standard data symbols](ud.qmd#data-symbols), including:
+
+- `c` for confidential values
+- `x` for unavailable values
+- `z` for values that are not applicable
+
+Don't use zero to represent these situations. Zero means the actual
+value is zero.
+
+Everything in your data file can be downloaded, so make sure your
+disclosure control has been applied to the data itself before publishing.
+
+## Create the metadata {#create-the-metadata}
+
+Each tidy data file also needs a **metadata file**.
+
+The data file contains the actual statistics. The metadata file
+tells EES what the different columns mean and how to display them.
+
+For example, our data file includes a column named `pupil_count`.
+The metadata is where we tell EES to display this as **Number of pupils**,
+with no decimal places.
+
+### Start from the template
+
+Download the
+[blank metadata template](../resources/open-data-standards/metadata-template.meta.csv).
+
+It contains the eight
+[mandatory metadata columns](ud.qmd#mandatory-ees-metadata-columns).
+
+You need one metadata row for each filter and indicator in your
+data file. You do not need metadata rows for the standard time
+and geography columns.
+
+For our example, we need four rows: two filters and two indicators.
+Each row gives the column's type and display label. Indicator rows also
+set how the figure displays, such as its unit and number of decimal places.
+
+Here are the main settings from the completed example.
+
+```{r}
+#| echo: false
+show_table(
+  example_meta[
+    , c(
+      "col_name", "col_type", "label", "indicator_unit",
+      "indicator_dp", "filter_default"
+    )
+  ],
+  caption = "Selected metadata settings for the pupil example."
+)
+```
+
+In our example:
+
+- `pupil_count` has no unit and displays with 0 decimal places
+- `pupil_percent` uses `%` and displays with 1 decimal place
+- filter rows leave indicator-specific metadata columns empty
+- indicator rows leave filter-specific metadata columns empty
+
+The name in `col_name` must exactly match the relevant column
+heading in your data file.
+
+### Set sensible default filters
+
+You can also choose which filter values EES selects by default.
+
+For this example, it makes sense to start with:
+
+- `All education phases` for the phase filter
+- `Total` for the sex filter
+
+This gives users an overall pupil count when they first open
+the data, while allowing them to select individual groups.
+
+To do this, add the optional `filter_default` column to your metadata file.
+It isn't in the template, so the completed example has nine columns
+rather than eight.
+
+The [aggregates and default filters guidance](ud.qmd#aggregates-and-default-filters)
+explains how these settings work.
+
+You can download the
+[completed example metadata file](../resources/open-data-standards/pupil-enrolments.meta.csv)
+to see the settings used.
+
+### Name the metadata file
+
+The metadata CSV must use the same base name as the data CSV,
+with `.meta` added.
+
+For example:
+
+- Data: `pupil-enrolments.csv`
+- Metadata: `pupil-enrolments.meta.csv`
+
+These are the two files you'll upload to EES.
+
+## Check your files {#check-your-files}
+
+Before publishing, make sure both files meet the EES data standards.
+
+EES automatically screens your data and metadata files when you
+upload them, but you can run the same checks earlier using:
+
+- the [EES data screener app](https://rsconnect/rsc/dfe-published-data-qa/),
+  available on DfE kit
+- the [eesyscreener R package](https://github.com/dfe-analytical-services/eesyscreener),
+  which can be included in your data preparation pipeline
+
+Fix any problems in your source data or code and regenerate the files,
+rather than manually editing the final CSV.
+
+Review warnings as well as errors. Passing the screening checks does
+not replace your own quality assurance of the statistics, which is
+covered in the [checklists](#checklists) below.
+
+## Check how it looks in EES {#check-how-it-looks-in-ees}
+
+Once you've [uploaded the files](ees.qmd#uploading-files), preview
+your release in EES.
+
+It's worth checking the data from the perspective of someone who
+will use it, not just the perspective of the person who prepared it.
+
+For our pupil example, try to:
+
+1. Build a table comparing male and female primary pupils across regions.
+2. Make a chart showing the percentage of pupils by sex.
+3. Check that the indicator labels, units and decimal places are understandable.
+4. Check that the default filter selections show sensible figures.
+5. Create featured tables for the views users are most likely to need.
+
+If you're replacing data in an existing publication, read the
+[replacing data guidance](ees.qmd#replacing-data) before changing
+column names or structures. These changes can affect tables and
+charts that have already been set up.
+
+If you are publishing through the API, also follow the
+[API publishing checklist](api-data-standards.qmd#api-publishing-checklist).
+
+## Checklists {#checklists}
+
+### For each data file and metadata file
+
+- [ ] Each row is an observation and the data has a
+      [tidy structure](ud.qmd#tidy-data-structure).
+- [ ] Filters and indicators are clearly identified.
+- [ ] The [mandatory time and geography columns](ud.qmd#time-and-geography)
+      are present.
+- [ ] Column names follow the [naming standards](ud.qmd#variable-names),
+      using [harmonised variables](ud.qmd#common-harmonised-variables)
+      where appropriate.
+- [ ] Missing and suppressed values use the
+      [standard symbols](ud.qmd#data-symbols).
+- [ ] The metadata file has
+      [all mandatory columns](ud.qmd#mandatory-ees-metadata-columns),
+      matching names and understandable labels.
+- [ ] Both files are [UTF-8 CSVs](ud.qmd#data-format) with matching file names.
+- [ ] The figures, totals and percentages have been checked against their
+      sources.
+- [ ] No combination of time, geography and filters appears more than once.
+- [ ] Both files pass the
+      [screening checks](ud.qmd#how-to-check-against-these-standards).
+
+### For the whole publication
+
+- [ ] Related data has been organised into a manageable number of useful files.
+- [ ] Featured tables are available for the views users need most often.
+- [ ] All published data meets the disclosure control policy.
+- [ ] [Public data guidance](ees.qmd#public-data-guidance) and methodology
+      explain what each file contains.
+- [ ] Tables, charts and filter defaults have been checked in the EES preview.
+- [ ] If publishing through the API, the
+      [API publishing checklist](api-data-standards.qmd#api-publishing-checklist)
+      is complete.
+
+## Getting help
+
+To upload and publish data, you need access to the EES admin system.
+See [accessing EES](ees.qmd#accessing-ees).
+
+For questions about tidy data, data standards or publishing in EES,
+contact the Explore Education Statistics platforms team at
+[explore.statistics@education.gov.uk](mailto:explore.statistics@education.gov.uk).

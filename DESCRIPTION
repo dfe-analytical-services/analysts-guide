@@ -26,7 +26,6 @@ Depends:
 Imports:
     cli,
     dplyr,
-    duckplyr,
     jsonlite,
     mime,
     rlang,
@@ -35,7 +34,6 @@ Imports:
     tidyr,
     utils
 Suggests:
-    dfeR,
     knitr,
     readr,
     rmarkdown,
@@ -43,8 +41,6 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: 
     knitr
-Remotes: 
-    dfe-analytical-services/dfeR
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-GB

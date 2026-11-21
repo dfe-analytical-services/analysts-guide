@@ -1,0 +1,5 @@
+col_name,col_type,label,indicator_grouping,indicator_unit,indicator_dp,filter_hint,filter_grouping_column,filter_default
+education_phase,Filter,Education phase,,,,Select education phases,,All education phases
+sex,Filter,Sex,,,,Select pupil sex,,Total
+pupil_count,Indicator,Number of pupils,,,0,,,
+pupil_percent,Indicator,Percentage of pupils,,%,1,,,
