@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "en_GB",
-  "platform": "4.6.1",
+  "platform": "4.6.2",
   "metadata": {
     "appmode": "quarto-static",
     "primary_rmd": "index.qmd",
@@ -15,7 +15,7 @@
     }
   },
   "quarto": {
-    "version": "1.10.18",
+    "version": "1.11.9",
     "engines": ["markdown", "knitr"]
   },
   "packages": {
@@ -77,8 +77,15 @@
         "Maintainer": "Brian Ripley <Brian.Ripley@R-project.org>",
         "Repository": "CRAN",
         "Date/Publication": "2025-02-28 17:44:52 UTC",
-        "Built": "R 4.6.1; x86_64-w64-mingw32; 2026-06-24 08:23:25 UTC; windows",
-        "Archs": "x64"
+        "Built": "R 4.6.2; x86_64-w64-mingw32; 2026-11-19 10:44:29 UTC; windows",
+        "Archs": "x64",
+        "RemoteType": "standard",
+        "RemoteRef": "MASS",
+        "RemotePkgRef": "MASS",
+        "RemoteRepos": "https://cran.rstudio.com",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "7.3-65"
       }
     },
     "R6": {
@@ -2276,7 +2283,7 @@
         "Maintainer": "Kevin Ushey <kevin@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2026-04-16 07:20:03 UTC",
-        "Built": "R 4.6.1; ; 2026-10-13 11:04:06 UTC; windows"
+        "Built": "R 4.6.1; ; 2026-10-13 11:44:14 UTC; windows"
       }
     },
     "rlang": {
@@ -3072,55 +3079,61 @@
       "checksum": "17f847933966777e7397760158d3dc05"
     },
     ".Rprofile": {
-      "checksum": "04b5d62e1d9bcd443cb510fa23bcbe4c"
+      "checksum": "8403a1ff07e25388ec0ed9dfe479a853"
     },
     "_quarto.yml": {
-      "checksum": "4862bad290b5c3ea36c0e5d5227fd583"
+      "checksum": "ffd4f7fbec42e3c8a171516996e4660a"
     },
     "_site/404.html": {
-      "checksum": "ce3f18405518385643aba1ae5cf8f7fd"
+      "checksum": "521e23da231505f9390eb10d8d3d5080"
     },
     "_site/ADA/ada.html": {
-      "checksum": "a0b075fd27c423b8a6da47843be86ef6"
+      "checksum": "2749a0b160c769bfb1d7172959db7455"
+    },
+    "_site/ADA/databricks_common_issues.html": {
+      "checksum": "11f39de62558a4d48db489c605124a54"
     },
     "_site/ADA/databricks_fundamentals.html": {
-      "checksum": "37fac112dec202e267108c38d8b51792"
+      "checksum": "1182aa1aae42519f4e4f60c3871a9e35"
     },
     "_site/ADA/databricks_medallion_architecture.html": {
-      "checksum": "f9d4327c32cedd2df71db0da87e67bc1"
+      "checksum": "85681fd75ea6c3d244b27dd7e8f96240"
     },
     "_site/ADA/databricks_notebooks.html": {
-      "checksum": "da758cc5fcc3b2ffb6f4a51fd42f5584"
+      "checksum": "c8e73fbdc02c51a6e1d2eaecda7366e5"
     },
     "_site/ADA/databricks_rstudio_personal_cluster.html": {
-      "checksum": "3f58c4e0880f09f5500825e1294730a0"
+      "checksum": "d20e4590f56cc7ec1d8c9a864d40b271"
     },
     "_site/ADA/databricks_rstudio_personal_cluster_sparklyr.html": {
-      "checksum": "a01ab422de8be6bbc32f99a99e57d411"
+      "checksum": "bc382763c8a3e288994d12d0286e787f"
     },
     "_site/ADA/databricks_rstudio_personal_cluster_sparklyr_archive.html": {
-      "checksum": "3fee46bcfb59a44a431a3b9e5a3a3830"
+      "checksum": "526bb61913ee473f7fc1f49bc5d5c0b6"
     },
     "_site/ADA/databricks_rstudio_sql_warehouse.html": {
-      "checksum": "a9aa7eebb9a2592253dc0a931274f7c0"
+      "checksum": "f07ce98153fe6d3163656a90748510b6"
+    },
+    "_site/ADA/databricks_strategy.html": {
+      "checksum": "61c8fc3432d3da737b94507cc73dfa3d"
     },
     "_site/ADA/databricks_workflows.html": {
-      "checksum": "3bcc12c03788f8f8c3098958ca8e4eed"
+      "checksum": "4c195fef250c70f7c127db53c5ccdb9c"
     },
     "_site/ADA/Databricks_workflows.qmd": {
-      "checksum": "243a42e4e0a3c8820500884ba4595483"
+      "checksum": "0fddd6c6efce8c868dcd3cdefe0244e9"
     },
     "_site/ADA/git_databricks.html": {
-      "checksum": "9d1d49c5865e71e39953f1ec0890a34e"
+      "checksum": "38b75ab5dabd53ba41a3e3a8195ad71c"
     },
     "_site/ADA/migrating_to_databricks.html": {
-      "checksum": "f9e7a6ce4718e7a4ff3ae4e4707fd8b4"
+      "checksum": "38fb7e8b649a122bb10274d93fc53681"
     },
     "_site/CODE_OF_CONDUCT.html": {
-      "checksum": "e15c2f81f4042001fb6e8097952ebc43"
+      "checksum": "691b7c1307e11c56ed43c4e80bd454bd"
     },
     "_site/CONTRIBUTING.html": {
-      "checksum": "bad3db60fb182ad8f480db9dc78a0a3a"
+      "checksum": "23f63ec9cb74ffc43959849da53a97ae"
     },
     "_site/data_examples/ees_demo_datafile.csv": {
       "checksum": "a04be8590f5175a3a4317089863b0b16"
@@ -3133,9 +3146,6 @@
     },
     "_site/images/accessibility.PNG": {
       "checksum": "85908718643b94f8a3b5af5670676d42"
-    },
-    "_site/images/ada-cloud-computing.jpg": {
-      "checksum": "9e5c0e699e9d7c991361aafc0f1e6ce2"
     },
     "_site/images/ada-compute-personal-advanced.png": {
       "checksum": "d3ff84a3a1222f1ea0e35e832c620aa7"
@@ -3166,9 +3176,6 @@
     },
     "_site/images/ada-notebook.png": {
       "checksum": "14558444407b8c5feb7975c95976b0ed"
-    },
-    "_site/images/ada-traditional-computer.jpg": {
-      "checksum": "cdc7ac4ec68a8c36b3dc8219d8e204cd"
     },
     "_site/images/ada-unity-catalog-sidebar.png": {
       "checksum": "6efe4c79bc03c63bc7ad94a69146c9a3"
@@ -3217,6 +3224,51 @@
     },
     "_site/images/ada-workspace-repos.png": {
       "checksum": "3c8ce50b85e158f3bfae03a427d344fc"
+    },
+    "_site/images/ADA/databricks_common_questions/catalog_dropdown_1.png": {
+      "checksum": "4b82bdd0f09c3e5bb15e1cdc037a8079"
+    },
+    "_site/images/ADA/databricks_common_questions/catalog_dropdown_2.png": {
+      "checksum": "5e1d48d9bb0d631c174c68cb0b980ee2"
+    },
+    "_site/images/ADA/databricks_common_questions/pat_token_1.png": {
+      "checksum": "8d09ea1909f302189daaf6d332a8b201"
+    },
+    "_site/images/ADA/databricks_common_questions/pat_token_2.png": {
+      "checksum": "3ff58619282be08d21755c8ad605b563"
+    },
+    "_site/images/ADA/databricks_common_questions/pat_token_3.png": {
+      "checksum": "0ca992b9705026d13af874cc7386a80f"
+    },
+    "_site/images/ADA/databricks_common_questions/pat_token_4.png": {
+      "checksum": "a5965a8fb0bec0b7e434ac4e36ab8580"
+    },
+    "_site/images/ADA/databricks_common_questions/personal_compute_1.png": {
+      "checksum": "f161056d4e657391163b44e1b5ac57d2"
+    },
+    "_site/images/ADA/databricks_common_questions/personal_compute_2.png": {
+      "checksum": "6017eaf774c253edd034ae9d93cc3adf"
+    },
+    "_site/images/ADA/databricks_common_questions/personal_compute_3.png": {
+      "checksum": "bd257072a80e16142494019e5b2869d8"
+    },
+    "_site/images/ADA/databricks_common_questions/personal_compute_4.png": {
+      "checksum": "39bb1a856b7a41315c91fe8a627832de"
+    },
+    "_site/images/ADA/databricks_common_questions/personal_compute_5.png": {
+      "checksum": "807c47b017855f33764fe26a57f5a4fb"
+    },
+    "_site/images/ADA/databricks_common_questions/personal_compute_6.png": {
+      "checksum": "b90f95b9e17bb3dd7e2e6c7744c7c55d"
+    },
+    "_site/images/ADA/databricks_common_questions/workspace_dropdown_1.png": {
+      "checksum": "1903715787a1fdc45391632cc7d6899f"
+    },
+    "_site/images/ADA/databricks_common_questions/workspace_dropdown_2.png": {
+      "checksum": "ddf373dd7fc10587be179eaee3dca9fe"
+    },
+    "_site/images/ADA/databricks_common_questions/workspace_dropdown_3.png": {
+      "checksum": "5d67d5c51187b4cdac6a744271f43a84"
     },
     "_site/images/add-git-folder.png": {
       "checksum": "a5f57e758db77313aec9f7fc276ac58e"
@@ -3624,115 +3676,115 @@
       "checksum": "8c056386c14df189173c94a2ee845663"
     },
     "_site/index.html": {
-      "checksum": "ba7fc48d9c5e66be35b0309df6f9836f"
+      "checksum": "86fad333a7706897bd26f6e74556baab"
     },
     "_site/learning-development/accessibility.html": {
-      "checksum": "fb3ef1fd86c38a2b54318107159aa7f6"
+      "checksum": "79d10aace8e69774e42d9009dd24d158"
     },
     "_site/learning-development/databricks.html": {
-      "checksum": "6e41ad20b0b5fd98cc2a722eb2c8b5dd"
+      "checksum": "6b3fd780719c7b55e374776fbd294b07"
     },
     "_site/learning-development/datacamp-tracks.html": {
-      "checksum": "672d165f93c8aca5afaa74ab53bc8e55"
+      "checksum": "5d91bcf10494e06c3f384f691b14c7b3"
     },
     "_site/learning-development/git.html": {
-      "checksum": "f87cdfabafdcde988d8596f27207d147"
+      "checksum": "154d112c5d60338d728cc0d19d4cae95"
     },
     "_site/learning-development/learning-support.html": {
-      "checksum": "44972751ee81b0cd47dc7c0e2fababdd"
+      "checksum": "f284334a6126ca57b4b43e02dfc6d432"
     },
     "_site/learning-development/python.html": {
-      "checksum": "deb96656d98a1d674ef478b367f52124"
+      "checksum": "81de930ca1c2892daa6046efd71716f3"
     },
     "_site/learning-development/r.html": {
-      "checksum": "a0da1c89ff5cebebb75fcd7a03e3c7ea"
+      "checksum": "0e7421780891725821b4b0f64732f049"
     },
     "_site/learning-development/sql.html": {
-      "checksum": "bcf31a44d2cd7015de506ed31d97a3c6"
+      "checksum": "99282c44187ca8578414604445725722"
     },
     "_site/RAP/common-rap-principles/automated-high-level-checks.html": {
-      "checksum": "ae56d4595685ceb2468cf716eff61ade"
+      "checksum": "41f04aec8757d39b6a72843a89c46952"
     },
     "_site/RAP/common-rap-principles/automated-reproducible-reports.html": {
-      "checksum": "70f69e42f998b13f95aa144f6eb2ad3d"
+      "checksum": "aed7f089f2ffc64751a6a60393eadc20"
     },
     "_site/RAP/common-rap-principles/clean-final-code.html": {
-      "checksum": "3b6999c9218acf0511134af121b30cb0"
+      "checksum": "45b23d19c2f690c93e60c60eae9a7929"
     },
     "_site/RAP/common-rap-principles/collaboratively-developed-using-git.html": {
-      "checksum": "e839de394b99b65e4cdb501bec717e4d"
+      "checksum": "20ffa252f309fb69d01e8ec6b37258be"
     },
     "_site/RAP/common-rap-principles/documentation.html": {
-      "checksum": "de6fa91c21bfec211a1786ffc4963f05"
+      "checksum": "4fa4f9e5100f3817dc8c1997ff1ba088"
     },
     "_site/RAP/common-rap-principles/peer-code-review-outside-team.html": {
-      "checksum": "d58b5987455d1b5b8dec25cc174a3b65"
+      "checksum": "5d0d2bbe6add246e9c07acc0f57b0725"
     },
     "_site/RAP/common-rap-principles/peer-code-review.html": {
-      "checksum": "faa45d1860dfeb38d9a750e8c4d10bed"
+      "checksum": "2672d76ebdcf0ed7840508caa4ea1eae"
     },
     "_site/RAP/common-rap-principles/processing-done-with-code.html": {
-      "checksum": "4a53bbaefd12b8989efd68be784b59a1"
+      "checksum": "e6d45cb76c4411cae19a5f3275563e64"
     },
     "_site/RAP/common-rap-principles/publication-project-specific-automated-sense-checks.html": {
-      "checksum": "0d4bbe84232bb3c15c106fa79525bdcc"
+      "checksum": "87005f80ba6c6a0890e08e481b5acd14"
     },
     "_site/RAP/common-rap-principles/recyclable-code-for-future-use.html": {
-      "checksum": "c109a64522e11c628ba5463bb9f8acb9"
+      "checksum": "3aea77029277114459e2ff2ff70ce4d6"
     },
     "_site/RAP/common-rap-principles/sensible-folder-and-file-structure.html": {
-      "checksum": "ddda101e576055c5d12c6ac5a72edaf9"
+      "checksum": "9e12fdeaeb6c765e66ee49e41f3e794c"
     },
     "_site/RAP/common-rap-principles/source-data-acquired-sensibly.html": {
-      "checksum": "8045bdb7c8b7f888744dc1487ec10520"
+      "checksum": "28bed0a4c0d13bea6f1f46d6d5f8dfac"
     },
     "_site/RAP/common-rap-principles/use-appropriate-tools.html": {
-      "checksum": "0384b21e55e6372683be3cbd15fdcbf9"
+      "checksum": "b2bef06d68a92990051d29674467d4d1"
     },
     "_site/RAP/common-rap-principles/version-controlled-final-scripts.html": {
-      "checksum": "8f4dda6536903dc5fcf33309c3356fa7"
+      "checksum": "22640bab586d3cc2fe5808df5bdba086"
     },
     "_site/RAP/common-rap-principles/whole-pipeline-run-scripts.html": {
-      "checksum": "3f637229d358eacab5fc4238f5340808"
+      "checksum": "3ebf295ecdb0ae95e93cac4b92bdac29"
     },
     "_site/RAP/getting-started-with-rap.html": {
-      "checksum": "305061833bec7a8087abd36946d81515"
+      "checksum": "8f94e8fbc1d1b424cbc14ff29ef8eb03"
     },
     "_site/RAP/rap-analysis/rap-analysis-preparing-data.html": {
-      "checksum": "6042ff03fb74327a4dc60471ad9a69d8"
+      "checksum": "4284653fc0e7890b0202c9a158e0ed90"
     },
     "_site/RAP/rap-analysis/rap-analysis-version-control.html": {
-      "checksum": "d76fb12b2a9d7560e865144c5d17609a"
+      "checksum": "9291b871824b9801706ffd5bf2e23f74"
     },
     "_site/RAP/rap-analysis/rap-analysis-writing-code.html": {
-      "checksum": "36a7aaf3b896580142d7aa6bcad76479"
+      "checksum": "62bbe8c600a027c992fde5f2b86760eb"
     },
     "_site/RAP/rap-analysis/rap-analysis.html": {
-      "checksum": "297d82e62ef1517777f4ee362f7382ac"
+      "checksum": "f068eb9fd27f01676917584983489885"
     },
     "_site/RAP/rap-case-studies.html": {
-      "checksum": "7e8246b187a1aef9b7839168aebc03e0"
+      "checksum": "dd51c149c17f96e16219d51d41a5596b"
     },
     "_site/RAP/rap-expectations.html": {
-      "checksum": "08fb992d335f4ea0c71c8ea669af3233"
+      "checksum": "ffaa30db6c6f2802e02f294854114671"
     },
     "_site/RAP/rap-faq.html": {
-      "checksum": "b1e3a1711aa45be71fcae2809187f627"
+      "checksum": "93cd8b4c482e505314a3b294ef8908e2"
     },
     "_site/RAP/rap-statistics/rap-statistics-preparing-data.html": {
-      "checksum": "6fc05554b6a0aa9fcff89347085fb499"
+      "checksum": "a03df201799dc5546aa7ffc2dcb0c1f2"
     },
     "_site/RAP/rap-statistics/rap-statistics-version-control.html": {
-      "checksum": "6c0bf8ceb9acc1f9498008b16017a053"
+      "checksum": "a43d379f85e238245b790a075d8fd8cf"
     },
     "_site/RAP/rap-statistics/rap-statistics-writing-code.html": {
-      "checksum": "0bf14e6fe9f8e722646308fc23e7fbbf"
+      "checksum": "c83c4fac111a883f1f2c6f0b89bf3016"
     },
     "_site/RAP/rap-statistics/rap-statistics.html": {
-      "checksum": "6867fb08e2f5cfd81be76dff48270258"
+      "checksum": "d59f6c6c696249b59d5c51886196e485"
     },
     "_site/RAP/rap-support.html": {
-      "checksum": "833dea48651c139348e587e40b22d6e0"
+      "checksum": "92c000e11ff671509d0b0e7cf340b91a"
     },
     "_site/README.md": {
       "checksum": "8985b661dddf3ecd955d723c12337934"
@@ -3774,13 +3826,13 @@
       "checksum": "0dd41aebe0e22186be86f78e8088ea77"
     },
     "_site/search.json": {
-      "checksum": "327b72701aee0b3c152acbb48b75e71e"
+      "checksum": "11d1112cc03a14f3f0f3cf9cc3a00a50"
     },
-    "_site/site_libs/bootstrap/bootstrap-615d741eae781cad7563ffedb882b0ab.min.css": {
-      "checksum": "615d741eae781cad7563ffedb882b0ab"
+    "_site/site_libs/bootstrap/bootstrap-421d9280840152c5ec324f87553f7cce.min.css": {
+      "checksum": "421d9280840152c5ec324f87553f7cce"
     },
-    "_site/site_libs/bootstrap/bootstrap-dark-29ea61902a13f4a66b3a4dc93499b7fb.min.css": {
-      "checksum": "29ea61902a13f4a66b3a4dc93499b7fb"
+    "_site/site_libs/bootstrap/bootstrap-dark-09d6e5ca7e12274a8a6996e7dacfdd0b.min.css": {
+      "checksum": "09d6e5ca7e12274a8a6996e7dacfdd0b"
     },
     "_site/site_libs/bootstrap/bootstrap-icons.css": {
       "checksum": "886da841d7421705f715f600c5ff11bb"
@@ -4094,14 +4146,17 @@
     "_site/site_libs/quarto-html/popper.min.js": {
       "checksum": "3a4a291ccf3f1ea0f82b641542fd3827"
     },
-    "_site/site_libs/quarto-html/quarto-syntax-highlighting-8c450af0e90ef59b22746d2ceb940a03.css": {
-      "checksum": "8c450af0e90ef59b22746d2ceb940a03"
+    "_site/site_libs/quarto-html/quarto-syntax-highlighting-40da53fc3cc19031cc3f2743e33c0041.css": {
+      "checksum": "40da53fc3cc19031cc3f2743e33c0041"
     },
-    "_site/site_libs/quarto-html/quarto-syntax-highlighting-dark-4816e79be40edb22001378da1f801405.css": {
-      "checksum": "4816e79be40edb22001378da1f801405"
+    "_site/site_libs/quarto-html/quarto-syntax-highlighting-dark-22883d1228546e9267704a1c86668128.css": {
+      "checksum": "22883d1228546e9267704a1c86668128"
     },
     "_site/site_libs/quarto-html/quarto.js": {
-      "checksum": "6f4245742deb3cc92337dbe2701ccfe1"
+      "checksum": "9bda8df81e66194b1ab694f468d9d599"
+    },
+    "_site/site_libs/quarto-html/scrollable-regions/scrollable-regions.js": {
+      "checksum": "63e1b4fb86651777d6ca88c29f7c1180"
     },
     "_site/site_libs/quarto-html/tabsets/tabsets.js": {
       "checksum": "e8d6a8862b33ccc461f8fd532e05b365"
@@ -4125,55 +4180,55 @@
       "checksum": "9c992af743ca88c8c5f650cf312c4e61"
     },
     "_site/sitemap.xml": {
-      "checksum": "a5b6127bb1a13a88663e75dd918c1bb3"
+      "checksum": "f70d969be42fc0e1cc7c2f8a29f9c585"
     },
     "_site/statistics-production/api-data-standards.html": {
-      "checksum": "e5082104caca94722d96ef5e43d9ae98"
+      "checksum": "531047a794f15dda1c8f4dd18ececcf9"
     },
     "_site/statistics-production/ees.html": {
-      "checksum": "996d5664f5a0cc475655543b85e245b5"
+      "checksum": "5f128f1e0f8fc2ca95f5cce02dd510be"
     },
     "_site/statistics-production/embedded-charts.html": {
-      "checksum": "8d433e1267919dac785362d2527c0fdd"
+      "checksum": "b9a16c8e16666b9e3af83030ac82254c"
     },
     "_site/statistics-production/examples.html": {
-      "checksum": "c78f2d604de6e7fdb9e36b6f281fbf35"
+      "checksum": "34f31325e405cef6d4b1e388c7b7145c"
     },
     "_site/statistics-production/pub.html": {
-      "checksum": "45fcc0dddae65e73132c5c8882b12bdf"
+      "checksum": "ab093495b5b8c03dfbe326a295b15d67"
     },
     "_site/statistics-production/scrums.html": {
-      "checksum": "ef910a6d39cdcc63d92df03021f9bce0"
+      "checksum": "82964a3344ef5c32b96575cbf57b7255"
     },
     "_site/statistics-production/stats_tools.html": {
-      "checksum": "9ec96201270b76035e330a33f5e85e79"
+      "checksum": "3995669bc9ce833c2bd41b77795a8593"
     },
     "_site/statistics-production/ud.html": {
-      "checksum": "893f186346e5c9bf1fa34ecd6f6f11e1"
+      "checksum": "acd6fcee25fdb868a459e441aa23082b"
     },
     "_site/statistics-production/user-analytics.html": {
-      "checksum": "780a8a90af1a243f39ffb3f6e04aa470"
+      "checksum": "fa5e3ffb2a6d57be097b9090e768e856"
     },
     "_site/statistics-production/user-eng.html": {
-      "checksum": "df8ae779d5639b9503d295525418c6ce"
+      "checksum": "1c45491c4f51d3f7c494b3693bdb3377"
     },
     "_site/styles.css": {
       "checksum": "aeb58cbfd5c5e5916e1d1e43fa186014"
     },
     "_site/writing-visualising/dashboards.html": {
-      "checksum": "8d60aacd0d6e2c847fa27f0eb763c729"
+      "checksum": "eb3d0bcaa447e73ca412219e8deaa5ba"
     },
     "_site/writing-visualising/dashboards_rshiny.html": {
-      "checksum": "80c03b71ff6570c6466f10d71aa5e520"
+      "checksum": "33ee887f4048b4ead65683fb65ce4b57"
     },
     "_site/writing-visualising/dashboards_rshiny_files/figure-html/chart_colours-1.png": {
       "checksum": "442261633503a0f9163e632860431823"
     },
     "_site/writing-visualising/visualising.html": {
-      "checksum": "1e305e633c36321b7b741ae8be8690ec"
+      "checksum": "62d702f4b270c3677307e63493378592"
     },
     "_site/writing-visualising/writing.html": {
-      "checksum": "5cca05ae34128780554f0c1c4f589196"
+      "checksum": "47b9a7450ecf9e7908604677fa1ea8e7"
     },
     "_styles.scss": {
       "checksum": "6aeac96a094b6e933df1dfcb483a835e"
@@ -4184,14 +4239,17 @@
     "ADA/ada.qmd": {
       "checksum": "6e9f9fb71c5fc9fdec156bf413240802"
     },
+    "ADA/databricks_common_issues.qmd": {
+      "checksum": "33683a850eb48b2a119149191a1922d7"
+    },
     "ADA/databricks_fundamentals.qmd": {
-      "checksum": "b1be9773d3be00df75ab50d82a9ef5cd"
+      "checksum": "16b671470e0cce613a74af198d39ed98"
     },
     "ADA/databricks_medallion_architecture.qmd": {
       "checksum": "879ac6f3ec2b00f2ac4b679d9b502b0e"
     },
     "ADA/databricks_notebooks.qmd": {
-      "checksum": "5d292f95219e3781c1f813bcaada5554"
+      "checksum": "11e8da09728bfda6c9c4e0031a401630"
     },
     "ADA/databricks_rstudio_personal_cluster.qmd": {
       "checksum": "fc99910fa578dada5eacf7866e025aa6"
@@ -4205,6 +4263,9 @@
     "ADA/databricks_rstudio_sql_warehouse.qmd": {
       "checksum": "2ce6bf8b1bd78a5af5c012109777ff9c"
     },
+    "ADA/databricks_strategy.qmd": {
+      "checksum": "b48c36392088e349fcd20b5026e0aa00"
+    },
     "ADA/databricks_workflows.qmd": {
       "checksum": "0fddd6c6efce8c868dcd3cdefe0244e9"
     },
@@ -4212,7 +4273,7 @@
       "checksum": "95e5d06b3bbc9ded7b21a67abd906b2e"
     },
     "ADA/migrating_to_databricks.qmd": {
-      "checksum": "7bad3f131327bb5181826de2fabb59f9"
+      "checksum": "85a15b1a640074192f673002a3d69f44"
     },
     "CODE_OF_CONDUCT.md": {
       "checksum": "97654949926441a44f170abb1e082ebc"
@@ -4327,6 +4388,57 @@
     },
     "images/ada-workspace-repos.png": {
       "checksum": "3c8ce50b85e158f3bfae03a427d344fc"
+    },
+    "images/ADA/databricks_common_questions/catalog_dropdown_1.png": {
+      "checksum": "4b82bdd0f09c3e5bb15e1cdc037a8079"
+    },
+    "images/ADA/databricks_common_questions/catalog_dropdown_2.png": {
+      "checksum": "5e1d48d9bb0d631c174c68cb0b980ee2"
+    },
+    "images/ADA/databricks_common_questions/pat_token_1.png": {
+      "checksum": "8d09ea1909f302189daaf6d332a8b201"
+    },
+    "images/ADA/databricks_common_questions/pat_token_2.png": {
+      "checksum": "3ff58619282be08d21755c8ad605b563"
+    },
+    "images/ADA/databricks_common_questions/pat_token_3.png": {
+      "checksum": "0ca992b9705026d13af874cc7386a80f"
+    },
+    "images/ADA/databricks_common_questions/pat_token_4.png": {
+      "checksum": "a5965a8fb0bec0b7e434ac4e36ab8580"
+    },
+    "images/ADA/databricks_common_questions/personal_compute_1.png": {
+      "checksum": "f161056d4e657391163b44e1b5ac57d2"
+    },
+    "images/ADA/databricks_common_questions/personal_compute_2.png": {
+      "checksum": "6017eaf774c253edd034ae9d93cc3adf"
+    },
+    "images/ADA/databricks_common_questions/personal_compute_3.png": {
+      "checksum": "bd257072a80e16142494019e5b2869d8"
+    },
+    "images/ADA/databricks_common_questions/personal_compute_4.png": {
+      "checksum": "39bb1a856b7a41315c91fe8a627832de"
+    },
+    "images/ADA/databricks_common_questions/personal_compute_5.png": {
+      "checksum": "807c47b017855f33764fe26a57f5a4fb"
+    },
+    "images/ADA/databricks_common_questions/personal_compute_6.png": {
+      "checksum": "b90f95b9e17bb3dd7e2e6c7744c7c55d"
+    },
+    "images/ADA/databricks_common_questions/r_and_compute_1.png": {
+      "checksum": "cd50ca438a58192d5482ff8f494fc37c"
+    },
+    "images/ADA/databricks_common_questions/r_and_compute_2.png": {
+      "checksum": "223379674723de1d8958e0e3423886b0"
+    },
+    "images/ADA/databricks_common_questions/workspace_dropdown_1.png": {
+      "checksum": "1903715787a1fdc45391632cc7d6899f"
+    },
+    "images/ADA/databricks_common_questions/workspace_dropdown_2.png": {
+      "checksum": "ddf373dd7fc10587be179eaee3dca9fe"
+    },
+    "images/ADA/databricks_common_questions/workspace_dropdown_3.png": {
+      "checksum": "5d67d5c51187b4cdac6a744271f43a84"
     },
     "images/add-git-folder.png": {
       "checksum": "a5f57e758db77313aec9f7fc276ac58e"
@@ -4854,7 +4966,7 @@
       "checksum": "78c50706664a48cc3de94d8ba46128a2"
     },
     "index.qmd": {
-      "checksum": "e53c69e6b77f67d0ec35043b86d86d68"
+      "checksum": "0bb8f339287bb854355f4e608a961e71"
     },
     "learning-development/accessibility.qmd": {
       "checksum": "cf9c87de5f776d2e5d003580bc88b657"
@@ -4875,7 +4987,7 @@
       "checksum": "a076d36f79251c8286a85a7542fac2f5"
     },
     "learning-development/r.qmd": {
-      "checksum": "9915d6aa06d840f6e1a1b2e3ed991d46"
+      "checksum": "3f10759d60e4d6b840042a2932306483"
     },
     "learning-development/sql.qmd": {
       "checksum": "3677df64dc94cdf2cb92aeb0ee9252fe"
